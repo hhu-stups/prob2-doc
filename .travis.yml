@@ -3,6 +3,10 @@ jdk:
 - oraclejdk8
 before_istall:
     - sudo apt-get update -q
-    - sudp apt-get install graphviz
+    - sudo apt-get install graphviz
+    
+install: /bin/true
+script:
+- TERM=dumb gradle ascii --info --stacktrace    
 
     
