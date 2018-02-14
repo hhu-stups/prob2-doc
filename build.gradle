@@ -5,7 +5,9 @@ buildscript {
 
     dependencies {
         classpath 'org.asciidoctor:asciidoctor-gradle-plugin:1.5.2'
-        classpath 'org.asciidoctor:asciidoctorj-pdf:1.5.0-alpha.6'
+        classpath 'org.asciidoctor:asciidoctorj-pdf:1.5.0-alpha.11'
+        classpath 'org.asciidoctor:asciidoctorj-epub3:1.5.0-alpha.6'
+        classpath 'org.asciidoctor:asciidoctorj:1.5.6'
         classpath 'com.github.jruby-gradle:jruby-gradle-plugin:0.1.11'
     }
 }
@@ -22,11 +24,12 @@ dependencies {
     gems 'rubygems:asciidoctor-diagram:1.2.1'
 }
 
-asciidoctor {
-    // let jruby-gradle download and install gems
-    dependsOn jrubyPrepareGems
+asciidoctorj {
+    version = '1.5.6'
+}
 
-    // include the diagram gem
+asciidoctor {
+    dependsOn jrubyPrepareGems
     requires = ['asciidoctor-diagram']
     gemPath = jrubyPrepareGems.outputDir
 
@@ -34,23 +37,23 @@ asciidoctor {
 
     backends = ['html5', 'pdf']
 
-    attributes 'source-highlighter'    : 'coderay',
-               'coderay-linenums-mode' : 'table',
-               toc                     : 'left',
-               'imagesdir': 'images',
-               icon                    : 'font',
-               linkattrs               : true,
-               encoding                : 'utf-8'
+    attributes 'source-highlighter': 'coderay',
+        'coderay-linenums-mode': 'table',
+        toc: 'left',
+        'imagesdir': 'images',
+        icon: 'font',
+        linkattrs: true,
+        encoding: 'utf-8'
 
 
-sources {
-  include 'handbook.adoc'
-}
+    sources {
+        include 'handbook.adoc'
+    }
 
 
     resources {
         from('src/docs/asciidoc') {
-             include '**/*.png'
+            include '**/*.png'
         }
     }
 }
