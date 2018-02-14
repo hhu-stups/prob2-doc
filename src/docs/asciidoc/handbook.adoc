@@ -1,0 +1,33 @@
+= ProB 2.0 Developer Handbook
+Jens Bendisposto;Joy Clark
+
+
+:xrefstyle: short
+:toc:
+
+
+:leveloffset: +1
+
+
+include::chapter/01_introduction.adoc[]
+
+include::chapter/02_architecture.adoc[]
+
+include::chapter/03_installation.adoc[]
+
+include::chapter/04_lowlevelapi.adoc[]
+
+include::chapter/05_probcore.adoc[]
+
+include::chapter/06_animation.adoc[]
+
+include::chapter/07_evaluation.adoc[]
+
+include::chapter/08_cosimulation.adoc[]
+
+include::chapter/09_dependencyinjection.adoc[]
+
+include::chapter/A_reference.adoc[]
+
+
+:leveloffset: -1

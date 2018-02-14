@@ -1,0 +1,164 @@
+[[animation]]
+= Animation
+
+It is possible for the user to perform animation manually using the state and transition abstractions, or to use the trace abstraction which allows the user access to previously executed transitions, and the ability to move within the trace. This chapter will describe in detail all of the different ways that it is possible to perform animation using the provided abstractions.
+
+== Animation via State
+We can also use a state to start animating the model. For instance, we can "execute" an event, resulting in the successor state by executing the `anyEvent` method of the state instance. There is also a method `anyOperation` which is just a synonym for `anyEvent`. The `anyEvent` Method can be used to construct random traces.
+
+[source, groovy]
+----
+y = x.anyEvent()
+y = x.anyOperation()
+
+// create random walks
+def random_trace(sspace) {
+  def t = [sspace.root]
+  100.times { t << t.last().anyEvent() }
+  return t;
+}
+----
+
+Another thing we typically want to do is to execute a specific event using the perform method of the state object. At this point you need to chose an event that you want to execute. It has to be enabled in the state, but you can provide additional guards to restrict the parameters. For instance if the event foo is enabled and we want call it with the parameter x set to the value 42, we can use the `perform` method:
+
+[source, groovy]
+----
+y = x.perform("foo",["x=42"])
+----
+
+The second argument is a list of predicates that are added to the guard of the event. They are used to further restrict the parameters. In our case foo could have been defined as
+
+[source]
+----
+foo = ANY x WHERE x : NAT THEN y := y + x END
+----
+
+If we execute the event using `anyEvent` and ProB is allowed to choose any natural number, typically it chooses 0. Adding `x=42` as an additional predicate will force ProB to set x to 42. Note that any predicate is allowed, we could also use for instance x:42..47 which allows ProB to choose any number between 42 and 47.
+
+The name of the formal parameters can only be retrieved indirectly from the machine. We can now implement a new execution method that does use positional arguments instead of named arguments using B predicates.
+
+[source, groovy]
+----
+fp = mch.getEvent(o.getName()).getParameters()
+
+def execute(machine, state, operation_name, Object... params) {
+  formal_params = machine.getEvent(operation_name).getParameters()
+  pred = [formal_params,params]
+          .transpose()
+          .collect { a,b -> a.toString() + "=" + b.toString() }
+  x.perform(name,pred)
+}
+----
+
+A call would look like  `execute(mch, x, ``foo", 42)` or for an operation with three parameters it would look like `execute(mch,"bar",1,"{}",-3)`.
+
+== Animation via Trace
+
+The `Trace` class is the main abstraction intended for animation. This section explains how to use the trace API. We can use the trace to track a succession of states. Traces also support the anyEvent method.
+
+[source, groovy]
+----
+t2 = t.anyEvent() // extend the trace by one random state
+
+def randomTrace(t,n) {
+  def result = t
+  n.times { result = result.anyEvent() }
+  result // return value
+}
+
+t3 = randomTrace(t2,100)
+t4 = t3.anyEvent("foo") // execute foo
+t5 = t4.anyEvent(["foo","bar"]) // execute either foo or bar
+t6 = t5.anyOperation() // synonym for anyEvent
+----
+
+A Trace has a current state, typically the last state in the trace. but we can "go back in time". This changes the current trace to some other state contained in the trace.
+
+[source, groovy]
+----
+t = randomTrace(new Trace(sspace),100) // a rather long trace
+t.getCurrentState()
+t.canGoForward() // false
+t.canGoBack() // true
+t = t.back()
+t.canGoForward() // true
+t = t.forward()
+t.canGoForward() // false
+----
+
+== Synchronized Animations
+
+When dealing with model composition/decomposition there is interest in synchronized animations. This is usually the case when a model has been decomposed into separate components. It is of course possible to animate the components separately by creating a Trace object for each separate component. However, often a user wants to create a composed animation in which multiple Trace objects can be animated at once. In such an animation, specific events from different Traces can be selected and synchronized. Here, synchronized means that when an event from one trace is fired, events that are synchronized will attempt to trigger as well. If one of the triggered events fails, the whole animation step fails.
+
+A synchronized trace object, or `SyncedTrace`, can be created by specifying a list of Traces and a list of `SyncedEvents`. These `SyncedEvents` are defined by the user and encapsule name and parameter combinations from different traces that are then coupled under a user defined event name.
+
+[source, groovy]
+----
+// t0, t1, t2 are Trace objects
+tt = new SyncedTraces([t0,t1,t2],
+                      [new SyncedEvent("sync1").sync(t0,"foo",["x < 5"]).sync(t1,"bar",[]),
+	                   new SyncedEvent("sync2").sync(t2,"baz",[]).sync(t0,"foo",["x > 5"])])
+----
+
+Once a `SyncedEvent` has been defined for a `SyncedTrace`, this event can be executed on the class which results in the previously defined events being fired in the underlying Trace objects.
+
+
+[source, groovy]
+----
+tt1 = tt.sync1()  // The Java equivalent of this call is tt.execute("sync1")
+assert tt1.traces[0].getCurrentTransition().getName() == "foo"
+assert tt1.traces[1].getCurrentTransition().getName() == "bar"
+assert tt1.traces[2] == t2
+
+tt2 = tt.sync2()
+assert tt2.traces[0].getCurrentTransition().getName() == "foo"
+assert tt2.traces[1] == t1
+assert tt2.traces[2].getCurrentTransition().getName() == "baz"
+----
+
+If the user wants to execute an event on one of the internal traces, the execute method allows this Trace object to be specified via index.
+
+[source, groovy]
+----
+tt3 = tt.execute(1, "moo", ["pp : {1,2,3}"])
+assert tt3.traces[0] == t0
+assert tt3.traces[1].getCurrentTransition().getName() == "moo"
+assert tt2.traces[2] == t2
+----
+
+However, when executing if the event that is triggered is one of the synced events, triggering this animation step will trigger the synced events in the other Trace objects as well.
+
+[source, groovy]
+----
+tt4 = tt.execute(0, "foo", ["x < 5"])
+assert tt4.traces[0].getCurrentTransition().getName() == "foo"
+assert tt4.traces[1].getCurrentTransition().getName() == "bar"
+assert tt4.traces[2] == t2
+
+tt5 = tt.execute(1, "bar", [])
+assert tt5.traces[0].getCurrentTransition().getName() == "foo"
+assert tt5.traces[1].getCurrentTransition().getName() == "bar"
+assert tt5.traces[2] == t2
+
+tt6 = tt.execute(0, "foo", ["x > 5"])
+assert tt6.traces[0].getCurrentTransition().getName() == "foo"
+assert tt6.traces[1] == t1
+assert tt6.traces[2].getCurrentTransition().getName() == "baz"
+
+tt7 = tt.execute(2, "baz", [])
+assert tt7.traces[0].getCurrentTransition().getName() == "foo"
+assert tt7.traces[1] == t1
+assert tt7.traces[2].getCurrentTransition().getName() == "baz"
+----
+
+Triggering an event whose name and parameter combinations do not exactly match those defined in the synced event will not trigger any synced event.
+
+[source, groovy]
+----
+tt8 = tt.execute(2, "foo", ["x = 5"])
+assert tt8.traces[0].getCurrentTransition().getName() == "foo"
+assert tt8.traces[1] == t1
+assert tt8.traces[2] == t2
+----
+
+If any animation step in any of the underlying Trace classes fails, the entire animation will also fail. In this example, attempting to execute the synced event `sync1` while either `traces[0].foo("x <5")` or `traces[1].bar()` is not enabled will result in an exception.

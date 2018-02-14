@@ -1,0 +1,359 @@
+[[highlevel]]
+= High Level API
+
+We have introduced a high level API in ProB 2.0 which allows much nicer interaction with ProB. Before 2.0, all interaction was done using commands. There were no abstractions that represent typically used concepts such as a model, a state space, or a trace. Together with this high level API, we introduced a scripting interface that makes it very easy to tweak ProB and implement new features. Almost everything in ProB can be manipulated through Groovy scripts. This chapter will introduce the programmatic abstractions now available in ProB 2.0, and will briefly describe their function. Later chapters will cover in greater depth how to use the abstractions. <<animation>> covers the topic of animation, and <<evaluation>> discusses how to evaluate formulas using the API. In the following sections we will introduce the main abstractions that are available in ProB 2.0, that is, the model, state space and trace abstractions.
+
+== Experimenting with ProB 2.0
+The best way to get a feel for ProB 2.0 is to try it out in a Groovy environment. Within the GUI, a Groovy shell can be opened from the _Advanced_ menu.
+
+ProB will automatically provide some predefined objects for interaction in Groovy shells. The most interesting predefined objects are stored in the `api` and `animations` variables.
+
+The next section will only contain examples referencing the `api` variable, a singleton instance of the `Api` class, which has methods to load models for a number of different formalisms (currently classical B, Event-B, TLA+ and CSP). The `animations` variable is used to programatically interact with the user interface and will be referenced frequently in <<animation>>.
+
+== Model Abstraction
+The model abstraction provides static information about the current model that is being animated or checked. For Classical B and Event-B, this includes all of the information about the refinement chain and all of the different components (Machines, Contexts, Invariants, Variables, etc.). Currently, the model abstraction has been implemented for the Classical B, Event B, TLA+ and CSP-M formalisms. However, because we have implemented the abstraction with other formalisms in mind, it is not difficult to implement new formalisms.
+
+A model is a graph whose vertices are components (e.g., machines and contexts) and whose edges are relations between components. The main differences between an Event-B model and its classical B counterpart are the artifacts and relationships they can contain. An Event-B Model consists of Machines and Contexts and the only relationships are refinement and sees while the classical B model contains machines, refinements and implementations and there are more relationships, for instance uses and includes.
+
+All of the components in a model can be retrieved using the `getComponents` method. There is also a `getComponent` method to get a specific component by name. Because of some groovy features, these components can also be retrieved from the model by accessing the name of the component as if it were a field or property for the object.
+
+IMPORTANT: Please note, that it is *not* required to use Groovy, everything works from any JVM based language except for some syntactic sugar.
+
+The following example shows how to access a component with the Model API.
+
+[source, groovy]
+----
+allComponents = model1.getComponents()
+someComponent = model1.getComponent("the_machine")
+sameComponent = model1.the_machine // works only in Groovy
+----
+
+In a similar way, it is possible to access the children components for a machine or context like the invariants or variables. When dealing with a B model, we can use the `getInvariants` method in a machine object to get a list of invariant defined in that machine. Invariants in classical B are automatically split into its conjuncts. We can also get a list of the events or a specific event using `getEvents` or `getEvent("name")`.  From there we can get the list of guards footnote:[In classical B we get the outermost precondition.] for an event. The following Groovy code shows an example that prints all events and their corresponding guard. We have recombined the guards into a single predicate.
+
+[source, groovy]
+----
+machine.events.each {
+  event ->
+     guard = event.guard.join " ⋀ "
+     println "Event ${event.name}'s guard: ${guard}"
+}
+----
+
+The list of elements within a component is implemented with a special instance of list which also contains a mapping of the names of elements (if they have a name) so that specific elements can be retrieved from the list via name instead of iterating through the list and searching for the name. These elements can be accessed from the list via the `getElement` method. In a Groovy environment, these named elements also appear as fields on the class, which provides some nice syntactic sugar as seen in the following code snippet.
+
+[source, groovy]
+----
+// get @grd1 from evt in Groovy environment
+grd1 = model1.the_machine.events.evt.grd1
+
+// equivalent call in Java syntax
+grd1 = model1.getComponent("the_machine").getEvents().getElement("evt").getGuard("grd1")
+----
+
+When we were implementing the API for the models, we took into account that classical B and Event-B specifications share many similarities. We wanted to be able to write scripts for both model objects without having to specify between the two. For this reason, there is also a mapping from a generic class (that is identical for both classical B and Event-B models) to the implementation specific elements.
+
+For example, consider the similarities between classical B and Event-B. Both of the specifications have invariants (we break the classical B invariant down into its conjuncts). However, each of the Event-B invariants also a name. We therefore need two different implementations of the Invariant class, `ClassicalBInvariant` and `EventBInvariant`. Both the `ClassicalBMachine` and `EventBMachine` maintain a list of invariants, but there is also an implicit mapping from the `Invariant` class to the list of invariants which allows you to access the list via the `getChildrenOfType` method without knowing the type of the model in question. This is demonstrated in the following code examples
+
+[source, groovy]
+----
+classicalBMachine.getChildrenOfType(Invariant.class)
+eventBMachine.getChildrenOfType(Invariant.class)
+----
+
+Because Groovy is dynamically typed, accessing the children elements in this way usually only makes sense in a Java environment.
+
+
+== Loading models into ProB
+
+Now we need to load an actual specification file into ProB. This takes place in two steps: extracting the static information about the model into a Model object and then using that static information in order to load the model into the ProB CLI. In order to make the process as simple as possible, these two steps are separated. First, a ModelFactory is used to extract the Model represenation from a specification file. The Model representation then contains all of the information that it needs in order to load itself into ProB.
+
+The ModelFactory is defined by the following interface:
+
+[source,java]
+----
+public interface ModelFactory<T extends AbstractModel> {
+    public ExtractedModel<T> extract(String pathToSpecification);
+}
+----
+
+As you can see, a `ModelFactory` extracts a `Model` object from a given specification. From this interface we can also see that the statement made previously about the model's ability to load itself into ProB is not completely accurate. A model contains several different components (for B these are machines or contexts). However, ProB requires one of these components to be specified as the so called _main component_, which is the component on which further animations will be based. The user will also likely want to set special preferences for a given animation, so this should also be available when loading the Model into ProB. For this reason, the loading function in an AbstractModel is defined as follows
+
+[source, java]
+----
+public abstract class AbstractModel extends AbstractElement {
+    public StateSpace load(AbstractElement mainComponent) {
+		load(mainComponent, Collections.emptyMap());
+    }
+
+    public abstract StateSpace load(AbstractElement mainComponent, Map<String,String> preferences);
+}
+----
+
+When extracting the model from a specification file, the main component is usually inherently specified. The user will extract the component `/path/to/dir/spec1.mch` and will expect that the component with the name `spec1` will have been loaded. For this reason, we have introduced the `ExtractedModel` abstraction.
+
+We have abstracted the loading mechanism for specifications so that it can be adapted to load any number of different formalisms. The classes responsible for loading the models basically have to perform three tasks: extract the static information about the specification in question, create at command to load the model into the Prolog kernel, and subscribe any formulas of interest (the subscription mechanism will be explained more in <<evaluation>>. The load command consists of setting user specified preferences, a formalism specific load command for the model, and a request for ProB to start animating the model in question. Each formalism that is supported by ProB has its own factory responsible for loading it. These factories can be created via <<dependency_injection>>, and they also have accessor methods in the `Api` class which makes it simple to load specifications in a groovy environment.
+
+The load method of a factory takes three parameters:
+* the `String` path to the specification file
+*  a `Map<String,String>` of user specified preferences (for list of possible preferences see <<preferences>>)
+* a Groovy closure (the Groovy implementation of a lambda function) that takes the loaded model as a parameter and will execute user defined behavior
+
+== Load Function
+
+As mentioned above, one of the parameters that is required by the model factory is a closure that performs user defined behavior after loading the model. For instance, the closure in the following listing would print the string representation of the model after loading it.
+
+[source, groovy]
+----
+loadClosure = { model ->
+	println model
+}
+----
+
+Of course, this particular closure may not be useful for the user, but adding this functionality allows users to define actions that need to be taken directly after the model has been loaded. It is also possible to simply use an empty closure that does nothing. For those programming a Java environment, a predefined empty closure is defined as `Api.EMPTY`.
+
+When loading the model into the user interface, we want formulas of interest to tell the state space to evaluate themselves in every step of the animation so that their values can be cached and easily retrieved. This evaluation mechanism is described further in <<evaluation>>. To do this, we have implemented the `Api.DEFAULT` closure which will tell ProB that all invariants, variables, and constants are of interest.
+
+As mentioned before, the model factories (`ClassicalBFactory`, `EventBFactory`, `CSPFactory`, and `TLAFactory`) can be retrieved from the injector framework. However, there are also methods for loading the specifications in the `Api` class to allow access from a Groovy environment. The next sections will briefly cover how to load different specifications and the special characteristics for the specification in question. Each of the load methods in the `Api` take three parameters, but there are also default values for the parameters that are supplied if the user does not choose to define one of them. To take the optional parameters into account, groovy compiles a single method call into three separate method calls as shown in the following:
+
+[source, groovy]
+----
+// The following calls have identical results
+m = api.formalism_load("/path/to/formalism/formalism.extension")
+m = api.formalism_load("/path/to/formalism/formalism.extension", Collections.emptyMap())
+m = api.formalism_load("/path/to/formalism/formalism.extension", Collections.emptyMap(), api.getSubscribeClosure())
+----
+
+As you can see from the third call, the load closure in `api.formalism_load` will be set to `api.getSubscribeClosure()` if not defined by the user. What does this method do? As stated in the above sections, there are two default load closures contained in the Api class (`Api.DEFAULT` and `Api.EMPTY`). If the user does not want to subscribe all formulas of interest by default, they can manipulate this via the boolean flag `api.loadVariablesByDefault`
+
+[source, groovy]
+----
+api.loadVariablesByDefault = true  // register all formulas of interest
+api.getSubscribeClosure() == api.DEFAULT  // true
+
+api.loadVariablesByDefault = false // do not register any formulas
+api.getSubscribeClosure() == api.EMPTY  // true
+
+// It is also possible to create new DEFAULT behavior
+olddefault = api.DEFAULT
+api.DEFAULT = { model ->
+	// This closure subscribes variables from the highest refinement
+	model.getMainComponent().variables.each {
+		it.subscribe(model.getStateSpace())
+	}
+}
+api.loadVariablesByDefault = true
+api.getSubscribeClosure() != olddefault  // true
+api.getSubscribeClosure() == api.DEFAULT  // true
+----
+
+== Loading Classical B Specifications
+
+The following listing shows how classical B specifications are loaded.
+
+[source, groovy]
+----
+model1 = api.b_load("/path/classicalb/machine.mch")
+model2 = api.b_load("/path/classicalb/refinement.ref")
+
+// load with preference COMPRESSION set to true
+model3 = api.b_load("/path/classicalb/machine.mch", [COMPRESSION : "true"])
+
+// loading from the ClassicalBFactory itself
+classicalBFactory.load("/path/classicalb/machine.mch", Collections.emptyMap(),
+							api.getSubscribeClosure())
+----
+
+== Loading Event-B specifications
+Loading Event-B specifications is possible via the `api.load_eventb` method. However, there are several different ways to serialize Event-B models, so there are also more ways to load an Event-B specification. The easiest way is to load an Event-B specification from the static checked files produced by Rodin:
+
+[source, groovy]
+----
+model1 = api.eventb_load("/path/eventb/machine.bcm")
+model2 = api.eventb_load("/path/eventb/context.bcc")
+
+// Loading from the EventBFactory itself
+eventBFactory.load("/path/eventb/machine.bcm", Collections.emptyMap(),
+				   			api.getSubscribeClosure())
+----
+
+If a user attempts to load an unchecked file (.bum or .buc), the loading mechanism attempts to find the correct corresponding checked file.
+
+However, the tool also supports two further formats for loading an Event-B model. The first is the _.eventb_ format, which is the format exported from Rodin for the Tcl/Tk version of ProB. Unfortunately, when loading from this format, it is not possible to find any static information about the model, so the model object that is constructed will be empty.
+
+[source, groovy]
+----
+// the following calls are equivalent
+api.eventb_load("/path/eventb/machine_mch.eventb")
+eventBFactory.loadModelFromEventBFile("/path/eventb/machine_mch.eventb",
+	                   Collections.emptyMap(), api.getSubscribeClosure())
+----
+
+Rodin allows users to export projects in the .zip format, so we also support the loading of Event-B specifications directly from the zipped file. Here we need further information: the name of the particular component that the user is interested in. As with the other load methods, there are optional parameters that may be specified
+
+[source, groovy]
+----
+// searches recursively until machine.bcm is found
+model1 = api.eventb_load("/path/eventb/model.zip", "machine")
+
+// searches recursively until context.bcc is found
+model2 = api.eventb_load("/path/eventb/model.zip", "context")
+
+// loading a zip file from EventBFactory itself
+eventBFactory.loadModelFromZip("/path/eventb/model.zip", "machine",
+                           Collections.emptyMap(), api.getSubscribeClosure()))
+----
+
+== Loading TLA+ specifications
+
+ProB provides support for TLA+ specifications via a translation tool developed separately to translate TLA+ specifcations into the AST format used by the classical B parser footnote:[D. Hansen and M. Leuschel: Translating TLA+  to B for Validation with ProB, IFM 2012]. Using the same mechanism, we translate the TLA+ mechanism into a `ClassicalBModel` during loading, so the ProB API handles TLA+ models exactly the same way it treats classical B specifications. The load command can be seen in the following code snippet. What is worth noting here is that the model object returned from the load command is for all intents and purposes to the API actually a ClassicalB model due to the translation process.
+
+[source, groovy]
+----
+// As with classical B and Event-B, the following calls are equivalent
+api.tla_load("/path/tla/specification.tla")
+tlaFactory.load("/path/tla/specification.tla", Collections.emptyMap(),
+					api.getSubscribeClosure())
+----
+
+== Loading CSP-M Specifications
+
+The CSP-M specifications are parsed using an external library.
+We currently don't have a way to extract static data structures from CSP specifications, so the CSPModel that is created by loading the specification is empty. For this reason also, the default load closure for CSP-M specifications is `Api.EMPTY`. The different ways to load CSP specifications can be seen in the following
+
+[source, groovy]
+----
+// The following calls are equivalent
+api.csp_load("/path/csp/specification.csp")
+cspFactory.load("/path/csp/specification.csp"), Collections.emptyMap(),
+				api.EMPTY)
+----
+
+== State Space
+While the model describes the static properties of a development, the StateSpace describes the dynamic properties. There is a one-to-one relationship between a StateSpace and a model. The StateSpace is the corresponding label transition system for a particular model that is calculated by ProB.
+
+The state space represents the whole currently known world for an animation. It is lazily explored, i.e., when we access a state within the StateSpace, ProB will fetch the information from Prolog automatically and transparently. The only observation that can be made is that the fetching of some states takes longer than the ones that are already cached in the StateSpace.
+
+The class itself is based on an LRU cache implementation. Because the states are all cached within the Prolog binary, we do not want to cache all of them on the Java side in order to ensure that the memory footprint of the Java API remains reasonably small. The cache currently stores up to 100 states, although we may make this customizable in the future.
+
+On the Prolog side, the States are identified by a unique String identifier (which is currently implemented with a counter that increments every time a state is discovered). For this reason, the states can be retrieved from the StateSpace via the getState method. If a state has been cached for the specified identifier, this is retrieved from the Java cache. Otherwise, the Prolog kernel is queried to see if the specified identifier maps to an valid state in the state space, and if so, the state is constructed, cached, and returned to the user.
+
+The StateSpace is also used as the gateway to the Prolog binary. It implements the IAnimator interface and therefore we can submit commands using the state space.
+
+The state space that corresponds to a loaded model can be obtained using the model's getStateSpace() method. We can also use Groovy's special syntax for type coercion:
+
+[source, groovy]
+----
+sspace = model1.getStateSpace()
+sspace = model1 as StateSpace
+----
+
+
+== State
+
+As stated before, the state space is the labeled transition system for a model. The state space maintains a cache of states that have been accessed from within the state space. These states are represented by object of class `State`, and the relationship between the states is specified using objects of class `Transition`. The `Transition` objects are not explicitly saved in the state space, but the graph maintains its structure because each state maintains a list of outgoing transitions from itself. The transitions are not saved by default, rather are calculated lazily when they are needed. The outgoing transitions from a given state can be calculated via the explore method, which also retrieves other information from the Prolog kernel including if the invariant is broken and the calculated values of the formulas of interest. The following listing shows how to explore a state (thereby calculating outgoing transitions). There is also a `getOutTransitions` method which performs both of these steps at once.
+
+[source, groovy]
+----
+// Code snippet 1:
+x = sspace.getRoot()            // retrieves root state.
+x.getTransitions().size() == 0  // true, when the state is not explored
+x.explore()
+x.getTransitions().size() != 0  // true, when ProB has calculated a transition
+
+// Code snippet 2:
+x = sspace.getRoot()
+x.getOutTransitions().size() != 0 // getOutTransitions explores the state if
+                            // necessary, returning the resulting transitions
+
+----
+
+It is also possible to use the state object for evaluation of formulas and for animation, but these functionalities will be explained in detail in the next chapters.
+
+== Transition
+
+As explained in the last section, a state maintains a list of all outgoing transitions. But what do these transitions contain? The transitions represents the instantiation of an event from one state into another. The transition object contains the unique identifier that ProB assigns to the transition, the name of the event that is initiated, the source state and destination state for the transition, and the values of the parameters and return values that ProB has calculated. The following code snippet shows the basic API for a transition object. The `getRep` method is also available which creates a pretty representation of the transition based on the syntax of the model that is being animated.
+
+[source, groovy]
+----
+transition = sspace.getRoot().getOutTransitions().first()
+transition.getSource() == sspace.getRoot() // will be true
+destination = transition.getDestination()
+transitionId = transition.getId()
+params = transition.getParams()
+returnVs = transition.getReturnValues()
+
+println transition.getRep()  // pretty print of the transition
+----
+
+When using transitions, however, it is important to be aware that not all of these fields are filled by default. The source and destination states, the id, and the name are all defined, but the parameters and return values are retrieved lazily only if they are needed. This is because many specifications written in classical B or Event-B have very large parameter values, and these parameter values need to be sent from the prolog side to the Java side. Because the communication between the two uses sockets and the parsing of strings, having to send large strings results in a visible performance decrease. Often, the user doesn't need to use the parameter values, so it made sense to retrieve them lazily from Prolog.
+
+However, even retrieving the parameters and return values at a later time can be inefficient if you are dealing with multiple transitions for which you need to retrieve the parameters at the same time. For this reason, we have made the `evaluateTransitions` method in the state space, which takes a collection of transitions and retrieves their parameters and return values in one go by composing the requests to Prolog into one query as described in <<lowlevel>>. This results in better performance because for a list of transitions with n elements, only one communication step is required instead of n steps.
+
+In addition to the `evaluateTransition` method, we have also modified the getter methods for classes containing lists of transitions (i.e. the `getOutTransitions` method in the State class and the `getTransitionList` and `getNextTransitions` method in the `Trace` class). S
+
+[source, groovy]
+----
+stateSpace.evaluateTransitions(list_of_transitions)
+
+state.getOutTransitions() == state.getOutTransitions(false)
+state.getOutTransitions(true) // all transitions will be evaluated
+
+trace.getTransitionList() == trace.getTransitionList(false)
+trace.getTransitionList(true) // all transitions will be evaluated
+
+trace.getNextTransitions() == trace.getNextTransitions(false)
+trace.getNextTransitions(true) // all transitions will be evaluated
+----
+
+The Trace class is explained in further detail in the next section. These getter methods take an additional parameter evaluate (which is by default set to false), and if set to true, will evaluate all of the transitions at once.
+
+== Trace
+
+For some tools, the `StateSpace` abstraction may be sufficient. But when it comes to animation and the concept of a _current state_, a further abstraction, called a Trace, becomes handy. Without the trace abstraction each tool would have to explicitly store the lists of states that has been executed.
+
+A trace consists of a linked list of states which correspond to a path through the state space. There is also a pointer in the list which identifies the current state.
+If we go back in time, the trace keeps future states. If we change a decision in the past, the trace drops the future. It behaves in the same way your browser history does.
+One instance of `Trace` corresponds to exactly one trace within the animation. Each trace is associated with exactly one state space, but we can have many different traces on top of a single state space.
+
+The `Trace` objects are immutable. This means that whenever an animation step is performed (forward, backward, or simply adding a transition to the trace) a new Trace is returned. We use structural sharing to efficiently implement the operations. We do *not* require copying the list each time we change something.
+
+There can be an arbitrary number of `Trace` objects for any given instance of a state space. A trace is created from one specified start state. It can also be created from the state space object itself, at which point it is assumed that the start state is the root state
+
+[source, groovy]
+----
+t = new Trace(someStateSpace)
+t2 = new Trace(someStateSpace.getRoot())
+// t and t2 are equivalent
+
+// anyEvent randomly follows a transition
+arbitraryState = stateSpace.getRoot().anyEvent().anyEvent()
+t = new Trace(arbitraryState) // start from arbitrary state
+----
+
+Traces are implemented as two "pointers" into an immutable linked list. This allows us to always create new `Trace` objects while still being efficient.
+
+The following code demonstrates how traces evolve:
+
+[source, groovy]
+----
+t1 = randomTrace(new Trace(),3);
+t2 = t1.back()
+t3 = t2.anyEvent("d")
+----
+
+Initially we create a random Trace t1 of length 4 (<<img-trace1>>). Let's say the Trace consists of the events a,b, and c. Then we call the back method on t1 yielding a new Trace object t2 (<<img-trace2>>). Finally we  execute some event d. In Figure~\ref{fig:trace_evolve} we show the case where t1.getCurrentState() yields a different state than t3.getCurrentState(). Otherwise t3 would be a copy of t1.
+
+[#img-trace1]
+.t1 = randomTrace(new Trace(),3);
+image::traces_1.png[]
+
+[#img-trace2]
+.t2 = t1.back()
+image::traces_2.png[]
+
+[#img-trace3]
+.t3 = t2.anyEvent("d")
+image::traces_3.png[]
+
+
+Note, that almost all elements are shared between the Traces, we do not have to copy the List in order to have immutable values, so the implementation is efficient.

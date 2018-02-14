@@ -1,0 +1,27 @@
+[[installation]]
+= Installation
+
+You can use the ProB 2.0 archive.
+The easiest way is to use Gradle or Maven.
+
+The artifact is providaed via   http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22de.prob2.kernel%22[Maven central]
+The current developer Snapshot can be found in the  https://oss.sonatype.org/content/repositories/snapshots/de/hhu/stups/[Sonatype repository]
+
+The following listing shows an example Gradle build script that can be used as a template for builds. We have also prepared an https://github.com/bendisposto/prob2_tooling_template[example project] that can be used as a template for a tool built on top of ProB 2.0.
+
+[source,groovy]
+----
+apply plugin: 'java'
+
+repositories {
+ mavenCentral()
+ maven {
+  name "sonatype"
+  url "https://oss.sonatype.org/content/repositories/snapshots/de/hhu/stups/"
+ }
+}
+
+dependencies {
+ compile "de.prob:de.prob.core.kernel:2.0.0" // replace version number
+}
+----
