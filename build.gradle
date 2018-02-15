@@ -8,12 +8,13 @@ buildscript {
         classpath 'org.asciidoctor:asciidoctorj-pdf:1.5.0-alpha.11'
         classpath 'org.asciidoctor:asciidoctorj-epub3:1.5.0-alpha.6'
         classpath 'org.asciidoctor:asciidoctorj:1.5.6'
-        classpath 'com.github.jruby-gradle:jruby-gradle-plugin:0.1.11'
+        classpath 'com.github.jruby-gradle:jruby-gradle-plugin:1.5.0'
     }
 }
 
 apply plugin: 'org.asciidoctor.convert'
 apply plugin: 'com.github.jruby-gradle.base'
+import com.github.jrubygradle.JRubyExec
 
 
 repositories {
@@ -22,16 +23,22 @@ repositories {
 
 dependencies {
     gems 'rubygems:asciidoctor-diagram:1.2.1'
+    gems 'rubygems:asciidoctor-bibtex:0.3.1'
 }
 
 asciidoctorj {
     version = '1.5.6'
 }
 
+task bibtex {
+  (new File('src/docs/asciidoc/combined.bib')).text =
+      files('stups.bib', 'localrefs.bib').collect{it.getText()}.join("\n")
+}
+
 asciidoctor {
-    dependsOn jrubyPrepareGems
-    requires = ['asciidoctor-diagram']
-    gemPath = jrubyPrepareGems.outputDir
+    dependsOn = ['bibtex','jrubyPrepare']
+    requires = ['asciidoctor-diagram', 'asciidoctor-bibtex']
+    gemPath = jrubyPrepare.outputDir
 
     options doctype: 'book'
 
@@ -39,11 +46,12 @@ asciidoctor {
 
     attributes 'source-highlighter': 'coderay',
         'coderay-linenums-mode': 'table',
-        toc: 'left',
+        'toc': 'left',
         'imagesdir': 'images',
-        icon: 'font',
-        linkattrs: true,
-        encoding: 'utf-8'
+        'icon': 'font',
+        'linkattrs': true,
+        'encoding': 'utf-8',
+        'bibtex-file': 'combined.bib'
 
 
     sources {
