@@ -65,3 +65,5 @@ asciidoctor {
         }
     }
 }
+
+defaultTasks 'clean','asciidoctor'
