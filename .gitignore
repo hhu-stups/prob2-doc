@@ -17,3 +17,6 @@ gradle-app.setting
 
 
 combined.bib
+*.cache
+diag-*.png.cache
+diag-*.png
