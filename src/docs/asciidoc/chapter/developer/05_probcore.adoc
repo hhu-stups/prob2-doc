@@ -205,7 +205,7 @@ eventBFactory.loadModelFromZip("/path/eventb/model.zip", "machine",
 
 == Loading TLA+ specifications
 
-ProB provides support for TLA+ specifications via a translation tool developed separately to translate TLA+ specifcations into the AST format used by the classical B parser footnote:[D. Hansen and M. Leuschel: Translating TLA+  to B for Validation with ProB, IFM 2012]. Using the same mechanism, we translate the TLA+ mechanism into a `ClassicalBModel` during loading, so the ProB API handles TLA+ models exactly the same way it treats classical B specifications. The load command can be seen in the following code snippet. What is worth noting here is that the model object returned from the load command is for all intents and purposes to the API actually a ClassicalB model due to the translation process.
+ProB provides support for TLA+ specifications via a translation tool developed separately to translate TLA+ specifcations into the AST format used by the classical B parser cite:[HansenLeuschelTLA2012]. Using the same mechanism, we translate the TLA+ mechanism into a `ClassicalBModel` during loading, so the ProB API handles TLA+ models exactly the same way it treats classical B specifications. The load command can be seen in the following code snippet. What is worth noting here is that the model object returned from the load command is for all intents and purposes to the API actually a ClassicalB model due to the translation process.
 
 [source, groovy]
 ----

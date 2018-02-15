@@ -1,4 +1,4 @@
-= ProB 2.0 Developer Handbook
+= ProB 2.0 Handbook
 Jens Bendisposto;Joy Clark
 
 
@@ -8,26 +8,45 @@ Jens Bendisposto;Joy Clark
 
 :leveloffset: +1
 
+= Users
 
-include::chapter/01_introduction.adoc[]
+:leveloffset: +1
 
-include::chapter/02_architecture.adoc[]
-
-include::chapter/03_installation.adoc[]
-
-include::chapter/04_lowlevelapi.adoc[]
-
-include::chapter/05_probcore.adoc[]
-
-include::chapter/06_animation.adoc[]
-
-include::chapter/07_evaluation.adoc[]
-
-include::chapter/08_cosimulation.adoc[]
-
-include::chapter/09_dependencyinjection.adoc[]
-
-include::chapter/A_reference.adoc[]
+include::chapter/user/01_introduction.adoc[]
 
 
 :leveloffset: -1
+
+= Developers
+
+:leveloffset: +1
+
+include::chapter/developer/01_introduction.adoc[]
+
+include::chapter/developer/02_architecture.adoc[]
+
+include::chapter/developer/03_installation.adoc[]
+
+include::chapter/developer/04_lowlevelapi.adoc[]
+
+include::chapter/developer/05_probcore.adoc[]
+
+include::chapter/developer/06_animation.adoc[]
+
+include::chapter/developer/07_evaluation.adoc[]
+
+include::chapter/developer/08_cosimulation.adoc[]
+
+include::chapter/developer/09_dependencyinjection.adoc[]
+
+:leveloffset: -1
+
+= Appendix
+
+:leveloffset: +1
+
+include::chapter/appendix/A_literature.adoc[]
+
+include::chapter/appendix/B_preferences.adoc[]
+
+:leveloffset: -2

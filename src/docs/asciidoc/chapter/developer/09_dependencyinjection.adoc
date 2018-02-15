@@ -1,7 +1,7 @@
 [[dependency_injection]]
-== Dependency Injection
+= Dependency Injection
 
-We have decided to use the Guice framework for dependency injection. Although this is just an implementation detail  it is important to get a basic understanding of how it works and why we use it in order to build tools on top of ProB 2.0. A more complete introduction to dependency injection and the Guice framework can be found in https://dl.acm.org/citation.cfm?id=1795686[Dependency Injection by Prasanna] and https://github.com/google/guice[the Guice website].
+We have decided to use the Guice framework for dependency injection. Although this is just an implementation detail  it is important to get a basic understanding of how it works and why we use it in order to build tools on top of ProB 2.0. A more complete introduction to dependency injection and the Guice framework can be found in cite:[Prasanna:2009:DI:1795686] and https://github.com/google/guice[the Guice website].
 
 Dependency injection is used when we create an instance of a class. As an example, we will use the `Api` class. The class depends on a class that constructs factories which construct model objects from files. It also depends on a provider that can create instances of `IAnimator`, which coordinates the execution of commands.
 
