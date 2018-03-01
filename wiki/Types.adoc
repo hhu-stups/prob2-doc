@@ -1,0 +1,103 @@
+ProB requires all constants and variables to be typed. As of version
+1.3, ProB uses a new unification-based type inference and checking
+algorithm. As such, you should be able to use most Atelier B models
+without problem. On the other hand, certain models that ProB accepts
+will have to be rewritten to be type checked by Atelier B (e.g., by
+adding additional typing predicates). Also note that, in contrast to
+Atelier B, ProB will type check macro DEFINITIONS.
+
+[[what-is-a-basic-type-in-b]]
+What is a basic type in B
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* BOOL
+* INTEGER
+* Any name of a set introduced in a SETS clause or introduced as a
+parameter of the machine
+* POW (τ) (power set) for τ being a type
+* τ1 * τ2 (Cartesian product) for τ1 and τ2 being two types
+
+[[what-needs-to-be-typed]]
+What needs to be typed
+~~~~~~~~~~~~~~~~~~~~~~
+
+Generally speaking, any constant or variable. More precisely:
+
+* Constants declared in the CONSTANTS clause must be typed in the
+PROPERTIES clause;
+* Variables declared in the VARIABLES clause must be typed in the
+INVARIANT;
+* Arguments of an operation must be typed in the precondition PRE or a
+top-level SELECT statement of the operation;
+* Variables in universal or existential quantifications;
+* Variables of set comprehensions must be typed in a conjunct of the
+body of the set comprehension. For example, \{xx | xx:NAT & xx>0 & xx<5}
+is fine, but \{xx | xx>0 & xx<5} is not;
+* Variables of lambda abstractions must be typed in the predicate part
+of the abstraction. For example, %yy.(yy:NAT|yy-1) properly types the
+variable yy;
+* Variables introduced in ANY statements must be typed in the WHERE part
+of the statement.
+
+ProB will warn you if a variable has not been given a type.
+
+*HINT: The Analyse|Show Typing command reveals the typing that ProB has
+inferred for your constants and global variables.*
+
+[[restriction-on-the-domains-of-the-variables]]
+Restriction on the Domains of the Variables
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Animating and verifying a B specification is in principle undecidable.
+ProB overcomes this by requiring that the domain of the variables is
+finite (i.e., with finitely many values) or integer. This ensures that
+the state space has finite size. Typing of the B specification ensures
+this restriction.
+
+In the B specification, a set is either defined explicitely, thus being
+a finite domain, or its definition is deferred. In the later case, the
+user can indicate the size of the set mySET (without defining its
+elements) by creating a macro in the DEFINITIONS clause with the name
+scope_mySET and an integer value (e.g. scope_mySET==2) or a value
+specified as a range (e.g. scope_mySET == 1..12). The macros with the
+prefix ``scope_'' will be used by ProB and do not modify the B
+specification. If the size of the set is unspecified, ProB considers the
+set to have a default size. The value for the default size is defined in
+the Preferences|Animation Preferences... preference window by the
+preference Size of unspecified sets in SETS section.
+
+The B method enables to specify the size of a set with the card operator
+in the PROPERTIES clause; this form of constraint is now supported by
+ProB, provided it is of a simple form card(S)=Nr, where S is a deferred
+set and Nr a natural number.
+
+[[enumeration-in-prob]]
+Enumeration in ProB
+~~~~~~~~~~~~~~~~~~~
+
+The typing information is used by ProB to enumerate the possible values
+of a constant or a variable whenever a specification does not narrow
+down that value to a single value.
+
+For example, if you write xx:NAT & xx=1 ProB does not have to resort to
+enumeration as the xx=1 constraint imposes a single possible value for
+xx. However, if you write xx:NAT & xx<3 ProB will enumerate the possible
+values of xx in order to find those that satisfy the constraints imposed
+by the machine (here 0,1,2).
+
+ProB will use the constraints to try to cut down the enumeration space,
+and will resort to enumeration usually only as a last resort. So
+something like xx:NAT & xx<10 & x>2 & x=5 will not result in
+enumeration.
+
+The enumeration range for integers is controlled by two preferences in
+the Preferences|Animation Preferences... preference window: !MinInt,
+used for expressions such as xx::INT, and !MaxInt, used for expressions
+such as xx::NAT preferences. Nevertheless, writing xx: NAT & xx = 55
+puts the value 55 in x no matter what !MaxInt is set to, as no
+enumeration is required.
+
+Note that these preferences also apply to the mathematical integers
+(INTEGER) and natural numbers (NATURAL). In case a mathematical integer
+or natural number is enumerated (using !MinInt and !MaxInt) a warning is
+printed on the console.

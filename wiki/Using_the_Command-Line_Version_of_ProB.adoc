@@ -335,7 +335,7 @@ preference is multiplied by 10 for this command.
 There are various variations of this command:
 
 `-cbc_assertions_proof` +
-`-cbc_assertions_tautology_proof `
+`-cbc_assertions_tautology_proof`
 
 Both commands do not allow enumeration warnings to occur. The latter
 command ignores the PROPERTIES and tries to check whether the
@@ -696,7 +696,7 @@ outgoing transitions will be computed)
 
 Example
 
-`probcli my.mch -mc 10000000 -scope ````n<18`''`  `
+`probcli my.mch -mc 10000000 -scope ````n<18`''
 
 [[s]]
 -s
@@ -1434,7 +1434,7 @@ consumption further by not storing processed stats and using symmetry
 reduction (and accepting hash collisions) do:
 
 ....
-probcli -p COMPRESSION -p IGNORE_HASH_COLLISIONS TRUE -p FORGET_STATE_SPACE TRUE -p SYMMETRY_MODE hash -model_check M.mch 
+probcli -p COMPRESSION -p IGNORE_HASH_COLLISIONS TRUE -p FORGET_STATE_SPACE TRUE -p SYMMETRY_MODE hash -model_check M.mch
 ....
 
 [[command-line-arguments-for-prob-tcltk]]

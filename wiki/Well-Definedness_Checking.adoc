@@ -1,0 +1,39 @@
+Well-definedness errors can occur in B in the following circumstances:
+
+* a division by 0: `r=100/0`
+* modulo by 0, modulo involving negative numbers: `r=100 mod -2`
+* exponentiation using a negative exponent: `2**(-2)`
+* application of a function outside of its domain: `f={1|->2} & r=f(3)`
+* application of a relation which is not a function:
+`f={1|->2,1|->3} & r=f(1)`
+* application of the card operator to infinite sets: `card(NATURAL)`
+* application of the min or max operator to empty sets:
+`x={} & r=max(x)`
+* application of the inter operator to empty sets: `x={} & r=inter(x)`
+* wrong application of sequence operators
+** taking the first, front, last, tail of an empty sequence:
+`x=<> & r=first(x)`
+** using negative indexes for prefix or suffix sequence: `x = s /|\ -1`
+** using too large indexes for suffix sequence: `x= s \|/ (size(s)+1)`
+* ...
+
+To ensure that your models only contain well-defined formulas, Rodin
+creates well-definedness proof obligations for Event-B and Atelier-B can
+create them for classical B. ProB will check for well-definedness during
+constraint solving, animation and model checking. However, by default
+this check is not very extensive. You can force ProB to look more
+aggressively for well-definedness issues in your formulas by setting the
+following preference to true:
+
+* `TRY_FIND_ABORT`
+
+However, even with this, the search is not guaranteed to be exhaustive.
+Also, ProB's constraint solving does not necessarily solve formulas from
+left to right. Hence, the following formulas will be considered
+well-defined (and on can argue that they are) by ProB:
+
+* `r=1/x & x/=0`
+
+Technically speaking, for disjunctions and implications ProB uses the
+L-system of well-definedness (i.e., for P => Q, P should be well-defined
+and if P is true then Q should also be well-defined).

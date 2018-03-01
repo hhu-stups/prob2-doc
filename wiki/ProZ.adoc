@@ -40,8 +40,8 @@ For example, let S be the state schema (= is used for \defs):
 
 There are two supported styles for the initialization:
 
-`a)   Init = [ S | x=0 /\ y=1]` +
- +
+`a)   Init = [ S | x=0 /\ y=1]`
+
 `b)   Init = [ S'| x'=0 /\ y'=1 ]`
 
 If you want to use the logic of other schemas besides the state schema
@@ -262,7 +262,7 @@ Logical predicates:
  P \implies Q      implication
  P \iff Q          equivalence
  \lnot P           negation
- 
+
 Quantifiers:
 ------------
  \forall x:T | P @ Q      universal quantification (P => Q)
@@ -270,7 +270,7 @@ Quantifiers:
  \exists_1 x:T | P @ Q    exactly one existential quantification
 
 Sets:
------ 
+-----
   \emptyset        empty set
   \{E,F\}          set extension
   \{~x:S | P~\}    set comprehension

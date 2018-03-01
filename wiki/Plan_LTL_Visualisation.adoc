@@ -1,0 +1,107 @@
+[[wichtige-punkte]]
+Wichtige Punkte
+---------------
+
+Diese Teile müssen bei der Implementation / Beschreibung in der Arbeit
+beachtet werden.
+
+[[schleifen-deadlocks-und-gekürzte-gegenbeispiele]]
+Schleifen, Deadlocks, und gekürzte Gegenbeispiele
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Der Modelchecker liefert drei Arten von Gegenbeispielen:
+
+* Schleifen, der Einstiegspunkt wird mitgeliefert. Eine Schleife
+repräsentiert einen unendlichen Pfad.
+* Pfade, die im Deadlock enden. Beispiele: Im letzten Zustand des
+Gegenbeispiels ist X(f) immer falsch, unabhängig von f. G(f) ist im
+letzten Zustand war, wenn f dort wahr ist.
+* Gekürzte Pfade. Als Gegenbeispiel reicht ein Teil der ursprünglich
+berechneten Schleife aus. Beispiele: X(f) ist im letzten Zustand nicht
+ermittelbar. Auch G(f) nicht, wenn f dort wahr ist.
+
+[[verwaltung-von-ltl-formeln]]
+Verwaltung von LTL-Formeln
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* Speichern von zuvor eingegebener Formeln (Model-abhängig?)
+* Evtl. mehrere Reiter für verschiedene Formeln
+
+[[anzeige]]
+Anzeige
+~~~~~~~
+
+* Wie kann der Benutzer die Schleife erkennen, bzw. den Unterschied
+zwischen Deadlock und gekürztem Pfad?
+* Formeln sollten evtl. durch den Rodin-UTF8-Konverter geschickt werden:
+
+`RodinKeyboardPlugin.getDefault().translate(...)`
+
+Dann muss allerdings der Rodin-Font verwendet werden.
+
+* Bei Auswahl einer Zelle sollte mittels Farben (oder was besseres?)
+angezeigt werden, wie es zu dem Wert gekommen ist.
+
+Beispiel: Hier wird die blau hinterlegte Zelle vom Benutzer markiert. In
+der nächsten Spalte färben sich einige Zellen gelb und rot. ``G(not q)''
+ist in 7 unwahr wegen der Folge 7(not q: true), 8(not q: true), 9(not
+q:false). /File:ltl1.png[600px|center]
+
+* Alternativ könnte man die einen Schleifendurchlauf noch einmal hinten
+dran hängen, um den Benutzer zu entlasten.
+* Die Anzeige der Zustandsnummern bringt dem Benutzer nicht wirklich
+etwas (wird sonst nirgendwo anders verwendet)
+
+[[semantik-vom-release-operator]]
+Semantik vom Release-Operator
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+(pi,i) |= fRg genau dann wenn
+
+* ein j>=i existiert mit (pi,j) |= f&g und für alle k mit i<=k<j (pi,k)
+|= g gilt
+* oder (pi,j) |= g für alle j>=i gilt
+
+[[ideen-zu-gui]]
+Ideen zu GUI
+------------
+
+* Interaktion mit der aktuellen Historie: Evtl. sollte das Gegenbeispiel
+auch in die aktuelle Historie geladen werden und der aktuell ausgewählte
+Zustand dort auch angezeigt werden.
+* Gleichzeitig in mehreren Reitern verschiedene Pfade speichern
+* Evtl. könnte der Benutzer einen Knopf gebrauchen, mit dem er den
+Einstiegs-Zustand der Schleife (wenn eine existiert) wieder hinten
+anhängen kann. Dann verschiebt sich der Einstiegspunkt um 1.
+* Den LTL-Button in der Event-View und den LTL-Dialog entfernen und die
+Eingabe der Formeln komplett in der LTL-View erledigen.
+* Atomare Aussagen sollten in der StateView analysierbar werden, z.B.
+mittels Kontextmenü. Analog zum ``grünen Plus'' in der StateView. Ideal
+wäre DnD.
+
+[[interaktion-mit-anderen-prob-komponenten]]
+Interaktion mit anderen ProB-Komponenten
+----------------------------------------
+
+Bisher ist man als Benutzer noch relativ verloren, wenn man das
+Gegenbeispiel mit dem ursprünglichen Modell in Verbindung bringen will.
+Die bestehenden Anzeigen sollten mit benutzt werden, um den Benutzer zu
+helfen.
+
+Wenn in der LTL-View ein Zustand angewählt wird (oder explizit mittels
+Doppelklick oder so ähnlich), sollte der aktuelle Zustand und History
+auf den Zustand gesetzt werden:
+
+* In der State-View wird der aktuelle Zustand angezeigt und auswertbar
+gemacht.
+* In der History-View wird das komplette LTL-Gegenbeispiel angezeigt
+* In der Event-View werden alle möglichen Events angezeigt werden. Der
+Benutzer kann dann mit den vor-zurück-Buttons durch das Gegenbeispiel
+navigieren. Wählt er ein Event explizit, bekommt er eine neue History
+(wie bisher auch)
+* Atomare Aussagen sollten als Formeln in die State-View anzuzeigen
+sein.
+
+Umgekehrt sollte es möglich sein, die aktuelle Historie auf eine
+LTL-Formel hin zu überprüfen. Was machen wir in dem Fall mit dem
+Beispiels-Ende (also Deadlock, abgeschnitten oder Schleife?)

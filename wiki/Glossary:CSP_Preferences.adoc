@@ -1,0 +1,8 @@
+* if all of the CSP-M processes (not just MAIN) should be animated
+without arguments,
+* if more fine-grained source-location animation for CSP should be
+performed (can slow model checking down),
+* if CSP source-location information should be stripped (for RHS of
+processes, except for internal choice).
+* the path to Probe or other tool to view .csp files, the path to the
+FDR2 tool, and the path to a CSP Type Checking tool.

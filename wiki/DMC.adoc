@@ -1,0 +1,58 @@
+__NOTOC__ We used three different setups to evaluate the distributed
+version of ProB.
+
+* A standalone multi core computer
+* Amazon EC2 Instances
+* The HILBERT cluster
+
+[[multicore-computer]]
+Multicore Computer
+~~~~~~~~~~~~~~~~~~
+
+We used a hexacore 3.33GHz Mac Pro with 16GB of RAM. On this computer we
+benchmarked all models regardless whether we expected them to be
+scalable or not. We varied the number of used cores from 1 up to 12
+hyperthreads. Each experiment was repeated at least 5 times.
+
+[[amazon-ec2-instances]]
+Amazon EC2 Instances
+~~~~~~~~~~~~~~~~~~~~
+
+We used c3.8xlarge instances, each of which has 32 virtual CPUs and is
+equipped with 64 GB of RAM. We used the Mac Pro to get an impression if
+and how well the B models scale. From the experiments, we chose those
+models that seemed to scale well and ran the benchmarks on the Amazon EC
+computer with a higher number of workers. Models that did not scale on
+the Mac Pro were not considered as they would not scale on more
+processors. We used 2 or 4 instances connected with 10 GBit ethernet
+connection. Each experiment was repeated at least 5 times.
+
+[[hilbert]]
+HILBERT
+~~~~~~~
+
+We used the high performance cluster at the university of Düsseldorf
+(HILBERT) for a single model. The model could not be cheked using a
+single core because it would have taken too long. Based on a partial
+execution, it would take about 17 days on a single core on the Mac Pro.
+The model was checked with different numbers of cores on the HILBERT
+cluster. We varied between 44 and 140 cores. On the cluster we only
+executed the experiments once but all experiments on the other platforms
+indicated that the variation between experiments could be ignored. Also
+the execution times of all 6 experiments seem to be consistent.
+
+[[models]]
+Models
+~~~~~~
+
+We cannot make all models public, because they we provided by industrial
+partners from various research projects. The models that could be make
+available can be downloaded from http://www.stups.hhu.de/models/parb/[1]
+
+[[results]]
+RESULTS
+~~~~~~~
+
+The results of the experiments are shown in Jens Bendisposto's
+dissertation. A preprint is available from
+http://www.stups.uni-duesseldorf.de/w/Directed_and_Distributed_Model_Checking_of_B_Specifications_(Preprint)[2]

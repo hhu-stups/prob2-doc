@@ -1,0 +1,55 @@
+We assume that you have completed
+link:/Tutorial_Complete_Model_Checking[Tutorial Complete Model
+Checking]. It may also be a good idea to complete the
+link:/Tutorial_Model_Checking,_Proof_and_CBC[Tutorial_Model_Checking,_Proof_and_CBC].
+
+Let us examine the following B model:
+
+....
+MACHINE SimpleAccount
+CONSTANTS minb,maxb
+PROPERTIES
+ minb < maxb &
+ minb <= 0 &
+ maxb >= 0 & maxb > 1000
+VARIABLES balance
+INVARIANT
+ balance: minb..maxb
+INITIALISATION balance:=0
+OPERATIONS
+  Deposit(s) = SELECT s>0 & balance+s<= maxb THEN balance := balance + s END;
+  Withdraw(s) = SELECT s>0 & balance-s >= minb THEN balance := balance - s END;
+  NoWithrawalPossible = SELECT balance = minb THEN skip END;
+  NoDepositPossible = SELECT balance = maxb THEN skip END
+END
+....
+
+In model-based testing you want to generate traces for your model which
+satisfy a certain coverage criterion. Currently, ProB basically supports
+one coverage criterion: operation coverage, i.e., ProB tries to cover
+all operations (aka events for Event-B).
+
+There are two ways this coverage can be achieved systematically: using
+model checking or using a constraint-based approach.
+
+[[model-checking-based-testcase-generation]]
+Model-Checking Based Testcase Generation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Select the ``Stop when all OPERATIONS Covered'' check box in the model
+checking dialog:
+
+/file:StopWhenAllOpsCovered.png[center||200px]
+
+Press the ``Model Check'' button; after a short while ProB should
+respond with
+
+/file:AllOpsCoveredDialog.png[center||200px]
+
+[TODO]
+
+[[constraint-based-testcase-generation]]
+Constraint-Based Testcase Generation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+[TODO]

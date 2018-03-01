@@ -1,0 +1,92 @@
+[[overview]]
+Overview
+--------
+
+The current nightly builds of ProB support different symbolic model
+checking algorithms:
+
+* Bounded Model Checking (BMC),
+* k-Induction, and
+* different Variants of the IC3 algorithm.
+
+As opposed to link:/Constraint_Based_Checking[constraint-based
+checking], these algorithms find counterexamples which are reachable
+from the INITIALISATION. As opposed to
+link:/Consistency_Checking[ordinary model checking], they do not build
+up the state space explicitly, e.g., they do not compute all possible
+solutions for parameters and constants. This can be useful when the
+out-degree of the state-space is very high, i.e., when there are many
+possible solutions for the constants, the initialisation and/or the
+individual operations and their parameters.
+
+In addition to the algorithms explained here, BMC*, a bounded model
+checking algorithm based on a different technique is available in Prob.
+See link:/Bounded_Model_Checking[its wiki page] for details.
+
+[[usage]]
+Usage
+-----
+
+Take the following example:
+
+....
+MACHINE VerySimpleCounterWrong
+CONSTANTS lim
+PROPERTIES lim = 2**25
+VARIABLES ct
+INVARIANT
+ ct:INTEGER & ct < lim
+INITIALISATION ct::0..(lim-1)
+OPERATIONS
+  Inc(i) = PRE i:1..1000 & ct + i <= lim THEN ct := ct+i END;
+  Reset = PRE ct = lim THEN ct := 0 END
+END
+....
+
+The ProB model checker will here run for a very long time before
+uncovering the error that occurs when `ct` is set to lim. If you run the
+link:/TLC[TLC backend] you will get the error message
+```Too many possible next states for the last state in the trace.`''
+
+However, for the symbolic model checking techniques this is less of a
+problem. You can use them via command-line version of ProB as follows:
+
+....
+$ probcli VerySimpleCounterWrong.mch -symbolic_model_check bmc
+K = 0
+solve/2: result of prob: contradiction_found
+K = 1
+solve/2: result of prob: contradiction_found
+K = 2
+solve/2: result of prob: contradiction_found
+K = 3
+solve/2: result of prob: contradiction_found
+K = 4
+solve/2: result of prob: solution
+successor_found(0)
+ --> INITIALISATION(0)
+successor_found(1)
+ --> Inc
+successor_found(2)
+ --> Inc
+successor_found(3)
+ --> Inc
+successor_found(4)
+ --> Inc
+! *** error occurred ***
+! invariant_violation
+....
+
+Instead of ``bmc'' you can use ``kinduction'' and ``ic3'' as command
+line arguments in order to use the other algorithms.
+
+The algorithms are also available from within ProB Tcl/Tk. They can be
+found inside the ``Symbolic Model Checking'' sub-menu of the ``Analyse''
+menu.
+
+[[more-details]]
+More details
+------------
+
+A paper describing the symbolic model checking algorithms and how they
+are applied to B and Event-B machines has been submitted to ABZ 2016.

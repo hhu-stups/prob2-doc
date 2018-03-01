@@ -70,9 +70,9 @@ as follows:
 where op1,...,opn are the visible operations defined in the B machine.
 * CSP events do not need to provide all arguments of B operations:
 
-`add!1 -> will match add(1,1) or add(1,2) or ... ` +
+`add!1 -> will match add(1,1) or add(1,2) or ...` +
 `(supposing add has 2 parameters in B)` +
-`add -> will match add(1,2), add(2,1), ... ` +
+`add -> will match add(1,2), add(2,1), ...` +
 `add!1!2 -> will only match add(1,2)`
 
 * B Output arguments are specified at the end

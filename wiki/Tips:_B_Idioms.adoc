@@ -1,0 +1,233 @@
+Also have a look at
+/Tips:_Writing_Models_for_ProB[Tips:_Writing_Models_for_ProB].
+
+[[let]]
+Let
+~~~
+
+Classical B only has a LET substitution, no let construct for predicates
+or expressions. Event-B has no let construct whatsoever.
+
+[[probs-extended-syntax]]
+ProB's Extended Syntax
+^^^^^^^^^^^^^^^^^^^^^^
+
+Since version *1.6.1-beta* (28th of April 2016), ProB supports the use
+of the `LET` substitution syntax in expressions and predicates.
+
+[[examples]]
+Examples:
++++++++++
+
+`>>> LET a BE a = 10 IN a + 10 END` +
+`Expression Value = 20`
+
+`>>> LET a BE a=10 IN a END + 10` +
+`Expression Value = 20`
+
+`>>> LET a BE a=10 IN a END = 10` +
+`Predicate is TRUE`
+
+`>>> LET a BE a = 10 IN a < 10 END` +
+`Predicate is FALSE`
+
+`>>> LET a BE a=10 IN a /= 10 END or 1=1` +
+`Predicate is TRUE`
+
+`>>> LET a, b BE a = 10 & b = 1 IN a + b END` +
+`Expression Value = 11`
+
+[[let-for-predicates]]
+Let for predicates
+^^^^^^^^^^^^^^^^^^
+
+For predicates this encodes a let predicate:
+
+`#x.(x=E & P)`
+
+corresponds to something like
+
+`let x=E in P`
+
+Within set comprehensions one can use the following construct:
+
+`dom({x,y|y=E & P})`
+
+corresponds to something like
+
+`{x|let y=E in P}`
+
+One can also use the ran operator or introduce multiple lets in one go:
+
+`dom(dom({x,y,z|y=E1 & z=E2 &P}))`
+
+or
+
+`ran({y,z,x|y=E1 & z=E2 &P})`
+
+both encode
+
+`{x|let y=E1 & z=E2 in P}`
+
+[[let-for-expressions]]
+Let for expressions
+^^^^^^^^^^^^^^^^^^^
+
+In case F is a set expression, then the following construct can be used
+to encode a let statement:
+
+`UNION(x).(x=E|F)`
+
+corresponds to something like
+
+`let x=E in F`
+
+The following construct has exactly the same effect:
+
+`INTER(x).(x=E|F)`
+
+[[if-then-else]]
+If-Then-Else
+~~~~~~~~~~~~
+
+Classical B only has an IF-THEN-ELSE substitution (aka statement), no
+such construct for predicates or expressions.
+
+[[nightly-builds]]
+Nightly Builds
+^^^^^^^^^^^^^^
+
+Since version *1.6.1-beta* (28th of April 2016), ProB supports the use
+of the `LET` substitution syntax in expressions and predicates.
+
+[[examples-1]]
+Examples:
++++++++++
+
+`>>> IF 1 = 1 THEN 3 ELSE 4 END` +
+`Expression Value = 3`
+
+`>>> IF 1 = 1 THEN 3 ELSE 4 END + 5` +
+`Expression Value = 8`
+
+`>>> IF 1=1 THEN TRUE = FALSE  ELSE TRUE=TRUE END` +
+`Predicate is FALSE`
+
+`>>> IF 1=1 THEN TRUE = FALSE  ELSE TRUE=TRUE END or 1=1` +
+`Predicate is TRUE`
+
+[[expressions]]
+Expressions
+^^^^^^^^^^^
+
+The following construct
+
+`%((x).(x=0 & PRED|C1)\/%(x).(x=0 & not(PRED)|C2)) (0)`
+
+encodes an if-then-else for expressions:
+
+`IF PRED THEN C1 ELSE C2 END`
+
+The former lambda-construct is recognised by ProB and replaced
+internally by an if-then-else construct. The latter syntax is actually
+now recognised as well by ProB 1.6 (version 1.6.0 still requires
+parentheses around the IF-THEN-ELSE; version 1.6.1 no longer requires
+them).
+
+[[finite]]
+finite
+~~~~~~
+
+In classical B there is no counterpart to the Event-B `finite` operator.
+However, the following construct has the same effect as `finite(x)` (and
+is recognised by ProB):
+
+`x : FIN(x)`
+
+[[all-different]]
+all-different
+~~~~~~~~~~~~~
+
+One can encode the fact that n objects x1,...,xn are pair-wise different
+using the following construct (recognised by ProB):
+
+`card({x1,...,xn})=n`
+
+[[map]]
+map
+~~~
+
+Given a function f and a sequence `sqce` one can map the function over
+all elements of `sqce` using the relational composition operator `;`:
+
+`(sqce ; f)`
+
+For example, `([1,2,3] ; succ)` gives us the sequence `[2,3,4]`.
+
+[[recursion-using-closure1]]
+Recursion using closure1
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Even though B has no built-in support for recursion, one can use the
+transitive closure operator `closure1` to compute certain recursive
+functions. For this we need to encode the recursion as a step function
+of the form:
+
+`%(in,acc).(P|(inr,accr))`
+
+where P is a predicate which in case we have not yet reached a base case
+for the input value `in`. The computation result has to be stored in an
+accumulator: `acc` is the accumulator before the recursion step, `accr`
+after. `inr` is the new input value for the recursive call. In case the
+base case is reached for `in`, the predicate P should be false and the
+value of the recursive call should be the value of the accumulator.
+
+The value of the recursive function can thus be obtained by calling:
+
+`closure1(step)[{(in,ia)}](b)`
+
+where `in` is the input value, `b` is the base case and `ia` is the
+initial (empty) accumulator.
+
+For example, to sort a set of integers into a ascending sequence, we
+would define the step function as follows:
+
+`step = %(s,o).(s/={} | (s\{min(s)},o<-min(s)))`
+
+A particular call would be:
+
+`closure1(step)[{({4,5,2},[])}]({})`
+
+resulting in the sequence `[2,4,5]`.
+
+Observe that, even though `closure1(step)` is an infinite relation, ProB
+can compute the relational image of `closure1(step)` for a particular
+set such as `{({4,5,2},[])}` (provided the recursion terminates).
+
+[[recursion-using-abstract_constants]]
+Recursion using `ABSTRACT_CONSTANTS`
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Recursive functions can be declared using the `ABSTRACT_CONSTANTS`
+section in B machines. Functions declared as `ABSTRACT_CONSTANTS` are
+treated symbolically by ProB and not evaluated eagerly.
+
+For example, to sort a set of integers into a ascending sequence, as
+above, we would define a recursive function as follows:
+
+`ABSTRACT_CONSTANTS` +
+`    Recursive_Sort` +
+`PROPERTIES` +
+`    Recursive_Sort : POW(INTEGER) <-> POW(INTEGER*INTEGER)` +
+`    & Recursive_Sort =` +
+`        %in.(in : POW(INTEGER) & in = {} | [])` +
+`        \/ %in.(in : POW(INTEGER) & in /= {}` +
+`                         | min(in) -> Recursive_Sort(in\{min(in)}))`
+
+By defining `Recursive_Sort` as an abstract constant we indicate that
+ProB should handle the function symbolically, i.e. ProB will not try to
+enumerate all elements of the function. The recursive function itself is
+composed of two single functions: a function defining the base case and
+a function defining the recursive case. Note, that the intersection of
+the domains of these function is empty, and hence, the union is still a
+function.

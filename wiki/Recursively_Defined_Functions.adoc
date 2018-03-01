@@ -9,8 +9,8 @@ Take the following function:
 
 `CONSTANTS parity` +
 `PROPERTIES` +
-` parity : (NATURAL --> {0,1}) & ` +
-` parity(0) = 0 & ` +
+` parity : (NATURAL --> {0,1}) &` +
+` parity(0) = 0 &` +
 ` !x.(x:NATURAL => parity(x+1) = 1 - parity(x))`
 
 Here, ProB will complain that it cannot find a solution for parity. The
@@ -21,15 +21,15 @@ There are basically four solutions to this problem:
 
 * Write a finite function:
 
-`parity : (NAT --> {0,1}) & ` +
-`parity(0) = 0 & ` +
+`parity : (NAT --> {0,1}) &` +
+`parity(0) = 0 &` +
 `!x.(x:NAT & x`` parity(x+1) = 1 - parity(x))`
 
 * Rewrite your function so that in the forall you do not refer to values
 of parity greater than x:
 
-`parity : (NATURAL --> {0,1}) & ` +
-`parity(0) = 0 & ` +
+`parity : (NATURAL --> {0,1}) &` +
+`parity(0) = 0 &` +
 `!x.(x:NATURAL1 => parity(x) = 1 - parity(x-1))`
 
 * Write your function constructively using a single recursive equation
@@ -37,7 +37,7 @@ using set comprehensions, lambda abstractions, finite sets and set
 union. This requires ProB 1.3.5-beta7 or higher and you need to declare
 `parity` as `ABSTRACT_CONSTANT`. Here is a possible equation:
 
-`parity : INTEGER <-> INTEGER & ` +
+`parity : INTEGER <-> INTEGER &` +
 `parity = {0|->0} \/ %x.(x:NATURAL1|1-parity(x-1))`
 
 Note, you have to remove the check `parity : (NATURAL --> {0,1})`, as
@@ -47,7 +47,7 @@ describe this new scheme in more detail below.
 * Another solution is try and write your function constructively and
 non-recursively, ideally using a lambda abstraction:
 
-`  parity : (NATURAL --> INTEGER) & ` +
+`  parity : (NATURAL --> INTEGER) &` +
 `  parity = %x.(x:NATURAL|x mod 2)`
 
 * Here ProB detects that parity is an infinite function and will keep it
@@ -85,7 +85,7 @@ the online version of the link:/Eval_Console[Eval console]).
 `MACHINE InfiniteParityFunction` +
 `CONSTANTS parity` +
 `PROPERTIES` +
-`  parity : NATURAL --> INTEGER & ` +
+`  parity : NATURAL --> INTEGER &` +
 `  parity = %x.(x:NATURAL|x mod 2)` +
 `VARIABLES c` +
 `INVARIANT` +
@@ -145,7 +145,7 @@ Here is a full example:
 `MACHINE Parity` +
 `ABSTRACT_CONSTANTS parity` +
 `PROPERTIES` +
-` parity : INTEGER <-> INTEGER & ` +
+` parity : INTEGER <-> INTEGER &` +
 ` parity = {0|->0} \/ %x.(x:NATURAL1|1-parity(x-1))` +
 `END`
 
@@ -156,8 +156,8 @@ be written as:
 `MACHINE ParityIFTE` +
 `ABSTRACT_CONSTANTS parity` +
 `PROPERTIES` +
-` parity : INTEGER <-> INTEGER & ` +
-` parity = %x.(x:NATURAL|IF x=0 THEN 0 ELSE 1-parity(x-1)END) ` +
+` parity : INTEGER <-> INTEGER &` +
+` parity = %x.(x:NATURAL|IF x=0 THEN 0 ELSE 1-parity(x-1)END)` +
 `END`
 
 [[operations-applicable-for-recursive-functions]]

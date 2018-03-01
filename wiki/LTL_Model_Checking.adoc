@@ -283,7 +283,7 @@ must be specified. In case there is more than one LTL assertion given in
 the ‘DEFINITIONS’ section, the particular LTL assertions must be
 separated by semicolon. For example:
 
-`DEFINITIONS ` +
+`DEFINITIONS` +
 `  ASSERT_LTL  == ````G`` ``(e(SetCruiseSpeed)`` ``=>`` ``e(CruiseBecomesNotAllowed))`''`;` +
 `  ASSERT_LTL1 == ````G`` ``(e(CruiseBecomesNotAllowed)`` ``=>`` ``e(SetCruiseSpeed))`''`;` +
 `  ASSERT_LTL2 == ````G`` ``(e(CruiseBecomesNotAllowed)`` ``=>`` ``(ObstacleDisappears))`''
@@ -320,12 +320,12 @@ LTL Formulas in a Separate File
 With the command line version of ProB it is possible to check several
 LTL^[e]^ formulae with one call. The command has the following syntax
 
-`probcli -ltlfile FILE ... `
+`probcli -ltlfile FILE ...`
 
 The file FILE contains one or more sections where each section has the
 form
 
-`[Name]  Formula `
+`[Name]  Formula`
 
 The formula itself can spread several lines. Additional comments can be
 added with a leading #. If a counter-example is found, the trace of the
@@ -344,12 +344,12 @@ LTL Formulae in a Separate File
 With the command line version of ProB it is possible to check several
 LTL^[e]^ formulae with one call. The command has the following syntax
 
-`probcli -ltlfile FILE ... `
+`probcli -ltlfile FILE ...`
 
 The file FILE contains one or more sections where each section has the
 form
 
-`[Name]  Formula `
+`[Name]  Formula`
 
 The formula itself can spread in several lines. Additional comments can
 be added with a leading #. If a counter-example is found, the trace of
@@ -418,7 +418,7 @@ LTL model checking: memory usage approx. 1924 KiB, 14104 atoms and 10724 transit
 LTL model checking: total time 22492ms, 2803 callbacks needed 22465ms, netto 26ms.
 ! An error occurred !
 ! source(ltl)
-! Model Check Counter-Example found for: 
+! Model Check Counter-Example found for:
 ! GF [eat.0]
 
 Formula FALSE.

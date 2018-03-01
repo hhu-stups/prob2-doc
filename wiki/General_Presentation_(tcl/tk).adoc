@@ -1,0 +1,63 @@
+[[the-prob-main-window]]
+The ProB Main Window
+~~~~~~~~~~~~~~~~~~~~
+
+The menu bar contains the various commands to access the features of
+ProB. It includes the traditional ``File'' menu with a sub-menu ``Recent
+Files'' to quickly access the files previously opened in ProB. Notice
+the commands ``Open\Save'', ``Reopen\Save'' and ``Reopen''; the latter
+reopens the currently opened file and reinitializes the state of the
+animation and the model checking processes completely. The ``About''
+menu provides help on the tool and includes a command to check if an
+update is available on the ProB website. By default, ProB starts with a
+limited set of commands in the Beginner mode. The Normal mode gives
+access to more features and can be set in the menu ``Preferences|User
+Mode''.
+
+Under the menu bar, the main window contains four panes:
+
+* In the top pane, the specification of the B machine is displayed with
+the syntax highlighted and can also be edited by typing directly in this
+pane; you can find out more about this editor and how to use external
+editors in our link:/Editors_for_ProB[wiki page on editors].
+* At the bottom, the animation window is composed of three panes which
+display at the current point during the animation:
+1.  The current state of the B machine (State Properties), listing the
+current values of the machine variables;
+2.  The enabled operations (Enabled Operations), listing the operations
+whose preconditions and guards are true in this state (see
+link:/Colours_of_enabled_operations[here] for what the different colours
+mean);
+3.  The history of operations leading to this state (History).
+
+[[preferences]]
+Preferences
+~~~~~~~~~~~
+
+The ``Preferences'' menu allows the various features of ProB to be
+configured. When ProB is started for the first time, it creates a file
+prob_preferences.pl that stores those preferences.
+
+* The sub-menu ``Font'' changes the font size of the B specification
+displayed in the main window.
+
+The next three commands correspond to groups of preferences displayed in
+separate pop-up windows.
+
+* The command ``Animation Preferences'' ... configures important aspects
+of ProB relative to the animation and model checking of the B
+specifications. These preferences influence directly the way ProB
+interprets the B specification and are described in ``Animation and
+Visualisation'', amongst others.
+
+* The command ``Graphical Viewer Preferences'' ... allows the user to
+set the options of the visualization tool used by ProB and the shapes
+and colors used to display the nodes of the state space.
+
+* The command ``Syntax Highlight Preferences'' ... allows the user to
+activate the syntax highlight of the B specification in the main window
+and also to select the various colors corresponding to the syntactic
+elements of the B notation.
+
+*IMPORTANT: Changes in the animation preferences take effect only after
+reloading the machine.*

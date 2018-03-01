@@ -58,12 +58,12 @@ warnings; but you should not get errors):
 
 `---------------------` +
 `Performing Self-Check` +
-`..........................................................` +
- +
-`..........................................................` +
- +
-`..........................................................` +
- +
+`..........................................................`
+
+`..........................................................`
+
+`..........................................................`
+
 `..........................................................` +
 `Self-Check Finished` +
 `-------------------`
@@ -193,8 +193,8 @@ libraries: /usr/lib/libtk.so : invalid ELF header
 Solution:
 
 `Replace libtk.so with a symbolic link to the actual library,` +
-`e.g., do something like that: # ln -s /usr/lib/libtk8.4.so ` +
-`/usr/lib/libtk.so ` +
+`e.g., do something like that: # ln -s /usr/lib/libtk8.4.so` +
+`/usr/lib/libtk.so` +
 `(Probably best to make a backup of libtk.so before that.)`
 
 [[finding-multiple-assertion-violations]]

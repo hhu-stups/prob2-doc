@@ -59,19 +59,19 @@ INVARIANT
                 dom(db) = active & ran(db) = activec
 ASSERTIONS
   card(active) >= card(activec)
-INITIALISATION  
+INITIALISATION
     db := {} || active := {} || activec := {}
 OPERATIONS
 dd <-- getdom = dd:= dom(db);
 cc <-- lookup(nn) =
     PRE
-        nn : Name & nn : active 
+        nn : Name & nn : active
     THEN
         cc:=db(nn)
     END;
 add(nn,cc) =
     PRE
-        nn:Name & cc:Code  & nn /: active 
+        nn:Name & cc:Code  & nn /: active
     THEN
         db := db \/ { nn |-> cc} || active := active \/ {nn} || activec := activec \/ {cc}
     END;
@@ -79,8 +79,8 @@ delete(nn,cc) =
         PRE
                 nn:Name & cc:Code & nn: active & cc: activec & db(nn) = cc
         THEN
-               db := db - { nn |-> cc} || active := active - {nn} || activec := db[(active - {nn})] 
-        END 
+               db := db - { nn |-> cc} || active := active - {nn} || activec := db[(active - {nn})]
+        END
 END
 ....
 

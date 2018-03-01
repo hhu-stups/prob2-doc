@@ -1,0 +1,36 @@
+ProB offers various validation techniques:
+
+* link:/Consistency_Checking[Consistency Checking (Finding Invariant
+Violations using the Model Checker)]
+* link:/Constraint_Based_Checking[Constraint Based Checking]
+* link:/Refinement_Checking[Refinement Checking]
+* link:/LTL_Model_Checking[LTL Model Checking]
+* link:/Bounded_Model_Checking[Bounded Model Checking]
+
+Here we want to describe the advantages and disadvantages of the various
+methods.
+
+.align=``bottom'' style=``color:#e76700;'' |__Comparing ProB Validation
+Techniques__
+[cols=",,,,",options="header",]
+|=======================================================================
+|Question |Model Checking |LTL Model Checking |CBC Checking |Bounded
+Model Checking
+|Can find Invariant Violations ? |yes |yes (`G{INV}`) |yes |yes
+
+|Only reachable counter-examples from initial state? |yes |yes |no |yes
+
+|Search Technique for counter-examples? |mixed df/bf, df, bf
+|depth-first (df) |length 1 |breadth-first (bf)
+
+|Can deal with large branching factor? |no |no |yes |yes
+
+|Can find deep counter-examples? |yes |yes |n/a (length 1) |no
+
+|Can find deadlocks ? |yes |yes (`G not(deadlock)`) |yes |not yet
+
+|Can find assertion violations ? |yes |(`G{ASS}`) |static |no
+
+|Can confirm absence of errors ? |finite statespace |finite statespace
+|invariant strong enough |bound on trace length
+|=======================================================================

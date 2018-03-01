@@ -1,0 +1,76 @@
+__NOTOC__ This page provides additional resources for the journal
+article we have submitted for the
+http://sttt.cs.uni-dortmund.de/[International Journal on Software Tools
+for Technology Transfer].
+
+The journal article is an extended version of the paper we have
+submitted for the http://www.irit.fr/ABZ2014/casestudy.html[ABZ 2014
+case study track].
+
+The full description of the case study can be found
+/Media:landing_system.pdf[here].
+
+[[prob-live-visualisations]]
+ProB Live Visualisations
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+We have prepared two interactive live visualizations of the case study.
+One of our own Event-B model and one of the first development by
+Jean-Raymond Abrial and Wen Su footnote:[Aircraft Landing Gear System:
+Approaches with Event-B to the Modeling of an Industrial System, Su, W.
+and Abrial, J., 2014 in Communications in Computer and Information
+Science (ABZ 2014: The Landing Gear Case Study)].
+
+The visualization of our own model can either be controlled by
+interacting with the displayed elements (i.e., clicking the handle) or
+using the Events view which can be opened using the ``Open View'' menu
+at the bottom right corner. The other model can only be controlled using
+the Events view.
+
+http://wyvern.cs.uni-duesseldorf.de/bms/landing.html[Visualization of
+our own model]
+
+1.  http://wyvern.cs.uni-duesseldorf.de:18080/bms/vis_dev1_fixed/landinggear.html[Visualization
+of the model by Jean-Raymond Abrial and Wen Su (Temporally disabled)]
+
+[[bmotion-studio-for-prob-video]]
+BMotion Studio for ProB Video
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+[[resources]]
+Resources
+^^^^^^^^^
+
+* http://www.stups.hhu.de/w/Special:Publication/abz14casestudy[ABZ 2014
+Case Study Paper]
+* /Media:LandingGear.zip[Landing Gear Model EventB Model]
+
+[[links]]
+Links
+^^^^^
+
+[[bmotion-studio-for-prob]]
+BMotion Studio for ProB
++++++++++++++++++++++++
+
+* http://www.stups.hhu.de/ProB/index.php5/BMotion_Studio[BMotion Studio
+for ProB Homepage]
+* https://www3.hhu.de/stups/handbook/bmotion/current/html[BMotion Studio
+for ProB User Handbook]
+* https://github.com/ladenberger/bmotion-prob[BMotion Studio for ProB
+Sourcecode]
+
+[[prob-2.0]]
+ProB 2.0
+++++++++
+
+* http://nightly.cobra.cs.uni-duesseldorf.de/prob2/prob2-handbook/nightly/devel/html/[ProB
+2.0 Developer Handbook]
+* https://github.com/bendisposto/prob2[ProB 2.0 Sourcecode]
+* http://nightly.cobra.cs.uni-duesseldorf.de/experimental/updatesite/[ProB
+2.0 Nightly Build Updatesite]
+* link:/Tutorial13[ProB 2.0 Tutorial]
+
+[[references]]
+References
+^^^^^^^^^^

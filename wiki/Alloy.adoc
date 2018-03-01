@@ -1,4 +1,4 @@
-= Alloy
+/Category:User_Manual[Category:User Manual]
 
 As of version 1.8 ProB provides support to load
 http://alloy.mit.edu/alloy/[Alloy] models. The Alloy models are
@@ -209,8 +209,7 @@ encoding, with `move` as B operation
 Below we shoe the B machine we have input into AtelierB. It was obtained
 by pretty-printing from \prob, and putting the negated guard
 
-`of theadd_preserves_inv into an assertion (so that AtelierB generates the desired proof obligation).` +
-` `
+`of theadd_preserves_inv into an assertion (so that AtelierB generates the desired proof obligation).`
 
 ....
 MACHINE alloytranslation

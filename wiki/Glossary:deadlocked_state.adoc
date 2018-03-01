@@ -1,0 +1,2 @@
+A /glossary:state[state] from which no further states are able to be
+reached.

@@ -1,0 +1,100 @@
+ProB provides various ways to analyse the coverage of the state space of
+a model. In ProB Tcl/Tk these features reside in the Coverage submenu of
+the Analyse menu:
+
+/file:CoverageMenu.png[center||300px]
+
+These coverage commands all operate on the state space of the B model,
+i.e., those states that ProB has visited via animation or model checking
+from the initial states. Note: if you perform constraint-based checks,
+ProB may add additional states to this state space, which are not
+necessarily reachable from the initial states. Note: these commands do
+not drive the model checker and work on the currently explored state
+space; if the state space is incomplete the commands may obviously miss
+covered values in the unexplored part. Finally, the larger the state
+space, the more time these commands will take.
+
+Here is a brief overview of the main commands:
+
+* Operation Coverage: determine which operations (aka events for Event-B
+or actions for TLA) are covered in the state-space and compute how often
+each operation is enabled
+* Minimum and Maximum Values: determine for each variable and constant a
+minumum and maximum value that is reached. This also detects whether
+just a single value was encountered. This command is particularly useful
+when model checking unexpectedly runs for very long or seems to run
+forever: here one can often spot individual variables which grow in an
+unbounded fashion.
+* Value coverage for Expression: this allows the user to enter an
+expression, which is computed in every state of the state space; all
+values are then displayed in a table along with the possible values, how
+often these values have been encountered and a witness state id, giving
+you one possible witness state for this value.
+* Number of covered values for variables: computes for each variable,
+how many different values it has taken on in the state space. Again,
+this is useful to diagnose state space explosion.
+* Precise Operation Coverage: will check which operations have been
+covered in the current state space; for those operations that have not
+been covered, the constraint solver is called to determine whether the
+operation is actually feasible given the invariant (is there a state
+satisfying the invariant which enables the operation). If an operation
+is infeasible, it can never be reached (unless we reach a state
+violating the invariant).
+
+The commands to determine vacuous guards and invariants rely on MC/DC
+coverage, which is detailed below.
+
+[[mcdc-coverage]]
+MC/DC Coverage
+~~~~~~~~~~~~~~
+
+MC/DC (Modified Condition/Decision Coverage) is a coverage criterion
+which is used in avionics. One core idea is ensure that for every
+condition in our code or model we generate at least one test where the
+condition independently plays an observable role in the outcome of a
+decision. In other words, if the condition were to be true rather than
+false (or vice versa) the decision would be changed. In still other
+words, we are trying to find an execution context where the result of
+the particular condition under test is crucial for the observable
+outcome.
+
+In the context of B and Event-B, one question is what constitutes a
+condition and what constitutes a decision. We view a condition to be an
+atomic predicate (e.g., x>y) not involving logical connectives (`&`,
+`or`, `not`, `=>`, ⇔). There is, however, the possibility of treating a
+bigger predicate as atomic (e.g., an entire guard of an event). The
+reason for this is to provide better feedback to the user and to reduce
+the number of coverage criteria if desired. At the moment, we also
+consider a universally or existentially quantified formula to be a
+condition. A decision constitutes the fact whether an event is enabled
+or not. However, we also allow MC/DC to be applied in other contexts,
+e.g., to analyse invariants; in that setting a decision is whether an
+invariant is true or false.
+
+We have implemented a MC/DC coverage analysis which examines all visited
+states and computes the MC/DC coverage for a series of predicates under
+consideration. Currently MC/DC coverage is used in two ways:
+
+* for the coverage for the invariants, where the invariant is expected
+to be true (i.e., the analysis does not expect to find states where the
+invariant is false)
+* for the coverage for the event guards. Here it is expected that every
+event can be enabled or disabled.
+
+The algorithm is parametrised by an optional depth bound (called level
+in the coverage menu of ProB Tcl/Tk): if the depth bound is reached,
+then all sub-predicates are considered to be atomic decisions. The
+analysis can be used to measure the coverage of tests, but can also be
+used after an exhaustive model check to detect vacuous guards and
+vacuous invariants.
+
+The MC/DC analysis has been integrated into ProB and has been
+successfully applied to various case studies. Below is a screenshot of
+part of the output for an early version of the ABZ landing gear case
+study. It shows that parts of the invariant inv13
+`not(C0step = 0 & (gearstate = retracting & doorstate /= locked_open & handle = UP))`
+cannot be set independently to false. This highlights a redundancy in
+the invariant; indeed the simpler to understand (but stronger) invariant
+`not(gearstate = retracting & doorstate /= locked_open)` holds.
+
+/file:MCDC_Coverage_ABZ.png[center||700px]

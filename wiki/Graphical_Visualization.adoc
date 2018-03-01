@@ -67,7 +67,7 @@ The B machine of the 8-puzzle is as follows:
 `INVARIANT INV` +
 `INITIALISATION board : (INV & GOAL)` +
 `OPERATIONS` +
-` MoveDown(i,j,x) = PRE i:2..dim & j:1..dim & ` +
+` MoveDown(i,j,x) = PRE i:2..dim & j:1..dim &` +
 `                       board(i|->j) = 0 & x:1..nmax & board(i-1|->j) = x` +
 `                   THEN board := board <+ {(i|->j)|->x, (i-1|->j)|->0}` +
 `                   END;` +
@@ -122,8 +122,8 @@ Typical patterns for the animation function are as follows:
 * A useful way to obtain a function of the required signature is to
 write a set comprehension of the following form:
 
-`{row,col,img | row:1..NrRow & col:1..NrCols & P}, ` +
-` where P is a predicate which gives img a value depending on row and col.` +
+`{row,col,img | row:1..NrRow & col:1..NrCols & P},` +
+` where P is a predicate which gives img a value depending on row and col.`
 
 * Another useful pattern is to write one function for default images and
 then use the override operator to replace the default images only when
@@ -183,19 +183,19 @@ FME’02, LNCS 2391, pages 21–40. Springer-Verlag, 2002.] is as follows:
 `  SELECT pp : waiting` +
 `  THEN waiting := waiting - { pp }` +
 `  END;` +
-` ready(rr) = ` +
+` ready(rr) =` +
 `  SELECT rr : waiting` +
 `  THEN waiting := (waiting - {rr}) ||` +
 `       IF (active = {})` +
 `       THEN active := {rr}` +
-`       ELSE ready := ready \/ {rr} ` +
+`       ELSE ready := ready \/ {rr}` +
 `       END` +
 `  END;` +
-` swap = ` +
+` swap =` +
 `  SELECT active /= {}` +
 `  THEN waiting := (waiting \/ active) ||` +
 `       IF (ready = {}) THEN active := {}` +
-`       ELSE ` +
+`       ELSE` +
 `        ANY pp WHERE pp : ready` +
 `        THEN active := {pp} || ready := ready - {pp}` +
 `        END` +
@@ -214,7 +214,7 @@ the following animation function. Here, we need to map PID elements to
 image numbers.
 
 `IsPidNrci == p=process1 & i=1) or (p=process2 & i=2) or (p=process3 & i=3));` +
-`ANIMATION_FUNCTION == ` +
+`ANIMATION_FUNCTION ==` +
 ` ({1|->0|->5, 2|->0|->6, 3|->0|->7} \/ {r,c,img|r:1..3 & img=4 & c:1..3} <+` +
 ` ({r,c,i| r=1 & i:INTEGER & c=i & #p.(p:waiting & IsPidNrci)} \/` +
 ` {r,c,i| r=2 & i:INTEGER & c=i & #p.(p:ready & IsPidNrci)} \/` +
@@ -251,7 +251,7 @@ The animation function is as follows:
 `        (Sudoku9(r)(c)=n3 => i=3) & (Sudoku9(r)(c)=n4 => i=4) &` +
 `        (Sudoku9(r)(c)=n5 => i=5) & (Sudoku9(r)(c)=n6 => i=6) &` +
 `        (Sudoku9(r)(c)=n7 => i=7) & (Sudoku9(r)(c)=n8 => i=8) &` +
-`        (Sudoku9(r)(c)=n9 => i=9) ` +
+`        (Sudoku9(r)(c)=n9 => i=9)` +
 `       );` +
 `ANIMATION_FUNCTION == ({r,c,i|r:1..fullsize & c:1..fullsize & i=0} <+` +
 `                       {r,c,i|r:1..fullsize & c:1..fullsize &` +

@@ -1,0 +1,25 @@
+The kernel of ProB is written in Prolog, the B parser is developed in
+Java using SableCC. The https://github.com/bendisposto/probparsers[ProB
+parser is available on github]. There is a comprehensive Java API
+available (also known as ProB 2.0).
+
+[[prob-prolog-source-code]]
+ProB Prolog Source Code
+~~~~~~~~~~~~~~~~~~~~~~~
+
+* link:/Getting_Involved[Getting Involved] (includes details about
+getting and running the Prolog sources)
+* link:/ProB_Tcl/Tk_Architecture[ProB Tcl/Tk Architecture]
+* link:/Why_Prolog?[Why Prolog?]
+* link:/Prolog_Coding_Guidelines[Prolog Coding Guidelines]
+* http://www.stups.uni-duesseldorf.de/ProB/developer_tutorial[Tutorial:
+Extending ProB]
+* link:/Running_ProB_from_source[Running ProB from source]
+* link:/ProB's_Prolog_Datastructures[ProB's Prolog Datastructures]
+
+[[prob-java-api-aka-prob-2.0]]
+ProB Java API (aka ProB 2.0)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The documentation for the Java API to ProB can be found
+link:/ProB_Java_API[here].

@@ -1,0 +1,2 @@
+A state is a mapping from names to values. In classical B a state
+consists of constants and variables.

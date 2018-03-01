@@ -35,20 +35,20 @@ Formalisms'' in the file filtering menu).
 Another simple example for a very basic process algebra is as follows:
 
 `% start(PossibleInitialState)` +
-`start(choice(pref(a,stop),intl(pref(b,pref(c,stop)),pref(d,stop)))).` +
- +
+`start(choice(pref(a,stop),intl(pref(b,pref(c,stop)),pref(d,stop)))).`
+
 `% trans(Event, StateBefore, StateAfter)` +
 `trans(A,pref(A,P),P). % action prefix` +
 `trans(A,intl(P,Q),intl(P2,Q)) :- trans(A,P,P2). % interleave` +
 `trans(A,intl(P,Q),intl(P,Q2)) :- trans(A,Q,Q2).` +
 `trans(A,par(P,Q),par(P2,Q2)) :- trans(A,P,P2), trans(A,Q,Q2). % parallel composition` +
 `trans(A,choice(P,Q),P2) :- trans(A,P,P2). % choice` +
-`trans(A,choice(P,Q),Q2) :- trans(A,Q,Q2).` +
- +
+`trans(A,choice(P,Q),Q2) :- trans(A,Q,Q2).`
+
 `% prop(State, PropertyOfState)` +
 `prop(pref(A,P),prefix).` +
 `prop(intl(P,Q),interleave).` +
-`prop(A,A).` +
+`prop(A,A).`
 
 If you have a working interpreter, you can also contact the ProB
 developers in order for your interpreter to be included in the standard
@@ -60,29 +60,29 @@ properties,...
 Another, slightly more elaborate example, is the following interpreter
 for regular expressions:
 
-`/* A simple animator for regular expressions */` +
- +
-`start('|'('.'('*'(a),b) ,  '.'('*'(b),a))). ` +
- +
+`/* A simple animator for regular expressions */`
+
+`start('|'('.'('*'(a),b) ,  '.'('*'(b),a))).`
+
 `trans(_,[],_) :- !,fail.` +
 `trans(X,X,[]) :- atomic(X),!.` +
-`trans(X,'|'(R1,R2),R) :- ` +
+`trans(X,'|'(R1,R2),R) :-` +
 ` trans(X,R1,R) ; trans(X,R2,R).` +
 `trans(X,'.'(R1,B),R) :- trans(X,R1,R2),` +
 ` gen_concat(R2,B,R).` +
 `trans(X,'?'(R1),R) :-` +
 ` trans(X,R1,R) ; (X=epsilon,R=[]).` +
-`trans(epsilon,'*'(_R1),[]). ` +
-`trans(X,'*'(R1),R) :- ` +
+`trans(epsilon,'*'(_R1),[]).` +
+`trans(X,'*'(R1),R) :-` +
 ` trans(X,R1,R2),` +
 ` gen_concat(R2,'*'(R1),R).` +
-`trans(X,'+'(R1),R) :- ` +
+`trans(X,'+'(R1),R) :-` +
 ` trans(X,R1,R2),` +
-` gen_concat(R2,'*'(R1),R).` +
- +
-`gen_concat(R1,R2,R) :- ` +
-` (R1=[] -> R = R2 ; R = '.'(R1,R2)).` +
- +
+` gen_concat(R2,'*'(R1),R).`
+
+`gen_concat(R1,R2,R) :-` +
+` (R1=[] -> R = R2 ; R = '.'(R1,R2)).`
+
 `prop(X,X).`
 
 Finally, a more complex example is link:/Rush_Hour_XTL[an encoding of

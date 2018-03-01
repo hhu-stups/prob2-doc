@@ -37,9 +37,9 @@ like
 `  try {` +
 `    URL u = new URL(url)` +
 `    PlatformUI.getWorkbench().getBrowserSupport().getExternalBrowser().openURL(u);` +
-`  } ` +
-`  catch (PartInitException e) { /* handle exception */ } ` +
-`  catch (MalformedURLException e) { /* handle exception */ } ` +
+`  }` +
+`  catch (PartInitException e) { /* handle exception */ }` +
+`  catch (MalformedURLException e) { /* handle exception */ }` +
 `  return null;` +
 `}`
 
@@ -52,7 +52,7 @@ Aside: It is quite usefull in User Interfaces to get the
 IWorkbenchWindow object related to the event (we don't need it in this
 particular example). This can be done within the execute method using
 
-`IWorkbenchWindow window = HandlerUtil.getActiveWorkbenchWindowChecked(event); `
+`IWorkbenchWindow window = HandlerUtil.getActiveWorkbenchWindowChecked(event);`
 
 \3. Now we add an instance of the command to the menu bar
 

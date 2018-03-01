@@ -1,0 +1,23 @@
+* the max number of initializations computed,
+* the max number of times that an operation may be enabled,
+* the time out for the computing of enabled transitions (in ms),
+* the size of unspecified deferred sets in the SETS section,
+* the MAXINT,
+* the MININT,
+* how many levels of refined models are animated by default,
+* if the software should try more aggressively to detect expressions
+that are not well-defined,
+* if the software should use the CLP(FD) solver for B integers,
+* if there should be lazy expansion of lambdas and set comprehensions,
+* if the lazy form should be converted back into explicit form for
+variables, constants, and operation arguments,
+* if a small main window should be used for ProB,
+* if the B source code should be shown,
+* if the trace for each event should be stored,
+* if top-level ANY variable values of B Operations without parameters as
+parameters should be shown,
+* if the effect of initialization and setup constants in the operation
+name should be shown,
+* if operations which are skip or PRE C THEN skip should be animated,
+* if the outermost PRE should be treated as SELECT,
+* if operations should be required to assign to all outputs.

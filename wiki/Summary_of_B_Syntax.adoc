@@ -137,7 +137,7 @@ Relations:
  closure1(r)   transitive closure
  closure(r)    reflexive & transitive closure
                (non-standard version: closure({}) = {}; see iterate(r,0) below)
- iterate(r,n)  iteration of r with n>=0 
+ iterate(r,n)  iteration of r with n>=0
                (Note: iterate(r,0) = id(s) where s = dom(r)\/ran(r))
  fnc(r)    translate relation A<->B into function A+->POW(B)
  rel(r)    translate relation A<->POW(B) into relation A<->B
@@ -301,7 +301,7 @@ Statements (aka Substitutions):
   SELECT P THEN G WHEN ... WHEN Q THEN H ELSE I END
   CASE E OF EITHER m THEN G OR n THEN H ... END END
   CASE E OF EITHER m THEN G OR n THEN H ... ELSE I END END
-  
+
   WHEN P THEN G END  is a synonym for SELECT P THEN G END
 
 **: cannot be used at the top-level of an operation, but needs to
@@ -315,7 +315,7 @@ Machine header:
 
 ....
   MACHINE or REFINEMENT or IMPLEMENTATION
-  
+
   Note: machine parameters can either be SETS (if identifier is all upper-case)
         or scalars (i.e., integer, boolean or SET element; if identifier is not
         all upper-case; typing must be provided be CONSTRAINTS)
@@ -334,7 +334,7 @@ Machine sections:
   CONCRETE_CONSTANTS cx,cy,...
   PROPERTIES         P       (logical predicate)
   DEFINITIONS        m(x,...) == BODY;....
-  VARIABLES          x,y,...  
+  VARIABLES          x,y,...
   CONCRETE_VARIABLES cv,cw,...
   INVARIANT          P       (logical predicate)
   ASSERTIONS         P;...;P (list of logical predicates separated by ;)
@@ -353,9 +353,9 @@ Machine inclusion:
   EXTENDS list of machines
   PROMOTES list of operations
   REFINES machine
-  
+
   CSP_CONTROLLER controller  will use controller.csp to guide machine (currently disabled in 1.3)
-  
+
   Note:
   Refinement machines should express the operation preconditions in terms
   of their own variables.
@@ -370,7 +370,7 @@ Definitions:
   NAME2(ID,...,ID) == E2;       Definition with arguments
 ....
 
-` ````FILE.def`''`;                   Include definitions from file `
+` ````FILE.def`''`;                   Include definitions from file`
 
 There are a few Definitions which can be used to influence the animator:
 

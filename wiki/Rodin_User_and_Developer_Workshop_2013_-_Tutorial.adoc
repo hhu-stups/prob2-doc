@@ -86,7 +86,7 @@ access to axioms, constants and sets. Let's explore machines.
 
 *What is the guard of new?*
 
-`ne.getGuards() `
+`ne.getGuards()`
 
 [[the-state-space]]
 The State Space
@@ -100,7 +100,7 @@ accessed via their string identifier.
 
 *How do we retrieve the state space for a given model?*
 
-`s = m.getStateSpace() `
+`s = m.getStateSpace()`
 
 In Rodin, you should try to explore the state until your trace contains
 the `massakr` event. This event breaks the invariant of the system.
@@ -112,15 +112,15 @@ Otherwise the next command will return an empty set.
 
 *Does the state that violate the invariant?*
 
-`state.getInvariantOk() `
+`state.getInvariantOk()`
 
 *Can we get the value of a variable in that state?*
 
-`state.eval(````active`''`) `
+`state.eval(````active`''`)`
 
 *Can we randomly ``execute'' events?*
 
-`y = state.anyEvent() `
+`y = state.anyEvent()`
 
 *Can we ``execute'' a specific event?*
 
@@ -132,23 +132,23 @@ Yes we can! We will figure out how it is done in a moment.
 
 *What are the elements of this list?*
 
-`state.getOutTransitions().first().getClass() `
+`state.getOutTransitions().first().getClass()`
 
 *Now let's get one of these Transition objects*
 
-`trans = state.getOutTransitions()[1] `
+`trans = state.getOutTransitions()[1]`
 
 *What is the name of the transition?*
 
-`n = trans.getName() `
+`n = trans.getName()`
 
 *What are the actual parameters?*
 
-`params = trans.getParams() `
+`params = trans.getParams()`
 
 *What is the formal parameter name?*
 
-`e = mch.getEvent(trans.getName()) `
+`e = mch.getEvent(trans.getName())`
 
 Finally we can ``execute'' the Event using the perform method of the
 StateId object. At this point you need to chose an event that you want
@@ -175,7 +175,7 @@ functions!
 `  pred = [formal_params,params].transpose()` +
 `   .collect { a,b -> a.toString() + ````=`''` + b.toString() }` +
 `  state.perform(name,pred)` +
-`}  ` +
+`}`
 
 You can write your own set of convenience functions in a groovy file and
 run it at the beginning.
@@ -193,39 +193,39 @@ because of structural sharing.
 
 *How can we track a trace of events?*
 
-`t = new Trace(s) `
+`t = new Trace(s)`
 
 *What is the current state of the trace?*
 
-`t.getCurrentState() `
+`t.getCurrentState()`
 
 *What are the enabled events in the current state?*
 
-`t.getNextTransitions() `
+`t.getNextTransitions()`
 
 *How can we ``execute'' an event?*
 
-`t = t.add(t.getNextTransitions().first()) `
+`t = t.add(t.getNextTransitions().first())`
 
 *How can we produce a random trace?*
 
-`def randTrace(t,n) { ` +
-`  def nt = t; ` +
+`def randTrace(t,n) {` +
+`  def nt = t;` +
 `  n.times {  nt = nt.anyEvent() }` +
 `  nt` +
-`}  `
+`}`
 
 *Let's run it!*
 
-`randTrace(t,20) `
+`randTrace(t,20)`
 
 '''How can go back in time? '''
 
-`t = t.back() `
+`t = t.back()`
 
 *How can we go forward in time?*
 
-`t = t.forward() `
+`t = t.forward()`
 
 If we go back in time, the trace keeps future states. If we change a
 decision in the past, the trace drops the future. It behaves in the same
@@ -241,22 +241,22 @@ They apply a parser to a String
 
 *How can we create an EventB formula?*
 
-`f1 = ````active`` ``\\/`` ``waiting`''` as EventB `
+`f1 = ````active`` ``\\/`` ``waiting`''` as EventB`
 
 The escaping of the backslash is unfortunatly required because the
 formula is contained in a Java String.
 
 *And how do we create a classical B formula?*
 
-`f2 = ````active`` ``\\/`` ``waiting`''` as ClassicalB `
+`f2 = ````active`` ``\\/`` ``waiting`''` as ClassicalB`
 
 *How can we evaluate the formulas for state x?*
 
-`x.eval(f1) `
+`x.eval(f1)`
 
 *What have we received?*
 
-`x.eval(f1).getClass() `
+`x.eval(f1).getClass()`
 
 ProB's Prolog engine does not make a difference between EventB and
 classical B. Only the parsers are different. Event B Formulas are parsed
@@ -265,14 +265,14 @@ by Rodin. Classical B formulas are parsed by ProB's parser.
 *Ok, we can evaluate a formula for a state. Anything else that evaluates
 formulas?*
 
-`t.eval(f1) `
+`t.eval(f1)`
 
 Traces evaluate a formula for each state of the trace. They return a
 list of results.
 
 *Anything else?*
 
-`s.evaluateForGivenStates(t.getTransitionList().collect { it.getSource()},[f1, ````waiting`''` as EventB]) `
+`s.evaluateForGivenStates(t.getTransitionList().collect { it.getSource()},[f1, ````waiting`''` as EventB])`
 
 evaluateForGivenStates takes a list of states and a list of formulas and
 evaluates them for each state of the statespace. This method is not
@@ -282,14 +282,14 @@ called eval to prevent accidental evaluation.
 
 `g = mch.getEvent(````del`''`).getGuards()` +
 `g = g.collect {it.toString()}.join(" & ")` +
-`t.eval(g) `
+`t.eval(g)`
 
 '''I want to have it extra sweet! '''
 
 `String.metaClass.and = {b -> ````(`''`+delegate+````)`` ``&`` ``(`''`+b + ````)`''` }` +
 `not = { ````not(`''`+it+````)`''` }` +
 `String.metaClass.implies = {b -> ````(`''`+delegate +````)`` ``=>`` ``(`''` + b + ") "}` +
-`conj = { it.collect{it.toString()}.inject {a,b -> a & b}}  `
+`conj = { it.collect{it.toString()}.inject {a,b -> a & b}}`
 
 This piece of code introduces four functions to simplify handling of
 formulas. The first line overrides the & operator for Strings and allows
@@ -310,7 +310,7 @@ Constraint solver
 `f4 = new EventB(````a`` ``=`` ``1`` ``&`` ``b`` ``=`` ``a`` ``-`` ``1`''`)` +
 `c4 = new CbcSolveCommand(f4)` +
 `s.execute(c4)` +
-`c4.getValue()` +
+`c4.getValue()`
 
 The state space in the example has two purposes. It is used to tell the
 typechecker which constants and sets exist in the model. It also allows
@@ -321,7 +321,7 @@ us to send commands to the Prolog core of ProB.
 `f4 = new ClassicalB(````a`` ``=`` ``a`` ``-`` ``1`''`)` +
 `c4 = new CbcSolveCommand(f4)` +
 `s.execute(c4)` +
-`c4.getValue()` +
+`c4.getValue()`
 
 *Can we get rid of that Java stuff please?*
 
@@ -363,11 +363,11 @@ in the future to something more meaningful, e.g., loader.
 
 *Can I get the trace that is shown in the UI?*
 
-`animations.getCurrentTrace() `
+`animations.getCurrentTrace()`
 
 *What traces are registered?*
 
-`animations.getTraces() `
+`animations.getTraces()`
 
 *Can I add a trace to the UI?*
 
