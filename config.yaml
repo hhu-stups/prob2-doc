@@ -1,0 +1,16 @@
+---
+file: prob2_developer.adoc
+title: ProB 2.0 Developer handbook
+authors:
+  - Jens Bendisposto
+  - Joy Clark
+content:
+  - developer/java_api
+  - appendix
+---
+file: prob_tcltk.adoc
+title: ProB Tcl/Tk Handbook
+authors:
+  - Michael Leuschel
+content:
+  - user

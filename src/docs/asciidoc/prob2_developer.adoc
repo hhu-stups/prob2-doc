@@ -1,0 +1,27 @@
+= ProB 2.0 Developer handbook
+Jens Bendisposto;Joy Clark
+
+:xrefstyle: short
+:toc:
+
+:leveloffset: +1
+
+include::/Users/bendisposto/repositories/prob/handbook/src/docs/chapter/developer/java_api/00_section_header.adoc[]
+include::/Users/bendisposto/repositories/prob/handbook/src/docs/chapter/developer/java_api/01_introduction.adoc[]
+include::/Users/bendisposto/repositories/prob/handbook/src/docs/chapter/developer/java_api/02_architecture.adoc[]
+include::/Users/bendisposto/repositories/prob/handbook/src/docs/chapter/developer/java_api/03_installation.adoc[]
+include::/Users/bendisposto/repositories/prob/handbook/src/docs/chapter/developer/java_api/04_lowlevelapi.adoc[]
+include::/Users/bendisposto/repositories/prob/handbook/src/docs/chapter/developer/java_api/05_probcore.adoc[]
+include::/Users/bendisposto/repositories/prob/handbook/src/docs/chapter/developer/java_api/06_animation.adoc[]
+include::/Users/bendisposto/repositories/prob/handbook/src/docs/chapter/developer/java_api/07_evaluation.adoc[]
+include::/Users/bendisposto/repositories/prob/handbook/src/docs/chapter/developer/java_api/08_cosimulation.adoc[]
+include::/Users/bendisposto/repositories/prob/handbook/src/docs/chapter/developer/java_api/09_dependencyinjection.adoc[]
+include::/Users/bendisposto/repositories/prob/handbook/src/docs/chapter/developer/java_api/ZZ_section_footer.adoc[]
+
+:leveloffset: -1
+:leveloffset: +1
+
+include::/Users/bendisposto/repositories/prob/handbook/src/docs/chapter/03_appendix/A_literature.adoc[]
+include::/Users/bendisposto/repositories/prob/handbook/src/docs/chapter/03_appendix/B_preferences.adoc[]
+
+:leveloffset: -1

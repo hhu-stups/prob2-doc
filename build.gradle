@@ -1,6 +1,9 @@
 buildscript {
     repositories {
         jcenter()
+        maven {
+          url 'http://maven.myweek-end.ru/'
+        }
     }
 
     dependencies {
@@ -9,12 +12,24 @@ buildscript {
         classpath 'org.asciidoctor:asciidoctorj-epub3:1.5.0-alpha.6'
         classpath 'org.asciidoctor:asciidoctorj:1.5.6'
         classpath 'com.github.jruby-gradle:jruby-gradle-plugin:1.5.0'
+        classpath 'com.github.spullara.mustache.java:compiler:0.8.12'
+        classpath 'org.freemarker:freemarker:2.3.23'
+        classpath 'org.yaml:snakeyaml:1.17'
     }
 }
 
+
 apply plugin: 'org.asciidoctor.convert'
 apply plugin: 'com.github.jruby-gradle.base'
+
 import com.github.jrubygradle.JRubyExec
+import org.yaml.snakeyaml.Yaml
+import freemarker.template.Configuration;
+
+def cfg = new Configuration();
+
+
+
 
 
 repositories {
@@ -31,12 +46,17 @@ asciidoctorj {
 }
 
 task bibtex {
+  doFirst {
+    def tree = fileTree(dir: 'src/docs/bibtex')
+    tree.include("**/*.bib")
+    def files = tree.getFiles()
   (new File('src/docs/asciidoc/combined.bib')).text =
-      files('stups.bib', 'localrefs.bib').collect{it.getText()}.join("\n")
+      files.collect{it.getText()}.join("\n")
+      }
 }
 
 asciidoctor {
-    dependsOn = ['bibtex','jrubyPrepare']
+    dependsOn = ['bibtex','jrubyPrepare','buildMaindocs']
     requires = ['asciidoctor-diagram', 'asciidoctor-bibtex']
     gemPath = jrubyPrepare.outputDir
 
@@ -53,11 +73,9 @@ asciidoctor {
         'encoding': 'utf-8',
         'bibtex-file': 'combined.bib'
 
-
     sources {
-        include 'handbook.adoc'
+        include '*.adoc'
     }
-
 
     resources {
         from('src/docs/asciidoc') {
@@ -66,4 +84,35 @@ asciidoctor {
     }
 }
 
+clean.doFirst {
+    def tree = fileTree('src/docs/asciidoc/images') {
+       include '**/diag-*'
+    }
+    tree.each { it.delete() }
+    tree = fileTree('src/docs/asciidoc') {
+       include '*.adoc'
+    }
+    tree.each { it.delete() }
+    file('src/docs/asciidoc/combined.bib').delete()
+}
+
 defaultTasks 'clean','asciidoctor'
+
+task buildMaindocs() {
+ doLast {
+   def template = cfg.getTemplate("src/docs/templates/handbook.ftlh")
+   Yaml parser = new Yaml()
+   def books = parser.loadAll(("config.yaml" as File).text)
+   books.each {
+     book ->
+       def includes = []
+       book.content.each {
+         dir ->
+           includes << fileTree('src/docs/chapter/'+dir).collect { it }.sort()
+       }
+       book.directories = includes
+       def w = new FileWriter("src/docs/asciidoc/"+book.file);
+       template.process(book, w);
+   }
+ }
+}
