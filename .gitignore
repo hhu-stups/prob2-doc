@@ -21,3 +21,4 @@ combined.bib
 diag-*.png.cache
 diag-*.png
 tmp
+src/docs/asciidoc/*.adoc
