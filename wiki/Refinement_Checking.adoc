@@ -1,0 +1,33 @@
+/Category:User_Manual[Category:User Manual]
+/Category:Stubs[Category:Stubs] ProB can be used for refinement checking
+of B, Z and CSP specifications. Below we first discuss refinement
+checking for B machines. There is a tutorial on checking CSP assertions
+in ProB which can be viewed
+http://stups.hhu.de/ProB/w/Checking_CSP_Assertions[here].
+
+[[what-kind-of-refinement-is-checked]]
+What kind of refinement is checked?
+-----------------------------------
+
+ProB checks trace refinement. In other words, it checks whether every
+trace (consisting of executed operations with their parameter values and
+return values) of a refinement machine can also be performed by the
+abstract specification.
+
+Hence, ProB does *not* check the gluing invariant. Also, PRE-conditions
+are treated as SELECT and PRE-conditions of the abstract machine are
+*not* always propagated down to the refinement machine. Hence,
+refinement checking has to be used with care for classical B machines,
+but it is well suited for EventB-style machines.
+
+[[how-does-it-work]]
+How does it work?
+-----------------
+
+1.  Open the abstract specification, explore its state space (e.g.,using
+an exhaustive temporal model check).
+2.  Use the command ``Save state for later refinement check'' in the
+``Verify'' menu.
+3.  Open the refinement machine.
+4.  You can now use the ``Refinement Check...'' command in the
+``Verify'' menu.

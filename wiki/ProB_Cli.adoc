@@ -1,0 +1,20 @@
+/Category:Components[Category:Components]
+/Category:ProB_Cli[Category:ProB Cli]
+
+The ProB Cli (command-line interface) offers many of the ProB features
+via command-line. As such, you can run ProB from your shell scripts or
+in your Makefiles. probcli contains a REPL (Read-Eval-Print-Loop) and
+you can also https://github.com/bivab/prob.vim[integrate probcli into an
+editor such as vim]. probcli can also communicate with other tools or
+graphical user interfaces via sockets (this is used by
+link:/ProB_for_Rodin[ProB for Rodin]).
+
+[[documentation]]
+Documentation
+~~~~~~~~~~~~~
+
+`             `` `link:/Using_the_Command-Line_Version_of_ProB[`User`` ``Manual`] +
+`                   `
+
+`             `` `link:/Developer_Manual[`Developer`` ``Manual`] +
+`                   `

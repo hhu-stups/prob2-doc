@@ -1,0 +1,87 @@
+/Category:Tutorial[Category:Tutorial]
+/Category:ProB_Tcl_Tk[Category:ProB Tcl Tk]
+
+ProB is a flexible and extensible validation tool for high-level
+specification formalisms. ProB supports
+
+* multiple languages: B, Z, CSP, Event-B, Promela, dSL, ...
+* and multiple validation techniques : animation, model checking, ...
+
+Below we present a gentle introduction to ProB focusing on classical B
+(but many of the commands are also applicable to the other formalisms
+such as CSP, Event-B and Z).
+
+* link:/Tutorial_First_Step[Starting ProB and first animation steps]
+* link:/Tutorial_Animation_Tips[Some animation tips (dealing with large
+parameter values,...)]
+* link:/Tutorial_First_Model_Checking[First steps in model checking]
+* link:/Tutorial_Complete_Model_Checking[Complete model checking]
+* link:/Tutorial_Directed_Model_Checking[Directed model checking]
+* link:/Tutorial_Setup_Phases[Understanding the ProB Setup Phases]
+* link:/Tutorial_Troubleshooting_the_Setup[Tutorial Troubleshooting the
+Setup]
+* link:/Tutorial_Understanding_the_Complexity_of_B_Animation[Tutorial
+Understanding the Complexity of B Animation]
+* link:/Tutorial_Understanding_ProB's_Constraint_Solver[Tutorial
+Understanding ProB's Constraint Solver]
+* link:/Tutorial_Debugging_Well-Definedness_and_Transition_Errors[Tutorial
+Debugging Well-Definedness and Transition Errors]
+
+* link:/Tutorial_Enabling_Analysis[Tutorial Enabling Analysis]
+* link:/Tutorial_Model_Checking_with_Various_Optimizations[Tutorial
+Various Optimizations]
+
+* link:/Evaluation_View[Tutorial on using the Evaluation View]
+* link:/Eval_Console[Tutorial on using the Eval Console]
+
+* link:/Tutorial_Model_Checking,_Proof_and_CBC[Model Checking, Proof and
+Constraint-Based Checking]
+* link:/Tutorial_Model-Based_Testing[Tutorial on Model-Based Testing]
+
+* link:/Using_the_Command-Line_Version_of_ProB[Using the Command-Line
+Version of ProB]
+
+* link:/Tutorial_Modeling_Infinite_Datatypes[Tutorial Modeling Infinite
+Datatypes]
+
+* link:/Tutorial_Co-Simulation[Tutorial Co-Simulation]
+
+* link:/ProB_Examples[Some Example Specifications and their Validation
+with ProB]
+
+For ProB for Rodin, the following presents a gentle introduction:
+
+* link:/Tutorial_Rodin_First_Step[Starting ProB for Rodin and first
+animation steps]
+* link:/Tutorial_Rodin_Parameters[Important Parameters of ProB for
+Rodin]
+* link:/Tutorial_Rodin_Exporting[Exporting Rodin Models for ProB
+Classic]
+* link:/Tutorial_Symbolic_Constants[Using the Symbolic Contants Plugin]
+* link:/Tutorial_Disprover[Using the ProB (Dis-)Prover]
+* link:/Tutorial_LTL_Counter-example_View[Visualization of LTL
+Counter-examples in Rodin]
+
+The http://handbook.event-b.org[Rodin handbook] also contains material
+about ProB:
+
+* http://handbook.event-b.org/current/html/tut_building_the_model.html#tut:prob[Finding
+Invariant Violations with ProB]
+* http://handbook.event-b.org/current/html/tut_populate_context.html#a0000000094[Finding
+Solutions to Axioms]
+
+Furthermore, there are several tutorials on the physical units plugin:
+
+* link:/Tutorial_Unit_Plugin[Using the Physical Units Plugin inside
+ProB]
+* link:/Tutorial_Unit_Plugin_With_Rodin[Analysing Physical Units with
+ProB for Rodin]
+
+For ProB for CSP, the following presents a gentle introduction:
+
+* link:/Tutorial_CSP_First_Step[Starting ProB for CSP and first
+animation steps]
+
+We also have a
+http://www.stups.uni-duesseldorf.de/bmotionstudio/index.php/User_Guide/Tutorial[tutorial
+for B Motion Studio].

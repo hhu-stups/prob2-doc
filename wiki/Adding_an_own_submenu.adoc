@@ -1,0 +1,10 @@
+/Category:Developer_Manual[Category:Developer Manual] For submenus we
+usually need a menu contribution for both the standalone version and the
+plug-in version
+
+[cols=",",options="header",]
+|=======================================================================
+|Plug-in Version |Standalone Version
+|/File:Menu_plugin.png[File:Menu plugin.png]
+|/File:Menu_standalone.png[File:Menu standalone.png]
+|=======================================================================

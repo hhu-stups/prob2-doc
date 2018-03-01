@@ -1,0 +1,115 @@
+/Category:User_Manual[Category:User Manual]
+/Category:_Advanced_Feature[Category: Advanced Feature]
+
+As of version 1.3.5-beta7 ProB can make use of externally defined
+functions. These functions must currently be written in Prolog (in
+principle C, Java, Tcl or even other languages can be used via the
+SICStus Prolog external function interfaces). These functions can be
+used to write expression, predicates, or substitutions. The general
+mechanism that is used is to mark certain DEFINITIONS as external, in
+which case ProB will make use of external Prolog code rather than using
+the right-hand-side of the DEFINITION whenever it is used. However,
+these DEFINITIONS can often (unless they are polymorphic) be wrapped
+into B (constant) functions. If you just want to use the standard
+external functions already defined by ProB, then you don't have to
+understand this mechanism in detail (or at all).
+
+[[standard-libraries-provided-by-prob]]
+Standard Libraries provided by ProB
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In a first instance we have predefined a series of external functions
+and grouped them in various library machines and definition files:
+
+* `LibraryMath.mch`: defining sin, cos, tan, sinx, cosx, tanx, logx,
+gcd, msb, random as well as access to all other Prolog built-in
+arithmetic functions.
+* `LibraryStrings.mch`: functions manipulating B STRING objects by
+providing `length`, `append`, `split` and conversion functions `chars`,
+`codes`.
+* `LibraryFiles.mch`: various functions to obtain information about
+files and directories in the underlying file system
+* `LibraryIO.def`: providing functions to write information to screen or
+file. Note: these external functions are polymorphic and as such cannot
+be defined as B constants: you have to use the DEFINITIONS provided in
+`LibraryIO.def`.
+* `CHOOSE.def`: providing the
+http://planetmath.org/encyclopedia/HilbertsEpsilonOperator.html[Hilbert
+choice operator] for choosing a designated element from each set. Again,
+this function is polymorphic and thus cannot be defined as a B function.
+This function is useful for defining
+link:/Recursively_Defined_Functions[recursive functions] over sets (see
+also link:/TLA[TLA]). Note that it in ProB it is undefined for the empty
+set.
+* `LibraryMeta.def`: providing access to meta-information about the
+loaded model (`PROJECT_INFO`), about the state space (`HISTORY`,
+`STATE_TRANS`, ...) and about ProB itself (GET_PREF, `PROB_INFO_STR`,
+`PROB_INFO_INT`,..).
+
+As of version 1.6.1 there is also a `READ_XML` external function to read
+in XML files and convert them to a B data structure with strings and
+records.
+
+Since version 1.5 the standard library is shipped with ProB and
+references to machines and DEFINITION-files in the standard library are
+resolved automatically when referenced (see link:/PROBPATH[PROBPATH] for
+information about how to customize the lookup path).
+
+To use a library machine you can use the `SEES` mechanism:
+
+`SEES LibraryMath`
+
+In general you can do the following with an external function, such as
+`sin`, wrapped into a constant:
+
+* apply the function: `sin(x)`
+* compute the image of the function: `sin[1..100]`
+* compose the function with a finite relation on the left:
+`([1..100] ; sin)`
+* compute the domain of the function: `dom(sin)`
+
+To use a library definition file, you need to include the file in the
+DEFINITIONS clause:
+
+`DEFINITIONS` +
+`  ````LibraryIO.def`''
+
+[[overview-of-the-external-function-definition-mechanism]]
+Overview of the External Function DEFINITION Mechanism
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Currently, external functions are linked to classical B machines using B
+DEFINITIONS as follows:
+
+* one definition, which defines the function as it is seen by tools
+other than ProB (e.g., Atelier-B). Suppose we want to declare an
+external cosinus function named `COS`, then this definition could be
+`COS(x) == cos(x)`.
+* one definition declaring the type of the function. For `COS` this
+would be `EXTERNAL_FUNCTION_COS == INTEGER --> INTEGER`.
+* Prolog code which gets called by ProB in place of the right-hand-side
+of the first definition
+
+Usually, it is also a good idea to encapsulate the external function
+inside a CONSTANT which is defined as a lambda abstraction with as body
+simply the call to the first DEFINITION. For `COS` this would be
+`cos = %x.(x:NATURAL|COS(x))`. Observe that for Atelier-B this is a
+tautology. For ProB, the use of such a constant allows one to have a
+real B function representing the external function, for which we can
+compute the domain, range, etc.
+
+For the typing of an external function `NAME` with type `TYPE` there are
+three possibilities, depending on whether the function is a function, a
+predicate or a substitution:
+
+* `EXTERNAL_FUNCTION_NAME == TYPE`
+* `EXTERNAL_PREDICATE_NAME == TYPE`
+* `EXTERNAL_SUBSTITUTION_NAME == TYPE`
+
+In case the external function is polymorphic, the `DEFINITION` can take
+extra arguments: each argument is treated like a type variable. For
+example, the following is used in `CHOOSE.def` to declare the
+http://planetmath.org/encyclopedia/HilbertsEpsilonOperator.html[Hilbert
+choice operator]:
+
+* `EXTERNAL_FUNCTION_CHOOSE(T) == (POW(T)-->T)`

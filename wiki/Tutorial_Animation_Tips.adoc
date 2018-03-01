@@ -1,0 +1,159 @@
+/Category:User_Manual[Category:User Manual]
+
+Make sure you have the Lift.mch model from the first part of the
+tutorial: link:/Tutorial_First_Step[Starting ProB and first animation
+steps].
+
+[[operation-with-many-solutions-for-the-parameters]]
+Operation with many solutions for the parameters
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Add the following operation to the Lift model:
+
+....
+jump(level) = PRE level : 0..99 THEN floor := level END
+....
+
+Now reload your model and initialise the machine. Your ProB window
+should now look as follows:
+
+/file:ProB_LiftWithJump.png[center||500px]
+
+As you can see, only 10 values for the level parameter of the jump
+operation are displayed in the ``Enabled Operations'' pane. The orange
+``max'' button to the left of ``Enabled Operation'' tells you that not
+all possible parameter values for the operations were computed.
+
+There are several solutions to overcome this.
+
+[[increasing-max_operations]]
+Increasing MAX_OPERATIONS
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+First, you could increase the ``MAX_OPERATIONS'' preference of ProB by
+selecting the ``Animation Preferences'' command in the ``Preferences''
+menu:
+
+/file:ProB_Lift_MAX_OPERATIONS.png[center||350px]
+
+You should then set the preference "" to at least 101 and then re-load
+the B machine.
+
+/file:ProB_Lift_OpPane_WithJump101.png[center||200px]
+
+[[executing-an-operation-by-predicate]]
+Executing an Operation by Predicate
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The alternative is to provide the parameter value for `level` yourself.
+For this, select the ``Execute an Operation...'' command in the animate
+menu:
+
+/file:ProB_Lift_ExecuteOperationMenu.png[center||200px]
+
+After that, select the `jump` operation
+
+/file:ProB_ExecuteOperation.png[center||350px]
+
+and you will be provided with the following dialog:
+
+/file:ProB_Lift_ExecuteOperation_Dialog.png[center||490px]
+
+Type in `98` into the level field and hit the ``Execute'' button.
+
+/file:ProB_Lift_OpPane_WithJump_Exec98.png[center||490px]
+
+Note: instead or in addition to providing concrete values, you can also
+specify a predicate that constrains the values of the parameters:
+/file:ProB_Lift_ExecuteOperation_Dialog_Pred.png[center||490px]
+
+The above predicate, `level>96 & level mod 2 =0` would select the same
+value `98` for level. When there are multiple solutions, ProB will only
+execute the operation for the first solution found.
+
+[[using-random-enumeration]]
+Using Random enumeration
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+You can also tell ProB to try and perform random enumerations. This
+feature is available in ProB 1.5.0 or newer. You add the following lines
+to your model:
+
+`DEFINITIONS` +
+`  SET_PREF_RANDOMISE_ENUMERATION_ORDER == TRUE`
+
+Alternatively, you can set this preference using the ``Advanced
+Preferences'' pane in the Preferences menu. After reloading the machine
+you should see a picture similar to the following one:
+
+/file:ProB_Lift_Randomise.png[center||650px]
+
+[[using-constraint-based-validation-techniques]]
+Using Constraint-Based Validation Techniques
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+[[find-sequence]]
+Find Sequence
++++++++++++++
+
+You can also use the constraint solver to construct sequences which are
+of interest to you. Let us add the following operation to the lift
+model:
+
+`top_reached = PRE floor=99 THEN skip END`
+
+Now suppose we want to execute this new operation as early as possible.
+We can ask the constraint solver to generate a feasible sequence of
+operations. First select the ``Find Sequence...'' command in the Verify
+menu:
+
+/file:FindSequenceMenu.png[center||400px]
+
+Now type in
+
+` jump ; top_reached`
+
+in this dialog box:
+
+/file:FindSequenceDialog.png[center||500px]
+
+ProB will then find a solution operation sequence for you and execute
+it:
+
+/file:FindSequenceResult.png[center||300px]
+
+[[constraint-based-model-based-testing]]
+Constraint-Based Model-Based Testing
+++++++++++++++++++++++++++++++++++++
+
+Alternatively, you could for example use the constraint-based test-case
+generator to find for every operation the shortest trace that enables
+it.
+
+First select the ``Constraint-based Testcase Generation..'' command in
+the Analyse menu:
+
+/file:CBCMBTMenu.png[center||400px]
+
+Now click on the ok button in the dialog box (which allows you to select
+the target operations to cover in the generated test cases):
+
+/file:CBCMBTDialog.png[center||200px]
+
+ProB will then find four test cases for you, one for each operation:
+
+/file:CBCMBTResult.png[center||400px]
+
+You can also visualise these test cases as a tree by clicking the ``View
+Tree'' button:
+
+/file:CBCMBTTreeResult.png[center||600px]
+
+Green entries show test cases (traces which cover an operation in the
+shortest possible way), gray entries are traces which did not contribute
+to a test case.
+
+More details are available in the
+link:/Tutorial_Model-Based_Testing[Tutorial_Model-Based_Testing] and
+link:/Tutorial_Model_Checking,_Proof_and_CBC[Tutorial_Model_Checking,_Proof_and_CBC]
+sections.

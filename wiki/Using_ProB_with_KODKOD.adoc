@@ -1,0 +1,126 @@
+/Category:User_Manual[Category:User Manual]
+/Category:Stubs[Category:Stubs]
+
+As of version 1.3.5 ProB can make use of
+http://alloy.mit.edu/kodkod/[Kodkod] as an alternate way of solving
+constraints. Kodkod provides a relational interface to SAT solvers and
+is the heart of the http://alloy.mit.edu/alloy/[Alloy] tool.
+
+[[how-to-enable-kodkod]]
+How to enable Kodkod
+--------------------
+
+For the command-line version you need to call prob as follows:
+
+`probcli -p KODKOD TRUE`
+
+Note: to experiment with Kodkod you may want to try out the command:
+
+`probcli -p KODKOD TRUE -repl`
+
+If in addition you want see a graphical representation of the solutions
+found you can use the following command and open the `out.dot` file
+using dotty or GraphViz:
+
+`probcli -p KODKOD TRUE -repl -evaldot ~/out.dot`
+
+For the ProB Tcl/Tk Version you should select the menu command ``Enable
+Kodkod for Properties'' in the Preferences menu.
+
+[[what-can-be-translated]]
+What can be translated
+----------------------
+
+* Types:
+** Basic Types: Deferred Sets, enumerated sets, integers, booleans
+** Sets of basic types
+** Relations between basic types
+** Higher-order types (sets of sets) are not supported
+
+* Operators:
+** Predicates: &, or, =>, <=>, not, !, #, =, /=
+** Booleans: TRUE, FALSE, BOOL, bool(...)
+** Sets: \{..,...} \{x|P}, POW, card, Cartesian product, \/, /\, -, :,
+/:, /<:, <<: /<<:
+** Numbers: n..m, >, <, >=, <=, +, -, *, SIGMA(x).(P|x)
+** Relations: <->, |->, dom, ran, id, <|, <<|, |>, |>>, ~, [...], <+,
+prj1, prj2, closure1
+** x : S+->T, x:S-->T, ..., lambda
+** currently no operations on sequences are supported
+
+* Some limitations:
+** If integers are used, a predicate can only be translated if a static
+analysis can estimate the interval of its possible values.
+** Generally only complete predicates are translated or nothing at all,
+unless you set the `KODKOD_ONLY_FULL` preference to FALSE.
+
+[[when-is-the-kokod-translation-used]]
+When is the Kokod translation used
+----------------------------------
+
+Once enabled, the Kodkod translation will be used in the following
+circumstances:
+
+* for solving PROPERTIES
+* constraint-based assertion checking (`-cbc_assertions` command for
+`probcli` or the ``Check Assertions on Constants'' command in the menu
+Verify -> Constraint-Based Checking)
+* constraint-based deadlock checking
+* in the link:/Eval_Console[Eval Console] in the ProB Tcl/Tk version
+* for the REPL in probcli (`probcli -p KODKOD TRUE -repl`)
+
+[[sat-solver]]
+SAT solver
+----------
+
+By default Kodkod in ProB uses the bundled SAT4J solver. You can switch
+to using minisat by putting a current version of `libminisat.jnilib`
+into ProB's `lib` directory.
+
+Similarly, as of ProB 1.6.1-beta5 you can also use the Solver
+http://fmv.jku.at/lingeling/[lingeling] or
+http://www.labri.fr/perso/lsimon/glucose/[glucose] by dropping
+`liblingeling.dylib` or `libglucose.dylib` into ProB's lib folder (for
+Mac OS X; for Linux the extension will be different). You can control
+the solver being used using the `KODKOD_SAT_SOLVER` preference (which
+has four possible values: sat4j, minisat, lingeling, glucose).
+
+These files can be downloaded from the
+http://alloy.mit.edu/kodkod/download.html[Kodkod download site].
+
+[[more-preferences]]
+More Preferences
+----------------
+
+If you set `KODKOD_ONLY_FULL` to `FALSE`, then the Kodkod translation
+can be applied to part of a predicate. In other words, the predicate
+(such as the PROPERTIES) are partitioned into two parts: one that can be
+understood by Kodkod and the rest which will be dealt with by ProB's
+solver.
+
+You can also enable symmetry by using the preference `KODKOD_SYMMETRY`.
+By default, ProB will set this value to 0, i.e., symmetry is off. This
+means that Kodkod can also be used within set comprehensions. By setting
+the preference to a value higher than 0 you will enable symmetry within
+Kodkod, which may mean that not all solutions will be returned. Setting
+the value too high may be counter productive; Kodkod's recommended
+default is 20.
+
+Finally, you can control the number of solutions that Kodkod computes in
+one go using the preference `KODKOD_MAX_NR_SOLS`. E.g., if you are
+interested in only one solution and `KODKOD_ONLY_FULL` is `TRUE`, then
+you should set this value to 1.
+
+[[more-details]]
+More details
+------------
+
+* https://www3.hhu.de/stups/downloads/pdf/PlaggeLeuschel_Kodkod2012.pdf[Plagge,
+Leuschel. Validating B, Z and TLA+ using ProB and Kodkod. In Proceedings
+FM'2012, Dimitra Giannakopoulou and Dominique Méry, LNCS 7436, Springer,
+372--386, 2012. (pdf)]
+
+You can also have a look at these Wiki pages:
+
+* link:/Proving_Theorems_in_the_ProB_REPL[Proving_Theorems_in_the_ProB_REPL]
+* link:/Argumentation_Theory[Argumentation Theory Example]

@@ -1,0 +1,189 @@
+/Category:User_Manual[Category:User Manual]
+/Category:_Advanced_Feature[Category: Advanced Feature]
+
+[[symbolic-functions-and-relations]]
+Symbolic Functions and Relations
+--------------------------------
+
+Take the following function:
+
+`CONSTANTS parity` +
+`PROPERTIES` +
+` parity : (NATURAL --> {0,1}) & ` +
+` parity(0) = 0 & ` +
+` !x.(x:NATURAL => parity(x+1) = 1 - parity(x))`
+
+Here, ProB will complain that it cannot find a solution for parity. The
+reason is that parity is a function over an infinite domain, but ProB
+tries to represent the function as a finite set of maplets.
+
+There are basically four solutions to this problem:
+
+* Write a finite function:
+
+`parity : (NAT --> {0,1}) & ` +
+`parity(0) = 0 & ` +
+`!x.(x:NAT & x`` parity(x+1) = 1 - parity(x))`
+
+* Rewrite your function so that in the forall you do not refer to values
+of parity greater than x:
+
+`parity : (NATURAL --> {0,1}) & ` +
+`parity(0) = 0 & ` +
+`!x.(x:NATURAL1 => parity(x) = 1 - parity(x-1))`
+
+* Write your function constructively using a single recursive equation
+using set comprehensions, lambda abstractions, finite sets and set
+union. This requires ProB 1.3.5-beta7 or higher and you need to declare
+`parity` as `ABSTRACT_CONSTANT`. Here is a possible equation:
+
+`parity : INTEGER <-> INTEGER & ` +
+`parity = {0|->0} \/ %x.(x:NATURAL1|1-parity(x-1))`
+
+Note, you have to remove the check `parity : (NATURAL --> {0,1})`, as
+this will currently cause expansion of the recursive function. We
+describe this new scheme in more detail below.
+
+* Another solution is try and write your function constructively and
+non-recursively, ideally using a lambda abstraction:
+
+`  parity : (NATURAL --> INTEGER) & ` +
+`  parity = %x.(x:NATURAL|x mod 2)`
+
+* Here ProB detects that parity is an infinite function and will keep it
+symbolic (if possible). With such an infinite function you can:
+** apply the function, e.g., `parity(10001)` is the value `1`
+** compute the image of the function, e.g., `parity[10..20]` is `{0,1}`
+** check if a tuple is a member of the function, e.g., `20|->0 : parity`
+** check if a tuple is not a member of the function, e.g.,
+`21|->0 /: parity`
+** check if a finite set of tuples is a subset of the function, e.g.,
+`{20|->0, 120|->0, 121|->1, 1001|->1} <: parity`
+** check if a finite set of tuples is not a subset of the function,
+e.g., `{20|->0, 120|->0, 121|->1, 1001|->2} /<: parity`
+** compose the function with a finite relation, e.g.,
+`(id(1..10) ; parity)` gives the value `[1,0,1,0,1,0,1,0,1,0]`
+** sometimes compute the domain of the function, here, `dom(parity)` is
+determined to be `NATURAL`. But this only works for simple infinite
+functions.
+** sometimes check that you have a total function, e.g.,
+`parity: NATURAL --> INTEGER` can be checked by ProB. However, if you
+change the range (say from `INTEGER` to `0..1`), then ProB will try to
+expand the function.
+** In version 1.3.7 we are adding more and more operators that can be
+treated symbolically. Thus you can now also compose two symbolic
+functions using relational composition `;` or take the transitive
+closure (`closure1`) symbolically.
+
+You can experiment with those by using the link:/Eval_Console[Eval
+console] of ProB, experimenting for example with the following complete
+machine. Note, you should use ProB 1.3.5-beta2 or higher. (You can also
+type expressions and predicates such as
+`parity = %x.(x:NATURAL|x mod 2) & parity[1..10] = res` directly into
+the online version of the link:/Eval_Console[Eval console]).
+
+`MACHINE InfiniteParityFunction` +
+`CONSTANTS parity` +
+`PROPERTIES` +
+`  parity : NATURAL --> INTEGER & ` +
+`  parity = %x.(x:NATURAL|x mod 2)` +
+`VARIABLES c` +
+`INVARIANT` +
+`c: NATURAL` +
+`INITIALISATION c:=0` +
+`OPERATIONS` +
+` Inc = BEGIN c:=c+1 END;` +
+` r <-- Parity = BEGIN r:= parity(c) END;` +
+` r <-- ParityImage = BEGIN r:= parity[0..c] END;` +
+` r <-- ParityHistory = BEGIN r:= (%i.(i:1..c+1|i-1) ; parity) END` +
+`END`
+
+You may also want to look at the tutorial page on
+link:/Tutorial_Modeling_Infinite_Datatypes[modeling infinite datatypes].
+
+[[when-does-prob-treat-a-set-comprehension-or-lambda-abstraction-symbolically]]
+When does ProB treat a set comprehension or lambda abstraction
+symbolically ?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Currently there are four cases when ProB tries to keep a function such
+as `f = %x.(PRED|E)` symbolically rather than computing an explicit
+representation:
+
+* the domain of the function is obviously infinite; this is the case for
+predicates such as `x:NATURAL`; in version 1.3.7-beta5 or later this has
+been considerably improved. Now ProB also keeps those lambda
+abstractions or set comprehensions symbolic where the constraint solver
+cannot reduce the domain of the parameters to a finite domain. As such,
+e.g., `{x,y,z| x*x + y*y = z*z}` or `{x,y,z| z:seq(NATURAL) & x^y=z}`
+are now automatically kept symbolic.
+* `f` is declared to be an `ABSTRACT_CONSTANT` and the equation is part
+of the `PROPERTIES` with `f` on the left.
+* the preference `SYMBOLIC` is set to true (e.g., using a `DEFINITION`
+`SET_PREF_SYMBOLIC == TRUE`)
+* a pragma is used to mark the lambda abstraction as symbolic as
+follows: `f = /*@ symbolic */ %x.(PRED|E)`; this requires ProB version
+1.3.5-beta10 or higher. In Event-B, pragmas are represented as Rodin
+database attributes and one should use the
+link:/Tutorial_Symbolic_Constants[symbolic constants plugin].
+
+[[recursive-function-definitions-in-prob]]
+Recursive Function Definitions in ProB
+--------------------------------------
+
+As of version 1.3.5-beta7 ProB now accepts recursively defined
+functions. For this:
+
+* the function has to be declared an `ABSTRACT_CONSTANT`.
+* the function has to be defined using a single recursive equation with
+the name of the function on the left of the equation
+* the right-hand side of the equation can make use of lambda
+abstractions, set comprehensions, set union and other finite sets
+
+Here is a full example:
+
+`MACHINE Parity` +
+`ABSTRACT_CONSTANTS parity` +
+`PROPERTIES` +
+` parity : INTEGER <-> INTEGER & ` +
+` parity = {0|->0} \/ %x.(x:NATURAL1|1-parity(x-1))` +
+`END`
+
+As of version 1.6.1 you can also use IF-THEN-ELSE and LET constructs in
+the body of a recursive function. The above example can for example now
+be written as:
+
+`MACHINE ParityIFTE` +
+`ABSTRACT_CONSTANTS parity` +
+`PROPERTIES` +
+` parity : INTEGER <-> INTEGER & ` +
+` parity = %x.(x:NATURAL|IF x=0 THEN 0 ELSE 1-parity(x-1)END) ` +
+`END`
+
+[[operations-applicable-for-recursive-functions]]
+Operations applicable for recursive functions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+With such a recursive function you can:
+
+* apply the function to a given argument, e.g., `parity(100)` will give
+you 0;
+* compute the image of the function, e.g., `parity[1..10]` gives
+`{0,1}`.
+* composing it with another function, notably finite sequences:
+`([1,2] ; parity)` corresponds to the ``map'' construct of functional
+programming and results in the output `[1,0]`.
+
+Also, you have to be careful to avoid accidentally expanding these
+functions. For example, trying to check `parity : INTEGER <-> INTEGER`
+or `parity : INTEGER +-> INTEGER` will cause older version of ProB to
+try and expand the function. ProB 1.6.1 can actually check
+`parity:NATURAL --> INTEGER`, but it cannot check
+`parity:NATURAL --> 0..1`.
+
+There are the following further restrictions:
+
+* ProB does not support mutual recursion yet
+* the function is not allowed to depend on other constants, unless those
+other constants can be valued in a deterministic way (i.e., ProB finds
+only one possible solution for them)

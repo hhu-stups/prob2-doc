@@ -1,0 +1,64 @@
+/Category:User_Manual[Category:User_Manual] __NOTOC__ ProB is a
+graphical animator and model checker for the B method. The ProB homepage
+is at
+http://www.stups.uni-duesseldorf.de/ProB[http://www.stups.uni-duesseldorf.de/ProB],
+where precompiled binaries, installation instructions and documentation
+are available.
+
+[[important-notice]]
+Important notice
+~~~~~~~~~~~~~~~~
+
+If you find a problem with ProB or this documentation please let us
+know. We are happy to receive suggestions for improvements to ProB or
+the documentation. More information about submitting bug reports is
+available in the link:/Bugs[``bugs'' section] or directly in our
+http://jira.cobra.cs.uni-duesseldorf.de/[bug tracker]. You can also post
+a question in our
+https://groups.google.com/d/forum/prob-users[prob-users group] or send
+an email to mailto:Michael.Leuschel@hhu.de[Michael Leuschel].
+
+[[content-of-this-handbook]]
+Content of this handbook
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+(Also have a look at the tutorial; in particular
+link:/Tutorial_First_Step[Starting ProB and first animation steps]).
+
+[[sample-models]]
+Sample Models
+~~~~~~~~~~~~~
+
+* link:/TrainSwitchingPuzzle[TrainSwitchingPuzzle]
+* link:/Gilbreath_Card_Trick[Model for Card Trick by Gilbreath]
+* link:/Rush_Hour_Puzzle[Rush Hour Puzzle]
+* link:/Game_of_Life[Game of Life]
+* link:/N-Queens[N-Queens]
+* link:/Peaceable_Armies_of_Queens[Peaceable Armies of Queens]
+* link:/Die_Hard_Jugs_Puzzle[Die Hard Jugs Puzzle]
+* link:/ABZ14[ABZ 2014 Landing Gear Case Study]
+* link:/Sudoku_Solved_in_the_ProB_REPL[Sudoku Solved in the ProB REPL]
+* link:/Euler_Problem_67_-_Maximum_Path_Sum_II[Euler Problem 67 -
+Maximum Path Sum II]
+* link:/Mutual_Exclusion_(Fairness)[Mutual Exclusion (Fairness)]
+* link:/Cheryl's_Birthday[Cheryl's Birthday]
+* link:/Blocks_World_(Directed_Model_Checking)[Blocks World (Directed
+Model Checking)]
+* link:/Nine_Prisoners[Nine Prisoners Puzzle by Dudeney and Gardner]
+* link:/Apples_and_Oranges_(Apple_Interview_Question)[Apples and Oranges
+(Apple Interview Question)]
+* link:/Bridges_Puzzle_(Hashiwokakero)[Bridges Puzzle (Hashiwokakero)]
+* link:/Argumentation_Theory[Argumentation Theory]
+* link:/State_space_visualization_examples[State_space_visualization_examples]
+* link:/The_Jobs_Puzzle[The Jobs Puzzle]
+* link:/N-Bishops_Puzzle[N-Bishops Puzzle]
+* link:/ABZ16[ABZ 2016 Medical Case Study]
+* link:/Proving_Theorems_in_the_ProB_REPL[Proving Theorems in the ProB
+REPL]
+* link:/SEND-MORE-MONEY[SEND-MORE-MONEY]
+
+[[sample-graphics]]
+Sample Graphics
+~~~~~~~~~~~~~~~
+
+* link:/SiemensComplicatedProp[Siemens Complicated Property Visualized]

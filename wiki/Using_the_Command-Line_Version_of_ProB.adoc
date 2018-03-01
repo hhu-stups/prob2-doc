@@ -1,0 +1,1462 @@
+/Category:Tutorial[Category:Tutorial]
+/Category:User_Manual[Category:User Manual]
+/Category:ProB_Cli[Category:ProB Cli]
+
+The command-line version of ProB, called probcli, offers many of the
+features of the standalone Tcl/Tk Version via the command-line. As such,
+you can run ProB from your shell scripts or in your Makefiles. These
+pages refer to version 1.6 of ProB. Some features are only available in
+the nightly build of ProB. You can run `probcli –help` to find out which
+commands are supported by your version of ProB. For Bash users we
+provide link:/Bash_Completion[command completion] support.
+
+Note: the order of commands is not relevant for `probcli` (except within
+groups of commands such as `-p MAXINT 127`). Any argument that is not
+recognised by `probcli` is treated as a filename to be analysed.
+
+[[conventions-used]]
+Conventions used
+~~~~~~~~~~~~~~~~
+
+The following conventions are used in this guide:
+
+[cols=",",]
+|=======================================================================
+| |All values that should be replaced with some value are shown withing
+< >
+
+|line breaks |Command synopsis for command may be broken up on several
+lines. When typing commands enter all option on the same line.
+|=======================================================================
+
+[[synopsis]]
+Synopsis
+~~~~~~~~
+
+....
+probcli [--help]
+<filename> [ <options> ]
+....
+
+The underscore within all options can as of version 1.5.1-beta7 be
+replaced with dashes. Also, all commands can either be typed with single
+leading dashes or double leading dashes. For example, all of the
+following commands have the same effect:
+
+`probcli M.mch -model_check` +
+`probcli M.mch -model-check` +
+`probcli M.mch --model_check` +
+`probcli M.mch --model-check`
+
+[[options]]
+Options
+~~~~~~~
+
+[[mc]]
+-mc
+^^^^
+
+Description
+
+[cols="",]
+|====================================
+|model check; checking at most states
+|====================================
+
+Example
+
+` probcli my.mch -mc 100`
+
+Note: with a value of nr=1 ProB will only inspect the ``virtual'' root
+node (and compute its outgoing transitions). Also see the related
+options `-nodead, -noinv, -nogoal, -noass` to influence which kinds of
+errors are reported by `-mc`. You can also set a target goal predicate
+using the `-goal ````PRED`'' command and limit the scope of the model
+checking using the `-scope ````PRED`'' command.
+
+[[model_check]]
+-model_check
+^^^^^^^^^^^^
+
+The same as `-mc` but without a limit on the number of nodes checked.
+ProB will run until the entire state space is explored.
+
+[[no]]
+-no
+^^^
+
+Description
+
+[cols="",]
+|=======================================================================
+a|
+restrict errors reported by model checking (-mc), TLC model checking
+(-mc_with_tlc), animation (-animate) and execution (-execute) with
+=dead,inv,goal,ass
+
+* -nodead : do not report deadlocks
+* -noinv : do not report invariant violations
+* -nogoal : do not stop if a state satisfying the GOAL predicate has
+been found
+* -noass : do not report assertion violations
+
+|=======================================================================
+
+Example
+
+` probcli my.mch -mc 1000 -nodead -nogoal`
+
+[[disable_timeout]]
+-disable_timeout
+^^^^^^^^^^^^^^^^
+
+Description
+
+[cols="",]
+|=======================================================================
+|turn off ProB's timeout mechanism, e.g., for computing enabled
+operations and invariant checking; this can sometimes speed up model
+checking (-mc or -model_check) and animation (-animate). Available as of
+version 1.5.1-beta7.
+|=======================================================================
+
+Example
+
+` probcli my.mch -model-check -disable-timeout`
+
+[[bf]]
+-bf
+^^^
+
+Description
+
+[cols="",]
+|===========================================
+|proceed breadth-first during model checking
+|===========================================
+
+Example
+
+` probcli my.mch -bf -mc 1000`
+
+[[df]]
+-df
+^^^
+
+Description
+
+[cols="",]
+|=========================================
+|proceed depth-first during model checking
+|=========================================
+
+Example
+
+` probcli my.mch -df -mc 1000`
+
+[[mc_mode]]
+-mc_mode
+^^^^^^^^^
+
+Description
+
+[cols="",]
+|=======================================================================
+a|
+influence how the model checker proceeds. Available as of version 1.5.1.
+Supersedes the `-df` and `-bf` switches. Possible values for the mode
+are:
+
+* `df` (depth-first traversal),
+* `bf` (breadth-first traversal),
+* `mixed` (mixed depth-first / breadth-first traversal with random
+choice; currently the default),
+* `random` (choosing next node to process completely at random),
+* `hash` (similar to random, but uses the Prolog hash function of a node
+instead of a random number generator),
+* `heuristic` (try and use `HEURISTIC_FUNCTION` provided by user in
+`DEFINITIONS` clause). Some explanations can be found
+link:/Blocks_World_(Directed_Model_Checking)[in an example about
+directed model checking].
+* `out_degree_hash` (prioritise nodes with fewer outgoing transitions;
+mainly useful for deadlock checking)
+
+|=======================================================================
+
+Example
+
+` probcli my.mch -model_check -mc_mode random`
+
+[[timeout]]
+--timeout
+^^^^^^^^^^
+
+Description
+
+[cols="",]
+|=======================================================================
+|Global timeout in ms for model checking and refinement checking. This
+does not influence the timeout used for computing individual
+transitions/operations. This has to be set with the -p TIME_OUT . Note
+that the `TIME_OUT` preference also influences other computations, such
+as invariant checking or static assertion checking, where it is
+multiplied by a factor. See the description of the -p option.
+|=======================================================================
+
+Example
+
+`probcli my.mch -timeout 10000`
+
+[[t]]
+-t
+^^
+
+Description
+
+[cols="",]
+|===============================================
+|trace check (associated .trace file must exist)
+|===============================================
+
+Example
+
+`probcli my.mch -t`
+
+[[init]]
+-init
+^^^^^
+
+Description
+
+[cols="",]
+|========================
+|initialise specification
+|========================
+
+Example
+
+`probcli my.mch -init` +
+`nr_of_components(1)` +
+`% checking_component_properties(1,[])` +
+`% enumerating_constants_without_constraints([typedval(fd(_24428,ID),global(ID),iv)])` +
+`% grounding_wait_flags` +
+`grounding_component(1)` +
+`grounding_component(2)` +
+`% found_enumeration_of_constants(0,2)` +
+`% backtrack(found_enumeration_of_constants(0,2))` +
+`% found_enumeration_of_constants(0,1)` +
+`% backtrack(found_enumeration_of_constants(0,1))` +
+`<- 0: SETUP_CONSTANTS :: root` +
+`% Could not set up constants with parameters from trace file.` +
+`% Will attempt any possible initialisation of constants.` +
+` | 0: SETUP_CONSTANTS success -->0` +
+` - <- 1: INITIALISATION :: 0` +
+`% Could not initialise with parameters from trace file.` +
+`% Will attempt any possible initialisation.` +
+`ALL OPERATIONS COVERED` +
+` -  | 1: INITIALISATION success -->2` +
+` -  - SUCCESS`
+
+[[cbc]]
+-cbc
+^^^^^
+
+Description
+
+[cols="",]
+|====================================================================
+|constraint-based invariant checking for an operation (also use =all)
+|====================================================================
+
+Example
+
+`probcli my.mch -cbc all`
+
+[[cbc_deadlock]]
+-cbc_deadlock
+^^^^^^^^^^^^^
+
+Description
+
+[cols="",]
+|=======================================================================
+|Perform constraint-based deadlock checking (also use -cbc_deadlock_pred
+PRED)
+|=======================================================================
+
+This will try to find a state which satisfies the invariant and
+properties and where no operation/event is enabled. Note: if ProB finds
+a counter example then the machine cannot be proven to be deadlock free.
+However, the particular state may not be reachable from the initial
+state(s). If you want to find a reachable deadlock you have to use the
+model checker.
+
+[[cbc_deadlock_pred]]
+-cbc_deadlock_pred
+^^^^^^^^^^^^^^^^^^^
+
+Description
+
+[cols="",]
+|===================================================
+|Constraint-based deadlock finding given a predicate
+|===================================================
+
+This is like -cbc_deadlock but you provide an additional predicate. ProB
+will only find deadlocks which also make this predicate true.
+
+Example
+
+`probcli my.mch  -cbc_deadlock_pred ````n=15`''
+
+[[cbc_assertions]]
+-cbc_assertions
+^^^^^^^^^^^^^^^
+
+Description
+
+[cols="",]
+|====================================================
+|Constraint-based checking of assertions on constants
+|====================================================
+
+This will try and find a solution for the constants which make an
+assertion (on constants) false.
+
+You can use the extra command `-cbc_output_file FILE` to write the
+result of this check to a file. You can also use the extra command
+`-cbc_option contradiction_check` to ask ProB to check if there is a
+contradiction in the properties (in case the check did not find a
+counter-example to the assertions). The extra command
+`-cbc_option unsat_core` tells ProB to compute the unsatisfiable core in
+case a proof the assertions was found. Note that the `TIME_OUT`
+preference is multiplied by 10 for this command.
+
+There are various variations of this command:
+
+`-cbc_assertions_proof` +
+`-cbc_assertions_tautology_proof `
+
+Both commands do not allow enumeration warnings to occur. The latter
+command ignores the PROPERTIES and tries to check whether the
+ASSERTION(s) are tautologies. Both commands can be useful to use ProB as
+a Prover/Disprover (as is done in Atelier-B 4.3).
+
+[[cbc_sequence]]
+-cbc_sequence
+^^^^^^^^^^^^^^
+
+Description
+
+[cols="",]
+|=======================================================================
+|Constraint-based searching for a sequence of operation names (separated
+by semicolons)
+|=======================================================================
+
+This will try and find a solution for the constants, initial variable
+values and parameters which make execution of the given sequence of
+operations possible.
+
+Example
+
+`probcli my.mch  -cbc_sequence ````op1;op2`''
+
+[[strict]]
+-strict
+^^^^^^^
+
+Description
+
+[cols="",]
+|=======================================================================
+|raise error and stop probcli if anything unexpected happens, e.g., if
+model checking finds a counter example or trace checking fails or any
+unexpected error happens
+|=======================================================================
+
+Example
+
+`probcli my.mch -t -strict`
+
+[[expcterr]]
+-expcterr
+^^^^^^^^^^
+
+Description
+
+[cols="",]
+|=======================================================================
+|expect error to occur (=cbc,mc,ltl,...) Tell ProB that you expect a
+certain error to occur. Mainly useful for regression tests (in
+conjunction with the -strict option).
+|=======================================================================
+
+Example
+
+`probcli examples/B/Benchmarks/CarlaTravelAgencyErr.mch -mc 1000 -expcterr invariant_violation -strict`
+
+[[animate]]
+-animate
+^^^^^^^^^
+
+Description
+
+[cols="",]
+|===============================
+|random animation (max Nr steps)
+|===============================
+
+Animates the machine randomly, maximally Nr of steps. It will stop if a
+deadlock is reached and report an error. You can also use the command
+`-animate_all`, which will only stop at a deadlock (and not report an
+error). Be careful: `-animate_all` could run forever.
+
+Example
+
+`probcli my.mch -animate 100`
+
+[[execute]]
+-execute
+^^^^^^^^^
+
+Description
+
+[cols="",]
+|========================
+|execution (max Nr steps)
+|========================
+
+Executes the ``first'' enabled operation of a machine, maximally Nr of
+steps. It will stop if a deadlock is reached and report an error. You
+can also use the command `-execute_all`, which will only stop at a
+deadlock (and not report an error). Be careful: `-execute_all` could run
+forever.
+
+In contrast to -animate, -execute will
+
+* always choose the first enabled operation it finds and stop searching
+for further enabled operations in that state (-animate will compute all
+enabled operations up to the limit set by the `MAX_OPERATIONS` or
+`MAX_INITIALISATIONS` preference and then choose randomly); the order of
+operations in the B machine is thus important for -execute
+* not store intermediate states in the state space; as such -execute is
+faster but after execution one only has access to the first state and
+the final state of execution
+
+Example
+
+`probcli my.mch -execute 100`
+
+[[det_check]]
+-det_check
+^^^^^^^^^^
+
+Description
+
+[cols="",]
+|==========================================
+|check if animation steps are deterministic
+|==========================================
+
+Checks if every step of the animation is deterministic (i.e., only one
+operation is possible, and it can only be executed in one possible way
+as far as parameters and result is concerned). Currently this option has
+only an effect for the -animate and the -init commands.
+
+Example
+
+`probcli my.mch -animate 100 -det_check`
+
+[[det_constants]]
+-det_constants
+^^^^^^^^^^^^^^
+
+Description
+
+[cols="",]
+|==========================================
+|check if animation steps are deterministic
+|==========================================
+
+Checks if the SETUP_CONSTANTS step is deterministic (i.e., only one way
+to set up the constants is possible). Currently this option has only an
+effect for the -animate and the -init commands.
+
+Example
+
+`probcli my.mch -init -det_constants`
+
+[[his]]
+-his
+^^^^^
+
+Description
+
+[cols="",]
+|================================
+|save animation history to a file
+|================================
+
+Save the animation (or model checking) history to a text file.
+Operations are separated by semicolons. The output can be adapted using
+the -his_option command. With -his_option show_states the -his command
+will also write out all states to the file (in the form of comments
+before and after operations). With -his_option show_init only the
+initial state is written out. The -his command is executed after the
+-init, -animate, -t or -mc commands. See also the -sptxt command to only
+write the current values of variables and constants to a file.
+
+Example
+
+`probcli -animate 5 -his history.txt  supersimple.mch`
+
+Additionally we can have the initialised variables and constants:
+
+`probcli -animate 5 -his history.txt -his_option show_init supersimple.mch`
+
+And we can have in addition the values of the variables in between (and
+at the end):
+
+`probcli -animate 5 -his history.txt -his_option show_states supersimple.mch`
+
+With -his_option trace_file as only option, probcli will write the
+history in Prolog format, which can later be used by the -t command.
+
+[[i]]
+-i
+^^
+
+Description
+
+[cols="",]
+|=====================
+|interactive animation
+|=====================
+
+After performing the other commands, ProB stays in interactive mode and
+allows the user to manually animate the loaded specification.
+
+Example
+
+`probcli my.mch -i`
+
+[[repl]]
+-repl
+^^^^^
+
+Description
+
+[cols="",]
+|======================================
+|start interactive read-eval-print-loop
+|======================================
+
+Example
+
+`probcli my.mch -p CLPFD TRUE -repl`
+
+A list of commands can be obtained by typing `:help` (just help for
+versions 1.3.x of probcli). The interactive read-eval-print-loop can be
+exited using `:q` (just typing a return on a blank line for versions
+1.3.x of probcli).. If in addition you want see a graphical
+representation of the solutions found you can use the following command
+and open the `out.dot` file using dotty or GraphViz:
+
+`probcli -repl -evaldot ~/out.dot`
+
+You can also use the `-eval` command to evaluate specific formulas or
+expressions:
+
+`probcli -eval ````1+2`''
+
+For convenience, these formulas can also be put into a separate file:
+
+`probcli -eval_file MyFormula.txt`
+
+[[c]]
+-c
+^^
+
+Description
+
+[cols="",]
+|=========================
+|print coverage statistics
+|=========================
+
+Example
+
+`probcli my.mch -mc 1000 -c`
+
+You can also use the longer name for the command:
+
+`probcli my.mch -mc 1000 --coverage`
+
+There is also a version which prints a shorter summary (and which is
+much faster for large state spaces):
+
+`probcli my.mch -mc 1000 --coverage_summary`
+
+[[cc]]
+-cc
+^^^^
+
+Description
+
+[cols="",]
+|=======================================================================
+|print and check coverage statistics Print coverage statistics and check
+that the given number of nodes and transitions have been computed.
+|=======================================================================
+
+Example
+
+`probcli my.mch -mc 1000 -cc 10 25`
+
+[[p]]
+-p
+^^^
+
+Description
+
+[cols="",]
+|=======================================================================
+|Set to . For more information about preferences please have a look at
+link:/Using_the_Command-Line_Version_of_ProB#Preferences[Preferences]
+|=======================================================================
+
+You can also use --pref instead of -p. Example
+
+`probcli my.mch -p TIME_OUT 8000 -p CLPFD TRUE -mc 10000`
+
+[[prefs]]
+-prefs
+^^^^^^^
+
+Description
+
+[cols="",]
+|=======================================================================
+|Set preferences from preference file . The file should be created by
+the Tcl/Tk version of ProB; this version automatically creates a file
+called ProB_Preferences.pl. For more information about preferences
+please have a look at
+link:/Using_the_Command-Line_Version_of_ProB#Preferences[Preferences]
+|=======================================================================
+
+Example
+
+`probcli my.mch -prefs ProB_Preferences.pl`
+
+[[card]]
+-card
+^^^^^^
+
+Description
+
+[cols="",]
+|=======================================================================
+|set cardinality (scope in Alloy terminology) of a B deferred set. This
+overrides the default cardinality (which can be set using
+`-p DEFAULT_SETSIZE `).
+|=======================================================================
+
+Example
+
+`probcli my.mch -card PID 5`
+
+[[goal]]
+-goal
+^^^^^^
+
+Description
+
+[cols="",]
+|====================================
+|set GOAL predicate for model checker
+|====================================
+
+Example
+
+`probcli my.mch -mc 10000000 -goal ````n=18`''`  -strict -expcterr goal_found`
+
+[[scope]]
+-scope
+^^^^^^^
+
+Description
+
+[cols="",]
+|=======================================================================
+|set SCOPE predicate for model checker; states which do not satisfy the
+SCOPE predicate will be ignored (invariant will not be checked and no
+outgoing transitions will be computed)
+|=======================================================================
+
+Example
+
+`probcli my.mch -mc 10000000 -scope ````n<18`''`  `
+
+[[s]]
+-s
+^^^
+
+Description
+
+[cols="",]
+|=================================
+|start socket server on given port
+|=================================
+
+Example
+
+`probcli my.mch ...`
+
+[[ss]]
+-ss
+^^^
+
+Description
+
+[cols="",]
+|================================
+|start socket server on port 9000
+|================================
+
+Example
+
+`probcli my.mch ...`
+
+[[sf]]
+-sf
+^^^
+
+Description
+
+[cols="",]
+|=====================================
+|start socket server on some free port
+|=====================================
+
+Example
+
+`probcli my.mch ...`
+
+[[sptxt]]
+-sptxt
+^^^^^^^
+
+Description
+
+[cols="",]
+|======================================
+|save constants and variables to a file
+|======================================
+
+Save the values of constants and variables to a text file in classical B
+syntax. The -sptxt command is executed after the -init, -animate, -t or
+-mc commands. The values are fully written out (some sets, e.g.,
+infinite sets may be written out symbolically).
+
+See also the -his command.
+
+Example
+
+`probcli -animate 5 -sptxt state.txt  supersimple.mch`
+
+This will write the values of all variables and constants to the file
+state.txt after animating the machine 5 steps.
+
+[[cache]]
+-cache
+^^^^^^^
+
+Description
+
+[cols="",]
+|=======================================================================
+|save constants (and in future also variables) to a file to avoid
+recomputation
+|=======================================================================
+
+This commands saves the values of constants for the current B machine
+and puts those values into files in the specified directory. The command
+will also tell ProB to try and reuse constants saved for subsidiary
+machines (included using SEES for example) whenever possible. The
+purpose of the command is to avoid recomputing constants as much as
+possible, as this can be very time consuming. This also works for values
+of variables computed in the initialisation or even using operations.
+However, we do not support refinements at the moment.
+
+Note: this command can also be used when starting up the ProB Tcl/Tk
+version.
+
+[[logxml]]
+-logxml
+^^^^^^^^
+
+Description
+
+[cols="",]
+|======================================================
+|log activities and results of probcli in XML format in
+|======================================================
+
+Example
+
+`probcli my.mch -mc 1000 -logxml log.xml`
+
+[[logxml_write_vars]]
+-logxml_write_vars
+^^^^^^^^^^^^^^^^^^^
+
+Description
+
+[cols="",]
+|=======================================================================
+|after processing other commands (such as -execute) write values of
+variables having prefix PREFIX in their name into the XML log file (if
+XML logging has been activated using the -logxml command)
+|=======================================================================
+
+Example
+
+`probcli my.mch -execute 1000 -logxml log.xml -logxml_write_vars out`
+
+[[l]]
+-l
+^^^
+
+Description
+
+[cols="",]
+|=====================================
+|log activities in using Prolog format
+|=====================================
+
+Example
+
+`probcli my.mch -mc 1000 -l my.log`
+
+[[ll]]
+-ll
+^^^
+
+Description
+
+[cols="",]
+|=========================================
+|log activities in /tmp/prob_cli_debug.log
+|=========================================
+
+Example
+
+`probcli my.mch -mc 1000 -ll`
+
+[[lg]]
+-lg
+^^^^
+
+Description
+
+[cols="",]
+|=====================
+|analyse using gnuplot
+|=====================
+
+Example
+
+`probcli my.mch ...`
+
+[[pp]]
+-pp
+^^^^
+
+Description
+
+[cols="",]
+|=======================================
+|pretty-print internal representation to
+|=======================================
+
+Example
+
+`probcli my.mch -pp my_pp.mch`
+
+[[ppf]]
+-ppf
+^^^^^
+
+Description
+
+[cols="",]
+|=======================================================================
+|pretty-print internal representation to , force printing of all type
+infos
+|=======================================================================
+
+Example
+
+`probcli my.mch -ppf my_ppf.mch`
+
+[[v]]
+-v
+^^
+
+Description
+
+[cols="",]
+|==========================
+|set ProB into verbose mode
+|==========================
+
+Example
+
+`probcli my.mch -mc 1000 -v`
+
+[[version]]
+-version
+^^^^^^^^
+
+Description
+
+[cols="",]
+|=========================
+|print version information
+|=========================
+
+There is also an alternate command called -svers which just prints the
+version number of ProB. Example
+
+`probcli -version` +
+`ProB Command Line Interface` +
+`  VERSION 1.3.4-rc1 (9556:9570M)` +
+`  $LastChangedDate: 2011-11-16 18:36:18 +0100 (Wed, 16 Nov 2011) $` +
+`  Prolog: SICStus 4.2.0 (x86_64-darwin-10.6.0): Mon Mar  7 20:03:36 CET 2011` +
+`  Application Path: /Users/leuschel/svn_root/NewProB`
+
+`probcli -svers` +
+`VERSION 1.3.4-rc1 (9556:9570M)`
+
+You can use `probcli -version -v` to obtain more information about your
+version of probcli.
+
+[[check_java_version]]
+-check_java_version
+^^^^^^^^^^^^^^^^^^^
+
+Description
+
+[cols="",]
+|===========================================
+|check Java and B parser version information
+|===========================================
+
+This command is available as of ProB version 1.5.1-beta5 or higher. It
+can be useful to check that your Java is correctly installed and that
+the ProB B parser can operate correctly
+
+`probcli -check_java_version` +
+`Result of checking Java version:` +
+` Java is correctly installed and version 1.7.0_55-b13 is compatible with ProB requirements (>= 1.7).` +
+` ProB B Java Parser available in version: 2016-02-25 15:27:18.55.`
+
+[[assertions]]
+-assertions
+^^^^^^^^^^^
+
+Description
+
+[cols="",]
+|=======================================================================
+a|
+check ASSERTIONS of your machine
+
+If you provide the -t switch, the ASSERTIONS will be checked after
+executing your trace. Otherwise, they will be checked in an initial
+state. ProB will automatically initialize the machine if you have not
+provide the -init or -t switch.
+
+You can also use -main_assertions to check only the ASSERTIONS found in
+the main file.
+
+If your ASSERTIONS are all static (i.e., make no reference to
+variables), then ProB will remove all CONSTANTS and PROPERTIES from your
+machine which are not linked (directly or indirectly) to the ASSERTIONS.
+This optimization will only be made if you provide no other switch, such
+as -mc or -animate which may require the computation of the variables.
+
+|=======================================================================
+
+Example
+
+`probcli my.mch -init -assertions`
+
+[[properties]]
+-properties
+^^^^^^^^^^^
+
+Description
+
+[cols="",]
+|=======================================================================
+|check PROPERTIES Note: you should probably first initialise the machine
+(e.g., with -init). If the constants have not yet been set up, probcli
+will debug the properties.
+|=======================================================================
+
+Example
+
+`probcli my.mch -init -properties`
+
+[[dot_output]]
+-dot_output
+^^^^^^^^^^^^
+
+Description
+
+[cols="",]
+|=======================================================================
+|define path for generation of dot files for false properties or
+assertions
+|=======================================================================
+
+This option is applicable to -properties and -assertions. It will result
+in individual dot files being generated for every false or unknown
+property or assertion. Assertions are numbered A0,A1,... and properties
+P0,P1,... You can also force to generate dot files for all properties
+(i.e., also the true ones) using the -dot_all command-line flag.
+
+Example
+
+`probcli my.mch -init -properties -dot_output somewhere/`
+
+This will generate files somewhere/my_P0_false.dot,
+somewhere/my_P1_false.dot, ...
+
+[[rc]]
+-rc
+^^^
+
+Description
+
+[cols="",]
+|==============================================
+|runtime checking of types/pre-/post-conditions
+|==============================================
+
+Example
+
+`probcli my.mch ...`
+
+[[ltlfile]]
+-ltlfile
+^^^^^^^^^
+
+Description
+
+[cols="",]
+|==========================
+|check LTL formulas in file
+|==========================
+
+Example
+
+`probcli my.mch ...`
+
+[[ltlassertions]]
+-ltlassertions
+^^^^^^^^^^^^^^
+
+Description
+
+[cols="",]
+|=====================================
+|check LTL assertions (in DEFINITIONS)
+|=====================================
+
+Example
+
+`probcli my.mch ...`
+
+[[ltllimit]]
+-ltllimit
+^^^^^^^^^^
+
+Description
+
+[cols="",]
+|==============================================
+|explore at most states when model-checking LTL
+|==============================================
+
+Example
+
+`probcli my.mch ...`
+
+[[save]]
+-save
+^^^^^^
+
+Description
+
+[cols="",]
+|===========================================
+|save state space for later refinement check
+|===========================================
+
+Example
+
+`probcli my.mch ...`
+
+[[refchk]]
+-refchk
+^^^^^^^^
+
+Description
+
+[cols="",]
+|===================================================
+|refinement check against previous saved state space
+|===================================================
+
+Example
+
+`probcli my.mch ...`
+
+[[mcm_tests]]
+-mcm_tests
+^^^^^^^^^^^
+
+Generate test cases for the given specification. Each test case consists
+of a sequence of operations resp. events (a so-called trace) that
+
+* start in a state after an initialisation
+* contain a requested operation/event
+* end in a state where the is fulfilled
+
+The user can specify what requested operations/events are with the
+option link:/#-mcm_cover_<Operation(s)>[-mcm_cover].
+
+ProB uses a ``breadth-first'' approach to search for test cases. When
+all requested operations/events are covered by test cases within maximum
+length M, the algorithm will explore the complete state space with that
+maximum distance M from the initialisation. It outputs all found traces
+that satisfy the requirements above.
+
+The algorithm stops if either
+
+* it has covered all required operations/events with the current search
+depth
+* or it has reached the maximum search depth or maximum number of
+explored states.
+
+The required parameters are:
+
+Depth::
+  The maximum length of traces that the algorithm searches for test
+  until it stops without covering all required operations/events.
+MaxStates::
+  The maximum number of explored states until the algorithm stops
+  without covering all required operations/events.
+EndPredicate::
+  A predicate in B syntax that the last state of a trace must fulfil. If
+  you do not have any restrictions on that state, use a trivially true
+  predicate like *1=1*
+FILE::
+  The found test cases a written to the XML file .
+
+Example
+
+`probcli my.mch -mcm_tests 10 2000 ````EndStateVar=TRUE`''` testcases.xml -mcm_cover op1,op2`
+
+generates test cases for the operations *op1* and *op2* of the
+specification *my.mch*. The maximum length of traces is 10, at most 2000
+states are explored. Each test case ends in a state where the predicate
+*EndStateVar=TRUE* holds. The found test cases are written to a file
+*testcases.xml*.
+
+As of version 1.6.0, the operation arguments are also written to the XML
+file. The preference `INTERNAL_ARGUMENT_PREFIX` can be used to provide a
+prefix for internal operation arguments; any argument/parameter whose
+name starts with that prefix is considered an internal parameter and not
+shown in the trace file. Also, as of version 1.6.0, the
+non-deterministic initialisations are shown in the XML trace file: all
+variables and constants where more than one possible initialisation
+exists are written into the trace file, as argument of an INITIALISATION
+event.
+
+[[mcm_cover]]
+-mcm_cover
+^^^^^^^^^^^
+
+Specify an operation or event that should be covered when generating
+test cases with the *-mcm_test* option. Multiple operations/events can
+be specified by seperating them by comma or by using *-mcm_cover*
+several times.
+
+See
+link:/#-mcm_tests_<Depth>_<MaxStates>_<EndPredicate>_<FILE>[-mcm-tests]
+for further details.
+
+[[spdot]]
+-spdot
+^^^^^^^
+
+Description
+
+[cols="",]
+|=======================================
+|Write graph of the state space to a dot
+|=======================================
+
+Example
+
+`probcli my.mch -mc 100 -spdot my_statespace.dot`
+
+[[cbc_tests]]
+-cbc_tests
+^^^^^^^^^^^
+
+Generate test cases by constraint solving with maximum length *Depth*,
+the last state satisfies *EndPredicate* and the test cases are written
+to *File*. If the predicate is the empty string we assume truth. If the
+filename is the empty string no file is generated. See also the page on
+link:/Test_Case_Generation[Test_Case_Generation].
+
+[[cbc_cover]]
+-cbc_cover
+^^^^^^^^^^^
+
+When generating CB test cases, *Operation* should be covered. The option
+can be given multiple times to specify several operations.
+Alternatively, multiple operations can be separated by a comma. You can
+also use the option
+
+....
+-cbc_cover_match PartialName
+....
+
+to match all operations whose name contains PartialName. See also the
+page about link:/Test_Case_Generation[Test_Case_Generation].
+
+[[test_description]]
+-test_description
+^^^^^^^^^^^^^^^^^^
+
+Read the options for constraint based test case generation from *File*.
+
+[[bmc]]
+-bmc
+^^^^^
+
+[cols="",]
+|=======================================================================
+|Run the link:/Bounded_Model_Checking[bounded model checker] until
+maximum trace depth specified. Looks for invariant violations using the
+constraint-based test case generation algorithm.
+|=======================================================================
+
+Example
+
+`probcli my.mch -bmc 20`
+
+[[csp-guide]]
+-csp-guide
+^^^^^^^^^^^
+
+Use the CSP File *File* to guide the B Machine (``CSP||B''). (This
+feature is included since version 1.3.5-beta7.)
+
+[[preferences]]
+Preferences
+~~~~~~~~~~~
+
+You can use these preferences within the command:
+
+`-p `` `
+
+[cols=",",options="header",]
+|=======================================================================
+| |
+|MAXINT |nat ==> MaxInt, used for expressions such as xx::NAT
+(2147483647 for 4 byte ints)
+
+|MININT |neg ==> MinInt, used for expressions such as xx::INT
+(-2147483648 for 4 byte ints)
+
+|DEFAULT_SETSIZE |nat ==> Size of unspecified deferred sets in SETS
+section. Will be used if a set s is neither enumerated, has no no
+card(s)=nr predicate in the PROPERTIES and has no scope_s == Nr
+DEFINITION.
+
+|MAX_INITIALISATIONS |nat ==> Max Number of Initialisations and ways to
+setup constants computed
+
+|MAX_OPERATIONS |nat ==> Max Number of Enablings per Operation Computed
+
+|ANIMATE_SKIP_OPERATIONS |bool ==> Animate operations which are skip or
+PRE C THEN skip
+
+|COMPRESSION |bool ==> Use more aggressive COMPRESSION when storing
+states
+
+|EXPAND_CLOSURES_FOR_STATE |bool ==> Convert lazy form back into
+explicit form for Variables, Constants, Operation Arguments. ProB will
+sometimes try to keep certain sets symbolic. If this preference is TRUE
+then ProB will try to expand those sets for variables and constants
+after an operation has been executed.
+
+|SYMBOLIC |bool ==> Lazy expansion of lambdas and set comprehensions. By
+default ProB will keep certain sets symbolic (e.g., sets it knows are
+infinite). When this preference is set to TRUE then all set
+comprehensions and lambda abstractions will at first be kept symbolic
+and only expanded into explicit form if needed.
+
+|CLPFD |bool ==> Use CLP(FD) solver for B integers (restricts range to
+-2^28..2^28-1 on 32 bit computers). Setting this preference to TRUE
+should substantially improve ProB's ability to solve complicated
+predicates involving integers. However, it may cause CLP(FD) overflows
+in certain circumstances.
+
+|SMT |bool ==> Enable SMT-Mode (aggressive treatment of : and /: inside
+predicates). With this predicate set to TRUE ProB will be better at
+solving certain constraint solving tasks. It should be enabled when
+doing constraint-based invariant or deadlock checking. ProB Tcl/Tk will
+turn this preference on automatically for those checks.
+
+|STATIC_ORDERING |bool ==> Use static ordering to enumerate constants
+which occur in most PROPERTIES first
+
+|SYMMETRY_MODE |[off,flood,nauty,hash] ==> Symmetry Mode:
+off,flood,canon,nauty,hash
+
+|TIME_OUT |nat1 ==> Time out for computing enabled transitions (in ms,
+is multiplied by a factor for other computations)
+
+|PROOF_INFO |bool ==> Use Proof Information to restrict invariant
+checking to affected unproven clauses. Most useful in EventB for models
+exported from Rodin.
+
+|TRY_FIND_ABORT |bool ==> Try more aggressively to detect ill-defined
+expressions (e.g. applying function outside of domain), may slow down
+animator
+
+|NUMBER_OF_ANIMATED_ABSTRACTIONS |nat ==> How many levels of refined
+models are animated by default
+
+|ALLOW_INCOMPLETE_SETUP_CONSTANTS |bool ==> Allow ProB to proceed even
+if only part of the CONSTANTS have been found.
+
+|PARTITION_PROPERTIES |bool ==> Partition predicates (PROPERTIES) into
+components
+
+|USE_RECORD_CONSTRUCTION |bool ==> Records: Check if axioms/properties
+describe a record pattern
+
+|OPERATION_REUSE |bool ==> Try and reuse previously computed operation
+effects in B/Event-B
+
+|SHOW_EVENTB_ANY_VALUES |bool ==> Show top-level ANY variable values of
+B Operations without parameters as parameters
+
+|RANDOMISE_OPERATION_ORDER |bool ==> Randomise order of operations when
+computing successor states
+
+|EXPAND_FORALL_UPTO |nat ==> When analysing predicates: max. domain size
+for expansion of forall (use 0 to disable expansion)
+
+|MAX_DISPLAY_SET |int ==> Max size for pretty-printing sets (-1 means no
+limit)
+
+|CSP_STRIP_SOURCE_LOC |bool ==> Strip source location for CSP; will
+speed up model checking
+
+|WARN_WHEN_EXPANDING_INFINITE_CLOSURES |int ==> Warn when expanding
+infinite closures if MAXINT larger than:
+
+|TRACE_INFO |bool ==> Provide various tracing information on the
+terminal/console.
+
+|DOUBLE_EVALUATION |bool ==> Evaluate PREDICATES positively and
+negatively when analyzing assertions or properties
+
+|RECURSIVE |bool ==> Lazy expansion of *Recursive* set Comprehensions
+and lambdas
+
+|IGNORE_HASH_COLLISIONS |bool ==> Ignore Hash Collisions (if true not
+all states may be computed, visited states are not memorised !)
+
+|FORGET_STATE_SPACE |bool ==> Do not remember state space (mainly useful
+in conjunction with Ignore Hash Collisions)
+
+|NEGATED_INVARIANT_CHECKING |bool ==> Perform double evaluation
+(positive and negative) when checking invariants
+
+|CSE |bool ==> Perform common-sub-expression elimination
+
+|CSE_SUBST |bool ==> Perform common-sub-expression elimination also for
+B substitutions
+|=======================================================================
+
+Example
+
+`probcli my.mch -p TIME_OUT 5000 -p CLPFD TRUE -p SYMMETRY_MODE hash -mc 1000`
+
+[[some-probcli-examples]]
+Some probcli examples
+~~~~~~~~~~~~~~~~~~~~~
+
+To load a file My.mch, setup the constants and initialize it do:
+
+....
+probcli -init My.mch
+....
+
+To load a file M.mch, setup the constants, initialize and then check all
+assertions with Atelier-B's default values for MININT and MAXINT and an
+increased timeout of 5 seconds do:
+
+....
+probcli -init -assertions -p MAXINT 2147483647 -p MININT -2147483647 -p TIME_OUT 5000 M.mch
+....
+
+To fully model check a specification M.mch while tryining to minimize
+memory consumption do:
+
+....
+probcli -model_check -p COMPRESSION TRUE M.mch
+....
+
+To model check a specification M.mch while trying to minimize memory
+consumption further by not storing processed stats and using symmetry
+reduction (and accepting hash collisions) do:
+
+....
+probcli -p COMPRESSION -p IGNORE_HASH_COLLISIONS TRUE -p FORGET_STATE_SPACE TRUE -p SYMMETRY_MODE hash -model_check M.mch 
+....
+
+[[command-line-arguments-for-prob-tcltk]]
+Command-line Arguments for ProB Tcl/Tk
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Note that the stand-alone Tcl/Tk version also supports a limited form of
+command-line preferences:
+
+* *FILE* (the name/path of the file to be loaded)
+* *-prefs PREF_FILE* (to use a specific preferences file, rather than
+the default ProB_Preferences.pl in your home folder)
+* *-batch* (to instruct ProB not to try to bring up windows, but to
+print information only to the terminal)
+* *-selfcheck* (to run the standard unit tests)
+* *-t* (to perform the Trace Check on the default trace file associated
+with the specification)
+* *-tcl TCL_Command* (to run a particular pre-defined Tcl command)
+* *-mc* (to perform model checking)
+* *-c* (to compute the coverage)
+* *-ref* (to perform the default trace refinment check)
+
+However, the comand-line version of ProB, called *probcli*, provides
+more features. It also does not depend on Tcl/Tk and can therefore be
+run on systems without Tcl/Tk.
