@@ -56,7 +56,7 @@ task bibtex {
 }
 
 asciidoctor {
-    dependsOn = ['bibtex','jrubyPrepare','buildMaindocs']
+    dependsOn = ['cleanpdf','bibtex','jrubyPrepare','buildMaindocs']
     requires = ['asciidoctor-diagram', 'asciidoctor-bibtex']
     gemPath = jrubyPrepare.outputDir
 
@@ -94,6 +94,13 @@ clean.doFirst {
     }
     tree.each { it.delete() }
     file('src/docs/asciidoc/combined.bib').delete()
+}
+
+task cleanpdf() {
+  def tree = fileTree('build/asciidoc/pdf') {
+     include '*.pdf'
+  }
+  tree.each { it.delete() }
 }
 
 defaultTasks 'clean','asciidoctor'
