@@ -1,3 +1,4 @@
+= Gilbreath Card Trick
 My belief is that B is a very expressive language, which can be very
 convenient for modelling many problems. Hence, when in the Dagstuhl
 library I stumbled upon a nice short

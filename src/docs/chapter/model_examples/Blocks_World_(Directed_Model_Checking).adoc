@@ -1,3 +1,4 @@
+= Blocks World
 In this example we want to highlight the new
 link:/Tutorial_Directed_Model_Checking[directed model checking] features
 of ProB (available as of version 1.5.1), which allow one to direct the

@@ -1,3 +1,5 @@
+= Jobs puzzle
+
 Based on _Michael Leuschel, David Schneider. Towards B as a High-Level
 Constraint Modeling Language. In Yamine Ait Amer, Klaus-Dieter Schewe
 (ed.): Abstract State Machines, Alloy, B, TLA, VDM, and Z, Springer

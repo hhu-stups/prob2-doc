@@ -1,3 +1,5 @@
+= Conway's game of life 
+
 This is a simple model of Conway's Game of Life. It was written for
 animation with ProB. One interesting aspect is that the simulation is
 unbounded, i.e., not restricted to some pre-determined area of the grid.

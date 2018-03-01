@@ -1,3 +1,5 @@
+= Rush hour (XTL)
+
 This case studies tackles encoding the
 http://en.wikipedia.org/wiki/Rush_Hour_(board_game)[rush hour board
 game] in which cars are packed on a 6-by-6 grid and can either move

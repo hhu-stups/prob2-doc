@@ -1,3 +1,5 @@
+= Nine prisoners puzzle
+
 An
 https://www.quantamagazine.org/20150609-a-design-dilemma-solved-minus-designs/[article
 in Quanta magazine] mentions the following puzzle by Dudeney and

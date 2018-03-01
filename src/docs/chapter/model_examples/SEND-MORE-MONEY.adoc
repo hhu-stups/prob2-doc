@@ -1,3 +1,5 @@
+= Send more money puzzle
+
 In this entry we study how to solve the famous
 https://en.wikipedia.org/wiki/Verbal_arithmetic[verbal arithmetic
 SEND-MORE-MONEY] puzzle. The task is to find the digits S,E,N,D,M,O,R,Y

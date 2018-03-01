@@ -1,3 +1,5 @@
+= N-Bishops puzzle
+
 This puzzle is a variation of the link:/N-Queens[N-Queens] puzzle: we
 try to place as many bishops as possible on a n by n chess board. In
 contrast to the N-Queens puzzle, one can place more than one bishop per

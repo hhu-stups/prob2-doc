@@ -1,3 +1,5 @@
+= N-Queens puzzle
+
 The N-Queens is a famous constraint solving benchmark puzzle. It is a
 generalisation of the original
 http://en.wikipedia.org/wiki/Eight_queens_puzzle[eight queens puzzle],

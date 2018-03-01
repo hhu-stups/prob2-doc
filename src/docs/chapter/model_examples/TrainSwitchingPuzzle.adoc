@@ -1,3 +1,5 @@
+= Train switching puzzle
+
 This model was developed to solve Puzzle Nr 40 from the book ``My best
 mathematical and logical puzzles'' by Martin Gardner. Using
 breadth-first, ProB takes about 5 seconds to find the shortest solution

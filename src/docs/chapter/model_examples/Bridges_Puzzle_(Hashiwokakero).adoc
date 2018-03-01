@@ -1,3 +1,5 @@
+= Bridges Puzzle
+
 The https://en.wikipedia.org/wiki/Hashiwokakero[Hashiwokakero] Puzzle is
 a logical puzzle where one has to build bridges between islands. The
 puzzle is also known under the name Ai-Ki-Ai. The puzzles can also be

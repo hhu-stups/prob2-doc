@@ -1,3 +1,5 @@
+= Fibonacci Sequence with dynamic programming
+
 In this example we show how one can encode the Fibonacci problem in such
 a way that you get dynamic programming automatically when using ProB to
 solve the encoding:

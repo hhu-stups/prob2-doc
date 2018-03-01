@@ -1,3 +1,5 @@
+= Apples and Oranges
+
 This puzzle is
 https://bgr.com/2015/11/20/apple-interview-questions/[apparently an
 Interview question at Apple]. Quoting from
@@ -79,4 +81,4 @@ command ``Expression as Table...'' in the Visualize->Formulas menu. If
 you enter ``DecisionFunction'' as expression you will see the following
 tabular representation:
 
-/File:ProB_ApplesOranges_Table.png[500px|center]
+image::wiki/ProB_ApplesOranges_Table.png[]

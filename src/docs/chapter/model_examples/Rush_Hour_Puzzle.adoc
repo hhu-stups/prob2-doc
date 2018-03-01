@@ -1,6 +1,5 @@
 [[b-encoding-of-the-rush-hour-puzzle]]
-B Encoding of the Rush Hour Puzzle
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+= Rush Hour Puzzle
 
 This case studies tackles encoding the
 http://en.wikipedia.org/wiki/Rush_Hour_(board_game)[rush hour board
