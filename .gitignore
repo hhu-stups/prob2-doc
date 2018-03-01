@@ -20,3 +20,4 @@ combined.bib
 *.cache
 diag-*.png.cache
 diag-*.png
+tmp
