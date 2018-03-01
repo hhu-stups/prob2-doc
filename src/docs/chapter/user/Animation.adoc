@@ -1,4 +1,4 @@
-/Category:User_Manual[Category:User Manual]
+= Animation
 
 The animation facilities of ProB allow users to gain confidence in their
 specifications. These features try to be as user-friendly as possible

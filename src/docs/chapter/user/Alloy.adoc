@@ -1,4 +1,4 @@
-/Category:User_Manual[Category:User Manual]
+= Alloy
 
 As of version 1.8 ProB provides support to load
 http://alloy.mit.edu/alloy/[Alloy] models. The Alloy models are
@@ -61,7 +61,7 @@ run show for exactly 4 queen, 5 int
 This can be loaded in ProB, as shown in the following screenshot. To run
 the ``show'' command you have to use ``Find Sequence...'' command for
 ``run_show'' in the ``Constraint-Based Checking'' submenu of the
-``Verify'' menu. /File:ProBAlloyQueens.png[800px|center]
+``Verify'' menu. image::ProBAlloyQueens.png[800px|center]
 
 Internally the Alloy model is translated to the following B model:
 
@@ -92,11 +92,10 @@ OPERATIONS
     run_show = PRE show_ THEN skip END
 END
 ....
-
+<<<<
 [[river-crossing-puzzle]]
 River Crossing Puzzle
 ^^^^^^^^^^^^^^^^^^^^^
-
 ....
 module river_crossing
 open util/ordering[State]
@@ -126,7 +125,8 @@ This can be loaded in ProB, as shown in the following screenshot. To run
 the ``show'' command you have to use ``Find Sequence...'' command for
 ``run_show'' in the ``Constraint-Based Checking'' submenu of the
 ``Verify'' menu (after enabling Kodkod in the Preferences menu).
-/File:ProBAlloyRiver.png[800px|center]
+
+image::wiki/ProBAlloyRiver.png[]
 
 Internally the Alloy model is translated to the following B model:
 
@@ -235,4 +235,4 @@ END
 
 The following shows AtelierB proving the above assertion:
 
-/File:AlloyAtelierB.png[800px|center]
+image::wiki/AlloyAtelierB.png[]
