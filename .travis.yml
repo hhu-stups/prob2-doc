@@ -10,7 +10,7 @@ install:
 script:
 - TERM=dumb gradle ascii --info --stacktrace
 after_success:
-- travis-custom-deploy sftp build/asciidoc/pdf/handbook.pdf
+- travis-custom-deploy sftp build/asciidoc/pdf/*.pdf
 - travis-custom-deploy sftp build/asciidoc/html5
 env:
   global:
