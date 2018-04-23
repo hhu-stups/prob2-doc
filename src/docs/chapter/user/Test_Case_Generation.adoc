@@ -59,6 +59,15 @@ paths. The constraint-based approach cannot detect cycles; even if the
 state space is finite it may run forever in case an operation cannot be
 covered (because it is infeasible).
 
+[[constraint-based-test-case-generation]]
+=== Constraint-based Test Case Generation
+
+Constraint based test case generation allows to explore the state space
+for a machine and generate traces of operations that cover certain user
+defined operations and meet a given condition to end the search. (See
+also the link:/Bounded_Model_Checking[bounded model checker] of ProB
+which uses this technique to find invariant violations.)
+
 When should one use the constraint-based test case generator:
 
 * when one has a large number of possible values for the constants
@@ -71,9 +80,8 @@ length of the test-case and the number of candidate test cases also
 typically grows exponentially with the depth of the feasible execution
 paths.
 
-[[example-1-constraint-based-test-case-generation-better]]
-Example 1 (Constraint-based Test Case Generation better)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[[example-1-when-constraint-based-test-case-generation-is-better]]
+==== Example 1 (When Constraint-based Test Case Generation is better)
 
 Here is an example which illustrates when constraint-based test case
 generation is better.
@@ -131,15 +139,8 @@ no state where BothOverflow is enabled):
 
 /file:CBC_StateSpace_Example1.png[center||500px]
 
-[[constraint-based-test-case-generation]]
-Constraint-based Test Case Generation
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Constraint based test case generation allows to explore the state space
-for a machine and generate traces of operations that cover certain user
-defined operations and meet a given condition to end the search. (See
-also the link:/Bounded_Model_Checking[bounded model checker] of ProB
-which uses this technique to find invariant violations.)
+[[how-to-run]]
+==== How to run
 
 We will use the following B Machine as an example, which is stored in a
 file called `simplecounter.mch`.
@@ -159,20 +160,17 @@ OPERATIONS
 END
 ....
 
-[[how-to-run]]
-How to run
-~~~~~~~~~~
-
 To start the test case generation there are two alternatives. We can
 either provide all settings as command line arguments or in a test
 description file.
 
-[[from-the-command-line]]
-From the command line
-^^^^^^^^^^^^^^^^^^^^^
+
+===== From the command line
+
+
 
 From the command line there are six relevant settings to configure the
-test case generation
+test case generation:
 
 ....
 -cbc_tests Depth EndPredicate File
@@ -205,7 +203,7 @@ specify this as follows, where we use CLPFD and have a timeout of 2000
 ms for each explored trace:
 
 ....
-./probcli.sh simplecounter.mch -cbc_tests 5 count=MAX-1 test_results.xml -cb_cover Increase -p CLPFD true -p TIME_OUT 2000
+./probcli.sh simplecounter.mch -cbc_tests 5 count=MAX-1 test_results.xml -cbc_cover Increase -p CLPFD true -p TIME_OUT 2000
 ....
 
 The generated test cases are stored in a file called test_results.xml.
@@ -215,11 +213,10 @@ You can provide the empty filename
 ''
 ....
 
-in which case no file is generated.::
+in which case no file is generated. Providing the same as EndPredicate will only lead to test cases of length 1.
 
-[[test-generation-description]]
-Test Generation Description
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[[with-a-test-description-file]]
+===== With a test description file
 
 The configuration for the test case generation can also be provided as
 an XML file. The format is shown below:
@@ -243,7 +240,7 @@ an XML file. The format is shown below:
 </test-generation-description>
 ....
 
-*Example:* For our example the description file would look as follows.
+*Example:* For our example the description file would look as follows:
 
 ....
 <test-generation-description>
