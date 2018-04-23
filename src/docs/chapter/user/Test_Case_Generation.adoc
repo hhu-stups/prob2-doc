@@ -33,8 +33,7 @@ ProB has two main algorithms to find suites of test cases:
 * model-checking based (invoked, e.g., using the
 link:/Using_the_Command-Line_Version_of_ProB#-mcm_tests_.3CDepth.3E_.3CMaxStates.3E_.3CEndPredicate.3E_.3CFILE.3E[mcm_tests]
 command of link:/Using_the_Command-Line_Version_of_ProB[probcli]) and
-* constraint-based (invoked, e.g., using the
-link:/Using_the_Command-Line_Version_of_ProB#-cbc_tests_.3CDepth.3E_.3CEndPredicate.3E_.3CFile.3E[cbc_tests]
+* constraint-based (invoked, e.g., using the link:/Using_the_Command-Line_Version_of_ProB#-cbc_tests_.3CDepth.3E_.3CEndPredicate.3E_.3CFile.3E[cbc_tests]
 command of link:/Using_the_Command-Line_Version_of_ProB[probcli]; more
 details can be found below)
 
@@ -42,12 +41,12 @@ The former will run the model checker to generate the state space of the
 formal model, and will stop when the coverage criterion has been
 satisfied. The full state space of the model contains all possible
 initialisations of the machine, along with all possible values of the
-constants. The latter, will use ProB's constraint solver to generate
+constants. The latter will use ProB's constraint solver to generate
 feasible sequences of events in a breadth-first fashion and will also
 stop when the coverage criterion has been satisfied. (You may want to
 examine the
 link:/Tutorial_Model_Checking,_Proof_and_CBC[Tutorial_Model_Checking,_Proof_and_CBC]
-in this context.) So what are the differences:
+in this context.) So, what are the differences:
 
 * the constraint-based approach will instantiate the constants and
 parameters of the operations as required by the target sequence. It will
@@ -57,7 +56,7 @@ the operation.
 * the constraint-based approach hence does not construct the full-state
 space (aka a graph), but rather constructs a tree of feasible execution
 paths. The constraint-based approach cannot detect cycles; even if the
-state space is finite it may run forever in case an operations cannot be
+state space is finite it may run forever in case an operation cannot be
 covered (because it is infeasible).
 
 When should one use the constraint-based test case generator:
@@ -66,10 +65,10 @@ When should one use the constraint-based test case generator:
 * when one has a large number of possible values for the initial values
 * when one has a large number of possible values for the parameters of
 the operations
-* when the lengths of the individual test-cases remains relatively low;
+* when the length of the individual test-cases remains relatively low;
 indeed, the complexity of the constraint solving increases with the
 length of the test-case and the number of candidate test cases also
-typically grow exponentially with the depth of the feasible execution
+typically grows exponentially with the depth of the feasible execution
 paths.
 
 [[example-1-constraint-based-test-case-generation-better]]
@@ -92,7 +91,7 @@ END
 
 The state space of this machine is infinite, as we have infinitely many
 possible values for n. For large values of n, we also have many possible
-initialisations for x and may possible parameter values for the `Sety`
+initialisations for x and many possible parameter values for the `Sety`
 operation. This gives us an indication that the constraint-based
 test-case generation algorithm is better suited. Indeed, it will very
 quickly generate two test cases:
@@ -161,7 +160,7 @@ END
 ....
 
 [[how-to-run]]
-How To run
+How to run
 ~~~~~~~~~~
 
 To start the test case generation there are two alternatives. We can
@@ -194,18 +193,19 @@ test case generation
 
 -p CLPFD TRUE
         flag to enable the CLPFD constraint solver to search the state space, which is highly recommended.
+        
 -p TIME_OUT x
         time out in milliseconds to abort the exploration of each possible trace
 ....
 
 *Example:* To generate test cases that cover the event `Increase` in the
 machine above, leading to a state where `count = MAX-1` is true and the
-explored paths do not have a depth of more than 5 operations we would
+explored paths do not have a depth of more than 5 operations, we would
 specify this as follows, where we use CLPFD and have a timeout of 2000
-ms. for each explored trace:
+ms for each explored trace:
 
 ....
-./probcli.sh simplecounter.mch -cb_tests 5 count=MAX-1 test_results.xml -cb_cover Increase -p CLPFD true -p TIME_OUT 2000
+./probcli.sh simplecounter.mch -cbc_tests 5 count=MAX-1 test_results.xml -cb_cover Increase -p CLPFD true -p TIME_OUT 2000
 ....
 
 The generated test cases are stored in a file called test_results.xml.
@@ -215,7 +215,7 @@ You can provide the empty filename
 ''
 ....
 
-in this case no file is generated.::
+in which case no file is generated.::
 
 [[test-generation-description]]
 Test Generation Description
