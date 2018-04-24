@@ -59,6 +59,9 @@ paths. The constraint-based approach cannot detect cycles; even if the
 state space is finite it may run forever in case an operation cannot be
 covered (because it is infeasible).
 
+[[model-checking-based-test-case-generation]]
+=== Model-checking based Test Case Generation
+
 [[constraint-based-test-case-generation]]
 === Constraint-based Test Case Generation
 
@@ -80,8 +83,8 @@ length of the test-case and the number of candidate test cases also
 typically grows exponentially with the depth of the feasible execution
 paths.
 
-[[example-1-when-constraint-based-test-case-generation-is-better]]
-==== Example 1 (When Constraint-based Test Case Generation is better)
+[[example-when-constraint-based-test-case-generation-is-better]]
+==== Example: When Constraint-based Test Case Generation is better
 
 Here is an example which illustrates when constraint-based test case
 generation is better.
@@ -160,14 +163,10 @@ OPERATIONS
 END
 ....
 
-To start the test case generation there are two alternatives. We can
-either provide all settings as command line arguments or in a test
-description file.
+To start the test case generation there are three alternatives: Using the tcl/tk-application or using the command line by either providing all settings as command line arguments or in a test description file.
 
 
 ===== From the command line
-
-
 
 From the command line there are six relevant settings to configure the
 test case generation:
@@ -206,7 +205,7 @@ ms for each explored trace:
 ./probcli.sh simplecounter.mch -cbc_tests 5 count=MAX-1 test_results.xml -cbc_cover Increase -p CLPFD true -p TIME_OUT 2000
 ....
 
-The generated test cases are stored in a file called test_results.xml.
+The generated test cases are stored in a file called `test_results.xml`.
 You can provide the empty filename
 
 ....
@@ -265,4 +264,36 @@ with the following call.
 
 ....
 ./probcli.sh simplecounter.mch -test_description simple_counter_test_description.xml
+....
+
+[[in-tcl-tk]]
+===== In the tcl/tk-application
+
+In the tcl/tk-application the test case generation can be started by choosing _Analyse > Testing > constraint-based test case generation..._. In the appearing window one can set the same parameters as described for the command line.
+
+image::CBC-MBT-Dialog.png[]
+
+After a short while you will see the following window:
+
+image::CBC-MBT-Result.png[]
+
+Clicking on _View CBC Test Tree_ will open a window showing the test cases. In this case there is only one test case generated. After just one execution of `Increase` the EndPredicate `count=MAX-1` is satisfied and all operations that we specified are covered, hence the test case's depth is 1.
+
+image::CBC-MBT-Tree.png[]
+
+All three execution variants lead to the same output in the file `test_results.xml`:
+
+....
+<extended_test_suite>
+  <test_case>
+    <initialisation>
+      <value type="variable" name="count">1</value>
+    </initialisation>
+    <step name="Increase">
+      <value name="y">4</value>
+      <modified name="count">5</modified>
+    </step>
+  </test_case>
+</extended_test_suite>
+
 ....
