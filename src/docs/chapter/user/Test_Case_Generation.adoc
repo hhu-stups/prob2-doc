@@ -387,3 +387,30 @@ All three execution variants lead to the same output in the file `test_results.x
 </extended_test_suite>
 
 ....
+
+Another model, for which the given `EndPredicate` cannot be satisfied after one step, leads to the following test cases and tree structure of possible traces:
+
+....
+<extended_test_suite>
+  <test_case>
+    <initialisation>
+      <value type="variable" name="counter">8</value>
+    </initialisation>
+    <step name="Double" />
+    <step name="Double" />
+    <step name="Double" />
+  </test_case>
+  <test_case>
+    <initialisation>
+      <value type="variable" name="counter">8</value>
+    </initialisation>
+    <step name="Double" />
+    <step name="Double" />
+    <step name="Double" />
+    <step name="Double" />
+    <step name="Halve" />
+  </test_case>
+</extended_test_suite>
+....
+
+image::CBC-MBT-Tree2.png[]
