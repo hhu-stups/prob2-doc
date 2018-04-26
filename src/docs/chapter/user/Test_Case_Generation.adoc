@@ -30,7 +30,7 @@ is exercised by at least one test case.
 
 ProB has two main algorithms to find suites of test cases:
 
-* model-checking based (invoked, e.g., using the
+* model-checking-based (invoked, e.g., using the
 link:/Using_the_Command-Line_Version_of_ProB#-mcm_tests_.3CDepth.3E_.3CMaxStates.3E_.3CEndPredicate.3E_.3CFILE.3E[mcm_tests]
 command of link:/Using_the_Command-Line_Version_of_ProB[probcli]) and
 * constraint-based (invoked, e.g., using the link:/Using_the_Command-Line_Version_of_ProB#-cbc_tests_.3CDepth.3E_.3CEndPredicate.3E_.3CFile.3E[cbc_tests]
@@ -41,7 +41,8 @@ The former will run the model checker to generate the state space of the
 formal model, and will stop when the coverage criterion has been
 satisfied. The full state space of the model contains all possible
 initialisations of the machine, along with all possible values of the
-constants. The latter will use ProB's constraint solver to generate
+constants. The latter will use Profile:///home/jessy/Dokumente/STUPS/prob2-doc/src/docs/chapter/user/Test_Case_Generation.adoc
+B's constraint solver to generate
 feasible sequences of events in a breadth-first fashion and will also
 stop when the coverage criterion has been satisfied. (You may want to
 examine the
@@ -60,9 +61,9 @@ state space is finite it may run forever in case an operation cannot be
 covered (because it is infeasible).
 
 [[model-checking-based-test-case-generation]]
-=== Model-checking based Test Case Generation
+=== Model-checking-based Test Case Generation
 
-Model-checking based test case generation will build the model's state space, starting from the initial states, until the coverage criterion is satisfied. ProB uses a "breadth-first" approach to search for the test cases.
+Model-checking-based test case generation will build the model's state space, starting from the initial states, until the coverage criterion is satisfied. ProB uses a "breadth-first" approach to search for the test cases.
 
 ==== How to run
 
@@ -88,7 +89,7 @@ To start the test case generation there are two alternatives: Using the tcl/tk-a
 
 ====== From the command line
 
-From the command line there are three commands to configure the
+From the command line there are two commands to configure the
 test case generation:
 
 ....
@@ -101,9 +102,6 @@ test case generation:
         Specify an operation or event that should be covered when generating 
         test cases. Multiple operations/events can be specified by seperating
         them by comma or by using -mcm_cover several times.
-        
--p TIME_OUT x
-        time out in milliseconds to abort the exploration of each possible trace
 ....
 
 When all requested operations are covered by test cases within maximum length `Depth`, the algorithm will still explore the complete state space up to that maximum distance `Depth` from the initialisation. It outputs all found traces that satisfy the given requirements. The algorithm stops when it either
@@ -117,7 +115,7 @@ explored paths do not have a depth of more than 5 operations and not more than 2
 ms for each explored trace:
 
 ....
-./probcli.sh simplecounter.mch -mcm_tests 5 2000 count=MAX-1 test_results.xml -mcm_cover Increase -p TIME_OUT 2000
+./probcli.sh simplecounter.mch -mcm_tests 5 2000 count=MAX-1 test_results.xml -mcm_cover Increase
 ....
 
 The generated test cases are stored in a file called `test_results.xml`.
@@ -129,11 +127,29 @@ You can provide the empty filename
 
 in which case no file is generated. Providing the same as `EndPredicate` will only lead to test cases of length 1.
 
-
 ====== In the tcl/tk-application
 
-==== Example: When Model-Checking based Test Case Generation is better
+In the tcl/tk-application the test case generation can be started by choosing _Analyse > Testing > model-checking-based test case generation..._. In the appearing window one can set the same parameters as described for the command line.
 
+image::MCM-MBT-Dialog.png[]
+
+After a short while you will see the following window:
+
+image::MCM-MBT-Result.png[]
+
+You cannot look at the test cases in ProB. Instead you can open the file you just saved the results to, which looks like this: 
+
+....
+<extended_test_suite>
+  <test_case id="1" targets="[Increase]">
+    <global>
+      <step id="1" name="Increase">
+      <value name="y">4</value>
+    </step>
+    </global>
+  </test_case>
+</extended_test_suite>
+....
 
 [[constraint-based-test-case-generation]]
 === Constraint-based Test Case Generation
@@ -341,7 +357,6 @@ with the following call.
 ./probcli.sh simplecounter.mch -test_description simple_counter_test_description.xml
 ....
 
-[[in-tcl-tk]]
 ====== In the tcl/tk-application
 
 In the tcl/tk-application the test case generation can be started by choosing _Analyse > Testing > constraint-based test case generation..._. In the appearing window one can set the same parameters as described for the command line.
