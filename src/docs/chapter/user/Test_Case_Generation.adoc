@@ -236,25 +236,7 @@ image::CBC_StateSpace_Example1.png[center||500px]
 [[how-to-run]]
 ==== How to run
 
-We will use the following B Machine as an example, which is stored in a
-file called `simplecounter.mch`.
-
-....
-MACHINE SimpleCounter
-DEFINITIONS MAX==4
-VARIABLES count
-INVARIANT
- count: 1..MAX
-INITIALISATION count := 1
-OPERATIONS
-  Increase(y) = PRE y: 1..(MAX-count) THEN
-     count := count+y
-  END;
-  Reset = BEGIN count := 1 END
-END
-....
-
-To start the test case generation there are three alternatives: Using the tcl/tk-application or using the command line by either providing all settings as command line arguments or in a test description file.
+We will again use the machine `simplecounter.mch`. To start the test case generation there are three alternatives: Using the tcl/tk-application or using the command line by either providing all settings as command line arguments or in a test description file.
 
 
 ====== From the command line
@@ -297,13 +279,7 @@ ms for each explored trace:
 ....
 
 The generated test cases are stored in a file called `test_results.xml`.
-You can provide the empty filename
-
-....
-''
-....
-
-in which case no file is generated. Providing the same as `EndPredicate` will only lead to test cases of length 1.
+Just as with model-checking-based test case generation you can provide the empty filename `''`, in which case no file is generated, and an empty `EndPredicate` that will only lead to test cases of length 1.
 
 [[with-a-test-description-file]]
 ====== With a test description file
