@@ -131,11 +131,11 @@ in which case no file is generated. Providing the same as `EndPredicate` will on
 
 In the tcl/tk-application the test case generation can be started by choosing _Analyse > Testing > model-checking-based test case generation..._. In the appearing window one can set the same parameters as described for the command line.
 
-image::MCM-MBT-Dialog.png[]
+image::MBT-MCM-Dialog-SC.png[]
 
 After a short while you will see the following window:
 
-image::MCM-MBT-Result.png[]
+image::MBT-MCM-Result-SC.png[]
 
 You cannot look at the test cases in ProB. Instead you can open the file you just saved the results to, which looks like this: 
 
@@ -337,15 +337,15 @@ with the following call.
 
 In the tcl/tk-application the test case generation can be started by choosing _Analyse > Testing > constraint-based test case generation..._. In the appearing window one can set the same parameters as described for the command line.
 
-image::CBC-MBT-Dialog.png[]
+image::MBT-CBC-Dialog-SC.png[]
 
 After a short while you will see the following window:
 
-image::CBC-MBT-Result.png[]
+image::MBT-CBC-Result-SC.png[]
 
 Clicking on _View CBC Test Tree_ will open a window showing the test cases. In this case there is only one test case generated. After just one execution of `Increase` the EndPredicate `count=MAX-1` is satisfied and all operations that we specified are covered, hence the test case's depth is 1.
 
-image::CBC-MBT-Tree.png[]
+image::MBT-CBC-Tree-SC.png[]
 
 All three execution variants lead to the same output in the file `test_results.xml`:
 
@@ -389,4 +389,4 @@ Another model, for which the given `EndPredicate` cannot be satisfied after one 
 </extended_test_suite>
 ....
 
-image::CBC-MBT-Tree2.png[]
+image::MBT-CBC-Tree-DC.png[]

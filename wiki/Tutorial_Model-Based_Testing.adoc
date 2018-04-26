@@ -43,11 +43,11 @@ To start the test case generation select _Analyse > Testing > model-checking-bas
 * Depth: Enter the maximum depth of a trace in the state space.
 * States: Enter the maximum number of states in the state space to be explored.
 
-image::MCM-MBT-Dialog-Tutorial.png[]
+image::MBT-MCM-Dialog-Acc.png[]
 
 Clicking _OK_ will start the test case generation. After a short while you will see the following window:
 
-image::MCM-MBT-Result-Tutorial.png[]
+image::MBT-MCM-Result-Acc.png[]
 
 You cannot look at the test cases in ProB. Instead you can open the file you just saved the results to. It contains the three generated test cases in XML format:
 
@@ -99,6 +99,6 @@ You cannot look at the test cases in ProB. Instead you can open the file you jus
 
 The constraint-based test case generation can be started by selecting _Analyse > Testing > constraint-based test case generation..._. In the appearing window one can set the same parameters as described before (except for the maximum number of states). Clicking on _View CBC Test Tree_ in the window popping up will open another window showing the test cases.
 
-image::CBC-MBT-Tree-Tutorial.png[]
+image::MBT-CBC-Tree-Acc.png[]
 
 More examples and information on how to execute the test case generation via the command line can be found in the documentation on link:/Test_Case_Generation[Test case generation].
