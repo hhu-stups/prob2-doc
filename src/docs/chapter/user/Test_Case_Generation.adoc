@@ -41,7 +41,7 @@ The former will run the model checker to generate the state space of the
 formal model, and will stop when the coverage criterion has been
 satisfied. The full state space of the model contains all possible
 initialisations of the machine, along with all possible values of the
-constants. The latter will use Profile:///home/jessy/Dokumente/STUPS/prob2-doc/src/docs/chapter/user/Test_Case_Generation.adoc
+constants. The latter will use
 B's constraint solver to generate
 feasible sequences of events in a breadth-first fashion and will also
 stop when the coverage criterion has been satisfied. (You may want to
@@ -61,7 +61,7 @@ state space is finite it may run forever in case an operation cannot be
 covered (because it is infeasible).
 
 [[model-checking-based-test-case-generation]]
-=== Model-checking-based Test Case Generation
+=== Model-Checking-Based Test Case Generation
 
 Model-checking-based test case generation will build the model's state space, starting from the initial states, until the coverage criterion is satisfied. ProB uses a "breadth-first" approach to search for the test cases.
 
@@ -152,7 +152,7 @@ You cannot look at the test cases in ProB. Instead you can open the file you jus
 ....
 
 [[constraint-based-test-case-generation]]
-=== Constraint-based Test Case Generation
+=== Constraint-Based Test Case Generation
 
 Constraint based test case generation allows to explore the state space
 for a machine and generate traces of operations that cover certain user

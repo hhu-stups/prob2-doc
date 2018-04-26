@@ -19,7 +19,7 @@ INITIALISATION balance:=0
 OPERATIONS
   Deposit(s) = SELECT s>0 & balance+s<= maxb THEN balance := balance + s END;
   Withdraw(s) = SELECT s>0 & balance-s >= minb THEN balance := balance - s END;
-  NoWithrawalPossible = SELECT balance = minb THEN skip END;
+  NoWitdhrawalPossible = SELECT balance = minb THEN skip END;
   NoDepositPossible = SELECT balance = maxb THEN skip END
 END
 ....
@@ -29,27 +29,76 @@ satisfy a certain coverage criterion. Currently, ProB basically supports
 one coverage criterion: operation coverage, i.e., ProB tries to cover
 all operations (aka events for Event-B).
 
-There are two ways this coverage can be achieved systematically: using
-model checking or using a constraint-based approach.
+There are two ways this coverage can be achieved systematically: using a
+model-checking-based or a constraint-based approach.
 
 [[model-checking-based-testcase-generation]]
-Model-Checking Based Testcase Generation
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+=== Model-Checking Based Test Case Generation
 
-Select the ``Stop when all OPERATIONS Covered'' check box in the model
-checking dialog:
+To start the test case generation select _Analyse > Testing > model-checking-based test case generation..._. In the appearing window one can set some parameters:
 
-/file:StopWhenAllOpsCovered.png[center||200px]
+* Output file: Enter a filename in the first text field to save the test cases in this file.
+* Predicate: Enter the predicate that the last state in a test case has to satisfy. Leaving this field empty leads to test cases of length 1 only.
+* Operations: Choose the operations/events that should be covered.
+* Depth: Enter the maximum depth of a trace in the state space.
+* States: Enter the maximum number of states in the state space to be explored.
 
-Press the ``Model Check'' button; after a short while ProB should
-respond with
+image::MCM-MBT-Dialog-Tutorial.png[]
 
-/file:AllOpsCoveredDialog.png[center||200px]
+Clicking _OK_ will start the test case generation. After a short while you will see the following window:
 
-[TODO]
+image::MCM-MBT-Result-Tutorial.png[]
+
+You cannot look at the test cases in ProB. Instead you can open the file you just saved the results to. It contains the three generated test cases in XML format:
+
+....
+<extended_test_suite>
+  <test_case id="1" targets="[Deposit]">
+    <global>
+      <step id="1" name="INITIALISATION">
+      <value name="minb">-1</value>
+    </step>
+      <step id="2" name="Deposit">
+      <value name="s">10</value>
+    </step>
+    </global>
+  </test_case>
+  <test_case id="2" targets="[NoWithdrawalPossible]">
+    <global>
+      <step id="1" name="INITIALISATION">
+      <value name="minb">0</value>
+    </step>
+      <step id="2" name="NoWithdrawalPossible" />
+      <step id="3" name="Deposit">
+      <value name="s">10</value>
+    </step>
+    </global>
+  </test_case>
+  <test_case id="3" targets="[Withdraw]">
+    <global>
+      <step id="1" name="INITIALISATION">
+      <value name="minb">-1</value>
+    </step>
+      <step id="2" name="Deposit">
+      <value name="s">1</value>
+    </step>
+      <step id="3" name="Withdraw">
+      <value name="s">1</value>
+    </step>
+      <step id="4" name="Deposit">
+      <value name="s">10</value>
+    </step>
+    </global>
+  </test_case>
+</extended_test_suite>
+....
+
 
 [[constraint-based-testcase-generation]]
-Constraint-Based Testcase Generation
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+=== Constraint-Based Test Case Generation
 
-[TODO]
+The constraint-based test case generation can be started by selecting _Analyse > Testing > constraint-based test case generation..._. In the appearing window one can set the same parameters as described before (except for the maximum number of states). Clicking on _View CBC Test Tree_ in the window popping up will open another window showing the test cases.
+
+image::CBC-MBT-Tree-Tutorial.png[]
+
+More examples and information on how to execute the test case generation via the command line can be found in the documentation on link:/Test_Case_Generation[Test case generation].
