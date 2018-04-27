@@ -127,6 +127,16 @@ You can provide the empty filename
 
 in which case no file is generated. Providing the same as `EndPredicate` will only lead to test cases of length 1.
 
+As of version 1.6.0, the operation arguments are also written to the XML
+file. The preference `INTERNAL_ARGUMENT_PREFIX` can be used to provide a
+prefix for internal operation arguments; any argument/parameter whose
+name starts with that prefix is considered an internal parameter and not
+shown in the trace file. Also, as of version 1.6.0, the
+non-deterministic initialisations are shown in the XML trace file: all
+variables and constants where more than one possible initialisation
+exists are written into the trace file, as argument of an INITIALISATION
+event.
+
 ====== In the tcl/tk-application
 
 In the tcl/tk-application the test case generation can be started by choosing _Analyse > Testing > model-checking-based test case generation..._. In the appearing window one can set the same parameters as described for the command line.

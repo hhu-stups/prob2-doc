@@ -1139,17 +1139,17 @@ of a sequence of operations resp. events (a so-called trace) that
 The user can specify what requested operations/events are with the
 option link:/#-mcm_cover_<Operation(s)>[-mcm_cover].
 
-ProB uses a ``breadth-first'' approach to search for test cases. When
+ProB uses a "breadth-first" approach to search for test cases. When
 all requested operations/events are covered by test cases within maximum
 length M, the algorithm will explore the complete state space with that
 maximum distance M from the initialisation. It outputs all found traces
 that satisfy the requirements above.
 
-The algorithm stops if either
+The algorithm stops if it either
 
-* it has covered all required operations/events with the current search
+* has covered all required operations/events with the current search
 depth
-* or it has reached the maximum search depth or maximum number of
+* or has reached the maximum search depth or maximum number of
 explored states.
 
 The required parameters are:
@@ -1169,7 +1169,7 @@ FILE::
 
 Example
 
-`probcli my.mch -mcm_tests 10 2000 ````EndStateVar=TRUE`''` testcases.xml -mcm_cover op1,op2`
+`probcli my.mch -mcm_tests 10 2000  EndStateVar=TRUE  testcases.xml -mcm_cover op1,op2`
 
 generates test cases for the operations *op1* and *op2* of the
 specification *my.mch*. The maximum length of traces is 10, at most 2000
@@ -1225,12 +1225,21 @@ to *File*. If the predicate is the empty string we assume truth. If the
 filename is the empty string no file is generated. See also the page on
 link:/Test_Case_Generation[Test_Case_Generation].
 
+....
+-cbc_tests Depth EndPredicate File
+....
+
 [[cbc_cover]]
 -cbc_cover
 ^^^^^^^^^^^
 
-When generating CB test cases, *Operation* should be covered. The option
-can be given multiple times to specify several operations.
+When generating CB test cases, *Operation* should be covered.
+
+....
+-cbc_cover Operation
+....
+
+The option can be given multiple times to specify several operations.
 Alternatively, multiple operations can be separated by a comma. You can
 also use the option
 
