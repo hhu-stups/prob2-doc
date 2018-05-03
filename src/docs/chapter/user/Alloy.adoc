@@ -1,3 +1,5 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
+
 = Alloy
 
 As of version 1.8 ProB provides support to load
@@ -126,7 +128,7 @@ the ``show'' command you have to use ``Find Sequence...'' command for
 ``run_show'' in the ``Constraint-Based Checking'' submenu of the
 ``Verify'' menu (after enabling Kodkod in the Preferences menu).
 
-image::wiki/ProBAlloyRiver.png[]
+image::ProBAlloyRiver.png[]
 
 Internally the Alloy model is translated to the following B model:
 
@@ -235,4 +237,4 @@ END
 
 The following shows AtelierB proving the above assertion:
 
-image::wiki/AlloyAtelierB.png[]
+image::AlloyAtelierB.png[]

@@ -1,3 +1,5 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
+
 = Animation
 
 The animation facilities of ProB allow users to gain confidence in their

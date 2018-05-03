@@ -1,7 +1,3 @@
-/Category:Tutorial[Category:Tutorial]
-/Category:User_Manual[Category:User Manual]
-/Category:ProB_Cli[Category:ProB Cli]
-
 The command-line version of ProB, called probcli, offers many of the
 features of the standalone Tcl/Tk Version via the command-line. As such,
 you can run ProB from your shell scripts or in your Makefiles. These

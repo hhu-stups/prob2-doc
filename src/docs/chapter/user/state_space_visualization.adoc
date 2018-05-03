@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 = State Space Visualization
 
 Example: inlined dot
