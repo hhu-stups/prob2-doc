@@ -399,4 +399,4 @@ Another model, for which the given `EndPredicate` cannot be satisfied after one 
 </extended_test_suite>
 ....
 
-image::MBT-CBC-Tree-DC.png[]
+image::wiki/MBT-CBC-Tree-DC.png[]
