@@ -1,8 +1,9 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 ProB provides various ways to analyse the coverage of the state space of
 a model. In ProB Tcl/Tk these features reside in the Coverage submenu of
 the Analyse menu:
 
-/file:CoverageMenu.png[center||300px]
+ image::CoverageMenu.png[]
 
 These coverage commands all operate on the state space of the B model,
 i.e., those states that ProB has visited via animation or model checking
@@ -97,4 +98,4 @@ cannot be set independently to false. This highlights a redundancy in
 the invariant; indeed the simpler to understand (but stronger) invariant
 `not(gearstate = retracting & doorstate /= locked_open)` holds.
 
-/file:MCDC_Coverage_ABZ.png[center||700px]
+ image::MCDC_Coverage_ABZ.png[]

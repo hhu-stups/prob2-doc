@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 We assume that you have completed
 link:/Tutorial_Complete_Model_Checking[Tutorial Complete Model
 Checking]. It may also be a good idea to complete the

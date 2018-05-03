@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 /Category:User_Manual[Category:User Manual]
 /Category:Stubs[Category:Stubs] ProB can make use of symmetries induced
 by the use of deferred sets in B (and given sets in Z).

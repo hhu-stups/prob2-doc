@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 [[starting-prob-tcltk]]
 Starting ProB Tcl/Tk
 ~~~~~~~~~~~~~~~~~~~~

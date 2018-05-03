@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 __NOTOC__
 
 [[the-hemodialysis-machine-case-study]]
@@ -20,17 +21,17 @@ Study Paper]
 
 The original specification of the HD machine as PDF.
 
-* /Media:HDMachine-160122.zip[HD Machine Event-B Model]
+*  image::HDMachine-160122.zip[]
 
 The zip file contains the HD machine Event-B model. You can import the
 zip file directly into the Rodin platform as an Event-B project.
 
-* /Media:Cosim-160122.zip[Co-Simulation Model of the Blood Flow Control]
+*  image::Cosim-160122.zip[]
 
 The zip file of the co-simulation model contains a readme file that
 explains what is included.
 
-* /Media:HDMachine-BMS-160122.zip[BMotion Studio Visualisation]
+*  image::HDMachine-BMS-160122.zip[]
 
 The zip file contains the domain specific visualisation of the HD
 machine developed with BMotion Studio. You need to

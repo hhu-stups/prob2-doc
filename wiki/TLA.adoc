@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 As of version 1.3.5, ProB supports
 http://research.microsoft.com/en-us/um/people/lamport/tla/tla.html[TLA+].
 
@@ -15,7 +16,7 @@ http://research.microsoft.com/en-us/um/people/lamport/tla/license.html[MIT
 License]. In the ProB Tcl/Tk GUI you have to select the menu command
 ``Download and Install TLA Tools'' in the Help menu.
 
-/File:Download_TLA_Tools.png[400px|center]
+ image::Download_TLA_Tools.png[]
 
 When you open a TLA+ module ProB generates the translated B machine in
 the same folder and loads it in the background. If there is a valid

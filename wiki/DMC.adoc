@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 __NOTOC__ We used three different setups to evaluate the distributed
 version of ProB.
 

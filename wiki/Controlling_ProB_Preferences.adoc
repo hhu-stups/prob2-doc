@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 ProB provides a variety of preferences to control its behaviour. A list
 of the most important preferences can be found
 link:/Using_the_Command-Line_Version_of_ProB#Preferences[in the manual
@@ -52,9 +53,9 @@ ProB Tcl/Tk stores your preferences settings in a file
 The ProB preferences are grouped into various categories. In the
 ``Preferences'' Menu you can modify the preferences for each category:
 
-/File:GraphicalViewerPreferencesMenuEntry.png[File:GraphicalViewerPreferencesMenuEntry.png[`File:GraphicalViewerPreferencesMenuEntry.png`]]
+ image::GraphicalViewerPreferencesMenuEntry.png[]]
 
 For example, if you choose the graphical viewer preferences you will get
 this dialog:
 
-/File:GraphicalViewerPreferences.png[File:GraphicalViewerPreferences.png[`File:GraphicalViewerPreferences.png`]]
+ image::GraphicalViewerPreferences.png[]]

@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 ProB supports animation and model-checking for Event-B specifications.
 
 [[installation]]
@@ -93,6 +94,6 @@ Download Theories
 ^^^^^^^^^^^^^^^^^
 
 An example project with theories:
-/media:theories2.zip[media:theories2.zip]
+ image::theories2.zip[]
 
 *TODO*: A description of the supported parts.

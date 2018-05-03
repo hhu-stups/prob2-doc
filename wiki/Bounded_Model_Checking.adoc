@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 As of version 1.5, ProB provides support for constraint-based bounded
 model checking (BMC). As opposed to
 link:/Constraint_Based_Checking[constraint-based checking], BMC finds
@@ -78,4 +79,4 @@ the command, you may have to change the preference entry to
 in the `ProB_Preferences.pl` file) Running the command on the above
 example will generate the following counter-example:
 
-/File:BMC_Counter_Wrong.png[File:BMC_Counter_Wrong.png[`File:BMC_Counter_Wrong.png`]]
+ image::BMC_Counter_Wrong.png[]]

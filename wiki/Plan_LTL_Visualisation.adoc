@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 [[wichtige-punkte]]
 Wichtige Punkte
 ---------------
@@ -45,7 +46,7 @@ angezeigt werden, wie es zu dem Wert gekommen ist.
 Beispiel: Hier wird die blau hinterlegte Zelle vom Benutzer markiert. In
 der nächsten Spalte färben sich einige Zellen gelb und rot. ``G(not q)''
 ist in 7 unwahr wegen der Folge 7(not q: true), 8(not q: true), 9(not
-q:false). /File:ltl1.png[600px|center]
+q:false).  image::ltl1.png[]
 
 * Alternativ könnte man die einen Schleifendurchlauf noch einmal hinten
 dran hängen, um den Benutzer zu entlasten.

@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 * if all of the CSP-M processes (not just MAIN) should be animated
 without arguments,
 * if more fine-grained source-location animation for CSP should be

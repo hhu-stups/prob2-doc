@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 ProB can (as of version 1.6.1) be used to process Latex files, i.e., the
 command-line tool probcli scans a given Latex file and replaces certain
 commands by processed results.
@@ -28,7 +29,7 @@ The distribution folder of ProB contains an example with a Makefile,
 producing the following file, which at the same time documents the core
 features:
 
-/File:prob_latex_doc.pdf[File:prob_latex_doc.pdf]
+ image::prob_latex_doc.pdf[]
 
 [[commands]]
 Commands
@@ -98,7 +99,7 @@ Some Examples
 
 * Presentation held in Grenoble in September 2016 about ``Constraint
 Programming Puzzles in B''
-/File:puzzle_latex_presentation.pdf[File:puzzle_latex_presentation.pdf]
+ image::puzzle_latex_presentation.pdf[]
 * SBMF'2016 keynote article ``Formal Model-Based Constraint Solving and
 Document Generation''
-/File:sbmf_2016_latex.pdf[File:sbmf_2016_latex.pdf]
+ image::sbmf_2016_latex.pdf[]

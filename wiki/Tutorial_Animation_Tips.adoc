@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 /Category:User_Manual[Category:User Manual]
 
 Make sure you have the Lift.mch model from the first part of the
@@ -17,7 +18,7 @@ jump(level) = PRE level : 0..99 THEN floor := level END
 Now reload your model and initialise the machine. Your ProB window
 should now look as follows:
 
-/file:ProB_LiftWithJump.png[center||500px]
+ image::ProB_LiftWithJump.png[]
 
 As you can see, only 10 values for the level parameter of the jump
 operation are displayed in the ``Enabled Operations'' pane. The orange
@@ -34,12 +35,12 @@ First, you could increase the ``MAX_OPERATIONS'' preference of ProB by
 selecting the ``Animation Preferences'' command in the ``Preferences''
 menu:
 
-/file:ProB_Lift_MAX_OPERATIONS.png[center||350px]
+ image::ProB_Lift_MAX_OPERATIONS.png[]
 
 You should then set the preference "" to at least 101 and then re-load
 the B machine.
 
-/file:ProB_Lift_OpPane_WithJump101.png[center||200px]
+ image::ProB_Lift_OpPane_WithJump101.png[]
 
 [[executing-an-operation-by-predicate]]
 Executing an Operation by Predicate
@@ -49,23 +50,23 @@ The alternative is to provide the parameter value for `level` yourself.
 For this, select the ``Execute an Operation...'' command in the animate
 menu:
 
-/file:ProB_Lift_ExecuteOperationMenu.png[center||200px]
+ image::ProB_Lift_ExecuteOperationMenu.png[]
 
 After that, select the `jump` operation
 
-/file:ProB_ExecuteOperation.png[center||350px]
+ image::ProB_ExecuteOperation.png[]
 
 and you will be provided with the following dialog:
 
-/file:ProB_Lift_ExecuteOperation_Dialog.png[center||490px]
+ image::ProB_Lift_ExecuteOperation_Dialog.png[]
 
 Type in `98` into the level field and hit the ``Execute'' button.
 
-/file:ProB_Lift_OpPane_WithJump_Exec98.png[center||490px]
+ image::ProB_Lift_OpPane_WithJump_Exec98.png[]
 
 Note: instead or in addition to providing concrete values, you can also
 specify a predicate that constrains the values of the parameters:
-/file:ProB_Lift_ExecuteOperation_Dialog_Pred.png[center||490px]
+ image::ProB_Lift_ExecuteOperation_Dialog_Pred.png[]
 
 The above predicate, `level>96 & level mod 2 =0` would select the same
 value `98` for level. When there are multiple solutions, ProB will only
@@ -86,7 +87,7 @@ Alternatively, you can set this preference using the ``Advanced
 Preferences'' pane in the Preferences menu. After reloading the machine
 you should see a picture similar to the following one:
 
-/file:ProB_Lift_Randomise.png[center||650px]
+ image::ProB_Lift_Randomise.png[]
 
 [[using-constraint-based-validation-techniques]]
 Using Constraint-Based Validation Techniques
@@ -107,7 +108,7 @@ We can ask the constraint solver to generate a feasible sequence of
 operations. First select the ``Find Sequence...'' command in the Verify
 menu:
 
-/file:FindSequenceMenu.png[center||400px]
+ image::FindSequenceMenu.png[]
 
 Now type in
 
@@ -115,12 +116,12 @@ Now type in
 
 in this dialog box:
 
-/file:FindSequenceDialog.png[center||500px]
+ image::FindSequenceDialog.png[]
 
 ProB will then find a solution operation sequence for you and execute
 it:
 
-/file:FindSequenceResult.png[center||300px]
+ image::FindSequenceResult.png[]
 
 [[constraint-based-model-based-testing]]
 Constraint-Based Model-Based Testing
@@ -133,21 +134,21 @@ it.
 First select the ``Constraint-based Testcase Generation..'' command in
 the Analyse menu:
 
-/file:CBCMBTMenu.png[center||400px]
+ image::CBCMBTMenu.png[]
 
 Now click on the ok button in the dialog box (which allows you to select
 the target operations to cover in the generated test cases):
 
-/file:CBCMBTDialog.png[center||200px]
+ image::CBCMBTDialog.png[]
 
 ProB will then find four test cases for you, one for each operation:
 
-/file:CBCMBTResult.png[center||400px]
+ image::CBCMBTResult.png[]
 
 You can also visualise these test cases as a tree by clicking the ``View
 Tree'' button:
 
-/file:CBCMBTTreeResult.png[center||600px]
+ image::CBCMBTTreeResult.png[]
 
 Green entries show test cases (traces which cover an operation in the
 shortest possible way), gray entries are traces which did not contribute

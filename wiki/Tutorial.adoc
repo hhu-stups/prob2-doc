@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 /Category:Tutorial[Category:Tutorial]
 /Category:ProB_Tcl_Tk[Category:ProB Tcl Tk]
 

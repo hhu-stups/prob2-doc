@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 In this tutorial a quick overview will be given describing the LTL
 counter-example visualization plug-in in Rodin. The functionality of the
 plug-in will be presented by means of an Event-B model on which
@@ -26,16 +27,16 @@ The LTL model checker of ProB provides three types of counter-examples:
 
 1.  Finite path leading to a deadlock state (see Figure 1): +
  +
-/File:Deadlock_path.png[center|300px] +
+ image::Deadlock_path.png[] +
 2.  Infinite path (see Figure 2), the infinite path in this case is
 represented by means of a loop: +
  +
-/File:LTLViewInfinitePath.png[center|300px] +
+ image::LTLViewInfinitePath.png[] +
 3.  Finite path (see Figure 3). (In this case an infinite path
 representing the respective counter-example has been shortened in order
 to attract the attention to the relevant part of the counter-example). +
  +
-/File:LTLViewFinitePath.png[center|300px] +
+ image::LTLViewFinitePath.png[] +
 
 Intuitively, the first two types of counter-examples (Figure 1 and
 Figure 2) constitute a violation of a livenessfootnote:[The first type
@@ -71,7 +72,7 @@ are interested in the coloring of the states in regard to the LTL
 formula ‘X \{p2=crit2}’.]
 
  +
-/File:LTLViewVisualisation1.png[center|250px] +
+ image::LTLViewVisualisation1.png[] +
 Since the value of the atom ‘\{p2=crit2}’ in latexmath:[$s_{1}$] is
 equal to false the value of the LTL formula ‘X \{p2=crit2}’ in
 latexmath:[$s_{0}$] is also equal to false. Therefore, the first state
@@ -80,7 +81,7 @@ is colored in red. On the other hand, the value of the formula ‘X
 state of latexmath:[$s_{1}$] in the path, as shown in Figure 4.
 Accordingly, the second state in the LTL counter-example viewer will be
 colored in grey. +
-/File:LTLViewFinitePathUnknown.png[center|250px] +
+ image::LTLViewFinitePathUnknown.png[] +
 States in the path considered to be significant for the evaluation of
 the respective LTL formula are highlighted by bright colors.
 Accordingly, the other states will be grayed out.
@@ -95,7 +96,7 @@ reached.] As a consequence, the LTL counter-example view will display
 the following visualization of the counter-example:
 
  +
-/File:LTLViewVisualisation2.png[center|250px] +
+ image::LTLViewVisualisation2.png[] +
 The path in Figure 5 violates ‘\{p1=noncrit1} U \{p1=crit1}’ since the
 goal (‘\{p1=crit1}’) of the until-formula does not hold in all states of
 the path. This is illustrated by means of the bottom colored path in the
@@ -112,7 +113,7 @@ thus the state is colored in green. latexmath:[$s_{0}$] has been grayed
 out since the evaluation of ‘\{p1=noncrit1}’ in that state has no
 significant meaning for the violation of ‘\{p1=noncrit1} U
 \{p1=crit1}’. +
-/File:LTLViewFinitePathUntil.png[center|300px] +
+ image::LTLViewFinitePathUntil.png[] +
 Notice, for a given LTL formula _f_ the values (or the colors) of the
 states are set in regard to the evaluation of the sub-formula/-s of _f_
 and highlighted with respect to the semantics of _f_. In case of the
@@ -130,7 +131,7 @@ counter-example hold the mouse cursor on the respective edge. A label
 will appear with the transition name:
 
  +
-/File:LTLViewVisualisation3.png[center|250px] +
+ image::LTLViewVisualisation3.png[] +
 Another way to find out the transitions of the path is to inspect the
 current trace loaded in the history view.
 
@@ -153,7 +154,7 @@ corresponds not to the number of sub-formulas, but to the number of the
 operators used in the LTL formula.]:
 
  +
-/File:LTLViewVisualisation4.png[center|250px] +
+ image::LTLViewVisualisation4.png[] +
 In order to view the visualizations of the sub-formulas, one should
 click on one of the states of the source-formula.
 
@@ -169,7 +170,7 @@ types of events: request (for entering in the critical section), enter
 section).
 
  +
-/File:LTLViewMUTEXEvents.png[center|600px] +
+ image::LTLViewMUTEXEvents.png[] +
 Each process latexmath:[$P_{i}$] has three possible states that are
 denoted by the constants latexmath:[$noncrit_{i}$] (the state in which
 latexmath:[$P_{i}$] performs noncritical actions),
@@ -209,14 +210,14 @@ current variables’ evaluation in the respective state and the labels
 above the edges the executed events in the path:
 
  +
-/File:LTLViewCEForGF1.png[center|500px] +
+ image::LTLViewCEForGF1.png[] +
 Obviously the property ‘GF \{p1=crit1}’ is violated for the path in
 Figure 6 since it constitutes an infinite path where no state exists in
 which _p1_ is equal to _crit1_. The counter-example for ‘GF \{p1=crit1}’
 will be then visualized as follows:
 
  +
-/File:LTLViewVisualisation5.png[center|350px] +
+ image::LTLViewVisualisation5.png[] +
 Each state of the counter-example is colored in red since ‘F
 \{p1=crit1}’ does not hold for all states of the path. Additionally,
 state latexmath:[$s_{0}$] has been highlighted since *all* paths
@@ -233,7 +234,7 @@ if and only if there is a state in which _p1_ is equal to _crit1_ and
 thus all states are significant for the violation of the formula.
 
  +
-/File:LTLViewVisualisation6.png[center|350px] +
+ image::LTLViewVisualisation6.png[] +
 For the starvation freedom property (_each waiting process will
 eventually enter its critical section_) of process P1 three operators
 are needed for encoding it in LTL: ‘G (\{p1=wait1} => F \{p1=crit1})’.
@@ -246,7 +247,7 @@ the LTL model checker. As a consequence, the following visualization
 will be shown in the LTL counter-example view:
 
  +
-/File:LTLViewVisualisation4.png[center|350px] +
+ image::LTLViewVisualisation4.png[] +
 In this visualization the crucial state for violating the property ‘G
 (\{p1=wait1} => F \{p1=crit1})’ is latexmath:[$s_{1}$] since at this
 state ‘p1=wait1’ becomes true. Once a state is encountered where

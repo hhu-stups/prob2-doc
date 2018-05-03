@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 If you want to submit a bug report, please use our bug tracker. You may
 also want to ask questions within our prob-users group.
 

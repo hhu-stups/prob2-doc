@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 /Category:Tutorial[Category:Tutorial]
 /Category:User_Manual[Category:User Manual]
 /Category:Physical_Units_Plugin[Category:Physical Units Plugin]
@@ -38,7 +39,7 @@ Attaching Physical Units to Variables and Constants
 Once both plugins are installed, ProB allows to annotate both variables
 and constants with physical units:
 
-/file:ProBRodinUnitPragmas.png[center||600px]
+ image::ProBRodinUnitPragmas.png[]
 
 We store the user supplied unit and the units inferred by ProB as a new
 attribute in the Rodin database.
@@ -57,7 +58,7 @@ The supplied units can now be used by ProB to infer missing units,
 verify the supplied units and detect unit errors. To start the analysis
 use the context menu of the machine / context you want to analyse:
 
-/file:ProBRodinStartUnitAnalysis.png[center]
+ image::ProBRodinStartUnitAnalysis.png[]
 
 Necessary machines and contexts will be translated and passed to ProB.
 Once the analysis is finished, the ``inferred unit'' text fields are

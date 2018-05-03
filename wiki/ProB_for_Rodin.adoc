@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 /Category:Components[Category:Components]
 
 Currently there are two versions of ProB available for Rodin.

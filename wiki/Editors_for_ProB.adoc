@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 [[prob-tcltk-editor]]
 ProB Tcl/Tk Editor
 ~~~~~~~~~~~~~~~~~~
@@ -70,4 +71,4 @@ B, TLA+, CSP and Prolog] are available.
 Emacs
 ^^^^^
 
-A package /File:b-mode.el.zip[File:b-mode.el.zip] is available.
+A package  image::b-mode.el.zip[] is available.

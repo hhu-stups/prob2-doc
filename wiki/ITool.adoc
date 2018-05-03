@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 /Category:Components[Category:Components]
 
 In order to adapt link:/BMotion_Studio[BMotion Studio] to other

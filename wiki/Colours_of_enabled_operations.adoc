@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 The enabled operations are shown in different colours, depending on the
 state where the operation leads to. If more than one rule of the
 following list apply, the first colour is taken:

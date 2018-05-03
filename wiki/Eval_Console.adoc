@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 For this tutorial, load for example the file `StackConstructive.mch`
 included in the `examples/Tutorial` directory of the
 http://www.stups.uni-duesseldorf.de/ProB/index.php5/Download[ProB
@@ -15,17 +16,17 @@ on the green ``INITIALISATION'' line in the same pane. To start the
 * right-click (Control-Click on a Mac) on the ``State Properties'' pane
 and select the ``Eval...'' entry as shown below:
 
-/File:StackConstructiveProBEvalCommand.png[center|500px]
+ image::StackConstructiveProBEvalCommand.png[]
 
 This will bring up a new window, the ``Eval Console'':
 
-/File:StackConstructiveProBEvalConsoleEmpty.png[center|500px]
+ image::StackConstructiveProBEvalConsoleEmpty.png[]
 
 You can now enter predicates or expressions and hit return or enter to
 evaluate them in the current state of the machine. Below is a small
 transcript:
 
-/File:StackConstructiveProBEvalConsoleFull.png[center|500px]
+ image::StackConstructiveProBEvalConsoleFull.png[]
 
 You can use the up and down arrow keys to navigate to earlier predicates
 or expressions you have entered.
@@ -36,7 +37,7 @@ Push(RANGE3), Push(RANGE1), Push(RANGE2) by double-clicking on the
 respective lines in the ``Enabled Operations'' pane, then a transcript
 of using the console is as follows:
 
-/File:StackConstructiveProBEvalConsoleFull2.png[center|500px]
+ image::StackConstructiveProBEvalConsoleFull2.png[]
 
 The console works the same way for Event-B models, Z and TLA
 specifications. However, in all those cases the Eval console uses the

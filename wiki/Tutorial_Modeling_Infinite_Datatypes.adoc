@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 __NOTOC__ This tutorial describes how to model (and how not to model)
 infinite datatypes so that they can be animated with ProB. (You may also
 want to look at the manual page on
@@ -62,4 +63,4 @@ As the screenshot illustrates, this model can now be animated with ProB.
 Observe how the functions push, pop and tops are kept symbolic in the
 State View.
 
-/File:StackConstructiveProB.png[500px]
+ image::StackConstructiveProB.png[]

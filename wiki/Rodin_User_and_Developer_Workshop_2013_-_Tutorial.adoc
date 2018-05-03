@@ -1,9 +1,10 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 /Category:ProB_Java_API[Category:ProB Java API]
 
 Here are the information we have shown you at the tutorial. If you want
 to follow this tutorial on your computer you will have to install ProB
 2.0 and start an animation. For this tutorial we use a
-/media:Scheduler_tutorial2013.zip[simple scheduler example]. Maybe you
+ image::Scheduler_tutorial2013.zip[]. Maybe you
 have to clean the project after importing.
 
 This page was updated in May of 2015 to reflect changes made to the ProB

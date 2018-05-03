@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 /Category:User_Manual[Category:User Manual]
 
 We assume that you have completed
@@ -10,7 +11,7 @@ command-line switch of
 link:/Using_the_Command-Line_Version_of_ProB[probcli]. In the Tcl/Tk
 version you can select the strategy in the model checking dialog box
 (which you obtain via the``Model Check...'' command in the ``Verify''
-menu): /file:ProBWinModelCheckDialog.png[center] The following values
+menu):  image::ProBWinModelCheckDialog.png[] The following values
 are possible in all versions of ProB:
 
 * Mixed DF/BF (`mixed` for `mc_mode`) : mixed depth-first /
@@ -105,7 +106,7 @@ Breadth-First
 
 `$ probcli phonebook7.mch -p MAX_OPERATIONS 99 -mc 10 -spdot out.dot -p DOT_LEAVES FALSE -mc_mode bf`
 
-/file:ProB_Phonebook7_spdot_bf.png[1000px|center]
+ image::ProB_Phonebook7_spdot_bf.png[]
 
 This mode has the advantage of finding shortest counter examples first.
 We also have a guarantee that, provided a counter example exists, a
@@ -119,7 +120,7 @@ Depth-First
 
 `$ probcli phonebook7.mch -p MAX_OPERATIONS 99 -mc 10 -spdot out.dot -p DOT_LEAVES FALSE -mc_mode df`
 
-/file:ProB_Phonebook7_spdot_df.png[160px|center]
+ image::ProB_Phonebook7_spdot_df.png[]
 
 The depth-first traversal has the advantage of lower memory requirements
 (concerning storing the unprocessed nodes) and can find very deep
@@ -149,9 +150,9 @@ operation to be executed).
 
 The result will vary from one run of ProB to another:
 
-/file:ProB_Phonebook7_spdot_mixed1.png[700px|center]
+ image::ProB_Phonebook7_spdot_mixed1.png[]
 
-/file:ProB_Phonebook7_spdot_mixed2.png[700px|center]
+ image::ProB_Phonebook7_spdot_mixed2.png[]
 
 It is interesting to compare this result with the random search
 strategy, which we show next.
@@ -164,9 +165,9 @@ Random
 
 Here are two sample results:
 
-/file:ProB_Phonebook7_spdot_random1.png[600px|center]
+ image::ProB_Phonebook7_spdot_random1.png[]
 
-/file:ProB_Phonebook7_spdot_random2.png[600px|center]
+ image::ProB_Phonebook7_spdot_random2.png[]
 
 Compared to the `mixed` option one can notice that the mixed option has
 more of a tendency to explore certain branches in depth.
@@ -177,7 +178,7 @@ Hash
 
 `$ probcli phonebook7.mch -p MAX_OPERATIONS 99 -mc 10 -spdot out.dot -p DOT_LEAVES FALSE -mc_mode hash`
 
-/file:ProB_Phonebook7_spdot_hash.png[700px|center]
+ image::ProB_Phonebook7_spdot_hash.png[]
 
 The difference with the `random` option is that this will always return
 the same result, as the hash value of the states do not change from one
@@ -189,7 +190,7 @@ Out-Degree
 
 `$ probcli phonebook7.mch -p MAX_OPERATIONS 99 -mc 10 -spdot out.dot -p DOT_LEAVES FALSE -mc_mode dlk`
 
-/file:ProB_Phonebook7_spdot_dlk.png[600px|center]
+ image::ProB_Phonebook7_spdot_dlk.png[]
 
 One can notice that ProB here has a tendency to go into depth, as the
 number of enabled operations decreases: if we add a name to the

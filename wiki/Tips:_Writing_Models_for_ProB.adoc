@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 /Category:User_Manual[Category:User Manual]
 
 The most common issue is that ProB needs to find values for the

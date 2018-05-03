@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 /Category:User_Manual[Category:User Manual]
 
 [[warning]]
@@ -45,7 +46,7 @@ editor in Rodin presents the user with a number of Hypotheses and one
 Goal, to be proved. If the Disprover is installed, it is available in
 the tool bar alongside the other provers:
 
-/File:disprover_proof_control.png[File:disprover_proof_control.png]
+ image::disprover_proof_control.png[]
 
 [[how-it-works]]
 How it works
@@ -59,7 +60,7 @@ also checks if there cannot be a model for the formula. If this is the
 case it acts like a decision procedure, i.e., absence of a model is a
 proof for the goal. This is shown in the proof tree as follows:
 
-/File:disprover_proof.png[File:disprover_proof.png]
+ image::disprover_proof.png[]
 
 Unfortunately, sometimes neither a counter example nor a proof can be
 found.

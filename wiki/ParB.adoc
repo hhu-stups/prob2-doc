@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 This page explains how to run the distributed model checking prototype.
 
 Note that the implementation does not work with Windows, only Linux

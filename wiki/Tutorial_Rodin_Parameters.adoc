@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 /Category:User_Manual[Category:User Manual]
 
 [[preferences]]
@@ -7,13 +8,13 @@ Preferences
 You can modify the most important parameters of ProB by going to the
 Rodin preferences.
 
-/file:RodinPrefs.png[center]
+ image::RodinPrefs.png[]
 
 Now selecting the ProB pane inside the Rodin preferences. You see that a
 relatively large list of preferences appears (the actual number and
 denotation depends on the exact version of ProB you have installed):
 
-/file:ProBRodinPrefs.png[center||600px]
+ image::ProBRodinPrefs.png[]
 
 We explain the most important preferences below.
 

@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 /Category:ProB_Java_API[Category:ProB Java API]
 
 [[installing-prob-2.0-from-rodin-2.7-or-later]]
@@ -14,7 +15,7 @@ Obtaining the latest ProB binary
 
 Open a Groovy Console and type `upgrade ````latest`''.
 
-/File:GroovyConsoleUpgradeLatest.png[300px|center]
+ image::GroovyConsoleUpgradeLatest.png[]
 
 If you have trouble with this you can also manually download the latest
 nightly version of ProB from our downloads area and put the probcli
@@ -26,17 +27,17 @@ Import the Lift Project
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 Select the Rodin ``Import…'' menu command and import the
-/Media:Lift.zip[Lift.zip archive].
+ image::Lift.zip[].
 
 [[start-animating-the-lift]]
 Start Animating the Lift
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 Right-click on the `MLift` model and select the ``Start Animation''
-command: /File:MLiftAnimateWithProB.png[300px|center]
+command:  image::MLiftAnimateWithProB.png[]
 
 Click on setup_constants and initialise in the Events view:
-/File:MLiftEventsView.png[200px|center]
+ image::MLiftEventsView.png[]
 
 [[open-html-visualization]]
 Open HTML Visualization
@@ -44,12 +45,12 @@ Open HTML Visualization
 
 Go into the BMotion Studio Menu at the top and select
 `Open BMotion Studio Template`:
-/File:MLiftOpenHTMLVisualization.png[300px|center]
+ image::MLiftOpenHTMLVisualization.png[]
 
 Navigate to the ``lift.html'' file that is included in the Lift.zip
 archive.
 
 You can now see a graphical visualisation of the state of the model:
-/File:MLiftHTMLVisualization.png[300px|center]
+ image::MLiftHTMLVisualization.png[]
 
 You can also click on the buttons in the HTML page to control the model.

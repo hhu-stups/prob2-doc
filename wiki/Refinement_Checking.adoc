@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 /Category:User_Manual[Category:User Manual]
 /Category:Stubs[Category:Stubs] ProB can be used for refinement checking
 of B, Z and CSP specifications. Below we first discuss refinement

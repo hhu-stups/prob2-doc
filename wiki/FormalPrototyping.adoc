@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 __NOTOC__
 
 This page provides additional information and resources for the tool
@@ -10,7 +11,7 @@ Resources
 
 * https://www3.hhu.de/stups/prob/index.php/BMotionWeb_Download[BMotionWeb
 Download]
-* /Media:Phonebook.Formal.Prototype.zip[Phonebook Formal Prototype]
+*  image::Phonebook.Formal.Prototype.zip[]
 * /Media:CCS.Formal.Prototype.zip[Cruise Control System Formal
 Prototype]
 

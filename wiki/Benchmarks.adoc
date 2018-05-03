@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 Here you will find links to benchmarks (sometimes with raw data) we
 produced to evaluate ProB.
 

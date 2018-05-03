@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 [Category:User Manual]
 
 [[startup]]
@@ -18,7 +19,7 @@ the ``Examples'' directory that came with your ProB installation. Inside
 the ``CSP'' subfolder, open the ``buses.csp'' specification. Your main
 ProB window should now look as follows:
 
-/file:ProB_BusesAfterLoad.png[center||500px]
+ image::ProB_BusesAfterLoad.png[]
 
 [[first-steps-in-animation]]
 First Steps in Animation
@@ -46,7 +47,7 @@ Pane. This has the effect of computing the events offered by `MAIN`. The
 ProB window should now look as follows (the upper half will remain
 unchanged):
 
-/file:ProB_CSPAfterInit.png[center||500px]
+ image::ProB_CSPAfterInit.png[]
 
 In the ``Enabled Operations'' pane we can see that two tau events are
 offered: `tau(int_choice_left)` and `tau(int_choice_right)`. The
@@ -56,7 +57,7 @@ which parts of the CSP specification contributed to the event. For
 example, single clicking on the first tau event yields in the following
 picture:
 
-/file:ProB_CSPAfterTauSingleClick.png[center||500px]
+ image::ProB_CSPAfterTauSingleClick.png[]
 
 By repeatedly single clicking on the event you can cycle through the
 various locations that contributed to the event. To execute an event,
@@ -65,7 +66,7 @@ simply double-click on it. Try this out for yourself: double-click on
 which is offered. This time the event is a synchronization of two
 events(note that ProB uses a different colour for highlighting the
 source locations). The source highlighting should look as follows:
-/file:ProB_CSPAfterBoardSingleClick.png[center||500px]
+ image::ProB_CSPAfterBoardSingleClick.png[]
 
 [[first-steps-in-model-checking]]
 First Steps in Model Checking
@@ -73,7 +74,7 @@ First Steps in Model Checking
 
 You can use the model checker to search for certain errors. Execute the
 ``Model Check...'' command in the ``Verify Menu''. The following dialog
-box will appear: /file:ProB_CSPModelCheck.png[center||200px]
+box will appear:  image::ProB_CSPModelCheck.png[]
 
 By default, ProB will search for deadlocks, illegal channel values and
 events on the ``error'' channel. To turn the latter off, uncheck the
@@ -83,7 +84,7 @@ event on goal CSP channel'').
 
 Now press the ``Model Check'' button. ProB should find a deadlock and
 insert the counter-example into the history as follows:
-/file:ProB_CSPAfterModelCheck.png[center||700px]
+ image::ProB_CSPAfterModelCheck.png[]
 
 [[error-highlighting]]
 Error Highlighting
@@ -106,7 +107,7 @@ following error:
 
 display the trace to the error in the History pane and highlight the
 error location in the source as follows:
-/file:ProB_CSPAfterModelCheck2.png[center||600px]
+ image::ProB_CSPAfterModelCheck2.png[]
 
 [[other-features]]
 Other Features
@@ -125,4 +126,4 @@ ProB are also available for CSP; see link:/State_Space_Visualization[the
 corresponding part of the tutorial]. For example, if you select the
 command ``Statespace'' in the ``Visualize'' menu (after having fully
 explored the system), the following graph will be displayed:
-/file:ProB_CSPBusStatespace.png[center||200px]
+ image::ProB_CSPBusStatespace.png[]

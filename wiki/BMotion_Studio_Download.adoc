@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 /Category:BMotion_Studio[Category:BMotion_Studio] __NOTOC__
 
 Current Release

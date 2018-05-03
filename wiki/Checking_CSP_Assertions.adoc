@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 As of version 1.3.4, ProB provides support for refinement checking and
 various other assertions (deadlock, divergence, determinism, and LTL/CTL
 assertions) of CSP-M specifications. In this tutorial we give a short
@@ -150,7 +151,7 @@ Viewer_ either from the menu bar of the main window by selecting the
 Refinement button in the ‘’State Properties’’ pane. The viewer looks as
 follows:
 
-/file:CSPAssertionsViewer.png[file:CSPAssertionsViewer.png]
+ image::CSPAssertionsViewer.png[]
 
 The _CSP Assertion Viewer_ of ProB has a similar design to the graphical
 user interface of FDR2. It consists basically of three main components:
@@ -432,7 +433,7 @@ obviously `P` reaches a deadlock state after performing the trace
 latexmath:[$\langle a,b,c \rangle$]. Providing a second double-click on
 the assertion will open the following debugging window:
 
-/file:_CSP_Deadlock_Trace.png[file: CSP_Deadlock_Trace.png]
+ image::_CSP_Deadlock_Trace.png[]
 
 Considering the CSP processes `Q` and `R` one can see or check that `R`
 is a trace refinement of `Q` since `R` performs the same set of traces
@@ -443,7 +444,7 @@ refinement check. Performing a second double-click on the item `R [T= Q`
 will open the following trace debugger window with the counterexample
 displayed in it:
 
-/file:_CSP_Trace_Debugger.png[file: CSP_Trace_Debugger.png]
+ image::_CSP_Trace_Debugger.png[]
 
 A counterexample of a trace-refinement assertion is a trace leading to a
 state in which the implementation process performs an event that the
@@ -463,7 +464,7 @@ produce a counterexample since `R` refuses the event `c` that is offered
 by Q after executing `a`. Accordingly, the counterexample will be
 illustrated within the following trace debugger window:
 
-/file:_CSP_Failures_Debugger.png[file: CSP_Failures_Debugger.png]
+ image::_CSP_Failures_Debugger.png[]
 
 These are basically the three types of debugging windows that will
 appear when debugging a counterexample for an assertion check in case
@@ -483,7 +484,7 @@ reaches a cycle “(b -> a)+” that violates the property “F [c]”.
 Performing a second double-click on the assertion will display the
 following state space graph in the graphical viewer:
 
-/file:_CE_LTL_assertion.png[file: CE_LTL_assertion.png]
+ image::_CE_LTL_assertion.png[]
 
 In the figure above, the nodes and the transitions of the respective
 counterexample ``a -> (b -> a)+'' are colored in red.

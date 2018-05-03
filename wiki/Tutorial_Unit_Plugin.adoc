@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 /Category:Tutorial[Category:Tutorial]
 /Category:User_Manual[Category:User Manual]
 /Category:Physical_Units_Plugin[Category:Physical Units Plugin]

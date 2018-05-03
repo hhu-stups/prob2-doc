@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 The B-method and in particular its successor Event-B are methodologies
 for formal development and verification of systems. In Event-B, a
 machine is usually viewed as a reactive system executing continuously
@@ -66,7 +67,7 @@ that Op1 is always enabled after the execution of Op2. In other words,
 in all after-states of Op2 the operation Op1 is guaranteed to be
 enabled. This relation between Op2 and Op1 we can illustrate as follows:
 
-/File:GuaranteedRelationEn.png[File:GuaranteedRelationEn.png]
+ image::GuaranteedRelationEn.png[]
 
 In the figure above the green boxes denote that the evaluation of the
 guard of Op1 is true, whereas the red boxes denote that the evaluation
@@ -79,7 +80,7 @@ Op5 is impossible to be enabled after each execution of Op2. Such a
 relation between two operations we denote as ‘’impossible’’ and can be
 illustrated as follows:
 
-/File:ImpossibleRelationEn.png[File:ImpossibleRelationEn.png]
+ image::ImpossibleRelationEn.png[]
 
 Both arrows in the illustration of the ‘’impossible’’ relation indicate
 that whether the guard condition of Op5 is fulfilled or not in a
@@ -95,12 +96,12 @@ clearly, the second case (\false -> \false) of the impossible relation
 is not possible for (Op2, Op2). This gives rise of introducing another
 (more precise) impossible relation:
 
-/File:ImpossibleDisableRelation.png[File:ImpossibleDisableRelation.png]
+ image::ImpossibleDisableRelation.png[]
 
 Accordingly, we can derive another relation from ‘’impossible’’ for
 which only the second case of the ‘’impossible’’ relation is fulfilled:
 
-/File:ImpossibleKeepRelation.png[File:ImpossibleKeepRelation.png]
+ image::ImpossibleKeepRelation.png[]
 
 As an example for a pair of operations that fulfills the
 ‘’impossible_keep’’ requirement you can take, for example, the pair
@@ -111,7 +112,7 @@ easily conclude that Op2 remains always disabled after Op3.
 Similarly as for ‘’impossible’’, one could derive two further enabling
 relations from ‘’guaranteed’’:
 
-/File:GuaranteedEnableKeepRelation.png[File:GuaranteedEnableKeepRelation.png]
+ image::GuaranteedEnableKeepRelation.png[]
 
 Another interesting class of enabling relations that could be helpful
 for better understanding and analyzing B and Event-B models is that of
@@ -120,7 +121,7 @@ operation op2 if op1 cannot change the status of the enabling condition
 of op2, i.e. op1 keeps op2 enabled respectively disabled. This
 relationship could be illustrated as follows:
 
-/File:KeepRelation.png[File:KeepRelation.png]
+ image::KeepRelation.png[]
 
 We can take (Op1,Op2) and (Op1,Op3) as examples of pairs in
 `Example.mch` that are elements of the keep relation. ‘’keep’’ relations
@@ -158,7 +159,7 @@ of the machine where Op1 is disabled in both states s and s’. Though,
 what we could definitely say is that Op3 cannot disable Op1. This
 relationship we can illustrate as follows:
 
-/File:PossibleEnableRelation.png[File:PossibleEnableRelation.png]
+ image::PossibleEnableRelation.png[]
 
 The opposite relation of “possible_enable” is the relation where an
 operation op2 can disable another operation op1. Formally, we say that
@@ -166,7 +167,7 @@ op2 can disable op1 if op2 may disable op1 and op2 cannot enable op1.
 This relationship is denoted as “possible_disable” and can be
 illustrated as follows:
 
-/File:PossibleDisableRelation.png[File:PossibleDisableRelation.png]
+ image::PossibleDisableRelation.png[]
 
 In order to determine how operations influence each other we need to
 assure first that these are feasible. An operation ‘’op’’ is said to be
@@ -186,7 +187,7 @@ We can now list all possible enabling relations for the machine
 operation in the row is the operation whose effect is studied on the
 status of the guard of the operation in the column.
 
-/File:_EnablingResults.png[File: EnablingResults.png]
+ image::_EnablingResults.png[]
 
 Rather than showing the enabling information for each pair of operations
 of the machine, one can display the enabling relations by means of a
@@ -196,7 +197,7 @@ marked as impossible, independent or infeasible are not shown in the
 graph. We denote such graphs as enable graphs. The enable graph of
 `Example.mch` looks as follows.
 
-/File:_EnableGraph_Example.png[File: EnableGraph_Example.png]
+ image::_EnableGraph_Example.png[]
 
 From the enable graph one can recognize the control flow of the model
 and deduce some properties. For example, we can clearly see that `Op4`
@@ -215,31 +216,31 @@ results in ProB.
 
 * _guaranteed_: op2 guaranteed to be executable after op1.
 
-/File:_GuaranteedExample.png[File: GuaranteedExample.png]
+ image::_GuaranteedExample.png[]
 
 * _guaranteed_enable_: op2 is guaranteed to become enabled after op1.
 
-/File:_GuaranteedEnableExample.png[File: GuaranteedEnableExample.png]
+ image::_GuaranteedEnableExample.png[]
 
 * _guaranteed_keep_: op2 is guaranteed to stay enabled after op1.
 
-/File:_GuaranteedKeepExample.png[File: GuaranteedKeepExample.png]
+ image::_GuaranteedKeepExample.png[]
 
 * _impossible_: op2 is impossible to be executed after op1.
 
-/File:_ImpossibleExample.png[File: ImpossibleExample.png]
+ image::_ImpossibleExample.png[]
 
 * _impossible_disable_: op2 is guaranteed to become disabled after op1.
 
-/File:_ImpossibleDisableExample.png[File: ImpossibleDisableExample.png]
+ image::_ImpossibleDisableExample.png[]
 
 * _impossible_keep_: op2 is impossible to become enabled after op1.
 
-/File:_ImpossibleKeepExample.png[File: ImpossibleKeepExample.png]
+ image::_ImpossibleKeepExample.png[]
 
 * _keep_: op2 always stays enabled resp. disabled after op1.
 
-/File:_KeepExample.png[File: KeepExample.png]
+ image::_KeepExample.png[]
 
 * _syntactic_unchanged_: op1 does not write any variable read in the
 guard of op2, i.e. write(op1) /\ read(op2) = \{}
@@ -263,16 +264,16 @@ SyntacticFullyIndependentExample.png]
 * _possible_enable_: op2 possible after op1, but op2 cannot be disabled
 by op1.
 
-/File:_PossibleEnableExample.png[File: PossibleEnableExample.png]
+ image::_PossibleEnableExample.png[]
 
 * _possible_disable_: op2 possible after op1, but op2 cannot be enabled
 by op1.
 
-/File:_PossibleDisableExample.png[File: PossibleDisableExample.png]
+ image::_PossibleDisableExample.png[]
 
 * _infeasible_: op1 is not feasible and thus cannot influence op2.
 
-/File:_InfeasibleExample.png[File: InfeasibleExample.png]
+ image::_InfeasibleExample.png[]
 
 [[performing-enabling-analysis-within-prob]]
 Performing Enabling Analysis within ProB

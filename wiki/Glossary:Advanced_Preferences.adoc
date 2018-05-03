@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 * the multiplying factor for timeout (for debug properties),
 * if a large heap and stack size should be used for the Java parser,
 * if the negation of an invariant should be checked,

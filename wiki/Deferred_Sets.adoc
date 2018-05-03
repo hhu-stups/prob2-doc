@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 A deferred set in B is declared in the SETS Section and is not
 explicitly enumerated. In the example below, AA is a deferred set and BB
 is an enumerated set.

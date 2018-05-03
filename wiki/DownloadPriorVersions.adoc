@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 [[prior-versions-of-prob]]
 Prior Versions of ProB
 ~~~~~~~~~~~~~~~~~~~~~~

@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 /Category:ProB_Java_API[Category:ProB Java API]
 /Category:Developer_Manual[Category:Developer Manual] __TOC__
 

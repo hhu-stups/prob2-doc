@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 /Category:User_Manual[Category:User Manual]
 
 We assume that you have loaded the ``Lift.mch'' B machine from the ProB
@@ -12,15 +13,15 @@ Simple Model Checking
 The model checker can be used to systematically execute the operations
 and tries to find an erroneous state (e.g., where the invariant is
 violated). Select the ``Model Check...'' command in the ``Verify'' menu:
-/file:ProBWinModelCheckCommand.png[center] This brings up the following
-dialog box: /file:ProBWinModelCheckDialog.png[center] Now click the
+ image::ProBWinModelCheckCommand.png[] This brings up the following
+dialog box:  image::ProBWinModelCheckDialog.png[] Now click the
 ``Model Check'' button. After a short while, ProB will give you the
 following error message:
-/file:ProBWinModelCheckCounterExampleFound.png[center]
+ image::ProBWinModelCheckCounterExampleFound.png[]
 
 The lower half of the ProB window should now look as follows:
 
-/file:ProB_LiftAfterModelCheck.png[center||700px]
+ image::ProB_LiftAfterModelCheck.png[]
 
 The red ``**KO**'' button in the ``State Properties'' pane tells us that
 the model checker has moved us into a state where the invariant is
@@ -39,7 +40,7 @@ Coverage Statistics
 We can obtain some statistics about how many states ProB has explored by
 selecting the ``Compute Coverage'' command in the ``Analyse'' menu:
 
-/file:ProB_LiftAfterModelCheck_Coverage.png[center]
+ image::ProB_LiftAfterModelCheck_Coverage.png[]
 
 In the NODES section we can see that ProB has explored a total of 11
 nodes (i.e., states of the B machine). None of these nodes are
@@ -73,7 +74,7 @@ link:/Graphical_Viewer[installed and setup the graphical viewer as
 desribed in the user manual]. Now, choose the ``View Statespace''
 command in the ``Animate'' menu:
 
-/file:ProB_LiftAfterModelCheck_Statespace.png[center]
+ image::ProB_LiftAfterModelCheck_Statespace.png[]
 
 We can now see the 11 nodes. The two open nodes are marked in red. You
 can also see that there is a virtual root node (the inverted triangle at
@@ -85,7 +86,7 @@ Note: you can influence the coloring and shapes used by ProB, by
 selecting ``Graphical Viewer Preferences...'' in the ``Preferences''
 menu.
 
-/file:ProB_GraphicalViewerPreferences_Shapes.png[center]
+ image::ProB_GraphicalViewerPreferences_Shapes.png[]
 
 You can obtain more information about the state space visualization in
 the user manual: link:/State_Space_Visualization[State Space

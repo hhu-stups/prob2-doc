@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 /Category:Tutorial[Category:Tutorial]
 /Category:User_Manual[Category:User Manual]
 
@@ -41,18 +42,18 @@ computing enabled operations (which correspond to a transition from one
 state to the B machine to another). These errors are displayed in red in
 the State Properties pane:
 
-/file:ProB_WhileAfterLoad.png[600px|center]
+ image::ProB_WhileAfterLoad.png[]
 
 When you click on the red transition error you get presented with more
 details about the error:
 
-/file:ProB_WhileAfterErrClick.png[600px|center]
+ image::ProB_WhileAfterErrClick.png[]
 
 Sometimes you can also have the possibility to click on a ``Visualise''
 button, which in this case will give you a graphical visualisation of
 the invariant violation:
 
-/file:ProB_While_INV_Violation.png[200px|center]
+ image::ProB_While_INV_Violation.png[]
 
 The same technique applies for inspecting other transition errors, such
 as:

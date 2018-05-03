@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 /Category:ProB_Disprover[Category:ProB Disprover]
 
 We benchmarked the ProB disprove for an article currently under

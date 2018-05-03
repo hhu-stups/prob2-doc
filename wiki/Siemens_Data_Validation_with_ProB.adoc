@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 [[prob-validation-for-siemens-sas]]
 ProB Validation for Siemens SAS
 -------------------------------

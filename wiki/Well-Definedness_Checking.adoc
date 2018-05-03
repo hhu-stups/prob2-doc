@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 Well-definedness errors can occur in B in the following circumstances:
 
 * a division by 0: `r=100/0`

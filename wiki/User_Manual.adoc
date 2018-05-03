@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 /Category:User_Manual[Category:User_Manual] __NOTOC__ ProB is a
 graphical animator and model checker for the B method. The ProB homepage
 is at

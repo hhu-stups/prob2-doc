@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 __NOTOC__ This page provides additional resources for the paper we have
 submitted for the http://icfem2015.lri.fr/[ICFEM 2015].
 
@@ -7,7 +8,7 @@ Resources and ProB Live Visualizations
 
 We have prepared two interactive live visualizations. One of the Event-B
 model of the landing gear system (the full description of the case study
-can be found /Media:landing_system.pdf[here]) and one of the Event-B
+can be found  image::landing_system.pdf[]) and one of the Event-B
 model of a simple lift system.
 
 The visualizations can either be controlled by interacting with the
@@ -21,7 +22,7 @@ of the landing gear system]
 the simple lift]
 
 The Event-B model of the simple lift system be can be downloaded here:
-/File:SimpleLift.zip[File:SimpleLift.zip].
+ image::SimpleLift.zip[].
 
 http://stups.hhu.de/w/Special:Publication/LadenbergerLeuschel_ProjectDiagram[Technical
 Report]

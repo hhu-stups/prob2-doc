@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 Also have a look at
 /Tips:_Writing_Models_for_ProB[Tips:_Writing_Models_for_ProB].
 

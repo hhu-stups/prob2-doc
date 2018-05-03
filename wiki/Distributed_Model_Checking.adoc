@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 Distributed Model Checking allows to check invariants and
 deadlock-freedom (and assertions) with additional computational power.
 The distributed version of ProB is named _distb_. In the following, we

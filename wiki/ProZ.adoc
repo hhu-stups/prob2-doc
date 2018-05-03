@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 /Category:User_Manual[Category:User Manual]__NOTOC__ ProZ is a extension
 of the ProB animator and model checker to support Z specifications. It
 uses the http://spivey.oriel.ox.ac.uk/mike/fuzz[Fuzz Type Checker] by
@@ -182,7 +183,7 @@ details):
 
 Here is how the animation of the specification should look like:
 
-/File:ProZ_jars.png[600px|center]
+ image::ProZ_jars.png[]
 
 [[special-constructs]]
 Special constructs

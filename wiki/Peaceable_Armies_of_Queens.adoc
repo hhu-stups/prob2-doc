@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 I found this challenging constraint programming problem in the following
 paper:
 
@@ -82,7 +83,7 @@ using an http://alloy.mit.edu/alloy/[Alloy] model (see below).
 
 The first solution found for dim=8 and n=9 is as follows:
 
-/File:ProB_PeaceableQueens_8_9_Screenshot.png[600px|center]
+ image::ProB_PeaceableQueens_8_9_Screenshot.png[]
 
 [[the-alloy-model-for-comparison]]
 The Alloy model for comparison
@@ -218,4 +219,4 @@ Here are the solving times for various board sizes on my MacBook Air:
 
 The first solution found for dim=8 is as follows:
 
-/File:ProB_PeaceableQueens_8_9_Opt_Screenshot.png[600px|center]
+ image::ProB_PeaceableQueens_8_9_Opt_Screenshot.png[]

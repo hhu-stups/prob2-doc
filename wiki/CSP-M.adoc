@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 /Category:User_Manual[Category:User Manual] __NOTOC__ ProB supports
 machine readable CSPfootnote:[M. Butler and M. Leuschel: _Combining CSP
 and B for specification and property verification_. FM 2005, LNCS 3582,

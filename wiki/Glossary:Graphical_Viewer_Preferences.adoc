@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 * graphical viewer (PostScript, Dot Viewer, Alternative Dot Viewer) used
 * if operation arguments, functions, self-loops, leaves, root node, node
 identifiers, node information should be printed,

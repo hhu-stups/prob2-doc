@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 /Category:User_Manual[Category:User Manual]
 
 We assume that you have completed
@@ -37,9 +38,9 @@ Successful Model Checking
 
 Now select the ``Model Check...'' command in the ``Verify'' menu which
 brings up the model checking dialog box:
-/file:ProBWinModelCheckDialog.png[center] Now click the ``Model Check''
+ image::ProBWinModelCheckDialog.png[] Now click the ``Model Check''
 button. After a short while, ProB will give you the following message:
-/file:ProBModelCheckNoCounterExampleFound.png[center]
+ image::ProBModelCheckNoCounterExampleFound.png[]
 
 This message means that ProB has examine all possible states of your B
 model and has found no invariant violation and no deadlock. (In this
@@ -58,7 +59,7 @@ Computing All Transitions
 Let us now adapt the above B machine by changing the DEFINITION of MAX
 to 6. Now repeat the model checking exercise above. This time ProB will
 produce the following message:
-/file:ProBModelCheckNoCounterExampleFoundTrans.png[center]
+ image::ProBModelCheckNoCounterExampleFoundTrans.png[]
 
 Again no invariant violations or deadlocks were found, but this time
 ProB warns us that not all transitions were computed. Indeed, the
@@ -69,7 +70,7 @@ and thus may have missed an invariant violation.
 
 Indeed, when you double click on the ``INITIALISATION(1)'' entry in the
 ``EnabledOperations'' pane, you will see the following:
-/file:ProBSimpleCounterForMC_Max.png[center]
+ image::ProBSimpleCounterForMC_Max.png[]
 
 The orange ``max'' button tells us that not all operations were
 computed.
@@ -86,7 +87,7 @@ above, but this time the machine is actually incorrect. The only way to
 solve ensure that ProB checks the entire state space is to increase the
 ``MAX_OPERATIONS'' preference to a suitably large value, e.g.,
 `SET_PREF_MAX_OPERATIONS==8` in this case. Now model checking will find
-a counter example: /file:ProBSimpleCounterForMC_InvViol.png[center]
+a counter example:  image::ProBSimpleCounterForMC_InvViol.png[]
 
 [[deferred-sets]]
 Deferred Sets
@@ -107,13 +108,13 @@ END
 ....
 
 Here model checking with ProB will give you the following message:
-/file:ProBModelCheckNoCounterExampleFound_Unbounded.png[center]
+ image::ProBModelCheckNoCounterExampleFound_Unbounded.png[]
 
 Unfortunately this does not guarantee that your machine is correct.
 Indeed, ProB has checked your machine only for one specific cardinality
 of the deferred set ID (probably 2 or 3). Indeed, if you look at the
 ProB window after loading the above machine you will see:
-/file:ProBSimpleCountDefSet_BeforeInit.png[center] In the ``State
+ image::ProBSimpleCountDefSet_BeforeInit.png[] In the ``State
 Properties'' pane you can see that the cardinality of ID was set to 3.
 There are various ways you can influence the cardinality chosen by ProB.
 One is by adding a DEFINITION of the form:
@@ -123,7 +124,7 @@ DEFINITIONS  scope_ID == 10
 ....
 
 If you add this definition, ProB will now find an invariant violation:
-/file:ProBSimpleCountDefSet_InvViol.png[center]
+ image::ProBSimpleCountDefSet_InvViol.png[]
 
 However, if you remove the above DEFINITION and add the following
 instead:
@@ -133,7 +134,7 @@ PROPERTIES card(ID) = 5
 ....
 
 ProB will give you the message we have already seen:
-/file:ProBModelCheckNoCounterExampleFound.png[center] Indeed, you have
+ image::ProBModelCheckNoCounterExampleFound.png[] Indeed, you have
 now explicitly declare ID to be of size 5, and ProB has checked all
 states for that instantiation of ID. Another solution is to replace the
 deferred set ID by an enumerated set (this will, however, reduce the

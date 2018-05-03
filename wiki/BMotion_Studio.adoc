@@ -1,6 +1,7 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 /Category:Components[Category:Components] __NOTOC__
 
-/File:bmotion_logo.png[center]
+ image::bmotion_logo.png[]
 
 What is BMotionWeb?
 

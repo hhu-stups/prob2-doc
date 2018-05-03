@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 /Category:Developer_Manual[Category:Developer Manual] In case that you
 want to compile ProB from Source on Windows (XP), here are some
 information about the setup:

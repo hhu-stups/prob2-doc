@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 __NOTOC__ This tutorial describes the use of ProB's evaluation view to
 explore single states of a model. The view shows the details of a
 particular state during the animation. It can be used to
@@ -21,13 +22,13 @@ couple of animation steps and then open the Evaluation view in the
 Analyse menu. You should get window that looks similar to the following
 screenshot:
 
-/File:Eval_view.png[500px]
+ image::Eval_view.png[]
 
 You can now expand each of the three sections to investigate the current
 state of the machine. For instance if we expand the Variables section we
 will get the following:
 
-/File:Eval_view2.png[500px]
+ image::Eval_view2.png[]
 
 The tree shows values for each variable in the same way as the State
 Properties view. The value of the variable numbers in our example tell
@@ -35,7 +36,7 @@ us that card(numbers) = 2288 and it shows the first and last entries. In
 contrast to the State Properties View you can see all values by
 doubleclicking an entry as shown in the next screenshot.
 
-/File:Eval_view3.png[500px]
+ image::Eval_view3.png[]
 
 The save button can be used to save the value of the variable (as a
 B-Expression) to a file. You can also save the values of multiple
@@ -52,7 +53,7 @@ sub-expressions. This can be demonstrated using Priorityqueue.mch from
 the folder SchneiderBook. After initializing the machine and a few
 animation-steps opening the evaluation view yields
 
-/File:Eval_view4.png[500px]
+ image::Eval_view4.png[]
 
 The invariant consists of two predicates
 
@@ -86,7 +87,7 @@ Now we can model check the machine and ProB will find a state that
 violates the invariant. Opening the evaluation view gives us something
 like
 
-/File:Eval_view5.png[500px]
+ image::Eval_view5.png[]
 
 In the case that a universal quantification predicate yields false, ProB
 gives us a counterexample. For existential quantification the result is
@@ -102,7 +103,7 @@ particular if A and B are large sets. The behavior can be observed, for
 example, in the Paperround.mch model from the SchneiderBook folder.
 After a couple of operations the evaluation view looks like
 
-/File:Eval_view5.png[500px]
+ image::Eval_view5.png[]
 
 If we introduce an error, such as
 
@@ -116,7 +117,7 @@ be inspected using the evaluation view and because of the automatically
 introduced predicate it is very easy to see the reason why
 `magazines <: papers` is false.
 
-/File:Eval_view6.png[500px]
+ image::Eval_view6.png[]
 
 [[filtering-relevant-information-and-data-extraction]]
 Filtering relevant information and Data Extraction
@@ -134,7 +135,7 @@ upper right part of the view. As we type, ProB will filter out all items
 that do not contain our search phrase. If we, for instance, type x19. We
 will get only those constants and properties that contain x19.
 
-/File:Eval_view7.png[500px]
+ image::Eval_view7.png[]
 
 The second way to filter out unnecessary information is to mark some
 items and restrict the view. Suppose we are only interested in the
@@ -145,7 +146,7 @@ we want to see by selecting ``Mark all selected items'' from the context
 menu. In the same popup menu, we can select ``Show only marked items''
 which will remove all other information.
 
-/File:Eval_view8.png[500px]
+ image::Eval_view8.png[]
 
 Finally the popup menu allows us to save the content of a particular
 state into a file (either the full state, or the marked items only). In

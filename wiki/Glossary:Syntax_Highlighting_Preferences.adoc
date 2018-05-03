@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 * turn on/off syntax color highlighting
 * change the colors for typing constructs, logical operators,
 assignments, normal operators, top level keywords, control keywords,

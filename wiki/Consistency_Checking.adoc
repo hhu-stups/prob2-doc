@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 /Category:User_Manual[Category:User Manual] __NOTOC__
 
 [[checking-consistency-via-model-checking]]
@@ -60,7 +61,7 @@ Using the Model Checker
 To model check a B machine loaded in ProB, launch the command from
 ``Verify| Model Check''.
 
-/File:Temporal_Model_Checker_settings.png[center]
+ image::Temporal_Model_Checker_settings.png[]
 
 By default the model checking is done by exploring the state space in a
 mixed depth-first/breadth-first manner, unless the setting ``pure

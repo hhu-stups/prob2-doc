@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 __NOTOC__ This page provides additional resources for the journal
 article we have submitted for the
 http://sttt.cs.uni-dortmund.de/[International Journal on Software Tools
@@ -8,7 +9,7 @@ submitted for the http://www.irit.fr/ABZ2014/casestudy.html[ABZ 2014
 case study track].
 
 The full description of the case study can be found
-/Media:landing_system.pdf[here].
+ image::landing_system.pdf[].
 
 [[prob-live-visualisations]]
 ProB Live Visualisations
@@ -43,7 +44,7 @@ Resources
 
 * http://www.stups.hhu.de/w/Special:Publication/abz14casestudy[ABZ 2014
 Case Study Paper]
-* /Media:LandingGear.zip[Landing Gear Model EventB Model]
+*  image::LandingGear.zip[]
 
 [[links]]
 Links

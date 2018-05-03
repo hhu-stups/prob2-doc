@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 /Category:Tutorial[Category:Tutorial]
 
 We assume that you have grasped the way that ProB setups up the initial
@@ -21,18 +22,18 @@ First, open the machine ``Jukebox.mch'' which can be found in the
 SchneiderBook/Jukebox_Chapter13 subdirectory of the ProB Examples
 folder. The main ProB window should look more or less as follows:
 
-/file:ProB_JukeboxAfterLoad.png[center||300px]
+ image::ProB_JukeboxAfterLoad.png[]
 
 Now edit the file, and type `& limit>99` after `PROPERTIES limit:NAT1`.
 Save the machine and reload it. Hint: there is a ``Save and reopen''
 command in the ``File'' menu for this action.
 
 ProB should now popup the following message:
-/file:ProB_Jukebox_UnsatProp.png[center]
+ image::ProB_Jukebox_UnsatProp.png[]
 
 If you click ``Yes'' (or Ja), you will get the following window:
 
-/file:ProB_Jukebox_DebugUnsatProp.png[center|400px]
+ image::ProB_Jukebox_DebugUnsatProp.png[]
 
 What ProB does is add conjuncts from the PROPERTIES (and CONSTRAINTS
 clause) one-by-one, until it can no longer find a solution. This can
@@ -43,11 +44,11 @@ An alternate means to figure out the source of the problem is ProB's
 graphical formula viewer. For this, choose the ``Analyse
 Graphically/Properties'' in the ``Analyse'' menu:
 
-/file:ProB_Jukebox_AnalyseGraphicallyCommand.png[center]
+ image::ProB_Jukebox_AnalyseGraphicallyCommand.png[]
 
 This will result in the following visualization:
 
-/file:ProB_Jukebox_AnalyseGraphicallyUnsatProp.png[center]
+ image::ProB_Jukebox_AnalyseGraphicallyUnsatProp.png[]
 
 This viewer uses another, more sophisticated algorithm to determine a
 maximal subset of the Properties which is satisfiable. In this case, it
@@ -66,7 +67,7 @@ DEFINITIONS
 to the machine and re-load it. As we can see, the problem is solved and
 we can proceed with animation of the machine:
 
-/file:ProB_JukeboxAfterLoad2.png[center||600px]
+ image::ProB_JukeboxAfterLoad2.png[]
 
 [[a-more-involved-inconsistency]]
 A more involved inconsistency
@@ -83,13 +84,13 @@ get the error message that ProB cannot find CONSTANTS which satisfy the
 PROPERTIES. If click on the ``Yes'' button to debug the PROPERTIES we
 get the following picture:
 
-/file:ProB_Jukebox_DebugUnsatProp2.png[center|400px]
+ image::ProB_Jukebox_DebugUnsatProp2.png[]
 
 We can see that ProB has found the solution `limit=100` for the first
 two properties and then got stuck. Using the graphical viewer results
 the following visualization:
 
-/file:ProB_Jukebox_AnalyseGraphicallyUnsatProp2.png[center|600px]
+ image::ProB_Jukebox_AnalyseGraphicallyUnsatProp2.png[]
 
 Here we can see that ProB has used another partial solution, namely
 `limit=1`, which also satisfies two properties (and fails to satisfy
@@ -110,12 +111,12 @@ Now save and reopen the machine. This time the properties are
 satisfiable. After selecting SETUP_CONSTANTS(100) and
 INITIALISATION(\{}) we obtain the following picture:
 
-/file:ProB_JukeboxAfterInit3.png[center||600px]
+ image::ProB_JukeboxAfterInit3.png[]
 
 We can now analyze the ASSERTIONS. For this, choose the ``Analyse
 Graphically/Assertions'' in the ``Analyse'' menu:
 
-/file:ProB_Jukebox_AnalyseGraphicallyUnsatAssertion3.png[center]
+ image::ProB_Jukebox_AnalyseGraphicallyUnsatAssertion3.png[]
 
 The graphical viewer gives us an instance where the universally
 quantified formula is false: `x=99`, which hopefully helps us in fixing
@@ -125,9 +126,9 @@ Note, that ProB also allows us to inspect custom predicates using the
 graphical viewer (without saving and reopening a machine). For this,
 choose the ``Analyse Graphically/Custom Predicate...'' in the
 ``Analyse'' menu and enter `!x.(x`` x<=99)`:
-/file:ProB_Jukebox_AnalyseGraphicallyCustomCommand.png[center] After
+ image::ProB_Jukebox_AnalyseGraphicallyCustomCommand.png[] After
 hitting OK we obtain:
-/file:ProB_Jukebox_AnalyseGraphicallyCustom3.png[center]
+ image::ProB_Jukebox_AnalyseGraphicallyCustom3.png[]
 
 As we can see, this predicate is true in that particular state of the
 machine. Note, there is also the option to use ``Analyse
@@ -153,8 +154,8 @@ precondition and guards of operations. This is useful to find out why a
 particular operation is (maybe) unexpectedly disabled or enabled. For
 this, choose the ``Analyse Graphically/Operation PRE...'' in the
 ``Analyse'' menu and select the ``select'' operation:
-/file:ProB_Jukebox_AnalyseGraphicallyOperationPRE.png[center]
+ image::ProB_Jukebox_AnalyseGraphicallyOperationPRE.png[]
 
 After hitting ``Select'' or typing return we obtain, which shows us why
 the operation is not enabled:
-/file:ProB_Jukebox_AnalyseGraphicallyOperationPRE3.png[center]
+ image::ProB_Jukebox_AnalyseGraphicallyOperationPRE3.png[]

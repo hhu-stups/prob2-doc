@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 /Category:User_Manual[Category:User Manual]
 
 We assume that you have grasped the first steps of opening and animating
@@ -11,7 +12,7 @@ First, open the machine ``Jukebox.mch'' which can be found in the
 SchneiderBook/Jukebox_Chapter13 subdirectory of the ProB Examples
 folder. The main ProB window should look more or less as follows:
 
-/file:ProB_JukeboxAfterLoad.png[center||700px]
+ image::ProB_JukeboxAfterLoad.png[]
 
 In general, before the operations of a machine can be applied, ProB
 needs to traverse three phases:
@@ -24,7 +25,7 @@ and CONSTRAINTS are satisfied.
 
 This process is illustrated in the following picture:
 
-/file:ProB_AnimationPhases.png[center]
+ image::ProB_AnimationPhases.png[]
 
 We now examine these phases on the Jukebox machine in more detail
 
@@ -67,7 +68,7 @@ As you can see above in the ``State Properties'' pane, ProB has chosen
 MAXINT=3, MININT=-1 and card(TRACK)=2. If you wish to change these
 settings, perform the steps above and reload the machine. Hint: there is
 a ``Reopen'' command in the ``File'' menu:
-/file:ProB_JukeboxReopenCommand.png[center]
+ image::ProB_JukeboxReopenCommand.png[]
 
 [[setup_constants]]
 2. SETUP_CONSTANTS
@@ -85,7 +86,7 @@ Operations'' pane. This means that there might actually be more than
 three ways to setup the constants. We will return to this issue later.
 
 By double clicking on ``SETUP_CONSTANTS(2)'' we proceed to the next
-phase: /file:ProB_JukeboxAfterSETUPCONSTANTS.png[center||700px]
+phase:  image::ProB_JukeboxAfterSETUPCONSTANTS.png[]
 
 [[initialization]]
 3. INITIALIZATION
@@ -100,12 +101,12 @@ INITIALISATION(0,\{}) leads the animator into a state where all
 constants and variables are valued, and where the `INVARIANT` can be
 checked and operations can be applied:
 
-/file:ProB_JukeboxAfterINITIALISATION.png[center|700px]
+ image::ProB_JukeboxAfterINITIALISATION.png[]
 
 Let us conclude by choosing the ``View Statespace'' command in the
 ``Animate'' menu:
 
-/file:ProB_Jukebox_Statespace.png[center|500px]
+ image::ProB_Jukebox_Statespace.png[]
 
 As you can see, there is only one root node (inverted triangle): in
 order to change MAXINT, MININT or the deferred set sizes you have to
@@ -116,6 +117,6 @@ the ``Model Check'' button.
 
 If we now choose the ``View Statespace'' command in the ``Animate''
 menu, we get the following picture:
-/file:ProB_Jukebox_StatespaceFull.png[center] We can see (or guess at
+ image::ProB_Jukebox_StatespaceFull.png[] We can see (or guess at
 least) that ProB has validated the machine and explored the statespace
 not just for `limit=2` but also for `limit=1` and `limit=3`.

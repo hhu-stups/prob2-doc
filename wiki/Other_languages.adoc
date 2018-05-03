@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 /Category:User_Manual[Category:User Manual]
 /Category:Developer_Manual[Category:Developer Manual] Since version
 1.2.7 of ProB (July 2008) you can also open Promela files with ProB.

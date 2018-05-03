@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 /Category:User_Manual[Category:User Manual]
 
 [[introduction]]
@@ -31,7 +32,7 @@ link:/Installation[Installation].
 * Then use the command ``Graphical Viewer Preferences...'' in the
 ``Preferences'' Menu:
 
-/File:GraphicalViewerPreferencesMenuEntry.png[File:GraphicalViewerPreferencesMenuEntry.png[`File:GraphicalViewerPreferencesMenuEntry.png`]]
+ image::GraphicalViewerPreferencesMenuEntry.png[]]
 
 Then set or check the following preferences:
 
@@ -41,7 +42,7 @@ Then set or check the following preferences:
 Note: you can use the ``Pick'' button to locate the dot program and the
 dot viewer.
 
-/File:GraphicalViewerPreferences.png[File:GraphicalViewerPreferences.png[`File:GraphicalViewerPreferences.png`]]
+ image::GraphicalViewerPreferences.png[]]
 
 In case you want to use the Postscript option, also make sure that you
 have a viewer for Postscript files installed, and set the preference
@@ -50,4 +51,4 @@ have a viewer for Postscript files installed, and set the preference
 * You can select which viewer to use by going to the ``Graphical
 Viewer'' sub-menu of the ``Preferences'' Menu:
 
-/File:GraphicalViewerSubMenu.png[File:GraphicalViewerSubMenu.png[`File:GraphicalViewerSubMenu.png`]]`.`
+ image::GraphicalViewerSubMenu.png[]]`.`

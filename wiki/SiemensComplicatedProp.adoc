@@ -1,6 +1,7 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 Below we show the graphical visualisation of a complicated property by
 ProB's graphical formula viewer. The graphics are also available as
-/File:GraphicalViewerSiemensSaoPauloL9.pdf[PDF File]. The property is
+ image::GraphicalViewerSiemensSaoPauloL9.pdf[]. The property is
 the following one:
 
 ....
@@ -31,4 +32,4 @@ images of images of functions, and has a double universal quantifier.
 All this lead to a proof tree and a goal size that is beyond the
 capabilities of Atelier B.
 
-/File:GraphicalViewerSiemensSaoPauloL9.png[`700px`]
+ image::GraphicalViewerSiemensSaoPauloL9.png[]

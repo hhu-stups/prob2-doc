@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 * the max number of initializations computed,
 * the max number of times that an operation may be enabled,
 * the time out for the computing of enabled transitions (in ms),

@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 Windows Specific Download Instructions
 
 [[go-to-the-prob-downloads-site]]
@@ -8,7 +9,7 @@ Go to the ProB Downloads site
 http://www.stups.uni-duesseldorf.de/ProB/index.php5/Download[http://www.stups.uni-duesseldorf.de/ProB/index.php5/Download],
 this should look as follows:
 
-/File:ProBWindowsDownload.png[center||600px]
+ image::ProBWindowsDownload.png[]
 
 [[install-tcltk-8.5]]
 Install Tcl/Tk 8.5
@@ -26,7 +27,7 @@ file highlighted in blue below) if you want to use the 32-bit version of
 ProB.
 * Download and follow the installation instructions
 
-/File:TkWindowsDownload.png[center||600px]
+ image::TkWindowsDownload.png[]
 
 [[install-java]]
 Install Java
@@ -52,7 +53,7 @@ the location and structure of the files and directories within ProB
 (apart from the Machines directory)! The contents of the ProB directory
 should look something like this:
 
-/File:ProBWindowsFolder.png[center]
+ image::ProBWindowsFolder.png[]
 
 The subfolder called ``Microsoft.VC80.CRT'' contains the DLLs for the
 Microsoft C runtime.

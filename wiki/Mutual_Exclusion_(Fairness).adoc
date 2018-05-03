@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 Consider an Event-B model formalizing an algorithm for mutual exclusion
 with semaphores for two concurrent processes latexmath:[$P_1$] and
 latexmath:[$P_2$]. Each process has been simplified to perform three
@@ -10,7 +11,7 @@ Model Checking”, The MIT Press, 2008, pages 43-45.]).
 Each of the actions of a process are represented by a respective event:
 
  +
-/File:LTLViewMUTEXEvents.png[center|600px] +
+ image::LTLViewMUTEXEvents.png[] +
 Each process latexmath:[$P_i$] has three possible states that are
 denoted by the constants latexmath:[$noncrit_{i}$] (the state in which
 latexmath:[$P_i$] performs noncritical actions), latexmath:[$wait_{i}$]

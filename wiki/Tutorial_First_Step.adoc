@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 /Category:User_Manual[Category:User Manual]
 
 [[installation]]
@@ -14,13 +15,13 @@ Starting ProB
 Start ProB by double-clicking on `ProBWin` (for Windows users), or by
 launching `StartProB.sh` from a Terminal (for Linux and Mac users).
 
-/file:ProBWinContents.png[center]
+ image::ProBWinContents.png[]
 
 Mac users may also be able to launch ProB by double-clicking on
 `StartProB.sh`.
 
 This should bring up a window as follows (on a Mac):
-/file:ProBStartWindow.png[center||500px]
+ image::ProBStartWindow.png[]
 
 In case this does not work, please have a look at the output of ProB in
 the terminal window (on Windows a separate window will be automatically
@@ -28,21 +29,21 @@ started) and send us a description of what is printed in that window
 along with a detailed report (list which operating system you use, which
 version it is, which version of ProB have you downloaded, etc.).
 Normally, it should look as follows (on Windows):
-/file:ProBStartTerminal.png[center||400px]
+ image::ProBStartTerminal.png[]
 
 [[loading-a-first-b-machine]]
 Loading a first B machine
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Use the ``Open...'' command in the ``File'' menu
-/file:ProBWinOpen.png[center] and then navigate to the ``Examples''
+ image::ProBWinOpen.png[] and then navigate to the ``Examples''
 directory that came with your ProB installation:
-/file:ProBWinExamplesFolder.png[center||400px]
+ image::ProBWinExamplesFolder.png[]
 
 Inside the samples folder, open the ``Lift.mch'' machine. Your main ProB
 window should now look as follows:
 
-/file:ProB_LiftAfterLoad.png[center||500px]
+ image::ProB_LiftAfterLoad.png[]
 
 [[first-steps-in-animation]]
 First Steps in Animation
@@ -74,7 +75,7 @@ and moving the machine into its initialized state. The lower half of the
 ProB window should now look as follows (the upper half will remain
 unchanged):
 
-/file:ProB_LiftAfterInit.png[center||700px]
+ image::ProB_LiftAfterInit.png[]
 
 In the ``Enabled Operations'' pane we can see that two operations can be
 executed: `inc` and `dec`. The ``History'' pane shows us that we have
@@ -84,13 +85,13 @@ value 4. The green ``OK'' button indicates that the invariant of the
 machine is true. By clicking on the ``OK'' button, we obtain more
 details about the invariant of the machine:
 
-/file:ProB_LiftAfterInitInvariant.png[center]
+ image::ProB_LiftAfterInitInvariant.png[]
 
 Now, double click on ```dec`'' in the ``Enabled Operations'' Pane
 thereby executing the associated operation. The lower half of the ProB
 window should now look as follows:
 
-/file:ProB_LiftAfterDec.png[center||700px]
+ image::ProB_LiftAfterDec.png[]
 
 As you can see, the lift is now on floor 3. You can also see in the
 ``Enabled Operations'' pane that the `inc` operation is colored in blue,
@@ -102,7 +103,7 @@ work similar to a browser. Clicking on the back arrow will ``undo'' the
 last animation step and lead us back to the previous state of the
 machine:
 
-/file:ProB_LiftAfterDecBack.png[center||700px]
+ image::ProB_LiftAfterDecBack.png[]
 
 This time, the forward button is also enabled which will undo the action
 of the back button (i.e., re-apply the `dec` operation).

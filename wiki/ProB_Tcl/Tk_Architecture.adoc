@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 /Category:Developer_Manual[Category:Developer Manual] __NOTOC__
 
 [[theprob-tcltk-cross-language-architecture]]
@@ -82,7 +83,7 @@ ProB Tcl/Tk, just on the console (if any) used to launch ProB Tcl/Tk).
 
 The command is now available and ready to use:
 
-/file:ProB_TclTk_CountVarMenu.png[center||400px]
+ image::ProB_TclTk_CountVarMenu.png[]
 
 [[some-useful-prob-tcltk-procedures]]
 Some useful ProB Tcl/Tk procedures

@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 We provide here a list of modeling or specification examples (mainly in
 B) and how they can be validated with ProB.
 

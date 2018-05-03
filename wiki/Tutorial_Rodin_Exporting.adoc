@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 /Category:User_Manual[Category:User Manual]
 
 [[introduction]]
@@ -17,7 +18,7 @@ Start by right clicking (control Click on the Mac) on the machine or
 context in the ``Event-B Explorer'' view you wish to export and select
 ``ProB Classic.../Export for use in ProB Classic'':
 
-/file:ProBRodinExport.png[center||400px]
+ image::ProBRodinExport.png[]
 
 Now a ``File Save'' dialog will pop up. Choose a location and name (the
 default one will do) for the file. The file should have the extension
@@ -56,7 +57,7 @@ models. The source frame of ProB will show an ASCII rendering of the
 Event-B models. Note that all contexts and ancestor machines are merged
 into a single ``.eventb'' project file.
 
-/file:ProBRodinLoadedInTclTk.png[center||400px]
+ image::ProBRodinLoadedInTclTk.png[]
 
 [[starting-up-prob-classic-directly]]
 Starting up ProB Classic Directly
@@ -68,7 +69,7 @@ first generating an ``.eventb'' file. For this, start by right clicking
 Explorer'' view you wish to validate and select ``ProB Classic.../Open
 in ProB classic'':
 
-/file:ProBRodinExport.png[center||400px]
+ image::ProBRodinExport.png[]
 
 For this to work, you first need to open the ProB Classic preferences
 and then click on ``Browse'' to locate your installation of ProB Classic
@@ -76,4 +77,4 @@ and then click on ``Browse'' to locate your installation of ProB Classic
 http://www.stups.uni-duesseldorf.de/ProB/index.php5/Download[ProB
 download site] (we usually recommend the nightly-build version).
 
-/file:ProBRodinClassicPreference.png[center||400px]
+ image::ProBRodinClassicPreference.png[]

@@ -1,3 +1,4 @@
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 /Category:Developer_Manual[Category:Developer Manual] __NOTOC__ In this
 chapter we try to answer the question: why did we use Prolog to develop
 the core of ProB, and in particular why do we use the commercial
