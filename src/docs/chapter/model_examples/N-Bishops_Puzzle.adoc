@@ -56,7 +56,7 @@ END
 
 This will lead to ProB to show the solution graphically, as follows:
 
-/File:ProB_Bishops_8_14_Screenshot.png[300px|center]
+image:ProB_Bishops_8_14_Screenshot.png[300px|center]
 
 For the chess pieces we have used the images available at
 https://commons.wikimedia.org/wiki/Category:SVG_chess_pieces[wikimedia.org].

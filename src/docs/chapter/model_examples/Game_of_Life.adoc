@@ -79,4 +79,4 @@ END
 
 The following is a screenshot of ProB Tcl/Tk animating the above model:
 
-/File:ProB_GameOfLife_Screenshot.png[600px|center]
+image:ProB_GameOfLife_Screenshot.png[600px|center]

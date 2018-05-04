@@ -107,7 +107,7 @@ END
 This machine can then be loaded, e.g., into the ProB Tcl/Tk animator,
 which should give you a picture like this:
 
-/File:ProB_SendMoreMoney_Screenshot.png[600px|center]
+image:ProB_SendMoreMoney_Screenshot.png[600px|center]
 
 Alternatively you can load the B machine from the command-line using,
 e.g.:

@@ -50,7 +50,7 @@ END
 This will lead to ProB to show the solution graphically, as follows (the
 screenshot is unfortunately cropped and does not show all rows):
 
-/File:ProB_Queens_40_Screenshot.png[600px|center]
+image:ProB_Queens_40_Screenshot.png[600px|center]
 
 Instead of using ProB's standard constraint-solving backend, you can
 also use our link:/Using_ProB_with_KODKOD[Kodkod backend] to solve this

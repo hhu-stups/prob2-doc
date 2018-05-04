@@ -118,7 +118,7 @@ manual. With the above, ProB will display the variables x, y and dist in
 a graphical way, and by animation one can gain insights into why it is
 impossible not to generate four quartets.
 
-/File:ProB_Card_Screenshot.png[600px|center]
+image:ProB_Card_Screenshot.png[600px|center]
 
 [[a-version-requiring-symmetry-reduction]]
 A version requiring symmetry reduction

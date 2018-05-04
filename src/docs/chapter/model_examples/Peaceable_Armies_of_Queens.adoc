@@ -83,7 +83,7 @@ using an http://alloy.mit.edu/alloy/[Alloy] model (see below).
 
 The first solution found for dim=8 and n=9 is as follows:
 
- image::ProB_PeaceableQueens_8_9_Screenshot.png[]
+image::ProB_PeaceableQueens_8_9_Screenshot.png[]
 
 [[the-alloy-model-for-comparison]]
 The Alloy model for comparison
@@ -219,4 +219,4 @@ Here are the solving times for various board sizes on my MacBook Air:
 
 The first solution found for dim=8 is as follows:
 
- image::ProB_PeaceableQueens_8_9_Opt_Screenshot.png[]
+image::ProB_PeaceableQueens_8_9_Opt_Screenshot.png[]

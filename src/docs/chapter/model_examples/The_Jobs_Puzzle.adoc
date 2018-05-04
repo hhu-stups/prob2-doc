@@ -260,7 +260,7 @@ constraints, generating a valid solution that answers the question posed
 by the puzzle “who holds which job? ” in form of the HoldsJob function.
 The solution found by ProB is depicted below.
 
-/File:JobsPuzzleSolutionAsGraph.png[border|center|The solution to the
+image:JobsPuzzleSolutionAsGraph.png[border|center|The solution to the
 Jobs puzzle, depicted graphically]
 
 This satisfies, in our eyes, the challenges identified by Shapiro. In

@@ -112,7 +112,7 @@ from above):
 This gives rise to the following graphical visualization of the first
 solution found by ProB:
 
-/File:ProB_NinePrisoners_Fancy.png[600px|center]
+image:ProB_NinePrisoners_Fancy.png[600px|center]
 
 Details about the use of this visualization feature can be found in the
 link:/Graphical_Visualization[Graphical_Visualization] page of the

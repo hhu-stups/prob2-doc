@@ -196,7 +196,7 @@ model checking. You can see the (simple)
 link:/Graphical_Visualization[graphical visualisation] of the state of
 the model.
 
-/File:ProB_RushHour_XTL_Screenshot.png[600px|center]
+image:ProB_RushHour_XTL_Screenshot.png[600px|center]
 
 [[running-using-probcli]]
 Running using probcli

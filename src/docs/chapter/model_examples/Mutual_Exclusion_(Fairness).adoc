@@ -10,8 +10,9 @@ Model Checking”, The MIT Press, 2008, pages 43-45.]).
 
 Each of the actions of a process are represented by a respective event:
 
- +
- image::LTLViewMUTEXEvents.png[] +
+
+image::LTLViewMUTEXEvents.png[]
+
 Each process latexmath:[$P_i$] has three possible states that are
 denoted by the constants latexmath:[$noncrit_{i}$] (the state in which
 latexmath:[$P_i$] performs noncritical actions), latexmath:[$wait_{i}$]
