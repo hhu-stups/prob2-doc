@@ -1,3 +1,5 @@
+== Test Case Generation
+
 ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 
 [[introduction]]
@@ -31,10 +33,10 @@ is exercised by at least one test case.
 ProB has two main algorithms to find suites of test cases:
 
 * model-checking-based (invoked, e.g., using the
-link:/Using_the_Command-Line_Version_of_ProB#-mcm_tests_.3CDepth.3E_.3CMaxStates.3E_.3CEndPredicate.3E_.3CFILE.3E[mcm_tests]
-command of link:/Using_the_Command-Line_Version_of_ProB[probcli]) and
-* constraint-based (invoked, e.g., using the link:/Using_the_Command-Line_Version_of_ProB#-cbc_tests_.3CDepth.3E_.3CEndPredicate.3E_.3CFile.3E[cbc_tests]
-command of link:/Using_the_Command-Line_Version_of_ProB[probcli]; more
+<<Using_the_Command-Line_Version_of_ProB#-mcm_tests,mcm_tests>>
+command of <<Using_the_Command-Line_Version_of_ProB,probcli>>) and
+* constraint-based (invoked, e.g., using the <<Using_the_Command-Line_Version_of_ProB#-cbc_tests,cbc_tests>> 
+command of <<Using_the_Command-Line_Version_of_ProB,probcli>>; more
 details can be found below)
 
 The former will run the model checker to generate the state space of the
