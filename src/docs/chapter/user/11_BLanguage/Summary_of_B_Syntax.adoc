@@ -409,9 +409,22 @@ B supports two styles of comments:
 ....
 ProB recognises several pragma comments of the form /*@ PRAGMA VALUE */
 The whitespace between @ and PRAGMA is optional.
+  /*@symbolic */      put before comprehension set or lambda to instruct ProB
+                      to keep it symbolic and not try to compute it explicitly
   /*@label LBL */     associates a label LBL with the following predicate
+                      (LBL must be identifier or a string "....")
   /*@desc DESC */     associates a description DESC with the preceding predicate
-  /*@file PATH */     associates a file for machines in SEES,...
+  /*@file PATH */     associates a file for machines in SEES, INCLUDES, ...
+                      put pragma after a seen or included machine
+  /*@package NAME */  at start of machine, machine file should be in folder NAME/...
+                      NAME can be qualified N1.N2...Nk, in which case the machine
+                      file should be in N1/N2/.../Nk
+  /*@import-package NAME */  adds ../NAME to search paths for SEES,...
+                      NAME can also be qualified N1.N2...Nk, use after package pragma
+  /*@unit U */        associates a unit U with the following constant or variable in the
+                      CONSTANTS or VARIABLES section, possible units are, e.g.,
+                      "m", "s", "mps", "m * s**-2"  (quotes must be used);
+                      see https://www3.hhu.de/stups/prob/index.php/Tutorial_Unit_Plugin
 ....
 
 [[file-extensions]]
@@ -454,8 +467,9 @@ reference manual]. Here are the main differences with Atelier B:
   - ProB allows WHILE loops and sequential composition in abstract machines
   - ProB now allows the IF-THEN-ELSE and LET for expressions and predicates
     (e.g., IF x<0 THEN -x ELSE x END or LET x BE x=f(y) IN x+x END)
-  - ProB's type inference is much stronger than Atelier-B's, much less typing predicates
+  - ProB's type inference is stronger than Atelier-B's, much less typing predicates
     are required
+  - ProB accepts operations with parameters but without pre-conditions
   - ProB allows identifiers consisting of a single character
   - ProB allows multi-line strings and supports UTF-8 characters in strings,
     and ProB allows string literals written using three apostrophes ('''string''')
