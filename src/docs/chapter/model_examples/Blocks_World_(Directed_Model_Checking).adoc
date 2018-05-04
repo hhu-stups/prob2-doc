@@ -148,12 +148,12 @@ In ProB Tcl/Tk you simply use the standard model checking dialog (in the
 Verify menu) and choose the ``Heuristic Function / Random'' option in
 the ``Search Strategy'' pop-up menu:
 
-/File:ProB_MC_Heuristic.png[200px|center]
+image:ProB_MC_Heuristic.png[200px|center]
 
 After that you can find the solution quickly by simply pressing the
 ``Model Check'' button:
 
-/File:ProB_BlockGoal_Screenshot.png[600px|center]
+image:ProB_BlockGoal_Screenshot.png[600px|center]
 
 When writing your own heuristic functions, keep in mind that internally
 the weights are stored as 64-bit integers on 64-bit systems, and 32-bit

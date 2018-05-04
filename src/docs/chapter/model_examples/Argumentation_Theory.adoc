@@ -60,7 +60,7 @@ END
 
 Here is a screenshot of ProB Tcl/Tk after loading the model.
 
- image::ProB_Argumentation_Screenshot1.png[]
+image::ProB_Argumentation_Screenshot1.png[]
 
 You can see that there is only a single solution (solving time 10 ms),
 as only a single SETUP_CONSTANTS line is available in the ``Enabled
@@ -68,17 +68,17 @@ Operations'' pane. Double-click on SETUP_CONSTANTS and then
 INITIALISATION will give you the following result, where you can see the
 solution in the ``State Properties'' pane:
 
- image::ProB_Argumentation_Screenshot2.png[]
+image::ProB_Argumentation_Screenshot2.png[]
 
 If you want to inspect the solution visually, you can select the
 ``Current State as Graph'' command in the ``States'' submenu of the
 ``Visualize'' menu:
 
- image::ProB_Argumentation_VisCurStateAsGraph.png[]
+image::ProB_Argumentation_VisCurStateAsGraph.png[]
 
 This results in the following picture being displayed:
 
- image::ProB_Argumentation_Dot.png[]
+image::ProB_Argumentation_Dot.png[]
 
 You can try and experiment with various attack graphs by editing the
 file. E.g., with
@@ -88,11 +88,11 @@ file. E.g., with
 you now get three possible labelling, the last one assigns undec to all
 arguments.
 
- image::ProB_Argumentation_Dot1.png[]
+image::ProB_Argumentation_Dot1.png[]
 
- image::ProB_Argumentation_Dot2.png[]
+image::ProB_Argumentation_Dot2.png[]
 
- image::ProB_Argumentation_Dot3.png[]
+image::ProB_Argumentation_Dot3.png[]
 
 [[a-more-elegant-encoding]]
 A more elegant encoding
@@ -206,4 +206,4 @@ end
 If you load this model with link:/Tutorial_Rodin_First_Step[ProB for
 Rodin], you can see the solution in the State view:
 
- image::ProBRodinArgumentationState.png[]
+image::ProBRodinArgumentationState.png[]
