@@ -208,7 +208,7 @@ The left side of the following Figure shows the non-graphical animation
 of the machine scheduler, and the right side shows its graphical
 animation obtained using ProB.
 
- image::scheduler_graphvis1.png[]
+image::scheduler_graphvis1.png[]
 
 The graphical visualization is done by writing in the DEFINTIONS section
 the following animation function. Here, we need to map PID elements to
@@ -264,7 +264,7 @@ particular puzzle (left), the graphical visualization of the puzzle
 (middle), as well as the visualization of the solution found by ProB
 after a couple of seconds (right).
 
- image::Sudoku_graphvis1.png[]
+image::Sudoku_graphvis1.png[]
 
 Note that it would have been nice to be able to replace Nri inside the
 animation function simply by i = Sudoku9(r)(c). While our visualization

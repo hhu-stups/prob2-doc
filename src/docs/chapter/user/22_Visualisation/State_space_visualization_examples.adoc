@@ -15,12 +15,12 @@ for TLA+], the model checker run for a few seconds and then the command
 The goal predicate rBit=1 was used; those states satisfying this
 predicate are shown in orange.
 
- image::MCAlternatingBit_sfdp.png[]
+image::MCAlternatingBit_sfdp.png[]
 
 Below is a projection of this state space onto the expression
 `(rBit,sBit)`, using the ``Custom Transition Diagram'' feature of ProB:
 
- image::MCAlternatingBit_projsrBit.png[]
+image::MCAlternatingBit_projsrBit.png[]
 
 More details about this statespace projection feature can be found in
 our
@@ -68,12 +68,12 @@ computed (this can be set by defining SCOPE==card(q)<=qLen). The colour
 indicates the length of the queue variable q of the model
 (gray=0,blue=1,red=2, green=3, lightgray=4) .
 
- image::MCInnerFIFO_q3_sfdp.png[]
+image::MCInnerFIFO_q3_sfdp.png[]
 
 Below is a projection of this state space onto the expression `card(q)`,
 using the ``Custom Transition Diagram'' feature of ProB:
 
- image::MCInnerFIFO_proj_cardq.png[]
+image::MCInnerFIFO_proj_cardq.png[]
 
 [[rushhour]]
 RushHour
@@ -85,7 +85,7 @@ Hour puzzle B model], at the moment that ProB has found a solution to
 the goal predicate (red car moved out of the grid). The solution node(s)
 are marked in orange and the prism option was used.
 
- image::RushHour_sfdp.png[]
+image::RushHour_sfdp.png[]
 
 Here is a visualisation of the full state space of 4782 nodes and 29890
 transitions, using the scale option this time:
@@ -131,7 +131,7 @@ state space contains 5410 nodes. One can clearly see two synchronisation
 points on the left-hand side and right-hand side, and that in between
 synchronisation the processes simply interleave.
 
- image::Threads51_sfdp.png[]
+image::Threads51_sfdp.png[]
 
 With partial order reduction, the state space is reduced to 208 states:
  image::Threads51_POR_sfdp.png[]
@@ -174,8 +174,8 @@ Below are projections of the above state spaces onto the expression
 feature of ProB. The first shows the projection without partial order
 reduction:
 
- image::Threads51_proj.png[]
+image::Threads51_proj.png[]
 
 With partial order reduction, one can see that the Step1_p1 events now
 all occur before the Step1_p2 events:
- image::Threads51_POR_proj.png[]
+image::Threads51_POR_proj.png[]

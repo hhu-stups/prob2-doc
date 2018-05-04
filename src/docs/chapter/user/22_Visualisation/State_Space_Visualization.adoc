@@ -22,7 +22,7 @@ by ProB. As shown in the following figure, the command (visualize)
 ``Statespace'' displays a diagram corresponding to the state space
 currently explored by the animation in a separate window.
 
- image::Visualising_the_state_space.png[]
+image::Visualising_the_state_space.png[]
 
 [[graph-nodes]]
 Graph Nodes
@@ -46,7 +46,7 @@ In addition to its type, a node can indicate that it corresponds to an
 invariant violation, which is displayed by a color filling as shown in
 the following figure
 
- image::Trace_to_invariant_violation.png[]
+image::Trace_to_invariant_violation.png[]
 
 Finally, if you have specified a goal predicate (either using a
 DEFINITION `GOAL == P` or by using a command such as ``Find state

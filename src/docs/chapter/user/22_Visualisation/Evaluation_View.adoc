@@ -22,13 +22,13 @@ couple of animation steps and then open the Evaluation view in the
 Analyse menu. You should get window that looks similar to the following
 screenshot:
 
- image::Eval_view.png[]
+image::Eval_view.png[]
 
 You can now expand each of the three sections to investigate the current
 state of the machine. For instance if we expand the Variables section we
 will get the following:
 
- image::Eval_view2.png[]
+image::Eval_view2.png[]
 
 The tree shows values for each variable in the same way as the State
 Properties view. The value of the variable numbers in our example tell
@@ -36,7 +36,7 @@ us that card(numbers) = 2288 and it shows the first and last entries. In
 contrast to the State Properties View you can see all values by
 doubleclicking an entry as shown in the next screenshot.
 
- image::Eval_view3.png[]
+image::Eval_view3.png[]
 
 The save button can be used to save the value of the variable (as a
 B-Expression) to a file. You can also save the values of multiple
@@ -117,7 +117,7 @@ be inspected using the evaluation view and because of the automatically
 introduced predicate it is very easy to see the reason why
 `magazines <: papers` is false.
 
- image::Eval_view6.png[]
+image::Eval_view6.png[]
 
 [[filtering-relevant-information-and-data-extraction]]
 Filtering relevant information and Data Extraction
@@ -135,7 +135,7 @@ upper right part of the view. As we type, ProB will filter out all items
 that do not contain our search phrase. If we, for instance, type x19. We
 will get only those constants and properties that contain x19.
 
- image::Eval_view7.png[]
+image::Eval_view7.png[]
 
 The second way to filter out unnecessary information is to mark some
 items and restrict the view. Suppose we are only interested in the
@@ -146,7 +146,7 @@ we want to see by selecting ``Mark all selected items'' from the context
 menu. In the same popup menu, we can select ``Show only marked items''
 which will remove all other information.
 
- image::Eval_view8.png[]
+image::Eval_view8.png[]
 
 Finally the popup menu allows us to save the content of a particular
 state into a file (either the full state, or the marked items only). In
