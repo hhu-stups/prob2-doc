@@ -33,7 +33,7 @@ The distribution folder of ProB contains an example with a Makefile,
 producing the following file, which at the same time documents the core
 features:
 
-image::prob_latex_doc.pdf[]
+  image::prob_latex_doc.pdf[]
 
 [[commands]]
 Commands
