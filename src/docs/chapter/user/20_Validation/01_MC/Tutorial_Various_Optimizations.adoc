@@ -1,4 +1,8 @@
+:wikifix: 2
 ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
+[[tutorial-various-optimizations]]
+= Tutorial Various Optimizations
+
 The ordinary model checker of ProB enables the user to verify
 automatically whether a B model contains any errors such as deadlocks
 and invariant violations. The search for errors is performed by a graph
@@ -51,7 +55,7 @@ executing the operations is irrelevant with respect to reaching the
 deadlock state. This can be seen, for example, by observing the full
 state space of the machine:
 
- image::full_state_space_por.png[]
+image::full_state_space_por.png[]
 
 Since the order in which the operations are executed is not relevant for
 discovering the deadlock state it is sufficient to examine only one of
@@ -59,7 +63,7 @@ the six possible paths that start in the initial state and reach the
 deadlock. Thus, for the machine it is enough to analyze only one
 arbitrary order of the events in order to detect the deadlock:
 
- image::partial_state_space_por.png[]
+image::partial_state_space_por.png[]
 
 Using this observation the ordinary model checker of ProB has been
 extended to check a model formalized in B or Event-B using partial order
@@ -154,7 +158,7 @@ The reduction algorithm makes use of the independence of transitions.
 Two transitions `Op1` and `Op2` are called independent if for each state
 s where both are enabled we have the following situation:
 
- image::independence.png[]
+image::independence.png[]
 
 Let us assume that the transitions `Op1` and `Op2` in the Figure above
 constitute the executions of two deterministic operations of a B
@@ -186,7 +190,7 @@ menu bar of the Tcl/Tk interface of ProB: “Verify → Enabling Analysis →
 Dependence Analysis (Table)”. For example, the dependency table for the
 model 'Example.mch' looks as follows:
 
- image::dependency_table.png[]
+image::dependency_table.png[]
 
 The results in the dependency table for a pair of operations `Op1` and
 `Op2` have the following meanings:
@@ -280,7 +284,7 @@ various ways:
 This enabling relation of two operations we can illustrate, for example,
 as follows:
 
- image::RelationFigureExplanation.png[]
+image::RelationFigureExplanation.png[]
 
 where the green boxes denote that the evaluation of the guard of `Op2`
 is true, whereas the red boxes indicate that the evaluation of the guard
@@ -291,11 +295,11 @@ such a kind of relations. The enabling relations are determined by means
 of syntactic and constraint-based analyses. In particular, we
 concentrate on three kinds of enabling relations:
 
-*  image::_GuaranteedRelation.png[] +
+*image::_GuaranteedRelation.png[] +
 `Op2` is *always* enabled after the execution of `Op1`
-*  image::_ImpossibleRelation.png[] +
+*image::_ImpossibleRelation.png[] +
 `Op2` is *impossible* to be enabled after the execution of `Op1`
-*  image::_KeepRelation.png[] +
+*image::_KeepRelation.png[] +
 `Op1` *keeps* `Op2` enabled respectively disabled
 
 Consider the B machine below modelling an algorithm for mutual exclusion
@@ -357,7 +361,7 @@ exploring the state space of the machine 48 guard tests (8 states
 latexmath:[$\times$] 6 operations) will be performed in order to unfold
 the entire state space of the MutualExclusion machine.
 
- image::StateSpacePGE.png[]
+image::StateSpacePGE.png[]
 
 The state space of the `MutualExclusion` machine is visualised in Figure
 1. The symbols latexmath:[$n_i$], latexmath:[$w_i$] and

@@ -1,4 +1,8 @@
+:wikifix: 2
 ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
+[[checking-csp-assertions]]
+= Checking CSP Assertions
+
 As of version 1.3.4, ProB provides support for refinement checking and
 various other assertions (deadlock, divergence, determinism, and LTL/CTL
 assertions) of CSP-M specifications. In this tutorial we give a short
@@ -151,7 +155,7 @@ Viewer_ either from the menu bar of the main window by selecting the
 Refinement button in the ‘’State Properties’’ pane. The viewer looks as
 follows:
 
- image::CSPAssertionsViewer.png[]
+image::CSPAssertionsViewer.png[]
 
 The _CSP Assertion Viewer_ of ProB has a similar design to the graphical
 user interface of FDR2. It consists basically of three main components:
@@ -223,7 +227,7 @@ of all assertions in the list box that are not checked yet.
 specification in FDR2. The FDR2 tool is launched with the currently
 loaded specification in case the FDR2 is installed and the correct path
 to the `fdr2` command is set for the respective preference `Path to the
-FDR2 tool`. The value of the `Path to the FDR2 tool` preference can be
+FDR2 tool`. The value of the`Path to the FDR2 tool` preference can be
 changed from the “CSP Preferences…” window which can be opened by
 selecting the `CSP Preferences…` command in `Preferences` menu of the
 main window.
@@ -287,10 +291,10 @@ picture below.
 /file:_CSPAssertionsViewer_ctxmenu.png[file:
 CSPAssertionsViewer_ctxmenu.png]
 
-The assertion ```ASSYSTEM |= LTL: “GF [eats.0]”`'' intends to check if
-the process ASSYSTEM satisfies the LTL formula ```GF [eats.0]`''. For
+The assertion "`ASSYSTEM |= LTL: “GF [eats.0]”`" intends to check if
+the process ASSYSTEM satisfies the LTL formula "`GF [eats.0]`". For
 the selected assertion above, for example, the options `Show LTL
-Counterexample` and `Show LTL Counterexample in State Space` are enabled
+Counterexample`and`Show LTL Counterexample in State Space` are enabled
 as a counterexample was found for the check. On the other hand, the
 options `Check Assertion` and `Interrupt Assertion` are disabled as the
 assertion check was completed.
@@ -326,8 +330,8 @@ negated assertion becomes tick (✔). Otherwise, if the result of the
 Performing the command causes the attachment of a new refinement
 assertion in which the process expressions on both sides of the
 refinement operator `[m=` are swapped. If, for example, we execute
-‘’Swap Processes’’ on the assertion ```P [T= Q`'', the command adds to
-the list of assertions the assertion ```Q [T= P`''.
+‘’Swap Processes’’ on the assertion "`P [T= Q`", the command adds to
+the list of assertions the assertion "`Q [T= P`".
 
 The following options affect all assertions in the list box.
 
@@ -350,7 +354,7 @@ expressions can be evaluated.
 specification in FDR2. The FDR2 tool is launched with the currently
 loaded specification if FDR2 is installed and the correct path to the
 `fdr2` command is set for the respective preference `Path to the FDR2
-tool`. The value of the `Path to the FDR2 tool` preference can be
+tool`. The value of the`Path to the FDR2 tool` preference can be
 changed from the “CSP Preferences…” window which can be opened by
 selecting the `CSP Preferences…` command in `Preferences` menu of the
 main window.
@@ -433,7 +437,7 @@ obviously `P` reaches a deadlock state after performing the trace
 latexmath:[$\langle a,b,c \rangle$]. Providing a second double-click on
 the assertion will open the following debugging window:
 
- image::_CSP_Deadlock_Trace.png[]
+image::_CSP_Deadlock_Trace.png[]
 
 Considering the CSP processes `Q` and `R` one can see or check that `R`
 is a trace refinement of `Q` since `R` performs the same set of traces
@@ -444,7 +448,7 @@ refinement check. Performing a second double-click on the item `R [T= Q`
 will open the following trace debugger window with the counterexample
 displayed in it:
 
- image::_CSP_Trace_Debugger.png[]
+image::_CSP_Trace_Debugger.png[]
 
 A counterexample of a trace-refinement assertion is a trace leading to a
 state in which the implementation process performs an event that the
@@ -464,7 +468,7 @@ produce a counterexample since `R` refuses the event `c` that is offered
 by Q after executing `a`. Accordingly, the counterexample will be
 illustrated within the following trace debugger window:
 
- image::_CSP_Failures_Debugger.png[]
+image::_CSP_Failures_Debugger.png[]
 
 These are basically the three types of debugging windows that will
 appear when debugging a counterexample for an assertion check in case
@@ -484,10 +488,10 @@ reaches a cycle “(b -> a)+” that violates the property “F [c]”.
 Performing a second double-click on the assertion will display the
 following state space graph in the graphical viewer:
 
- image::_CE_LTL_assertion.png[]
+image::_CE_LTL_assertion.png[]
 
 In the figure above, the nodes and the transitions of the respective
-counterexample ``a -> (b -> a)+'' are colored in red.
+counterexample "a -> (b -> a)+" are colored in red.
 
 [[checking-csp-assertions-with-probcli]]
 Checking CSP Assertions with `probcli`
@@ -496,14 +500,14 @@ Checking CSP Assertions with `probcli`
 It is also possible to check CSP assertions with the command line
 version of ProB. The command has the following syntax:
 
-`probcli -csp_assertion ````A`''` File`
+`probcli -csp_assertion "``A`"`File`
 
 where _A_ is a CSP assertion and _File_ the path to the CSP file. For
 example, if we want to check the refinement assertion ``P [T= Q`` on
 some CSP specification `example.csp`, then we can do this by running the
 ProB command line version with the following options:
 
-`probcli -csp_assertion ````P`` ``[T=`` ``Q`''` example.csp`
+`probcli -csp_assertion "``P````[T=````Q`"`example.csp`
 
 Note that the assertion should be placed between quotes. In addition,
 when an assertion is checked with the '-csp_assertion' option the
@@ -513,7 +517,7 @@ Notice that for checking LTL and CTL assertions from the command line
 you need to escape the double quotes (") wrapping the respective LTL/CTL
 formula by means of a backslash \.
 
-`probcli -csp_assertion ````Q`` ``|=`` ``LTL:`` ``\`''`F [c]\"" example.csp`
+`probcli -csp_assertion "``Q````|=````LTL:````\`"`F [c]\"" example.csp`
 
 [[references-and-notes]]
 References and Notes

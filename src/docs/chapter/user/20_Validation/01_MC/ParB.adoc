@@ -1,4 +1,8 @@
+:wikifix: 2
 ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
+[[parb]]
+= ParB
+
 This page explains how to run the distributed model checking prototype.
 
 Note that the implementation does not work with Windows, only Linux
@@ -10,27 +14,27 @@ It takes the size of shared memory as parameter (usually the size of
 your memory in GB). You need to run the script with root rights.
 
 `#!/bin/bash` +
-`if [ $# -gt 0 ]; then` +
-`    echo ````Setting`` ``SHM`` ``sizes:`'' +
-`    sysctl -w kern.sysv.shmmax=\`perl -e ````print`` ``1073741824*$1`''`\`` +
-`    sysctl -w kern.sysv.shmseg=4096` +
-`    sysctl -w kern.sysv.shmall=\`perl -e ````print`` ``262144*$1`''`\`` +
-`    echo ````Here`` ``are`` ``the`` ``current`` ``values:`'' +
-`    sysctl -a | grep shm` +
+`if [ $# -gt 0 ]; then` +
+`echo "``Setting````SHM````sizes:`" +
+`sysctl -w kern.sysv.shmmax=\`perl -e "``print`` ``1073741824*$1`"`\`` +
+`sysctl -w kern.sysv.shmseg=4096` +
+`sysctl -w kern.sysv.shmall=\`perl -e "``print`` ``262144*$1`"`\`` +
+`echo "``Here````are````the````current````values:`" +
+`sysctl -a | grep shm` +
 `else` +
-`    echo ````You`` ``need`` ``to`` ``provide`` ``the`` ``size`` ``of`` ``shared`` ``memort`` ``(in`` ``full`` ``GB)`'' +
+`echo "``You````need````to````provide````the````size````of````shared````memort````(in````full````GB)`" +
 `fi`
 
 After setting up shared memory, you can use the `parB.sh` script that
-comes with the ProB distribution (see link:/Download[Download]).
+comes with the ProB distribution (see <<download,Download>>).
 
 Usage
 
-`./parB <Nr. of workers> `` `
+`./parB <Nr. of workers>```
 
 Example usage:
 
-`$ ./parB.sh 2 ~/parB.log scheduler.mch`
+`$ ./parB.sh 2 ~/parB.log scheduler.mch`
 
 [[running-in-the-cloudcluster]]
 Running in the Cloud/Cluster
@@ -43,15 +47,15 @@ complex:
 * On each physical computer you need to start exactly one copy of
 `lib/hasher`.
 
-`lib/hasher `` `` 1`
+`lib/hasher````1`
 
 * Multiple Copies of `probcli` configured as workers:
 
-`probcli -zmq_worker2 `` `` 0`
+`probcli -zmq_worker2````0`
 
 * A single instance of `probcli` configured as the master:
 
-`probcli -zmq_master2 `` `` ``  0 `` `
+`probcli -zmq_master2``````0```
 
 The minimal queue length is used to determine if a worker is allowed to
 share its queue. The experiments have shown, that a number between 10
@@ -73,8 +77,8 @@ Options
 
 You can use preferences in parB.sh (and the master) :
 
-`./parB <Nr. of workers> `` `` ` +
-` ./probcli `` -zmq_master2 `` `` ``  0 `` `` `
+`./parB <Nr. of workers>````` +
+`./probcli``-zmq_master2``````0`````
 
 If you use -strict, parB will stop as soon as a violation is found,
 otherwise parB will explore the full state space (up to the maximal
@@ -88,4 +92,4 @@ If something goes wrong it may be necessary to clean up your shared
 memory. You can find out if there are still memory blocks occupied using
 `ipcs`. Removal can be done using:
 
-`ipcrm -M \`ipcs | grep `` | grep -o ````0x[^`` ``]*`''` | sed ':a;N;$!ba;s/\n/ -M /g'\``
+`ipcrm -M \`ipcs | grep " | grep -o ````0x[^`` ``]*`"` | sed ':a;N;$!ba;s/\n/ -M /g'\``

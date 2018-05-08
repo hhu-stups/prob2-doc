@@ -1,7 +1,14 @@
+:wikifix: 2
 ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
-/Category:Tutorial[Category:Tutorial]
-/Category:User_Manual[Category:User Manual]
-/Category:Physical_Units_Plugin[Category:Physical Units Plugin]
+[[tutorial-unit-plugin-with-rodin]]
+= Tutorial Unit Plugin With Rodin
+
+:category: Tutorial
+
+:category: User_Manual
+
+:category: Physical_Units_Plugin
+
 
 This tutorial describes, how ProB's integrated plugin for unit analysis
 can be used with Event-B machines from inside the Rodin platform. This
@@ -28,7 +35,7 @@ Instructions] or the
 http://www.stups.uni-duesseldorf.de/ProB/index.php5/Installation#Installation_Instruction_for_ProB_.28Rodin_Plugin.29[Screencast]
 to install ProB for Rodin.
 
-In addition to the ``ProB for Rodin2'' plugin there is a ``ProB for
+In addition to the "ProB for Rodin2" plugin there is a ``ProB for
 Rodin2 - Physical Units Support'' plugin at out Rodin update site. You
 have to install both to enable physical units support for Rodin.
 
@@ -39,16 +46,16 @@ Attaching Physical Units to Variables and Constants
 Once both plugins are installed, ProB allows to annotate both variables
 and constants with physical units:
 
- image::ProBRodinUnitPragmas.png[]
+image::ProBRodinUnitPragmas.png[]
 
 We store the user supplied unit and the units inferred by ProB as a new
 attribute in the Rodin database.
 
 Units can be supplied in two forms:
 
-* by using an alias like ``m'', ``cm'', ``mps'' and so on,
+* by using an alias like "m", "cm", "mps" and so on,
 * or by using an Event-B Expression in an SI unit compatible form, like
-``10^2 * m^2''.
+"10^2 * m^2".
 
 [[starting-the-analysis]]
 Starting the Analysis
@@ -58,10 +65,10 @@ The supplied units can now be used by ProB to infer missing units,
 verify the supplied units and detect unit errors. To start the analysis
 use the context menu of the machine / context you want to analyse:
 
- image::ProBRodinStartUnitAnalysis.png[]
+image::ProBRodinStartUnitAnalysis.png[]
 
 Necessary machines and contexts will be translated and passed to ProB.
-Once the analysis is finished, the ``inferred unit'' text fields are
+Once the analysis is finished, the "inferred unit" text fields are
 filled with the resulting units.
 
 [[possible-errors]]
@@ -71,7 +78,7 @@ Possible Errors
 Inside the Rodin Errors view, several errors might occur:
 
 * An invalid unit has been supplied. Please check your input to the
-corresponding ``Physical Unit'' attribute.
+corresponding "Physical Unit" attribute.
 * Multiple units have been inferred for a variable or constant.
 
 Furthermore, we output a warning if no unit could be inferred for a

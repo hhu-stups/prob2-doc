@@ -1,4 +1,8 @@
-== Using the Command-Line Version of ProB
+:wikifix: 2
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
+[[using-the-command-line-version-of-prob]]
+= Using the Command-Line Version of ProB
+
 
 [[Using_the_Command-Line_Version_of_ProB]]
 The command-line version of ProB, called probcli, offers many of the
@@ -7,7 +11,7 @@ you can run ProB from your shell scripts or in your Makefiles. These
 pages refer to version 1.6 of ProB. Some features are only available in
 the nightly build of ProB. You can run `probcli –help` to find out which
 commands are supported by your version of ProB. For Bash users we
-provide link:/Bash_Completion[command completion] support.
+provide <<bash-completion,command completion>> support.
 
 Note: the order of commands is not relevant for `probcli` (except within
 groups of commands such as `-p MAXINT 127`). Any argument that is not
@@ -42,10 +46,10 @@ replaced with dashes. Also, all commands can either be typed with single
 leading dashes or double leading dashes. For example, all of the
 following commands have the same effect:
 
-`probcli M.mch -model_check` +
-`probcli M.mch -model-check` +
-`probcli M.mch --model_check` +
-`probcli M.mch --model-check`
+`probcli M.mch -model_check` +
+`probcli M.mch -model-check` +
+`probcli M.mch --model_check` +
+`probcli M.mch --model-check`
 
 [[options]]
 Options
@@ -64,14 +68,14 @@ Description
 
 Example
 
-` probcli my.mch -mc 100`
+`probcli my.mch -mc 100`
 
-Note: with a value of nr=1 ProB will only inspect the ``virtual'' root
+Note: with a value of nr=1 ProB will only inspect the "virtual" root
 node (and compute its outgoing transitions). Also see the related
 options `-nodead, -noinv, -nogoal, -noass` to influence which kinds of
 errors are reported by `-mc`. You can also set a target goal predicate
-using the `-goal ````PRED`'' command and limit the scope of the model
-checking using the `-scope ````PRED`'' command.
+using the `-goal "``PRED`" command and limit the scope of the model
+checking using the `-scope "``PRED`" command.
 
 [[model_check]]
 -model_check
@@ -103,7 +107,7 @@ been found
 
 Example
 
-` probcli my.mch -mc 1000 -nodead -nogoal`
+`probcli my.mch -mc 1000 -nodead -nogoal`
 
 [[disable_timeout]]
 -disable_timeout
@@ -121,7 +125,7 @@ version 1.5.1-beta7.
 
 Example
 
-` probcli my.mch -model-check -disable-timeout`
+`probcli my.mch -model-check -disable-timeout`
 
 [[bf]]
 -bf
@@ -136,7 +140,7 @@ Description
 
 Example
 
-` probcli my.mch -bf -mc 1000`
+`probcli my.mch -bf -mc 1000`
 
 [[df]]
 -df
@@ -151,7 +155,7 @@ Description
 
 Example
 
-` probcli my.mch -df -mc 1000`
+`probcli my.mch -df -mc 1000`
 
 [[mc_mode]]
 -mc_mode
@@ -184,7 +188,7 @@ mainly useful for deadlock checking)
 
 Example
 
-` probcli my.mch -model_check -mc_mode random`
+`probcli my.mch -model_check -mc_mode random`
 
 [[timeout]]
 --timeout
@@ -204,7 +208,7 @@ multiplied by a factor. See the description of the -p option.
 
 Example
 
-`probcli my.mch -timeout 10000`
+`probcli my.mch -timeout 10000`
 
 [[t]]
 -t
@@ -219,7 +223,7 @@ Description
 
 Example
 
-`probcli my.mch -t`
+`probcli my.mch -t`
 
 [[init]]
 -init
@@ -234,27 +238,27 @@ Description
 
 Example
 
-`probcli my.mch -init` +
+`probcli my.mch -init` +
 `nr_of_components(1)` +
-`% checking_component_properties(1,[])` +
-`% enumerating_constants_without_constraints([typedval(fd(_24428,ID),global(ID),iv)])` +
-`% grounding_wait_flags` +
+`% checking_component_properties(1,[])` +
+`% enumerating_constants_without_constraints([typedval(fd(_24428,ID),global(ID),iv)])` +
+`% grounding_wait_flags` +
 `grounding_component(1)` +
 `grounding_component(2)` +
-`% found_enumeration_of_constants(0,2)` +
-`% backtrack(found_enumeration_of_constants(0,2))` +
-`% found_enumeration_of_constants(0,1)` +
-`% backtrack(found_enumeration_of_constants(0,1))` +
-`<- 0: SETUP_CONSTANTS :: root` +
-`% Could not set up constants with parameters from trace file.` +
-`% Will attempt any possible initialisation of constants.` +
-` | 0: SETUP_CONSTANTS success -->0` +
-` - <- 1: INITIALISATION :: 0` +
-`% Could not initialise with parameters from trace file.` +
-`% Will attempt any possible initialisation.` +
-`ALL OPERATIONS COVERED` +
-` -  | 1: INITIALISATION success -->2` +
-` -  - SUCCESS`
+`% found_enumeration_of_constants(0,2)` +
+`% backtrack(found_enumeration_of_constants(0,2))` +
+`% found_enumeration_of_constants(0,1)` +
+`% backtrack(found_enumeration_of_constants(0,1))` +
+`<- 0: SETUP_CONSTANTS :: root` +
+`% Could not set up constants with parameters from trace file.` +
+`% Will attempt any possible initialisation of constants.` +
+`| 0: SETUP_CONSTANTS success -->0` +
+`- <- 1: INITIALISATION :: 0` +
+`% Could not initialise with parameters from trace file.` +
+`% Will attempt any possible initialisation.` +
+`ALL OPERATIONS COVERED` +
+`-  | 1: INITIALISATION success -->2` +
+`-  - SUCCESS`
 
 [[cbc]]
 -cbc
@@ -269,7 +273,7 @@ Description
 
 Example
 
-`probcli my.mch -cbc all`
+`probcli my.mch -cbc all`
 
 [[cbc_deadlock]]
 -cbc_deadlock
@@ -306,7 +310,7 @@ will only find deadlocks which also make this predicate true.
 
 Example
 
-`probcli my.mch  -cbc_deadlock_pred ````n=15`''
+`probcli my.mch  -cbc_deadlock_pred "``n=15`"
 
 [[cbc_assertions]]
 -cbc_assertions
@@ -359,7 +363,7 @@ operations possible.
 
 Example
 
-`probcli my.mch  -cbc_sequence ````op1;op2`''
+`probcli my.mch  -cbc_sequence "``op1;op2`"
 
 [[strict]]
 -strict
@@ -376,7 +380,7 @@ unexpected error happens
 
 Example
 
-`probcli my.mch -t -strict`
+`probcli my.mch -t -strict`
 
 [[expcterr]]
 -expcterr
@@ -393,7 +397,7 @@ conjunction with the -strict option).
 
 Example
 
-`probcli examples/B/Benchmarks/CarlaTravelAgencyErr.mch -mc 1000 -expcterr invariant_violation -strict`
+`probcli examples/B/Benchmarks/CarlaTravelAgencyErr.mch -mc 1000 -expcterr invariant_violation -strict`
 
 [[animate]]
 -animate
@@ -413,7 +417,7 @@ error). Be careful: `-animate_all` could run forever.
 
 Example
 
-`probcli my.mch -animate 100`
+`probcli my.mch -animate 100`
 
 [[execute]]
 -execute
@@ -426,7 +430,7 @@ Description
 |execution (max Nr steps)
 |========================
 
-Executes the ``first'' enabled operation of a machine, maximally Nr of
+Executes the "first" enabled operation of a machine, maximally Nr of
 steps. It will stop if a deadlock is reached and report an error. You
 can also use the command `-execute_all`, which will only stop at a
 deadlock (and not report an error). Be careful: `-execute_all` could run
@@ -445,7 +449,7 @@ the final state of execution
 
 Example
 
-`probcli my.mch -execute 100`
+`probcli my.mch -execute 100`
 
 [[det_check]]
 -det_check
@@ -465,7 +469,7 @@ only an effect for the -animate and the -init commands.
 
 Example
 
-`probcli my.mch -animate 100 -det_check`
+`probcli my.mch -animate 100 -det_check`
 
 [[det_constants]]
 -det_constants
@@ -484,7 +488,7 @@ effect for the -animate and the -init commands.
 
 Example
 
-`probcli my.mch -init -det_constants`
+`probcli my.mch -init -det_constants`
 
 [[his]]
 -his
@@ -508,16 +512,16 @@ write the current values of variables and constants to a file.
 
 Example
 
-`probcli -animate 5 -his history.txt  supersimple.mch`
+`probcli -animate 5 -his history.txt  supersimple.mch`
 
 Additionally we can have the initialised variables and constants:
 
-`probcli -animate 5 -his history.txt -his_option show_init supersimple.mch`
+`probcli -animate 5 -his history.txt -his_option show_init supersimple.mch`
 
 And we can have in addition the values of the variables in between (and
 at the end):
 
-`probcli -animate 5 -his history.txt -his_option show_states supersimple.mch`
+`probcli -animate 5 -his history.txt -his_option show_states supersimple.mch`
 
 With -his_option trace_file as only option, probcli will write the
 history in Prolog format, which can later be used by the -t command.
@@ -538,7 +542,7 @@ allows the user to manually animate the loaded specification.
 
 Example
 
-`probcli my.mch -i`
+`probcli my.mch -i`
 
 [[repl]]
 -repl
@@ -553,7 +557,7 @@ Description
 
 Example
 
-`probcli my.mch -p CLPFD TRUE -repl`
+`probcli my.mch -p CLPFD TRUE -repl`
 
 A list of commands can be obtained by typing `:help` (just help for
 versions 1.3.x of probcli). The interactive read-eval-print-loop can be
@@ -562,16 +566,16 @@ exited using `:q` (just typing a return on a blank line for versions
 representation of the solutions found you can use the following command
 and open the `out.dot` file using dotty or GraphViz:
 
-`probcli -repl -evaldot ~/out.dot`
+`probcli -repl -evaldot ~/out.dot`
 
 You can also use the `-eval` command to evaluate specific formulas or
 expressions:
 
-`probcli -eval ````1+2`''
+`probcli -eval "``1+2`"
 
 For convenience, these formulas can also be put into a separate file:
 
-`probcli -eval_file MyFormula.txt`
+`probcli -eval_file MyFormula.txt`
 
 [[c]]
 -c
@@ -586,16 +590,16 @@ Description
 
 Example
 
-`probcli my.mch -mc 1000 -c`
+`probcli my.mch -mc 1000 -c`
 
 You can also use the longer name for the command:
 
-`probcli my.mch -mc 1000 --coverage`
+`probcli my.mch -mc 1000 --coverage`
 
 There is also a version which prints a shorter summary (and which is
 much faster for large state spaces):
 
-`probcli my.mch -mc 1000 --coverage_summary`
+`probcli my.mch -mc 1000 --coverage_summary`
 
 [[cc]]
 -cc
@@ -611,7 +615,7 @@ that the given number of nodes and transitions have been computed.
 
 Example
 
-`probcli my.mch -mc 1000 -cc 10 25`
+`probcli my.mch -mc 1000 -cc 10 25`
 
 [[p]]
 -p
@@ -622,12 +626,12 @@ Description
 [cols="",]
 |=======================================================================
 |Set to . For more information about preferences please have a look at
-link:/Using_the_Command-Line_Version_of_ProB#Preferences[Preferences]
+<<using-the-command-line-version-of-prob,Preferences>>
 |=======================================================================
 
 You can also use --pref instead of -p. Example
 
-`probcli my.mch -p TIME_OUT 8000 -p CLPFD TRUE -mc 10000`
+`probcli my.mch -p TIME_OUT 8000 -p CLPFD TRUE -mc 10000`
 
 [[prefs]]
 -prefs
@@ -641,12 +645,12 @@ Description
 the Tcl/Tk version of ProB; this version automatically creates a file
 called ProB_Preferences.pl. For more information about preferences
 please have a look at
-link:/Using_the_Command-Line_Version_of_ProB#Preferences[Preferences]
+<<using-the-command-line-version-of-prob,Preferences>>
 |=======================================================================
 
 Example
 
-`probcli my.mch -prefs ProB_Preferences.pl`
+`probcli my.mch -prefs ProB_Preferences.pl`
 
 [[card]]
 -card
@@ -658,12 +662,12 @@ Description
 |=======================================================================
 |set cardinality (scope in Alloy terminology) of a B deferred set. This
 overrides the default cardinality (which can be set using
-`-p DEFAULT_SETSIZE `).
+`-p DEFAULT_SETSIZE`).
 |=======================================================================
 
 Example
 
-`probcli my.mch -card PID 5`
+`probcli my.mch -card PID 5`
 
 [[goal]]
 -goal
@@ -678,7 +682,7 @@ Description
 
 Example
 
-`probcli my.mch -mc 10000000 -goal ````n=18`''`  -strict -expcterr goal_found`
+`probcli my.mch -mc 10000000 -goal "``n=18`"`-strict -expcterr goal_found`
 
 [[scope]]
 -scope
@@ -695,7 +699,7 @@ outgoing transitions will be computed)
 
 Example
 
-`probcli my.mch -mc 10000000 -scope ````n<18`''
+`probcli my.mch -mc 10000000 -scope "``n<18`"
 
 [[s]]
 -s
@@ -710,7 +714,7 @@ Description
 
 Example
 
-`probcli my.mch ...`
+`probcli my.mch ...`
 
 [[ss]]
 -ss
@@ -725,7 +729,7 @@ Description
 
 Example
 
-`probcli my.mch ...`
+`probcli my.mch ...`
 
 [[sf]]
 -sf
@@ -740,7 +744,7 @@ Description
 
 Example
 
-`probcli my.mch ...`
+`probcli my.mch ...`
 
 [[sptxt]]
 -sptxt
@@ -762,7 +766,7 @@ See also the -his command.
 
 Example
 
-`probcli -animate 5 -sptxt state.txt  supersimple.mch`
+`probcli -animate 5 -sptxt state.txt  supersimple.mch`
 
 This will write the values of all variables and constants to the file
 state.txt after animating the machine 5 steps.
@@ -804,7 +808,7 @@ Description
 
 Example
 
-`probcli my.mch -mc 1000 -logxml log.xml`
+`probcli my.mch -mc 1000 -logxml log.xml`
 
 [[logxml_write_vars]]
 -logxml_write_vars
@@ -821,7 +825,7 @@ XML logging has been activated using the -logxml command)
 
 Example
 
-`probcli my.mch -execute 1000 -logxml log.xml -logxml_write_vars out`
+`probcli my.mch -execute 1000 -logxml log.xml -logxml_write_vars out`
 
 [[l]]
 -l
@@ -836,7 +840,7 @@ Description
 
 Example
 
-`probcli my.mch -mc 1000 -l my.log`
+`probcli my.mch -mc 1000 -l my.log`
 
 [[ll]]
 -ll
@@ -851,7 +855,7 @@ Description
 
 Example
 
-`probcli my.mch -mc 1000 -ll`
+`probcli my.mch -mc 1000 -ll`
 
 [[lg]]
 -lg
@@ -866,7 +870,7 @@ Description
 
 Example
 
-`probcli my.mch ...`
+`probcli my.mch ...`
 
 [[pp]]
 -pp
@@ -881,7 +885,7 @@ Description
 
 Example
 
-`probcli my.mch -pp my_pp.mch`
+`probcli my.mch -pp my_pp.mch`
 
 [[ppf]]
 -ppf
@@ -897,7 +901,7 @@ infos
 
 Example
 
-`probcli my.mch -ppf my_ppf.mch`
+`probcli my.mch -ppf my_ppf.mch`
 
 [[v]]
 -v
@@ -912,7 +916,7 @@ Description
 
 Example
 
-`probcli my.mch -mc 1000 -v`
+`probcli my.mch -mc 1000 -v`
 
 [[version]]
 -version
@@ -928,15 +932,15 @@ Description
 There is also an alternate command called -svers which just prints the
 version number of ProB. Example
 
-`probcli -version` +
-`ProB Command Line Interface` +
-`  VERSION 1.3.4-rc1 (9556:9570M)` +
-`  $LastChangedDate: 2011-11-16 18:36:18 +0100 (Wed, 16 Nov 2011) $` +
-`  Prolog: SICStus 4.2.0 (x86_64-darwin-10.6.0): Mon Mar  7 20:03:36 CET 2011` +
-`  Application Path: /Users/leuschel/svn_root/NewProB`
+`probcli -version` +
+`ProB Command Line Interface` +
+`VERSION 1.3.4-rc1 (9556:9570M)` +
+`$LastChangedDate: 2011-11-16 18:36:18 +0100 (Wed, 16 Nov 2011) $` +
+`Prolog: SICStus 4.2.0 (x86_64-darwin-10.6.0): Mon Mar  7 20:03:36 CET 2011` +
+`Application Path: /Users/leuschel/svn_root/NewProB`
 
-`probcli -svers` +
-`VERSION 1.3.4-rc1 (9556:9570M)`
+`probcli -svers` +
+`VERSION 1.3.4-rc1 (9556:9570M)`
 
 You can use `probcli -version -v` to obtain more information about your
 version of probcli.
@@ -956,10 +960,10 @@ This command is available as of ProB version 1.5.1-beta5 or higher. It
 can be useful to check that your Java is correctly installed and that
 the ProB B parser can operate correctly
 
-`probcli -check_java_version` +
-`Result of checking Java version:` +
-` Java is correctly installed and version 1.7.0_55-b13 is compatible with ProB requirements (>= 1.7).` +
-` ProB B Java Parser available in version: 2016-02-25 15:27:18.55.`
+`probcli -check_java_version` +
+`Result of checking Java version:` +
+`Java is correctly installed and version 1.7.0_55-b13 is compatible with ProB requirements (>= 1.7).` +
+`ProB B Java Parser available in version: 2016-02-25 15:27:18.55.`
 
 [[assertions]]
 -assertions
@@ -990,7 +994,7 @@ as -mc or -animate which may require the computation of the variables.
 
 Example
 
-`probcli my.mch -init -assertions`
+`probcli my.mch -init -assertions`
 
 [[properties]]
 -properties
@@ -1007,7 +1011,7 @@ will debug the properties.
 
 Example
 
-`probcli my.mch -init -properties`
+`probcli my.mch -init -properties`
 
 [[dot_output]]
 -dot_output
@@ -1029,7 +1033,7 @@ P0,P1,... You can also force to generate dot files for all properties
 
 Example
 
-`probcli my.mch -init -properties -dot_output somewhere/`
+`probcli my.mch -init -properties -dot_output somewhere/`
 
 This will generate files somewhere/my_P0_false.dot,
 somewhere/my_P1_false.dot, ...
@@ -1047,7 +1051,7 @@ Description
 
 Example
 
-`probcli my.mch ...`
+`probcli my.mch ...`
 
 [[ltlfile]]
 -ltlfile
@@ -1062,7 +1066,7 @@ Description
 
 Example
 
-`probcli my.mch ...`
+`probcli my.mch ...`
 
 [[ltlassertions]]
 -ltlassertions
@@ -1077,7 +1081,7 @@ Description
 
 Example
 
-`probcli my.mch ...`
+`probcli my.mch ...`
 
 [[ltllimit]]
 -ltllimit
@@ -1092,7 +1096,7 @@ Description
 
 Example
 
-`probcli my.mch ...`
+`probcli my.mch ...`
 
 [[save]]
 -save
@@ -1107,7 +1111,7 @@ Description
 
 Example
 
-`probcli my.mch ...`
+`probcli my.mch ...`
 
 [[refchk]]
 -refchk
@@ -1122,7 +1126,7 @@ Description
 
 Example
 
-`probcli my.mch ...`
+`probcli my.mch ...`
 
 [[mcm_tests]]
 -mcm_tests
@@ -1136,7 +1140,7 @@ of a sequence of operations resp. events (a so-called trace) that
 * end in a state where the is fulfilled
 
 The user can specify what requested operations/events are with the
-option link:/#-mcm_cover_<Operation(s)>[-mcm_cover].
+option <<,-mcm_cover>>.
 
 ProB uses a "breadth-first" approach to search for test cases. When
 all requested operations/events are covered by test cases within maximum
@@ -1168,7 +1172,7 @@ FILE::
 
 Example
 
-`probcli my.mch -mcm_tests 10 2000  EndStateVar=TRUE  testcases.xml -mcm_cover op1,op2`
+`probcli my.mch -mcm_tests 10 2000  EndStateVar=TRUE  testcases.xml -mcm_cover op1,op2`
 
 generates test cases for the operations *op1* and *op2* of the
 specification *my.mch*. The maximum length of traces is 10, at most 2000
@@ -1196,7 +1200,7 @@ be specified by seperating them by comma or by using *-mcm_cover*
 several times.
 
 See
-link:/#-mcm_tests_<Depth>_<MaxStates>_<EndPredicate>_<FILE>[-mcm-tests]
+<<,-mcm-tests>>
 for further details.
 
 [[spdot]]
@@ -1212,7 +1216,7 @@ Description
 
 Example
 
-`probcli my.mch -mc 100 -spdot my_statespace.dot`
+`probcli my.mch -mc 100 -spdot my_statespace.dot`
 
 [[cbc_tests]]
 -cbc_tests
@@ -1222,7 +1226,7 @@ Generate test cases by constraint solving with maximum length *Depth*,
 the last state satisfies *EndPredicate* and the test cases are written
 to *File*. If the predicate is the empty string we assume truth. If the
 filename is the empty string no file is generated. See also the page on
-link:/Test_Case_Generation[Test_Case_Generation].
+<<test-case-generation,Test_Case_Generation>>.
 
 ....
 -cbc_tests Depth EndPredicate File
@@ -1247,7 +1251,7 @@ also use the option
 ....
 
 to match all operations whose name contains PartialName. See also the
-page about link:/Test_Case_Generation[Test_Case_Generation].
+page about <<test-case-generation,Test_Case_Generation>>.
 
 [[test_description]]
 -test_description
@@ -1261,20 +1265,20 @@ Read the options for constraint based test case generation from *File*.
 
 [cols="",]
 |=======================================================================
-|Run the link:/Bounded_Model_Checking[bounded model checker] until
+|Run the <<bounded-model-checking,bounded model checker>> until
 maximum trace depth specified. Looks for invariant violations using the
 constraint-based test case generation algorithm.
 |=======================================================================
 
 Example
 
-`probcli my.mch -bmc 20`
+`probcli my.mch -bmc 20`
 
 [[csp-guide]]
 -csp-guide
 ^^^^^^^^^^^
 
-Use the CSP File *File* to guide the B Machine (``CSP||B''). (This
+Use the CSP File *File* to guide the B Machine ("CSP||B"). (This
 feature is included since version 1.3.5-beta7.)
 
 [[preferences]]
@@ -1283,7 +1287,7 @@ Preferences
 
 You can use these preferences within the command:
 
-`-p `` `
+`-p```
 
 [cols=",",options="header",]
 |=======================================================================
@@ -1410,7 +1414,7 @@ B substitutions
 
 Example
 
-`probcli my.mch -p TIME_OUT 5000 -p CLPFD TRUE -p SYMMETRY_MODE hash -mc 1000`
+`probcli my.mch -p TIME_OUT 5000 -p CLPFD TRUE -p SYMMETRY_MODE hash -mc 1000`
 
 [[some-probcli-examples]]
 Some probcli examples

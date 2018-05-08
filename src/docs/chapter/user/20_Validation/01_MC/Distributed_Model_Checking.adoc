@@ -1,4 +1,8 @@
+:wikifix: 2
 ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
+[[distributed-model-checking]]
+= Distributed Model Checking
+
 Distributed Model Checking allows to check invariants and
 deadlock-freedom (and assertions) with additional computational power.
 The distributed version of ProB is named _distb_. In the following, we
@@ -27,20 +31,20 @@ may be allocated, both per segment and overall. This is, to our
 knowledge, required for Mac OS X and older versions of Ubuntu. You can
 view the limits by running:
 
-`sysctl -a | grep shm`
+`sysctl -a | grep shm`
 
 Per default, recent versions of Ubuntu set the following values:
 
-`kernel.shmall = 18446744073692774399` +
-`kernel.shmmax = 18446744073692774399` +
-`kernel.shmmni = 4096`
+`kernel.shmall = 18446744073692774399` +
+`kernel.shmmax = 18446744073692774399` +
+`kernel.shmmni = 4096`
 
 On Mac OS X, the keys might be different and you can set them by
 executing:
 
-`sudo sysctl -w kern.sysv.shmmax=18446744073692774399` +
-`sudo sysctl -w kern.sysv.shmseg=4096` +
-`sudo sysctl -w kern.sysv.shmall=18446744073692774399`
+`sudo sysctl -w kern.sysv.shmmax=18446744073692774399` +
+`sudo sysctl -w kern.sysv.shmseg=4096` +
+`sudo sysctl -w kern.sysv.shmall=18446744073692774399`
 
 [[running-distb]]
 Running _distb_
@@ -48,20 +52,20 @@ Running _distb_
 
 Run once per machine:
 
-`/path/to/prob/lib/proxy $MASTER_IP 5000 $IP 30 $LOGFILE_PROXY $PROXY_NUMBER`
+`/path/to/prob/lib/proxy $MASTER_IP 5000 $IP 30 $LOGFILE_PROXY $PROXY_NUMBER`
 
 Note that on Linux systems you might need to set the LD_LIBRARY_PATH
 variable to find the ZeroMQ libraries beforehand (for all components):
 
-`export LD_LIBRARY_PATH=/path/to/prob/lib`
+`export LD_LIBRARY_PATH=/path/to/prob/lib`
 
 Run once per model checking:
 
-`/path/to/prob/probcli -bf -zmq_master <unique identifier> $MODEL`
+`/path/to/prob/probcli -bf -zmq_master <unique identifier> $MODEL`
 
 Run as many workers as you want:
 
-`/path/to/prob/probcli -zmq_worker <unique identifier> &`
+`/path/to/prob/probcli -zmq_worker <unique identifier> &`
 
 [[additional-preferences]]
 Additional Preferences

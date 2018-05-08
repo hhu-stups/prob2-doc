@@ -1,4 +1,8 @@
+:wikifix: 2
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
+[[gilbreath-card-trick]]
 = Gilbreath Card Trick
+
 My belief is that B is a very expressive language, which can be very
 convenient for modelling many problems. Hence, when in the Dagstuhl
 library I stumbled upon a nice short
@@ -113,7 +117,7 @@ the following:
 ....
 
 Details about the use of this feature can be found in the
-link:/Graphical_Visualization[Graphical_Visualization] page of the
+<<graphical-visualization,Graphical_Visualization>> page of the
 manual. With the above, ProB will display the variables x, y and dist in
 a graphical way, and by animation one can gain insights into why it is
 impossible not to generate four quartets.
@@ -165,7 +169,7 @@ more low-level and to enable the translation to TLA+ for use with
 http://research.microsoft.com/en-us/um/people/lamport/tla/tlc.html[TLC]
 (this is a new feature inside ProB Tcl/Tk). The machine is shown below.
 The model checking time with ProB is now reduced to 75 seconds. With the
-command ``Verify -> External Tools -> Model Check with TLC...'' you can
+command "Verify -> External Tools -> Model Check with TLC..." you can
 use
 http://research.microsoft.com/en-us/um/people/lamport/tla/tlc.html[TLC]
 as a backend. The model checking time is then approximately 15 seconds

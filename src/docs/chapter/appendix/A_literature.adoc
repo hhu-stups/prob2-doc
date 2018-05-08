@@ -1,4 +1,8 @@
-[[literature]]
+:wikifix: 2
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
+[[a-literature]]
+= A literature
+
 = Additional Literature
 
 bibliography::[]

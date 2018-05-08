@@ -1,2 +1,6 @@
-= Prolog
+:wikifix: 2
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
+[[00-section-header]]
+= 00 section header
+
 :leveloffset: +1

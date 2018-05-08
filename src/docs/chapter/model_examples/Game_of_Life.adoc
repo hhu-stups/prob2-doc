@@ -1,4 +1,8 @@
-= Conway's game of life 
+:wikifix: 2
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
+[[game-of-life]]
+= Game of Life
+
 
 This is a simple model of Conway's Game of Life. It was written for
 animation with ProB. One interesting aspect is that the simulation is

@@ -1,5 +1,10 @@
+:wikifix: 2
 ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
-/Category:Components[Category:Components]
+[[prob-for-rodin]]
+= ProB for Rodin
+
+:category: Components
+
 
 Currently there are two versions of ProB available for Rodin.
 
@@ -14,22 +19,22 @@ http://wiki.event-b.org/index.php/Rodin_Platform_3.3_Release_Notes[Rodin
 3.3]. The update site comes built in into Rodin, see
 link:/Tutorial_Rodin_First_Step[the tutorial on installing ProB for
 Rodin]. Nightly releases of this versions are also available on the
-link:/Download#Nightly_Build[Download] page.
+<<download,Download>> page.
 
 [[prob-2.0-for-rodin]]
 ProB 2.0 for Rodin
 ^^^^^^^^^^^^^^^^^^
 
 The second, still experimental, one is based on the new
-link:/ProB_Java_API[ProB Java API] (aka ProB 2.0). Because the UI
-components provided by the link:/ProB_Java_API[ProB Java API] are based
+<<prob-java-api,ProB Java API>> (aka ProB 2.0). Because the UI
+components provided by the <<prob-java-api,ProB Java API>> are based
 on web technologies, we were able create a simple plugin for the Rodin 3
 tool that provides the user with all of the functionality of ProB within
 Rodin. The plugin uses views with embedded Eclipse SWT browsers to
 access the user interface components that are shipped with the
-link:/ProB_Java_API[ProB Java API] library. Details about nightly
+<<prob-java-api,ProB Java API>> library. Details about nightly
 releases of this versions is also available on the
-link:/Download#Nightly_Build[Download] page.
+<<download,Download>> page.
 
 [[multi-simulation-for-rodin-based-on-prob]]
 Multi-Simulation for Rodin based on ProB

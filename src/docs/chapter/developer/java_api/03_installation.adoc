@@ -1,4 +1,8 @@
-[[installation]]
+:wikifix: 2
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
+[[03-installation]]
+= 03 installation
+
 = Installation
 
 You can use the ProB 2.0 archive.

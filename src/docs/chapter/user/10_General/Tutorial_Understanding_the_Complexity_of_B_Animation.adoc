@@ -1,9 +1,14 @@
+:wikifix: 2
 ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
-/Category:Tutorial[Category:Tutorial]
+[[tutorial-understanding-the-complexity-of-b-animation]]
+= Tutorial Understanding the Complexity of B Animation
+
+:category: Tutorial
+
 
 We assume that you have grasped the way that ProB setups up the initial
 states of a B machine as outlined in
-link:/Tutorial_Setup_Phases[Tutorial Setup Phases].
+<<tutorial-setup-phases,Tutorial Setup Phases>>.
 
 In this lesson, we examine the complexity of animation of B models in
 general, how ProB solves this problem, and what the ramification for
@@ -51,7 +56,7 @@ Hence, if we set MAXINT to 16 (adding a definiton
 `SET_PREF_MAXINT == 16`) we get the following picture after executing
 the INITIALISATION:
 
- image::ProB_GoldbachAfterInit.png[]
+image::ProB_GoldbachAfterInit.png[]
 
 We can see that 10 can be expressed as the sum 5+5 or 3+7. At least
 until 16, Goldbach's conjecture is confirmed, as NotGoldbachNumber is
@@ -69,7 +74,7 @@ undecidability. Another source stems from the deferred sets. Indeed, the
 size of those sets can be unknown, and they may even be infinite. To
 overcome this issue, ProB is required to fix the cardinality of every
 deferred set to a finite number before animation (see also
-link:/Tutorial_Setup_Phases[Understanding the ProB Setup Phases] on how
+<<tutorial-setup-phases,Understanding the ProB Setup Phases>> on how
 you can control the cardinality of the deferred sets).
 
 [[complexity-of-animation]]
@@ -98,7 +103,7 @@ The following table shows how the size of a deferred set S influences
 the number of subsets, partial functions, relations over S, and a total
 function over relations of S:
 
-.align=``bottom'' style=``color:#e76700;'' |__Number of distinct
+.align="bottom" style="color:#e76700;" |__Number of distinct
 solutions__
 [cols=",,,,",options="header",]
 |=======================================================================

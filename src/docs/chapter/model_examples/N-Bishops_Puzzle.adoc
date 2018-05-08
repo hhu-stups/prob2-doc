@@ -1,6 +1,10 @@
-= N-Bishops puzzle
+:wikifix: 2
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
+[[n-bishops-puzzle]]
+= N-Bishops Puzzle
 
-This puzzle is a variation of the link:/N-Queens[N-Queens] puzzle: we
+
+This puzzle is a variation of the <<n-queens,N-Queens>> puzzle: we
 try to place as many bishops as possible on a n by n chess board. In
 contrast to the N-Queens puzzle, one can place more than one bishop per
 row. As such, we can now longer represent the positions of the bishops
@@ -37,7 +41,7 @@ is 2*n - 2; see http://mathworld.wolfram.com/BishopsProblem.html.
 ProB 1.5.1 can solve this puzzle with `nbishops >13` in about half a
 second.
 
-One can use link:/Graphical_Visualization[graphical visualisation]
+One can use <<graphical-visualization,graphical visualisation>>
 features to display the solution, by declaring the ANIMATION FUNCTION
 inside the DEFINITIONS section as follows:
 
@@ -59,7 +63,8 @@ This will lead to ProB to show the solution graphically, as follows:
 image:ProB_Bishops_8_14_Screenshot.png[300px|center]
 
 For the chess pieces we have used the images available at
-https://commons.wikimedia.org/wiki/Category:SVG_chess_pieces[wikimedia.org].
+https://commons.wikimedia.org/wiki:category: SVG_chess_pieces
+.
 These images are available under the
 https://en.wikipedia.org/wiki/Creative_Commons[Creative Commons]
 https://creativecommons.org/licenses/by-sa/3.0/deed.en[Attribution-Share

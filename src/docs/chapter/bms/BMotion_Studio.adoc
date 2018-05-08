@@ -1,7 +1,12 @@
+:wikifix: 2
 ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
-/Category:Components[Category:Components] __NOTOC__
+[[bmotion-studio]]
+= BMotion Studio
 
- image::bmotion_logo.png[]
+:category: Components
+
+
+image::bmotion_logo.png[]
 
 What is BMotionWeb?
 
@@ -11,41 +16,41 @@ CSP models.
 
 Download
 
-`           `` `link:/BMotion_Studio_Download[`Download`` ``BMotionWeb`] +
-`                   `
+````<<bmotion-studio-download,`Download````BMotionWeb`>> +
+``
 
  +
 
 Getting Started
 
-`             `` `http://www3.hhu.de/stups/handbook/bmotion/current/html/first_steps.html[`First`` ``Steps`` ``(Installation`` ``and`` ``Start)`] +
-`                   `
+````http://www3.hhu.de/stups/handbook/bmotion/current/html/first_steps.html[`First````Steps````(Installation````and````Start)`] +
+``
 
-`             `` `http://www3.hhu.de/stups/handbook/bmotion/current/html/tutorial_b.html[`Tutorial:`` ``BMotionWeb`` ``for`` ``Event-B`` ``and`` ``Classical-B`] +
-`                   `
+````http://www3.hhu.de/stups/handbook/bmotion/current/html/tutorial_b.html[`Tutorial:````BMotionWeb````for````Event-B````and````Classical-B`] +
+``
 
  +
 
 Online Visualization
 
-`           `` `http://wyvern.cs.uni-duesseldorf.de/bms/lift.html[`Simple`` ``Lift`` ``(Event-B)`] +
-`                   `
+````http://wyvern.cs.uni-duesseldorf.de/bms/lift.html[`Simple````Lift````(Event-B)`] +
+``
 
-`           `` `http://wyvern.cs.uni-duesseldorf.de/bms/bridge.html[`Cars`` ``on`` ``bridge`` ``(Event-B)`] +
-`                   `
+````http://wyvern.cs.uni-duesseldorf.de/bms/bridge.html[`Cars````on````bridge````(Event-B)`] +
+``
 
-`           `` `http://wyvern.cs.uni-duesseldorf.de/bms/landing.html[`Landing`` ``Gear`` ``System`` ``(Event-B)`] +
-`                   `
+````http://wyvern.cs.uni-duesseldorf.de/bms/landing.html[`Landing````Gear````System````(Event-B)`] +
+``
 
-`           `` `http://wyvern.cs.uni-duesseldorf.de/bms/crossing.html[`Crossing`` ``(CSP)`] +
-`                   `
+````http://wyvern.cs.uni-duesseldorf.de/bms/crossing.html[`Crossing````(CSP)`] +
+``
 
-`           `` `http://wyvern.cs.uni-duesseldorf.de/bms/bully.html[`Bully`` ``Algorithm`` ``(CSP)`] +
-`                   `
+````http://wyvern.cs.uni-duesseldorf.de/bms/bully.html[`Bully````Algorithm````(CSP)`] +
+``
 
  +
 
 Documentation
 
-`           `` `http://www3.hhu.de/stups/handbook/bmotion/current/pdf/bms-doc.pdf[`User`` ``Manual`] +
-`                   `
+````http://www3.hhu.de/stups/handbook/bmotion/current/pdf/bms-doc.pdf[`User````Manual`] +
+``

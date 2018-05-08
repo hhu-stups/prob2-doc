@@ -1,5 +1,10 @@
+:wikifix: 2
 ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
-/Category:User_Manual[Category:User Manual] __NOTOC__ As of version 1.3,
+[[using-prob-with-atelier-b]]
+= Using ProB with Atelier B
+
+:category: User_Manual
+As of version 1.3,
 ProB contains a much improved parser which tries be compliant with
 Atelier B as much as possible.
 
@@ -69,7 +74,7 @@ cannot write `r2=rel;rel`. You need to write `r2=(rel;rel)`. This allows
 ProB to distinguish the relational composition from the sequential
 composition (or other uses of the semicolon).
 
-* link:/Well-Definedness_Checking[Well-definedness]: ProB will try to
+* <<well-definedness-checking,Well-definedness>>: ProB will try to
 check if your predicates are well-defined during animation or model
 checking. For this ProB assumes (similar to Rodin) a stricter
 left-to-right definition of well-definedness than Atelier B.

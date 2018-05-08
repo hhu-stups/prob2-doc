@@ -1,8 +1,12 @@
+:wikifix: 2
 ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
+[[tutorial-model-based-testing]]
+= Tutorial Model-Based Testing
+
 We assume that you have completed
 link:/Tutorial_Complete_Model_Checking[Tutorial Complete Model
 Checking]. It may also be a good idea to complete the
-link:/Tutorial_Model_Checking,_Proof_and_CBC[Tutorial_Model_Checking,_Proof_and_CBC].
+<<tutorial-model-checking-proof-and-cbc,Tutorial_Model_Checking,_Proof_and_CBC>>.
 
 Let us examine the following B model:
 
@@ -102,4 +106,4 @@ The constraint-based test case generation can be started by selecting _Analyse >
 
 image::MBT-CBC-Tree-Acc.png[]
 
-More examples and information on how to execute the test case generation via the command line can be found in the documentation on link:/Test_Case_Generation[Test case generation].
+More examples and information on how to execute the test case generation via the command line can be found in the documentation on <<test-case-generation,Test case generation>>.

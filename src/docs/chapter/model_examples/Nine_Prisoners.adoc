@@ -1,4 +1,8 @@
-= Nine prisoners puzzle
+:wikifix: 2
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
+[[nine-prisoners]]
+= Nine Prisoners
+
 
 An
 https://www.quantamagazine.org/20150609-a-design-dilemma-solved-minus-designs/[article
@@ -72,7 +76,7 @@ follows:
 
 This gives rise to the following visualisation:
 
-/File:ProB_NinePrisoners_Simple.png[600px|center]
+image::ProB_NinePrisoners_Simple.png[]
 
 As can be seen in the screenshot, we have also added an operation to
 inspect the solution computed by ProB:
@@ -115,5 +119,5 @@ solution found by ProB:
 image:ProB_NinePrisoners_Fancy.png[600px|center]
 
 Details about the use of this visualization feature can be found in the
-link:/Graphical_Visualization[Graphical_Visualization] page of the
+<<graphical-visualization,Graphical_Visualization>> page of the
 manual.

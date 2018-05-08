@@ -1,4 +1,8 @@
+:wikifix: 2
 ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
+[[probpath]]
+= PROBPATH
+
 Starting with version 1.5 of ProB, it is possible to customize where the
 parser will ProB will search for referenced files.
 
@@ -12,16 +16,16 @@ custom location.
 
 The search path can be customized by defining a PROBPATH environment
 variable that contains a list of directories to be searched. On windows
-the directors are separated by a ``;'' and on unix systems by a ``:''
+the directors are separated by a ";" and on unix systems by a ":"
 character, e.g.:
 
 On unix:
 
-`PROBPATH=~/myproject/common:~/myotherproject/common probcli model.mch`
+`PROBPATH=~/myproject/common:~/myotherproject/common probcli model.mch`
 
 And on windows:
 
-` PROBPATH=~/myproject/common;~/myotherproject/common probcli model.mch`
+`PROBPATH=~/myproject/common;~/myotherproject/common probcli model.mch`
 
 will resolved referenced files relative to model.mch, then in
 *~/myproject/common* then in *~/myotherproject/common* and finally in

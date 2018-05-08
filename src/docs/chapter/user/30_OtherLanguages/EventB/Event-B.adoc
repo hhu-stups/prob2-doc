@@ -1,4 +1,8 @@
+:wikifix: 2
 ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
+[[event-b]]
+= Event-B
+
 ProB supports animation and model-checking for Event-B specifications.
 
 [[installation]]
@@ -6,11 +10,11 @@ Installation
 ~~~~~~~~~~~~
 
 To install the ProB plugin for http://www.event-b.org[Rodin], open the
-``Help'' menu in Rodin and click ``Install new software''.
+"Help" menu in Rodin and click "Install new software".
 
-You see a drop-down list titled ``Work with:'' at the top of the install
-dialog. Choose the update site ``ProB - ...'' and click on ``ProB for
-rodin2'' in the field below. Click on the ``Next'' button at the button
+You see a drop-down list titled "Work with:" at the top of the install
+dialog. Choose the update site "ProB - ..." and click on ``ProB for
+rodin2'' in the field below. Click on the "Next" button at the button
 on the dialog and proceed with the installation as usual.
 
 Alternativaly, one can use the Tcl/Tk version of ProB but Event-B models
@@ -66,7 +70,7 @@ name as the theory.
 
 For each annotated operator, the file contains a line of the form
 
-`operator `**`Name`**` internal {`**`Tag`**`}`
+`operator`**`Name`**`internal {`**`Tag`**`}`
 
 where *Name* is the name of the operator in the theory and *Tag* is a
 ProB internal name.
@@ -94,6 +98,6 @@ Download Theories
 ^^^^^^^^^^^^^^^^^
 
 An example project with theories:
- image::theories2.zip[]
+image::theories2.zip[]
 
 *TODO*: A description of the supported parts.

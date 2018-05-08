@@ -1,5 +1,10 @@
+:wikifix: 2
 ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
-/Category:BMotion_Studio[Category:BMotion_Studio] __NOTOC__
+[[bmotion-studio-release-0-dot-2-3]]
+= BMotion Studio Release 0.2.3
+
+:category: BMotion_Studio
+
 
 Release Notes - BMotion Studio - Version 0.2.3
 

@@ -1,4 +1,8 @@
-= Train switching puzzle
+:wikifix: 2
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
+[[trainswitchingpuzzle]]
+= TrainSwitchingPuzzle
+
 
 This model was developed to solve Puzzle Nr 40 from the book ``My best
 mathematical and logical puzzles'' by Martin Gardner. Using

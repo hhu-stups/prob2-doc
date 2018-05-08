@@ -1,4 +1,8 @@
-= N-Queens puzzle
+:wikifix: 2
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
+[[n-queens]]
+= N-Queens
+
 
 The N-Queens is a famous constraint solving benchmark puzzle. It is a
 generalisation of the original
@@ -23,7 +27,7 @@ END
 ProB 1.3.7 can solve this puzzle in about 0.150 seconds (for n=40, on a
 1.7 GHz Mac Book Air).
 
-One can use link:/Graphical_Visualization[graphical visualisation]
+One can use <<graphical-visualization,graphical visualisation>>
 features to display the solution, by declaring the ANIMATION FUNCTION as
 follows:
 
@@ -53,9 +57,9 @@ screenshot is unfortunately cropped and does not show all rows):
 image:ProB_Queens_40_Screenshot.png[600px|center]
 
 Instead of using ProB's standard constraint-solving backend, you can
-also use our link:/Using_ProB_with_KODKOD[Kodkod backend] to solve this
-puzzle. To do this, either ``Enable Kodkod for Properties'' in the ProB
-Tcl/Tk ``Preferences'' menu or add the following to the DEFINITIONS in
+also use our <<using-prob-with-kodkod,Kodkod backend>> to solve this
+puzzle. To do this, either "Enable Kodkod for Properties" in the ProB
+Tcl/Tk "Preferences" menu or add the following to the DEFINITIONS in
 the machine file above:
 
 ....

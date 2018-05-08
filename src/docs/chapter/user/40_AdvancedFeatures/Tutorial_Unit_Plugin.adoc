@@ -1,7 +1,14 @@
+:wikifix: 2
 ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
-/Category:Tutorial[Category:Tutorial]
-/Category:User_Manual[Category:User Manual]
-/Category:Physical_Units_Plugin[Category:Physical Units Plugin]
+[[tutorial-unit-plugin]]
+= Tutorial Unit Plugin
+
+:category: Tutorial
+
+:category: User_Manual
+
+:category: Physical_Units_Plugin
+
 
 This tutorial describes, how ProB's integrated plugin for unit analysis
 can be used to verify the usage of physical units throughout a B
@@ -27,7 +34,7 @@ Therefore, a B machine needs to be loaded before the plugin can be
 activated.
 
 Once a machine is loaded, the plugin can be activated through ProB's
-plugin menu. Choose ``Interpreting units stored in pragmas'' inside of
+plugin menu. Choose "Interpreting units stored in pragmas" inside of
 the activate plugin submenu. Furthermore, the preferences can be
 accessed through the menu.
 
@@ -50,19 +57,19 @@ Annotating variables and animating a machine
 To connect a variable with an expected physical unit, a special comment
 is placed before the variable.
 
-` VARIABLES` +
-`   /*@ unit ````10**1`` ``*`` ``m**1`''` */ x,` +
-`   /*@ unit ````m**2`''` */ y`
+`VARIABLES` +
+`/*@ unit "``10**1````*````m**1`"`*/ x,` +
+`/*@ unit "``m**2`"`*/ y`
 
-Following the ``unit'' keyword is a specification of the unit in form of
+Following the "unit" keyword is a specification of the unit in form of
 a B expression. Allowed constructs are multiplication and division as
 well as exponentiation.
 
 For several often used units like cm, dm, km, etc. an alias can be used.
 
-` VARIABLES` +
-`   /*@ unit ````mm`''` */ x,` +
-`   /*@ unit ````dm`''` */ y`
+`VARIABLES` +
+`/*@ unit "``mm`"`*/ x,` +
+`/*@ unit "``dm`"`*/ y`
 
 Once at least one variable is annotated, further units can be inferred.
 
@@ -84,20 +91,20 @@ conversion.
 
 See the following B machine for an example operation:
 
-` MACHINE SimpleConversion` +
-` VARIABLES` +
-`   /*@ unit ````10**-2`` ``*`` ``m`''` */ xx,` +
-`   /*@ unit ````10**-3`` ``*`` ``m`''` */ yy,` +
-`   converted` +
-` INVARIANT` +
-`   xx:NAT &` +
-`   yy:NAT &` +
-`   converted:NAT` +
-` INITIALISATION xx,yy,converted:=0,0,0` +
-` OPERATIONS` +
-`   n <-- addToXX = n:=xx+1;` +
-`   mmToCm  = converted:=/*@ conversion */(10*yy)` +
-` END`
+`MACHINE SimpleConversion` +
+`VARIABLES` +
+`/*@ unit "``10**-2````*````m`"`*/ xx,` +
+`/*@ unit "``10**-3````*````m`"`*/ yy,` +
+`converted` +
+`INVARIANT` +
+`xx:NAT &` +
+`yy:NAT &` +
+`converted:NAT` +
+`INITIALISATION xx,yy,converted:=0,0,0` +
+`OPERATIONS` +
+`n <-- addToXX = n:=xx+1;` +
+`mmToCm  = converted:=/*@ conversion */(10*yy)` +
+`END`
 
 [[static-analysis]]
 Static analysis

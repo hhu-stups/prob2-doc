@@ -57,17 +57,16 @@ some default definitions used for the tests). Normally, the console
 window should look like this (you may get some multiple solutions
 warnings; but you should not get errors):
 
-`---------------------` +
-`Performing Self-Check` +
-`..........................................................`
-
-`..........................................................`
-
-`..........................................................`
-
-`..........................................................` +
-`Self-Check Finished` +
-`-------------------`
+....
+---------------------
+Performing Self-Check
+..........................................................
+..........................................................
+..........................................................
+..........................................................
+Self-Check Finished
+-------------------
+....
 
 [[prob-seems-stuck-when-loading-a-machine]]
 ProB seems stuck when loading a machine
@@ -119,8 +118,8 @@ for EventB than classical B, but we are working to fully support both
 styles of refinement.]
 
 [[the-constraint-based-checker-is-very-slow-and-does-not-always-work]]
-The constraint based checker is very slow and does not always work
-------------------------------------------------------------------
+## The constraint based checker is very slow and does not always work
+
 
 The constraint based checker is the least stable part of the system.
 First try it on simple machines to get a feel of how it works.
@@ -133,9 +132,8 @@ animator). Running ProB on Sicstus Prolog 3.9 seems to get rid of this
 problem (at least partially).
 
 [[i-can-animate-your-machine-files-but-i-am-not-able-to-open-my-own-machine-files]]
-I can animate your machine files but I am not able to open my own
+## I can animate your machine files but I am not able to open my own
 machine files
--------------------------------------------------------------------------------
 
 Be sure to have Java installed and set up the CLASSPATH as stipulated
 above.

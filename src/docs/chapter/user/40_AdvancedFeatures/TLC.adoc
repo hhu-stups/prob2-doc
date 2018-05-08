@@ -1,4 +1,8 @@
+:wikifix: 2
 ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
+[[tlc]]
+= TLC
+
 As of version 1.4.0, ProB can make use of
 http://research.microsoft.com/en-us/um/people/lamport/tla/tlc.html[TLC]
 as an alternative model checker to validate B specifications. TLC is an
@@ -19,10 +23,10 @@ Using TLC in ProB Tcl/Tk
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 First you have to open a B specification in the ProB GUI. Then you can
-select the menu command ``Model Check with TLC'' in the
-``Verify->External Tools'' menu.
+select the menu command "Model Check with TLC" in the
+"Verify->External Tools" menu.
 
- image::Model_Checking_With_TLC.png[]
+image::Model_Checking_With_TLC.png[]
 
 You can use TLC to find the following kinds of errors in the B
 specification:
@@ -40,7 +44,7 @@ In some cases, TLC reports a trace leading to the state where the error
 automatically replayed in the ProB animator (displayed in the history
 pane) to give an optimal feedback.
 
- image::Model_Checking_With_TLC_Trace.png[]
+image::Model_Checking_With_TLC_Trace.png[]
 
 [[requirements]]
 Requirements
@@ -49,7 +53,7 @@ Requirements
 On Linux the tlc-thread package is required to run TLC from the tcl/tk
 ui:
 
-`sudo apt-get install tcl-thread`
+`sudo apt-get install tcl-thread`
 
 [[using-tlc-in-probcli]]
 Using TLC in probcli
@@ -74,7 +78,7 @@ In addition you can provide
 The preference `TLC_WORKERS` influences the number of workers that will
 be used by TLC. So, a call might look like this:
 
-`probcli FILE.mch -mc_with_tlc -p TLC_WORKERS 2 -noltl`
+`probcli FILE.mch -mc_with_tlc -p TLC_WORKERS 2 -noltl`
 
 [[when-to-use-tlc]]
 When to use TLC
@@ -121,19 +125,19 @@ Sometimes TLC will show a different number of visited states compared to
 the ProB model checker. The following example should illustrate this
 issue:
 
-`MACHINE NumberOfStates` +
-`CONSTANTS k` +
+`MACHINE NumberOfStates` +
+`CONSTANTS k` +
 `PROPERTIES` +
-` k : 1..10` +
-`VARIABLES x` +
+`k : 1..10` +
+`VARIABLES x` +
 `INVARIANT` +
-` x : NATURAL` +
-`INITIALISATION x := k` +
+`x : NATURAL` +
+`INITIALISATION x := k` +
 `END`
 
 ProB will report 21 distinct states (1 root state, 10 constant setup
 states, 10 initialization states):
- image::NumberOfStates.jpeg[]
+image::NumberOfStates.jpeg[]
 
 TLC will only report 10 distinct states (10 initialization states).
 

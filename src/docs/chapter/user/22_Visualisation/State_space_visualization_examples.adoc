@@ -1,4 +1,8 @@
+:wikifix: 2
 ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
+[[state-space-visualization-examples]]
+= State space visualization examples
+
 (This page is under construction)
 
 [[alternating-bit-protocol]]
@@ -10,7 +14,7 @@ model of the alternating bit protocol, as distributed with the
 http://research.microsoft.com/en-us/um/people/lamport/tla/tools.html[TLA+
 tools]. This model (MCAlternatingBit.tla) was loaded with link:/TLA[ProB
 for TLA+], the model checker run for a few seconds and then the command
-``State Space Fast Rendering'' with options (scale,fast) was used.
+"State Space Fast Rendering" with options (scale,fast) was used.
 
 The goal predicate rBit=1 was used; those states satisfying this
 predicate are shown in orange.
@@ -18,7 +22,7 @@ predicate are shown in orange.
 image::MCAlternatingBit_sfdp.png[]
 
 Below is a projection of this state space onto the expression
-`(rBit,sBit)`, using the ``Custom Transition Diagram'' feature of ProB:
+`(rBit,sBit)`, using the "Custom Transition Diagram" feature of ProB:
 
 image::MCAlternatingBit_projsrBit.png[]
 
@@ -71,7 +75,7 @@ indicates the length of the queue variable q of the model
 image::MCInnerFIFO_q3_sfdp.png[]
 
 Below is a projection of this state space onto the expression `card(q)`,
-using the ``Custom Transition Diagram'' feature of ProB:
+using the "Custom Transition Diagram" feature of ProB:
 
 image::MCInnerFIFO_proj_cardq.png[]
 
@@ -90,7 +94,7 @@ image::RushHour_sfdp.png[]
 Here is a visualisation of the full state space of 4782 nodes and 29890
 transitions, using the scale option this time:
 
- image::RushHour_full_sfdp.png[]
+image::RushHour_full_sfdp.png[]
 
 [[can-bus]]
 CAN Bus
@@ -100,7 +104,7 @@ This is a visualisation of the statespace of an Event-B model of a CAN
 Bus. The colours indicate the size of the BUSwrite variable
 (gray=0,blue=1,red=2, green=3, lightgray=4).
 
- image::CANBus_sfdp.png[]
+image::CANBus_sfdp.png[]
 
 [[hanoi-6-discs]]
 Hanoi (6 Discs)
@@ -109,17 +113,17 @@ Hanoi (6 Discs)
 This is a visualisation of the statespace of a B model of the towers of
 Hanoi for 6 discs. The state space contains 731 nodes and 2186 nodes.
 
- image::Hanoi6_sfdp.png[]
+image::Hanoi6_sfdp.png[]
 
 One can observe that this figure resembles a Sierpinski triangle. This
 is http://www.math.ubc.ca/~cass/courses/m308-02b/projects/touhey/[no
 coincidence, the state space of Hanoi is one].
 
 Below is a projection of this state space onto the expression
-`card(on(dest)))`, using the ``Custom Transition Diagram'' feature of
+`card(on(dest)))`, using the "Custom Transition Diagram" feature of
 ProB:
 
- image::Hanoi6_proj_cardondest.png[]
+image::Hanoi6_proj_cardondest.png[]
 
 [[threads---partial-order-reduction]]
 Threads - Partial Order Reduction
@@ -134,7 +138,7 @@ synchronisation the processes simply interleave.
 image::Threads51_sfdp.png[]
 
 With partial order reduction, the state space is reduced to 208 states:
- image::Threads51_POR_sfdp.png[]
+image::Threads51_POR_sfdp.png[]
 
 Here is the B source code of the model:
 
@@ -170,7 +174,7 @@ END
 ....
 
 Below are projections of the above state spaces onto the expression
-`(bool(pc1=n),bool(pc2=n))`, using the ``Custom Transition Diagram''
+`(bool(pc1=n),bool(pc2=n))`, using the "Custom Transition Diagram"
 feature of ProB. The first shows the projection without partial order
 reduction:
 

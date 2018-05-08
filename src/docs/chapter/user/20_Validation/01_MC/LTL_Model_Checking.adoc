@@ -1,17 +1,22 @@
+:wikifix: 2
 ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
-/Category:User_Manual[Category:User Manual]__NOTOC__ ProB provides
+[[ltl-model-checking]]
+= LTL Model Checking
+
+:category: User_Manual
+ProB provides
 support for LTL (linear temporal logic) model checking. For an
 introduction to LTL see the
 http://en.wikipedia.org/wiki/Linear_temporal_logic[Wikipedia Article].
 
-To use this feature, select ``Check LTL/CTL Assertions'' in the
-``Verify'' menu. The feature can also be accessed by the key combination
-``Ctrl+L'' under Windows and Linux, and by the key combination ``Cmd+L''
+To use this feature, select "Check LTL/CTL Assertions" in the
+"Verify" menu. The feature can also be accessed by the key combination
+"Ctrl+L" under Windows and Linux, and by the key combination "Cmd+L"
 under MacOS. The following window appears:
 
- image::ltlviewer.png[]
+image::ltlviewer.png[]
 
-All LTL formulas that are given in the ``DEFINTIONS'' section of a B
+All LTL formulas that are given in the "DEFINTIONS" section of a B
 machine are displayed in the list box of the LTL/CTL Assertions Viewer.
 For CSP-M specifications all LTL formulas given in the LTL pragmas of
 the loaded CSP-M file will be shown in the viewer. (For more detailed
@@ -20,13 +25,13 @@ models see Section *Storing LTL Assertions into a Model*).
 
 A new LTL formula can be entered in the entry below the list box. (We
 explain the supported syntax below). The typed formula can then be
-either added to the list box by clicking the ``Add'' button or directly
-checked by clicking the ``Check'' button. Before doing that assure
-whether you are in the proper frame (``Add LTL Formula'') of the bottom
+either added to the list box by clicking the "Add" button or directly
+checked by clicking the "Check" button. Before doing that assure
+whether you are in the proper frame ("Add LTL Formula") of the bottom
 part of the LTL viewer.
 
 The LTL model checker can be started for an LTL formula by performing a
-double-click on the respective formula or typing ``Enter'' after
+double-click on the respective formula or typing "Enter" after
 selecting the respective formula. Each LTL formula in the list box has
 on the left hand side a symbol that indicates what is the status of the
 respective formula. An LTL formula can have one of the following
@@ -48,7 +53,7 @@ so far, but the absence of a path that does not satisfy the formula can
 not be guaranteed because the state space was not fully explored. A new
 check can be started by a double-click.
 
-All formulas can be checked by ``Assertions -> Check All Assertions'' in
+All formulas can be checked by "Assertions -> Check All Assertions" in
 the menu bar. All formulas will be then checked from top to bottom in
 the list box.
 
@@ -57,9 +62,9 @@ elements. The context menu can be popped-up by a right-mouse-click on a
 formula from the list box, and it performs a set of actions available to
 be performed on the currently selected formula (see Figure below).
 
- image::ltlviewercontext.png[]
+image::ltlviewercontext.png[]
 
-The old LTL and CTL dialogs can be accessed from ``OldLtlViewers'' in
+The old LTL and CTL dialogs can be accessed from "OldLtlViewers" in
 the menu bar.
 
 [[ltl-preferences]]
@@ -68,7 +73,7 @@ LTL Preferences
 
 There is a set of options coming with the LTL model checker. In this
 section we give a brief overview of the preferences. The LTL preferences
-can be viewed by selecting ``LTL Preferences'' in the ``Preferences''
+can be viewed by selecting "LTL Preferences" in the "Preferences"
 menu of the LTL/CTL Assertions Viewer.
 
 *Exploring new states* +
@@ -76,7 +81,7 @@ The LTL model checker searches in the already explored search space of
 the model. If a state is encountered that has not been explored before,
 the state will be explored (i.e. all transitions to successor states are
 computed). The number of how often this can happen is limited by the
-field ``Max no. of new states''. Depending on the LTL formula, a
+field "Max no. of new states". Depending on the LTL formula, a
 partially explored state space can be sufficient to find a
 counterexample or to assure the absence of a counterexample. If there's
 still the possibility of a counterexample in the remaining unexplored
@@ -98,7 +103,7 @@ that not the entire state space has to be computed. For this
 optimisation to work, ProB needs the LTL2BA translator. You can download
 and put it into ProB's lib folder, by choosing
 
-`Download and Install LTL2BA Tool...`
+`Download and Install LTL2BA Tool...`
 
 from the Help menu.
 
@@ -118,8 +123,8 @@ All paths that start in a state of the initialization of the machine are
 checked, but the formula is mapped to the current state. For example,
 this option can be used to check properties like ``Is this state only
 reachable directly after executing operation `xy`?'': The formula would
-be `Y[xy]`. This is equivalent to ``G (current => f)'' with f as the
-entered formula and using the option ``Start search in initialization''.
+be `Y[xy]`. This is equivalent to "G (current => f)" with f as the
+entered formula and using the option "Start search in initialization".
 
 Note: Whereas `Y true` is always false when checked with option 1 or 2,
 it is usually true (but not in all cases) for option 3.
@@ -143,7 +148,7 @@ well.
 ** To start a search from the current state of the animation use
 `current` (see the section *LTL Preferences* for more information).
 ** To check if a state has no outgoing transition leading to a different
-state use `sink`. This can be useful for finding ``pseudo''-deadlocks,
+state use `sink`. This can be useful for finding "pseudo"-deadlocks,
 i.e. states where only query-operations are enabled that do not change
 the state. Note that `sink` holds for deadlock states as well.
 ** For checking if a state is a deadlock state the atomic proposition `
@@ -190,8 +195,8 @@ the operations starts.
 ** `f T g`: trigger (dual to release)
 
 * Fairness operators
-** `WF(Op)` or `wf(Op)`: weak fairness, where ` Op` is an operation
-** `SF(Op)`or `sf(Op)`: strong fairness, where ` Op` is an operation
+** `WF(Op)` or `wf(Op)`: weak fairness, where `Op` is an operation
+** `SF(Op)`or `sf(Op)`: strong fairness, where `Op` is an operation
 ** `WEF`: weak fairness for all possible operations
 ** `SEF`: strong fairness for all possible operations
 
@@ -201,18 +206,18 @@ Setting Fairness Constraints
 
 Fairness is a notion where the search for counterexamples is restricted
 to paths that do not ignore infinitely the execution of a set of enabled
-operations imposed by the user as ``fair'' constraints. One possibility
+operations imposed by the user as "fair" constraints. One possibility
 to set fairness constraints in ProB is to encode them in the LTL^[e]^
 formula intended to be checked. For example, for a given LTL^[e]^
-formula ``f'' a set of weak fairness conditions \{a1,…,an} can be given
+formula "f" a set of weak fairness conditions \{a1,…,an} can be given
 as follows:
 
-`(FG e(a1) => GF [a1]) & … & (FG e(an) => GF [an]) => f.`
+`(FG e(a1) => GF [a1]) & … & (FG e(an) => GF [an]) => f.`
 
 In a similar way, strong fairness constraints can be imposed expressed
 by means of an LTL^[e]^ formula:
 
-`(GF e(a1) => GF [a1]) & … & (GF e(an) => GF [an]) => f.`
+`(GF e(a1) => GF [a1]) & … & (GF e(an) => GF [an]) => f.`
 
 Checking fairness in this way is very often considered to be inefficient
 as usually the number of atoms (the possible valuations of the property)
@@ -226,52 +231,52 @@ be checked efficiently. In addition, new operators have been added to
 the ProB’s LTL parser for setting fairness constraints to an LTL^[e]^
 property. The new operators are _WF(-)_ and _SF(-)_ and both accept as
 argument an operation. The fairness constraints must be given by means
-of implication: ``fair => f'', where ``f'' is the property to be checked
-and ``fair'' the fairness constraints.
+of implication: "fair => f", where "f" is the property to be checked
+and "fair" the fairness constraints.
 
-In particular, ``fair'' can have one of the forms: ``wfair'', ``sfair'',
-``wfair & sfair'', and ``sfair & wfair'', where ``wfair'' and ``sfair''
+In particular, "fair" can have one of the forms: "wfair", "sfair",
+"wfair & sfair", and "sfair & wfair", where "wfair" and "sfair"
 represent the imposed weak and strong fairness constraints,
 respectively.
 
-Basically, ``wfair'' and ``sfair'' are expressed by means of logical
+Basically, "wfair" and "sfair" are expressed by means of logical
 formulas having the following syntax:
 
-* Weak fair conditions (``wfair''):
+* Weak fair conditions ("wfair"):
 ** `WF(a)`, where `a` is an operation
 ** `&` and `or`: conjunction and disjunction
 
-* Strong fair conditions (``sfair''):
+* Strong fair conditions ("sfair"):
 ** `SF(a)`, where `a` is an operation
 ** `&` and `or`: conjunction and disjunction
 
-For instance, if we want to check an LTL property ``f'' on paths that
-are weak fair in regard to the operations ``a'' and ``b'' and
-additionally strong fair in regard to ``c'' or ``d'', then this can be
+For instance, if we want to check an LTL property "f" on paths that
+are weak fair in regard to the operations "a" and "b" and
+additionally strong fair in regard to "c" or "d", then this can be
 given as follows:
 
-`(WF(a) & WF(b)) & (SF(c) or SF(d)) => f`
+`(WF(a) & WF(b)) & (SF(c) or SF(d)) => f`
 
 Note that the operators _WF(-)_ and _SF(-)_ cannot appear on the right
 side of the fairness implication. Basically, _WF(-)_ and _SF(-)_ can be
 described by the following equivalences:
 
-`WF(a) ≡ (FG e(a) => GF [a]) and SF(a) ≡ (GF e(a) => GF [a]), where a is an operation.`
+`WF(a) ≡ (FG e(a) => GF [a]) and SF(a) ≡ (GF e(a) => GF [a]), where a is an operation.`
 
 For setting fairness constraints on all possible operations of the model
-being checked use the operators ``WEF'' and ``SEF''. For instance, if
-``f'' is a liveness property and we want to restrict the search only to
+being checked use the operators "WEF" and "SEF". For instance, if
+"f" is a liveness property and we want to restrict the search only to
 strongly fair paths, then we can impose the fairness constraints by
-means of the formula ``SEF => f''.
+means of the formula "SEF => f".
 
 The grammar for imposing fairness constraints by means of the fairness
-implication (``fair => f'') looks as follows:
+implication ("fair => f") looks as follows:
 
-`fair ::= WEF | SEF | wfair | sfair | wfair & sfair | sfair & wfair` +
-`          wfair ::= wf(a) | ( wfair ) | wfair & wfair | wfair or wfair` +
-`          sfair ::= sf(a) | ( sfair ) | sfair & sfair | sfair or sfair`
+`fair ::= WEF | SEF | wfair | sfair | wfair & sfair | sfair & wfair` +
+`wfair ::= wf(a) | ( wfair ) | wfair & wfair | wfair or wfair` +
+`sfair ::= sf(a) | ( sfair ) | sfair & sfair | sfair or sfair`
 
-where ``a'' is a transition proposition.
+where "a" is a transition proposition.
 
 [[storing-ltl-assertions-in-the-model]]
 Storing LTL Assertions in the Model
@@ -285,14 +290,14 @@ the ‘DEFINITIONS’ section, the particular LTL assertions must be
 separated by semicolon. For example:
 
 `DEFINITIONS` +
-`  ASSERT_LTL  == ````G`` ``(e(SetCruiseSpeed)`` ``=>`` ``e(CruiseBecomesNotAllowed))`''`;` +
-`  ASSERT_LTL1 == ````G`` ``(e(CruiseBecomesNotAllowed)`` ``=>`` ``e(SetCruiseSpeed))`''`;` +
-`  ASSERT_LTL2 == ````G`` ``(e(CruiseBecomesNotAllowed)`` ``=>`` ``(ObstacleDisappears))`''
+`ASSERT_LTL  == "``G````(e(SetCruiseSpeed)````=>````e(CruiseBecomesNotAllowed))`"`;` +
+`ASSERT_LTL1 == "``G````(e(CruiseBecomesNotAllowed)````=>````e(SetCruiseSpeed))`"`;` +
+`ASSERT_LTL2 == "``G````(e(CruiseBecomesNotAllowed)````=>````(ObstacleDisappears))`"
 
 *Storing LTL formulas in CSP-M specifications* +
 LTL formulas can be stored within pragmas in CSP-M specifications. A
 pragma in which a single LTL formula is stored is given by "\{-#
-assert_ltl ``f'' ``c'' #-}", where ``assert_ltl'' indicates the type of
+assert_ltl "f" "c" #-}", where "assert_ltl" indicates the type of
 the information stored in the pragma (there are currently two types:
 assert_ltl and assert_ctl), and is followed by the LTL formula `f` and a
 comment `c` (the comment is optional). Both, the LTL formula and the
@@ -300,9 +305,9 @@ comment, must be enclosed in double quotes. It is also possible to give
 several LTL formulas in a single pragma within which the corresponding
 LTL assertions are separated by semicolon. For example:
 
-`{-# assert_ltl ````SF(enter.1)`` ``&`` ``WF(req.1)`` ``=>`` ``GF([enter.1])`''`;` +
-`    assert_ltl ````SF(enter.2)`` ``&`` ``WF(req.2)`` ``=>`` ``GF([enter.2])`''`;` +
-`    assert_ltl ````GF`` ``[enter.1]`` ``&`` ``GF`` ``[enter.2]`''` ````Should`` ``fail.`''`#-}`
+`{-# assert_ltl "``SF(enter.1)````&````WF(req.1)````=>````GF([enter.1])`"`;` +
+`assert_ltl "``SF(enter.2)````&````WF(req.2)````=>````GF([enter.2])`"`;` +
+`assert_ltl "``GF````[enter.1]````&````GF````[enter.2]`"`"``Should````fail.`"`#-}`
 
 Note that a semicolon must not follow the last assertion in a pragma.
 
@@ -311,8 +316,8 @@ particular processes in the model. This is possible by means of
 ``assert`` declarations, which have been recently included to the CSP-M
 grammar of the ProB CSP-M parser:
 
-`assert P |= LTL: ````ltl-formula`''`,` +
-`where \`P\` is an arbitrary process and \`ltl-formula\` an LTL formula.`
+`assert P |= LTL: "``ltl-formula`"`,` +
+`where \`P\`is an arbitrary process and \`ltl-formula\`an LTL formula.`
 
 [[ltl-formulas-in-a-separate-file]]
 LTL Formulas in a Separate File
@@ -321,22 +326,22 @@ LTL Formulas in a Separate File
 With the command line version of ProB it is possible to check several
 LTL^[e]^ formulae with one call. The command has the following syntax
 
-`probcli -ltlfile FILE ...`
+`probcli -ltlfile FILE ...`
 
 The file FILE contains one or more sections where each section has the
 form
 
-`[Name]  Formula`
+`[Name]  Formula`
 
 The formula itself can spread several lines. Additional comments can be
 added with a leading #. If a counter-example is found, the trace of the
-counter-example is saved into the file ltlce_Name.trace, where ``Name''
+counter-example is saved into the file ltlce_Name.trace, where "Name"
 is the name of the formula in the LTL file.
 
 One also can check a single LTL^[e]^ formula _F_ using the option
 '-ltlformula' as follows:
 
-`probcli -ltlformula ````F`''` ...`
+`probcli -ltlformula "``F`"`...`
 
 [[ltl-formulae-in-a-separate-file]]
 LTL Formulae in a Separate File
@@ -345,22 +350,22 @@ LTL Formulae in a Separate File
 With the command line version of ProB it is possible to check several
 LTL^[e]^ formulae with one call. The command has the following syntax
 
-`probcli -ltlfile FILE ...`
+`probcli -ltlfile FILE ...`
 
 The file FILE contains one or more sections where each section has the
 form
 
-`[Name]  Formula`
+`[Name]  Formula`
 
 The formula itself can spread in several lines. Additional comments can
 be added with a leading #. If a counter-example is found, the trace of
 the counter-example is saved into the file ltlce_Name.trace, where
-``Name'' is the name of the formula in the LTL file.
+"Name" is the name of the formula in the LTL file.
 
 One also can check a single LTL^[e]^ formula _F_ using the option
 '-ltlformula' as follows:
 
-`probcli -ltlformula ````F`''` ...`
+`probcli -ltlformula "``F`"`...`
 
 [[ltl-model-checker-output]]
 LTL Model Checker Output
@@ -394,17 +399,17 @@ outgoing transitions in SICStus Prolog. (For each state of the model a
 callback will be performed.) Additionally, the search for SCCs is based
 on the Tarjan's algorithm. In the terminal all messages coming from the
 LTL model checker are preceded either by "LTL (current statistics): " or
-``LTL model checking:''. The output from the LTL model checker can give
+"LTL model checking:". The output from the LTL model checker can give
 helpful insights about the model and the model checking process.
 
-Consider the CSP specifications ``dphil_ltl8.csp'' representing a model
+Consider the CSP specifications "dphil_ltl8.csp" representing a model
 of the dining philosophers problem for eight philosophers which resolves
 the starvation problem by always forcing the first philosopher to pick
 up first the right fork instead of the left one. In other words,
-``dphil_ltl8.csp'' has no deadlock states. Checking the LTL formula ``GF
+"dphil_ltl8.csp" has no deadlock states. Checking the LTL formula ``GF
 [eat.0]'' from the command line will produce the following output:
 
-....
+----
 $ probcli -ltlformula "GF [eat.0]" dphil_ltl8.csp
 ....
 LTL model checking formula
@@ -427,10 +432,10 @@ Formula FALSE.
 Runtime: 22220 ms
 ! *** error occurred ***
 ! ltl
-....
+----
 
 As one can clearly see from the output, the LTL model checker fails to
-prove ``GF [eat.0]'' on the model since it has found a counter-example
+prove "GF [eat.0]" on the model since it has found a counter-example
 for the formula. Note that the ProB LTL model checker explores the
 search graph and the state space dynamically. The above data is to be
 understand as follows:
@@ -458,13 +463,13 @@ identifying the self-fulfilling SCC (netto 26ms)
 * LTL (current statistics) - an intermediate data information is given
 each 20 seconds spent from the last current data information.
 
-In the example above one can prove the LTL^[e]^ formula ``GF [eat.0]''
+In the example above one can prove the LTL^[e]^ formula "GF [eat.0]"
 on dphil_ltl6.csp using fairness. One can impose, for example, strong
 fairness conditions on all transitions of the model and thus verify that
-``GF [eat.0]'' is satisfied under strong fairness. The call looks as
+"GF [eat.0]" is satisfied under strong fairness. The call looks as
 follows:
 
-....
+----
 $ probcli -ltlformula "SEF => GF [eat.0]" dphil_ltl8.csp
 ...
 LTL model checking formula
@@ -490,10 +495,10 @@ LTL model checking (fairness): total fairness checking time 3729ms, 3246 callbac
 LTL Formula TRUE.
 No counter example found for SEF => GF [eat.0].
 Runtime: 188370 ms
-....
+----
 
 In the above check no fair counter-example could be found for the
-formula ``GF [eat.0]''. For this check the search graph comprises 96500
+formula "GF [eat.0]". For this check the search graph comprises 96500
 atoms and 381625 transitions, far more than the previous formula check
 (without fairness assumptions). Since no fair counter-example was found
 we can infer that the whole state space of the model was explored.
@@ -505,7 +510,7 @@ In the output above there is also some information about the fairness
 checking being performed for the model checker run. Form the fairness
 statistics we can see that the model checker has refuted 800 SCCs in
 total, i.e. there were 800 SCCs in the search graph that could serve as
-a counter-example for ``GF [eat.0]'' in case no fairness constraints
+a counter-example for "GF [eat.0]" in case no fairness constraints
 were imposed.
 
 [[other-relevant-tutorials-about-ltl-model-checking]]

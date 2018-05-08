@@ -1,6 +1,12 @@
+:wikifix: 2
 ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
-/Category:Tutorial[Category:Tutorial]
-/Category:User_Manual[Category:User Manual]
+[[summary-of-b-syntax]]
+= Summary of B Syntax
+
+:category: Tutorial
+
+:category: User_Manual
+
 
 [[summary-of-b-syntax]]
 Summary of B Syntax
@@ -187,7 +193,7 @@ Sequences:
   conc(S)    concatenation of sequence of sequences
   s/|\n     take first n elements of sequence
   s\|/n     drop first n elements from sequence
- 
+
 ....
 
 [[records]]
@@ -215,16 +221,16 @@ Strings:
 
 Atelier-B does not support any operations on strings, apart from
 equality and disequality. However, the ProB
-link:/External_Functions[external function library] contains several
+<<external-functions,external function library>> contains several
 operators on strings. ProB also allows multi-line strings. As of version
 1.7.0, ProB will support the following escape sequences within strings:
 
-`\n   newline (ASCII character 13)` +
-`\r   carriage return (ASCII 10)` +
-`\t  tab (ASCII 9)` +
-`\"   the double quote symbol "` +
-`\'   the single quote symbol '` +
-`\\   the backslash symbol`
+`\n   newline (ASCII character 13)` +
+`\r   carriage return (ASCII 10)` +
+`\t  tab (ASCII 9)` +
+`\"   the double quote symbol "` +
+`\'   the single quote symbol '` +
+`\\   the backslash symbol`
 
 Within single-line string literals, you do not need to escape '. Within
 multi-line string literals, you do not need to escape " and you can use
@@ -328,7 +334,7 @@ Machine header:
 Machine sections:
 ^^^^^^^^^^^^^^^^^
 
-....
+----
   CONSTRAINTS         P      (logical predicate)
   SETS                S;T={e1,e2,...};...
   CONSTANTS           x,y,...
@@ -341,7 +347,7 @@ Machine sections:
   ASSERTIONS         P;...;P (list of logical predicates separated by ;)
   INITIALISATION
   OPERATIONS
-....
+----
 
 [[machine-inclusion]]
 Machine inclusion:
@@ -371,7 +377,7 @@ Definitions:
   NAME2(ID,...,ID) == E2;       Definition with arguments
 ....
 
-` ````FILE.def`''`;                   Include definitions from file`
+`"``FILE.def`"`;                   Include definitions from file`
 
 There are a few Definitions which can be used to influence the animator:
 
@@ -406,7 +412,7 @@ B supports two styles of comments:
    // ...          line comments
 ....
 
-....
+----
 ProB recognises several pragma comments of the form /*@ PRAGMA VALUE */
 The whitespace between @ and PRAGMA is optional.
   /*@symbolic */      put before comprehension set or lambda to instruct ProB
@@ -425,7 +431,7 @@ The whitespace between @ and PRAGMA is optional.
                       CONSTANTS or VARIABLES section, possible units are, e.g.,
                       "m", "s", "mps", "m * s**-2"  (quotes must be used);
                       see https://www3.hhu.de/stups/prob/index.php/Tutorial_Unit_Plugin
-....
+----
 
 [[file-extensions]]
 File Extensions

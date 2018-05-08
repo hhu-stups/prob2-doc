@@ -1,11 +1,15 @@
+:wikifix: 2
 ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
-__NOTOC__
+[[csp-m-syntax]]
+= CSP-M Syntax
+
+
 
 [[details-of-supported-csp-m-syntax]]
 Details of supported CSP-M syntax
 ---------------------------------
 
-Note: you can use the command ``Summary of CSP syntax'' in ProB's help
+Note: you can use the command "Summary of CSP syntax" in ProB's help
 menu to get an up-to-date list of the supported syntax, along with
 current limitations.
 
@@ -23,7 +27,7 @@ PROCESS EXPRESSIONS
 * `SKIP` terminating process
 * `CHAOS(a)` a: set of channel expressions
 * `ch->P` simple action prefix where ch is a channel name possibly
-followed by a sequence of outputs ``!v'' and input ``?VAR'', where v is
+followed by a sequence of outputs "!v" and input "?VAR", where v is
 a value expression and VAR a variable identifier
 * `ch?x:v->P` action prefix with set of accepted values
 * `P ; Q` sequential composition
@@ -37,7 +41,7 @@ channel expressions a
 * `P [ a || a' ] Q` alphabetised parallel
 * `P [ c<->c' ] Q` linked parallel
 * `P \ a` hiding of channel expressions in c
-* `P link:/_c<-c'_[ c<-c' ]` renaming of channels c into c'
+* `P <<c<-c, c<-c' >>` renaming of channels c into c'
 * `if B then P else Q`
 * `b & P` guard using a boolean expression b
 * `[]x:v@P` replicated external choice (x: variable, v: set value
@@ -120,7 +124,7 @@ PRAGMAS
 
 * `transparent f` where f is a unary function which will then on be
 ignored by ProB
-* `\{-# assert_ltl ``f'' ``comment'' #-}` where _f_ is an LTL-formula
+* `\{-# assert_ltl "f" "comment" #-}` where _f_ is an LTL-formula
 and _comment_ is an arbitrary comment, which is optional
-* `\{-# assert_ctl ``f'' ``comment'' #-}` where _f_ is a CTL-formula and
+* `\{-# assert_ctl "f" "comment" #-}` where _f_ is a CTL-formula and
 _comment_ is an arbitrary comment, which is optional

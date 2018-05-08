@@ -1,4 +1,8 @@
+:wikifix: 2
 ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
+[[types]]
+= Types
+
 ProB requires all constants and variables to be typed. As of version
 1.3, ProB uses a new unification-based type inference and checking
 algorithm. As such, you should be able to use most Atelier B models
@@ -61,7 +65,7 @@ user can indicate the size of the set mySET (without defining its
 elements) by creating a macro in the DEFINITIONS clause with the name
 scope_mySET and an integer value (e.g. scope_mySET==2) or a value
 specified as a range (e.g. scope_mySET == 1..12). The macros with the
-prefix ``scope_'' will be used by ProB and do not modify the B
+prefix "scope_" will be used by ProB and do not modify the B
 specification. If the size of the set is unspecified, ProB considers the
 set to have a default size. The value for the default size is defined in
 the Preferences|Animation Preferences... preference window by the

@@ -1,3 +1,7 @@
+:wikifix: 2
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
+[[cheryls-birthday]]
+= Cheryl's Birthday
 
 = Cheryl's birthday
 
@@ -10,11 +14,11 @@ Here is a first solution in B, where the text of the puzzle has been
 integrated as comments. There are almost certainly more elegant
 encodings of the problem in B. You can load this model using, e.g., ProB
 Tcl/Tk (see below). The model is also available as an example in our
-link:/ProB_Logic_Calculator[online ProB Logic Calculator].
+<<prob-logic-calculator,online ProB Logic Calculator>>.
 
 In case you are new to B, you probably need to know the following
 operators to understand the specification below (we als have a
-link:/Summary_of_B_Syntax[summary page about the B syntax]):
+<<summary-of-b-syntax,summary page about the B syntax>>):
 
 * `x : S` specifies that x is an element of S
 * `dom(r)` is the domain of a function or relation r
@@ -73,12 +77,12 @@ END
 ....
 
 When loading this B machine in ProB, you will see that there is only a
-single solution (solving time 20-30 ms) : `Month = ````july`'' and
+single solution (solving time 20-30 ms) : `Month = "``july`" and
 `Day = 16`.
 
 Here is a screenshot of ProB Tcl/Tk after loading the model.
 
-/File:ProB_Cheryl_Screenshot.png[600px|center]
+image::ProB_Cheryl_Screenshot.png[]
 
 Using an enumerated set
 
@@ -98,5 +102,5 @@ PD = {(aug|->14), (aug|->15), (aug|->17),
        (may|->15),(may|->16),(may|->19)}
 ....
 
-and also ```july`'' in the ASSERTIONS clause into `july`. This makes
+and also "`july`" in the ASSERTIONS clause into `july`. This makes
 constraint solving via ProB marginally faster.

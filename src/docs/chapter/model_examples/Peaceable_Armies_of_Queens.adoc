@@ -1,4 +1,8 @@
+:wikifix: 2
 ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
+[[peaceable-armies-of-queens]]
+= Peaceable Armies of Queens
+
 I found this challenging constraint programming problem in the following
 paper:
 
@@ -68,7 +72,7 @@ END
 ....
 
 Here are some running times on my MacBook Air 1.7 GHz i7, also comparing
-to using link:/Using_ProB_with_KODKOD[Kodkod as ProB's backend] and
+to using <<using-prob-with-kodkod,Kodkod as ProB's backend>> and
 using an http://alloy.mit.edu/alloy/[Alloy] model (see below).
 
 ....

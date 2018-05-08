@@ -1,4 +1,8 @@
-= Euler Problem 67
+:wikifix: 2
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
+[[euler-problem-67---maximum-path-sum-ii]]
+= Euler Problem 67 - Maximum Path Sum II
+
 
 Here we give a solution to the https://projecteuler.net/problem=67[Euler
 Problem 67]. The purpose is to show:

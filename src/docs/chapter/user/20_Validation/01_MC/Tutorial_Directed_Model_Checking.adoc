@@ -1,17 +1,22 @@
+:wikifix: 2
 ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
-/Category:User_Manual[Category:User Manual]
+[[tutorial-directed-model-checking]]
+= Tutorial Directed Model Checking
+
+:category: User_Manual
+
 
 We assume that you have completed
-link:/Tutorial_First_Model_Checking[Tutorial First Model Checking] and
-link:/Tutorial_Complete_Model_Checking[Complete model checking].
+<<tutorial-first-model-checking,Tutorial First Model Checking>> and
+<<tutorial-complete-model-checking,Complete model checking>>.
 
 Here we will look a bit closer at the search strategy options of the
 ProB model checker. You can set the mode using the `-mc_mode`
 command-line switch of
-link:/Using_the_Command-Line_Version_of_ProB[probcli]. In the Tcl/Tk
+<<using-the-command-line-version-of-prob,probcli>>. In the Tcl/Tk
 version you can select the strategy in the model checking dialog box
-(which you obtain via the``Model Check...'' command in the ``Verify''
-menu):  image::ProBWinModelCheckDialog.png[] The following values
+(which you obtain via the"Model Check..." command in the "Verify"
+menu):image::ProBWinModelCheckDialog.png[] The following values
 are possible in all versions of ProB:
 
 * Mixed DF/BF (`mixed` for `mc_mode`) : mixed depth-first /
@@ -90,13 +95,13 @@ search strategies when limiting the search to 10 nodes. For this we use
 the command-line version as follows (as there we can provide exactly how
 many states should be explored):
 
-`$ probcli phonebook7.mch -p MAX_OPERATIONS 99 -mc 10 -spdot out.dot -p DOT_LEAVES FALSE -mc_mode `
+`$ probcli phonebook7.mch -p MAX_OPERATIONS 99 -mc 10 -spdot out.dot -p DOT_LEAVES FALSE -mc_mode`
 
 However, you can also obtain a similar effect with the Tcl/Tk version by
 starting the model checker and then quickly pressing the Cancel button
 and then inspecting the state space (Statespace command in the Visualise
 menu; see
-link:/Tutorial_First_Model_Checking[Tutorial_First_Model_Checking]).
+<<tutorial-first-model-checking,Tutorial_First_Model_Checking>>).
 Below we show the output of the above command for the various choices of
 .
 
@@ -104,9 +109,9 @@ Below we show the output of the above command for the various choices of
 Breadth-First
 ^^^^^^^^^^^^^
 
-`$ probcli phonebook7.mch -p MAX_OPERATIONS 99 -mc 10 -spdot out.dot -p DOT_LEAVES FALSE -mc_mode bf`
+`$ probcli phonebook7.mch -p MAX_OPERATIONS 99 -mc 10 -spdot out.dot -p DOT_LEAVES FALSE -mc_mode bf`
 
- image::ProB_Phonebook7_spdot_bf.png[]
+image::ProB_Phonebook7_spdot_bf.png[]
 
 This mode has the advantage of finding shortest counter examples first.
 We also have a guarantee that, provided a counter example exists, a
@@ -118,9 +123,9 @@ counter examples.
 Depth-First
 ^^^^^^^^^^^
 
-`$ probcli phonebook7.mch -p MAX_OPERATIONS 99 -mc 10 -spdot out.dot -p DOT_LEAVES FALSE -mc_mode df`
+`$ probcli phonebook7.mch -p MAX_OPERATIONS 99 -mc 10 -spdot out.dot -p DOT_LEAVES FALSE -mc_mode df`
 
- image::ProB_Phonebook7_spdot_df.png[]
+image::ProB_Phonebook7_spdot_df.png[]
 
 The depth-first traversal has the advantage of lower memory requirements
 (concerning storing the unprocessed nodes) and can find very deep
@@ -146,13 +151,13 @@ also good at finding counter examples which require exhaustively to test
 all operations (e.g., many errors simply require a particular faulty B
 operation to be executed).
 
-`$ probcli phonebook7.mch -p MAX_OPERATIONS 200 -mc 10 -spdot out.dot -p DOT_LEAVES FALSE -mc_mode mixed`
+`$ probcli phonebook7.mch -p MAX_OPERATIONS 200 -mc 10 -spdot out.dot -p DOT_LEAVES FALSE -mc_mode mixed`
 
 The result will vary from one run of ProB to another:
 
- image::ProB_Phonebook7_spdot_mixed1.png[]
+image::ProB_Phonebook7_spdot_mixed1.png[]
 
- image::ProB_Phonebook7_spdot_mixed2.png[]
+image::ProB_Phonebook7_spdot_mixed2.png[]
 
 It is interesting to compare this result with the random search
 strategy, which we show next.
@@ -161,13 +166,13 @@ strategy, which we show next.
 Random
 ^^^^^^
 
-`$ probcli phonebook7.mch -p MAX_OPERATIONS 99 -mc 10 -spdot out.dot -p DOT_LEAVES FALSE -mc_mode random`
+`$ probcli phonebook7.mch -p MAX_OPERATIONS 99 -mc 10 -spdot out.dot -p DOT_LEAVES FALSE -mc_mode random`
 
 Here are two sample results:
 
- image::ProB_Phonebook7_spdot_random1.png[]
+image::ProB_Phonebook7_spdot_random1.png[]
 
- image::ProB_Phonebook7_spdot_random2.png[]
+image::ProB_Phonebook7_spdot_random2.png[]
 
 Compared to the `mixed` option one can notice that the mixed option has
 more of a tendency to explore certain branches in depth.
@@ -176,9 +181,9 @@ more of a tendency to explore certain branches in depth.
 Hash
 ^^^^
 
-`$ probcli phonebook7.mch -p MAX_OPERATIONS 99 -mc 10 -spdot out.dot -p DOT_LEAVES FALSE -mc_mode hash`
+`$ probcli phonebook7.mch -p MAX_OPERATIONS 99 -mc 10 -spdot out.dot -p DOT_LEAVES FALSE -mc_mode hash`
 
- image::ProB_Phonebook7_spdot_hash.png[]
+image::ProB_Phonebook7_spdot_hash.png[]
 
 The difference with the `random` option is that this will always return
 the same result, as the hash value of the states do not change from one
@@ -188,9 +193,9 @@ run of ProB to another.
 Out-Degree
 ^^^^^^^^^^
 
-`$ probcli phonebook7.mch -p MAX_OPERATIONS 99 -mc 10 -spdot out.dot -p DOT_LEAVES FALSE -mc_mode dlk`
+`$ probcli phonebook7.mch -p MAX_OPERATIONS 99 -mc 10 -spdot out.dot -p DOT_LEAVES FALSE -mc_mode dlk`
 
- image::ProB_Phonebook7_spdot_dlk.png[]
+image::ProB_Phonebook7_spdot_dlk.png[]
 
 One can notice that ProB here has a tendency to go into depth, as the
 number of enabled operations decreases: if we add a name to the
@@ -203,4 +208,4 @@ More examples
 ~~~~~~~~~~~~~
 
 A further illustration of directed model checking can be found in our
-link:/Blocks_World_(Directed_Model_Checking)[``Blocks World'' example].
+<<blocks-world-directed-model-checking,"Blocks World" example>>.

@@ -1,6 +1,10 @@
-= Blocks World
+:wikifix: 2
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
+[[blocks-world-directed-model-checking]]
+= Blocks World (Directed Model Checking)
+
 In this example we want to highlight the new
-link:/Tutorial_Directed_Model_Checking[directed model checking] features
+<<tutorial-directed-model-checking,directed model checking>> features
 of ProB (available as of version 1.5.1), which allow one to direct the
 model checker towards a desired goal. Technically speaking, the model
 checker now maintains a weighted priority queue of unprocessed states,
@@ -53,20 +57,20 @@ END
 
 Adding a graphical visualization
 
-Adding a link:/Graphical_Visualization[graphical visualization] is
+Adding a <<graphical-visualization,graphical visualization>> is
 independent of the model checking, but helps visualising the traces
 found by the model checker. For this we can add `ANIMATION_FUNCTION` and
 `ANIMATION_FUNCTION_DEFAULT` definition, as specified in the complete
 model at the end of this page.
 
 The initial state of our model then looks as follows, when loaded using
-ProB Tcl/Tk: /File:ProB_BlockInit_Screenshot.png[600px|center]
+ProB Tcl/Tk:image::ProB_BlockInit_Screenshot.png[]
 
 Finding the GOAL
 
 To use the default mixed depth-first/breadth-first search you can type:
 
-`$ probcli BlocksWorldGeneric6.mch -model_check`
+`$ probcli BlocksWorldGeneric6.mch -model_check`
 
 As it has a random component, runtimes vary (typically 0.5 to 3.5
 seconds on a Mac Book Air 1.7 GHz). It finds reasonably short counter
@@ -74,7 +78,7 @@ examples.
 
 You can use depth-first search using the -df flag:
 
-`$ probcli BlocksWorldGeneric6.mch -model_check -df`
+`$ probcli BlocksWorldGeneric6.mch -model_check -df`
 
 This finds a counter-example of length 48 relatively quickly (120 ms
 model checking time). You can use the `-bf` flag to force breadth-first
@@ -82,7 +86,7 @@ search, thus obtaining shortest counter-examples (of length 7; model
 checking time about 3.3 seconds).
 
 As of version 1.5.1 you can use the
-link:/Using_the_Command-Line_Version_of_ProB#-mc_mode_.3CM.3E[`-mc_mode`]
+<<using-the-command-line-version-of-prob,`-mc_mode`>>
 flag to provide other options to control the model checking (see also
 link:/Tutorial_Directed_Model_Checking[the tutorial page on directed
 model checking options]).
@@ -92,16 +96,16 @@ random weight. The difference over the mixed depth-first/breadth-first
 mode is that it completely disregards when nodes where generated. The
 mixed depth-first/breadth-first mode will try to do a mixture of
 depth-first and breadth-first traversal; the random mode here is
-``just'' random:
+"just" random:
 
-`probcli BlocksWorldGeneric6.mch -model_check -mc_mode random`
+`probcli BlocksWorldGeneric6.mch -model_check -mc_mode random`
 
 A variation of the above is the `hash` mode, which simply uses the
 state's Prolog hash as the random weight. The difference is that the
 result here is predictable, i.e., you will always get the same result
 when you run the model checker:
 
-`probcli BlocksWorldGeneric6.mch -model_check -mc_mode hash`
+`probcli BlocksWorldGeneric6.mch -model_check -mc_mode hash`
 
 Possibly a more interesting mode is `heuristic`. It looks for a
 user-provided DEFINITION for `HEURISTIC_FUNCTION` and uses this a s
@@ -145,13 +149,13 @@ goal_found
 ....
 
 In ProB Tcl/Tk you simply use the standard model checking dialog (in the
-Verify menu) and choose the ``Heuristic Function / Random'' option in
-the ``Search Strategy'' pop-up menu:
+Verify menu) and choose the "Heuristic Function / Random" option in
+the "Search Strategy" pop-up menu:
 
 image:ProB_MC_Heuristic.png[200px|center]
 
 After that you can find the solution quickly by simply pressing the
-``Model Check'' button:
+"Model Check" button:
 
 image:ProB_BlockGoal_Screenshot.png[600px|center]
 

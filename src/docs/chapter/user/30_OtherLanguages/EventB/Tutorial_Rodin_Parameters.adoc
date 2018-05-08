@@ -1,5 +1,10 @@
+:wikifix: 2
 ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
-/Category:User_Manual[Category:User Manual]
+[[tutorial-rodin-parameters]]
+= Tutorial Rodin Parameters
+
+:category: User_Manual
+
 
 [[preferences]]
 Preferences
@@ -8,13 +13,13 @@ Preferences
 You can modify the most important parameters of ProB by going to the
 Rodin preferences.
 
- image::RodinPrefs.png[]
+image::RodinPrefs.png[]
 
 Now selecting the ProB pane inside the Rodin preferences. You see that a
 relatively large list of preferences appears (the actual number and
 denotation depends on the exact version of ProB you have installed):
 
- image::ProBRodinPrefs.png[]
+image::ProBRodinPrefs.png[]
 
 We explain the most important preferences below.
 
@@ -52,26 +57,26 @@ Using contexts for ProB animation
 
 Note that you can create a new context with those axioms just for
 animation or model checking with ProB. For this you can simply
-right-click on the context and use the Rodin command ``EXTEND''. For
+right-click on the context and use the Rodin command "EXTEND". For
 example, in Camille syntax such a context could look like:
 
-`context c1_prob extends c1` +
+`context c1_prob extends c1` +
 `axioms` +
-` @prob_axm card(S) = 3` +
+`@prob_axm card(S) = 3` +
 `end`
 
 After that you can also refine the model you want to animate by
-right-clicking on it and using the Rodin command ``REFINE'', and then
+right-clicking on it and using the Rodin command "REFINE", and then
 add the new context to the seen context list:
 
-`machine m0_prob refines m0  sees c0 c1_prob`
+`machine m0_prob refines m0  sees c0 c1_prob`
 
 Here the machine m0_prob and c1_prob play the role of configuration
 files for the animation. You can also add additional axioms in c1_prob
 to force ProB to use a specific valuation of your constants.
 
 If ProB cannot infer the size of a carrier set; it will use the default
-value provided in the ``Size of unspecified sets'' preference.
+value provided in the "Size of unspecified sets" preference.
 
 Note that for complicated machines it can be tricky to set up the
 cardinalities of the carrier sets correctly. For example, if you have an

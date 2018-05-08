@@ -1,10 +1,15 @@
+:wikifix: 2
 ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
-/Category:User_Manual[Category:User Manual]
+[[tips-writing-models-for-prob]]
+= Tips: Writing Models for ProB
+
+:category: User_Manual
+
 
 The most common issue is that ProB needs to find values for the
 constants which satisfy the properties (aka axioms in Event-B). You
 should read the tutorial pages on this (in particular
-link:/Tutorial_Setup_Phases[Understanding the ProB Setup Phases] and
+<<tutorial-setup-phases,Understanding the ProB Setup Phases>> and
 link:/Tutorial_Troubleshooting_the_Setup[Tutorial Troubleshooting the
 Setup])
 
@@ -26,7 +31,7 @@ functions (see discussion about closure below). In symbolic mode, ProB
 will keep lambda expressions and set comprehensions symbolic as much as
 possible. In classical B, any `ABSTRACT_CONSTANT` will also at first be
 kept symbolic. However, there are only limited things you can do with a
-``symbolic'' function without forcing an expansion: taking the value of
+"symbolic" function without forcing an expansion: taking the value of
 a function is fine, computing the image over a set is also possible as
 is taking the union with another symbolic function.
 
@@ -46,13 +51,13 @@ variables in P apart from x are known to evaluate the quantifier.
 Indeed, if all variables apart from x are known, ProB can stop when it
 finds one solution for x. Take for example:
 
-`#x.(x:0..1000 & x=p) & p:101..104`
+`#x.(x:0..1000 & x=p) & p:101..104`
 
 Here, ProB will wait until p is known (e.g., 101) before enumerating
 possible values for x. However, it could be that the predicate P is
 required to instantiate the outside variable, as in this example:
 
-` #x.(x:100..101 & x=p) & p:NATURAL`
+`#x.(x:100..101 & x=p) & p:NATURAL`
 
 Here, the existential quantifier is required to narrow down the possible
 values of p. Thus, before enumerating an unbounded variable, ProB will
@@ -66,7 +71,7 @@ quantifiers.
 One exception to the above treatment are existential quantifiers of the
 form `#x.(x=E & P)`. They are recognised by ProB as LET-PREDICATES. This
 is a good use of the existential quantifier. This quantifier will never
-``block''.
+"block".
 
 * Tip: use existential quantifiers as LET-PREDICATES `#x.(x=E & P)` to
 avoid repeated computations
@@ -86,8 +91,8 @@ There are a few optimisations:
 
 * if ProB can determine that the domain of `x` is finite and small, then
 the universal quantifier will be expanded into a conjunction. E.g.,
-`!x.(x:1..3 & x`` P(x)` will be expanded into
-`(1`` P(1)) & (2`` P(2)) & (3`` P(3))` even if `y` is not yet known.
+`!x.(x:1..3 & x``P(x)` will be expanded into
+`(1``P(1)) & (2``P(2)) & (3``P(3))` even if `y` is not yet known.
 Setting the preference `SMT` to true will increase the threshold for
 which this expansion occurs.
 * if the quantifier is of the form `!x.(x:S => P)`, then P will be

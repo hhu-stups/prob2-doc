@@ -1,4 +1,8 @@
-= Rush hour (XTL)
+:wikifix: 2
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
+[[rush-hour-xtl]]
+= Rush Hour XTL
+
 
 This case studies tackles encoding the
 http://en.wikipedia.org/wiki/Rush_Hour_(board_game)[rush hour board
@@ -8,14 +12,14 @@ In this particular instance we try to solve the
 http://www.puzzles.com/products/RushHour/RHfromMarkRiedel/Jam.html?40[hardest
 puzzle of the original game Nr. 40].
 
-This is a link:/Other_languages[Prolog XTL encoding] of the
-link:/Rush_Hour_Puzzle[B solution which is also available]. On the
+This is a <<other-languages,Prolog XTL encoding>> of the
+<<rush-hour-puzzle,B solution which is also available>>. On the
 Prolog XTL encoding presented here ProB finds the example in one second
 (on a Mac Book Air, 1.7 GHz i7), on the B version it takes ProB about 10
 seconds (but the TLC backend is faster). Part of the B models are shown
 in comments for reference below. This file needs to be saved with a `.P`
-extension so that it can be loaded by link:/Installation[ProB Tcl/Tk] or
-link:/Using_the_Command-Line_Version_of_ProB[probcli].
+extension so that it can be loaded by <<installation,ProB Tcl/Tk>> or
+<<using-the-command-line-version-of-prob,probcli>>.
 
 Observe how we use sort and ord_add_element to avoid multiple versions
 of the same state. The important predicates that ProB uses are
@@ -193,7 +197,7 @@ cell_content(rcf(Rows,Cols,Free),Row,Col1,Car) :- dir(Dir),
 
 Here is a screenshot of ProB after finding the shortest solution using
 model checking. You can see the (simple)
-link:/Graphical_Visualization[graphical visualisation] of the state of
+<<graphical-visualization,graphical visualisation>> of the state of
 the model.
 
 image:ProB_RushHour_XTL_Screenshot.png[600px|center]
@@ -203,10 +207,10 @@ Running using probcli
 ~~~~~~~~~~~~~~~~~~~~~
 
 Here is how you can find the solution using
-link:/Using_the_Command-Line_Version_of_ProB[probcli] (run on a Mac Book
+<<using-the-command-line-version-of-prob,probcli>> (run on a Mac Book
 Air, 1.7 GHz i7):
 
-....
+----
 $ probcli -mc 100000 RushHour_Prolog.P -bf
 tcltk_open_xtl_file(/Users/leuschel/git_root/prob_examples/public_examples/B/Puzzles/RushHour/RushHour_Prolog.P)
 new_xtl_file(/Users/leuschel/git_root/prob_examples/public_examples/B/Puzzles/RushHour/RushHour_Prolog.P)
@@ -304,12 +308,12 @@ xtl_error
  82: mv_right(13,(2,5)):
 ! *** error occurred ***
 ! xtl_error
-....
+----
 
 The full states has 4781 states (including the root node) and 29889
 transitions. This is the output of ProB's coverage statistics:
 
-....
+----
 STATES
 deadlocked:0
 open:0
@@ -324,12 +328,12 @@ mv_right:6483
 mv_up:8461
 start_xtl_system:1
 UNCOVERED_OPERATIONS
-....
+----
 
 Complete model checking, without looking for goal states, takes 1.6
 seconds (on a Mac Book Air, 1.7 GHz i7):
 
-....
+----
 $ probcli -mc 100000 RushHour_Prolog.P -noinv --coverage
 tcltk_open_xtl_file(/Users/leuschel/git_root/prob_examples/public_examples/B/Puzzles/RushHour/RushHour_Prolog.P)
 new_xtl_file(/Users/leuschel/git_root/prob_examples/public_examples/B/Puzzles/RushHour/RushHour_Prolog.P)
@@ -341,4 +345,4 @@ No Counter Example found. ALL nodes visited.
 Coverage:
 
 [STATES,deadlocked:0,open:0,live:4781,total:4781,TOTAL_OPERATIONS,29889,COVERED_OPERATIONS,mv_down:8461,mv_left:6483,mv_right:6483,mv_up:8461,start_xtl_system:1,UNCOVERED_OPERATIONS]
-....
+----

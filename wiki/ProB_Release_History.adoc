@@ -1,7 +1,7 @@
 ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 Full ProB release history until release 1.6.0:
 
-....
+----
 RELEASE HISTORY
 ===============
 
@@ -771,4 +771,4 @@ October 3:
 First Release:
 Version 0.7 - Alpha Release
 Released on October 1 2003
-....
+----

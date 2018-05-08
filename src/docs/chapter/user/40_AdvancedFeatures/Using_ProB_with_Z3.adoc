@@ -1,5 +1,10 @@
+:wikifix: 2
 ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
-/Category:User_Manual[Category:User Manual]
+[[using-prob-with-z3]]
+= Using ProB with Z3
+
+:category: User_Manual
+
 
 The current nightly versions of ProB can make use of
 https://github.com/Z3Prover/z3[Z3] as an alternate way of solving
@@ -23,7 +28,7 @@ How to install Z3 for ProB
 --------------------------
 
 First of all, download a nightly build of ProB from the
-link:/Download[Downloads] page. To connect Z3 to ProB you also need the
+<<download,Downloads>> page. To connect Z3 to ProB you also need the
 proper extension. For Linux and Mac OS, the extension is build by on our
 infrastructure and ships with the regular ProB download. For Windows,
 you can download it from the following URLs:
@@ -31,12 +36,12 @@ you can download it from the following URLs:
 * https://www3.hhu.de/stups/downloads/z3interface/windows32/z3interface.dll[32bit]
 * https://www3.hhu.de/stups/downloads/z3interface/windows64/z3interface.dll[64bit]
 
-and place it in the ``lib'' folder of the ProB nightly build.
+and place it in the "lib" folder of the ProB nightly build.
 
 In addition to ProB, you need to install Z3 by downloading it from
 https://github.com/Z3Prover[Z3's GitHub page]. Currently, ProB is linked
 against the stable release 4.4.1 of Z3. Inside the zip file you will
-find a folder called ``bin'' with the z3 binary and the belonging
+find a folder called "bin" with the z3 binary and the belonging
 libraries inside.
 
 These libraries have to be made available to ProB. On Linux or Mac, this
@@ -45,7 +50,7 @@ can either be done by placing them in an appropriate folder (like
 (like LD_LIBRARY_PATH on Linux or DYLD_LIBRARY_PATH on Mac). On Windows,
 you can place z3.dll in the main folder of the ProB distribution, i. e.,
 on the same level as the lib directory, not inside it. If the libraries
-can not be loaded, ProB will answer with ``solver_not_available'' when
+can not be loaded, ProB will answer with "solver_not_available" when
 Z3 is queried.
 
 [[what-can-be-translated]]
@@ -63,7 +68,7 @@ constructs:
 * Projection
 
 When using Z3 alone, the solver will report
-``unsupported_type_or_expression'' if it can not handle parts of a
+"unsupported_type_or_expression" if it can not handle parts of a
 constraint.
 
 When used together with ProB, everything Z3 can not be coped with will
@@ -77,29 +82,29 @@ Using the repl, one can try out different examples.
 
 First an example which can be solved by Z3 and not by ProB:
 
-`>>> X``0)` +
-`### Warning: enumerating X : INTEGER : inf:sup ---> -1:3` +
-`Existentially Quantified Predicate over X,Y is UNKNOWN` +
-`[FALSE with ** ENUMERATION WARNING **]`
+`>>> X``0)` +
+`### Warning: enumerating X : INTEGER : inf:sup ---> -1:3` +
+`Existentially Quantified Predicate over X,Y is UNKNOWN` +
+`[FALSE with ** ENUMERATION WARNING **]`
 
 Using the Z3 translation it can be solved:
 
-`>>> :z3 X``>> (2|->4):{y|#x.(y=(x|->x+2))}` +
-`PREDICATE is TRUE`
+`>>> :z3 X``>> (2|->4):{y|#x.(y=(x|->x+2))}` +
+`PREDICATE is TRUE`
 
 This one cannot be solved by Z3:
 
-`>>> :z3 (2|->4):{y|#x.(y=(x|->x+2))}` +
-`PREDICATE is UNKNOWN: solver_answered_unknown`
+`>>> :z3 (2|->4):{y|#x.(y=(x|->x+2))}` +
+`PREDICATE is UNKNOWN: solver_answered_unknown`
 
 Here an example that shows that Z3 can be used to solve constraints and
 obtain solutions for the open variables:
 
-`>>> :z3 {x} /\ {y} /= {} & x:1000000..20000000 & y>=0 & y<2000000` +
-`PREDICATE is TRUE` +
+`>>> :z3 {x} /\ {y} /= {} & x:1000000..20000000 & y>=0 & y<2000000` +
+`PREDICATE is TRUE` +
 `Solution:` +
-`      x = 1000000` +
-`      y = 1000000`
+`x = 1000000` +
+`y = 1000000`
 
 [[more-details]]
 More details

@@ -1,4 +1,8 @@
-== Test Case Generation
+:wikifix: 2
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
+[[test-case-generation]]
+= Test Case Generation
+
 
 ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 
@@ -48,7 +52,7 @@ B's constraint solver to generate
 feasible sequences of events in a breadth-first fashion and will also
 stop when the coverage criterion has been satisfied. (You may want to
 examine the
-link:/Tutorial_Model_Checking,_Proof_and_CBC[Tutorial_Model_Checking,_Proof_and_CBC]
+<<tutorial-model-checking-proof-and-cbc,Tutorial_Model_Checking,_Proof_and_CBC>>
 in this context.) So, what are the differences:
 
 * the constraint-based approach will instantiate the constants and
@@ -169,7 +173,7 @@ You cannot look at the test cases in ProB. Instead you can open the file you jus
 Constraint based test case generation allows to explore the state space
 for a machine and generate traces of operations that cover certain user
 defined operations and meet a given condition to end the search. (See
-also the link:/Bounded_Model_Checking[bounded model checker] of ProB
+also the <<bounded-model-checking,bounded model checker>> of ProB
 which uses this technique to find invariant violations.)
 
 When should one use the constraint-based test case generator:

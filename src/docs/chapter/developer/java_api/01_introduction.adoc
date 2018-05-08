@@ -1,4 +1,8 @@
-[[introduction]]
+:wikifix: 2
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
+[[01-introduction]]
+= 01 introduction
+
 = Introduction
 
 == Acknowledgements

@@ -1,5 +1,10 @@
+:wikifix: 2
 ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
-/Category:Developer_Manual[Category:Developer Manual] __NOTOC__ In this
+[[why-prolog]]
+= Why Prolog?
+
+:category: Developer_Manual
+In this
 chapter we try to answer the question: why did we use Prolog to develop
 the core of ProB, and in particular why do we use the commercial
 http://www.sics.se/isl/sicstuswww/site/index.html[SICStus Prolog] rather
@@ -42,9 +47,9 @@ analysis
   last chapters of 2nd edition of the Dragon book), program verification
   (e.g., model checking), and program transformation (e.g., partial
   evaluation) in. Also, type inference and type checking are a
-  ``breeze'' thanks to Prolog's unification.
+  "breeze" thanks to Prolog's unification.
 
-* Modern Prolog systems support a feature called ``co-routining'',
+* Modern Prolog systems support a feature called "co-routining",
 
 ::
   also known as flexible computation rules or delay-declarations. These
@@ -54,8 +59,8 @@ analysis
   less_than_equal should only be expanded when both of its arguments are
   known:
 
-`:- block less_than_equal(-,?), less_than_equal(?,-).` +
-`less_than_equal(X,Y) :- X=<Y.`
+`:- block less_than_equal(-,?), less_than_equal(?,-).` +
+`less_than_equal(X,Y) :- X=<Y.`
 
 ::
   A nice aspect is that the block declarations do *not* influence the
@@ -63,7 +68,7 @@ analysis
   states that the declarative semantics of logic programs is independent
   of the selection rule.
 
-I believe this to be one of the ``killer'' features of modern Prolog
+I believe this to be one of the "killer" features of modern Prolog
 systems. We heavily use this in the ProB kernel to delay enumeration of
 values and to implement our own constraint solver over sets and
 relations. In my experience, this feature allows one to write much more
@@ -202,7 +207,7 @@ hence I had to run the Windows version in Parallels. LPA Prolog only
 runs on Windows; so it was also run using Parallels. Note: the purpose
 of the benchmark was to measure the performance of recursion. As such, I
 was trying to use the same types of data on all platforms (BigInts).
-Also note that this is actually not a typical Prolog ``application'' as
+Also note that this is actually not a typical Prolog "application" as
 no use is made of unification or non-determinism. But it is a good
 application for a functional programming language such as Haskell since
 Fibonacci is a pure function without side-effects.
@@ -214,37 +219,37 @@ feeling that Haskell has made great strides in performance recently, and
 that the Prolog community should be on its guard (so as not to be left
 behind).
 
-`System         BigInts            Fib(30)      Fib(35)` +
-`Java 1.5.0_16          NO (long)       0.020        0.231` +
-`GHC 6.10.1     yes         0.082        0.878` +
-`Yap    5.1.3       NO          0.193        2.112` +
-`SICStus 4.0.4          yes         0.240        2.640` +
-`Ciao 1.13.0        yes         0.312        3.461` +
-`BinProlog 11.38         NO                      0.361            3.725` +
-`Java 1.5.0_16          yes         0.445        4.898` +
-`XSB 3.1            NO          0.456        5.064` +
-`Python 2.5.1           yes         0.760        8.350` +
-`Gnu 1.3.1      NO          1.183       13.139` +
-`SWI 5.6.52     yes         1.900       20.990` +
-`LPA 4.710      yes         1.736       36.250`
+`System         BigInts            Fib(30)      Fib(35)` +
+`Java 1.5.0_16          NO (long)       0.020        0.231` +
+`GHC 6.10.1     yes         0.082        0.878` +
+`Yap    5.1.3       NO          0.193        2.112` +
+`SICStus 4.0.4          yes         0.240        2.640` +
+`Ciao 1.13.0        yes         0.312        3.461` +
+`BinProlog 11.38         NO                      0.361            3.725` +
+`Java 1.5.0_16          yes         0.445        4.898` +
+`XSB 3.1            NO          0.456        5.064` +
+`Python 2.5.1           yes         0.760        8.350` +
+`Gnu 1.3.1      NO          1.183       13.139` +
+`SWI 5.6.52     yes         1.900       20.990` +
+`LPA 4.710      yes         1.736       36.250`
 
 The same table with only the BigInteger versions is:
 
-`System         BigInts            Fib(30)      Fib(35)` +
-`GHC 6.10.1     yes         0.082        0.878` +
-`SICStus 4.0.4          yes         0.240        2.640` +
-`Ciao 1.13.0        yes         0.312        3.461` +
-`Java 1.5.0_16          yes         0.445        4.898` +
-`Python 2.5.1           yes         0.760        8.350` +
-`SWI 5.6.52     yes         1.900       20.990` +
-`LPA 4.710      yes         1.736       36.250`
+`System         BigInts            Fib(30)      Fib(35)` +
+`GHC 6.10.1     yes         0.082        0.878` +
+`SICStus 4.0.4          yes         0.240        2.640` +
+`Ciao 1.13.0        yes         0.312        3.461` +
+`Java 1.5.0_16          yes         0.445        4.898` +
+`Python 2.5.1           yes         0.760        8.350` +
+`SWI 5.6.52     yes         1.900       20.990` +
+`LPA 4.710      yes         1.736       36.250`
 
 I have also recently tested B Prolog 7.4. It seems to perform marginally
 faster than SICStus (3 %), but does not support BigInts. Note, that Gnu
 is the only system requiring tweaking of parameters:
 
-`export TRAILSZ=200000` +
-`export GLOBALSZ=1500000`
+`export TRAILSZ=200000` +
+`export GLOBALSZ=1500000`
 
 Java with int rather than BigIntegers takes 0.016 s for Fib(30) and
 0.163 s for Fib(35). Note that GHC Haskell seems to have received a big
@@ -259,46 +264,46 @@ Here are the various versions of Fibonacci:
 
 Prolog Version:
 
-`fib(0,1) :- !.` +
-`fib(1,1) :- !.` +
-`fib(N,R) :-` +
-` N1 is N-1, N2 is N1-1, fib(N1,R1), fib(N2,R2),` +
-` R is R1+R2.`
+`fib(0,1) :- !.` +
+`fib(1,1) :- !.` +
+`fib(N,R) :-` +
+`N1 is N-1, N2 is N1-1, fib(N1,R1), fib(N2,R2),` +
+`R is R1+R2.`
 
 Python Version:
 
-`def Fib(x):` +
-`    if x<2:` +
-`        return 1` +
-`    else:` +
-`        return Fib(x-1)+Fib(x-2)`
+`def Fib(x):` +
+`if x<2:` +
+`return 1` +
+`else:` +
+`return Fib(x-1)+Fib(x-2)`
 
 Java Version with BigInteger:
 
-`private static BigInteger ZERO = BigInteger.ZERO;` +
-`private static BigInteger ONE = BigInteger.ONE;` +
-`private static BigInteger TWO = new BigInteger(````2`''`);` +
-`public static BigInteger naiveFib(BigInteger x) {` +
-` if (x.equals(ZERO) ) return ONE;` +
-` if (x.equals(ONE) ) return BigInteger.ONE;` +
-` return naiveFib(x.subtract(ONE)).add(naiveFib(x.subtract(TWO)));` +
+`private static BigInteger ZERO = BigInteger.ZERO;` +
+`private static BigInteger ONE = BigInteger.ONE;` +
+`private static BigInteger TWO = new BigInteger("``2`"`);` +
+`public static BigInteger naiveFib(BigInteger x) {` +
+`if (x.equals(ZERO) ) return ONE;` +
+`if (x.equals(ONE) ) return BigInteger.ONE;` +
+`return naiveFib(x.subtract(ONE)).add(naiveFib(x.subtract(TWO)));` +
 `}`
 
 Haskell Version:
 
-`fib :: Integer -> Integer` +
-`fib n` +
-` | n == 0    = 1` +
-` | n == 1    = 1` +
-` | otherwise = fib(n-1) + fib(n-2)`
+`fib :: Integer -> Integer` +
+`fib n` +
+`| n == 0    = 1` +
+`| n == 1    = 1` +
+`| otherwise = fib(n-1) + fib(n-2)`
 
 Java Version with long rather than BigIntegers:
 
-`public static long fib(long xx) {` +
-` if (xx<2)` +
-`   return 1;` +
-` else` +
-`   return fib(xx-1)+fib(xx-2);` +
+`public static long fib(long xx) {` +
+`if (xx<2)` +
+`return 1;` +
+`else` +
+`return fib(xx-1)+fib(xx-2);` +
 `}`
 
 [[startup-times]]
@@ -307,37 +312,37 @@ Startup Times
 
 Below we test the startup times of some of the Prolog systems.
 Unfortunately, not all Prolog systems can easily be started as easily
-from the command-line as SICStus Prolog (e.g., --goal ``GOAL.''
+from the command-line as SICStus Prolog (e.g., --goal "GOAL."
 parameter and -l FILE parameter).
 
 First, the following command takes 0.026 s real time (0.015 s user time)
 with SICStus Prolog 4.0.5 on the same system as above:
 
-`time sicstus --goal ````halt.`''
+`time sicstus --goal "``halt.`"
 
 For SWI Prolog 5.6.64, we get 0.015 s real time (0.008 s user time):
 
-`time swipl -g ````halt.`''
+`time swipl -g "``halt.`"
 
-For Ciao Prolog 1.13.0-8334, we get 0.271 s user time for ``time ciao''
+For Ciao Prolog 1.13.0-8334, we get 0.271 s user time for "time ciao"
 and then typing halt (I found no easy way to provide goals on the
 command-line).
 
 Now, take the file halt.pl with contents:
 
-`main :- print(hello),nl,halt.` +
-` :- main.`
+`main :- print(hello),nl,halt.` +
+`:- main.`
 
 The following takes 0.028 seconds real time and 0.015 seconds user time.
 
-`time sicstus -l halt.pl`
+`time sicstus -l halt.pl`
 
 The following takes 0.204 seconds real time the first time and 0.015
 seconds real time the second time:
 
-`time swipl -c halt.pl`
+`time swipl -c halt.pl`
 
 The following takes 0.726 seconds real time and 0.648 seconds user time
 (after commenting out :- main.), i.e., 25 times slower than SICStus:
 
-`time ciao -c halt.pl`
+`time ciao -c halt.pl`

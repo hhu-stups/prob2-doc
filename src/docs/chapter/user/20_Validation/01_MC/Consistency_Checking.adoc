@@ -1,5 +1,10 @@
+:wikifix: 2
 ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
-/Category:User_Manual[Category:User Manual] __NOTOC__
+[[consistency-checking]]
+= Consistency Checking
+
+:category: User_Manual
+
 
 [[checking-consistency-via-model-checking]]
 Checking Consistency via Model Checking
@@ -59,39 +64,39 @@ Using the Model Checker
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 To model check a B machine loaded in ProB, launch the command from
-``Verify| Model Check''.
+"Verify| Model Check".
 
- image::Temporal_Model_Checker_settings.png[]
+image::Temporal_Model_Checker_settings.png[]
 
 By default the model checking is done by exploring the state space in a
 mixed depth-first/breadth-first manner, unless the setting ``pure
-Depth'' or ``pure Breadth First'' is selected in the ``Search Strategy''
+Depth'' or "pure Breadth First" is selected in the "Search Strategy"
 pop-up menu. As of version 1.5.1, additional options for directed model
 checking are available. For example, one can have truly random
 exploration or provide a custom heuristic function to guide the model
 checker. These features are illustrated using the
-link:/Blocks_World_(Directed_Model_Checking)[the blocks world example].
+<<blocks-world-directed-model-checking,the blocks world example>>.
 
-The two checkboxes ``Find Deadlocks'' and ``Find Invariant Violations''
+The two checkboxes "Find Deadlocks" and "Find Invariant Violations"
 control whether the model checker will report an error when a newly
 encountered state is deadlocked or respectively violates the invariant.
 
 Similarly, if the model contains assertions (theorems for Event-B
-models), then the ``Find B ASSERTION Violations'' checkbox is enabled.
+models), then the "Find B ASSERTION Violations" checkbox is enabled.
 You can then control whether the model checker cheeks the assertions
 (and stops upon encountering a false assertion). Also, if the B Machine
-contains a DEFINITION for GOAL, then the check box ``Find GOAL'' becomes
+contains a DEFINITION for GOAL, then the check box "Find GOAL" becomes
 enabled. You can then control whether the model checker cheeks the GOAL
 predicate (and stops when the predicate is true for a new state). More
 details about assertions and goals can be found below.
 
-The model checker is started by clicking on the ``Model Check'' button.
+The model checker is started by clicking on the "Model Check" button.
 When the model checker computes and searches the state space, a line
 prefixed with Searching... at the bottom of the pop-up window will
 update in real-time the number of nodes that have been computed, until a
 node violating one of the properties verified has been found or the
 entire state space has been checked. The user can interrupt the model
-checking at any time by pressing the ``Cancel'' button.
+checking at any time by pressing the "Cancel" button.
 
 [[incremental-model-checking]]
 Incremental Model Checking
@@ -100,15 +105,15 @@ Incremental Model Checking
 It is important to understand that the computation of and search in the
 state space is an incremental process. The model checking can be done by
 running the model checker several times; if the number of nodes
-specified in the entry ``max nr. of nodes to check'' is less that the
+specified in the entry "max nr. of nodes to check" is less that the
 size of the state space that remains to be checked. If the model
 checking is done in several steps, the end of the model checking step is
 indicated by the line No error so far, ... nodes visited at the bottom
 of the pop-up window, unless a violation of the properties
 (deadlockfreeness, invariant) are found. Between each model checking
 step, the user can execute the various commands of ProB, notably those
-of the ``Analyse'' menu to display information on the state space (see
-link:/Animation#The_Analyse_menu[The Analyse Menu]) and the
+of the "Analyse" menu to display information on the state space (see
+<<animation,The Analyse Menu>>) and the
 visualization features (see link:/State_Space_Visualization[State Space
 Visualization]).
 
@@ -117,9 +122,9 @@ last computed state space. This means that a change in the settings of
 the model checker between two steps does not affect the non-open nodes
 (those already computed), unless there is an alternative path to an
 already computed node. This behavior can be changed by toggling on the
-``Inspect Existing Nodes'' setting. This forces ProB to reevaluate the
+"Inspect Existing Nodes" setting. This forces ProB to reevaluate the
 properties set to be verified on the state space previously computed.
-Keep in mind that unless the ``Inspect Existing Nodes'' setting is on,
+Keep in mind that unless the "Inspect Existing Nodes" setting is on,
 the change of the model checking settings may not affect the state space
 already computed.
 
@@ -128,7 +133,7 @@ Results of the Model Checking
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 When the state space has been computed by ProB, the pop-up window is
-replaced by a dialog window stating ``No error state found''. All new
+replaced by a dialog window stating "No error state found". All new
 nodes visited. If ProB finds a node where one of the property that was
 checked is not verified, it displays a similar pop-up window but with
 the text Error state was found for new node: invariant violation or
@@ -137,17 +142,17 @@ animation panes the state of the B machine corresponding to the property
 violation. From there, the user can examine the state in the ``State
 Properties'' pane, the enabled operations (including the backtrack
 virtual operation to go back to the valid state that lead to the
-property violation) in the ``Enabled Operations'' pane, and the trace
-(sequence of operations) leading to the invalid state in the ``History''
+property violation) in the "Enabled Operations" pane, and the trace
+(sequence of operations) leading to the invalid state in the "History"
 pane.
 
 [[preferences-of-the-model-checking]]
 Preferences of the Model Checking
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The preferences ``Nr of Initialisations shown'' and ``Max Number of
+The preferences "Nr of Initialisations shown" and ``Max Number of
 Enablings shown'' (described in
-link:/Animation#Animation_Preferences[Animation Preferences]) affect the
+<<animation,Animation Preferences>>) affect the
 model checking in exactly the same way as they do for the animation.
 These preferences are particularly important for the model checking, as
 setting the number of initializations or the number times than an
@@ -157,8 +162,8 @@ set these preferences to a lower value if the exhaustive state space is
 too big to be covered by ProB.
 
 Once the state space of the B specification has been computed by ProB,
-the commands from the ``Analyse'' menu (see
-link:/Animation#The_Analyse_menu[The Analyse menu]) and the
+the commands from the "Analyse" menu (see
+<<animation,The Analyse menu>>) and the
 visualization features (see link:/State_Space_Visualization[State Space
 Visualization]) are then very useful to examine the state space. The
 features used to visualize a reduced state space are particularly useful
@@ -198,11 +203,11 @@ Two Phase Verification
 
 If the state space of the specification can be exhaustively searched,
 check for deadlocks and invariant violations in two phases. To do this,
-set ``Inspect Existing Nodes'' to off and turn either ``Check for
-Deadlocks'' or ``Check for Invariant Violations'' on and the other off.
+set "Inspect Existing Nodes" to off and turn either ``Check for
+Deadlocks'' or "Check for Invariant Violations" on and the other off.
 Perform the temporal model check until all the deadlocks (resp.
 invariant violations) are detected or shown to be absent. To recheck the
-whole state space, either turn on the option ``Inspect Existing Nodes''
+whole state space, either turn on the option "Inspect Existing Nodes"
 or purge the state space already computed by reopening the machine. Now
 deselect the previous property checked, and select the alternative
 property for checking. Now perform a temporal model check again to
@@ -216,13 +221,13 @@ Interleaved deadlock and invariant violation checking
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If you wish to determine if an already encountered invariant violation
-is also a deadlocked node, turn the option ``Inspect Existing Nodes''
-on, turn ``Detect Invariant Violations'' off, and ensure that ``Detect
+is also a deadlocked node, turn the option "Inspect Existing Nodes"
+on, turn "Detect Invariant Violations" off, and ensure that ``Detect
 Deadlocks'' is on. Performing a temporal model check now will traverse
 the state space including the previously found node that violates the
 invariant.
 
-*WARNING: Enabling ``Inspect Existing Nodes'' will continually report
+*WARNING: Enabling "Inspect Existing Nodes" will continually report
 the first error it encounters until that error is corrected.*
 
 [[specifying-goals-and-assertions]]
@@ -243,12 +248,12 @@ goal is a macro in the DEFINITIONS section whose name is GOAL and whose
 content is a predicate. If the B specification defines such a macro, the
 model checking pop-up window enables to check if a state satisfies this
 goal. If enabled and a state corresponding to the goal is found, a
-message ``State satisfying GOAL predicate was found'' is displayed, and
+message "State satisfying GOAL predicate was found" is displayed, and
 then ProB displays this state in the animation panes.
 
 It is also possible to find a state of the B machine that satisfies such
 a goal without defining it explicitly in the B specification. The
-``Verify|Advanced Find...'' command enables the user to type a predicate
+"Verify|Advanced Find..." command enables the user to type a predicate
 directly in a text field. ProB then searches for a state of the state
 space currently computed that satisfies this goal.
 

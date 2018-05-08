@@ -1,4 +1,8 @@
+:wikifix: 2
 ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
+[[tutorial-enabling-analysis]]
+= Tutorial Enabling Analysis
+
 The B-method and in particular its successor Event-B are methodologies
 for formal development and verification of systems. In Event-B, a
 machine is usually viewed as a reactive system executing continuously
@@ -67,7 +71,7 @@ that Op1 is always enabled after the execution of Op2. In other words,
 in all after-states of Op2 the operation Op1 is guaranteed to be
 enabled. This relation between Op2 and Op1 we can illustrate as follows:
 
- image::GuaranteedRelationEn.png[]
+image::GuaranteedRelationEn.png[]
 
 In the figure above the green boxes denote that the evaluation of the
 guard of Op1 is true, whereas the red boxes denote that the evaluation
@@ -80,7 +84,7 @@ Op5 is impossible to be enabled after each execution of Op2. Such a
 relation between two operations we denote as ‘’impossible’’ and can be
 illustrated as follows:
 
- image::ImpossibleRelationEn.png[]
+image::ImpossibleRelationEn.png[]
 
 Both arrows in the illustration of the ‘’impossible’’ relation indicate
 that whether the guard condition of Op5 is fulfilled or not in a
@@ -96,12 +100,12 @@ clearly, the second case (\false -> \false) of the impossible relation
 is not possible for (Op2, Op2). This gives rise of introducing another
 (more precise) impossible relation:
 
- image::ImpossibleDisableRelation.png[]
+image::ImpossibleDisableRelation.png[]
 
 Accordingly, we can derive another relation from ‘’impossible’’ for
 which only the second case of the ‘’impossible’’ relation is fulfilled:
 
- image::ImpossibleKeepRelation.png[]
+image::ImpossibleKeepRelation.png[]
 
 As an example for a pair of operations that fulfills the
 ‘’impossible_keep’’ requirement you can take, for example, the pair
@@ -112,7 +116,7 @@ easily conclude that Op2 remains always disabled after Op3.
 Similarly as for ‘’impossible’’, one could derive two further enabling
 relations from ‘’guaranteed’’:
 
- image::GuaranteedEnableKeepRelation.png[]
+image::GuaranteedEnableKeepRelation.png[]
 
 Another interesting class of enabling relations that could be helpful
 for better understanding and analyzing B and Event-B models is that of
@@ -121,7 +125,7 @@ operation op2 if op1 cannot change the status of the enabling condition
 of op2, i.e. op1 keeps op2 enabled respectively disabled. This
 relationship could be illustrated as follows:
 
- image::KeepRelation.png[]
+image::KeepRelation.png[]
 
 We can take (Op1,Op2) and (Op1,Op3) as examples of pairs in
 `Example.mch` that are elements of the keep relation. ‘’keep’’ relations
@@ -159,7 +163,7 @@ of the machine where Op1 is disabled in both states s and s’. Though,
 what we could definitely say is that Op3 cannot disable Op1. This
 relationship we can illustrate as follows:
 
- image::PossibleEnableRelation.png[]
+image::PossibleEnableRelation.png[]
 
 The opposite relation of “possible_enable” is the relation where an
 operation op2 can disable another operation op1. Formally, we say that
@@ -167,7 +171,7 @@ op2 can disable op1 if op2 may disable op1 and op2 cannot enable op1.
 This relationship is denoted as “possible_disable” and can be
 illustrated as follows:
 
- image::PossibleDisableRelation.png[]
+image::PossibleDisableRelation.png[]
 
 In order to determine how operations influence each other we need to
 assure first that these are feasible. An operation ‘’op’’ is said to be
@@ -176,7 +180,7 @@ of the machine and in which ‘’op’’ is enabled. In the B machine above
 the operation Op4, for example, is not feasible. Obviously, Op4 is
 enabled only in states where x is a negative number and states in which
 x is a negative number are visibly not consistent with the invariant
-since ``x : NATURAL''. Such incompatibilities are sometimes of great
+since "x : NATURAL". Such incompatibilities are sometimes of great
 importance for the modeler and therefore they should be revealed in the
 process of computing the enabling relations. In our case for each pair
 of operations (Op4,-) and (-,Op4) the status “infeasible” will be
@@ -187,7 +191,7 @@ We can now list all possible enabling relations for the machine
 operation in the row is the operation whose effect is studied on the
 status of the guard of the operation in the column.
 
- image::_EnablingResults.png[]
+image::_EnablingResults.png[]
 
 Rather than showing the enabling information for each pair of operations
 of the machine, one can display the enabling relations by means of a
@@ -197,7 +201,7 @@ marked as impossible, independent or infeasible are not shown in the
 graph. We denote such graphs as enable graphs. The enable graph of
 `Example.mch` looks as follows.
 
- image::_EnableGraph_Example.png[]
+image::_EnableGraph_Example.png[]
 
 From the enable graph one can recognize the control flow of the model
 and deduce some properties. For example, we can clearly see that `Op4`
@@ -216,31 +220,31 @@ results in ProB.
 
 * _guaranteed_: op2 guaranteed to be executable after op1.
 
- image::_GuaranteedExample.png[]
+image::_GuaranteedExample.png[]
 
 * _guaranteed_enable_: op2 is guaranteed to become enabled after op1.
 
- image::_GuaranteedEnableExample.png[]
+image::_GuaranteedEnableExample.png[]
 
 * _guaranteed_keep_: op2 is guaranteed to stay enabled after op1.
 
- image::_GuaranteedKeepExample.png[]
+image::_GuaranteedKeepExample.png[]
 
 * _impossible_: op2 is impossible to be executed after op1.
 
- image::_ImpossibleExample.png[]
+image::_ImpossibleExample.png[]
 
 * _impossible_disable_: op2 is guaranteed to become disabled after op1.
 
- image::_ImpossibleDisableExample.png[]
+image::_ImpossibleDisableExample.png[]
 
 * _impossible_keep_: op2 is impossible to become enabled after op1.
 
- image::_ImpossibleKeepExample.png[]
+image::_ImpossibleKeepExample.png[]
 
 * _keep_: op2 always stays enabled resp. disabled after op1.
 
- image::_KeepExample.png[]
+image::_KeepExample.png[]
 
 * _syntactic_unchanged_: op1 does not write any variable read in the
 guard of op2, i.e. write(op1) /\ read(op2) = \{}
@@ -264,16 +268,16 @@ SyntacticFullyIndependentExample.png]
 * _possible_enable_: op2 possible after op1, but op2 cannot be disabled
 by op1.
 
- image::_PossibleEnableExample.png[]
+image::_PossibleEnableExample.png[]
 
 * _possible_disable_: op2 possible after op1, but op2 cannot be enabled
 by op1.
 
- image::_PossibleDisableExample.png[]
+image::_PossibleDisableExample.png[]
 
 * _infeasible_: op1 is not feasible and thus cannot influence op2.
 
- image::_InfeasibleExample.png[]
+image::_InfeasibleExample.png[]
 
 [[performing-enabling-analysis-within-prob]]
 Performing Enabling Analysis within ProB
@@ -307,36 +311,36 @@ user, then the respective relation will be denoted as time-outed. By
 default, in ProB the time-out for each constraint solver call is set to
 300 ms.
 
-Within `ProB Tcl/Tk` you can find the menu ``Enabling Analysis'' in the
-``Analysis'' menu of the menu bar. /File:_EnablingAnalysisMenu.png[File:
+Within `ProB Tcl/Tk` you can find the menu "Enabling Analysis" in the
+"Analysis" menu of the menu bar. /File:_EnablingAnalysisMenu.png[File:
 EnablingAnalysisMenu.png]
 
-The ``Enabling Analysis'' menu provides multiple commands:
+The "Enabling Analysis" menu provides multiple commands:
 
-* ``Enabling Analysis (Table)'': this command performs a (fast) enabling
+* "Enabling Analysis (Table)": this command performs a (fast) enabling
 analysis on the respective B model using a time-out of 300 ms for the
 constraint-solver calls. The result of the enabling analysis is shown in
 a table. The table lists all enabling relations between the operations
 of the loaded B model. These can be exported to a CSV file. The table
 for `Example.mch` at the end of the _' Enabling Relations_' section was
 constructed this way.
-* ``Enabling Analysis (Precise, Table)'': this command performs an
+* "Enabling Analysis (Precise, Table)": this command performs an
 enabling analysis using a time-out of 2800 ms for each of the
 constraint-solver calls. As for the command above, the result of the
 analysis is shown in a table that can be exported to a CSV file.
-* ``Enabling Relations After...'': this command computes all the
+* "Enabling Relations After...": this command computes all the
 enabling relations involving an operation chosen by the user.
-* ``Enabling Analysis (Graph)'': this command performs the fast enabling
+* "Enabling Analysis (Graph)": this command performs the fast enabling
 analysis but displays the results as a graph. In case the preference
-``DOT_SHOW_OP_READ_WRITES'' is set for each operation the read/write
+"DOT_SHOW_OP_READ_WRITES" is set for each operation the read/write
 information is displayed.
-* ``Enabling Analysis (POR)...'': this menu provides further commands
+* "Enabling Analysis (POR)...": this menu provides further commands
 for another form of enabling analysis the results of which are used for
 the partial guard evaluation optimisation in ProB.
-* ``Read/Write Matrix (Table)'': this command performs syntactic
+* "Read/Write Matrix (Table)": this command performs syntactic
 analysis on the model. The analysis determines the read and write sets
 for each operation of the machine.
-* ``Dependence Analysis (Table)'': this command performs a dependency
+* "Dependence Analysis (Table)": this command performs a dependency
 analysis for each pair of operations. More specifically, the analysis
 determines which operations are dependent or independent to each other.
 
@@ -345,7 +349,7 @@ enabling analysis on a B or Event-B model by means of the
 `-enabling_analysis` option. The results of the analysis, as well as
 intermediate data and some statistics are printed out on the console:
 
-....
+----
 $ probcli Example.mch -enabling_analysis
 CHECKING ENABLING AFTER INITIALISATION
 INITIALISATION ---> Op1  :: ok : guaranteed
@@ -371,13 +375,13 @@ Op2,guaranteed,impossible,guaranteed,impossible_keep,impossible
 Op3,timeout_possible,impossible_keep,guaranteed,impossible_keep,syntactic_fully_independent
 Op4,impossible_keep,syntactic_unchanged,syntactic_unchanged,syntactic_keep,impossible_keep
 Op5,syntactic_independent,syntactic_unchanged,syntactic_fully_independent,syntactic_unchanged,syntactic_unchanged
-....
+----
 
 To perform enabling analysis from the command line and save the results
 into a CSV-file use the following commando:
 
 ....
-$ probcli file.mch -enabling_analysis_csv FILE 
+$ probcli file.mch -enabling_analysis_csv FILE
 ....
 
 where FILE is the name of the CSV-file in which the results of the
@@ -387,7 +391,7 @@ Related to this command is the feasibility analysis, which just checks
 whether a single event is in principle possible (given the invariant):
 
 ....
-$ probcli file.mch -feasibility_analysis_csv FILE 
+$ probcli file.mch -feasibility_analysis_csv FILE
 ....
 
 [[references-and-footnotes]]

@@ -1,6 +1,12 @@
+:wikifix: 2
 ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
-/Category:Tutorial[Category:Tutorial]
-/Category:User_Manual[Category:User Manual]
+[[tutorial-co-simulation]]
+= Tutorial Co-Simulation
+
+:category: Tutorial
+
+:category: User_Manual
+
 
 You can create Co-Simulations using FMI with ProB.
 

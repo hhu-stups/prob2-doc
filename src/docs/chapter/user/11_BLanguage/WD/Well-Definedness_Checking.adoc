@@ -1,4 +1,8 @@
+:wikifix: 2
 ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
+[[well-definedness-checking]]
+= Well-Definedness Checking
+
 Well-definedness errors can occur in B in the following circumstances:
 
 * a division by 0: `r=100/0`

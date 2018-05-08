@@ -1,4 +1,8 @@
+:wikifix: 2
 ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
+[[symbolic-model-checking]]
+= Symbolic Model Checking
+
 [[overview]]
 Overview
 --------
@@ -13,7 +17,7 @@ checking algorithms:
 As opposed to link:/Constraint_Based_Checking[constraint-based
 checking], these algorithms find counterexamples which are reachable
 from the INITIALISATION. As opposed to
-link:/Consistency_Checking[ordinary model checking], they do not build
+<<consistency-checking,ordinary model checking>>, they do not build
 up the state space explicitly, e.g., they do not compute all possible
 solutions for parameters and constants. This can be useful when the
 out-degree of the state-space is very high, i.e., when there are many
@@ -22,7 +26,7 @@ individual operations and their parameters.
 
 In addition to the algorithms explained here, BMC*, a bounded model
 checking algorithm based on a different technique is available in Prob.
-See link:/Bounded_Model_Checking[its wiki page] for details.
+See <<bounded-model-checking,its wiki page>> for details.
 
 [[usage]]
 Usage
@@ -46,8 +50,8 @@ END
 
 The ProB model checker will here run for a very long time before
 uncovering the error that occurs when `ct` is set to lim. If you run the
-link:/TLC[TLC backend] you will get the error message
-```Too many possible next states for the last state in the trace.`''
+<<tlc,TLC backend>> you will get the error message
+"`Too many possible next states for the last state in the trace.`"
 
 However, for the symbolic model checking techniques this is less of a
 problem. You can use them via command-line version of ProB as follows:
@@ -78,11 +82,11 @@ successor_found(4)
 ! invariant_violation
 ....
 
-Instead of ``bmc'' you can use ``kinduction'' and ``ic3'' as command
+Instead of "bmc" you can use "kinduction" and "ic3" as command
 line arguments in order to use the other algorithms.
 
 The algorithms are also available from within ProB Tcl/Tk. They can be
-found inside the ``Symbolic Model Checking'' sub-menu of the ``Analyse''
+found inside the "Symbolic Model Checking" sub-menu of the "Analyse"
 menu.
 
 [[more-details]]

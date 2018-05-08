@@ -1,17 +1,21 @@
+:wikifix: 2
 ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
+[[prob-validation-methods]]
+= ProB Validation Methods
+
 ProB offers various validation techniques:
 
 * link:/Consistency_Checking[Consistency Checking (Finding Invariant
 Violations using the Model Checker)]
-* link:/Constraint_Based_Checking[Constraint Based Checking]
-* link:/Refinement_Checking[Refinement Checking]
-* link:/LTL_Model_Checking[LTL Model Checking]
-* link:/Bounded_Model_Checking[Bounded Model Checking]
+* <<constraint-based-checking,Constraint Based Checking>>
+* <<refinement-checking,Refinement Checking>>
+* <<ltl-model-checking,LTL Model Checking>>
+* <<bounded-model-checking,Bounded Model Checking>>
 
 Here we want to describe the advantages and disadvantages of the various
 methods.
 
-.align=``bottom'' style=``color:#e76700;'' |__Comparing ProB Validation
+.align="bottom" style="color:#e76700;" |__Comparing ProB Validation
 Techniques__
 [cols=",,,,",options="header",]
 |=======================================================================

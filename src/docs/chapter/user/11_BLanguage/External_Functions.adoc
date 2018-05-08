@@ -1,6 +1,12 @@
+:wikifix: 2
 ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
-/Category:User_Manual[Category:User Manual]
-/Category:_Advanced_Feature[Category: Advanced Feature]
+[[external-functions]]
+= External Functions
+
+:category: User_Manual
+
+:category: _Advanced_Feature
+
 
 As of version 1.3.5-beta7 ProB can make use of externally defined
 functions. These functions must currently be written in Prolog (in
@@ -39,8 +45,8 @@ http://planetmath.org/encyclopedia/HilbertsEpsilonOperator.html[Hilbert
 choice operator] for choosing a designated element from each set. Again,
 this function is polymorphic and thus cannot be defined as a B function.
 This function is useful for defining
-link:/Recursively_Defined_Functions[recursive functions] over sets (see
-also link:/TLA[TLA]). Note that it in ProB it is undefined for the empty
+<<recursively-defined-functions,recursive functions>> over sets (see
+also <<tla,TLA>>). Note that it in ProB it is undefined for the empty
 set.
 * `LibraryMeta.def`: providing access to meta-information about the
 loaded model (`PROJECT_INFO`), about the state space (`HISTORY`,
@@ -53,12 +59,12 @@ records.
 
 Since version 1.5 the standard library is shipped with ProB and
 references to machines and DEFINITION-files in the standard library are
-resolved automatically when referenced (see link:/PROBPATH[PROBPATH] for
+resolved automatically when referenced (see <<probpath,PROBPATH>> for
 information about how to customize the lookup path).
 
 To use a library machine you can use the `SEES` mechanism:
 
-`SEES LibraryMath`
+`SEES LibraryMath`
 
 In general you can do the following with an external function, such as
 `sin`, wrapped into a constant:
@@ -73,7 +79,7 @@ To use a library definition file, you need to include the file in the
 DEFINITIONS clause:
 
 `DEFINITIONS` +
-`  ````LibraryIO.def`''
+`"``LibraryIO.def`"
 
 [[overview-of-the-external-function-definition-mechanism]]
 Overview of the External Function DEFINITION Mechanism

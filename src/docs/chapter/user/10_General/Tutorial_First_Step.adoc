@@ -1,14 +1,19 @@
-== Tutorial: First Step
+:wikifix: 2
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
+[[tutorial-first-step]]
+= Tutorial First Step
+
 
 ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
-/Category:User_Manual[Category:User Manual]
+:category: User_Manual
+
 
 [[installation]]
 Installation
 ~~~~~~~~~~~~
 
 Start off by installing the standalone Tcl/Tk version of ProB. Follow
-the instructions in link:/Installation[Installation].
+the instructions in <<installation,Installation>>.
 
 [[starting-prob]]
 Starting ProB
@@ -37,12 +42,12 @@ image::ProBStartTerminal.png[]
 Loading a first B machine
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Use the ``Open...'' command in the ``File'' menu
-image::ProBWinOpen.png[] and then navigate to the ``Examples''
+Use the "Open..." command in the "File" menu
+image::ProBWinOpen.png[] and then navigate to the "Examples"
 directory that came with your ProB installation:
- image::ProBWinExamplesFolder.png[]
+image::ProBWinExamplesFolder.png[]
 
-Inside the samples folder, open the ``Lift.mch'' machine. Your main ProB
+Inside the samples folder, open the "Lift.mch" machine. Your main ProB
 window should now look as follows:
 
 image::ProB_LiftAfterLoad.png[]
@@ -57,7 +62,7 @@ of the ProB window (ignoring the menu bar).
 * The upper half of the ProB window contains the source code of the
 model.
 * The lower half contains three panes.
-** The ``State Properties'' pane contains information about the current
+** The "State Properties" pane contains information about the current
 state of the model. We will explain the contents of this pane in more
 detail later.
 ** The Pane called "Enabled Operations" contains a list of operations
@@ -79,29 +84,29 @@ unchanged):
 
 image::ProB_LiftAfterInit.png[]
 
-In the ``Enabled Operations'' pane we can see that two operations can be
-executed: `inc` and `dec`. The ``History'' pane shows us that we have
+In the "Enabled Operations" pane we can see that two operations can be
+executed: `inc` and `dec`. The "History" pane shows us that we have
 executed "INITIALISATION(4)" to reach the current state. In the
-``State Properties'' pane we can see that the variable `floor` now has
-value 4. The green ``OK'' button indicates that the invariant of the
-machine is true. By clicking on the ``OK'' button, we obtain more
+"State Properties" pane we can see that the variable `floor` now has
+value 4. The green "OK" button indicates that the invariant of the
+machine is true. By clicking on the "OK" button, we obtain more
 details about the invariant of the machine:
 
 image::ProB_LiftAfterInitInvariant.png[]
 
-Now, double click on ```dec`'' in the ``Enabled Operations'' Pane
+Now, double click on "`dec`" in the "Enabled Operations" Pane
 thereby executing the associated operation. The lower half of the ProB
 window should now look as follows:
 
- image::ProB_LiftAfterDec.png[]
+image::ProB_LiftAfterDec.png[]
 
 As you can see, the lift is now on floor 3. You can also see in the
-``Enabled Operations'' pane that the `inc` operation is colored in blue,
+"Enabled Operations" pane that the `inc` operation is colored in blue,
 while `dec` is still colored in green. The blue color indicates that
 executing this operation would lead us back to a state which we have
-already explored (namely with `floor=4`). In the ``Enabled Operations''
+already explored (namely with `floor=4`). In the "Enabled Operations"
 pane you can also see a backward and forward arrow button. These buttons
-work similar to a browser. Clicking on the back arrow will ``undo'' the
+work similar to a browser. Clicking on the back arrow will "undo" the
 last animation step and lead us back to the previous state of the
 machine:
 

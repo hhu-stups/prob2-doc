@@ -1,4 +1,8 @@
+:wikifix: 2
 ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
+[[deferred-sets]]
+= Deferred Sets
+
 A deferred set in B is declared in the SETS Section and is not
 explicitly enumerated. In the example below, AA is a deferred set and BB
 is an enumerated set.
@@ -13,7 +17,7 @@ ProB in general requires all deferred sets to be given a finite
 cardinality before starting animation or model checking. If no
 cardinality is specified, a default size will be used (which is
 controlled by the `DEFAULT_SETSIZE`
-link:/Controlling_ProB_Preferences[preference]).
+<<controlling-prob-preferences,preference>>).
 
 In general (for both probcli and ProB Tcl/Tk) you can set the
 cardinality of a set AA either by
@@ -24,10 +28,10 @@ clause
 * Note: various other predicates in the PROPERTIES clause will also
 influence the size used for AA by ProB, for example:
 
-`     - card(AA) > 1` +
-`     - aa:AA & bb:AA & aa/=bb` +
-`     - AA = {aa,bb} & aa/=bb` +
-`     - …`
+`- card(AA) > 1` +
+`- aa:AA & bb:AA & aa/=bb` +
+`- AA = {aa,bb} & aa/=bb` +
+`- …`
 
 * you can add a DEFINITION `scope_AA == constant` to instruct ProB to
 set the cardinality of AA to the constant.
@@ -57,11 +61,11 @@ Setting Deferred Set Cardinalities within probcli
 From the command-line, using probcli you can use the command-line
 switch:
 
-`-card `` `
+`-card```
 
 Example:
 
-`probcli my.mch -card PID 5`
+`probcli my.mch -card PID 5`
 
 See
 link:/Using_the_Command-Line_Version_of_ProB#-card_.3CGS.3E_.3CVAL.3E[manual

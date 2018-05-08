@@ -1,10 +1,14 @@
-= Sudoku in the ProB REPL
+:wikifix: 2
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
+[[sudoku-solved-in-the-prob-repl]]
+= Sudoku Solved in the ProB REPL
+
 
 For this example we try and solve a
 http://en.wikipedia.org/wiki/Sudoku[Sudoku] using the REPL
 (Read-Eval-Print-Loop) of ProB only, without constructing any B machine.
 The REPL can either be started using probcli's command `-repl` or by
-starting the link:/Eval_Console[Eval Console in ProB Tcl/Tk].
+starting the <<eval-console,Eval Console in ProB Tcl/Tk>>.
 
 We will use the new feature of the REPL (available in ProB 1.4) to
 introduce local variables with the `let` construct. Below we have
@@ -19,9 +23,9 @@ ASCII expression or predicate typed by the user. The lines below then
 show the output computed by ProB; the responses are immediate (80 ms or
 less for all queries below on a Mac Book Air).
 
-`probcli -repl -p REPL_UNICODE TRUE` +
-`ProB Interactive Expression and Predicate Evaluator` +
-`Type ````:help`''` for more information.`
+`probcli -repl -p REPL_UNICODE TRUE` +
+`ProB Interactive Expression and Predicate Evaluator` +
+`Type "``:help`"`for more information.`
 
 First let us define two useful values: the domain `DOM` for the numbers
 to be put inside the Sudoku and the group of indices `SUBSQ` which can

@@ -1,4 +1,8 @@
+:wikifix: 2
 ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
+[[mutual-exclusion-fairness]]
+= Mutual Exclusion (Fairness)
+
 Consider an Event-B model formalizing an algorithm for mutual exclusion
 with semaphores for two concurrent processes latexmath:[$P_1$] and
 latexmath:[$P_2$]. Each process has been simplified to perform three
@@ -35,7 +39,7 @@ specified by the LTL formula `GF \{p1 = crit1} & GF \{p2 = crit2}` or
 the starvation freedom property that states _each waiting process will
 eventually enter its critical section_:
 
-`G ({p1 = wait1} => F {p1 = crit1}) & G ({p2 = wait2} => F {p2=crit2})`
+`G ({p1 = wait1} => F {p1 = crit1}) & G ({p2 = wait2} => F {p2=crit2})`
 
 Running the LTL model checker of ProB will provide for the last two
 properties above a counterexample since the model permits that a process
@@ -54,7 +58,7 @@ continuously ignored and that the event `Enter1` will not be ignored
 infinitely often. Both conditions for the property can be given by means
 of an LTL^[e]^ formula on the left side of the following implication:
 
-`(FG e(Req1) => GF [Req1]) & (GF e(Enter1) => GF [Enter1]) => GF {p1 = crit1}`
+`(FG e(Req1) => GF [Req1]) & (GF e(Enter1) => GF [Enter1]) => GF {p1 = crit1}`
 
 For checking the formula the LTL model checker generates 13312
 atomsfootnote:[The number of atoms generated for the search graph
@@ -71,7 +75,7 @@ For checking the requirement _each process will enter infinitely often
 its critical section_ the LTL formula ` GF \{p1 = crit1} & GF \{p2 =
 crit2}` should be checked with the following fairness constraints:
 
-`(WF(Req1) & WF(Req2)) & (SF(Enter1) & SF(Enter2))`
+`(WF(Req1) & WF(Req2)) & (SF(Enter1) & SF(Enter2))`
 
 Encoding these fairness conditions as an LTL^[e]^ formula will blow up
 exponentially the number of atoms and the transitions in regard to the

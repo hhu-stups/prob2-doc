@@ -1,4 +1,8 @@
-= Jobs puzzle
+:wikifix: 2
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
+[[the-jobs-puzzle]]
+= The Jobs Puzzle
+
 
 Based on _Michael Leuschel, David Schneider. Towards B as a High-Level
 Constraint Modeling Language. In Yamine Ait Amer, Klaus-Dieter Schewe
@@ -165,7 +169,7 @@ JOBS = {"chef", "guard", "nurse", "clerk", "police", "teacher", "actor", "boxer"
 The following statements further constrain the solution. First _“The job
 of nurse is held by a male”_, which we can express using the HoldsJob
 function and the set MALE by stating that the element of PEOPLE that
-HoldsJob(``nurse'') points to is also an element of the set MALE.
+HoldsJob("nurse") points to is also an element of the set MALE.
 
 ....
 HoldsJob("nurse") : MALE
@@ -223,8 +227,8 @@ puzzle[multiblock footnote omitted]. To interpret this sentence we need
 to know that the jobs of police officer, teacher and nurse require an
 education of more than 9 years. Hence the information we get is that
 Pete does not hold any of these jobs. Doing this inference step we
-could, as above, state something along the lines of HoldsJob(``police'')
-/= ``Pete'', etc. for each of the jobs. The solution used here, tries to
+could, as above, state something along the lines of HoldsJob("police")
+/= "Pete", etc. for each of the jobs. The solution used here, tries to
 avoid doing the manual inference step. Although we still need to provide
 the information needed to draw the conclusion that Pete does not hold
 any of these three jobs. We create a set of those jobs that need higher

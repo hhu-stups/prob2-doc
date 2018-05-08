@@ -1,14 +1,20 @@
+:wikifix: 2
 ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
-/Category:User_Manual[Category:User Manual]
-/Category:ProB_Cli[Category:ProB Cli]
+[[bash-completion]]
+= Bash Completion
+
+:category: User_Manual
+
+:category: ProB_Cli
+
 
 For the http://en.wikipedia.org/wiki/Bash_(Unix_shell)[Bash] Unix Shell
 we provide command completion support.
 
 Example
 
-`$ probcli -re` +
-`    -refchk  -repl`
+`$ probcli -re` +
+`-refchk  -repl`
 
 [[installation]]
 Installation
@@ -19,7 +25,7 @@ http://nightly.cobra.cs.uni-duesseldorf.de/bash/prob_completion.sh[here].
 To install download the linked file and store it locally on your
 machine. To enable the completion you need to *source* the file.
 
-`$ source `
+`$ source`
 
 To enable the completion automatically add the line above to your Bash
 settings, e.g. in the *.bashrc* or *.profile* files in your home

@@ -1,10 +1,16 @@
+:wikifix: 2
 ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
-/Category:Tutorial[Category:Tutorial]
-/Category:User_Manual[Category:User Manual]
+[[tutorial-understanding-probs-constraint-solver]]
+= Tutorial Understanding ProB's Constraint Solver
+
+:category: Tutorial
+
+:category: User_Manual
+
 
 We assume that you have grasped the way that ProB setups up the initial
 states of a B machine as outlined in
-link:/Tutorial_Setup_Phases[Tutorial Setup Phases], and have understood
+<<tutorial-setup-phases,Tutorial Setup Phases>>, and have understood
 why animation is difficult as outlined in
 link:/Tutorial_Understanding_the_Complexity_of_B_Animation[Tutorial
 Understanding the Complexity of B Animation].
@@ -56,7 +62,7 @@ marks as of yet unknown bits).
 
 Basically, the ProB constraint solver works as follows:
 
-* while interpreting the predicates, it will first try to ``execute''
+* while interpreting the predicates, it will first try to "execute"
 predicates (or sub-predicates) which result in information which can be
 stored in AVL-form
 * after having interpreted the whole predicate, it will then perform
@@ -66,11 +72,11 @@ constraint solver start enumerating possibilities. For this it maintains
 a priority queue of enumerations and choice points.
 
 The priority is a rough estimate of the number of possible solutions;
-predicates with the lowest estimate will be ``executed'' first.
+predicates with the lowest estimate will be "executed" first.
 
 The following picture provides a very rough picture of this process:
 
- image::ProB_Propagation.png[]
+image::ProB_Propagation.png[]
 
 [[a-simple-example]]
 A simple example
@@ -101,17 +107,17 @@ END
 After loading the file, we get offered one possible way to setup the
 constants:
 
- image::ProB_PropagationAfterLoad.png[]
+image::ProB_PropagationAfterLoad.png[]
 
 In this case, ProB performed no enumeration at all. It could immediately
 determine the values of all constants. We can inspect the behaviour of
-the constraint solver by choosing ``Advanced Preferences...'' in the
+the constraint solver by choosing "Advanced Preferences..." in the
 Preferences menu and the turning the ``Provide various tracing
 information on the terminal/console'' on. If we now reopen the machine,
 the following information will be printed (amongst others) on the
 console:
 
-....
+----
 ...
 % checking_properties
 
@@ -145,7 +151,7 @@ console:
 % grounding_wait_flags_for_constants(wfx(_57893,_66619,_56937))
 % found_enumeration_of_constants(10)
 ...
-....
+----
 
 The arrow `-->>` shows us when an AVL-representation was found for a
 constant. The `====>` tells us when a predicate is interpreted. You can
@@ -159,9 +165,9 @@ inconsistencies.
 
 After selecting SETUP_CONSTANTS and INITIALISATION, we obtain the
 following state, and we can ensure ourselves that the values found for f
-and fi are correct (by looking at the ``State Properties'' pane):
+and fi are correct (by looking at the "State Properties" pane):
 
- image::ProB_PropagationAfterInit.png[]
+image::ProB_PropagationAfterInit.png[]
 
 [[complicating-the-example]]
 Complicating the Example
@@ -181,7 +187,7 @@ look like this:
 
 Saving and reopening the machine, results in the following picture:
 
- image::ProB_PropagationAfterLoad2.png[]
+image::ProB_PropagationAfterLoad2.png[]
 
 You can see that ProB had no problem with this machine. Still, one may
 wonder why it only proposes four solutions for the constants. Indeed,
@@ -189,12 +195,12 @@ there should be 2^101 = 2.54e+30 different solutions (over 2 thousand
 billion billion billion solutions). In fact, as quite often there are a
 lot of solutions for the constants, ProB (luckily) does not compute all
 of them. Indeed, there is a cut-off point after which it will no longer
-search for more solutions. In this case, the orange button ``max''
-appears in the ``Enabled Operatoins'' pane. The cut-off itself is
+search for more solutions. In this case, the orange button "max"
+appears in the "Enabled Operatoins" pane. The cut-off itself is
 controlled by a preference. You can either
 
-* change the preference ``Max Number of Initialisations Computed'' in
-the ``Animation Preferences'', or
+* change the preference "Max Number of Initialisations Computed" in
+the "Animation Preferences", or
 * add a definition `SET_PREF_MAX_INITIALISATIONS == xxx`, where xxx is
 the maximum number of initialisations or possible ways to value the
 constants that ProB should compute.
@@ -202,7 +208,7 @@ constants that ProB should compute.
 There is a similar preference to control how many solutions are found
 for ways to execute an operation (`SET_PREF_MAX_OPERATIONS`). (As a side
 note: these preferences can also be set to 0. This means that you will
-have to use ``Execute an Operation...'' in the Animate menu to add
+have to use "Execute an Operation..." in the Animate menu to add
 transitions one by one.)
 
 One may wonder what happens if there are no solutions. Will not ProB
@@ -211,23 +217,23 @@ Let us add the predicate `f=fi` to the PROPERTIES, which are now
 unsatisfiable. If we save and reopen the machine, we get the following
 picture:
 
- image::ProB_PropagationAfterLoadMsg3.png[]
+image::ProB_PropagationAfterLoadMsg3.png[]
 
 If we answer yes, the Properties will be debugged by adding conjuncts
 one-by-one. We obtain the following:
 
- image::ProB_PropagationAfterLoadDebug3.png[]
+image::ProB_PropagationAfterLoadDebug3.png[]
 
 This will hopefully help us pinpoint the error in our properties. More
-recent versions of ProB also have a ``Minimize'' button in the lower
+recent versions of ProB also have a "Minimize" button in the lower
 left corner of the above dialog, in order to compute a minimal set of
 inconsistent properties. See
 link:/Tutorial_Troubleshooting_the_Setup[Tutorial Troubleshooting the
 Setup] for more ways to locate problems in the properties. After
-clicking ``Done'', we get the following; observe the orange timeout
-button in the ``State Properties'' pane:
+clicking "Done", we get the following; observe the orange timeout
+button in the "State Properties" pane:
 
- image::ProB_PropagationAfterLoad3.png[]
+image::ProB_PropagationAfterLoad3.png[]
 
 Note that one can click on the orange Timeout button: this will offer us
 the option to try to find solutions without a timeout. You should use
@@ -246,7 +252,7 @@ continue working.
 
 Finally, one can control the time after which a timeout will trigger
 using the preference ``Time out for computing enabled transitions (in
-ms)'' in the ``Animation Preferences''. You can also control it using a
+ms)'' in the "Animation Preferences". You can also control it using a
 definition for `SET_PREF_TIME_OUT` in the DEFINITIONS clause.
 
 [[adding-universally-quantified-formulas]]
@@ -261,7 +267,7 @@ Let us replace `f=fi` by the following property:
 
 If we save and reopen, we obtain the following picture:
 
- image::ProB_PropagationAfterLoad4.png[]
+image::ProB_PropagationAfterLoad4.png[]
 
 ProB had no trouble finding a solution here. Indeed, it expanded the
 universally quantified formula before starting enumeration of `f`. Here

@@ -1,4 +1,8 @@
+:wikifix: 2
 ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
+[[argumentation-theory]]
+= Argumentation Theory
+
 Below we try to model some concepts of argumentation theory in B. The
 examples try to show that classical (monotonic) logic with set theory
 can be used to model some aspects of argumentation theory quite
@@ -17,7 +21,7 @@ the binary attacks relation.
 
 In case you are new to B, you probably need to know the following
 operators to understand the specification below (we als have a
-link:/Summary_of_B_Syntax[summary page about the B syntax]):
+<<summary-of-b-syntax,summary page about the B syntax>>):
 
 * `x : S` specifies that x is an element of S
 * `a|->b` represents the pair (a,b); note that a relation and function
@@ -29,7 +33,7 @@ in B is a set of pairs.
 * `A --> B` denotes the set of total functions from A to B
 * block comments are of the form `/* ... */` and line comments start
 with `//` (be sure to use version 1.5.1 of ProB, e.g., from the
-link:/Download#Nightly_Build[Nightly download site] as line comments
+<<download,Nightly download site>> as line comments
 were added recently to B)
 
 ....
@@ -66,13 +70,13 @@ You can see that there is only a single solution (solving time 10 ms),
 as only a single SETUP_CONSTANTS line is available in the ``Enabled
 Operations'' pane. Double-click on SETUP_CONSTANTS and then
 INITIALISATION will give you the following result, where you can see the
-solution in the ``State Properties'' pane:
+solution in the "State Properties" pane:
 
 image::ProB_Argumentation_Screenshot2.png[]
 
 If you want to inspect the solution visually, you can select the
-``Current State as Graph'' command in the ``States'' submenu of the
-``Visualize'' menu:
+"Current State as Graph" command in the "States" submenu of the
+"Visualize" menu:
 
 image::ProB_Argumentation_VisCurStateAsGraph.png[]
 
@@ -83,7 +87,7 @@ image::ProB_Argumentation_Dot.png[]
 You can try and experiment with various attack graphs by editing the
 file. E.g., with
 
-`attacks = {B|->A, C|->B, D|->C, E |-> B, E|->D, D|->E}`
+`attacks = {B|->A, C|->B, D|->C, E |-> B, E|->D, D|->E}`
 
 you now get three possible labelling, the last one assigns undec to all
 arguments.
@@ -102,14 +106,14 @@ The following is a slightly more elegant encoding, where we represent
 the labelling as a partition of the arguments. This enables to use the
 relational image operator to express some constraints more compactly.
 This model is particularly well suited if you wish to use our
-link:/Using_ProB_with_KODKOD[Kodkod backend] which translates the
+<<using-prob-with-kodkod,Kodkod backend>> which translates the
 constraints to SAT. However, even the standard ProB solver can solve
 this instance in 10 ms (Kodkod requires 70 ms), so this would only be
 worthwhile for larger problem instances.
 
 In case you are new to B, you probably need to know the following
 additional operators to understand the specification below (we als have
-a link:/Summary_of_B_Syntax[summary page about the B syntax]):
+a <<summary-of-b-syntax,summary page about the B syntax>>):
 
 * `r~` is the inverse of a function or relation r
 * `r[S]` is the relational image of a relation r for a set of domain
@@ -160,10 +164,10 @@ DEFINITIONS
 
 These lines do not influence the meaning of the model; they are just
 used by ProB. Indeed, one can then use the ``Current State as Custom
-Graph'' command in the ``States'' submenu of the ``Visualise'' menu to
+Graph'' command in the "States" submenu of the "Visualise" menu to
 obtain the following rendering of the very first example above:
 
- image::ProB_Argumentation_CustomDot.png[]
+image::ProB_Argumentation_CustomDot.png[]
 
 [[an-event-b-version-of-the-model]]
 An Event-B Version of the Model

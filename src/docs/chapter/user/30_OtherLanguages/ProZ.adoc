@@ -1,5 +1,10 @@
+:wikifix: 2
 ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
-/Category:User_Manual[Category:User Manual]__NOTOC__ ProZ is a extension
+[[proz]]
+= ProZ
+
+:category: User_Manual
+ProZ is a extension
 of the ProB animator and model checker to support Z specifications. It
 uses the http://spivey.oriel.ox.ac.uk/mike/fuzz[Fuzz Type Checker] by
 Mike Spivey for extracting the formal specification from a LaTeX file.
@@ -17,9 +22,9 @@ often introduced by the underlying translation process from Z to B.
 Normally those comprehension sets should be treated symbolically. To
 support this, you should set the following in the preferences menu:
 
-`Animation Preferences ->` +
-` - Lazy expansion of lambdas & set comprehensions: True` +
-` - Convert lazy form back into explicit form for Variables and Constants: False`
+`Animation Preferences ->` +
+`- Lazy expansion of lambdas & set comprehensions: True` +
+`- Convert lazy form back into explicit form for Variables and Constants: False`
 
 [[structure-of-the-z-specification]]
 Structure of the Z Specification
@@ -31,19 +36,19 @@ State and Initialization
 
 To identify the components (like state, initialization, operations) of a
 Z specification, ProZ expects a certain structure of the specification:
-There must be a schema called ``Init''. ``Init'' describes the
-initialization of the state. ``Init'' must include exactly one schema in
+There must be a schema called "Init". "Init" describes the
+initialization of the state. "Init" must include exactly one schema in
 the declaration part. This schema is assumed to be the state schema.
 
 For example, let S be the state schema (= is used for \defs):
 
-` S = [ x,y:N ]`
+`S = [ x,y:N ]`
 
 There are two supported styles for the initialization:
 
-`a)   Init = [ S | x=0 /\ y=1]`
+`a)   Init = [ S | x=0 /\ y=1]`
 
-`b)   Init = [ S'| x'=0 /\ y'=1 ]`
+`b)   Init = [ S'| x'=0 /\ y'=1 ]`
 
 If you want to use the logic of other schemas besides the state schema
 in the initialization, you can do that by including those schemas in the
@@ -57,19 +62,19 @@ ProZ identifies schemas as operations if they satisfy the following
 properties:
 
 * All variables of the state and their primed counterpart are declared
-in the operation. Usually this is done by including ``\Delta S'' in the
+in the operation. Usually this is done by including "\Delta S" in the
 operation (with S being the state schema).
 * The operation is not referenced by any other schema in the
 specification
 
 Example: Let S be defined as above:
 
-` A = [ \Delta S | x'=x+1 /\ y'=y ]` +
-` B = [ x,y,x',y':N | x'=x+1 /\ y'=y ]` +
-` C = [ x,x':N | x'=x+1 ]` +
-` D = [ y,y':N | y'=y ]` +
-` E = C /\ D` +
-` F = [ \Xi S | x=0 ]`
+`A = [ \Delta S | x'=x+1 /\ y'=y ]` +
+`B = [ x,y,x',y':N | x'=x+1 /\ y'=y ]` +
+`C = [ x,x':N | x'=x+1 ]` +
+`D = [ y,y':N | y'=y ]` +
+`E = C /\ D` +
+`F = [ \Xi S | x=0 ]`
 
 Then the schemas A,B and E describe all the same operation. F is also
 identified as an operation that leaves the state unchanged.
@@ -85,22 +90,22 @@ searched. After the first step, the predicates of the axiomatic
 definitions are ignored. If you want to define functions in an axiomatic
 definition, consider that ProB can treat lambda expressions and set
 comprehensions symbolically. Example: The definition of a function
-``square'' could be
+"square" could be
 
 a)
 
-`| square : Z -> Z` +
+`| square : Z -> Z` +
 `|-----------------------` +
-`| square = (\lambda x:Z @ x*x)`
+`| square = (\lambda x:Z @ x*x)`
 
 b)
 
-`| square : Z -> Z` +
+`| square : Z -> Z` +
 `|-----------------------` +
-`| \forall x:Z @ square x = x*x`
+`| \forall x:Z @ square x = x*x`
 
-When using ProZ, it is preferable to use the method ``a'' because the
-lambda expression can be interpreted symbolically. If ``b'' is used,
+When using ProZ, it is preferable to use the method "a" because the
+lambda expression can be interpreted symbolically. If "b" is used,
 ProB will try to find a explicit set that will satisfy the given
 property.
 
@@ -109,7 +114,7 @@ Invariant
 ^^^^^^^^^
 
 You can add a B-style invariant to the specification by defining a
-schema ``Invariant'' that declares a subset of the state variables. In
+schema "Invariant" that declares a subset of the state variables. In
 each explored state the invariant will be checked. The model checking
 feature of ProB will try to find states that violate the invariant.
 
@@ -118,7 +123,7 @@ Scope
 ^^^^^
 
 It is possible to limit the search space of the model checker by adding
-a schema ``Scope'' that declares a subset of the state variables. If
+a schema "Scope" that declares a subset of the state variables. If
 such a schema is present, each explored state is checked, if it
 satisfies the predicate. If not, the state is not further explored.
 
@@ -140,7 +145,7 @@ Graphical animation
 
 (*Please note that this functionality is part of the next version. If
 you want to use graphical animation, please download a version from the
-link:/Download#Nightly_Build[Nightly build].*)
+<<download,Nightly build>>.*)
 
 Analogous to the graphical animation for B specifications, you can
 define a function that maps a coordinate to an image. Then ProZ will
@@ -154,36 +159,36 @@ The type used for images must be an enumerated set where the names of
 the elements denote their file names (without the suffix .gif).
 
 Please see the specification *jars.tex* which is bundled with the ProB
-Tcl/Tk version for link:/Download[Download] (inside the
+Tcl/Tk version for <<download,Download>> (inside the
 examples/Z/GraphicalAnimation/ directory). This is the part of the
 specification that defines the animation function (actually it defines a
 pair of animation functions: the default function over which the other
 function is overlaid; see
-link:/Graphical_Visualization[Graphical_Visualization] for more
+<<graphical-visualization,Graphical_Visualization>> for more
 details):
 
-`We declare a type for the used images, the names of the elements refer to the file names of the GIF files.` +
+`We declare a type for the used images, the names of the elements refer to the file names of the GIF files.` +
 `\begin{zed}` +
-` Images ::= Filled | Empty | Void` +
+`Images ::= Filled | Empty | Void` +
 `\end{zed}` +
-`The animation consists of a grid of images that is updated in each new state.` +
-`The $animation_function$ maps a coordinate to an image where $(1\mapsto 1)$ is the upper-left corner.` +
+`The animation consists of a grid of images that is updated in each new state.` +
+`The $animation_function$ maps a coordinate to an image where $(1\mapsto 1)$ is the upper-left corner.` +
 `\begin{schema}{ProZ_Settings}` +
-` Level \\` +
-` animation_function_default : (\nat \cross Jars) \pfun Images \\` +
-` animation_function : (\nat \cross Jars) \pfun Images \\` +
-` \where` +
-` animation_function_default = (1\upto global_maximum \cross Jars) \cross \{ Void \} \\` +
-` animation_function = \\` +
-` \t1 (\{ l:1\upto global_maximum; c:Jars | l\leq max_fill~c @ \\` +
-` \t2 global_maximum+1-l\mapsto c\} \cross \{Empty\}) \oplus \\` +
-` \t1 (\{ l:1\upto global_maximum; c:Jars | l\leq level~c @ \\` +
-` \t2 global_maximum+1-l\mapsto c\} \cross \{Filled\})` +
+`Level \\` +
+`animation_function_default : (\nat \cross Jars) \pfun Images \\` +
+`animation_function : (\nat \cross Jars) \pfun Images \\` +
+`\where` +
+`animation_function_default = (1\upto global_maximum \cross Jars) \cross \{ Void \} \\` +
+`animation_function = \\` +
+`\t1 (\{ l:1\upto global_maximum; c:Jars | l\leq max_fill~c @ \\` +
+`\t2 global_maximum+1-l\mapsto c\} \cross \{Empty\}) \oplus \\` +
+`\t1 (\{ l:1\upto global_maximum; c:Jars | l\leq level~c @ \\` +
+`\t2 global_maximum+1-l\mapsto c\} \cross \{Filled\})` +
 `\end{schema}`
 
 Here is how the animation of the specification should look like:
 
- image::ProZ_jars.png[]
+image::ProZ_jars.png[]
 
 [[special-constructs]]
 Special constructs
@@ -199,33 +204,33 @@ enumerating it (it checks the function only for a limited interval). For
 more complex definitions the number of entries is often too large to
 check. When the user is sure that those properties are satisfied (like
 in our example), a solution is relaxing the declaration from ``square :
-Z -> Z'' to ``square : Z <-> Z''. Sometimes this is not easy to do, for
+Z -> Z'' to "square : Z <-> Z". Sometimes this is not easy to do, for
 instance if schema types are used which imply other constraints.
 
 ProZ supports an operation \prozignore that instructs ProZ to ignore all
 constraints on the type and to use just the underlying type. For
 example, the square function could be defined by:
 
-`| square : \prozignore( Z -> Z )` +
+`| square : \prozignore( Z -> Z )` +
 `|-----------------------` +
-`| square = (\lambda x:Z @ x*x)`
+`| square = (\lambda x:Z @ x*x)`
 
 If you want to use \prozignore, you must first define a TeX command
 \prozignore:
 
-`\newcommand{\prozignore}{ignore_\textsl{\tiny ProZ}}`
+`\newcommand{\prozignore}{ignore_\textsl{\tiny ProZ}}`
 
 You can change the definition of the macro as you like because the
 content is ignored by ProZ. Then you must introduce a generic definition
 of \prozignore. The definition is ignored by ProB, but Fuzz needs it for
 type checking.
 
-`%%pregen \prozignore` +
+`%%pregen \prozignore` +
 `\begin{gendef}[X]` +
-`  \prozignore~_ : \power X` +
+`\prozignore~_ : \power X` +
 `\end{gendef}`
 
-It is also possible to append these lines to the ``fuzzlib'' in the fuzz
+It is also possible to append these lines to the "fuzzlib" in the fuzz
 distribution.
 
 [[translation-to-b]]
@@ -233,11 +238,11 @@ Translation to B
 ^^^^^^^^^^^^^^^^
 
 You can inspect the result of the translation process with ``Show
-internal representation'' in the ``Debug'' menu. Please note that the
+internal representation'' in the "Debug" menu. Please note that the
 shown B machine is normally not syntactically correct because of
 
 * additional constructs like free types
-* additional type information of the form ``var:type''
+* additional type information of the form "var:type"
 * names with primes (') or question marks, etc.
 * lack of support from the pretty printer for every construct
 

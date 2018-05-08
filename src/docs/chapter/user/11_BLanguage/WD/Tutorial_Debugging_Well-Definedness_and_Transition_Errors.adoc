@@ -1,15 +1,21 @@
+:wikifix: 2
 ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
-/Category:Tutorial[Category:Tutorial]
-/Category:User_Manual[Category:User Manual]
+[[tutorial-debugging-well-definedness-and-transition-errors]]
+= Tutorial Debugging Well-Definedness and Transition Errors
+
+:category: Tutorial
+
+:category: User_Manual
+
 
 We assume that you have grasped the way that ProB setups up the initial
 states of a B machine as outlined in
-link:/Tutorial_Setup_Phases[Tutorial Setup Phases], and have understood
+<<tutorial-setup-phases,Tutorial Setup Phases>>, and have understood
 why animation is difficult as outlined in
 link:/Tutorial_Understanding_the_Complexity_of_B_Animation[Tutorial
 Understanding the Complexity of B Animation]. You may also want to have
 a look at the explanation of
-link:/Well-Definedness_Checking[well-definedness in B].
+<<well-definedness-checking,well-definedness in B>>.
 
 [[a-simple-example]]
 A simple example
@@ -37,28 +43,28 @@ END
 ....
 
 After loading and initialising the machine you see that ProB has found a
-so-called ``transition error'', i.e., an error that occured while
+so-called "transition error", i.e., an error that occured while
 computing enabled operations (which correspond to a transition from one
 state to the B machine to another). These errors are displayed in red in
 the State Properties pane:
 
- image::ProB_WhileAfterLoad.png[]
+image::ProB_WhileAfterLoad.png[]
 
 When you click on the red transition error you get presented with more
 details about the error:
 
- image::ProB_WhileAfterErrClick.png[]
+image::ProB_WhileAfterErrClick.png[]
 
-Sometimes you can also have the possibility to click on a ``Visualise''
+Sometimes you can also have the possibility to click on a "Visualise"
 button, which in this case will give you a graphical visualisation of
 the invariant violation:
 
- image::ProB_While_INV_Violation.png[]
+image::ProB_While_INV_Violation.png[]
 
 The same technique applies for inspecting other transition errors, such
 as:
 
-* link:/Well-Definedness_Checking[well-definedness errors] of
+* <<well-definedness-checking,well-definedness errors>> of
 expressions such as:
 ** arithmetic well-definedness errors (division by 0, modulo by 0,
 modulo for negative numbers, min or max of empty set)

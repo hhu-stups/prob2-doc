@@ -1,4 +1,8 @@
+:wikifix: 2
 ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
+[[prolog-coding-guidelines]]
+= Prolog Coding Guidelines
+
 [[general-guidelines]]
 General Guidelines
 ------------------
@@ -90,7 +94,7 @@ to some extent, but it is annoying)
 committing to avoid later issues with git bisect); ideally you should
 run as many tests as possible, but at least those affecting the parts
 you have changed. See alias below to start the test REPL. The command
-``test'' then starts the ProB Test REPL. Type something like ``tickets''
+"test" then starts the ProB Test REPL. Type something like "tickets"
 to run all non-regression tests related to tickets.
 * as a rule of thumb: use rebase before pushing your changes to gitlab,
 especially when you only have one real commit.
@@ -101,16 +105,16 @@ Useful Bash Aliases
 
 To run probcli from sources:
 
-`alias probsli='rlwrap sicstus -l $PROB_SOURCE_DIR/prob_cli.pl --goal ````go_cli.`''` -a'`
+`alias probsli='rlwrap sicstus -l $PROB_SOURCE_DIR/prob_cli.pl --goal "``go_cli.`"`-a'`
 
 To run probcli with the REPL from sources:
 
-`alias seval='cd $NEWPROBDIR; rlwrap sicstus -l $PROB_SOURCE_DIR/prob_cli.pl --goal ````go_cli.`''` -a -repl -init -p WARN_WHEN_EXPANDING_INFINITE_CLOSURES 0 -p CLPFD TRUE'`
+`alias seval='cd $NEWPROBDIR; rlwrap sicstus -l $PROB_SOURCE_DIR/prob_cli.pl --goal "``go_cli.`"`-a -repl -init -p WARN_WHEN_EXPANDING_INFINITE_CLOSURES 0 -p CLPFD TRUE'`
 
 To run ProB Tcl/Tk from sources:
 
-`alias prob='cd $PROB_SOURCE_DIR; unlimit; sics -Dprob_profile=true -l $PROB_SOURCE_DIR/prob_tcltk.pl --goal ````go.`''`'`
+`alias prob='cd $PROB_SOURCE_DIR; unlimit; sics -Dprob_profile=true -l $PROB_SOURCE_DIR/prob_tcltk.pl --goal "``go.`"`'`
 
 To run the ProB Test REPL from sources:
 
-`alias test='cd $PROB_SOURCE_DIR/..; rlwrap sicstus -Dprob_safe_mode=true -l $PROB_SOURCE_DIR/test_runner.pl --goal ````test_repl.`''`'`
+`alias test='cd $PROB_SOURCE_DIR/..; rlwrap sicstus -Dprob_safe_mode=true -l $PROB_SOURCE_DIR/test_runner.pl --goal "``test_repl.`"`'`

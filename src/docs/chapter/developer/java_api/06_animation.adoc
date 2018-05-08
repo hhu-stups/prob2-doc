@@ -1,4 +1,8 @@
-[[animation]]
+:wikifix: 2
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
+[[06-animation]]
+= 06 animation
+
 = Animation
 
 It is possible for the user to perform animation manually using the state and transition abstractions, or to use the trace abstraction which allows the user access to previously executed transitions, and the ability to move within the trace. This chapter will describe in detail all of the different ways that it is possible to perform animation using the provided abstractions.
@@ -50,7 +54,7 @@ def execute(machine, state, operation_name, Object... params) {
 }
 ----
 
-A call would look like  `execute(mch, x, ``foo", 42)` or for an operation with three parameters it would look like `execute(mch,"bar",1,"{}",-3)`.
+A call would look like  `execute(mch, x,``foo", 42)` or for an operation with three parameters it would look like `execute(mch,"bar",1,"{}",-3)`.
 
 == Animation via Trace
 

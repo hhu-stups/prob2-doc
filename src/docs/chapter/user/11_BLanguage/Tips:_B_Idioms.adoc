@@ -1,4 +1,8 @@
+:wikifix: 2
 ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
+[[tips-b-idioms]]
+= Tips: B Idioms
+
 Also have a look at
 /Tips:_Writing_Models_for_ProB[Tips:_Writing_Models_for_ProB].
 
@@ -20,23 +24,23 @@ of the `LET` substitution syntax in expressions and predicates.
 Examples:
 +++++++++
 
-`>>> LET a BE a = 10 IN a + 10 END` +
-`Expression Value = 20`
+`>>> LET a BE a = 10 IN a + 10 END` +
+`Expression Value = 20`
 
-`>>> LET a BE a=10 IN a END + 10` +
-`Expression Value = 20`
+`>>> LET a BE a=10 IN a END + 10` +
+`Expression Value = 20`
 
-`>>> LET a BE a=10 IN a END = 10` +
-`Predicate is TRUE`
+`>>> LET a BE a=10 IN a END = 10` +
+`Predicate is TRUE`
 
-`>>> LET a BE a = 10 IN a < 10 END` +
-`Predicate is FALSE`
+`>>> LET a BE a = 10 IN a < 10 END` +
+`Predicate is FALSE`
 
-`>>> LET a BE a=10 IN a /= 10 END or 1=1` +
-`Predicate is TRUE`
+`>>> LET a BE a=10 IN a /= 10 END or 1=1` +
+`Predicate is TRUE`
 
-`>>> LET a, b BE a = 10 & b = 1 IN a + b END` +
-`Expression Value = 11`
+`>>> LET a, b BE a = 10 & b = 1 IN a + b END` +
+`Expression Value = 11`
 
 [[let-for-predicates]]
 Let for predicates
@@ -44,31 +48,31 @@ Let for predicates
 
 For predicates this encodes a let predicate:
 
-`#x.(x=E & P)`
+`#x.(x=E & P)`
 
 corresponds to something like
 
-`let x=E in P`
+`let x=E in P`
 
 Within set comprehensions one can use the following construct:
 
-`dom({x,y|y=E & P})`
+`dom({x,y|y=E & P})`
 
 corresponds to something like
 
-`{x|let y=E in P}`
+`{x|let y=E in P}`
 
 One can also use the ran operator or introduce multiple lets in one go:
 
-`dom(dom({x,y,z|y=E1 & z=E2 &P}))`
+`dom(dom({x,y,z|y=E1 & z=E2 &P}))`
 
 or
 
-`ran({y,z,x|y=E1 & z=E2 &P})`
+`ran({y,z,x|y=E1 & z=E2 &P})`
 
 both encode
 
-`{x|let y=E1 & z=E2 in P}`
+`{x|let y=E1 & z=E2 in P}`
 
 [[let-for-expressions]]
 Let for expressions
@@ -81,7 +85,7 @@ to encode a let statement:
 
 corresponds to something like
 
-`let x=E in F`
+`let x=E in F`
 
 The following construct has exactly the same effect:
 
@@ -105,17 +109,17 @@ of the `LET` substitution syntax in expressions and predicates.
 Examples:
 +++++++++
 
-`>>> IF 1 = 1 THEN 3 ELSE 4 END` +
-`Expression Value = 3`
+`>>> IF 1 = 1 THEN 3 ELSE 4 END` +
+`Expression Value = 3`
 
-`>>> IF 1 = 1 THEN 3 ELSE 4 END + 5` +
-`Expression Value = 8`
+`>>> IF 1 = 1 THEN 3 ELSE 4 END + 5` +
+`Expression Value = 8`
 
-`>>> IF 1=1 THEN TRUE = FALSE  ELSE TRUE=TRUE END` +
-`Predicate is FALSE`
+`>>> IF 1=1 THEN TRUE = FALSE  ELSE TRUE=TRUE END` +
+`Predicate is FALSE`
 
-`>>> IF 1=1 THEN TRUE = FALSE  ELSE TRUE=TRUE END or 1=1` +
-`Predicate is TRUE`
+`>>> IF 1=1 THEN TRUE = FALSE  ELSE TRUE=TRUE END or 1=1` +
+`Predicate is TRUE`
 
 [[expressions]]
 Expressions
@@ -123,11 +127,11 @@ Expressions
 
 The following construct
 
-`%((x).(x=0 & PRED|C1)\/%(x).(x=0 & not(PRED)|C2)) (0)`
+`%((x).(x=0 & PRED|C1)\/%(x).(x=0 & not(PRED)|C2)) (0)`
 
 encodes an if-then-else for expressions:
 
-`IF PRED THEN C1 ELSE C2 END`
+`IF PRED THEN C1 ELSE C2 END`
 
 The former lambda-construct is recognised by ProB and replaced
 internally by an if-then-else construct. The latter syntax is actually
@@ -143,7 +147,7 @@ In classical B there is no counterpart to the Event-B `finite` operator.
 However, the following construct has the same effect as `finite(x)` (and
 is recognised by ProB):
 
-`x : FIN(x)`
+`x : FIN(x)`
 
 [[all-different]]
 all-different
@@ -161,7 +165,7 @@ map
 Given a function f and a sequence `sqce` one can map the function over
 all elements of `sqce` using the relational composition operator `;`:
 
-`(sqce ; f)`
+`(sqce ; f)`
 
 For example, `([1,2,3] ; succ)` gives us the sequence `[2,3,4]`.
 
@@ -193,7 +197,7 @@ initial (empty) accumulator.
 For example, to sort a set of integers into a ascending sequence, we
 would define the step function as follows:
 
-`step = %(s,o).(s/={} | (s\{min(s)},o<-min(s)))`
+`step = %(s,o).(s/={} | (s\{min(s)},o<-min(s)))`
 
 A particular call would be:
 
@@ -217,13 +221,13 @@ For example, to sort a set of integers into a ascending sequence, as
 above, we would define a recursive function as follows:
 
 `ABSTRACT_CONSTANTS` +
-`    Recursive_Sort` +
+`Recursive_Sort` +
 `PROPERTIES` +
-`    Recursive_Sort : POW(INTEGER) <-> POW(INTEGER*INTEGER)` +
-`    & Recursive_Sort =` +
-`        %in.(in : POW(INTEGER) & in = {} | [])` +
-`        \/ %in.(in : POW(INTEGER) & in /= {}` +
-`                         | min(in) -> Recursive_Sort(in\{min(in)}))`
+`Recursive_Sort : POW(INTEGER) <-> POW(INTEGER*INTEGER)` +
+`& Recursive_Sort =` +
+`%in.(in : POW(INTEGER) & in = {} | [])` +
+`\/ %in.(in : POW(INTEGER) & in /= {}` +
+`| min(in) -> Recursive_Sort(in\{min(in)}))`
 
 By defining `Recursive_Sort` as an abstract constant we indicate that
 ProB should handle the function symbolically, i.e. ProB will not try to

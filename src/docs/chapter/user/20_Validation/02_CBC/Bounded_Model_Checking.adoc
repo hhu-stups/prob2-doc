@@ -1,9 +1,13 @@
+:wikifix: 2
 ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
+[[bounded-model-checking]]
+= Bounded Model Checking
+
 As of version 1.5, ProB provides support for constraint-based bounded
 model checking (BMC). As opposed to
-link:/Constraint_Based_Checking[constraint-based checking], BMC finds
+<<constraint-based-checking,constraint-based checking>>, BMC finds
 counterexamples which are reachable from the INITIALISATION. As opposed
-to link:/Consistency_Checking[ordinary model checking], it does not
+to <<consistency-checking,ordinary model checking>>, it does not
 compute all possible solutions for parameters and constants, but
 constructs these on demand. This can be useful when the out-degree of
 the state-space is very high, i.e., when there are many possible
@@ -28,8 +32,8 @@ END
 
 The ProB model checker will here run for a very long time before
 uncovering the error that occurs when `ct` is set to lim. If you run the
-link:/TLC[TLC backend] you will get the error message
-```Too many possible next states for the last state in the trace.`''
+<<tlc,TLC backend>> you will get the error message
+"`Too many possible next states for the last state in the trace.`"
 
 However, for the bounded model checker this is less of a problem; it
 will use the constraint solver to try and find suitable values of the
@@ -38,7 +42,7 @@ invariant violation. The bounded model checker actually uses the same
 algorithm than the link:/Test_Case_Generation[constraint-based test-case
 generator], but uses the negation of the invariant as target. You can
 use the command-line version of ProB, with the
-link:/Using_the_Command-Line_Version_of_ProB#-bmc_.3CDepth.3E[`-bmc DEPTH`]
+<<using-the-command-line-version-of-prob,`-bmc DEPTH`>>
 command as follows:
 
 ....
@@ -79,4 +83,4 @@ the command, you may have to change the preference entry to
 in the `ProB_Preferences.pl` file) Running the command on the above
 example will generate the following counter-example:
 
- image::BMC_Counter_Wrong.png[]]
+image::BMC_Counter_Wrong.png[]]

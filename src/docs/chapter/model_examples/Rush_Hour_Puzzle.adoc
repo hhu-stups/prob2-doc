@@ -1,4 +1,8 @@
-[[b-encoding-of-the-rush-hour-puzzle]]
+:wikifix: 2
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
+[[rush-hour-puzzle]]
+= Rush Hour Puzzle
+
 = Rush Hour Puzzle
 
 This case studies tackles encoding the
@@ -13,7 +17,7 @@ Inspired by discussions with Neng-Fa Zhou at ICLP'14 in Vienna, we now
 have a new version of the B model for this puzzle.
 
 The old version can still be found below. There is also a Prolog
-link:/Other_languages[XTL] encoding of the link:/Rush_Hour_XTL[same
+<<other-languages,XTL>> encoding of the link:/Rush_Hour_XTL[same
 problem available], where ProB finds the example in one second or less.
 Explanations and comparison with the
 http://picat-lang.org/exs/prob_rushhour.pi[Picat solution] will follow
@@ -100,14 +104,14 @@ Finding a Solution with ProB
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To find a solution you need to run the ProB
-link:/Consistency_Checking[``Model Check'' command] in the ``Verify''
-menu. Be sure to enable the ``Find GOAL (from DEFINITIONS)'' checkbox,
+<<consistency-checking,"Model Check" command>> in the "Verify"
+menu. Be sure to enable the "Find GOAL (from DEFINITIONS)" checkbox,
 as above we have specified the target state `col(red) = 4` inside the
 `GOAL` definition.
 
 Here is a screenshot of ProB after finding the shortest solution using
 model checking. As you can see there is also a (simple)
-link:/Graphical_Visualization[graphical visualisation] of the state of
+<<graphical-visualization,graphical visualisation>> of the state of
 the model. We have also opened the ``link:/Evaluation_View[Evaluation
 View]''.
 
@@ -120,18 +124,18 @@ Exporting a Solution Trace
 You can inspect or export the solution trace found by ProB in various
 ways:
 
-* using the command ``History to Current State'' in the ``Traces''
-submenu of the ``Visualize'' menu
-* using various commands in the ``Trace Checking'' submenu of the
-``Verify'' menu, e.g.:
-** ``Save History to Trace File'': this generates a Prolog trace file
-that can be replayed later using the ``Check Trace from Trace File''
+* using the command "History to Current State" in the "Traces"
+submenu of the "Visualize" menu
+* using various commands in the "Trace Checking" submenu of the
+"Verify" menu, e.g.:
+** "Save History to Trace File": this generates a Prolog trace file
+that can be replayed later using the "Check Trace from Trace File"
 command
-** ``Save History to B File...'': this saves the trace in B format and
+** "Save History to B File...": this saves the trace in B format and
 it can be parsed by a B parser
 
 Note: you can also find the solution from the command line using
-link:/Using_the_Command-Line_Version_of_ProB[probcli]:
+<<using-the-command-line-version-of-prob,probcli>>:
 `probcli -mc 10000 RushHour.mch`. The command line version probcli will
 output the trace on the console, but also provides various commands to
 save the history to file.
@@ -141,13 +145,13 @@ Finding the shortest solution using the TLC backend
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If you want to find the shortest solution with ProB you should set the
-``Search Strategy'' in the ProB link:/Consistency_Checking[``Model
-Check'' command] to ``Breadth First''. The shortest solution has 81
+"Search Strategy" in the ProB link:/Consistency_Checking[``Model
+Check'' command] to "Breadth First". The shortest solution has 81
 moves (if one allows a car to move multiple spaces in one move then the
 shortest solution has 51 moves).
 
 You can also use ou It was found in 3 seconds (about 1 second model
-checking time) using our link:/TLC[TLC model checking backend] on a Mac
+checking time) using our <<tlc,TLC model checking backend>> on a Mac
 Book Air 1.7 GHz i7:
 
 image:ProB_RushHour_v2_TLC_Dialog.png[200px|center]

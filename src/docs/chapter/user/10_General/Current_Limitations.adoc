@@ -1,13 +1,18 @@
+:wikifix: 2
 ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
-/Category:User_Manual[Category:User Manual]
+[[current-limitations]]
+= Current Limitations
 
-ProB in general requires all link:/Deferred_Sets[deferred sets] to be
+:category: User_Manual
+
+
+ProB in general requires all <<deferred-sets,deferred sets>> to be
 given a finite cardinality. If no cardinality is specified, a default
 size will be used. Also, unless finite bounds can be inferred by the
 ProB constraint solver, mathematical integers will only be enumerated
 within `MININT` to `MAXINT` (there is now some support for checking
 whether such an enumeration did occur, in particular when using the
-commands in the ``Analyse Predicate'' sub-menu).
+commands in the "Analyse Predicate" sub-menu).
 
 Other general limitations are:
 
@@ -48,7 +53,7 @@ cannot write `r2=rel;rel`. You need to write `r2=(rel;rel)`. This allows
 ProB to distinguish the relational composition from the sequential
 composition (or other uses of the semicolon).
 
-See the page link:/Using_ProB_with_Atelier_B[Using ProB with Atelier B]
+See the page <<using-prob-with-atelier-b,Using ProB with Atelier B>>
 for more details.
 
 [[multiple-machines-and-refinements]]

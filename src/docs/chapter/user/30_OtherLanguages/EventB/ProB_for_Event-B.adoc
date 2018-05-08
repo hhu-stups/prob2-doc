@@ -1,10 +1,14 @@
+:wikifix: 2
 ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
+[[prob-for-event-b]]
+= ProB for Event-B
+
 In addition to classical B (aka B for software development), ProB also
 supports Event-B and the Rodin platform. ProB can be installed as a
 plugin for Rodin. Once installed, one can
-link:/Tutorial_Rodin_Exporting[export contexts and models] as *.eventb
+<<tutorial-rodin-exporting,export contexts and models>> as *.eventb
 files and use them within ProB Tcl/Tk and the command-line version
-link:/Using_the_Command-Line_Version_of_ProB[probcli].
+<<using-the-command-line-version-of-prob,probcli>>.
 
 See the tutorial pages for more information about using ProB for
 Event-B:
@@ -15,8 +19,8 @@ animation steps]
 Rodin]
 * link:/Tutorial_Rodin_Exporting[Exporting Rodin Models for ProB
 Classic]
-* link:/Tutorial_Symbolic_Constants[Using the Symbolic Contants Plugin]
-* link:/Tutorial_Disprover[Using the ProB (Dis-)Prover]
+* <<tutorial-symbolic-constants,Using the Symbolic Contants Plugin>>
+* <<tutorial-disprover,Using the ProB (Dis-)Prover>>
 * link:/Tutorial_LTL_Counter-example_View[Visualization of LTL
 Counter-examples in Rodin]
 

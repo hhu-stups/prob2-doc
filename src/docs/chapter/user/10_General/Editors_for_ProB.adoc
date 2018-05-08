@@ -1,4 +1,8 @@
+:wikifix: 2
 ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
+[[editors-for-prob]]
+= Editors for ProB
+
 [[prob-tcltk-editor]]
 ProB Tcl/Tk Editor
 ~~~~~~~~~~~~~~~~~~
@@ -15,22 +19,22 @@ longer than 500 characters).
 
 It is possible to open the files in an external editor. You can setup
 the editor to be used by modifying the preference ``Path to External
-Text Editor'' in the ``Advanced Preferences'' list (available in the
-``Preferences'' menu). You can then use the command ``Open FILE in
-external editor'' in the ``File'' menu to open your main specification
+Text Editor'' in the "Advanced Preferences" list (available in the
+"Preferences" menu). You can then use the command ``Open FILE in
+external editor'' in the "File" menu to open your main specification
 file with this editor. You can also use the command-key shortcut
-``Cmd-E'' for this.
+"Cmd-E" for this.
 
 [[launching-the-editor-in-probcli]]
 Launching the editor in probcli
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The link:/Using_the_Command-Line_Version_of_ProB[probcli] REPL
+The <<using-the-command-line-version-of-prob,probcli>> REPL
 (read-eval-print-loop) supports the command `:e` to open the current
-file in the external editor, as specified in the ``EDITOR'' preference.
+file in the external editor, as specified in the "EDITOR" preference.
 You can set this preference using
 
-`probcli -repl -p EDITOR PATH`
+`probcli -repl -p EDITOR PATH`
 
 In case errors occurred with the last command, this will also try and
 move the cursor to the corresponding location in the file.
@@ -46,7 +50,7 @@ VIM
 A https://github.com/bivab/prob.vim[VIM plugin for ProB is available].
 It shows a quick fix list of parse and type errors for classical B
 machines (.mch) using the
-link:/Using_the_Command-Line_Version_of_ProB[command line tool probcli].
+<<using-the-command-line-version-of-prob,command line tool probcli>>.
 VIM has builtin syntax highlighting support for
 https://github.com/vim/vim/blob/master/runtime/syntax/b.vim[B].
 
@@ -71,4 +75,4 @@ B, TLA+, CSP and Prolog] are available.
 Emacs
 ^^^^^
 
-A package  image::b-mode.el.zip[] is available.
+A packageimage::b-mode.el.zip[] is available.

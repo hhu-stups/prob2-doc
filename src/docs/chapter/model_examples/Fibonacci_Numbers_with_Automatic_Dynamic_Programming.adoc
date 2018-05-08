@@ -1,4 +1,8 @@
-= Fibonacci Sequence with dynamic programming
+:wikifix: 2
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
+[[fibonacci-numbers-with-automatic-dynamic-programming]]
+= Fibonacci Numbers with Automatic Dynamic Programming
+
 
 In this example we show how one can encode the Fibonacci problem in such
 a way that you get dynamic programming automatically when using ProB to

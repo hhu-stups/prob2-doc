@@ -1,4 +1,8 @@
-= Die hard jugs
+:wikifix: 2
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
+[[die-hard-jugs-puzzle]]
+= Die Hard Jugs Puzzle
+
 
 This is the B model of a puzzle from the movie ``Die Hard with a
 Vengeance''. This https://www.youtube.com/watch?v=BVtQNK_ZUJg[clip shows
@@ -38,18 +42,18 @@ END
 ....
 
 After opening the file in ProB, choose the Model Check command in the
-Verify menu and then check the ``Find Define GOAL'' check box. This
+Verify menu and then check the "Find Define GOAL" check box. This
 instructs ProB to search for states satisfying the GOAL predicate
 `(4:ran(level))` defined above.
 
-/File:ProB_ModelCheckGoalBox.png[300px|center]
+image::ProB_ModelCheckGoalBox.png[]
 
 Now press the model check button and you should now obtain the following
-message: /File:ProB_Goal_Found.png[300px|center]
+message:image::ProB_Goal_Found.png[]
 
 The main window of ProB now contains the following information:
 
-/File:Jars_Panes.png[700px|center]
+image::Jars_Panes.png[]
 
 You can see that the second jug contains exactly 4 gallons. The steps
 required to reach this state can be found in the history pane on the
@@ -62,7 +66,7 @@ Graphical Animation
 This machine above is actually included in the ProB distribution (inside
 the examples/B/GraphicalAnimation/ directory). It also contains the
 following lines in the DEFINITIONS section, which defines a
-quick-and-dirty link:/Graphical_Visualization[graphical visualisation]
+quick-and-dirty <<graphical-visualization,graphical visualisation>>
 of the state. The images can be found in the subfolder images along the
 file Jars.mch.
 
@@ -80,7 +84,7 @@ file Jars.mch.
 Here is a screenshot of ProB Tcl/Tk after loading the model and having
 found the goal:
 
-/File:ProB_DieHard_Screenshot.png[600px|center]
+image::ProB_DieHard_Screenshot.png[]
 
 [[using-probcli-command-line-version]]
 Using probcli (command-line version)
@@ -88,7 +92,7 @@ Using probcli (command-line version)
 
 To find the solution using probcli you just need to type:
 
-` probcli -model_check Jars.mch`
+`probcli -model_check Jars.mch`
 
 The output will be as follows:
 
@@ -128,7 +132,7 @@ TLA+ Version
 A TLA+ version of the puzzle is also included with ProB (inside the
 examples/TLA+/ directory). The specification was developed by Leslie
 Lamport. It is possible to load TLA+ specifications with ProB as shown
-on the link:/TLA[TLA] wiki page.
+on the <<tla,TLA>> wiki page.
 
 ....
 ------------------------------ MODULE DieHard -------------------------------
@@ -268,8 +272,8 @@ Z Version
 
 A Z version of the puzzle is also included with ProB (inside the
 examples/Z/GraphicalAnimation/ directory) and shown on the
-link:/ProZ[ProZ] wiki page.
+<<proz,ProZ>> wiki page.
 
 Here is how the animation of the Z specification should look like:
 
-/File:ProZ_jars.png[600px|center]
+image::ProZ_jars.png[]

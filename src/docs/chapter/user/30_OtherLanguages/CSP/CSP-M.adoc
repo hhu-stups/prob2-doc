@@ -1,14 +1,19 @@
+:wikifix: 2
 ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
-/Category:User_Manual[Category:User Manual] __NOTOC__ ProB supports
+[[csp-m]]
+= CSP-M
+
+:category: User_Manual
+ProB supports
 machine readable CSPfootnote:[M. Butler and M. Leuschel: _Combining CSP
 and B for specification and property verification_. FM 2005, LNCS 3582,
 Springer-Verlag, 2005
 http://www.stups.uni-duesseldorf.de/~leuschel/publication_detail.php?id=1[1]]
 as supported by FDR and ProBE. CSP files can be animated and model
-checked on their own simply by opening a file ending with ``.csp''.
+checked on their own simply by opening a file ending with ".csp".
 
 You can also use a CSP file to guide a B machine by first opening the B
-machine and then using the ``Open Special'' sub-menu of the File menu:
+machine and then using the "Open Special" sub-menu of the File menu:
 
 * use CSP file: uses the CSP file to control the current B machine (see
 below)
@@ -32,8 +37,8 @@ yet fully supported
 constants (ch?(x,1) is ok, ch?(y+1,x) not). Also, for a record, all
 arguments must be provided (e.g., for datatype r.Val.Val you have to
 write r?x?y you cannot write r?xy). Finally, for the moment within ``ch?
-x.y:Set'' the ``:Set'' associates only with y; if you want to check that
-``x.y'' is in Set you need to write: "ch?(x.y):Set.
+x.y:Set'' the ":Set" associates only with y; if you want to check that
+"x.y" is in Set you need to write: "ch?(x.y):Set.
 * channel declarations can either use associative dot tuples or
 non-associative tuples but not yet both. Also, sets of tuples as channel
 types will not work the same way as in FDR. I.e., for channel a:LinkData
@@ -50,11 +55,11 @@ Guiding B Machines with CSP
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To use this feature of ProB: first open a B Machine, then select ``Use
-CSP File to Guide B...'' or ``Use Default CSP File'' in the ``Open
+CSP File to Guide B...'' or "Use Default CSP File" in the ``Open
 Special'' submenu of the File menu (you must be in normal user mode to
 see it).
 
-The CSP file should define a process called ``MAIN''. This process will
+The CSP file should define a process called "MAIN". This process will
 be executed in parallel with the B machine. The synchronization between
 the B machine and the CSP specification is as follows:
 
@@ -71,10 +76,10 @@ as follows:
 where op1,...,opn are the visible operations defined in the B machine.
 * CSP events do not need to provide all arguments of B operations:
 
-`add!1 -> will match add(1,1) or add(1,2) or ...` +
-`(supposing add has 2 parameters in B)` +
-`add -> will match add(1,2), add(2,1), ...` +
-`add!1!2 -> will only match add(1,2)`
+`add!1 -> will match add(1,1) or add(1,2) or ...` +
+`(supposing add has 2 parameters in B)` +
+`add -> will match add(1,2), add(2,1), ...` +
+`add!1!2 -> will only match add(1,2)`
 
 * B Output arguments are specified at the end
 +
@@ -95,10 +100,10 @@ two values on the channel to check for particular tuples in the
 relation. For example, use vv!3?Y to check whether tuples (3,Y) are in
 the relation vv (there will be one possible synchronisation per such
 value).
-* see the file ``bookstore_guide.csp'' in the provided Machines
+* see the file "bookstore_guide.csp" in the provided Machines
 directory for an example.
 
-For the syntax definition see link:/CSP-M_Syntax[CSP-M Syntax]
+For the syntax definition see <<csp-m-syntax,CSP-M Syntax>>
 
 [[command-line-option-for-guided-cspb]]
 Command Line option for guided CSP||B
@@ -106,7 +111,7 @@ Command Line option for guided CSP||B
 From the command line, you can specify a CSP File that should be used to
 guide the B machine with
 
-`-csp-guide `
+`-csp-guide`
 
 (This feature is included since version 1.3.5-beta7.)
 

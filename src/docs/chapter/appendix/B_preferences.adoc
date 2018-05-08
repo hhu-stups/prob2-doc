@@ -1,3 +1,7 @@
-[[preferences]]
+:wikifix: 2
+ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
+[[b-preferences]]
+= B preferences
+
 = ProB Preferences
 A list of the current preferences available in ProB is available from https://www3.hhu.de/stups/prob/index.php/Using_the_Command-Line_Version_of_ProB#Preferences[the ProB Website]

@@ -1,4 +1,8 @@
+:wikifix: 2
 ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
+[[apples-and-oranges-apple-interview-question]]
+= Apples and Oranges (Apple Interview Question)
+
 
 = Apples and Oranges
 
@@ -59,7 +63,7 @@ than 10 ms):
 /File:ProB_ApplesOranges_Sol.png[600px|center]
 
 As we can see, the only solution is to open the box labelled with
-``Both''. We can inspect the decision function by using the B REPL
+"Both". We can inspect the decision function by using the B REPL
 (e.g., double click on the State Properties pane to open it):
 
 ....
@@ -71,16 +75,16 @@ As we can see, the only solution is to open the box labelled with
 ....
 
 In other words, when we pick an apple out of the box labelled with
-``Both'', then it contains only apples and the box labelled ``O''ranges
-contains both apples and oranges. The box labelled ``A''pples contains
+"Both", then it contains only apples and the box labelled "O"ranges
+contains both apples and oranges. The box labelled "A"pples contains
 just oranges. Similarly, if we pick up an orange out of the box labelled
-with ``Both'', then it contains only oranges and the box labelled with
-``A''pples contains contains both apples and oranges. The box labelled
-``O''ranges contains just apples.
+with "Both", then it contains only oranges and the box labelled with
+"A"pples contains contains both apples and oranges. The box labelled
+"O"ranges contains just apples.
 
 Note: you can inspect values or expressions in a tabular form, using the
-command ``Expression as Table...'' in the Visualize->Formulas menu. If
-you enter ``DecisionFunction'' as expression you will see the following
+command "Expression as Table..." in the Visualize->Formulas menu. If
+you enter "DecisionFunction" as expression you will see the following
 tabular representation:
 
 

@@ -1,5 +1,10 @@
+:wikifix: 2
 ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
-/Category:User_Manual[Category:User Manual]
+[[tutorial-symbolic-constants]]
+= Tutorial Symbolic Constants
+
+:category: User_Manual
+
 
 [[introduction]]
 Introduction
@@ -19,14 +24,14 @@ Installing the ProB Symbolic Constants Plugin
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The plugin is available from the ProB for Rodin Updatesite. The package
-is called ``ProB for Rodin2 - Symbolic Constants Support''. It is not
+is called "ProB for Rodin2 - Symbolic Constants Support". It is not
 bundled with ProB for Rodin itself.
 
 [[marking-constants-to-be-kept-symbolic]]
 Marking Constants to be kept symbolic
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Once the plugin is installed, a toggle button ``symbolic'' / ``not
+Once the plugin is installed, a toggle button "symbolic" / ``not
 symbolic'' should appear next to each constant in the Rodin editor.
 
 You can select between the two behaviours:
@@ -36,7 +41,7 @@ as possible. Please note, that some operations might trigger a full
 evaluation of the constant and thus discard the symbolic representation.
 * not symbolic, which is the default setting. Please note that in
 certain cases ProB might auto detect that a constant should be stored
-symbolically (i.e. an infinite set). In this case the ``not symbolic''
+symbolically (i.e. an infinite set). In this case the "not symbolic"
 setting is overridden.
 
 See

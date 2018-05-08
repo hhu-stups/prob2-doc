@@ -1,5 +1,9 @@
+:wikifix: 2
 ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
-__NOTOC__ This tutorial describes the use of ProB's evaluation view to
+[[evaluation-view]]
+= Evaluation View
+
+ This tutorial describes the use of ProB's evaluation view to
 explore single states of a model. The view shows the details of a
 particular state during the animation. It can be used to
 
@@ -17,7 +21,7 @@ Inspecting the State Variables and Constants
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 As an example specification we use the Sieve.mch delivered with the ProB
-Distribution in the ``Less Simple'' folder. After opening the model do a
+Distribution in the "Less Simple" folder. After opening the model do a
 couple of animation steps and then open the Evaluation view in the
 Analyse menu. You should get window that looks similar to the following
 screenshot:
@@ -53,7 +57,7 @@ sub-expressions. This can be demonstrated using Priorityqueue.mch from
 the folder SchneiderBook. After initializing the machine and a few
 animation-steps opening the evaluation view yields
 
- image::Eval_view4.png[]
+image::Eval_view4.png[]
 
 The invariant consists of two predicates
 
@@ -70,24 +74,24 @@ expanded until we reach the level of simple values. The value of `xx` is
 chosen arbitrarily because the universal quantification is true. So let
 us modify the machine and introduce a bug e.g.
 
-` insert(nn) =` +
-` PRE nn : NAT` +
-` THEN` +
-`   SELECT queue = <> THEN queue := [nn]` +
-`   WHEN queue /= <> & nn <= min(ran(queue)) THEN queue := queue <- nn /*<-- the bug */` +
-`   WHEN queue /= <> & nn >= max(ran(queue)) THEN queue := queue <- nn` +
-`   ELSE ANY xx` +
-`        WHERE xx : 1..size(queue)-1 & queue(xx) <= nn & nn <= queue(xx+1)` +
-`        THEN queue := (queue /|\ xx) ^ [nn] ^ (queue \|/ xx)` +
-`        END` +
-`   END` +
-` END;`
+`insert(nn) =` +
+`PRE nn : NAT` +
+`THEN` +
+`SELECT queue = <> THEN queue := [nn]` +
+`WHEN queue /= <> & nn <= min(ran(queue)) THEN queue := queue <- nn /*<-- the bug */` +
+`WHEN queue /= <> & nn >= max(ran(queue)) THEN queue := queue <- nn` +
+`ELSE ANY xx` +
+`WHERE xx : 1..size(queue)-1 & queue(xx) <= nn & nn <= queue(xx+1)` +
+`THEN queue := (queue /|\ xx) ^ [nn] ^ (queue \|/ xx)` +
+`END` +
+`END` +
+`END;`
 
 Now we can model check the machine and ProB will find a state that
 violates the invariant. Opening the evaluation view gives us something
 like
 
- image::Eval_view5.png[]
+image::Eval_view5.png[]
 
 In the case that a universal quantification predicate yields false, ProB
 gives us a counterexample. For existential quantification the result is
@@ -103,14 +107,14 @@ particular if A and B are large sets. The behavior can be observed, for
 example, in the Paperround.mch model from the SchneiderBook folder.
 After a couple of operations the evaluation view looks like
 
- image::Eval_view5.png[]
+image::Eval_view5.png[]
 
 If we introduce an error, such as
 
-`remove(hh) =` +
-`  PRE hh : 1..163` +
-`  THEN  papers := papers - {hh}` +
-`  END`
+`remove(hh) =` +
+`PRE hh : 1..163` +
+`THEN  papers := papers - {hh}` +
+`END`
 
 we can now model check the machine and find a counter example that can
 be inspected using the evaluation view and because of the automatically
@@ -142,8 +146,8 @@ items and restrict the view. Suppose we are only interested in the
 constants x1, x4, x17 and the property
 `(x4 = FALSE or X2=FALSE) or X6=TRUE` (the first property in the list).
 Using the right mouse button, we can mark all the rows in the view that
-we want to see by selecting ``Mark all selected items'' from the context
-menu. In the same popup menu, we can select ``Show only marked items''
+we want to see by selecting "Mark all selected items" from the context
+menu. In the same popup menu, we can select "Show only marked items"
 which will remove all other information.
 
 image::Eval_view8.png[]
@@ -153,10 +157,10 @@ state into a file (either the full state, or the marked items only). In
 either case, ProB will generate a text file containing the state as a
 predicate. In our example the file will contain the following predicate
 
-`x1 = FALSE` +
-` &` +
-`x4 = TRUE` +
-` &` +
-`x17 = TRUE` +
-` &` +
-`(x4 = FALSE or x2 = FALSE) or x6 = TRUE`
+`x1 = FALSE` +
+`&` +
+`x4 = TRUE` +
+`&` +
+`x17 = TRUE` +
+`&` +
+`(x4 = FALSE or x2 = FALSE) or x6 = TRUE`
