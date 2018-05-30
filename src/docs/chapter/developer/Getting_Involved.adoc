@@ -91,7 +91,7 @@ the number of a unit test to run it, or a test category such as
 Running the Prolog Tests
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-All Prolog tests are stored as facts in the file `test cases.pl`. Every
+All Prolog tests are stored as facts in the file `testcases.pl`. Every
 test has
 
 * an identifier (a number); the last test added has the highest number
