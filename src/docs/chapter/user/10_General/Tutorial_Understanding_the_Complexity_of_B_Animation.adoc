@@ -103,8 +103,7 @@ The following table shows how the size of a deferred set S influences
 the number of subsets, partial functions, relations over S, and a total
 function over relations of S:
 
-.align="bottom" style="color:#e76700;" |__Number of distinct
-solutions__
+.__Number of distinct solutions__
 [cols=",,,,",options="header",]
 |=======================================================================
 |`card(S)` |`sub:POW(S)` |`pf:S+->S` |`rl: S<->S`
@@ -144,9 +143,11 @@ In order to make a B model amenable to animation, we have three options:
 * use small cardinalities for the deferred sets and avoid using overly
 complicated datastructures (e.g., relations over relations or total
 functions over relations)
+
 * ensure that ProB does not have to enumerate variables with complicated
 types, by providing concrete values (e.g., in the form of an equality
 such as `rel = {1|->2, 2|->3, 3|->1}`)
+
 * hope that the constraint solver of ProB will be able to find a
 solution.
 

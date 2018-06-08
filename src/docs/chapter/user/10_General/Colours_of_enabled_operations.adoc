@@ -14,4 +14,4 @@ orange : The operation leads to a deadlock state, i.e. a state where no
 operation is enabled. +
 black : Otherwise, the operation leads to a state that is different to
 the current state, has already been visited and is neither an invariant
-violating or deadlock state.::
+violating or deadlock state.

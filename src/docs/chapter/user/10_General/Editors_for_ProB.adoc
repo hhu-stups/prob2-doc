@@ -18,10 +18,10 @@ syntax highlighting is automatically turned off in some circumstances
 longer than 500 characters).
 
 It is possible to open the files in an external editor. You can setup
-the editor to be used by modifying the preference ``Path to External
-Text Editor'' in the "Advanced Preferences" list (available in the
-"Preferences" menu). You can then use the command ``Open FILE in
-external editor'' in the "File" menu to open your main specification
+the editor to be used by modifying the preference ''Path to External
+Text Editor'' in the Advanced Preferences list (available in the
+_Preferences_ menu). You can then use the command ''Open FILE in
+external editor'' in the _File_ menu to open your main specification
 file with this editor. You can also use the command-key shortcut
 "Cmd-E" for this.
 
@@ -32,7 +32,7 @@ Launching the editor in probcli
 The <<using-the-command-line-version-of-prob,probcli>> REPL
 (read-eval-print-loop) supports the command `:e` to open the current
 file in the external editor, as specified in the "EDITOR" preference.
-You can set this preference using
+You can set this preference using:
 
 `probcli -repl -p EDITOR PATH`
 

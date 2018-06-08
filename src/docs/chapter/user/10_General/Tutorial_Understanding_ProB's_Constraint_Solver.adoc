@@ -32,7 +32,7 @@ known. The symbolic representation can be used to represent certain sets
 some very limited extent also infinite sets).
 
 To give an idea about the performance related to the new AVL-based
-representation, take the substitution
+representation, take the substitution:
 
 ....
 numbers := numbers - ran(%n.(n:cur..limit/cur|cur*n))
@@ -112,8 +112,8 @@ image::ProB_PropagationAfterLoad.png[]
 In this case, ProB performed no enumeration at all. It could immediately
 determine the values of all constants. We can inspect the behaviour of
 the constraint solver by choosing "Advanced Preferences..." in the
-Preferences menu and the turning the ``Provide various tracing
-information on the terminal/console'' on. If we now reopen the machine,
+_Preferences_ menu and the turning the "Provide various tracing
+information on the terminal/console" on. If we now reopen the machine,
 the following information will be printed (amongst others) on the
 console:
 
@@ -208,7 +208,7 @@ constants that ProB should compute.
 There is a similar preference to control how many solutions are found
 for ways to execute an operation (`SET_PREF_MAX_OPERATIONS`). (As a side
 note: these preferences can also be set to 0. This means that you will
-have to use "Execute an Operation..." in the Animate menu to add
+have to use "Execute an Operation..." in the _Animate_ menu to add
 transitions one by one.)
 
 One may wonder what happens if there are no solutions. Will not ProB
@@ -251,8 +251,8 @@ error message which you can dismiss. Afterwards, you should be able to
 continue working.
 
 Finally, one can control the time after which a timeout will trigger
-using the preference ``Time out for computing enabled transitions (in
-ms)'' in the "Animation Preferences". You can also control it using a
+using the preference "Time out for computing enabled transitions (in
+ms)"" in the "Animation Preferences". You can also control it using a
 definition for `SET_PREF_TIME_OUT` in the DEFINITIONS clause.
 
 [[adding-universally-quantified-formulas]]

@@ -37,12 +37,12 @@ Increasing MAX_OPERATIONS
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 First, you could increase the "MAX_OPERATIONS" preference of ProB by
-selecting the "Animation Preferences" command in the "Preferences"
+selecting the "Animation Preferences" command in the _Preferences_
 menu:
 
 image::ProB_Lift_MAX_OPERATIONS.png[]
 
-You should then set the preference "" to at least 101 and then re-load
+You should then set the preference "MAX_OPERATIONS" to at least 101 and then re-load
 the B machine.
 
 image::ProB_Lift_OpPane_WithJump101.png[]
@@ -52,7 +52,7 @@ Executing an Operation by Predicate
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The alternative is to provide the parameter value for `level` yourself.
-For this, select the "Execute an Operation..." command in the animate
+For this, select the "Execute an Operation..." command in the _Animate_
 menu:
 
 image::ProB_Lift_ExecuteOperationMenu.png[]
@@ -88,8 +88,8 @@ to your model:
 `DEFINITIONS` +
 `SET_PREF_RANDOMISE_ENUMERATION_ORDER == TRUE`
 
-Alternatively, you can set this preference using the ``Advanced
-Preferences'' pane in the Preferences menu. After reloading the machine
+Alternatively, you can set this preference using the "Advanced
+Preferences" pane in the _Preferences_ menu. After reloading the machine
 you should see a picture similar to the following one:
 
 image::ProB_Lift_Randomise.png[]
@@ -110,7 +110,7 @@ model:
 
 Now suppose we want to execute this new operation as early as possible.
 We can ask the constraint solver to generate a feasible sequence of
-operations. First select the "Find Sequence..." command in the Verify
+operations. First select the "Find Sequence..." command in the _Verify_
 menu:
 
 image::FindSequenceMenu.png[]
@@ -137,7 +137,7 @@ generator to find for every operation the shortest trace that enables
 it.
 
 First select the "Constraint-based Testcase Generation.." command in
-the Analyse menu:
+the _Analyse_ menu:
 
 image::CBCMBTMenu.png[]
 
@@ -150,8 +150,8 @@ ProB will then find four test cases for you, one for each operation:
 
 image::CBCMBTResult.png[]
 
-You can also visualise these test cases as a tree by clicking the ``View
-Tree'' button:
+You can also visualise these test cases as a tree by clicking the "View
+Tree" button:
 
 image::CBCMBTTreeResult.png[]
 

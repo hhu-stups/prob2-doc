@@ -31,9 +31,10 @@ image::ProB_JukeboxAfterLoad.png[]
 
 Now edit the file, and type `& limit>99` after `PROPERTIES limit:NAT1`.
 Save the machine and reload it. Hint: there is a "Save and reopen"
-command in the "File" menu for this action.
+command in the _File_ menu for this action.
 
 ProB should now popup the following message:
+
 image::ProB_Jukebox_UnsatProp.png[]
 
 If you click "Yes" (or Ja), you will get the following window:
@@ -46,8 +47,8 @@ often give you an indication of what is wrong, and the source of the
 trouble (or inconsistency).
 
 An alternate means to figure out the source of the problem is ProB's
-graphical formula viewer. For this, choose the ``Analyse
-Graphically/Properties'' in the "Analyse" menu:
+graphical formula viewer. For this, choose the "Analyse
+Graphically/Properties" in the _Analyse_ menu:
 
 image::ProB_Jukebox_AnalyseGraphicallyCommand.png[]
 
@@ -118,8 +119,8 @@ INITIALISATION(\{}) we obtain the following picture:
 
 image::ProB_JukeboxAfterInit3.png[]
 
-We can now analyze the ASSERTIONS. For this, choose the ``Analyse
-Graphically/Assertions'' in the "Analyse" menu:
+We can now analyze the ASSERTIONS. For this, choose the "Analyse
+Graphically/Assertions" in the _Analyse_ menu:
 
 image::ProB_Jukebox_AnalyseGraphicallyUnsatAssertion3.png[]
 
@@ -130,14 +131,17 @@ the problem, e.g., writing `!x.(x``x<=99)`.
 Note, that ProB also allows us to inspect custom predicates using the
 graphical viewer (without saving and reopening a machine). For this,
 choose the "Analyse Graphically/Custom Predicate..." in the
-"Analyse" menu and enter `!x.(x``x<=99)`:
-image::ProB_Jukebox_AnalyseGraphicallyCustomCommand.png[] After
-hitting OK we obtain:
+_Analyse_ menu and enter `!x.(x``x<=99)`:
+
+image::ProB_Jukebox_AnalyseGraphicallyCustomCommand.png[]
+
+After hitting OK we obtain:
+
 image::ProB_Jukebox_AnalyseGraphicallyCustom3.png[]
 
 As we can see, this predicate is true in that particular state of the
-machine. Note, there is also the option to use ``Analyse
-Predicate/Custom Predicate...''. This will result in a simpler
+machine. Note, there is also the option to use "Analyse
+Predicate/Custom Predicate...". This will result in a simpler
 (non-graphical) visualization. Use this if the graphical visualization
 is too large or takes too much time to compute. The custom predicate
 analysis commands have one disadvantage: the formula has to be typed
@@ -150,17 +154,19 @@ in the DEFINITIONS:
 DEFINITIONS       GOAL == !x.(x<limit => x<99)
 ....
 
-Then one can use "Analyse Predicate/GOAL" or ``Analyse
-Graphically/GOAL''. The GOAL predicate can also be used to guide the
+Then one can use "Analyse Predicate/GOAL" or "Analyse
+Graphically/GOAL". The GOAL predicate can also be used to guide the
 model checker.
 
 Finally, the "Analyse" commands can also be applied to the
 precondition and guards of operations. This is useful to find out why a
 particular operation is (maybe) unexpectedly disabled or enabled. For
 this, choose the "Analyse Graphically/Operation PRE..." in the
-"Analyse" menu and select the "select" operation:
+_Analyse_ menu and select the "select" operation:
+
 image::ProB_Jukebox_AnalyseGraphicallyOperationPRE.png[]
 
 After hitting "Select" or typing return we obtain, which shows us why
 the operation is not enabled:
+
 image::ProB_Jukebox_AnalyseGraphicallyOperationPRE3.png[]

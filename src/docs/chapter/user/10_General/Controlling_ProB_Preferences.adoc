@@ -55,7 +55,7 @@ ProB Tcl/Tk stores your preferences settings in a file
 `ProB_Preferences.pl`.
 
 The ProB preferences are grouped into various categories. In the
-"Preferences" Menu you can modify the preferences for each category:
+_Preferences_ Menu you can modify the preferences for each category:
 
 image::GraphicalViewerPreferencesMenuEntry.png[]
 

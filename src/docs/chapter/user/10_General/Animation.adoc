@@ -100,7 +100,7 @@ selected operation is backtrack, the last selected operation is removed
 from the top of the History pane and the previous state is displayed in
 the State Properties pane. If the operation was not backtrack, it is
 added to the History pane, the effect of the operation are computed and
-the state is updated in the State Properties pane
+the state is updated in the State Properties pane.
 
 [[the-analyse-menu]]
 The Analyse menu
@@ -108,7 +108,7 @@ The Analyse menu
 
 At each point during the animation process, several useful commands
 displaying various information on the B machine are available in the
-Analyse menu. The Compute Coverage command opens a window that displays
+_Analyse_ menu. The Compute Coverage command opens a window that displays
 three groups of information:
 
 * *NODES* This is the number of nodes (i.e. states) explored so far;
@@ -156,13 +156,13 @@ status indicator in the State Properties pane.
 Other Animation Features
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-Several other commands are provided by ProB in the Animate menu for
+Several other commands are provided by ProB in the _Animate_ menu for
 animating B specifications. The Reset command will set the state of the
 machine to the root, as if the machine has just been opened, i.e. when
 the initialise constants or initialise machine operations are displayed
 in the Enabled Operations pane. The Random Animation(10) command
 operates a sequence of 10 randomly chosen operations from the B
 specification. The variant Random Animation enables to specify the
-number of operation to operate randomly. In the File menu, the command
+number of operation to operate randomly. In the _File_ menu, the command
 Save State stores the current state of the B machine, which can then be
 reloaded with the command Load Saved State.

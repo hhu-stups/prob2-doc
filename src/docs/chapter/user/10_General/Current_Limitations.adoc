@@ -31,10 +31,10 @@ supported, and hence one can translate an expression closure(e), where e
 is a binary relation over some domain d, into the expression
 `closure1(e) \/ id(d)`.
 
-* Trees and binary trees. These constructs are specific to the AtelierB
-tool and are not supported (the `STRING` type is now supported);
+* Trees and binary trees are specific to the AtelierB
+tool and are not supported (the `STRING` type is now supported).
 
-* Definitions. Definitions (from the `DEFINITIONS` clause) with
+* Definitions (from the `DEFINITIONS` clause) with
 arguments are supported, but in contrast to AtelierB they are parsed
 independently and have to be either an expression, a predicate, or a
 substitution; definitions which are predicates or substitutions must be
@@ -43,9 +43,10 @@ be expressions. Finally, when replacing DEFINITIONS the associativity is
 not changed. E.g., with `PLUS(x,y) == x+y`, the expression
 `PLUS(2,3)*10` will evaluate to 50 (and not to 32 as with Atelier-B).
 
-* There are also limitations with refinements. See below;
-* `VALUES` This clause of `IMPLEMENTATION` machines is not yet
-supported;
+* There are also limitations with refinements, as discussed below.
+
+* The `VALUES` clause of `IMPLEMENTATION` machines is not yet
+supported.
 
 * Parsing: ProB will require parentheses around the comma, the
 relational composition, and parallel product operators. For example, you
@@ -53,8 +54,7 @@ cannot write `r2=rel;rel`. You need to write `r2=(rel;rel)`. This allows
 ProB to distinguish the relational composition from the sequential
 composition (or other uses of the semicolon).
 
-See the page <<using-prob-with-atelier-b,Using ProB with Atelier B>>
-for more details.
+See the page <<using-prob-with-atelier-b,Using ProB with Atelier B>> for more details.
 
 [[multiple-machines-and-refinements]]
 Multiple Machines and Refinements

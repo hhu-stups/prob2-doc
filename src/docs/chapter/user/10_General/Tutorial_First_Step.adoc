@@ -28,6 +28,7 @@ Mac users may also be able to launch ProB by double-clicking on
 `StartProB.sh`.
 
 This should bring up a window as follows (on a Mac):
+
 image::ProBStartWindow.png[]
 
 In case this does not work, please have a look at the output of ProB in
@@ -36,15 +37,19 @@ started) and send us a description of what is printed in that window
 along with a detailed report (list which operating system you use, which
 version it is, which version of ProB have you downloaded, etc.).
 Normally, it should look as follows (on Windows):
+
 image::ProBStartTerminal.png[]
 
 [[loading-a-first-b-machine]]
 Loading a first B machine
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Use the "Open..." command in the "File" menu
-image::ProBWinOpen.png[] and then navigate to the "Examples"
-directory that came with your ProB installation:
+Use the "Open..." command in the _File_ menu
+
+image::ProBWinOpen.png[]
+
+and then navigate to the "Examples" directory that came with your ProB installation:
+
 image::ProBWinExamplesFolder.png[]
 
 Inside the samples folder, open the "Lift.mch" machine. Your main ProB
@@ -59,12 +64,14 @@ First Steps in Animation
 We have now loaded a first simple B model. Let us look at the contents
 of the ProB window (ignoring the menu bar).
 
-* The upper half of the ProB window contains the source code of the
-model.
+* The upper half of the ProB window contains the source code of themodel.
+
 * The lower half contains three panes.
+
 ** The "State Properties" pane contains information about the current
 state of the model. We will explain the contents of this pane in more
 detail later.
+
 ** The Pane called "Enabled Operations" contains a list of operations
 that can be applied to your model. Before a B machine can be animated,
 we have to initialise it. Hence, initially the only option presented is
@@ -72,13 +79,14 @@ we have to initialise it. Hence, initially the only option presented is
 set the main variable of the machine (`floor`) to the value 4. This
 information is useful in case multiple initialisations are possible (in
 order to distinguish them).
+
 ** The History pane contains the list of operations you have executed to
 reach the current state of the animator. Obviously, this list is
 initially empty.
 
-Now, double click on "INITIALISATION(4)" in the ``Enabled
-Operations'' Pane. This has the effect of executing the initialization
-and moving the machine into its initialized state. The lower half of the
+Now, double click on "INITIALISATION(4)" in the "Enabled
+Operations" Pane. This has the effect of executing the initialization
+and moving the machine into its initialised state. The lower half of the
 ProB window should now look as follows (the upper half will remain
 unchanged):
 
