@@ -32,7 +32,7 @@ someComponent = model1.getComponent("the_machine")
 sameComponent = model1.the_machine // works only in Groovy
 ----
 
-In a similar way, it is possible to access the children components for a machine or context like the invariants or variables. When dealing with a B model, we can use the `getInvariants` method in a machine object to get a list of invariant defined in that machine. Invariants in classical B are automatically split into its conjuncts. We can also get a list of the events or a specific event using `getEvents` or `getEvent("name")`.  From there we can get the list of guards footnote:[In classical B we get the outermost precondition.] for an event. The following Groovy code shows an example that prints all events and their corresponding guard. We have recombined the guards into a single predicate.
+In a similar way, it is possible to access the children components for a machine or context like the invariants or variables. When dealing with a B model, we can use the `getInvariants` method in a machine object to get a list of invariants defined in that machine. Invariants in classical B are automatically split into its conjuncts. We can also get a list of the events or a specific event using `getEvents` or `getEvent("name")`.  From there we can get the list of guards footnote:[In classical B we get the outermost precondition.] for an event. The following Groovy code shows an example that prints all events and their corresponding guard. We have recombined the guards into a single predicate.
 
 [source, groovy]
 ----
