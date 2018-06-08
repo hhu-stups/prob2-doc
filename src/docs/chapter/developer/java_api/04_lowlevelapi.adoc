@@ -50,7 +50,7 @@ public class GetShortestTraceCommand extends AbstractCommand {
 }
 ----
 
-<<img-lowlevelapi>> shows how commands are executed by ProB. Commands can be combined using ComposedCommand and executed via an instance of IAnimator. When the execute method returns, the commands have been processed and the results are ready.
+<<img-lowlevelapi>> shows how commands are executed by ProB. Commands can be combined using ComposedCommand and executed via an instance of IAnimator. When the `execute` method returns, the commands have been processed and the results are ready.
 
 [#img-lowlevelapi]
 .Combined execution of low level commands
