@@ -80,7 +80,7 @@ public interface ModelFactory<T extends AbstractModel> {
 }
 ----
 
-As you can see, a `ModelFactory` extracts a `Model` object from a given specification. From this interface we can also see that the statement made previously about the model's ability to load itself into ProB is not completely accurate. A model contains several different components (for B these are machines or contexts). However, ProB requires one of these components to be specified as the so called _main component_, which is the component on which further animations will be based. The user will also likely want to set special preferences for a given animation, so this should also be available when loading the Model into ProB. For this reason, the loading function in an AbstractModel is defined as follows
+As you can see, a `ModelFactory` extracts a `Model` object from a given specification. From this interface we can also see that the statement made previously about the model's ability to load itself into ProB is not completely accurate. A model contains several different components (for B these are machines or contexts). However, ProB requires one of these components to be specified as the so called _main component_, which is the component on which further animations will be based. The user will also likely want to set special preferences for a given animation, so this should also be available when loading the Model into ProB. For this reason, the loading function in an AbstractModel is defined as follows:
 
 [source, java]
 ----
@@ -95,7 +95,7 @@ public abstract class AbstractModel extends AbstractElement {
 
 When extracting the model from a specification file, the main component is usually inherently specified. The user will extract the component `/path/to/dir/spec1.mch` and will expect that the component with the name `spec1` will have been loaded. For this reason, we have introduced the `ExtractedModel` abstraction.
 
-We have abstracted the loading mechanism for specifications so that it can be adapted to load any number of different formalisms. The classes responsible for loading the models basically have to perform three tasks: extract the static information about the specification in question, create at command to load the model into the Prolog kernel, and subscribe any formulas of interest (the subscription mechanism will be explained more in <<evaluation>>. The load command consists of setting user specified preferences, a formalism specific load command for the model, and a request for ProB to start animating the model in question. Each formalism that is supported by ProB has its own factory responsible for loading it. These factories can be created via <<dependency_injection>>, and they also have accessor methods in the `Api` class which makes it simple to load specifications in a groovy environment.
+We have abstracted the loading mechanism for specifications so that it can be adapted to load any number of different formalisms. The classes responsible for loading the models basically have to perform three tasks: extract the static information about the specification in question, create a command to load the model into the Prolog kernel, and subscribe any formulas of interest (the subscription mechanism will be explained more in <<evaluation>>. The load command consists of setting user specified preferences, a formalism specific load command for the model, and a request for ProB to start animating the model in question. Each formalism that is supported by ProB has its own factory responsible for loading it. These factories can be created via <<dependency_injection>>, and they also have accessor methods in the `Api` class which makes it simple to load specifications in a groovy environment.
 
 The load method of a factory takes three parameters:
 * the `String` path to the specification file
@@ -163,8 +163,7 @@ model2 = api.b_load("/path/classicalb/refinement.ref")
 model3 = api.b_load("/path/classicalb/machine.mch", [COMPRESSION : "true"])
 
 // loading from the ClassicalBFactory itself
-classicalBFactory.load("/path/classicalb/machine.mch", Collections.emptyMap(),
-							api.getSubscribeClosure())
+classicalBFactory.load("/path/classicalb/machine.mch", Collections.emptyMap(), api.getSubscribeClosure())
 ----
 
 == Loading Event-B specifications
@@ -176,8 +175,7 @@ model1 = api.eventb_load("/path/eventb/machine.bcm")
 model2 = api.eventb_load("/path/eventb/context.bcc")
 
 // Loading from the EventBFactory itself
-eventBFactory.load("/path/eventb/machine.bcm", Collections.emptyMap(),
-				   			api.getSubscribeClosure())
+eventBFactory.load("/path/eventb/machine.bcm", Collections.emptyMap(), api.getSubscribeClosure())
 ----
 
 If a user attempts to load an unchecked file (.bum or .buc), the loading mechanism attempts to find the correct corresponding checked file.
@@ -188,8 +186,7 @@ However, the tool also supports two further formats for loading an Event-B model
 ----
 // the following calls are equivalent
 api.eventb_load("/path/eventb/machine_mch.eventb")
-eventBFactory.loadModelFromEventBFile("/path/eventb/machine_mch.eventb",
-	                   Collections.emptyMap(), api.getSubscribeClosure())
+eventBFactory.loadModelFromEventBFile("/path/eventb/machine_mch.eventb", Collections.emptyMap(), api.getSubscribeClosure())
 ----
 
 Rodin allows users to export projects in the .zip format, so we also support the loading of Event-B specifications directly from the zipped file. Here we need further information: the name of the particular component that the user is interested in. As with the other load methods, there are optional parameters that may be specified
@@ -203,8 +200,7 @@ model1 = api.eventb_load("/path/eventb/model.zip", "machine")
 model2 = api.eventb_load("/path/eventb/model.zip", "context")
 
 // loading a zip file from EventBFactory itself
-eventBFactory.loadModelFromZip("/path/eventb/model.zip", "machine",
-                           Collections.emptyMap(), api.getSubscribeClosure()))
+eventBFactory.loadModelFromZip("/path/eventb/model.zip", "machine", Collections.emptyMap(), api.getSubscribeClosure()))
 ----
 
 == Loading TLA+ specifications
@@ -215,8 +211,7 @@ ProB provides support for TLA+ specifications via a translation tool developed s
 ----
 // As with classical B and Event-B, the following calls are equivalent
 api.tla_load("/path/tla/specification.tla")
-tlaFactory.load("/path/tla/specification.tla", Collections.emptyMap(),
-					api.getSubscribeClosure())
+tlaFactory.load("/path/tla/specification.tla", Collections.emptyMap(), api.getSubscribeClosure())
 ----
 
 == Loading CSP-M Specifications
@@ -228,8 +223,7 @@ We currently don't have a way to extract static data structures from CSP specifi
 ----
 // The following calls are equivalent
 api.csp_load("/path/csp/specification.csp")
-cspFactory.load("/path/csp/specification.csp"), Collections.emptyMap(),
-				api.EMPTY)
+cspFactory.load("/path/csp/specification.csp"), Collections.emptyMap(), api.EMPTY)
 ----
 
 == State Space
@@ -259,15 +253,15 @@ As stated before, the state space is the labeled transition system for a model. 
 [source, groovy]
 ----
 // Code snippet 1:
-x = sspace.getRoot()            // retrieves root state.
-x.getTransitions().size() == 0  // true, when the state is not explored
+x = sspace.getRoot()              // retrieves root state.
+x.getTransitions().size() == 0    // true, when the state is not explored
 x.explore()
-x.getTransitions().size() != 0  // true, when ProB has calculated a transition
+x.getTransitions().size() != 0    // true, when ProB has calculated a transition
 
 // Code snippet 2:
 x = sspace.getRoot()
 x.getOutTransitions().size() != 0 // getOutTransitions explores the state if
-                            // necessary, returning the resulting transitions
+                                  // necessary, returning the resulting transitions
 
 ----
 
