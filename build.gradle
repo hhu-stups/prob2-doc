@@ -1,9 +1,7 @@
 buildscript {
     repositories {
         jcenter()
-        maven {
-          url 'http://maven.myweek-end.ru/'
-        }
+       
     }
 
     dependencies {
