@@ -14,11 +14,13 @@ Symbolic Functions and Relations
 
 Take the following function:
 
-`CONSTANTS parity
-`PROPERTIES
-`parity : (NATURAL --> {0,1}) &
-`parity(0) = 0 &
-`!x.(x:NATURAL => parity(x+1) = 1 - parity(x))`
+---------
+CONSTANTS parity
+PROPERTIES
+parity : (NATURAL --> {0,1}) &
+parity(0) = 0 &
+!x.(x:NATURAL => parity(x+1) = 1 - parity(x))
+---------
 
 Here, ProB will complain that it cannot find a solution for parity. The
 reason is that parity is a function over an infinite domain, but ProB
@@ -201,7 +203,7 @@ try and expand the function. ProB 1.6.1 can actually check
 
 There are the following further restrictions:
 
-* ProB does not support mutual recursion yet
-* the function is not allowed to depend on other constants, unless those
+* ProB does not support mutual recursion yet.
+* The function is not allowed to depend on other constants, unless those
 other constants can be valued in a deterministic way (i.e., ProB finds
-only one possible solution for them)
+only one possible solution for them).
