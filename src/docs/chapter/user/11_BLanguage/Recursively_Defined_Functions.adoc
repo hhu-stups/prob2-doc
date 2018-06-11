@@ -14,10 +14,10 @@ Symbolic Functions and Relations
 
 Take the following function:
 
-`CONSTANTS parity` +
-`PROPERTIES` +
-`parity : (NATURAL --> {0,1}) &` +
-`parity(0) = 0 &` +
+`CONSTANTS parity
+`PROPERTIES
+`parity : (NATURAL --> {0,1}) &
+`parity(0) = 0 &
 `!x.(x:NATURAL => parity(x+1) = 1 - parity(x))`
 
 Here, ProB will complain that it cannot find a solution for parity. The
@@ -28,24 +28,30 @@ There are basically four solutions to this problem:
 
 * Write a finite function:
 
-`parity : (NAT --> {0,1}) &` +
-`parity(0) = 0 &` +
-`!x.(x:NAT & x``parity(x+1) = 1 - parity(x))`
+---------
+parity : (NAT --> {0,1}) &
+parity(0) = 0 &
+!x.(x:NAT & x``parity(x+1) = 1 - parity(x))
+---------
 
 * Rewrite your function so that in the forall you do not refer to values
 of parity greater than x:
 
-`parity : (NATURAL --> {0,1}) &` +
-`parity(0) = 0 &` +
-`!x.(x:NATURAL1 => parity(x) = 1 - parity(x-1))`
+---------
+parity : (NATURAL --> {0,1}) &
+parity(0) = 0 &
+!x.(x:NATURAL1 => parity(x) = 1 - parity(x-1))
+---------
 
 * Write your function constructively using a single recursive equation
 using set comprehensions, lambda abstractions, finite sets and set
 union. This requires ProB 1.3.5-beta7 or higher and you need to declare
 `parity` as `ABSTRACT_CONSTANT`. Here is a possible equation:
 
-`parity : INTEGER <-> INTEGER &` +
-`parity = {0|->0} \/ %x.(x:NATURAL1|1-parity(x-1))`
+---------
+parity : INTEGER <-> INTEGER &
+parity = {0|->0} \/ %x.(x:NATURAL1|1-parity(x-1))
+---------
 
 Note, you have to remove the check `parity : (NATURAL --> {0,1})`, as
 this will currently cause expansion of the recursive function. We
@@ -54,8 +60,10 @@ describe this new scheme in more detail below.
 * Another solution is try and write your function constructively and
 non-recursively, ideally using a lambda abstraction:
 
-`parity : (NATURAL --> INTEGER) &` +
-`parity = %x.(x:NATURAL|x mod 2)`
+---------
+parity : (NATURAL --> INTEGER) &
+parity = %x.(x:NATURAL|x mod 2)
+---------
 
 * Here ProB detects that parity is an infinite function and will keep it
 symbolic (if possible). With such an infinite function you can:
@@ -89,28 +97,29 @@ type expressions and predicates such as
 `parity = %x.(x:NATURAL|x mod 2) & parity[1..10] = res` directly into
 the online version of the <<eval-console,Eval console>>).
 
-`MACHINE InfiniteParityFunction` +
-`CONSTANTS parity` +
-`PROPERTIES` +
-`parity : NATURAL --> INTEGER &` +
-`parity = %x.(x:NATURAL|x mod 2)` +
-`VARIABLES c` +
-`INVARIANT` +
-`c: NATURAL` +
-`INITIALISATION c:=0` +
-`OPERATIONS` +
-`Inc = BEGIN c:=c+1 END;` +
-`r <-- Parity = BEGIN r:= parity(c) END;` +
-`r <-- ParityImage = BEGIN r:= parity[0..c] END;` +
-`r <-- ParityHistory = BEGIN r:= (%i.(i:1..c+1|i-1) ; parity) END` +
-`END`
+---------
+MACHINE InfiniteParityFunction
+CONSTANTS parity
+PROPERTIES
+parity : NATURAL --> INTEGER &
+parity = %x.(x:NATURAL|x mod 2)
+VARIABLES c
+INVARIANT
+c: NATURAL
+INITIALISATION c:=0
+OPERATIONS
+inc = BEGIN c:=c+1 END;
+r <-- Parity = BEGIN r:= parity(c) END;
+r <-- ParityImage = BEGIN r:= parity[0..c] END;
+r <-- ParityHistory = BEGIN r:= (%i.(i:1..c+1|i-1) ; parity) END
+END`
+---------
 
 You may also want to look at the tutorial page on
 <<tutorial-modeling-infinite-datatypes,modeling infinite datatypes>>.
 
 [[when-does-prob-treat-a-set-comprehension-or-lambda-abstraction-symbolically]]
-When does ProB treat a set comprehension or lambda abstraction
-symbolically ?
+When does ProB treat a set comprehension or lambda abstraction symbolically ?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Currently there are four cases when ProB tries to keep a function such
@@ -148,24 +157,26 @@ the name of the function on the left of the equation
 abstractions, set comprehensions, set union and other finite sets
 
 Here is a full example:
-
-`MACHINE Parity` +
-`ABSTRACT_CONSTANTS parity` +
-`PROPERTIES` +
-`parity : INTEGER <-> INTEGER &` +
-`parity = {0|->0} \/ %x.(x:NATURAL1|1-parity(x-1))` +
-`END`
-
+---------
+MACHINE Parity
+ABSTRACT_CONSTANTS parity
+PROPERTIES
+parity : INTEGER <-> INTEGER &
+parity = {0|->0} \/ %x.(x:NATURAL1|1-parity(x-1))
+END
+---------
 As of version 1.6.1 you can also use IF-THEN-ELSE and LET constructs in
 the body of a recursive function. The above example can for example now
 be written as:
 
-`MACHINE ParityIFTE` +
-`ABSTRACT_CONSTANTS parity` +
-`PROPERTIES` +
-`parity : INTEGER <-> INTEGER &` +
-`parity = %x.(x:NATURAL|IF x=0 THEN 0 ELSE 1-parity(x-1)END)` +
-`END`
+---------
+MACHINE ParityIFTE
+ABSTRACT_CONSTANTS parity
+PROPERTIES
+parity : INTEGER <-> INTEGER &
+parity = %x.(x:NATURAL|IF x=0 THEN 0 ELSE 1-parity(x-1)END)
+SEND
+---------
 
 [[operations-applicable-for-recursive-functions]]
 Operations applicable for recursive functions

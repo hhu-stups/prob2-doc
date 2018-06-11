@@ -12,7 +12,7 @@ As of version 1.3.5-beta7 ProB can make use of externally defined
 functions. These functions must currently be written in Prolog (in
 principle C, Java, Tcl or even other languages can be used via the
 SICStus Prolog external function interfaces). These functions can be
-used to write expression, predicates, or substitutions. The general
+used to write expressions, predicates, or substitutions. The general
 mechanism that is used is to mark certain DEFINITIONS as external, in
 which case ProB will make use of external Prolog code rather than using
 the right-hand-side of the DEFINITION whenever it is used. However,
@@ -35,7 +35,7 @@ arithmetic functions.
 providing `length`, `append`, `split` and conversion functions `chars`,
 `codes`.
 * `LibraryFiles.mch`: various functions to obtain information about
-files and directories in the underlying file system
+files and directories in the underlying file system.
 * `LibraryIO.def`: providing functions to write information to screen or
 file. Note: these external functions are polymorphic and as such cannot
 be defined as B constants: you have to use the DEFINITIONS provided in
@@ -78,8 +78,10 @@ In general you can do the following with an external function, such as
 To use a library definition file, you need to include the file in the
 DEFINITIONS clause:
 
-`DEFINITIONS` +
-`"``LibraryIO.def`"
+-------------
+DEFINITIONS
+    "LibraryIO.def"
+-------------
 
 [[overview-of-the-external-function-definition-mechanism]]
 Overview of the External Function DEFINITION Mechanism
