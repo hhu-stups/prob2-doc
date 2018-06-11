@@ -62,27 +62,27 @@ Sets:
 ^^^^^
 
 ....
- {}          empty set
- {E}         singleton set
- {E,F}       set enumeration
- {x|P}       comprehension set
- POW(S)      power set
- POW1(S)     set of non-empty subsets
- FIN(S)      set of all finite subsets
- FIN1(S)     set of all non-empty finite subsets
- card(S)     cardinality
- S*T         cartesian product
- S\/T        set union
- S/\T        set intersection
- S-T         set difference
- E:S         element of
- E/:S        not element of
- S<:T        subset of
- S/<:T       not subset of
- S<<:T       strict subset of
- S/<<:T      not strict subset of
+ {}              empty set
+ {E}             singleton set
+ {E,F}           set enumeration
+ {x|P}           comprehension set
+ POW(S)          power set
+ POW1(S)         set of non-empty subsets
+ FIN(S)          set of all finite subsets
+ FIN1(S)         set of all non-empty finite subsets
+ card(S)         cardinality
+ S*T             cartesian product
+ S\/T            set union
+ S/\T            set intersection
+ S-T             set difference
+ E:S             element of
+ E/:S            not element of
+ S<:T            subset of
+ S/<:T           not subset of
+ S<<:T           strict subset of
+ S/<<:T          not strict subset of
  union(S)        generalised union over sets of sets
- inter(S)         generalised intersection over sets of sets
+ inter(S)        generalised intersection over sets of sets
  UNION(z).(P|E)  generalised union with predicate
  INTER(z).(P|E)  generalised intersection with predicate
 ....
@@ -92,31 +92,31 @@ Numbers:
 ^^^^^^^^
 
 ....
- INTEGER     set of integers
- NATURAL     set of natural numbers
- NATURAL1    set of non-zero natural numbers
- INT         set of implementable integers (MININT..MAXINT)
- NAT         set of implementable natural numbers
- NAT1        set of non-zero implementable natural numbers
- n..m        set of numbers from n to m
- MININT      the minimum implementable integer
- MAXINT      the maximum implementable integer
- m>n         greater than
- m<n         less than
- m>=n        greater than or equal
- m<=n        less than or equal
- max(S)      maximum of a set of numbers
- min(S)      minimum of a set of numbers
- m+n         addition
- m-n         difference
- m*n         multiplication
- m/n         division
- m**n        power
- m mod n     remainder of division
+ INTEGER        set of integers
+ NATURAL        set of natural numbers
+ NATURAL1       set of non-zero natural numbers
+ INT            set of implementable integers (MININT..MAXINT)
+ NAT            set of implementable natural numbers
+ NAT1           set of non-zero implementable natural numbers
+ n..m           set of numbers from n to m
+ MININT         the minimum implementable integer
+ MAXINT         the maximum implementable integer
+ m>n            greater than
+ m<n            less than
+ m>=n           greater than or equal
+ m<=n           less than or equal
+ max(S)         maximum of a set of numbers
+ min(S)         minimum of a set of numbers
+ m+n            addition
+ m-n            difference
+ m*n            multiplication
+ m/n            division
+ m**n           power
+ m mod n        remainder of division
  PI(z).(P|E)    Set product
  SIGMA(z).(P|E) Set summation
- succ(n)     successor (n+1)
- pred(n)     predecessor (n-1)
+ succ(n)        successor (n+1)
+ pred(n)        predecessor (n-1)
 ....
 
 [[relations]]
@@ -124,21 +124,21 @@ Relations:
 ^^^^^^^^^^
 
 ....
- S<->T     relation
- E|->F     maplet
- dom(r)    domain of relation
- ran(r)    range of relation
- id(S)     identity relation
- S<|r      domain restriction
- S<<|r     domain subtraction
- r|>S      range restriction
- r|>>S     range subtraction
- r~        inverse of relation
- r[S]      relational image
- r1<+r2    relational overriding (r2 overrides r1)
- r1><r2    direct product {x,(y,z) | x,y:r1 & x,z:r2}
- (r1;r2)     relational composition {x,y| x|->z:r1 & z|->y:r2}
- (r1||r2)    parallel product {((x,v),(y,w)) | x,y:r1 & v,w:r2}
+ S<->T         relation
+ E|->F         maplet
+ dom(r)        domain of relation
+ ran(r)        range of relation
+ id(S)         identity relation
+ S<|r          domain restriction
+ S<<|r         domain subtraction
+ r|>S          range restriction
+ r|>>S         range subtraction
+ r~            inverse of relation
+ r[S]          relational image
+ r1<+r2        relational overriding (r2 overrides r1)
+ r1><r2        direct product {x,(y,z) | x,y:r1 & x,z:r2}
+ (r1;r2)       relational composition {x,y| x|->z:r1 & z|->y:r2}
+ (r1||r2)      parallel product {((x,v),(y,w)) | x,y:r1 & v,w:r2}
  prj1(S,T)     projection function (usage prj1(Dom,Ran)(Pair))
  prj2(S,T)     projection function (usage prj2(Dom,Ran)(Pair))
  closure1(r)   transitive closure
@@ -146,8 +146,8 @@ Relations:
                (non-standard version: closure({}) = {}; see iterate(r,0) below)
  iterate(r,n)  iteration of r with n>=0
                (Note: iterate(r,0) = id(s) where s = dom(r)\/ran(r))
- fnc(r)    translate relation A<->B into function A+->POW(B)
- rel(r)    translate relation A<->POW(B) into relation A<->B
+ fnc(r)        translate relation A<->B into function A+->POW(B)
+ rel(r)        translate relation A<->POW(B) into relation A<->B
 ....
 
 [[functions]]
@@ -155,16 +155,16 @@ Functions:
 ^^^^^^^^^^
 
 ....
-  S+->T      partial function
-  S-->T      total function
-  S+->>T     partial surjection
-  S-->>T     total surjection
-  S>+>T      partial injection
-  S>->T      total injection
-  S>+>>T     partial bijection
-  S>->>T     total bijection
-  %x.(P|E)   lambda abstraction
-  f(E)       function application
+  S+->T          partial function
+  S-->T          total function
+  S+->>T         partial surjection
+  S-->>T         total surjection
+  S>+>T          partial injection
+  S>->T          total injection
+  S>+>>T         partial bijection
+  S>->>T         total bijection
+  %x.(P|E)       lambda abstraction
+  f(E)           function application
   f(E1,...,En)   is now supported (as well as f(E1|->E2))
 ....
 
@@ -191,8 +191,8 @@ Sequences:
   front(s)   front of sequence (all but last element)
   tail(s)    tail of sequence (all but first element)
   conc(S)    concatenation of sequence of sequences
-  s/|\n     take first n elements of sequence
-  s\|/n     drop first n elements from sequence
+  s/|\n      take first n elements of sequence
+  s\|/n      drop first n elements from sequence
 
 ....
 
@@ -211,12 +211,12 @@ Strings:
 ^^^^^^^^
 
 ....
-  "astring"     a specific (single-line) string value
-  '''astring''' an alternate way of writing (multi-line) strings, no need to escape "
-  STRING        the set of all strings
-                Note: for the moment enumeration of strings is limited (if a variable
-                of type STRING is not given a value by the machine, then ProB assumes
-                STRING = { "STR1", "STR2" })
+  "astring"       a specific (single-line) string value
+  '''astring'''   an alternate way of writing (multi-line) strings, no need to escape "
+  STRING          the set of all strings
+                  Note: for the moment enumeration of strings is limited (if a variable
+                  of type STRING is not given a value by the machine, then ProB assumes
+                  STRING = { "STR1", "STR2" })
 ....
 
 Atelier-B does not support any operations on strings, apart from
@@ -225,12 +225,14 @@ equality and disequality. However, the ProB
 operators on strings. ProB also allows multi-line strings. As of version
 1.7.0, ProB will support the following escape sequences within strings:
 
-`\n   newline (ASCII character 13)` +
-`\r   carriage return (ASCII 10)` +
-`\t  tab (ASCII 9)` +
-`\"   the double quote symbol "` +
-`\'   the single quote symbol '` +
-`\\   the backslash symbol`
+....
+  \n   newline (ASCII character 13)
+  \r   carriage return (ASCII 10)
+  \t   tab (ASCII 9)
+  \"   the double quote symbol "
+  \'   the single quote symbol '
+  \\   the backslash symbol
+....
 
 Within single-line string literals, you do not need to escape '. Within
 multi-line string literals, you do not need to escape " and you can use
@@ -243,7 +245,7 @@ Trees:
 
 Nodes in the tree are denoted by index sequences (branches), e.g,
 n=[1,2,1] Each node in the tree is labelled with an element from a
-domain S A tree is a function mapping of branches to elements of the
+domain S. A tree is a function mapping of branches to elements of the
 domain S.
 
 ....
@@ -263,8 +265,8 @@ domain S.
   right(t)     the right (last) son of the root of the binary tree t
   sizet(t)     the size of the tree (number of nodes)
   prefix(t)    the nodes of the tree t in prefix order
-  postfix(t)    the nodes of the tree t in prefix order
-  mirror, infix are recognised by the parser but not yet supported by ProB itself
+  postfix(t)   the nodes of the tree t in prefix order
+               mirror, infix are recognised by the parser but not yet supported by ProB itself
 ....
 
 [[let-and-if-then-else]]
@@ -278,8 +280,7 @@ ProB allows the following for predicates and expressions:
    LET x1,... BE x1=E1 & ... IN E END
 ....
 
-Note: the expressions E1,... defining x1,... are not allowed to use
-x1,...
+Note: The expressions E1,... defining x1,... are not allowed to use x1,...
 
 [[statements-aka-substitutions]]
 Statements (aka Substitutions):
@@ -294,9 +295,9 @@ Statements (aka Substitutions):
   x <-- OP(x)  call operation and assign return value
   G||H         parallel substitution**
   G;H          sequential composition**
-  ANY x,... WHERE P THEN G END   non deterministic choice
+  ANY x,... WHERE P THEN G END     non deterministic choice
   LET x,... BE x=E & ... IN G END
-  VAR x,... IN G END             generate local variables
+  VAR x,... IN G END               generate local variables
   PRE P THEN G END
   ASSERT P THEN G END
   CHOICE G OR H END
