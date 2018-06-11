@@ -378,7 +378,9 @@ Definitions:
   NAME2(ID,...,ID) == E2;       Definition with arguments
 ....
 
-`"``FILE.def`"`;                   Include definitions from file`
+....
+"FILE.def";                     Include definitions from file`
+....
 
 There are a few Definitions which can be used to influence the animator:
 
