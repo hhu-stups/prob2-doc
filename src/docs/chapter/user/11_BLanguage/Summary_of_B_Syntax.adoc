@@ -386,7 +386,7 @@ There are a few Definitions which can be used to influence the animator:
 
 ....
   GOAL == P                to define a custom Goal predicate for Model Checking
-                        (the Goal is also set by using "Advanced Find...")
+                           (the Goal is also set by using "Advanced Find...")
   SCOPE == P               to limit the search space to "interesting" nodes
   scope_SETNAME == n..n    to define custom cardinality for set SETNAME
   scope_SETNAME == n       equivalent to 1..n
@@ -395,12 +395,12 @@ There are a few Definitions which can be used to influence the animator:
   SET_PREF_MAX_INITIALISATIONS == n  max. number of intialisations computed
   SET_PREF_MAX_OPERATIONS == n       max. number of enablings per operation computed
   SET_PREF_SYMBOLIC == TRUE/FALSE
-  ASSERT_LTL... == "LTL Formula"    using X,F,G,U,R LTL operators +
-                                   Y,O,H,S Past-LTL operators +
-                                   atomic propositions: e(OpName), [OpName], {BPredicate}
+  ASSERT_LTL... == "LTL Formula"     using X,F,G,U,R LTL operators +
+                                     Y,O,H,S Past-LTL operators +
+                                     atomic propositions: e(OpName), [OpName], {BPredicate}
   ANIMATION_FUNCTION == e            a function (INT*INT) +-> INT or an INT
   ANIMATION_FUNCTION_DEFAULT == e    a function (INT*INT) +-> INT or an INT
-                    instead of any INT above you can also use BOOL or any SET
+                                     instead of any INT above you can also use BOOL or any SET
   ANIMATION_IMGn == "PATH to .gif"   a path to a gif file
   ANIMATION_STRn == "sometext"       a string without spaces
 ....
@@ -457,34 +457,32 @@ the semantics of Abrial's B-Book and of
 http://www.atelierb.eu/php/documents-en.php#manuel-reference[Atelier B's
 reference manual]. Here are the main differences with Atelier B:
 
-....
-  - tuples without parentheses are not supported; write (a,b,c) instead of a,b,c
-  - relational composition has to be wrapped into parentheses; write (f;g)
-  - parallel product also has to be wrapped into parentheses; write (f||g)
-  - trees are not yet fully supported
-  - the VALUES clause is only partially supported
-  - definitions have to be syntactically correct and be either an expression,
+  - Tuples without parentheses are not supported; write `(a,b,c)` instead of a,b,c
+  - Relational composition has to be wrapped into parentheses; write `(f;g)`
+  - Parallel product also has to be wrapped into parentheses; write `(f||g)`
+  - Trees are not yet fully supported
+  - The VALUES clause is only partially supported
+  - Definitions have to be syntactically correct and be either an expression,
     predicate or substitution;
     the arguments to definitions have to be expressions;
     definitions which are predicates or substitutions must be declared before first use
-  - definitions are local to a machine
-  - for ProB the order of fields in a record is not relevant (internally the fields are
+  - Definitions are local to a machine
+  - For ProB the order of fields in a record is not relevant (internally the fields are
     sorted), Atelier-B reports a type error if the order of the name of the fields changes
-  - well-definedness: for disjunctions and implications ProB uses the L-system
-    of well-definedness (i.e., for P => Q, P should be well-defined and
+  - Well-Definedness: for disjunctions and implications ProB uses the L-system
+    of well-definedness (i.e., for `P => Q`, P should be well-defined and
     if P is true then Q should also be well-defined)
   - ProB allows WHILE loops and sequential composition in abstract machines
   - ProB now allows the IF-THEN-ELSE and LET for expressions and predicates
-    (e.g., IF x<0 THEN -x ELSE x END or LET x BE x=f(y) IN x+x END)
+    (e.g., `IF x<0 THEN -x ELSE x END or LET x BE x=f(y) IN x+x END`)
   - ProB's type inference is stronger than Atelier-B's, much less typing predicates
     are required
   - ProB accepts operations with parameters but without pre-conditions
   - ProB allows identifiers consisting of a single character
   - ProB allows multi-line strings and supports UTF-8 characters in strings,
-    and ProB allows string literals written using three apostrophes ('''string''')
-  - ProB allows a she-bang line in machine files starting with #!
- (If you discover more differences, please let us know!)
-....
+    and ProB allows string literals written using three apostrophes (`'''string'''`)
+  - ProB allows a she-bang line in machine files starting with `#!` +
+(If you discover more differences, please let us know!)
 
 See also our Wiki for documentation:
 
@@ -494,28 +492,19 @@ See also our Wiki for documentation:
 Also note that there are various differences between BToolkit and
 AtelierB/ProB:
 
-....
  - AtelierB/ProB do not allow true as predicate;
    e.g., PRE true THEN ... END is not allowed (use BEGIN ... END instead)
  - AtelierB/ProB do not allow a machine parameter to be used in the PROPERTIES
  - AtelierB/ProB require a scalar machine parameter to be typed in the
    CONSTRAINTS clause
  - In AtelierB/ProB the BOOL type is pre-defined and cannot be redefined
-....
 
 [[other-notes]]
 Other notes
 ^^^^^^^^^^^
-
-....
- ProB is best at treating universally quantified formulas of the form
- !x.(x:SET => RHS), or
- !(x,y).(x|->y:SET =>RHS), !(x,y,z).(x|->y|->z:SET =>RHS), ...;
- otherwise the treatment of !(x1,...,xn).(LHS => RHS) may delay until all values
- treated by LHS are known.
- Similarly, expressions of the form SIGMA(x).(x:SET|Expr) and PI(x).(x:SET|Expr)
- lead to better constraint propagation.
- The construction S:FIN(S) is recognised by ProB as equivalent to the Event-B
- finite(S) operator.
+ProB is best at treating universally quantified formulas of the form `!x.(x:SET => RHS)`,
+or  `!(x,y).(x|->y:SET =>RHS)`, `!(x,y,z).(x|->y|->z:SET =>RHS)`, ...;+
+otherwise the treatment of `!(x1,...,xn).(LHS => RHS)` may delay until all values treated by LHS are known. +
+Similarly, expressions of the form `SIGMA(x).(x:SET|Expr)` and `PI(x).(x:SET|Expr)` lead to better constraint propagation. +
+The construction S:FIN(S) is recognised by ProB as equivalent to the Event-B finite(S) operator. +
 ProB assumes that machines and STRING values are encoded using UTF-8.
-....

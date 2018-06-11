@@ -24,23 +24,35 @@ of the `LET` substitution syntax in expressions and predicates.
 Examples:
 +++++++++
 
-`>>> LET a BE a = 10 IN a + 10 END` +
-`Expression Value = 20`
+----
+>>> LET a BE a = 10 IN a + 10 END
+Expression Value = 20
+----
 
-`>>> LET a BE a=10 IN a END + 10` +
-`Expression Value = 20`
+----
+>>> LET a BE a=10 IN a END + 10
+Expression Value = 20
+----
 
-`>>> LET a BE a=10 IN a END = 10` +
-`Predicate is TRUE`
+----
+>>> LET a BE a=10 IN a END = 10
+Predicate is TRUE
+----
 
-`>>> LET a BE a = 10 IN a < 10 END` +
-`Predicate is FALSE`
+----
+>>> LET a BE a = 10 IN a < 10 END
+Predicate is FALSE
+----
 
-`>>> LET a BE a=10 IN a /= 10 END or 1=1` +
-`Predicate is TRUE`
+----
+>>> LET a BE a=10 IN a /= 10 END or 1=1
+Predicate is TRUE
+----
 
-`>>> LET a, b BE a = 10 & b = 1 IN a + b END` +
-`Expression Value = 11`
+----
+>>> LET a, b BE a = 10 & b = 1 IN a + b END
+Expression Value = 11
+----
 
 [[let-for-predicates]]
 Let for predicates
@@ -109,18 +121,25 @@ of the `LET` substitution syntax in expressions and predicates.
 Examples:
 +++++++++
 
-`>>> IF 1 = 1 THEN 3 ELSE 4 END` +
-`Expression Value = 3`
+----
+>>> IF 1 = 1 THEN 3 ELSE 4 END
+Expression Value = 3
+----
 
-`>>> IF 1 = 1 THEN 3 ELSE 4 END + 5` +
-`Expression Value = 8`
+----
+>>> IF 1 = 1 THEN 3 ELSE 4 END + 5
+Expression Value = 8
+----
 
-`>>> IF 1=1 THEN TRUE = FALSE  ELSE TRUE=TRUE END` +
-`Predicate is FALSE`
+----
+>>> IF 1=1 THEN TRUE = FALSE  ELSE TRUE=TRUE END
+Predicate is FALSE
+----
 
-`>>> IF 1=1 THEN TRUE = FALSE  ELSE TRUE=TRUE END or 1=1` +
-`Predicate is TRUE`
-
+----
+>>> IF 1=1 THEN TRUE = FALSE  ELSE TRUE=TRUE END or 1=1
+Predicate is TRUE
+----
 [[expressions]]
 Expressions
 ^^^^^^^^^^^
@@ -210,7 +229,7 @@ can compute the relational image of `closure1(step)` for a particular
 set such as `{({4,5,2},[])}` (provided the recursion terminates).
 
 [[recursion-using-abstract_constants]]
-Recursion using `ABSTRACT_CONSTANTS`
+Recursion using ABSTRACT:_CONSTANTS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Recursive functions can be declared using the `ABSTRACT_CONSTANTS`
@@ -220,15 +239,16 @@ treated symbolically by ProB and not evaluated eagerly.
 For example, to sort a set of integers into a ascending sequence, as
 above, we would define a recursive function as follows:
 
-`ABSTRACT_CONSTANTS` +
-`Recursive_Sort` +
-`PROPERTIES` +
-`Recursive_Sort : POW(INTEGER) <-> POW(INTEGER*INTEGER)` +
-`& Recursive_Sort =` +
-`%in.(in : POW(INTEGER) & in = {} | [])` +
-`\/ %in.(in : POW(INTEGER) & in /= {}` +
-`| min(in) -> Recursive_Sort(in\{min(in)}))`
-
+----
+ABSTRACT_CONSTANTS
+Recursive_Sort
+PROPERTIES
+Recursive_Sort : POW(INTEGER) <-> POW(INTEGER*INTEGER)
+& Recursive_Sort =
+%in.(in : POW(INTEGER) & in = {} | [])
+\/ %in.(in : POW(INTEGER) & in /= {}
+| min(in) -> Recursive_Sort(in\{min(in)}))
+----
 By defining `Recursive_Sort` as an abstract constant we indicate that
 ProB should handle the function symbolically, i.e. ProB will not try to
 enumerate all elements of the function. The recursive function itself is
