@@ -36,11 +36,11 @@ INVARIANT;
 top-level SELECT statement of the operation;
 * Variables in universal or existential quantifications;
 * Variables of set comprehensions must be typed in a conjunct of the
-body of the set comprehension. For example, \{xx | xx:NAT & xx>0 & xx<5}
-is fine, but \{xx | xx>0 & xx<5} is not;
+body of the set comprehension. For example, `\{xx | xx:NAT & xx>0 & xx<5}`
+is fine, but `\{xx | xx>0 & xx<5}` is not;
 * Variables of lambda abstractions must be typed in the predicate part
-of the abstraction. For example, %yy.(yy:NAT|yy-1) properly types the
-variable yy;
+of the abstraction. For example, `%yy.(yy:NAT|yy-1)` properly types the
+variable `yy`;
 * Variables introduced in ANY statements must be typed in the WHERE part
 of the statement.
 
@@ -63,9 +63,9 @@ In the B specification, a set is either defined explicitely, thus being
 a finite domain, or its definition is deferred. In the later case, the
 user can indicate the size of the set mySET (without defining its
 elements) by creating a macro in the DEFINITIONS clause with the name
-scope_mySET and an integer value (e.g. scope_mySET==2) or a value
-specified as a range (e.g. scope_mySET == 1..12). The macros with the
-prefix "scope_" will be used by ProB and do not modify the B
+`scope_mySET` and an integer value (e.g. `scope_mySET==2`) or a value
+specified as a range (e.g. `scope_mySET == 1..12`). The macros with the
+prefix `scope_` will be used by ProB and do not modify the B
 specification. If the size of the set is unspecified, ProB considers the
 set to have a default size. The value for the default size is defined in
 the Preferences|Animation Preferences... preference window by the
@@ -73,8 +73,8 @@ preference Size of unspecified sets in SETS section.
 
 The B method enables to specify the size of a set with the card operator
 in the PROPERTIES clause; this form of constraint is now supported by
-ProB, provided it is of a simple form card(S)=Nr, where S is a deferred
-set and Nr a natural number.
+ProB, provided it is of a simple form `card(S)=Nr`, where `S` is a deferred
+set and `Nr` a natural number.
 
 [[enumeration-in-prob]]
 Enumeration in ProB
@@ -84,25 +84,25 @@ The typing information is used by ProB to enumerate the possible values
 of a constant or a variable whenever a specification does not narrow
 down that value to a single value.
 
-For example, if you write xx:NAT & xx=1 ProB does not have to resort to
-enumeration as the xx=1 constraint imposes a single possible value for
-xx. However, if you write xx:NAT & xx<3 ProB will enumerate the possible
-values of xx in order to find those that satisfy the constraints imposed
+For example, if you write `xx:NAT & xx=1` ProB does not have to resort to
+enumeration as the `xx=1` constraint imposes a single possible value for
+`xx`. However, if you write `xx:NAT & xx<3` ProB will enumerate the possible
+values of `xx` in order to find those that satisfy the constraints imposed
 by the machine (here 0,1,2).
 
 ProB will use the constraints to try to cut down the enumeration space,
 and will resort to enumeration usually only as a last resort. So
-something like xx:NAT & xx<10 & x>2 & x=5 will not result in
+something like `xx:NAT & xx<10 & x>2 & x=5` will not result in
 enumeration.
 
 The enumeration range for integers is controlled by two preferences in
-the Preferences|Animation Preferences... preference window: !MinInt,
-used for expressions such as xx::INT, and !MaxInt, used for expressions
-such as xx::NAT preferences. Nevertheless, writing xx: NAT & xx = 55
-puts the value 55 in x no matter what !MaxInt is set to, as no
+the Preferences|Animation Preferences... preference window: `!MinInt`,
+used for expressions such as `xx::INT`, and `!MaxInt`, used for expressions
+such as `xx::NAT` preferences. Nevertheless, writing `xx: NAT & xx = 55`
+puts the value `55` in `xx` no matter what `!MaxInt` is set to, as no
 enumeration is required.
 
 Note that these preferences also apply to the mathematical integers
 (INTEGER) and natural numbers (NATURAL). In case a mathematical integer
-or natural number is enumerated (using !MinInt and !MaxInt) a warning is
+or natural number is enumerated (using `!MinInt` and `!MaxInt`) a warning is
 printed on the console.
