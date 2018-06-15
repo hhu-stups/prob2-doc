@@ -15,8 +15,7 @@ Violations using the Model Checker)]
 Here we want to describe the advantages and disadvantages of the various
 methods.
 
-.align="bottom" style="color:#e76700;" |__Comparing ProB Validation
-Techniques__
+.__Comparing ProB Validation Techniques__
 [cols=",,,,",options="header",]
 |=======================================================================
 |Question |Model Checking |LTL Model Checking |CBC Checking |Bounded

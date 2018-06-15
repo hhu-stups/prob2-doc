@@ -32,8 +32,8 @@ END
 
 The ProB model checker will here run for a very long time before
 uncovering the error that occurs when `ct` is set to lim. If you run the
-<<tlc,TLC backend>> you will get the error message
-"`Too many possible next states for the last state in the trace.`"
+<<tlc,TLC backend>> you will get the error message:
+`"Too many possible next states for the last state in the trace."`
 
 However, for the bounded model checker this is less of a problem; it
 will use the constraint solver to try and find suitable values of the
@@ -77,10 +77,10 @@ Runtime (wall): 120 ms
 ....
 
 You can also use the bounded model checker from ProB Tcl/Tk. The command
-is situated inside the Experimental sub-menu of the Analyse menu (to see
+is situated inside the Experimental sub-menu of the _Analyse_ menu (to see
 the command, you may have to change the preference entry to
 `preference(user_is_an_expert_with_accessto_source_distribution,true).`
 in the `ProB_Preferences.pl` file) Running the command on the above
 example will generate the following counter-example:
 
-image::BMC_Counter_Wrong.png[]]
+image::BMC_Counter_Wrong.png[]

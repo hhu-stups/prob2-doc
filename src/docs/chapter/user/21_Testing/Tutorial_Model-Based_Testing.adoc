@@ -40,7 +40,7 @@ model-checking-based or a constraint-based approach.
 [[model-checking-based-testcase-generation]]
 === Model-Checking Based Test Case Generation
 
-To start the test case generation select _Analyse > Testing > model-checking-based test case generation..._. In the appearing window one can set some parameters:
+To start the test case generation select _Analyse_ > "Testing" > "model-checking-based test case generation...". In the appearing window one can set some parameters:
 
 * Output file: Enter a filename in the first text field to save the test cases in this file.
 * Predicate: Enter the predicate that the last state in a test case has to satisfy. Leaving this field empty leads to test cases of length 1 only.
@@ -102,7 +102,7 @@ You cannot look at the test cases in ProB. Instead you can open the file you jus
 [[constraint-based-testcase-generation]]
 === Constraint-Based Test Case Generation
 
-The constraint-based test case generation can be started by selecting _Analyse > Testing > constraint-based test case generation..._. In the appearing window one can set the same parameters as described before (except for the maximum number of states). Clicking on _View CBC Test Tree_ in the window popping up will open another window showing the test cases.
+The constraint-based test case generation can be started by selecting _Analyse_ > "Testing" > "constraint-based test case generation...". In the appearing window one can set the same parameters as described before (except for the maximum number of states). Clicking on _"View CBC Test Tree"_ in the window popping up will open another window showing the test cases.
 
 image::MBT-CBC-Tree-Acc.png[]
 

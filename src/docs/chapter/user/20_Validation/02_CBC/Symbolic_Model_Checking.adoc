@@ -50,8 +50,8 @@ END
 
 The ProB model checker will here run for a very long time before
 uncovering the error that occurs when `ct` is set to lim. If you run the
-<<tlc,TLC backend>> you will get the error message
-"`Too many possible next states for the last state in the trace.`"
+<<tlc,TLC backend>> you will get the error message:
+`"Too many possible next states for the last state in the trace."`
 
 However, for the symbolic model checking techniques this is less of a
 problem. You can use them via command-line version of ProB as follows:
@@ -86,8 +86,7 @@ Instead of "bmc" you can use "kinduction" and "ic3" as command
 line arguments in order to use the other algorithms.
 
 The algorithms are also available from within ProB Tcl/Tk. They can be
-found inside the "Symbolic Model Checking" sub-menu of the "Analyse"
-menu.
+found inside the "Symbolic Model Checking" sub-menu of the _Analyse_ menu.
 
 [[more-details]]
 More details

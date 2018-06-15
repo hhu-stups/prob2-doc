@@ -33,8 +33,6 @@ How does it work?
 
 1.  Open the abstract specification, explore its state space (e.g.,using
 an exhaustive temporal model check).
-2.  Use the command "Save state for later refinement check" in the
-"Verify" menu.
+2.  Use the command "Save state for later refinement check" in the _Verify_ menu.
 3.  Open the refinement machine.
-4.  You can now use the "Refinement Check..." command in the
-"Verify" menu.
+4.  You can now use the "Refinement Check..." command in the _Verify_ menu.

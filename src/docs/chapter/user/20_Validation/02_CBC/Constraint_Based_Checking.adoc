@@ -48,8 +48,8 @@ Commands of the Constraint Based Checker
 
 These commands are only accessible in the "Normal" mode of ProB (see
 link:/General_Presentation_(tcl/tk)#The_ProB_main_window[General
-Presentation]) and are in the sub-menu ``Verify|Constraint Based
-Checking''. The command "Constraint Search for Invariant Violations"
+Presentation]) and are in the sub-menu "Verify|Constraint Based
+Checking". The command "Constraint Search for Invariant Violations"
 will execute the constraint based checking described above to check for
 invariant violations. The process stops as soon as a counterexample has
 been found and then displays the counter-example in the animation panes.
