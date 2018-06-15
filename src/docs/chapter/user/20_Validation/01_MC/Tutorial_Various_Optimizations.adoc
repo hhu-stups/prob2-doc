@@ -1,4 +1,4 @@
-:wikifix: 2
+[red]#impossible#:wikifix: 2
 ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 [[tutorial-various-optimizations]]
 = Tutorial Various Optimizations
@@ -129,7 +129,7 @@ state space is sound in regard to the property being checked on the
 model. In fact, there are four conditions that each ample set should
 satisfy:
 
-* (A 1) `ample(s) = {} <=> enabled(s) = {}`
+* (A 1) `ample(s) = {} \<\=> enabled(s) = {}`
 * (A 2) Along every finite execution in the original state space
 starting in `s`, an event dependent on `ample(s)` cannot appear before
 some event from `ample(s)` is executed
@@ -295,12 +295,18 @@ such a kind of relations. The enabling relations are determined by means
 of syntactic and constraint-based analyses. In particular, we
 concentrate on three kinds of enabling relations:
 
-*image::_GuaranteedRelation.png[] +
-`Op2` is *always* enabled after the execution of `Op1`
-*image::_ImpossibleRelation.png[] +
-`Op2` is *impossible* to be enabled after the execution of `Op1`
-*image::_KeepRelation.png[] +
-`Op1` *keeps* `Op2` enabled respectively disabled
+* `Op2` is *always* enabled after the execution of `Op1`
+
+image::_GuaranteedRelation.png[]
+
+* `Op2` is *impossible* to be enabled after the execution of `Op1`
+
+image::_ImpossibleRelation.png[]
+
+* `Op1` *keeps* `Op2` enabled respectively disabled
+
+image::_KeepRelation.png[]
+
 
 Consider the B machine below modelling an algorithm for mutual exclusion
 with a semaphore (in the machine below this is variable `y`) for two
@@ -393,19 +399,19 @@ always guaranteed, respectively.
 |=======================================================================
 |Origin |Req1 |Enter1 |Rel1 |Req2 |Enter2 |Rel2
 
-|Req1 | impossible |enable | impossible | keep | keep | keep
+|Req1 | [red]#impossible# |enable | [red]#impossible# | [yellow]#keep# | [yellow]#keep# | [yellow]#keep#
 
-|Enter1 | impossible | impossible | guaranteed | keep | impossible |
-keep
+|Enter1 | [red]#impossible# | [red]#impossible# | [green]#guaranteed# | [yellow]#keep# | [red]#impossible# |
+[yellow]#keep#
 
-|Rel1 | guaranteed | impossible | impossible | keep |enable | keep
+|Rel1 | [green]#guaranteed# | [red]#impossible# | [red]#impossible# | [yellow]#keep# |enable | [yellow]#keep#
 
-|Req2 | keep | keep | keep | impossible |enable | impossible
+|Req2 | [yellow]#keep# | [yellow]#keep# | [yellow]#keep# | [red]#impossible# |enable | [red]#impossible#
 
-|Enter2 | keep | impossible | keep | impossible | impossible |
-guaranteed
+|Enter2 | [yellow]#keep# | [red]#impossible# | [yellow]#keep# | [red]#impossible# | [red]#impossible# |
+[green]#guaranteed#
 
-|Rel2 | keep |enable | keep | guaranteed | impossible | impossible
+|Rel2 | [yellow]#keep# |enable | [yellow]#keep# | [green]#guaranteed# | [red]#impossible# | [red]#impossible#
 |=======================================================================
 
 Let us now consider state latexmath:[$s_2$] in Figure 1 that we assume
@@ -481,7 +487,7 @@ latexmath:[$s_7$] without testing their guards for enabledness. The only
 operation that we need to test for enabledness in latexmath:[$s_7$] is
 `Enter2`.
 
-/_file:_StateSpaceDepthFirst.png_[ file: StateSpaceDepthFirst.png ]
+image::StateSpaceDepthFirst.png[]
 
 Let us now consider the explored state space in Figure 3. Using
 breadth-first search will explore all states above latexmath:[$s_7$] and
@@ -499,7 +505,7 @@ conclude that all operations are disabled in latexmath:[$s_7$] except
 for `Rel1`. Thus, in this case we saved up one guard test more in
 comparison to the depth-first search example.
 
-/_file:_StateSpaceBreadthFirst.png_[ file: StateSpaceBreadthFirst.png ]
+image::StateSpaceBreadthFirst.png[]
 
 Model checking with partial guard evaluation usually tends to decrease
 more significantly the number of guards being tested using breadth-first
@@ -516,7 +522,7 @@ an optimisation for model checking the models. In the *Skipped/Total
 Guard Tests* column the number of omitted guard tests and the total
 number of guards are given.
 
-/_file:_PGEEvaluationTable.png_[ file: PGEEvaluationTable.png ]
+image::PGEEvaluationTable.png[]
 
 In all test cases except for 'All Enabled' and 'Cruise Control' model
 checking with PGE has provided better performance results than model

@@ -10,7 +10,7 @@ introduction to LTL see the
 http://en.wikipedia.org/wiki/Linear_temporal_logic[Wikipedia Article].
 
 To use this feature, select "Check LTL/CTL Assertions" in the
-"Verify" menu. The feature can also be accessed by the key combination
+_Verify_ menu. The feature can also be accessed by the key combination
 "Ctrl+L" under Windows and Linux, and by the key combination "Cmd+L"
 under MacOS. The following window appears:
 
@@ -73,7 +73,7 @@ LTL Preferences
 
 There is a set of options coming with the LTL model checker. In this
 section we give a brief overview of the preferences. The LTL preferences
-can be viewed by selecting "LTL Preferences" in the "Preferences"
+can be viewed by selecting "LTL Preferences" in the _Preferences_
 menu of the LTL/CTL Assertions Viewer.
 
 *Exploring new states* +
@@ -105,13 +105,13 @@ and put it into ProB's lib folder, by choosing
 
 `Download and Install LTL2BA Tool...`
 
-from the Help menu.
+from the _Help_ menu.
 
 *Search Options* +
 The model checker searches for a counterexample (i.e. a path that does
 not satisfy the current formula). Where the checked paths through the
-model's search space start depend on the following options in the LTL
-Preferences’ menu:
+model's search space start depend on the following options in the "LTL
+Preferences"’ menu:
 
 1.  _Start search in initialization_ +
 All paths that start in a state of the initialization of the machine are
@@ -121,8 +121,8 @@ All paths that start in the current state are checked.
 3.  _Start in initialization, but check formula in current state_ +
 All paths that start in a state of the initialization of the machine are
 checked, but the formula is mapped to the current state. For example,
-this option can be used to check properties like ``Is this state only
-reachable directly after executing operation `xy`?'': The formula would
+this option can be used to check properties like "Is this state only
+reachable directly after executing operation `xy`?": The formula would
 be `Y[xy]`. This is equivalent to "G (current => f)" with f as the
 entered formula and using the option "Start search in initialization".
 
@@ -151,8 +151,7 @@ well.
 state use `sink`. This can be useful for finding "pseudo"-deadlocks,
 i.e. states where only query-operations are enabled that do not change
 the state. Note that `sink` holds for deadlock states as well.
-** For checking if a state is a deadlock state the atomic proposition `
-deadlock ` can be used.
+** For checking if a state is a deadlock state the atomic proposition `deadlock` can be used.
 ** To check if a set of operations is disabled in a state use
 `deadlock(Op1,Op2,...,Opk)`, where Op1,Op2,...,Opk with k>0 are
 operations of the model. It is also possible to check if specific
@@ -196,7 +195,7 @@ the operations starts.
 
 * Fairness operators
 ** `WF(Op)` or `wf(Op)`: weak fairness, where `Op` is an operation
-** `SF(Op)`or `sf(Op)`: strong fairness, where `Op` is an operation
+** `SF(Op)` or `sf(Op)`: strong fairness, where `Op` is an operation
 ** `WEF`: weak fairness for all possible operations
 ** `SEF`: strong fairness for all possible operations
 
@@ -272,9 +271,11 @@ means of the formula "SEF => f".
 The grammar for imposing fairness constraints by means of the fairness
 implication ("fair => f") looks as follows:
 
-`fair ::= WEF | SEF | wfair | sfair | wfair & sfair | sfair & wfair` +
-`wfair ::= wf(a) | ( wfair ) | wfair & wfair | wfair or wfair` +
-`sfair ::= sf(a) | ( sfair ) | sfair & sfair | sfair or sfair`
+----
+fair ::= WEF | SEF | wfair | sfair | wfair & sfair | sfair & wfair
+wfair ::= wf(a) | ( wfair ) | wfair & wfair | wfair or wfair
+sfair ::= sf(a) | ( sfair ) | sfair & sfair | sfair or sfair
+----
 
 where "a" is a transition proposition.
 
@@ -283,20 +284,22 @@ Storing LTL Assertions in the Model
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Storing LTL formulas in B machines* +
-LTL formulas can be stored in the `DEFINITIONS` section of a B machine.
-The name of the definition must start with `ASSERT_LTL` and a string
+LTL formulas can be stored in the DEFINITIONS section of a B machine.
+The name of the definition must start with ASSERT_LTL and a string
 must be specified. In case there is more than one LTL assertion given in
-the ‘DEFINITIONS’ section, the particular LTL assertions must be
+the DEFINITIONS section, the particular LTL assertions must be
 separated by semicolon. For example:
 
-`DEFINITIONS` +
-`ASSERT_LTL  == "``G````(e(SetCruiseSpeed)````=>````e(CruiseBecomesNotAllowed))`"`;` +
-`ASSERT_LTL1 == "``G````(e(CruiseBecomesNotAllowed)````=>````e(SetCruiseSpeed))`"`;` +
-`ASSERT_LTL2 == "``G````(e(CruiseBecomesNotAllowed)````=>````(ObstacleDisappears))`"
+----
+DEFINITIONS
+ASSERT_LTL  == "G (e(SetCruiseSpeed) => e(CruiseBecomesNotAllowed))";
+ASSERT_LTL1 == "G (e(CruiseBecomesNotAllowed) => e(SetCruiseSpeed))";
+ASSERT_LTL2 == "G (e(CruiseBecomesNotAllowed) => (ObstacleDisappears))"
+----
 
 *Storing LTL formulas in CSP-M specifications* +
 LTL formulas can be stored within pragmas in CSP-M specifications. A
-pragma in which a single LTL formula is stored is given by "\{-#
+pragma in which a single LTL formula is stored is given by "{-#
 assert_ltl "f" "c" #-}", where "assert_ltl" indicates the type of
 the information stored in the pragma (there are currently two types:
 assert_ltl and assert_ctl), and is followed by the LTL formula `f` and a
@@ -305,9 +308,11 @@ comment, must be enclosed in double quotes. It is also possible to give
 several LTL formulas in a single pragma within which the corresponding
 LTL assertions are separated by semicolon. For example:
 
-`{-# assert_ltl "``SF(enter.1)````&````WF(req.1)````=>````GF([enter.1])`"`;` +
-`assert_ltl "``SF(enter.2)````&````WF(req.2)````=>````GF([enter.2])`"`;` +
-`assert_ltl "``GF````[enter.1]````&````GF````[enter.2]`"`"``Should````fail.`"`#-}`
+----
+{-# assert_ltl "SF(enter.1) & WF(req.1) => GF([enter.1])";
+    assert_ltl "SF(enter.2) & WF(req.2) => GF([enter.2])";
+    assert_ltl "GF [enter.1] & GF [enter.2]" "Should fail."#-}
+----
 
 Note that a semicolon must not follow the last assertion in a pragma.
 
@@ -316,20 +321,22 @@ particular processes in the model. This is possible by means of
 ``assert`` declarations, which have been recently included to the CSP-M
 grammar of the ProB CSP-M parser:
 
-`assert P |= LTL: "``ltl-formula`"`,` +
-`where \`P\`is an arbitrary process and \`ltl-formula\`an LTL formula.`
+`assert P |= LTL: "ltl-formula"`
+
+where `P` is an arbitrary process and `ltl-formula` an LTL formula.
+
 
 [[ltl-formulas-in-a-separate-file]]
 LTL Formulas in a Separate File
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 With the command line version of ProB it is possible to check several
-LTL^[e]^ formulae with one call. The command has the following syntax
+LTL^[e]^ formulae with one call. The command has the following syntax:
 
 `probcli -ltlfile FILE ...`
 
 The file FILE contains one or more sections where each section has the
-form
+form:
 
 `[Name]  Formula`
 
@@ -341,19 +348,19 @@ is the name of the formula in the LTL file.
 One also can check a single LTL^[e]^ formula _F_ using the option
 '-ltlformula' as follows:
 
-`probcli -ltlformula "``F`"`...`
+`probcli -ltlformula "F"...`
 
 [[ltl-formulae-in-a-separate-file]]
 LTL Formulae in a Separate File
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 With the command line version of ProB it is possible to check several
-LTL^[e]^ formulae with one call. The command has the following syntax
+LTL^[e]^ formulae with one call. The command has the following syntax:
 
 `probcli -ltlfile FILE ...`
 
 The file FILE contains one or more sections where each section has the
-form
+form:
 
 `[Name]  Formula`
 
@@ -365,7 +372,7 @@ the counter-example is saved into the file ltlce_Name.trace, where
 One also can check a single LTL^[e]^ formula _F_ using the option
 '-ltlformula' as follows:
 
-`probcli -ltlformula "``F`"`...`
+`probcli -ltlformula "F"...`
 
 [[ltl-model-checker-output]]
 LTL Model Checker Output
@@ -406,8 +413,8 @@ Consider the CSP specifications "dphil_ltl8.csp" representing a model
 of the dining philosophers problem for eight philosophers which resolves
 the starvation problem by always forcing the first philosopher to pick
 up first the right fork instead of the left one. In other words,
-"dphil_ltl8.csp" has no deadlock states. Checking the LTL formula ``GF
-[eat.0]'' from the command line will produce the following output:
+"dphil_ltl8.csp" has no deadlock states. Checking the LTL formula "GF
+[eat.0]" from the command line will produce the following output:
 
 ----
 $ probcli -ltlformula "GF [eat.0]" dphil_ltl8.csp
@@ -464,7 +471,7 @@ identifying the self-fulfilling SCC (netto 26ms)
 each 20 seconds spent from the last current data information.
 
 In the example above one can prove the LTL^[e]^ formula "GF [eat.0]"
-on dphil_ltl6.csp using fairness. One can impose, for example, strong
+on "dphil_ltl6.csp" using fairness. One can impose, for example, strong
 fairness conditions on all transitions of the model and thus verify that
 "GF [eat.0]" is satisfied under strong fairness. The call looks as
 follows:

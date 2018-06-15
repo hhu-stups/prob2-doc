@@ -15,9 +15,11 @@ ProB model checker. You can set the mode using the `-mc_mode`
 command-line switch of
 <<using-the-command-line-version-of-prob,probcli>>. In the Tcl/Tk
 version you can select the strategy in the model checking dialog box
-(which you obtain via the"Model Check..." command in the "Verify"
-menu):image::ProBWinModelCheckDialog.png[] The following values
-are possible in all versions of ProB:
+(which you obtain via the"Model Check..." command in the _Verify_ menu):
+
+image::ProBWinModelCheckDialog.png[]
+
+The following values are possible in all versions of ProB:
 
 * Mixed DF/BF (`mixed` for `mc_mode`) : mixed depth-first /
 breadth-first traversal with random choice; currently the default),
@@ -56,37 +58,37 @@ simple example:
 ....
 MACHINE phonebook7
 SETS
-    Name  ; Code = {c1,c2,c3,c4}
+  Name; Code = {c1,c2,c3,c4}
 VARIABLES db, active, activec
 DEFINITIONS
-    scope_Name == 1..4
+  scope_Name == 1..4
 INVARIANT
-        db : Name +-> Code & active:POW(Name) & activec:POW(Code) &
-                dom(db) = active & ran(db) = activec
+  db : Name +-> Code & active:POW(Name) & activec:POW(Code) &
+  dom(db) = active & ran(db) = activec
 ASSERTIONS
   card(active) >= card(activec)
 INITIALISATION
-    db := {} || active := {} || activec := {}
+  db := {} || active := {} || activec := {}
 OPERATIONS
 dd <-- getdom = dd:= dom(db);
 cc <-- lookup(nn) =
-    PRE
-        nn : Name & nn : active
-    THEN
-        cc:=db(nn)
-    END;
+  PRE
+      nn : Name & nn : active
+  THEN
+      cc := db(nn)
+  END;
 add(nn,cc) =
-    PRE
-        nn:Name & cc:Code  & nn /: active
-    THEN
-        db := db \/ { nn |-> cc} || active := active \/ {nn} || activec := activec \/ {cc}
-    END;
+  PRE
+      nn:Name & cc:Code  & nn /: active
+  THEN
+      db := db \/ {nn |-> cc} || active := active \/ {nn} || activec := activec \/ {cc}
+  END;
 delete(nn,cc) =
-        PRE
-                nn:Name & cc:Code & nn: active & cc: activec & db(nn) = cc
-        THEN
-               db := db - { nn |-> cc} || active := active - {nn} || activec := db[(active - {nn})]
-        END
+  PRE
+      nn:Name & cc:Code & nn: active & cc: activec & db(nn) = cc
+  THEN
+      db := db - {nn |-> cc} || active := active - {nn} || activec := db[(active - {nn})]
+  END
 END
 ....
 
@@ -99,8 +101,7 @@ many states should be explored):
 
 However, you can also obtain a similar effect with the Tcl/Tk version by
 starting the model checker and then quickly pressing the Cancel button
-and then inspecting the state space (Statespace command in the Visualise
-menu; see
+and then inspecting the state space (Statespace command in the _Visualize_ menu; see
 <<tutorial-first-model-checking,Tutorial_First_Model_Checking>>).
 Below we show the output of the above command for the various choices of
 .

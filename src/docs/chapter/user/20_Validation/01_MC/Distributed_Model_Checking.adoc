@@ -35,16 +35,20 @@ view the limits by running:
 
 Per default, recent versions of Ubuntu set the following values:
 
-`kernel.shmall = 18446744073692774399` +
-`kernel.shmmax = 18446744073692774399` +
-`kernel.shmmni = 4096`
+----
+kernel.shmall = 18446744073692774399
+kernel.shmmax = 18446744073692774399
+kernel.shmmni = 4096
+----
 
 On Mac OS X, the keys might be different and you can set them by
 executing:
 
-`sudo sysctl -w kern.sysv.shmmax=18446744073692774399` +
-`sudo sysctl -w kern.sysv.shmseg=4096` +
-`sudo sysctl -w kern.sysv.shmall=18446744073692774399`
+----
+sudo sysctl -w kern.sysv.shmmax=18446744073692774399
+sudo sysctl -w kern.sysv.shmseg=4096
+sudo sysctl -w kern.sysv.shmall=18446744073692774399
+----
 
 [[running-distb]]
 Running _distb_
@@ -71,9 +75,9 @@ Run as many workers as you want:
 Additional Preferences
 ~~~~~~~~~~~~~~~~~~~~~~
 
-You can fine-tune the following parameters by adding -p NAME VALUE to
-the corresponding call (e.g., ./probcli -zmq_worker worker1 -p port 5010
--p max_states_in_memory 100) :
+You can fine-tune the following parameters by adding `-p NAME VALUE` to
+the corresponding call (e.g.: `./probcli -zmq_worker worker1 -p port 5010
+-p max_states_in_memory 100`) :
 
 [cols=",,,",options="header",]
 |=======================================================================
@@ -82,20 +86,20 @@ the corresponding call (e.g., ./probcli -zmq_worker worker1 -p port 5010
 
 |ip |localhost |IP of the master component |master
 
-|max_states |0 |how many states should be checked at most (0 means all)
+|max_states |0 |How many states should be checked at most (0 means all)
 |master
 
-|tmpdir |/tmp/ |directory for temporary files |master, worker
+|tmpdir |/tmp/ |Directory for temporary files |master, worker
 
-|logdir |./distb-logs |directory for log output (must exist) |master,
+|logdir |./distb-logs |Directory for log output (must exist) |master,
 worker
 
-|proxynumber |0 |which proxy should the component connect to (if
+|proxynumber |0 |Which proxy should the component connect to (if
 multiple run on the same machine) |worker
 
-|max_states_in_memory |1000 |how many states may be kept in memory
+|max_states_in_memory |1000 |How many states may be kept in memory
 before written into a database |worker
 
-|hash_cycle |25 |minimum amount of milliseconds that has to pass between
+|hash_cycle |25 |Minimum amount of milliseconds that has to pass between
 hash code updates from the master |master
 |=======================================================================

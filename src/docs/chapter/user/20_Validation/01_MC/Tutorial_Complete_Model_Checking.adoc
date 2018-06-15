@@ -29,9 +29,9 @@ END
 ....
 
 To load this machine into ProB you can select "New..." from the
-"File" menu, choose a file name (e.g., "SimpleCounterForMC.mch") and
-then paste the text above into the ProB source pane and choose ``Save
-and Reopen'' from the "File" menu.
+_File_ menu, choose a file name (e.g., "SimpleCounterForMC.mch") and
+then paste the text above into the ProB source pane and choose "Save
+and Reopen" from the _File_ menu.
 
 Note that the `DEFINITION SET_PREF_MAX_OPERATIONS==5` means that ProB
 will compute at most 5 possible ways to execute any given operation
@@ -41,10 +41,13 @@ will compute at most 5 possible ways to execute any given operation
 Successful Model Checking
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Now select the "Model Check..." command in the "Verify" menu which
+Now select the "Model Check..." command in the _Verify_ menu which
 brings up the model checking dialog box:
-image::ProBWinModelCheckDialog.png[] Now click the "Model Check"
-button. After a short while, ProB will give you the following message:
+
+image::ProBWinModelCheckDialog.png[]
+
+Now click the "Model Check" button. After a short while, ProB will give you the following message:
+
 image::ProBModelCheckNoCounterExampleFound.png[]
 
 This message means that ProB has examine all possible states of your B
@@ -64,6 +67,7 @@ Computing All Transitions
 Let us now adapt the above B machine by changing the DEFINITION of MAX
 to 6. Now repeat the model checking exercise above. This time ProB will
 produce the following message:
+
 image::ProBModelCheckNoCounterExampleFoundTrans.png[]
 
 Again no invariant violations or deadlocks were found, but this time
@@ -75,13 +79,14 @@ and thus may have missed an invariant violation.
 
 Indeed, when you double click on the "INITIALISATION(1)" entry in the
 "EnabledOperations" pane, you will see the following:
+
 image::ProBSimpleCounterForMC_Max.png[]
 
 The orange "max" button tells us that not all operations were
 computed.
 
 In this case, there was no error, but assume we change the definition of
-the Reset operation to
+the Reset operation to:
 
 ....
   Reset = BEGIN count :: 1..MAX+1 END
@@ -92,7 +97,9 @@ above, but this time the machine is actually incorrect. The only way to
 solve ensure that ProB checks the entire state space is to increase the
 "MAX_OPERATIONS" preference to a suitably large value, e.g.,
 `SET_PREF_MAX_OPERATIONS==8` in this case. Now model checking will find
-a counter example:image::ProBSimpleCounterForMC_InvViol.png[]
+a counter example:
+
+image::ProBSimpleCounterForMC_InvViol.png[]
 
 [[deferred-sets]]
 Deferred Sets
@@ -113,14 +120,17 @@ END
 ....
 
 Here model checking with ProB will give you the following message:
+
 image::ProBModelCheckNoCounterExampleFound_Unbounded.png[]
 
 Unfortunately this does not guarantee that your machine is correct.
 Indeed, ProB has checked your machine only for one specific cardinality
 of the deferred set ID (probably 2 or 3). Indeed, if you look at the
 ProB window after loading the above machine you will see:
-image::ProBSimpleCountDefSet_BeforeInit.png[] In the ``State
-Properties'' pane you can see that the cardinality of ID was set to 3.
+
+image::ProBSimpleCountDefSet_BeforeInit.png[]
+
+In the "State Properties" pane you can see that the cardinality of ID was set to 3.
 There are various ways you can influence the cardinality chosen by ProB.
 One is by adding a DEFINITION of the form:
 
@@ -129,6 +139,7 @@ DEFINITIONS  scope_ID == 10
 ....
 
 If you add this definition, ProB will now find an invariant violation:
+
 image::ProBSimpleCountDefSet_InvViol.png[]
 
 However, if you remove the above DEFINITION and add the following
@@ -139,8 +150,10 @@ PROPERTIES card(ID) = 5
 ....
 
 ProB will give you the message we have already seen:
-image::ProBModelCheckNoCounterExampleFound.png[] Indeed, you have
-now explicitly declare ID to be of size 5, and ProB has checked all
+
+image::ProBModelCheckNoCounterExampleFound.png[]
+
+Indeed, you have now explicitly declare ID to be of size 5, and ProB has checked all
 states for that instantiation of ID. Another solution is to replace the
 deferred set ID by an enumerated set (this will, however, reduce the
 potential for symmetry reduction):
@@ -157,7 +170,7 @@ It could be that your B machine makes use of the mathematical integers
 (`INTEGER`) or infinite subsets thereof (`NATURAL`, `NATURAL1`). Note
 that some derived types (such as seq(.)) are defined in terms of
 INTEGER. In this case there could be no way to explore all states of
-your system. For example, the following operation
+your system. For example, the following operation:
 
 ....
  Choose = BEGIN x :: NATURAL END
@@ -179,4 +192,4 @@ Finally, even if ProB was able to successfully check the entire state
 space of your model, this does not imply that you can prove your machine
 correct with AtelierB (or Rodin). We dedicate another tutorial page to
 this: link:/Tutorial_Model_Checking,_Proof_and_CBC[Model Checking, Proof
-and CBC]
+and CBC].

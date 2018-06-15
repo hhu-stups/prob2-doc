@@ -17,11 +17,17 @@ Simple Model Checking
 
 The model checker can be used to systematically execute the operations
 and tries to find an erroneous state (e.g., where the invariant is
-violated). Select the "Model Check..." command in the "Verify" menu:
-image::ProBWinModelCheckCommand.png[] This brings up the following
-dialog box:image::ProBWinModelCheckDialog.png[] Now click the
-"Model Check" button. After a short while, ProB will give you the
+violated). Select the "Model Check..." command in the _Verify_ menu:
+
+image::ProBWinModelCheckCommand.png[]
+
+This brings up the following dialog box:
+
+image::ProBWinModelCheckDialog.png[]
+
+Now click the "Model Check" button. After a short while, ProB will give you the
 following error message:
+
 image::ProBWinModelCheckCounterExampleFound.png[]
 
 The lower half of the ProB window should now look as follows:
@@ -43,7 +49,7 @@ Coverage Statistics
 ~~~~~~~~~~~~~~~~~~~
 
 We can obtain some statistics about how many states ProB has explored by
-selecting the "Compute Coverage" command in the "Analyse" menu:
+selecting the "Compute Coverage" command in the _Analyse_ menu:
 
 image::ProB_LiftAfterModelCheck_Coverage.png[]
 
@@ -77,7 +83,7 @@ We can obtain a graphical visualization of the state space explored by
 ProB. For this, be sure that you have correctly
 link:/Graphical_Viewer[installed and setup the graphical viewer as
 desribed in the user manual]. Now, choose the "View Statespace"
-command in the "Animate" menu:
+command in the _Animate_ menu:
 
 image::ProB_LiftAfterModelCheck_Statespace.png[]
 
@@ -88,7 +94,7 @@ initialization. The current node is depicted by the blue hexagon in the
 right hand corner.
 
 Note: you can influence the coloring and shapes used by ProB, by
-selecting "Graphical Viewer Preferences..." in the "Preferences"
+selecting "Graphical Viewer Preferences..." in the _Preferences_
 menu.
 
 image::ProB_GraphicalViewerPreferences_Shapes.png[]

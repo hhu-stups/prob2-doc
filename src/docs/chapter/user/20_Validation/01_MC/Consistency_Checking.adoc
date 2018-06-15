@@ -47,9 +47,9 @@ Notice that if the model checker does not find any invariant violations
 or deadlocks when a traversal of the exhaustive state space has been
 performed, this does not imply that the specification is a correct
 specification. This should be understood as the fact that, given the
-initialization stated and the model checker preferences set at the time
+initialisation stated and the model checker preferences set at the time
 of the check, no errors were found. The main difference is that the ProB
-animation preferences (such as the number of initializations, times that
+animation preferences (such as the number of initialisations, times that
 an operation may be enabled, and the size of unspecified sets) may be
 set too low for the exhaustive state space to be covered by the model
 checking.
@@ -69,8 +69,8 @@ To model check a B machine loaded in ProB, launch the command from
 image::Temporal_Model_Checker_settings.png[]
 
 By default the model checking is done by exploring the state space in a
-mixed depth-first/breadth-first manner, unless the setting ``pure
-Depth'' or "pure Breadth First" is selected in the "Search Strategy"
+mixed depth-first/breadth-first manner, unless the setting "pure
+Depth" or "pure Breadth First" is selected in the _Search Strategy_
 pop-up menu. As of version 1.5.1, additional options for directed model
 checking are available. For example, one can have truly random
 exploration or provide a custom heuristic function to guide the model
@@ -112,7 +112,7 @@ indicated by the line No error so far, ... nodes visited at the bottom
 of the pop-up window, unless a violation of the properties
 (deadlockfreeness, invariant) are found. Between each model checking
 step, the user can execute the various commands of ProB, notably those
-of the "Analyse" menu to display information on the state space (see
+of the _Analyse_ menu to display information on the state space (see
 <<animation,The Analyse Menu>>) and the
 visualization features (see link:/State_Space_Visualization[State Space
 Visualization]).
@@ -139,8 +139,8 @@ checked is not verified, it displays a similar pop-up window but with
 the text Error state was found for new node: invariant violation or
 Error state was found for new node: deadlock. Then, ProB displays in the
 animation panes the state of the B machine corresponding to the property
-violation. From there, the user can examine the state in the ``State
-Properties'' pane, the enabled operations (including the backtrack
+violation. From there, the user can examine the state in the "State
+Properties" pane, the enabled operations (including the backtrack
 virtual operation to go back to the valid state that lead to the
 property violation) in the "Enabled Operations" pane, and the trace
 (sequence of operations) leading to the invalid state in the "History"
@@ -150,19 +150,19 @@ pane.
 Preferences of the Model Checking
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The preferences "Nr of Initialisations shown" and ``Max Number of
-Enablings shown'' (described in
+The preferences "Nr of Initialisations shown" and "Max Number of
+Enablings shown" (described in
 <<animation,Animation Preferences>>) affect the
 model checking in exactly the same way as they do for the animation.
 These preferences are particularly important for the model checking, as
-setting the number of initializations or the number times than an
+setting the number of initialisations or the number times than an
 operation may be enabled too low will lead to computing and searching a
 state space that is too small. On the other hand, the user may have to
 set these preferences to a lower value if the exhaustive state space is
 too big to be covered by ProB.
 
 Once the state space of the B specification has been computed by ProB,
-the commands from the "Analyse" menu (see
+the commands from the _Analyse_ menu (see
 <<animation,The Analyse menu>>) and the
 visualization features (see link:/State_Space_Visualization[State Space
 Visualization]) are then very useful to examine the state space. The
@@ -180,7 +180,7 @@ Machines with Invariant Violations and Deadlocks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When the two properties (invariant and deadlock-freeness) are checked
-and a state violates both , only the invariant violation is reported. In
+and a state violates both, only the invariant violation is reported. In
 that situation, the deadlock can be observed either from the Enabled
 Operations (as only the backtrack virtual operation is enabled), or from
 the state space graph (as the current node has no successors).
@@ -203,8 +203,8 @@ Two Phase Verification
 
 If the state space of the specification can be exhaustively searched,
 check for deadlocks and invariant violations in two phases. To do this,
-set "Inspect Existing Nodes" to off and turn either ``Check for
-Deadlocks'' or "Check for Invariant Violations" on and the other off.
+set "Inspect Existing Nodes" to off and turn either "Check for
+Deadlocks" or "Check for Invariant Violations" on and the other off.
 Perform the temporal model check until all the deadlocks (resp.
 invariant violations) are detected or shown to be absent. To recheck the
 whole state space, either turn on the option "Inspect Existing Nodes"
@@ -222,8 +222,8 @@ Interleaved deadlock and invariant violation checking
 
 If you wish to determine if an already encountered invariant violation
 is also a deadlocked node, turn the option "Inspect Existing Nodes"
-on, turn "Detect Invariant Violations" off, and ensure that ``Detect
-Deadlocks'' is on. Performing a temporal model check now will traverse
+on, turn "Detect Invariant Violations" off, and ensure that "Detect
+Deadlocks" is on. Performing a temporal model check now will traverse
 the state space including the previously found node that violates the
 invariant.
 
@@ -239,8 +239,8 @@ predicates that are supposed to be deducible from the INVARIANT or
 PROPERTIES clauses. If the B specification opened in ProB contains an
 ASSERTIONS clause, the model checking pop-up window enables to check if
 the assertion can be violated. If enabled and a state corresponding to
-the violation of the assertion is found, a message ``Error state was
-found for new node: assertion violation'' is displayed, and then ProB
+the violation of the assertion is found, a message "Error state was
+found for new node: assertion violation" is displayed, and then ProB
 displays this state in the animation panes
 
 A feature that is similar to the assertions is the notion of a goal. A
