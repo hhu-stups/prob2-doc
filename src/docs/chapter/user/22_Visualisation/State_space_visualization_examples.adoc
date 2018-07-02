@@ -138,6 +138,7 @@ synchronisation the processes simply interleave.
 image::Threads51_sfdp.png[]
 
 With partial order reduction, the state space is reduced to 208 states:
+
 image::Threads51_POR_sfdp.png[]
 
 Here is the B source code of the model:
@@ -182,4 +183,5 @@ image::Threads51_proj.png[]
 
 With partial order reduction, one can see that the Step1_p1 events now
 all occur before the Step1_p2 events:
+
 image::Threads51_POR_proj.png[]

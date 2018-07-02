@@ -54,8 +54,8 @@ the following figure
 image::Trace_to_invariant_violation.png[]
 
 Finally, if you have specified a goal predicate (either using a
-DEFINITION `GOAL == P` or by using a command such as ``Find state
-satisfying predicate...'') then those predicates are coloured in orange.
+DEFINITION `GOAL == P` or by using a command such as "Find state
+satisfying predicate...") then those predicates are coloured in orange.
 
 [[statespace-projections]]
 Statespace Projections
@@ -71,20 +71,20 @@ detailed explanation is given in [multiblock footnote omitted].
 The command "Reduced Visited States" displays a state space where
 nodes sharing the same output arcs are collapsed into one node. The
 command "Reducted Deterministic Automaton of Visited States" removes
-the non-determinacy of the state space graph. The command ``Select
-Operations & Arguments for Reduction'' is used to specify which
+the non-determinacy of the state space graph. The command "Select
+Operations & Arguments for Reduction" is used to specify which
 operations and arguments are affected by the previous transformations.
 
 The two last commands of the "Statespace Projections" sub-menu display
-subgraphs of the state space. The command ``Subgraph for Invariant
-Violation'' displays the subgraph of nodes which violate the invariant,
+subgraphs of the state space. The command "Subgraph for Invariant
+Violation" displays the subgraph of nodes which violate the invariant,
 while the command "Subgraph of nodes satisfying GOAL" displays the
 subgraph where goals (discussed in
 link:/Temporal_Model_Checking#Specifying_Goals_and_Assertions[Temporal
 Model Checking]) are satisfied.
 
-As of December 2015, there is also a sub-menu ``Statespace Fast
-Rendering'', which enables one to visualize larger state spaces more
+As of December 2015, there is also a sub-menu "Statespace Fast
+Rendering", which enables one to visualize larger state spaces more
 effectively. Some sample
 link:/State_space_visualization_examples[visualizations can be found
 here].
@@ -94,8 +94,8 @@ Other Visualization Commands
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The "Visualize" menu contains several other sub-menus, to visualize
-traces and individual states. The command ``Shortest Trace to Current
-State'' displays the shortest sequence of nodes in the state space
+traces and individual states. The command "Shortest Trace to Current
+State" displays the shortest sequence of nodes in the state space
 starting from the root node and leading to the current node. The command
 "Current State" displays the current node and its successor nodes.
 
@@ -103,8 +103,8 @@ starting from the root node and leading to the current node. The command
 Preferences of the Visualization
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Many aspects of the visualization can be configured in the ``Graphical
-Viewer Preferences''... preference window of the "Preferences" menu.
+Many aspects of the visualization can be configured in the "Graphical
+Viewer Preferences"... preference window of the "Preferences" menu.
 This includes changing the shapes and colors of the various nodes (using
 the notation of the dot tool, see
 http://www.graphviz.org/cvs/doc/info/shapes.html[Dot-Shapes] and

@@ -50,7 +50,7 @@ predicates or expressions. The console also works in CSP mode and uses a
 CSP parser there.
 
 As of version 1.4 the console allows defining new local variables (local
-to the console) using Haskell's let syntax: `let` id `=` Expr. You can
+to the console) using Haskell's let syntax: `let id = Expr`. You can
 use the `:b` command to browse your let definitions. Here is an example
 session:
 

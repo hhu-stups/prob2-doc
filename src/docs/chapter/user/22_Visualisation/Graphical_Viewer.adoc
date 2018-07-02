@@ -36,14 +36,14 @@ architecture. More details can be found in
 <<installation,Installation>>.
 
 * Then use the command "Graphical Viewer Preferences..." in the
-"Preferences" Menu:
+_Preferences_ Menu:
 
 image::GraphicalViewerPreferencesMenuEntry.png[]
 
 Then set or check the following preferences:
 
-* ** Path/Command for dot program
-** Path/Command for dot viewer (e.g., dotty)
+* Path/Command for dot program
+* Path/Command for dot viewer (e.g., dotty)
 
 Note: you can use the "Pick" button to locate the dot program and the
 dot viewer.
@@ -54,7 +54,7 @@ In case you want to use the Postscript option, also make sure that you
 have a viewer for Postscript files installed, and set the preference
 "Path/Command for Postscript viewer".
 
-* You can select which viewer to use by going to the ``Graphical
-Viewer'' sub-menu of the "Preferences" Menu:
+* You can select which viewer to use by going to the "Graphical
+Viewer" sub-menu of the _Preferences_ Menu:
 
-image::GraphicalViewerSubMenu.png[]`.`
+image::GraphicalViewerSubMenu.png[]
