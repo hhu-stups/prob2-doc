@@ -500,14 +500,14 @@ Checking CSP Assertions with `probcli`
 It is also possible to check CSP assertions with the command line
 version of ProB. The command has the following syntax:
 
-`probcli -csp_assertion "``A`"`File`
+`probcli -csp_assertion "A"File`
 
 where _A_ is a CSP assertion and _File_ the path to the CSP file. For
-example, if we want to check the refinement assertion ``P [T= Q`` on
+example, if we want to check the refinement assertion `P [T= Q` on
 some CSP specification `example.csp`, then we can do this by running the
 ProB command line version with the following options:
 
-`probcli -csp_assertion "``P````[T=````Q`"`example.csp`
+`probcli -csp_assertion "P [T=Q"example.csp`
 
 Note that the assertion should be placed between quotes. In addition,
 when an assertion is checked with the '-csp_assertion' option the
@@ -517,7 +517,7 @@ Notice that for checking LTL and CTL assertions from the command line
 you need to escape the double quotes (") wrapping the respective LTL/CTL
 formula by means of a backslash \.
 
-`probcli -csp_assertion "``Q````|=````LTL:````\`"`F [c]\"" example.csp`
+`probcli -csp_assertion "Q |= LTL: \"F [c]\"" example.csp`
 
 [[references-and-notes]]
 References and Notes

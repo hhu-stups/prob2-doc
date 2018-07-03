@@ -18,7 +18,7 @@ double-clicking on `ProBWin` (for Windows users), or by launching
 Loading a first CSP specification
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Use the "Open..." command in the "File" menu and then navigate to
+Use the "Open..." command in the _File_ menu and then navigate to
 the "Examples" directory that came with your ProB installation. Inside
 the "CSP" subfolder, open the "buses.csp" specification. Your main
 ProB window should now look as follows:
@@ -70,6 +70,7 @@ simply double-click on it. Try this out for yourself: double-click on
 which is offered. This time the event is a synchronization of two
 events(note that ProB uses a different colour for highlighting the
 source locations). The source highlighting should look as follows:
+
 image::ProB_CSPAfterBoardSingleClick.png[]
 
 [[first-steps-in-model-checking]]
@@ -77,17 +78,20 @@ First Steps in Model Checking
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can use the model checker to search for certain errors. Execute the
-"Model Check..." command in the "Verify Menu". The following dialog
-box will appear:image::ProB_CSPModelCheck.png[]
+"Model Check..." command in the _Verify_ menu. The following dialog
+box will appear:
+
+image::ProB_CSPModelCheck.png[]
 
 By default, ProB will search for deadlocks, illegal channel values and
 events on the "error" channel. To turn the latter off, uncheck the
 "Find Invariant Violation" check box. You can also search for events
-on the "goal"channel, by checking the corresponding check box (``Find
-event on goal CSP channel'').
+on the "goal"channel, by checking the corresponding check box ("Find
+event on goal CSP channel").
 
 Now press the "Model Check" button. ProB should find a deadlock and
 insert the counter-example into the history as follows:
+
 image::ProB_CSPAfterModelCheck.png[]
 
 [[error-highlighting]]
@@ -100,17 +104,20 @@ of value 1 on the alight37B channel:
 `BUS37 = board37A -> (pay90 -> alight37B!1 -> STOP` +
 `[] alight37A -> STOP)`
 
-Now save and reload the specification and again choose the ``Model
-Check...'' command in the Verify menu. Now uncheck the ``Find
-Deadlocks'' check-box and press "Model Check". ProB will report the
+Now save and reload the specification and again choose the "Model
+Check..." command in the _Verify_ menu. Now uncheck the "Find
+Deadlocks" check-box and press "Model Check". ProB will report the
 following error:
 
-`Mismatch in number of arguments for synchronisation on channel alight37B with extra argument(s):` +
-`1` +
-`### Line: 11, Column: 30`
+----
+Mismatch in number of arguments for synchronisation on channel alight37B with extra argument(s):
+1
+  ### Line: 11, Column: 30
+----
 
 display the trace to the error in the History pane and highlight the
 error location in the source as follows:
+
 image::ProB_CSPAfterModelCheck2.png[]
 
 [[other-features]]
@@ -120,7 +127,7 @@ Other Features
 You can check more sophisticated temporal properties using the LTL model
 checker of ProB; see the link:/LTL_Model_Checking[corresponding part of
 the tutorial]. For example, you can try and validate the following LTL
-formula `G([board37A] => F [alight37B])`. ProB should respond:
+formula `G([board37A] \=> F [alight37B])`. ProB should respond:
 `Formula TRUE. No counterexample found.` Similarly, you can check the
 absence of divergence by checking the LTL formula `G not G [tau]`. It is
 also possible to perform various refinement checks and other assertion
@@ -128,6 +135,7 @@ checks (see http://stups.hhu.de/ProB/w/Checking_CSP_Assertions[Checking
 CSP Assertions' tutorial]). The state space visualization features of
 ProB are also available for CSP; see link:/State_Space_Visualization[the
 corresponding part of the tutorial]. For example, if you select the
-command "Statespace" in the "Visualize" menu (after having fully
+command "Statespace" in the _Visualize_ menu (after having fully
 explored the system), the following graph will be displayed:
+
 image::ProB_CSPBusStatespace.png[]

@@ -26,10 +26,10 @@ PROCESS EXPRESSIONS
 * `STOP` deadlocking process
 * `SKIP` terminating process
 * `CHAOS(a)` a: set of channel expressions
-* `ch->P` simple action prefix where ch is a channel name possibly
+* `ch\->P` simple action prefix where ch is a channel name possibly
 followed by a sequence of outputs "!v" and input "?VAR", where v is
 a value expression and VAR a variable identifier
-* `ch?x:v->P` action prefix with set of accepted values
+* `ch?x:v\->P` action prefix with set of accepted values
 * `P ; Q` sequential composition
 * `P ||| Q` interleaving
 * `P [] Q` external choice
@@ -39,9 +39,9 @@ a value expression and VAR a variable identifier
 * `P [| a |] Q` parallel composition with synchronisation on set of
 channel expressions a
 * `P [ a || a' ] Q` alphabetised parallel
-* `P [ c<->c' ] Q` linked parallel
+* `P [ c\<\->c' ] Q` linked parallel
 * `P \ a` hiding of channel expressions in c
-* `P <<c<-c, c<-c' >>` renaming of channels c into c'
+* `P [[c\<-c']]` renaming of channels c into c'
 * `if B then P else Q`
 * `b & P` guard using a boolean expression b
 * `[]x:v@P` replicated external choice (x: variable, v: set value
@@ -53,7 +53,7 @@ expression)
 * `;x:s@P` replicated sequential composition (s: sequence expression)
 * `||x:v@[a']P` replicated alphabetised parallel
 * `[| a |]x:s@P` replicated sharing
-* `[c<->c']x:s@P` replicated linked parallel (sequence s must be non
+* `[c\<\->c']x:s@P` replicated linked parallel (sequence s must be non
 empty)
 * `let f1=E1 ... fk=Ek within P`
 
@@ -65,13 +65,13 @@ BOOLEAN EXPRESSIONS
 * `false`
 * `b1 and b2` (`b1 && b2` also accepted but not in CSP-M)
 * `b1 or b2` (`b1 || b2` also accepted but not in CSP-M)
-* `b1 <=> b2` equivalence
-* `b1 => b2` implication
+* `b1 \<\=> b2` equivalence
+* `b1 \=> b2` implication
 * `not b`
 * `v==w` equality of values
 * `v!=w` disequality of values
 * `vw` strict ordering
-* `v<=w,v>=w` non-strict ordering (v=<w also accepted)
+* `v\<=w,v>=w` non-strict ordering (v=<w also accepted)
 * `member(v,w)` set membership check
 * `empty(a)` set emptiness check
 * `null(s)` sequence emptiness check
