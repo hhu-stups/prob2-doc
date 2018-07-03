@@ -60,10 +60,12 @@ animation or model checking with ProB. For this you can simply
 right-click on the context and use the Rodin command "EXTEND". For
 example, in Camille syntax such a context could look like:
 
-`context c1_prob extends c1` +
-`axioms` +
-`@prob_axm card(S) = 3` +
-`end`
+----
+context c1_prob extends c1
+axioms
+@prob_axm card(S) = 3
+end
+----
 
 After that you can also refine the model you want to animate by
 right-clicking on it and using the Rodin command "REFINE", and then
@@ -80,7 +82,7 @@ value provided in the "Size of unspecified sets" preference.
 
 Note that for complicated machines it can be tricky to set up the
 cardinalities of the carrier sets correctly. For example, if you have an
-axiom `f : A -->> B`, then the cardinality of `A` must be greater or
+axiom `f : A -\->> B`, then the cardinality of `A` must be greater or
 equal to the cardinality of `B`. We are working on an automated analysis
 for detecting the correct cardinalities of the carrier sets
 automatically.

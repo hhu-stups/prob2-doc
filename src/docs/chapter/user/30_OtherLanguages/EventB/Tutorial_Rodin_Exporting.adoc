@@ -46,13 +46,13 @@ probcli] for B models are also applicable to Event-B models.
 Warning: the preferences for ProB are managed in different ways by the
 different tools. For the command-line version, preference values have to
 be passed explicitly using the -p switch (e.g, `-p MAXINT 2147483647`).
-In ProB Tcl/Tk the preferences are managed from the "Preferences" menu
+In ProB Tcl/Tk the preferences are managed from the _Preferences_ menu
 (and current values are saved in a `ProB_Preferences.pl` file). The ProB
 for Rodin preferences are currently not exported into the ".eventb"
 file.
 
 You can also load the Event-B models into the ProB Tcl/Tk version.
-Simply choose the command "Open..." in the "File" menu and select
+Simply choose the command "Open..." in the _File_ menu and select
 the file you have exported above. (You may have to change the filename
 filter pop-up menu at the bottom of the "Open..." dialog to also show
 .eventb files.)
@@ -70,9 +70,9 @@ Starting up ProB Classic Directly
 
 You can also start up ProB Classic (aka ProB Tcl/Tk) directly, without
 first generating an ".eventb" file. For this, start by right clicking
-(control Click on the Mac) on the machine or context in the ``Event-B
-Explorer'' view you wish to validate and select ``ProB Classic.../Open
-in ProB classic'':
+(control Click on the Mac) on the machine or context in the "Event-B
+Explorer" view you wish to validate and select "ProB Classic.../Open
+in ProB classic":
 
 image::ProBRodinExport.png[]
 

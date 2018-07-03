@@ -14,8 +14,8 @@ First you need to download the Rodin platform (e.g,
 http://sourceforge.net/projects/rodin-b-sharp/files/Core_Rodin_Platform/3.3/[Rodin
 3.3],) if you have not already done so.
 
-Continue by installing the ProB for Rodin Plugin by choosing ``Install
-new software...'' in the Help menu.
+Continue by installing the ProB for Rodin Plugin by choosing "Install
+new software..." in the _Help_ menu.
 
 image::RodinInstallNewSoftware.png[]
 
@@ -40,8 +40,8 @@ Starting ProB
 ~~~~~~~~~~~~~
 
 Start by right clicking (control Click on the Mac) on the machine or
-context you wish to animate and select ``Start Animation/Model
-Checking'':
+context you wish to animate and select "Start Animation/Model
+Checking":
 
 image::ProBRodinStart.png[]
 

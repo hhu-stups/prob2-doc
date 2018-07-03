@@ -64,7 +64,9 @@ BinaryTree::
 Tagging operators
 ~~~~~~~~~~~~~~~~~
 
-*Please note:* The use of these tags is for experts only. Normally such
+[IMPORTANT]
+*Please note:*
+The use of these tags is for experts only. Normally such
 annotations are delivered with a theory. If you think ProB should
 provide specific support for a theory, please contact us.
 
@@ -111,7 +113,7 @@ Error Messages
 In case the .ptm file is missing, you will get an error message such as
 the following one:
 
-`Axiomatic defined operator "``SUM`"`not recognized.`
+`Axiomatic defined operator "SUM" not recognized.`
 
 For reference, here are the contents of some of the .ptm files. In case
 of an error message, you can copy these files into your Theory Projects

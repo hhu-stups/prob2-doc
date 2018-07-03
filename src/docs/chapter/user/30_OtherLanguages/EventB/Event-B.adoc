@@ -10,7 +10,7 @@ Installation
 ~~~~~~~~~~~~
 
 To install the ProB plugin for http://www.event-b.org[Rodin], open the
-"Help" menu in Rodin and click "Install new software".
+_Help_ menu in Rodin and click "Install new software".
 
 You see a drop-down list titled "Work with:" at the top of the install
 dialog. Choose the update site "ProB - ..." and click on ``ProB for
@@ -28,8 +28,7 @@ You can start animation of a model (machine or context) by
 right-clicking on the model in the Event-B explorer. Choose ``Start
 Animation / Model Checking''.
 
-*TODO:* Here we should add more details about the ProB perspective and
-views.
+//*TODO:* Here we should add more details about the ProB perspective and views.
 
 [[export-for-use-with-the-tcltk-version-of-prob]]
 Export for use with the Tcl/Tk version of ProB
@@ -91,13 +90,14 @@ Currently are the following tags supported:
 |mkinat(op1,op2)
 |===========================================
 
-*TODO*: to be continued...
+//*TODO*: to be continued...
 
 [[download-theories]]
 Download Theories
 ^^^^^^^^^^^^^^^^^
 
 An example project with theories:
+
 image::theories2.zip[]
 
-*TODO*: A description of the supported parts.
+//*TODO*: A description of the supported parts.
