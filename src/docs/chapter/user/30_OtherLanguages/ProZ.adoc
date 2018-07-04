@@ -22,9 +22,11 @@ often introduced by the underlying translation process from Z to B.
 Normally those comprehension sets should be treated symbolically. To
 support this, you should set the following in the preferences menu:
 
-`Animation Preferences ->` +
-`- Lazy expansion of lambdas & set comprehensions: True` +
-`- Convert lazy form back into explicit form for Variables and Constants: False`
+....
+Animation Preferences ->
+- Lazy expansion of lambdas & set comprehensions: True
+- Convert lazy form back into explicit form for Variables and Constants: False
+....
 
 [[structure-of-the-z-specification]]
 Structure of the Z Specification
@@ -46,9 +48,11 @@ For example, let S be the state schema (= is used for \defs):
 
 There are two supported styles for the initialization:
 
-`a)   Init = [ S | x=0 /\ y=1]`
+....
+a)   Init = [ S | x=0 /\ y=1]
 
-`b)   Init = [ S'| x'=0 /\ y'=1 ]`
+b)   Init = [ S'| x'=0 /\ y'=1 ]
+....
 
 If you want to use the logic of other schemas besides the state schema
 in the initialization, you can do that by including those schemas in the
@@ -69,12 +73,14 @@ specification
 
 Example: Let S be defined as above:
 
-`A = [ \Delta S | x'=x+1 /\ y'=y ]` +
-`B = [ x,y,x',y':N | x'=x+1 /\ y'=y ]` +
-`C = [ x,x':N | x'=x+1 ]` +
-`D = [ y,y':N | y'=y ]` +
-`E = C /\ D` +
-`F = [ \Xi S | x=0 ]`
+....
+A = [ \Delta S | x'=x+1 /\ y'=y ]
+B = [ x,y,x',y':N | x'=x+1 /\ y'=y ]
+C = [ x,x':N | x'=x+1 ]
+D = [ y,y':N | y'=y ]
+E = C /\ D
+F = [ \Xi S | x=0 ]
+....
 
 Then the schemas A,B and E describe all the same operation. F is also
 identified as an operation that leaves the state unchanged.
@@ -94,15 +100,19 @@ comprehensions symbolically. Example: The definition of a function
 
 a)
 
-`| square : Z -> Z` +
-`|-----------------------` +
-`| square = (\lambda x:Z @ x*x)`
+....
+| square : Z -> Z
+|-----------------------
+| square = (\lambda x:Z @ x*x)
+....
 
 b)
 
-`| square : Z -> Z` +
-`|-----------------------` +
-`| \forall x:Z @ square x = x*x`
+....
+| square : Z -> Z
+|-----------------------
+| \forall x:Z @ square x = x*x
+....
 
 When using ProZ, it is preferable to use the method "a" because the
 lambda expression can be interpreted symbolically. If "b" is used,
@@ -131,7 +141,7 @@ satisfies the predicate. If not, the state is not further explored.
 Abbreviation Definitions
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Abbreviation definitions (e.g. Abbr == \{1,2,3}) are used like macros by
+Abbreviation definitions (e.g. Abbr == {1,2,3}) are used like macros by
 ProZ. A reference to an abbreviation is replaced by its definition in a
 preprocessor phase. Thereby schemas defined by abbreviation definitions
 are ignored when ProZ tries to identify components. So, it is
@@ -167,24 +177,26 @@ function is overlaid; see
 <<graphical-visualization,Graphical_Visualization>> for more
 details):
 
-`We declare a type for the used images, the names of the elements refer to the file names of the GIF files.` +
-`\begin{zed}` +
-`Images ::= Filled | Empty | Void` +
-`\end{zed}` +
-`The animation consists of a grid of images that is updated in each new state.` +
-`The $animation_function$ maps a coordinate to an image where $(1\mapsto 1)$ is the upper-left corner.` +
-`\begin{schema}{ProZ_Settings}` +
-`Level \\` +
-`animation_function_default : (\nat \cross Jars) \pfun Images \\` +
-`animation_function : (\nat \cross Jars) \pfun Images \\` +
-`\where` +
-`animation_function_default = (1\upto global_maximum \cross Jars) \cross \{ Void \} \\` +
-`animation_function = \\` +
-`\t1 (\{ l:1\upto global_maximum; c:Jars | l\leq max_fill~c @ \\` +
-`\t2 global_maximum+1-l\mapsto c\} \cross \{Empty\}) \oplus \\` +
-`\t1 (\{ l:1\upto global_maximum; c:Jars | l\leq level~c @ \\` +
-`\t2 global_maximum+1-l\mapsto c\} \cross \{Filled\})` +
-`\end{schema}`
+....
+We declare a type for the used images, the names of the elements refer to the file names of the GIF files.
+\begin{zed}
+Images ::= Filled | Empty | Void
+\end{zed}
+The animation consists of a grid of images that is updated in each new state.
+The $animation_function$ maps a coordinate to an image where $(1\mapsto 1)$ is the upper-left corner.
+\begin{schema}{ProZ_Settings}
+Level \\
+animation_function_default : (\nat \cross Jars) \pfun Images \\
+animation_function : (\nat \cross Jars) \pfun Images \\
+\where
+animation_function_default = (1\upto global_maximum \cross Jars) \cross \{ Void \} \\
+animation_function = \\
+\t1 (\{ l:1\upto global_maximum; c:Jars | l\leq max_fill~c @ \\
+\t2 global_maximum+1-l\mapsto c\} \cross \{Empty\}) \oplus \\
+\t1 (\{ l:1\upto global_maximum; c:Jars | l\leq level~c @ \\
+\t2 global_maximum+1-l\mapsto c\} \cross \{Filled\})
+\end{schema}
+....
 
 Here is how the animation of the specification should look like:
 
@@ -203,17 +215,19 @@ ProZ checks if the square function in 2.3.a is a total function by
 enumerating it (it checks the function only for a limited interval). For
 more complex definitions the number of entries is often too large to
 check. When the user is sure that those properties are satisfied (like
-in our example), a solution is relaxing the declaration from ``square :
-Z -> Z'' to "square : Z <-> Z". Sometimes this is not easy to do, for
+in our example), a solution is relaxing the declaration from `square :
+Z \-> Z` to `square : Z \<\-> Z`. Sometimes this is not easy to do, for
 instance if schema types are used which imply other constraints.
 
 ProZ supports an operation \prozignore that instructs ProZ to ignore all
 constraints on the type and to use just the underlying type. For
 example, the square function could be defined by:
 
-`| square : \prozignore( Z -> Z )` +
-`|-----------------------` +
-`| square = (\lambda x:Z @ x*x)`
+....
+| square : \prozignore( Z -> Z )
+|-----------------------
+| square = (\lambda x:Z @ x*x)
+....
 
 If you want to use \prozignore, you must first define a TeX command
 \prozignore:
@@ -225,10 +239,12 @@ content is ignored by ProZ. Then you must introduce a generic definition
 of \prozignore. The definition is ignored by ProB, but Fuzz needs it for
 type checking.
 
-`%%pregen \prozignore` +
-`\begin{gendef}[X]` +
-`\prozignore~_ : \power X` +
-`\end{gendef}`
+....
+%%pregen \prozignore
+\begin{gendef}[X]
+\prozignore~_ : \power X
+\end{gendef}
+....
 
 It is also possible to append these lines to the "fuzzlib" in the fuzz
 distribution.
@@ -237,8 +253,8 @@ distribution.
 Translation to B
 ^^^^^^^^^^^^^^^^
 
-You can inspect the result of the translation process with ``Show
-internal representation'' in the "Debug" menu. Please note that the
+You can inspect the result of the translation process with "Show
+internal representation" in the _Debug_ menu. Please note that the
 shown B machine is normally not syntactically correct because of
 
 * additional constructs like free types

@@ -205,7 +205,7 @@ function are sets)
 ** TLA+ tuples are translated as sequences in B, hence all components of
 the tuple must have the same type
 * TLA2B do not support 2nd-order operators, i.e. operators that take a
-operator with arguments as argument (e.g.: foo(bar(_),p))
+operator with arguments as argument (e.g.: `foo(bar(_),p)`)
 
 [[tla-actions]]
 TLA+ Actions

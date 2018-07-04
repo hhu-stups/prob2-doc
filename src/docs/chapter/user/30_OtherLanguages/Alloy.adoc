@@ -67,7 +67,9 @@ run show for exactly 4 queen, 5 int
 This can be loaded in ProB, as shown in the following screenshot. To run
 the "show" command you have to use "Find Sequence..." command for
 "run_show" in the "Constraint-Based Checking" submenu of the
-"Verify" menu.image::ProBAlloyQueens.png[800px|center]
+_Verify_ menu.
+
+image::ProBAlloyQueens.png[800px|center]
 
 Internally the Alloy model is translated to the following B model:
 
@@ -131,7 +133,7 @@ run { last.far=Object } for exactly 8 State
 This can be loaded in ProB, as shown in the following screenshot. To run
 the "show" command you have to use "Find Sequence..." command for
 "run_show" in the "Constraint-Based Checking" submenu of the
-"Verify" menu (after enabling Kodkod in the Preferences menu).
+_Verify_ menu (after enabling Kodkod in the _Preferences_ menu).
 
 image::ProBAlloyRiver.png[]
 
@@ -208,15 +210,12 @@ check add_preserves_inv for 3
 
 Note that our translation does not (yet) generate an idiomatic B
 encoding, with `move` as B operation
-
-`and src+dst=Object as invariant: it generates a check operation encoding the predicate` +
-`add_preserves_inv` +
-`with universal quantification.`
+and `src+dst=Object` as invariant: it generates a check operation encoding the predicate
+`add_preserves_inv` with universal quantification.
 
 Below we shoe the B machine we have input into AtelierB. It was obtained
-by pretty-printing from \prob, and putting the negated guard
-
-`of theadd_preserves_inv into an assertion (so that AtelierB generates the desired proof obligation).`
+by pretty-printing from `\prob`, and putting the negated guard
+of `theadd_preserves_inv` into an assertion (so that AtelierB generates the desired proof obligation).
 
 ....
 MACHINE alloytranslation
