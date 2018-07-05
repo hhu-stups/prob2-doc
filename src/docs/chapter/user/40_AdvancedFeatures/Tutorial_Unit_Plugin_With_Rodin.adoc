@@ -35,8 +35,8 @@ Instructions] or the
 http://www.stups.uni-duesseldorf.de/ProB/index.php5/Installation#Installation_Instruction_for_ProB_.28Rodin_Plugin.29[Screencast]
 to install ProB for Rodin.
 
-In addition to the "ProB for Rodin2" plugin there is a ``ProB for
-Rodin2 - Physical Units Support'' plugin at out Rodin update site. You
+In addition to the "ProB for Rodin2" plugin there is a "ProB for
+Rodin2 - Physical Units Support" plugin at out Rodin update site. You
 have to install both to enable physical units support for Rodin.
 
 [[attaching-physical-units-to-variables-and-constants]]

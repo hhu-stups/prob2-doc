@@ -107,8 +107,8 @@ Tips
 
 To inspect the effect of CSE, you do one of the following:
 
-* In ProB Tcl/Tk you can use the command ``Show Internal
-Representation'' in the Debug menu to inspect the effect of CSE on your
+* In ProB Tcl/Tk you can use the command "Show Internal
+Representation" in the Debug menu to inspect the effect of CSE on your
 machine
 * For probcli, you can use the command `-pp FILE` to write the
 pretty-printed internal representation of your machine after CSE to a

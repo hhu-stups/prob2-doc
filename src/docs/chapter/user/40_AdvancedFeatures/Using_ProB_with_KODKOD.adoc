@@ -31,8 +31,8 @@ using dotty or GraphViz:
 
 `probcli -p KODKOD TRUE -repl -evaldot ~/out.dot`
 
-For the ProB Tcl/Tk Version you should select the menu command ``Enable
-Kodkod for Properties'' in the Preferences menu.
+For the ProB Tcl/Tk Version you should select the menu command "Enable
+Kodkod for Properties" in the _Preferences_ menu.
 
 [[what-can-be-translated]]
 What can be translated
@@ -45,14 +45,14 @@ What can be translated
 ** Higher-order types (sets of sets) are not supported
 
 * Operators:
-** Predicates: &, or, =>, <=>, not, !, #, =, /=
+** Predicates: &, or, \=>, \<\=>, not, !, #, =, /=
 ** Booleans: TRUE, FALSE, BOOL, bool(...)
 ** Sets: \{..,...} \{x|P}, POW, card, Cartesian product, \/, /\, -, :,
 /:, /<:, <<: /<<:
 ** Numbers: n..m, >, <, >=, <=, +, -, *, SIGMA(x).(P|x)
-** Relations: <->, |->, dom, ran, id, <|, <<|, |>, |>>, ~, [...], <+,
+** Relations: \<\->, |\->, dom, ran, id, <|, <<|, |>, |>>, ~, [...], <+,
 prj1, prj2, closure1
-** x : S+->T, x:S-->T, ..., lambda
+** x : S+\->T, x:S-\->T, ..., lambda
 ** currently no operations on sequences are supported
 
 * Some limitations:
@@ -71,7 +71,7 @@ circumstances:
 * for solving PROPERTIES
 * constraint-based assertion checking (`-cbc_assertions` command for
 `probcli` or the "Check Assertions on Constants" command in the menu
-Verify -> Constraint-Based Checking)
+_Verify_ -> Constraint-Based Checking)
 * constraint-based deadlock checking
 * in the <<eval-console,Eval Console>> in the ProB Tcl/Tk version
 * for the REPL in probcli (`probcli -p KODKOD TRUE -repl`)

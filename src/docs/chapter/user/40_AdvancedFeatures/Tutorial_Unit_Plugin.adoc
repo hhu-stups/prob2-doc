@@ -57,9 +57,11 @@ Annotating variables and animating a machine
 To connect a variable with an expected physical unit, a special comment
 is placed before the variable.
 
-`VARIABLES` +
-`/*@ unit "``10**1````*````m**1`"`*/ x,` +
-`/*@ unit "``m**2`"`*/ y`
+....
+VARIABLES
+  /*@ unit "10**1 * m**1" */ x
+  /*@ unit "m**2"*/ y
+....
 
 Following the "unit" keyword is a specification of the unit in form of
 a B expression. Allowed constructs are multiplication and division as
@@ -67,9 +69,11 @@ well as exponentiation.
 
 For several often used units like cm, dm, km, etc. an alias can be used.
 
-`VARIABLES` +
-`/*@ unit "``mm`"`*/ x,` +
-`/*@ unit "``dm`"`*/ y`
+....
+VARIABLES
+  /*@ unit "mm" * / x,
+  /*@ unit "dm" * / y
+....
 
 Once at least one variable is annotated, further units can be inferred.
 
@@ -91,20 +95,22 @@ conversion.
 
 See the following B machine for an example operation:
 
-`MACHINE SimpleConversion` +
-`VARIABLES` +
-`/*@ unit "``10**-2````*````m`"`*/ xx,` +
-`/*@ unit "``10**-3````*````m`"`*/ yy,` +
-`converted` +
-`INVARIANT` +
-`xx:NAT &` +
-`yy:NAT &` +
-`converted:NAT` +
-`INITIALISATION xx,yy,converted:=0,0,0` +
-`OPERATIONS` +
-`n <-- addToXX = n:=xx+1;` +
-`mmToCm  = converted:=/*@ conversion */(10*yy)` +
-`END`
+....
+MACHINE SimpleConversion
+VARIABLES
+  /*@ unit "10** -2 *m"*/ xx,
+  /*@ unit "10** -3 *m"*/ yy,
+converted
+INVARIANT
+  xx:NAT &
+  yy:NAT &
+  converted:NAT
+INITIALISATION xx,yy,converted:=0,0,0
+OPERATIONS
+  n <-- addToXX = n:=xx+1;
+  mmToCm  = converted:=/*@ conversion */(10*yy)
+END
+....
 
 [[static-analysis]]
 Static analysis

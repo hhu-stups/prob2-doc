@@ -125,18 +125,21 @@ Sometimes TLC will show a different number of visited states compared to
 the ProB model checker. The following example should illustrate this
 issue:
 
-`MACHINE NumberOfStates` +
-`CONSTANTS k` +
-`PROPERTIES` +
-`k : 1..10` +
-`VARIABLES x` +
-`INVARIANT` +
-`x : NATURAL` +
-`INITIALISATION x := k` +
-`END`
+....
+MACHINE NumberOfStates
+CONSTANTS k
+PROPERTIES
+k : 1..10
+VARIABLES x
+INVARIANT
+x : NATURAL
+INITIALISATION x := k
+END
+....
 
 ProB will report 21 distinct states (1 root state, 10 constant setup
 states, 10 initialization states):
+
 image::NumberOfStates.jpeg[]
 
 TLC will only report 10 distinct states (10 initialization states).

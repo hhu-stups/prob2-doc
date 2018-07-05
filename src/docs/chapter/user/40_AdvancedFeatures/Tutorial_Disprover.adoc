@@ -46,8 +46,9 @@ Build Update Site
 How to use it
 ~~~~~~~~~~~~~
 
-/Image:disprover-all.png[Image:disprover-all.png]: The proof obligation
-editor in Rodin presents the user with a number of Hypotheses and one
+image::disprover-all.png[]
+
+The proof obligation editor in Rodin presents the user with a number of Hypotheses and one
 Goal, to be proved. If the Disprover is installed, it is available in
 the tool bar alongside the other provers:
 

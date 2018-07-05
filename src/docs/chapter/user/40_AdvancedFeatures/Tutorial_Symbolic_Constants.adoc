@@ -31,8 +31,8 @@ bundled with ProB for Rodin itself.
 Marking Constants to be kept symbolic
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Once the plugin is installed, a toggle button "symbolic" / ``not
-symbolic'' should appear next to each constant in the Rodin editor.
+Once the plugin is installed, a toggle button "symbolic" / "not
+symbolic" should appear next to each constant in the Rodin editor.
 
 You can select between the two behaviours:
 

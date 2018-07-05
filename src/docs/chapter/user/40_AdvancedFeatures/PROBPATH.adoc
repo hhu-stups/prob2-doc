@@ -21,11 +21,11 @@ character, e.g.:
 
 On unix:
 
-`PROBPATH=~/myproject/common:~/myotherproject/common probcli model.mch`
+`PROBPATH=\~/myproject/common:~/myotherproject/common probcli model.mch`
 
 And on windows:
 
-`PROBPATH=~/myproject/common;~/myotherproject/common probcli model.mch`
+`PROBPATH=\~/myproject/common;~/myotherproject/common probcli model.mch`
 
 will resolved referenced files relative to model.mch, then in
 *~/myproject/common* then in *~/myotherproject/common* and finally in
