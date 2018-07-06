@@ -1,8 +1,3 @@
-:wikifix: 2
-ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
-[[04-lowlevelapi]]
-= 04 lowlevelapi
-
 = Low Level API
 
 The ProB core has two different APIs. One is suited for high level usage and one directly interacts with the Prolog binary. The latter (low level) API is used to extend the functionality of ProB 2.0 and this is the API that we are introducing in this chapter. It is typically only used within the development team because it often requires changing parts of the Prolog kernel. However, it still may be useful to know where one can look for low level features. This is particulary helpful when some of the features are not yet accessible to a higher level API.

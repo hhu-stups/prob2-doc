@@ -1,6 +1,2 @@
-:wikifix: 2
-ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
-[[00-section-header]]
-= 00 section header
-
+= ProB 2.0 Java API
 :leveloffset: +1

@@ -1,8 +1,3 @@
-:wikifix: 2
-ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
-[[05-probcore]]
-= 05 probcore
-
 = High Level API
 
 We have introduced a high level API in ProB 2.0 which allows much nicer interaction with ProB. Before 2.0, all interaction was done using commands. There were no abstractions that represent typically used concepts such as a model, a state space, or a trace. Together with this high level API, we introduced a scripting interface that makes it very easy to tweak ProB and implement new features. Almost everything in ProB can be manipulated through Groovy scripts. This chapter will introduce the programmatic abstractions now available in ProB 2.0, and will briefly describe their function. Later chapters will cover in greater depth how to use the abstractions. <<animation>> covers the topic of animation, and <<evaluation>> discusses how to evaluate formulas using the API. In the following sections we will introduce the main abstractions that are available in ProB 2.0, that is, the model, state space and trace abstractions.
