@@ -8,43 +8,29 @@ ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 
 Release Notes - BMotion Studio - Version 0.2.3
 
-Bug
+== Bug
 
-* /https://probjira.atlassian.net/browse/BMSPROB-13_BMSPROB-13[https://probjira.atlassian.net/browse/BMSPROB-13
-BMSPROB-13] - Images not working in svg editor
-* /https://probjira.atlassian.net/browse/BMSPROB-14_BMSPROB-14[https://probjira.atlassian.net/browse/BMSPROB-14
-BMSPROB-14] - Exception is thrown if root element has no observer in
+* https://probjira.atlassian.net/browse/BMSPROB-13_BMSPROB-13 - Images not working in svg editor
+* https://probjira.atlassian.net/browse/BMSPROB-14_BMSPROB-14 - Exception is thrown if root element has no observer in
 diagram generation
-* /https://probjira.atlassian.net/browse/BMSPROB-16_BMSPROB-16[https://probjira.atlassian.net/browse/BMSPROB-16
-BMSPROB-16] - Fix online mode
-* /https://probjira.atlassian.net/browse/BMSPROB-19_BMSPROB-19[https://probjira.atlassian.net/browse/BMSPROB-19
-BMSPROB-19] - Setting height and width in manifest file of root view
+* https://probjira.atlassian.net/browse/BMSPROB-16_BMSPROB-16 - Fix online mode
+* https://probjira.atlassian.net/browse/BMSPROB-19_BMSPROB-19 - Setting height and width in manifest file of root view
 throws an exception
-* /https://probjira.atlassian.net/browse/BMSPROB-21_BMSPROB-21[https://probjira.atlassian.net/browse/BMSPROB-21
-BMSPROB-21] - event selection popup shows for elements with one event
-* /https://probjira.atlassian.net/browse/BMSPROB-24_BMSPROB-24[https://probjira.atlassian.net/browse/BMSPROB-24
-BMSPROB-24] - Refreshing and closing window causes multiple rendering
+* https://probjira.atlassian.net/browse/BMSPROB-21_BMSPROB-21 - event selection popup shows for elements with one event
+* https://probjira.atlassian.net/browse/BMSPROB-24_BMSPROB-24 - Refreshing and closing window causes multiple rendering
 errors
-* /https://probjira.atlassian.net/browse/BMSPROB-27_BMSPROB-27[https://probjira.atlassian.net/browse/BMSPROB-27
-BMSPROB-27] - Observer values are not applied in diagram generation if
+* https://probjira.atlassian.net/browse/BMSPROB-27_BMSPROB-27 - Observer values are not applied in diagram generation if
 model is not initialised
 
-New Feature
+== New Feature
 
-* /https://probjira.atlassian.net/browse/BMSPROB-4_BMSPROB-4[https://probjira.atlassian.net/browse/BMSPROB-4
-BMSPROB-4] - Make probcli replaceable
-* /https://probjira.atlassian.net/browse/BMSPROB-9_BMSPROB-9[https://probjira.atlassian.net/browse/BMSPROB-9
-BMSPROB-9] - Implement bset observer
-* /https://probjira.atlassian.net/browse/BMSPROB-10_BMSPROB-10[https://probjira.atlassian.net/browse/BMSPROB-10
-BMSPROB-10] - Implement initialization listener
-* /https://probjira.atlassian.net/browse/BMSPROB-15_BMSPROB-15[https://probjira.atlassian.net/browse/BMSPROB-15
-BMSPROB-15] - Implement first version of WYSIWYG editor
-* /https://probjira.atlassian.net/browse/BMSPROB-26_BMSPROB-26[https://probjira.atlassian.net/browse/BMSPROB-26
-BMSPROB-26] - Support the creation of new visualizations via application
+* https://probjira.atlassian.net/browse/BMSPROB-4_BMSPROB-4 - Make probcli replaceable
+* https://probjira.atlassian.net/browse/BMSPROB-9_BMSPROB-9 - Implement bset observer
+* https://probjira.atlassian.net/browse/BMSPROB-10_BMSPROB-10 - Implement initialization listener
+* https://probjira.atlassian.net/browse/BMSPROB-15_BMSPROB-15 - Implement first version of WYSIWYG editor
+* https://probjira.atlassian.net/browse/BMSPROB-26_BMSPROB-26 - Support the creation of new visualizations via application
 
-Improvement
+== Improvement
 
-* /https://probjira.atlassian.net/browse/BMSPROB-11_BMSPROB-11[https://probjira.atlassian.net/browse/BMSPROB-11
-BMSPROB-11] - Add prob preferences to manifest file
-* /https://probjira.atlassian.net/browse/BMSPROB-25_BMSPROB-25[https://probjira.atlassian.net/browse/BMSPROB-25
-BMSPROB-25] - Support custom filenames for BMotion Studio manifest file
+* https://probjira.atlassian.net/browse/BMSPROB-11_BMSPROB-11  - Add prob preferences to manifest file
+* https://probjira.atlassian.net/browse/BMSPROB-25_BMSPROB-25 - Support custom filenames for BMotion Studio manifest file

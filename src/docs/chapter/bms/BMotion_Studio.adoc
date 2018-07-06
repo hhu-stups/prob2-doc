@@ -5,52 +5,36 @@ ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 
 :category: Components
 
-
 image::Bmotion_logo.png[]
 
-What is BMotionWeb?
+== What is BMotionWeb?
 
 BMotionWeb is a tool built on top of the link:/ProB_Java_API[ProB Java
 API] for creating interactive visualizations of Classical-B, Event-B and
 CSP models.
 
-Download
+== Download
 
-````<<bmotion-studio-download,`Download````BMotionWeb`>> +
-``
+<<bmotion-studio-download,DownloadBMotionWeb>>
 
- +
+== Getting Started
 
-Getting Started
+http://www3.hhu.de/stups/handbook/bmotion/current/html/first_steps.html[FirstSteps(InstallationandStart)]
 
-````http://www3.hhu.de/stups/handbook/bmotion/current/html/first_steps.html[`First````Steps````(Installation````and````Start)`] +
-``
+http://www3.hhu.de/stups/handbook/bmotion/current/html/tutorial_b.html[Tutorial:BMotionWebforEvent-BandClassical-B]
 
-````http://www3.hhu.de/stups/handbook/bmotion/current/html/tutorial_b.html[`Tutorial:````BMotionWeb````for````Event-B````and````Classical-B`] +
-``
+== Online Visualization
 
- +
+http://wyvern.cs.uni-duesseldorf.de/bms/lift.html[Simple Lift (Event-B)]
 
-Online Visualization
+http://wyvern.cs.uni-duesseldorf.de/bms/bridge.html[Carsonbridge(Event-B)]
 
-````http://wyvern.cs.uni-duesseldorf.de/bms/lift.html[`Simple````Lift````(Event-B)`] +
-``
+http://wyvern.cs.uni-duesseldorf.de/bms/landing.html[LandingGearSystem(Event-B)]
 
-````http://wyvern.cs.uni-duesseldorf.de/bms/bridge.html[`Cars````on````bridge````(Event-B)`] +
-``
+http://wyvern.cs.uni-duesseldorf.de/bms/crossing.html[Crossing(CSP)]
 
-````http://wyvern.cs.uni-duesseldorf.de/bms/landing.html[`Landing````Gear````System````(Event-B)`] +
-``
+http://wyvern.cs.uni-duesseldorf.de/bms/bully.html[BullyAlgorithm(CSP)]
 
-````http://wyvern.cs.uni-duesseldorf.de/bms/crossing.html[`Crossing````(CSP)`] +
-``
+== Documentation
 
-````http://wyvern.cs.uni-duesseldorf.de/bms/bully.html[`Bully````Algorithm````(CSP)`] +
-``
-
- +
-
-Documentation
-
-````http://www3.hhu.de/stups/handbook/bmotion/current/pdf/bms-doc.pdf[`User````Manual`] +
-``
+http://www3.hhu.de/stups/handbook/bmotion/current/pdf/bms-doc.pdf[UserManual]
