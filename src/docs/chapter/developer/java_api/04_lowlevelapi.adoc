@@ -54,6 +54,7 @@ public class GetShortestTraceCommand extends AbstractCommand {
 
 [#img-lowlevelapi]
 .Combined execution of low level commands
-image::lowlevelapi.png[]
+
+image::Lowlevelapi.png[]
 
 CAUTION: <<img-lowlevelapi>> is slightly outdated, the Prolog interface is located in prob2_interface.pl rather than eclipse_interface.pl.

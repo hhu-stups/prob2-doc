@@ -49,7 +49,9 @@ instructs ProB to search for states satisfying the GOAL predicate
 image::ProB_ModelCheckGoalBox.png[]
 
 Now press the model check button and you should now obtain the following
-message:image::ProB_Goal_Found.png[]
+message:
+
+image::ProB_Goal_Found.png[]
 
 The main window of ProB now contains the following information:
 

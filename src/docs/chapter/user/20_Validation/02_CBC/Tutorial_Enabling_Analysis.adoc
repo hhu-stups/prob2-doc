@@ -191,7 +191,7 @@ We can now list all possible enabling relations for the machine
 operation in the row is the operation whose effect is studied on the
 status of the guard of the operation in the column.
 
-image::_EnablingResults.png[]
+image::EnablingResults.png[]
 
 Rather than showing the enabling information for each pair of operations
 of the machine, one can display the enabling relations by means of a
@@ -201,7 +201,7 @@ marked as impossible, independent or infeasible are not shown in the
 graph. We denote such graphs as enable graphs. The enable graph of
 `Example.mch` looks as follows.
 
-image::_EnableGraph_Example.png[]
+image::EnableGraph_Example.png[]
 
 From the enable graph one can recognize the control flow of the model
 and deduce some properties. For example, we can clearly see that `Op4`

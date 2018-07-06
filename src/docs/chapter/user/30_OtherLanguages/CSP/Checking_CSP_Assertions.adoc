@@ -288,8 +288,7 @@ assertion, as well as various other options. Take, for example, the
 selected assertion on which the contextual menu is popped up in the
 picture below.
 
-/file:_CSPAssertionsViewer_ctxmenu.png[file:
-CSPAssertionsViewer_ctxmenu.png]
+image::CSPAssertionsViewer_ctxmenu.png[]
 
 The assertion "`ASSYSTEM |= LTL: “GF [eats.0]”`" intends to check if
 the process ASSYSTEM satisfies the LTL formula "`GF [eats.0]`". For
@@ -437,7 +436,7 @@ obviously `P` reaches a deadlock state after performing the trace
 latexmath:[$\langle a,b,c \rangle$]. Providing a second double-click on
 the assertion will open the following debugging window:
 
-image::_CSP_Deadlock_Trace.png[]
+image::CSP_Deadlock_Trace.png[]
 
 Considering the CSP processes `Q` and `R` one can see or check that `R`
 is a trace refinement of `Q` since `R` performs the same set of traces
@@ -448,7 +447,7 @@ refinement check. Performing a second double-click on the item `R [T= Q`
 will open the following trace debugger window with the counterexample
 displayed in it:
 
-image::_CSP_Trace_Debugger.png[]
+image::CSP_Trace_Debugger.png[]
 
 A counterexample of a trace-refinement assertion is a trace leading to a
 state in which the implementation process performs an event that the
@@ -468,7 +467,7 @@ produce a counterexample since `R` refuses the event `c` that is offered
 by Q after executing `a`. Accordingly, the counterexample will be
 illustrated within the following trace debugger window:
 
-image::_CSP_Failures_Debugger.png[]
+image::CSP_Failures_Debugger.png[]
 
 These are basically the three types of debugging windows that will
 appear when debugging a counterexample for an assertion check in case
@@ -488,7 +487,7 @@ reaches a cycle “(b -> a)+” that violates the property “F [c]”.
 Performing a second double-click on the assertion will display the
 following state space graph in the graphical viewer:
 
-image::_CE_LTL_assertion.png[]
+image::CE_LTL_assertion.png[]
 
 In the figure above, the nodes and the transitions of the respective
 counterexample "a -> (b -> a)+" are colored in red.

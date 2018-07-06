@@ -217,7 +217,7 @@ The left side of the following Figure shows the non-graphical animation
 of the machine scheduler, and the right side shows its graphical
 animation obtained using ProB.
 
-image::scheduler_graphvis1.png[]
+image::Scheduler_graphvis1.png[]
 
 The graphical visualization is done by writing in the DEFINTIONS section
 the following animation function. Here, we need to map PID elements to

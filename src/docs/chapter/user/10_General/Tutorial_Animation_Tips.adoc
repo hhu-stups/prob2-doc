@@ -71,6 +71,7 @@ image::ProB_Lift_OpPane_WithJump_Exec98.png[]
 
 Note: instead or in addition to providing concrete values, you can also
 specify a predicate that constrains the values of the parameters:
+
 image::ProB_Lift_ExecuteOperation_Dialog_Pred.png[]
 
 The above predicate, `level>96 & level mod 2 =0` would select the same

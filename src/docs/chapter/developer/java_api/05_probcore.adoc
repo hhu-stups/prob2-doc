@@ -343,15 +343,17 @@ Initially we create a random Trace t1 of length 4 (<<img-trace1>>). Let's say th
 
 [#img-trace1]
 .t1 = randomTrace(new Trace(),3);
+
 image::traces_1.png[]
 
 [#img-trace2]
 .t2 = t1.back()
+
 image::traces_2.png[]
 
 [#img-trace3]
 .t3 = t2.anyEvent("d")
-image::traces_3.png[]
 
+image::traces_3.png[]
 
 Note, that almost all elements are shared between the Traces, we do not have to copy the List in order to have immutable values, so the implementation is efficient.

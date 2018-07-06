@@ -55,7 +55,7 @@ executing the operations is irrelevant with respect to reaching the
 deadlock state. This can be seen, for example, by observing the full
 state space of the machine:
 
-image::full_state_space_por.png[]
+image::Full_state_space_por.png[]
 
 Since the order in which the operations are executed is not relevant for
 discovering the deadlock state it is sufficient to examine only one of
@@ -63,7 +63,7 @@ the six possible paths that start in the initial state and reach the
 deadlock. Thus, for the machine it is enough to analyze only one
 arbitrary order of the events in order to detect the deadlock:
 
-image::partial_state_space_por.png[]
+image::Partial_state_space_por.png[]
 
 Using this observation the ordinary model checker of ProB has been
 extended to check a model formalized in B or Event-B using partial order
@@ -158,7 +158,7 @@ The reduction algorithm makes use of the independence of transitions.
 Two transitions `Op1` and `Op2` are called independent if for each state
 s where both are enabled we have the following situation:
 
-image::independence.png[]
+image::Independence.png[]
 
 Let us assume that the transitions `Op1` and `Op2` in the Figure above
 constitute the executions of two deterministic operations of a B
@@ -190,7 +190,7 @@ menu bar of the Tcl/Tk interface of ProB: “Verify → Enabling Analysis →
 Dependence Analysis (Table)”. For example, the dependency table for the
 model 'Example.mch' looks as follows:
 
-image::dependency_table.png[]
+image::Dependency_table.png[]
 
 The results in the dependency table for a pair of operations `Op1` and
 `Op2` have the following meanings:
@@ -297,15 +297,15 @@ concentrate on three kinds of enabling relations:
 
 * `Op2` is *always* enabled after the execution of `Op1`
 
-image::_GuaranteedRelation.png[]
+image::GuaranteedRelation.png[]
 
 * `Op2` is *impossible* to be enabled after the execution of `Op1`
 
-image::_ImpossibleRelation.png[]
+image::ImpossibleRelation.png[]
 
 * `Op1` *keeps* `Op2` enabled respectively disabled
 
-image::_KeepRelation.png[]
+image::KeepRelation.png[]
 
 
 Consider the B machine below modelling an algorithm for mutual exclusion

@@ -6,7 +6,7 @@ ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 :category: Components
 
 
-image::bmotion_logo.png[]
+image::Bmotion_logo.png[]
 
 What is BMotionWeb?
 

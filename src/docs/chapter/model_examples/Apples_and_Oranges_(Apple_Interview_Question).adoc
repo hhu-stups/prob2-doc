@@ -60,7 +60,7 @@ ProB, simply use the normal comments `/* ... */`.
 Loading this model with ProB gives you just one solution (after less
 than 10 ms):
 
-/File:ProB_ApplesOranges_Sol.png[600px|center]
+image::ProB_ApplesOranges_Sol.png[]
 
 As we can see, the only solution is to open the box labelled with
 "Both". We can inspect the decision function by using the B REPL
@@ -87,5 +87,4 @@ command "Expression as Table..." in the Visualize->Formulas menu. If
 you enter "DecisionFunction" as expression you will see the following
 tabular representation:
 
-
-image::wiki/ProB_ApplesOranges_Table.png[]
+image::ProB_ApplesOranges_Table.png[]

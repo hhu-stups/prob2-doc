@@ -14,7 +14,6 @@ Model Checking”, The MIT Press, 2008, pages 43-45.]).
 
 Each of the actions of a process are represented by a respective event:
 
-
 image::LTLViewMUTEXEvents.png[]
 
 Each process latexmath:[$P_i$] has three possible states that are

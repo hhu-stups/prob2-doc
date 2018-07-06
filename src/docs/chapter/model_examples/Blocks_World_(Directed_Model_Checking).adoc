@@ -64,7 +64,9 @@ found by the model checker. For this we can add `ANIMATION_FUNCTION` and
 model at the end of this page.
 
 The initial state of our model then looks as follows, when loaded using
-ProB Tcl/Tk:image::ProB_BlockInit_Screenshot.png[]
+ProB Tcl/Tk:
+
+image::ProB_BlockInit_Screenshot.png[]
 
 Finding the GOAL
 

@@ -73,6 +73,7 @@ As you can see above in the "State Properties" pane, ProB has chosen
 MAXINT=3, MININT=-1 and card(TRACK)=2. If you wish to change these
 settings, perform the steps above and reload the machine. Hint: there is
 a "Reopen" command in the _File_ menu:
+
 image::ProB_JukeboxReopenCommand.png[]
 
 [[setup_constants]]
@@ -91,7 +92,9 @@ Operations'' pane. This means that there might actually be more than
 three ways to setup the constants. We will return to this issue later.
 
 By double clicking on "SETUP_CONSTANTS(2)" we proceed to the next
-phase:image::ProB_JukeboxAfterSETUPCONSTANTS.png[]
+phase:
+
+image::ProB_JukeboxAfterSETUPCONSTANTS.png[]
 
 [[initialisation]]
 3. INITIALISATION
@@ -122,6 +125,9 @@ the "Model Check" button.
 
 If we now choose the "View Statespace" command in the _Animate_
 menu, we get the following picture:
-image::ProB_Jukebox_StatespaceFull.png[] We can see (or guess at
+
+image::ProB_Jukebox_StatespaceFull.png[]
+
+We can see (or guess at
 least) that ProB has validated the machine and explored the statespace
 not just for `limit=2` but also for `limit=1` and `limit=3`.

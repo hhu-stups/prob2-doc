@@ -14,7 +14,7 @@ _Verify_ menu. The feature can also be accessed by the key combination
 "Ctrl+L" under Windows and Linux, and by the key combination "Cmd+L"
 under MacOS. The following window appears:
 
-image::ltlviewer.png[]
+image::Ltlviewer.png[]
 
 All LTL formulas that are given in the "DEFINTIONS" section of a B
 machine are displayed in the list box of the LTL/CTL Assertions Viewer.
@@ -62,7 +62,7 @@ elements. The context menu can be popped-up by a right-mouse-click on a
 formula from the list box, and it performs a set of actions available to
 be performed on the currently selected formula (see Figure below).
 
-image::ltlviewercontext.png[]
+image::Ltlviewercontext.png[]
 
 The old LTL and CTL dialogs can be accessed from "OldLtlViewers" in
 the menu bar.

@@ -46,13 +46,13 @@ Build Update Site
 How to use it
 ~~~~~~~~~~~~~
 
-image::disprover-all.png[]
+image::Disprover-all.png[]
 
 The proof obligation editor in Rodin presents the user with a number of Hypotheses and one
 Goal, to be proved. If the Disprover is installed, it is available in
 the tool bar alongside the other provers:
 
-image::disprover_proof_control.png[]
+image::Disprover_proof_control.png[]
 
 [[how-it-works]]
 How it works
@@ -66,7 +66,7 @@ also checks if there cannot be a model for the formula. If this is the
 case it acts like a decision procedure, i.e., absence of a model is a
 proof for the goal. This is shown in the proof tree as follows:
 
-image::disprover_proof.png[]
+image::Disprover_proof.png[]
 
 Unfortunately, sometimes neither a counter example nor a proof can be
 found.

@@ -19,8 +19,7 @@ annotations.
 Download Theories
 ~~~~~~~~~~~~~~~~~
 
-An example project with theories:
-image::theories2.zip[]
+//An example project with theories: theories2.zip[] TODO: Downloadlink
 
 The project contains the following theories:
 

@@ -75,4 +75,4 @@ B, TLA+, CSP and Prolog] are available.
 Emacs
 ^^^^^
 
-A packageimage::b-mode.el.zip[] is available.
+A package is available. //TODO: Downloadlink  b-mode.el.zip[]
