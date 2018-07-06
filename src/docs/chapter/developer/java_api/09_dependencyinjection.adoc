@@ -9,8 +9,8 @@ There are several possible ways to setup the dependencies. We could just create 
 [source, java]
 ----
 public Api() {
-   this.modelFactoryProvider = new FactoryProvider();
-   this.animatorProvider = new AnimatorProvider();
+	this.modelFactoryProvider = new FactoryProvider();
+	this.animatorProvider = new AnimatorProvider();
 }
 ----
 
@@ -21,8 +21,8 @@ A better way would be to pass in the dependencies of a class as parameters of th
 [source, java]
 ----
 public Api(FactoryProvider modelFactoryProvider, Provider<IAnimator> animatorProvider) {
-   this.animatorProvider = animatorProvider;
-   this.modelFactoryProvider = modelFactoryProvider;
+	this.animatorProvider = animatorProvider;
+	this.modelFactoryProvider = modelFactoryProvider;
 }
 ----
 
@@ -39,8 +39,8 @@ This is where dependency injection frameworks like Guice or Spring come into pla
 ----
 @Inject
 public Api(final FactoryProvider modelFactoryProvider, final Provider<IAnimator> animatorProvider) {
-  this.animatorProvider = animatorProvider;
-  this.modelFactoryProvider = modelFactoryProvider;
+	this.animatorProvider = animatorProvider;
+	this.modelFactoryProvider = modelFactoryProvider;
 }
 ----
 
@@ -62,9 +62,7 @@ If you want to use Guice in your own tool, you can create an Injector and tell P
 [source, java]
 ----
 Module myModule = new MyModule();
-Injector myInjector = Guice.createInjector(Stage.PRODUCTION,
-                                               mymodule,
-			                                         new MainModule());
+Injector myInjector = Guice.createInjector(Stage.PRODUCTION, mymodule, new MainModule());
 Main.setInjector(myInjector);
 ----
 

@@ -94,9 +94,10 @@ A synchronized trace object, or `SyncedTrace`, can be created by specifying a li
 [source, groovy]
 ----
 // t0, t1, t2 are Trace objects
-tt = new SyncedTraces([t0,t1,t2],
-                      [new SyncedEvent("sync1").sync(t0,"foo",["x < 5"]).sync(t1,"bar",[]),
-	                   new SyncedEvent("sync2").sync(t2,"baz",[]).sync(t0,"foo",["x > 5"])])
+tt = new SyncedTraces([t0,t1,t2], [
+	new SyncedEvent("sync1").sync(t0,"foo",["x < 5"]).sync(t1,"bar",[]),
+	new SyncedEvent("sync2").sync(t2,"baz",[]).sync(t0,"foo",["x > 5"]),
+])
 ----
 
 Once a `SyncedEvent` has been defined for a `SyncedTrace`, this event can be executed on the class which results in the previously defined events being fired in the underlying Trace objects.

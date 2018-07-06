@@ -71,7 +71,7 @@ The ModelFactory is defined by the following interface:
 [source,java]
 ----
 public interface ModelFactory<T extends AbstractModel> {
-    public ExtractedModel<T> extract(String pathToSpecification);
+	public ExtractedModel<T> extract(String pathToSpecification);
 }
 ----
 
@@ -80,11 +80,11 @@ As you can see, a `ModelFactory` extracts a `Model` object from a given specific
 [source, java]
 ----
 public abstract class AbstractModel extends AbstractElement {
-    public StateSpace load(AbstractElement mainComponent) {
+	public StateSpace load(AbstractElement mainComponent) {
 		load(mainComponent, Collections.emptyMap());
-    }
+	}
 
-    public abstract StateSpace load(AbstractElement mainComponent, Map<String,String> preferences);
+	public abstract StateSpace load(AbstractElement mainComponent, Map<String,String> preferences);
 }
 ----
 
