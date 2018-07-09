@@ -1,2 +1,2 @@
 run:
-	gradle asciidoctor
+	gradle asciidoctor --no-daemon
