@@ -1,6 +1,6 @@
 ---
 file: prob2_developer.adoc
-title: ProB 2.0 Developer handbook
+title: ProB 2.0 Developer Handbook
 authors:
   - Jens Bendisposto
   - Joy Clark
@@ -9,9 +9,17 @@ content:
   - appendix
 ---
 file: prob_tcltk.adoc
-title: ProB Tcl/Tk Handbook
+title: ProB User Manual
 authors:
   - Michael Leuschel
 content:
-  - model_examples
   - user
+  - model_examples
+---
+file: prob_prolog_developer.adoc
+title: ProB Prolog Developer Handbook
+authors:
+  - Michael Leuschel
+content:
+  - developer/prolog
+  - appendix
