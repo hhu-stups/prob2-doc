@@ -69,19 +69,15 @@ containing the DLLs for the C runtime. Also, the binary is called
 
 * Be sure that you have Tcl/Tk installed (see, e.g.,
 http://www.tcl.tk/software/tcltk/). With the latest version of ProB, you
-have to install Tcl/Tk version 8.4 (for some versions of ProB even 8.5)!
-For Windows you can find a correct version of Tcl/Tk at
-http://downloads.activestate.com/ActiveTcl/Windows/8.4.19/ . The Mac
-version needs Tcl/Tk 8.5 or higher
-(http://www.tcl.tk/software/tcltk/8.5.html/).
-* To load your own B machines you also need Java runtime installed
-(http://java.sun.com/j2se/index.jsp or directly to
-http://java.sun.com/javase/downloads/index.jsp to download the standard
-edition 5.0; on Mac and Linux Java is probably already installed).
+have to install Tcl/Tk version 8.5.
+For example, you can find a correct version of Tcl/Tk at
+http://downloads.activestate.com/ActiveTcl/releases/8.5.18.0/.
+* To load your own B machines you also need Java 7 or newer runtime or better JDK.
 * Note: you can skip this step if you do not wish to use the
 visualization commands. Install the ``dot'' program and ``dotty'' viewer
 from AT&T's Graphviz package (http://www.graphviz.org/ or
-http://www.research.att.com/sw/tools/graphviz/). By default, ProB will
+http://www.research.att.com/sw/tools/graphviz/).
+By default, ProB will
 open the ``dotty'' program to visualize the graphs, but postscript
 viewers (such as gv) are also supported. So, you do not need to install
 dotty if you don't want to; but it is probably easiest to install the
@@ -102,13 +98,13 @@ directory. Have fun ! Please report bugs!
 Checklist/Troubleshooting
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* Java: be sure to have Java 1.5 or newer installed. Otherwise you will
+* Java: be sure to have Java 7 or newer installed. Otherwise you will
 not be able to parse your own classical B machines as our parser is
 written in Java.
 
 * Tcl/Tk: be sure to have a suitable version of TclTk installed. In
-general you should install at least 8.4.14 in general and at least 8.5
-on the Mac. You also need the 64 bit version of Tcl/Tk for 64 bit
+general you should install at least 8.5.
+You also need the 64 bit version of Tcl/Tk for 64 bit
 versions of ProB.
 
 * GraphViz: in order to make use of the graphical visualization
