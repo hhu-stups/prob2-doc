@@ -24,6 +24,8 @@ comes with
 http://www.stups.uni-duesseldorf.de/BMotionStudio/[BMotionStudio] to
 easily generate domain specific graphical visualizations. (See
 https://www3.hhu.de/stups/prob/[for an overview of ProB's components]).
+ProB can now also be used as a
+ https://gitlab.cs.uni-duesseldorf.de/dgelessus/prob2-jupyter-kernel[Jupyter kernel] to generate interactive notebooks.
 
 ProB is being used within Siemens, Alstom, Thales and several other
 companies for http://www.data-validation.fr[data validation] of
