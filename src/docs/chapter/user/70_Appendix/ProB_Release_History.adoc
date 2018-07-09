@@ -1,10 +1,62 @@
 ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
-Full ProB release history until release 1.6.0:
+Full ProB release history until release 1.8.0:
 
 ----
 RELEASE HISTORY
 ===============
-
+1.8.1-beta
+ - support PNG images for ANIMATION_FUNCTION and ANIMATION_IMG, also look for images relative to
+   the file in wich the ANIMATION_IMG is declared.
+   Add horizontal scrolling for very wide visualizations and allow to scale visualization.
+   Allow to specify font and size for strings (TK_CUSTOM_STATE_VIEW_FONT_NAME/_SIZE)
+ - allow to choose dot layout engine via DOT_ENGINE preference
+ - support Atelier-B's "ref" keyword in Event-B (.sys) models
+ - better error messages for unknown identifiers (fuzzy matching and completion checking)
+ - support Jupyter kernel
+ - executing operations by predicate can now also specify post-conditions (e.g., on non-deterministically
+   assigned variables)
+ - CUSTOM_GRAPH_EDGES and CUSTOM_GRAPH_NODES can provide shape information and a much wider range of Tk/dot colours.
+ - add CODES_TO_STRING, HASH, ... external functions in LibraryStrings.mch
+ - improved error location feedback for expressions involving (nested) DEFINITION calls
+ - improvements in kernel (detection of infinite sets, symbolic treatments of set difference, ...)
+ - reduce console output in -silent mode
+ - add opitional ndjson error logging via NDJSON_ERROR_LOG_FILE preference
+20.03.2018: 1.8.0
+ - add terminal colour output in probcli, can be disabled by setting NO_COLOR environment variable
+ - improved performance of evaluation/state views in UI for large values
+ - changed treatment of reflexive closure: now corresponds to the more usual
+   mathematical definition: closure(X) = id(TypeOfX) \/ closure1(X)
+   The previous definition closure(X) = id(ran(X)\/dom(X)) \/ closure1(X) and
+    the definition in Atelier-B closure(X) = id(dom(X)) \/ closure1(X)
+    are not compatible with the following law in the B-Book on page 169 
+       (r[a] <: a => closure(r)[a]=a)
+    Note that closure({1|->2}) and iterate({1|->2},0) are now infinite.
+ - improved constraint solving for closure/closure1 operators
+ - static symmetry breaking uses partition predicates of deferred sets
+ - allow LET expressions and predicates to introduce multiple, dependent identifiers in order
+   (for LET substitutions this is only allowed if the preference ALLOW_COMPLEX_LETS is TRUE)
+ - TYPE_CHECK_DEFINITIONS preference to type check definitions (also unused ones)
+ - improved static checking for INITIALISATION order
+ - add preference DETECT_LAMBDAS to detect set comprehensions that can be transformed into lambdas
+ - added bitwise external functions in LibraryBits.def
+ - add TYPED_STRING_TO_ENUM, SLEEP external functions
+ - added random_subset and random_permutation external functions in LibraryRandom.def
+ - improvements in constraint solving kernel, e.g., total function checking for range
+ - allow to replay JSON trace files and to export to JSON trace files in ProB Tcl/Tk
+05.10.2017: 1.7.1
+ - new feature to export history to HTML file with graphical visualizations
+ - improved presentation of quantifiers in Tk Evaluation View
+ - improved presentation of non-deterministically assigned variables in operations view
+   (shown first for INITIALISATION, more variables shown for variables without parameters
+    and return values)
+ - made Z operation schema detection more flexible: schemas which work on part of
+   the variables are allowed and extended to schemas which do not change the other variables,
+   allow custom execution of Z operations by parameter values, improvements in kernel for Z types,
+   allow opening .zed files in addition to .tex files
+ - performance improvements in kernel
+ - added SOLVER_STRENGTH preference (to increase strength of propagations for large
+   sets, for reification of quantifiers, ...)
+ - external predicate SCCS for computing strongly connected components
 11.07.2017: 1.7.0
  - ProB now assumes strings, machine files,... are all encoded using UTF-8
  - first (limited) support for VALUES clause for constants
