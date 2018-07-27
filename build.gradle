@@ -46,7 +46,7 @@ task cleanpdf() {
 
 task bibtex() {
     doFirst {
-        def tree = fileTree(dir: 'src/docs/bibtex') {
+        def tree = fileTree('src/docs/bibtex') {
             include "**/*.bib"
         }
         def files = tree.files
