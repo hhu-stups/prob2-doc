@@ -7,8 +7,7 @@ ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 
 
 [[installation]]
-Installation
-~~~~~~~~~~~~
+== Installation
 
 First you need to download the Rodin platform (e.g,
 http://sourceforge.net/projects/rodin-b-sharp/files/Core_Rodin_Platform/3.3/[Rodin
@@ -36,8 +35,7 @@ link:/Installation#Installation_Instruction_for_ProB_.28Rodin_Plugin.29[screenca
 of the installation is available here].
 
 [[starting-prob]]
-Starting ProB
-~~~~~~~~~~~~~
+== Starting ProB
 
 Start by right clicking (control Click on the Mac) on the machine or
 context you wish to animate and select "Start Animation/Model

@@ -206,5 +206,4 @@ END
 ....
 
 [[references]]
-References
-~~~~~~~~~~
+== References

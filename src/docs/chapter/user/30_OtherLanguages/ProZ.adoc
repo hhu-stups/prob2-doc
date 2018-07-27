@@ -14,8 +14,7 @@ http://www.stups.uni-duesseldorf.de/w/Special:Publication/proz07[iFM'07
 article on ProZ] contains more details about the implementation.
 
 [[preferences]]
-Preferences
------------
+== Preferences
 
 A Z specification frequently makes use of comprehension sets, which are
 often introduced by the underlying translation process from Z to B.
@@ -29,12 +28,10 @@ Animation Preferences ->
 ....
 
 [[structure-of-the-z-specification]]
-Structure of the Z Specification
---------------------------------
+== Structure of the Z Specification
 
 [[state-and-initialization]]
-State and Initialization
-~~~~~~~~~~~~~~~~~~~~~~~~
+=== State and Initialization
 
 To identify the components (like state, initialization, operations) of a
 Z specification, ProZ expects a certain structure of the specification:
@@ -59,8 +56,7 @@ in the initialization, you can do that by including those schemas in the
 predicate part.
 
 [[operations]]
-Operations
-^^^^^^^^^^
+==== Operations
 
 ProZ identifies schemas as operations if they satisfy the following
 properties:
@@ -86,8 +82,7 @@ Then the schemas A,B and E describe all the same operation. F is also
 identified as an operation that leaves the state unchanged.
 
 [[axiomatic-definitions]]
-Axiomatic definitions
-^^^^^^^^^^^^^^^^^^^^^
+==== Axiomatic definitions
 
 If axiomatic definitions are present, the declared variables are treated
 like constants. In the first step of the animation, ProB searches for
@@ -120,8 +115,7 @@ ProB will try to find a explicit set that will satisfy the given
 property.
 
 [[invariant]]
-Invariant
-^^^^^^^^^
+==== Invariant
 
 You can add a B-style invariant to the specification by defining a
 schema "Invariant" that declares a subset of the state variables. In
@@ -129,8 +123,7 @@ each explored state the invariant will be checked. The model checking
 feature of ProB will try to find states that violate the invariant.
 
 [[scope]]
-Scope
-^^^^^
+==== Scope
 
 It is possible to limit the search space of the model checker by adding
 a schema "Scope" that declares a subset of the state variables. If
@@ -138,8 +131,7 @@ such a schema is present, each explored state is checked, if it
 satisfies the predicate. If not, the state is not further explored.
 
 [[abbreviation-definitions]]
-Abbreviation Definitions
-^^^^^^^^^^^^^^^^^^^^^^^^
+==== Abbreviation Definitions
 
 Abbreviation definitions (e.g. Abbr == {1,2,3}) are used like macros by
 ProZ. A reference to an abbreviation is replaced by its definition in a
@@ -150,8 +142,7 @@ definitions (\defs instead of ==) when defining state, initialization,
 operations, etc.
 
 [[graphical-animation]]
-Graphical animation
-~~~~~~~~~~~~~~~~~~~
+=== Graphical animation
 
 (*Please note that this functionality is part of the next version. If
 you want to use graphical animation, please download a version from the
@@ -203,12 +194,10 @@ Here is how the animation of the specification should look like:
 image::ProZ_jars.png[]
 
 [[special-constructs]]
-Special constructs
-~~~~~~~~~~~~~~~~~~
+=== Special constructs
 
 [[prozignore]]
-prozignore
-^^^^^^^^^^
+==== prozignore
 
 Sometimes it is not desired to check properties of some variables. E.g.
 ProZ checks if the square function in 2.3.a is a total function by
@@ -250,8 +239,7 @@ It is also possible to append these lines to the "fuzzlib" in the fuzz
 distribution.
 
 [[translation-to-b]]
-Translation to B
-^^^^^^^^^^^^^^^^
+==== Translation to B
 
 You can inspect the result of the translation process with "Show
 internal representation" in the _Debug_ menu. Please note that the
@@ -263,8 +251,7 @@ shown B machine is normally not syntactically correct because of
 * lack of support from the pretty printer for every construct
 
 [[known-limitations]]
-Known Limitations
-~~~~~~~~~~~~~~~~~
+=== Known Limitations
 
 * Generic definitions are not supported yet.
 * Miscellaneous unsupported constructs
@@ -273,26 +260,22 @@ Known Limitations
 * The error messages are not very helpful yet.
 
 [[summary-of-supported-operators]]
-Summary of Supported Operators
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+=== Summary of Supported Operators
 
 ....
-Logical predicates:
--------------------
+== Logical predicates:
  P \land Q         conjunction
  P \lor Q          disjunction
  P \implies Q      implication
  P \iff Q          equivalence
  \lnot P           negation
 
-Quantifiers:
-------------
+== Quantifiers:
  \forall x:T | P @ Q      universal quantification (P => Q)
  \exists x:T | P @ Q      existential quantification (P & Q)
  \exists_1 x:T | P @ Q    exactly one existential quantification
 
-Sets:
------
+== Sets:
   \emptyset        empty set
   \{E,F\}          set extension
   \{~x:S | P~\}    set comprehension
@@ -308,15 +291,13 @@ Sets:
   \bigcup A        generalized union of sets of sets
   \bigcap A        generalized intersection of sets of sets
 
-Pairs:
-------
+== Pairs:
   E \mapsto F      pair
   S \cross T       Cartesian product
   first E          first part of pair
   second E         second part of pair
 
-Numbers:
---------
+== Numbers:
   \nat             Natural numbers
   \num             Integers
   \nat_1           Positive natural numbers
@@ -336,8 +317,7 @@ Numbers:
 
 **:  modulo of negative numbers not supported
 
-Functions:
-----------
+== Functions:
   S \rel T         relations
   S \pfun T        partial functions from S to T
   S \fun T         total functions from S to T
@@ -354,8 +334,7 @@ Functions:
   R \oplus Q       overriding
   R \plus          transitive closure
 
-Sequences:
-----------
+== Sequences:
   \langle E,... \rangle   explicit sequence
   \seq S           sequences over S
   \seq_1 S         non-empty sequences

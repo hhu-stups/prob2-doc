@@ -4,8 +4,7 @@ ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 = ProB's Prolog Datastructures
 
 [[data-values]]
-Data Values
-~~~~~~~~~~~
+== Data Values
 
 Integer value:
 
@@ -93,8 +92,7 @@ Freetype values
 `freeval(Id,Case,Value)`
 
 [[ast-abstract-syntax-tree]]
-AST (Abstract Syntax Tree)
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+== AST (Abstract Syntax Tree)
 
 An AST node has the form:
 
@@ -107,8 +105,7 @@ for substitutions or the value type for expressions, see below. Infos
 contains information about the AST node and is explained next.
 
 [[information-list]]
-Information list
-^^^^^^^^^^^^^^^^
+=== Information list
 
 Infos should be a ground list of informations. Some important
 information fields are:
@@ -119,8 +116,7 @@ information fields are:
 `refers_to_old_state(References)`
 
 [[ast-types]]
-AST types
-^^^^^^^^^
+=== AST types
 
 Possible types are:
 
@@ -141,8 +137,7 @@ where FieldTypes is a list containing:
 `field(Name,Type)`
 
 [[operators-without-arguments]]
-Operators without arguments
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+=== Operators without arguments
 
 `boolean_false` +
 `boolean_true` +
@@ -151,8 +146,7 @@ Operators without arguments
 ...
 
 [[unary-operators]]
-Unary operators
-^^^^^^^^^^^^^^^
+=== Unary operators
 
 `card(AST)` +
 `domain(AST)` +
@@ -161,8 +155,7 @@ Unary operators
 ...
 
 [[binary-operators]]
-Binary operators
-^^^^^^^^^^^^^^^^
+=== Binary operators
 
 `cartesian_product(AST1,AST2)` +
 `composition(AST1,AST2)` +
@@ -172,8 +165,7 @@ Binary operators
 ...
 
 [[special-operators]]
-Special operators
-^^^^^^^^^^^^^^^^^
+=== Special operators
 
 `general_sum(Ids,AST,AST)` +
 `general_product(Ids,AST,AST)` +

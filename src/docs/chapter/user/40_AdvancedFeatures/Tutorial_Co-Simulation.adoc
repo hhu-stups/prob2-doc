@@ -11,8 +11,7 @@ ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 You can create Co-Simulations using FMI with ProB.
 
 [[overview]]
-Overview
-~~~~~~~~
+== Overview
 
 The ProB 2.0 Java API contains some classes for cosimulating discrete
 models specified in one of the formalisms that are supported by ProB,

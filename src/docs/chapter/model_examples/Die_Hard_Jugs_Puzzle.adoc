@@ -62,8 +62,7 @@ required to reach this state can be found in the history pane on the
 right (in reverse order).
 
 [[graphical-animation]]
-Graphical Animation
-~~~~~~~~~~~~~~~~~~~
+== Graphical Animation
 
 This machine above is actually included in the ProB distribution (inside
 the examples/B/GraphicalAnimation/ directory). It also contains the
@@ -89,8 +88,7 @@ found the goal:
 image::ProB_DieHard_Screenshot.png[]
 
 [[using-probcli-command-line-version]]
-Using probcli (command-line version)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+== Using probcli (command-line version)
 
 To find the solution using probcli you just need to type:
 
@@ -128,8 +126,7 @@ goal_found
 ....
 
 [[tla-version]]
-TLA+ Version
-~~~~~~~~~~~~
+== TLA+ Version
 
 A TLA+ version of the puzzle is also included with ProB (inside the
 examples/TLA+/ directory). The specification was developed by Leslie
@@ -269,8 +266,7 @@ NotSolved == big # 4
 ....
 
 [[z-version]]
-Z Version
-~~~~~~~~~
+== Z Version
 
 A Z version of the puzzle is also included with ProB (inside the
 examples/Z/GraphicalAnimation/ directory) and shown on the

@@ -38,8 +38,7 @@ will compute at most 5 possible ways to execute any given operation
 (i.e., Increase and Reset in this case). We return to this issue below.
 
 [[successful-model-checking]]
-Successful Model Checking
-~~~~~~~~~~~~~~~~~~~~~~~~~
+== Successful Model Checking
 
 Now select the "Model Check..." command in the _Verify_ menu which
 brings up the model checking dialog box:
@@ -61,8 +60,7 @@ about interpreting a completed model check. Below we examine several
 issues that have to be considered.
 
 [[computing-all-transitions]]
-Computing All Transitions
-~~~~~~~~~~~~~~~~~~~~~~~~~
+== Computing All Transitions
 
 Let us now adapt the above B machine by changing the DEFINITION of MAX
 to 6. Now repeat the model checking exercise above. This time ProB will
@@ -102,8 +100,7 @@ a counter example:
 image::ProBSimpleCounterForMC_InvViol.png[]
 
 [[deferred-sets]]
-Deferred Sets
-~~~~~~~~~~~~~
+== Deferred Sets
 
 Let us now use the following simple machine:
 
@@ -163,8 +160,7 @@ SETS ID={id1,id2,id3,id4,id5}
 ....
 
 [[infinite-types]]
-Infinite Types
-~~~~~~~~~~~~~~
+== Infinite Types
 
 It could be that your B machine makes use of the mathematical integers
 (`INTEGER`) or infinite subsets thereof (`NATURAL`, `NATURAL1`). Note
@@ -185,8 +181,7 @@ it. This information is not yet fed back to the graphical user interface
 (but we are working on it).
 
 [[model-checking-and-proof]]
-Model Checking and Proof
-~~~~~~~~~~~~~~~~~~~~~~~~
+== Model Checking and Proof
 
 Finally, even if ProB was able to successfully check the entire state
 space of your model, this does not imply that you can prove your machine

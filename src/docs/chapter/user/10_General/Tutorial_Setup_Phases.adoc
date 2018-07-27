@@ -35,8 +35,7 @@ image::ProB_AnimationPhases.png[]
 We now examine these phases on the Jukebox machine in more detail
 
 [[loading]]
-1. Loading
-~~~~~~~~~~
+== 1. Loading
 
 Here ProB parses and type checks the machine.
 
@@ -77,8 +76,7 @@ a "Reopen" command in the _File_ menu:
 image::ProB_JukeboxReopenCommand.png[]
 
 [[setup_constants]]
-2. SETUP_CONSTANTS
-~~~~~~~~~~~~~~~~~~
+== 2. SETUP_CONSTANTS
 
 In this phase ProB will try and find values for the constants and
 parameters of your machine, so that the `PROPERTIES` and `CONSTRAINTS`
@@ -97,8 +95,7 @@ phase:
 image::ProB_JukeboxAfterSETUPCONSTANTS.png[]
 
 [[initialisation]]
-3. INITIALISATION
-~~~~~~~~~~~~~~~~~
+== 3. INITIALISATION
 
 In this phase the values for the constants have been found, but the
 initial values of the variables still remain to be determined. For this,

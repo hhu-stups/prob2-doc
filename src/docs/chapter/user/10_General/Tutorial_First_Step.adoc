@@ -9,15 +9,13 @@ ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 
 
 [[installation]]
-Installation
-~~~~~~~~~~~~
+== Installation
 
 Start off by installing the standalone Tcl/Tk version of ProB. Follow
 the instructions in <<installation,Installation>>.
 
 [[starting-prob]]
-Starting ProB
-~~~~~~~~~~~~~
+== Starting ProB
 
 Start ProB by double-clicking on `ProBWin` (for Windows users), or by
 launching `StartProB.sh` from a Terminal (for Linux and Mac users).
@@ -41,8 +39,7 @@ Normally, it should look as follows (on Windows):
 image::ProBStartTerminal.png[]
 
 [[loading-a-first-b-machine]]
-Loading a first B machine
-~~~~~~~~~~~~~~~~~~~~~~~~~
+== Loading a first B machine
 
 Use the "Open..." command in the _File_ menu
 
@@ -58,8 +55,7 @@ window should now look as follows:
 image::ProB_LiftAfterLoad.png[]
 
 [[first-steps-in-animation]]
-First Steps in Animation
-~~~~~~~~~~~~~~~~~~~~~~~~
+== First Steps in Animation
 
 We have now loaded a first simple B model. Let us look at the contents
 of the ProB window (ignoring the menu bar).

@@ -27,8 +27,7 @@ a table or by means of a graph. For simplicity, we will concentrate
 mainly on B and use the terminology of the formalism.
 
 [[enabling-relations]]
-Enabling Relations
-~~~~~~~~~~~~~~~~~~
+== Enabling Relations
 
 What we want to find out is how the operations influence each other
 within a B model. In other words, for each pair (op1, op2) of operations
@@ -208,8 +207,7 @@ and deduce some properties. For example, we can clearly see that `Op4`
 cannot occur after the execution of another operation.
 
 [[summary-of-the-enabling-relations]]
-Summary of the Enabling Relations
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+== Summary of the Enabling Relations
 
 In the following, we summarize most of the enabling relations that we
 think can provide a useful feedback to the user. For each of the
@@ -277,8 +275,7 @@ image::PossibleDisableExample.png[]
 image::InfeasibleExample.png[]
 
 [[performing-enabling-analysis-within-prob]]
-Performing Enabling Analysis within ProB
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+== Performing Enabling Analysis within ProB
 
 The enabling analysis has been implemented in the ProB toolset. The
 computation of the enabling relations is based on syntactic and
@@ -393,5 +390,4 @@ $ probcli file.mch -feasibility_analysis_csv FILE
 ....
 
 [[references-and-footnotes]]
-References and Footnotes
-~~~~~~~~~~~~~~~~~~~~~~~~
+== References and Footnotes

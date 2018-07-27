@@ -7,14 +7,8 @@ ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 
 :category: User_Manual
 
-
-[[summary-of-b-syntax]]
-Summary of B Syntax
-~~~~~~~~~~~~~~~~~~~
-
 [[logical-predicates]]
-Logical predicates:
-^^^^^^^^^^^^^^^^^^^
+== Logical predicates:
 
 ....
  P & Q       conjunction
@@ -32,8 +26,7 @@ Note: you can also introduce multiple variables inside a universal or
 existential quantification, e.g., `!(x,y).(P => Q)`.
 
 [[equality]]
-Equality:
-^^^^^^^^^
+== Equality:
 
 ....
  E = F      equality
@@ -41,8 +34,7 @@ Equality:
 ....
 
 [[booleans]]
-Booleans:
-^^^^^^^^^
+== Booleans:
 
 ....
  TRUE
@@ -58,8 +50,7 @@ values `x` and `y` using conjunction you have to write
 value you have to use `bool(z>0)`.
 
 [[sets]]
-Sets:
-^^^^^
+== Sets:
 
 ....
  {}              empty set
@@ -88,8 +79,7 @@ Sets:
 ....
 
 [[numbers]]
-Numbers:
-^^^^^^^^
+== Numbers:
 
 ....
  INTEGER        set of integers
@@ -120,8 +110,7 @@ Numbers:
 ....
 
 [[relations]]
-Relations:
-^^^^^^^^^^
+== Relations:
 
 ....
  S<->T         relation
@@ -151,8 +140,7 @@ Relations:
 ....
 
 [[functions]]
-Functions:
-^^^^^^^^^^
+== Functions:
 
 ....
   S+->T          partial function
@@ -169,8 +157,7 @@ Functions:
 ....
 
 [[sequences]]
-Sequences:
-^^^^^^^^^^
+== Sequences:
 
 ....
   <> or []   empty sequence
@@ -197,8 +184,7 @@ Sequences:
 ....
 
 [[records]]
-Records:
-^^^^^^^^
+== Records:
 
 ....
   struct(ID:S,...,ID:S)   set of records with given fields and field types
@@ -207,8 +193,7 @@ Records:
 ....
 
 [[strings]]
-Strings:
-^^^^^^^^
+== Strings:
 
 ....
   "astring"       a specific (single-line) string value
@@ -240,8 +225,7 @@ tabs and newlines. ProB assumes that all B machines and strings use the
 UTF-8 encoding.
 
 [[trees]]
-Trees:
-^^^^^^
+== Trees:
 
 Nodes in the tree are denoted by index sequences (branches), e.g,
 n=[1,2,1] Each node in the tree is labelled with an element from a
@@ -270,8 +254,7 @@ domain S.
 ....
 
 [[let-and-if-then-else]]
-LET and IF-THEN-ELSE
-^^^^^^^^^^^^^^^^^^^^
+== LET and IF-THEN-ELSE
 
 ProB allows the following for predicates and expressions:
 
@@ -283,8 +266,7 @@ ProB allows the following for predicates and expressions:
 Note: The expressions E1,... defining x1,... are not allowed to use x1,...
 
 [[statements-aka-substitutions]]
-Statements (aka Substitutions):
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+== Statements (aka Substitutions):
 
 ....
   skip         no operation
@@ -318,8 +300,7 @@ Statements (aka Substitutions):
 ....
 
 [[machine-header]]
-Machine header:
-^^^^^^^^^^^^^^^
+== Machine header:
 
 ....
   MACHINE or REFINEMENT or IMPLEMENTATION
@@ -332,8 +313,7 @@ Machine header:
 ....
 
 [[machine-sections]]
-Machine sections:
-^^^^^^^^^^^^^^^^^
+== Machine sections:
 
 ----
   CONSTRAINTS         P      (logical predicate)
@@ -351,8 +331,7 @@ Machine sections:
 ----
 
 [[machine-inclusion]]
-Machine inclusion:
-^^^^^^^^^^^^^^^^^^
+== Machine inclusion:
 
 ....
   USES list of machines
@@ -370,8 +349,7 @@ Machine inclusion:
 ....
 
 [[definitions]]
-Definitions:
-^^^^^^^^^^^^
+== Definitions:
 
 ....
   NAME1 == Expression;          Definition without arguments
@@ -406,8 +384,7 @@ There are a few Definitions which can be used to influence the animator:
 ....
 
 [[comments-and-pragmas]]
-Comments and Pragmas
-^^^^^^^^^^^^^^^^^^^^
+== Comments and Pragmas
 
 ....
 B supports two styles of comments:
@@ -437,8 +414,7 @@ The whitespace between @ and PRAGMA is optional.
 ----
 
 [[file-extensions]]
-File Extensions
-^^^^^^^^^^^^^^^
+== File Extensions
 
 ....
    .mch   for abstract machine files
@@ -449,8 +425,7 @@ File Extensions
 ....
 
 [[differences-with-atelierbb4free]]
-Differences with AtelierB/B4Free
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+== Differences with AtelierB/B4Free
 
 Basically, ProB tries to be compatible with Atelier B and conforms to
 the semantics of Abrial's B-Book and of
@@ -500,8 +475,7 @@ AtelierB/ProB:
  - In AtelierB/ProB the BOOL type is pre-defined and cannot be redefined
 
 [[other-notes]]
-Other notes
-^^^^^^^^^^^
+== Other notes
 ProB is best at treating universally quantified formulas of the form `!x.(x:SET => RHS)`,
 or  `!(x,y).(x|->y:SET =>RHS)`, `!(x,y,z).(x|->y|->z:SET =>RHS)`, ...;+
 otherwise the treatment of `!(x1,...,xn).(LHS => RHS)` may delay until all values treated by LHS are known. +

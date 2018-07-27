@@ -20,8 +20,7 @@ We will also learn to use the various predicate analysis features
 provided by ProB.
 
 [[simple-inconsistency-in-the-properties]]
-Simple Inconsistency in the PROPERTIES
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+== Simple Inconsistency in the PROPERTIES
 
 First, open the machine "Jukebox.mch" which can be found in the
 SchneiderBook/Jukebox_Chapter13 subdirectory of the ProB Examples
@@ -76,8 +75,7 @@ we can proceed with animation of the machine:
 image::ProB_JukeboxAfterLoad2.png[]
 
 [[a-more-involved-inconsistency]]
-A more involved inconsistency
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+== A more involved inconsistency
 
 Let us add
 

@@ -19,8 +19,7 @@ model checking), and is easy to interate with other programming
 languages (so that the GUI does not have to be developed in Prolog).
 
 [[why-prolog]]
-Why Prolog
-~~~~~~~~~~
+== Why Prolog
 
 * Prolog is a convenient language in which to express the semantics of
 other languages.
@@ -105,8 +104,7 @@ and the libraries is not ideal (the ISO standard does not cover the
 module system for one). There is no standard static type checking tool.
 
 [[why-sicstus-prolog]]
-Why SICStus Prolog
-~~~~~~~~~~~~~~~~~~
+== Why SICStus Prolog
 
 Below is a short summary of some of the Prolog systems that to my
 knowledge are still being actively maintained (please email me
@@ -188,8 +186,7 @@ have a Prolog system with the features of SWI and the speed of YAP. This
 would be a serious (free) alternative to SICStus Prolog.
 
 [[a-small-benchmark]]
-A small benchmark
-~~~~~~~~~~~~~~~~~
+== A small benchmark
 
 Below I have conducted a small experiment to gauge the performance of
 various Prolog systems. I do not claim that this example is
@@ -307,8 +304,7 @@ Java Version with long rather than BigIntegers:
 `}`
 
 [[startup-times]]
-Startup Times
-~~~~~~~~~~~~~
+== Startup Times
 
 Below we test the startup times of some of the Prolog systems.
 Unfortunately, not all Prolog systems can easily be started as easily

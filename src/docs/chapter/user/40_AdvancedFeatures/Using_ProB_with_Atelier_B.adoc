@@ -9,8 +9,7 @@ ProB contains a much improved parser which tries be compliant with
 Atelier B as much as possible.
 
 [[atelier-b-plugin]]
-Atelier B Plugin
-~~~~~~~~~~~~~~~~
+== Atelier B Plugin
 
 There is also a
 http://tools.clearsy.com/tools/atelier-b-4-0-gui/external-tools-integration/prob-etool-generation/[plugin
@@ -18,12 +17,10 @@ for Atelier B] for use withthe standalone Tcl/Tk Version on
 http://www.atelierb.eu/[Atelier B] projects.
 
 [[differences-with-atelier-b]]
-Differences with Atelier B
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+== Differences with Atelier B
 
 [[extra-features-of-prob]]
-Extra Features of ProB
-^^^^^^^^^^^^^^^^^^^^^^
+=== Extra Features of ProB
 
 * Identifiers: ProB also allows identifiers consisting of a single
 letter. ProB also accepts enumerated set elements to be used as
@@ -65,8 +62,7 @@ machines
 around it: `(IF x<0 THEN -x ELSE x END)`
 
 [[limitations]]
-Limitations
-^^^^^^^^^^^
+=== Limitations
 
 * Parsing: ProB will require parentheses around the comma, the
 relational composition, and parallel product operators. For example, you

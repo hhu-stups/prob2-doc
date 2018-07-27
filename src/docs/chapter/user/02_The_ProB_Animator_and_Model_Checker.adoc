@@ -65,8 +65,7 @@ available.
 |=======================================================================
 
 [[implementation]]
-Implementation
-~~~~~~~~~~~~~~
+== Implementation
 
 The core of ProB is implemented in
 http://www.sics.se/isl/sicstuswww/site/index.html[SICStus Prolog] (but
@@ -84,8 +83,7 @@ https://www3.hhu.de/stups/internal/coverage/html/[coverage reports are
 also available].
 
 [[features]]
-Features
-~~~~~~~~
+== Features
 
 ProB covers a link:/Summary_of_B_Syntax[large part of B], and we are
 striving towards full coverage of Atelier B constructs. ProB supports B

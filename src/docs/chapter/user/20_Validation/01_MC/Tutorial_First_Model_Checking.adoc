@@ -12,8 +12,7 @@ Step]. There we have also seen how to execute operations on a B machine
 by double clicking on the items in the "Enabled Operations" pane.
 
 [[simple-model-checking]]
-Simple Model Checking
-~~~~~~~~~~~~~~~~~~~~~
+== Simple Model Checking
 
 The model checker can be used to systematically execute the operations
 and tries to find an erroneous state (e.g., where the invariant is
@@ -45,8 +44,7 @@ sequence that leads to an error or to this error. However, by selecting
 the shortest paths are found.)
 
 [[coverage-statistics]]
-Coverage Statistics
-~~~~~~~~~~~~~~~~~~~
+== Coverage Statistics
 
 We can obtain some statistics about how many states ProB has explored by
 selecting the "Compute Coverage" command in the _Analyse_ menu:
@@ -76,8 +74,7 @@ transitions: we have one initialization, 8 `inc` operations and 8 `dec`
 operations.
 
 [[view-statespace]]
-View Statespace
-~~~~~~~~~~~~~~~
+== View Statespace
 
 We can obtain a graphical visualization of the state space explored by
 ProB. For this, be sure that you have correctly

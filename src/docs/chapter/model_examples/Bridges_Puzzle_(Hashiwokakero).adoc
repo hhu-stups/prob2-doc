@@ -150,8 +150,7 @@ MacBook Air 2.2GHz i7). The conflict set is
 ....
 
 [[adding-graphical-visualization]]
-Adding graphical visualization
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+== Adding graphical visualization
 
 To show the solution graphically, we can add the following to the
 `DEFINITIONS` clause in the model:

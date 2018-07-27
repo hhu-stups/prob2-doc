@@ -41,7 +41,6 @@ numbers as indicated below:
 ....
 
 [[how-does-it-work]]
-How does it work
-^^^^^^^^^^^^^^^^
+== How does it work
 
 [TODO: insert explanation]

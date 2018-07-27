@@ -17,8 +17,7 @@ the values of the sub-expressions.
 ProB.
 
 [[inspecting-the-state-variables-and-constants]]
-Inspecting the State Variables and Constants
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+== Inspecting the State Variables and Constants
 
 As an example specification we use the Sieve.mch delivered with the ProB
 Distribution in the "Less Simple" folder. After opening the model do a
@@ -47,8 +46,7 @@ B-Expression) to a file. You can also save the values of multiple
 variables (we will cover this later).
 
 [[understanding-the-invariant-and-properties]]
-Understanding the Invariant and Properties
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+== Understanding the Invariant and Properties
 
 The second objective of the evaluation view is to help understanding why
 the invariant or the properties are true or false. Therefore the view
@@ -128,8 +126,7 @@ introduced predicate it is very easy to see the reason why
 image::Eval_view6.png[]
 
 [[filtering-relevant-information-and-data-extraction]]
-Filtering relevant information and Data Extraction
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+== Filtering relevant information and Data Extraction
 
 There are two different ways to filter out important information from a
 state. To demonstrate this feature we can use the model

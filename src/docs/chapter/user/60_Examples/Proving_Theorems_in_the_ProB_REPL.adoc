@@ -91,8 +91,7 @@ PREDICATE is FALSE
 ....
 
 [[user-defined-sets]]
-User-Defined Sets
-^^^^^^^^^^^^^^^^^
+== User-Defined Sets
 
 Suppose we want to prove a property not over a specific set such as the
 integers but over an arbitrary set. If you want to use additional basic

@@ -99,8 +99,7 @@ image::ProB_Argumentation_Dot2.png[]
 image::ProB_Argumentation_Dot3.png[]
 
 [[a-more-elegant-encoding]]
-A more elegant encoding
-~~~~~~~~~~~~~~~~~~~~~~~
+== A more elegant encoding
 
 The following is a slightly more elegant encoding, where we represent
 the labelling as a partition of the arguments. This enables to use the
@@ -148,8 +147,7 @@ END
 ....
 
 [[influencing-the-graphical-rendering]]
-Influencing the Graphical Rendering
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+== Influencing the Graphical Rendering
 
 One can influence the graphical representation of the current state in
 various ways. The user can directly define nodes and edges of the graph
@@ -170,8 +168,7 @@ obtain the following rendering of the very first example above:
 image::ProB_Argumentation_CustomDot.png[]
 
 [[an-event-b-version-of-the-model]]
-An Event-B Version of the Model
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+== An Event-B Version of the Model
 
 Instead of using ProB Tcl/Tk you can also encode this model in Rodin,
 the Eclipse-based platform for Event-B.

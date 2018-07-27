@@ -99,8 +99,7 @@ than proof. However, by adding a graphical visualization, a different
 kind of insight can be gained. This is shown below.
 
 [[adding-graphical-visualization]]
-Adding graphical visualization
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+== Adding graphical visualization
 
 To add a simple graphical visualization one needs to generate four
 pictures (in GIF format). I took pictures from Wikimedia Commons. In the
@@ -125,8 +124,7 @@ impossible not to generate four quartets.
 image:ProB_Card_Screenshot.png[600px|center]
 
 [[a-version-requiring-symmetry-reduction]]
-A version requiring symmetry reduction
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+== A version requiring symmetry reduction
 
 ....
 MACHINE CardTrickSym /* a version to be used with ProB's symmetry reduction */
@@ -161,8 +159,7 @@ END
 ....
 
 [[a-more-low-level-version-for-use-with-tlc]]
-A more low-level version for use with TLC
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+== A more low-level version for use with TLC
 
 We later adapted the above model (without symmetry) to make it somewhat
 more low-level and to enable the translation to TLA+ for use with

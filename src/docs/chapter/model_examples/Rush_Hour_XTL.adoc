@@ -203,8 +203,7 @@ the model.
 image:ProB_RushHour_XTL_Screenshot.png[600px|center]
 
 [[running-using-probcli]]
-Running using probcli
-~~~~~~~~~~~~~~~~~~~~~
+== Running using probcli
 
 Here is how you can find the solution using
 <<using-the-command-line-version-of-prob,probcli>> (run on a Mac Book

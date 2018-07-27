@@ -39,8 +39,7 @@ Example usage:
 `$ ./parB.sh 2 ~/parB.log scheduler.mch`
 
 [[running-in-the-cloudcluster]]
-Running in the Cloud/Cluster
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+== Running in the Cloud/Cluster
 
 The script can only be used for computation on a single physical
 computer. If you want to use multiple computers, the setup is a bit more
@@ -74,8 +73,7 @@ logical network in a more convenient way and running the model checker
 from within ProB.
 
 [[options]]
-Options
-~~~~~~~
+== Options
 
 You can use preferences in parB.sh (and the master) :
 
@@ -89,8 +87,7 @@ otherwise parB will explore the full state space (up to the maximal
 number of states)
 
 [[cleaning-up]]
-Cleaning up
-~~~~~~~~~~~
+== Cleaning up
 
 If something goes wrong it may be necessary to clean up your shared
 memory. You can find out if there are still memory blocks occupied using

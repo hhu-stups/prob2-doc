@@ -7,8 +7,7 @@ ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 
 
 [[preferences]]
-Preferences
-~~~~~~~~~~~
+== Preferences
 
 You can modify the most important parameters of ProB by going to the
 Rodin preferences.
@@ -24,8 +23,7 @@ image::ProBRodinPrefs.png[]
 We explain the most important preferences below.
 
 [[minint-and-maxint]]
-Minint and Maxint
-~~~~~~~~~~~~~~~~~
+== Minint and Maxint
 
 We first explain the first two entries in the screenshot above. Within
 classical B this provides the range for the implementable integer type.
@@ -35,8 +33,7 @@ if it cannot determine the value of an integer variable in order to know
 in which range it should be enumerated.
 
 [[size-of-unspecified-sets-carrier-sets]]
-Size of unspecified sets (carrier sets)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+== Size of unspecified sets (carrier sets)
 
 This is the third entry in the screen shot above. ProB requires all
 carrier sets to be finite and ProB has to know the cardinality before
@@ -52,8 +49,7 @@ specify a maximum cardinality, or `card(S)>n` to specify a minimum
 cardinality.
 
 [[using-contexts-for-prob-animation]]
-Using contexts for ProB animation
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+=== Using contexts for ProB animation
 
 Note that you can create a new context with those axioms just for
 animation or model checking with ProB. For this you can simply

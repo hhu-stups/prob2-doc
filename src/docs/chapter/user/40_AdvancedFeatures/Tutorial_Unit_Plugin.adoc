@@ -26,8 +26,7 @@ We assume that you have a general understanding of B and the usage of
 ProB.
 
 [[activating-the-plugin-and-setting-preferences]]
-Activating the Plugin and setting preferences
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+== Activating the Plugin and setting preferences
 
 Currently, the plugin can only be used with classical B machines.
 Therefore, a B machine needs to be loaded before the plugin can be
@@ -51,8 +50,7 @@ a fix point state, in which possible unit errors are presented to the
 user through ProB's error reporting facilities.
 
 [[annotating-variables-and-animating-a-machine]]
-Annotating variables and animating a machine
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+== Annotating variables and animating a machine
 
 To connect a variable with an expected physical unit, a special comment
 is placed before the variable.
@@ -84,8 +82,7 @@ enables the plugin to be used in conjunction with the evaluation view,
 the dot output and most other ProB features.
 
 [[converting-between-units]]
-Converting between units
-~~~~~~~~~~~~~~~~~~~~~~~~
+== Converting between units
 
 To distinct between a numerical multiplication, that changes the values
 without changing the unit and a multiplication meant to convert between
@@ -113,8 +110,7 @@ END
 ....
 
 [[static-analysis]]
-Static analysis
-~~~~~~~~~~~~~~~
+== Static analysis
 
 If activated, the results of the static analysis can be accessed from
 the plugin menu. Currently, the results include the inferred unit of

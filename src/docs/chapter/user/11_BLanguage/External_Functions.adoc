@@ -22,8 +22,7 @@ external functions already defined by ProB, then you don't have to
 understand this mechanism in detail (or at all).
 
 [[standard-libraries-provided-by-prob]]
-Standard Libraries provided by ProB
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+== Standard Libraries provided by ProB
 
 In a first instance we have predefined a series of external functions
 and grouped them in various library machines and definition files:
@@ -84,8 +83,7 @@ DEFINITIONS
 -------------
 
 [[overview-of-the-external-function-definition-mechanism]]
-Overview of the External Function DEFINITION Mechanism
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+== Overview of the External Function DEFINITION Mechanism
 
 Currently, external functions are linked to classical B machines using B
 DEFINITIONS as follows:

@@ -11,8 +11,7 @@ Problem 67]. The purpose is to show:
 * that by using ProB we get dynamic programming automatically.
 
 [[the-euler-problem-67-description]]
-The Euler Problem 67 Description
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+== The Euler Problem 67 Description
 
 For convenience,here is the description from the official site of the
 https://projecteuler.net/problem=67[Euler Problem 67]:
@@ -40,8 +39,7 @@ it would take over twenty billion years to check them all. There is an
 efficient algorithm to solve it. ;o)
 
 [[the-solution-in-b]]
-The solution in B
-^^^^^^^^^^^^^^^^^
+== The solution in B
 
 A solution in B is as follows, where the data for the triangle is held
 in the file `triangle_Euler67.def`:
@@ -132,8 +130,7 @@ computation of rows into B operations and use model checking or
 animation to solve the problem).
 
 [[the-data-file-for-the-euler-problem-67]]
-The data file for the Euler Problem 67
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+== The data file for the Euler Problem 67
 
 Contents of the definition file `triangle_Euler67.def` are:
 

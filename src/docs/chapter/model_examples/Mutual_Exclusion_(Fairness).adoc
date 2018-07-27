@@ -83,5 +83,4 @@ number of temporal operators (in this case `G` (globally) and
 property in a reasonable time.
 
 [[references]]
-References
-~~~~~~~~~~
+== References

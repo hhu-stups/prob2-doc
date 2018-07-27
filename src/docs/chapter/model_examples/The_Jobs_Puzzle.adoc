@@ -49,8 +49,7 @@ gender or that some of the job names imply the gender of the person that
 holds it.
 
 [[shapiros-challenge]]
-Shapiro’s Challenge
-~~~~~~~~~~~~~~~~~~~
+== Shapiro’s Challenge
 
 Shapiro[multiblock footnote omitted], following the original authors’
 remarks, that formalizing the puzzle was at times hard and tedious,
@@ -71,8 +70,7 @@ this puzzle a good case-study for the expressiveness of B to formalize
 such a problem.
 
 [[a-solution-to-the-jobs-puzzle-using-b]]
-A Solution to the Jobs Puzzle using B
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+== A Solution to the Jobs Puzzle using B
 
 The B encoding of the puzzle uses plain predicate logic, combined with
 set theory and arithmetic. We will show how this enables a very concise
@@ -285,8 +283,7 @@ away from the English expression, using quantifications and set
 cardinality expressions.
 
 [[related-work]]
-Related Work
-~~~~~~~~~~~~
+== Related Work
 
 In his paper Shapiro discusses several formalizations of the puzzle with
 regard to the identified challenges. A further formalization using

@@ -7,8 +7,7 @@ ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 
 
 [[warning]]
-WARNING
-~~~~~~~
+== WARNING
 
 We believe the Disprover to be useful. The disprover plugin is currently
 still experimental when used as a prover. Please keep in mind, that you
@@ -16,8 +15,7 @@ might run into some rough edges or even get wrong results (please inform
 us about any issues).
 
 [[introduction]]
-Introduction
-~~~~~~~~~~~~
+== Introduction
 
 The ProB Disprover plugin for RODIN utilizes the ProB animator and model
 checker to automatically find counterexamples or proofs for a given
@@ -35,16 +33,14 @@ proof. See http://stups.hhu.de/w/Special:Publication/disprover_eval[the
 paper describing the disprover as a prover] for more details.
 
 [[installation]]
-Installation
-~~~~~~~~~~~~
+== Installation
 
 The ProB Disprover is currently only available through the ProB Nightly
 Build Update Site
 (http://nightly.cobra.cs.uni-duesseldorf.de/rodin/updatesite/).
 
 [[how-to-use-it]]
-How to use it
-~~~~~~~~~~~~~
+== How to use it
 
 image::Disprover-all.png[]
 
@@ -55,8 +51,7 @@ the tool bar alongside the other provers:
 image::Disprover_proof_control.png[]
 
 [[how-it-works]]
-How it works
-~~~~~~~~~~~~
+== How it works
 
 Upon selecting the Disprover, it builds a formula from the Hypotheses
 and the negated Goal. The ProB model checker then tries to find a model

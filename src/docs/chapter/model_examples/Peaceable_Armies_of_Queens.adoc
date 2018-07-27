@@ -25,8 +25,7 @@ that can be placed onto the board, i.e., solving an optimisation
 problem.
 
 [[checking]]
-Checking
-~~~~~~~~
+== Checking
 
 Here is a B model for the checking problem. The problem is quite
 straightforward to encode in B. Many lines below (in the DEFINITIONS)
@@ -90,8 +89,7 @@ The first solution found for dim=8 and n=9 is as follows:
 image::ProB_PeaceableQueens_8_9_Screenshot.png[]
 
 [[the-alloy-model-for-comparison]]
-The Alloy model for comparison
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+=== The Alloy model for comparison
 
 Here is the http://alloy.mit.edu/alloy/[Alloy] model we have used.
 Initially, the model gave us wrong solutions as we were using `+`
@@ -143,8 +141,7 @@ run valid for 16 Queens, 7 int
 ....
 
 [[optimization]]
-Optimization
-~~~~~~~~~~~~
+== Optimization
 
 One can obviously use the above models to try and manually find a
 maximal value of n for a given board size dim. Below, we have encoded

@@ -16,8 +16,7 @@ Axiomatically defined operators are not supported without additional
 annotations.
 
 [[download-theories]]
-Download Theories
-~~~~~~~~~~~~~~~~~
+== Download Theories
 
 //An example project with theories: theories2.zip[] TODO: Downloadlink
 
@@ -60,8 +59,7 @@ BinaryTree::
   Binary Trees are supported by ProB.
 
 [[tagging-operators]]
-Tagging operators
-~~~~~~~~~~~~~~~~~
+== Tagging operators
 
 [IMPORTANT]
 *Please note:*
@@ -106,8 +104,7 @@ Nat
 |=======================================================================
 
 [[error-messages]]
-Error Messages
-^^^^^^^^^^^^^^
+=== Error Messages
 
 In case the .ptm file is missing, you will get an error message such as
 the following one:

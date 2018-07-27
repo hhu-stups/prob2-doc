@@ -30,8 +30,7 @@ currently explored by the animation in a separate window.
 image::Visualising_the_state_space.png[]
 
 [[graph-nodes]]
-Graph Nodes
-^^^^^^^^^^^
+== Graph Nodes
 
 ProB displays the state space as a graph whose nodes correspond to
 states that are differentiated by their shapes and colors and arcs
@@ -58,8 +57,7 @@ DEFINITION `GOAL == P` or by using a command such as "Find state
 satisfying predicate...") then those predicates are coloured in orange.
 
 [[statespace-projections]]
-Statespace Projections
-^^^^^^^^^^^^^^^^^^^^^^
+== Statespace Projections
 
 The sub-menu "Statespace Projections" contains several other commands
 that provide useful views on the state space.
@@ -90,8 +88,7 @@ link:/State_space_visualization_examples[visualizations can be found
 here].
 
 [[other-visualization-commands]]
-Other Visualization Commands
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+== Other Visualization Commands
 
 The "Visualize" menu contains several other sub-menus, to visualize
 traces and individual states. The command "Shortest Trace to Current
@@ -100,8 +97,7 @@ starting from the root node and leading to the current node. The command
 "Current State" displays the current node and its successor nodes.
 
 [[preferences-of-the-visualization]]
-Preferences of the Visualization
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+== Preferences of the Visualization
 
 Many aspects of the visualization can be configured in the "Graphical
 Viewer Preferences"... preference window of the "Preferences" menu.
@@ -150,5 +146,4 @@ which is useful for examining large graphs.
 on Solaris and Linux if non-standard mouse buttons are used).
 
 [[references]]
-References
-~~~~~~~~~~
+== References

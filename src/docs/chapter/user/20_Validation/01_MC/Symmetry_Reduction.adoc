@@ -10,8 +10,7 @@ ProB can make use of symmetries induced
 by the use of deferred sets in B (and given sets in Z).
 
 [[static-symmetry-reduction]]
-Static Symmetry Reduction
-~~~~~~~~~~~~~~~~~~~~~~~~~
+== Static Symmetry Reduction
 
 ProB will perform a limited form of symmetry reduction for constants
 which are elements of deferred sets. Take the following example:
@@ -92,8 +91,7 @@ B = {D4,D5,D6}
 ----
 
 [[symmetry-reduction-during-model-checking]]
-Symmetry Reduction during Model Checking
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+== Symmetry Reduction during Model Checking
 
 In addition to the above, you can also turn of stronger symmetry
 reduction for model checking.
@@ -138,5 +136,4 @@ http://www.stups.uni-duesseldorf.de/publications/final-symmetry.pdf[2]].
 This is typically the most efficient method.
 
 [[references]]
-References
-----------
+== References

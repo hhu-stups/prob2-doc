@@ -6,8 +6,7 @@ ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 [Category:User Manual]
 
 [[startup]]
-Startup
-~~~~~~~
+== Startup
 
 Start off by installing the standalone Tcl/Tk version of ProB. Follow
 the instructions in <<installation,Installation>>. Start ProB by
@@ -15,8 +14,7 @@ double-clicking on `ProBWin` (for Windows users), or by launching
 `StartProB.sh` from a Terminal (for Linux and Mac users).
 
 [[loading-a-first-csp-specification]]
-Loading a first CSP specification
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+== Loading a first CSP specification
 
 Use the "Open..." command in the _File_ menu and then navigate to
 the "Examples" directory that came with your ProB installation. Inside
@@ -26,8 +24,7 @@ ProB window should now look as follows:
 image::ProB_BusesAfterLoad.png[]
 
 [[first-steps-in-animation]]
-First Steps in Animation
-~~~~~~~~~~~~~~~~~~~~~~~~
+== First Steps in Animation
 
 We have now loaded a first simple CSP model. Let us look at the contents
 of the ProB window (ignoring the menu bar).
@@ -74,8 +71,7 @@ source locations). The source highlighting should look as follows:
 image::ProB_CSPAfterBoardSingleClick.png[]
 
 [[first-steps-in-model-checking]]
-First Steps in Model Checking
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+== First Steps in Model Checking
 
 You can use the model checker to search for certain errors. Execute the
 "Model Check..." command in the _Verify_ menu. The following dialog
@@ -95,8 +91,7 @@ insert the counter-example into the history as follows:
 image::ProB_CSPAfterModelCheck.png[]
 
 [[error-highlighting]]
-Error Highlighting
-~~~~~~~~~~~~~~~~~~
+== Error Highlighting
 
 Now edit the definition of the BUS37 process and add an illegal output
 of value 1 on the alight37B channel:
@@ -121,8 +116,7 @@ error location in the source as follows:
 image::ProB_CSPAfterModelCheck2.png[]
 
 [[other-features]]
-Other Features
-~~~~~~~~~~~~~~
+== Other Features
 
 You can check more sophisticated temporal properties using the LTL model
 checker of ProB; see the link:/LTL_Model_Checking[corresponding part of

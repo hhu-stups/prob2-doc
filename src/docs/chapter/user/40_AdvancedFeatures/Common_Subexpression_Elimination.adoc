@@ -8,8 +8,7 @@ https://en.wikipedia.org/wiki/Common_subexpression_elimination[common
 subexpression elimination (CSE)].
 
 [[basics-of-cse]]
-Basics of CSE
-~~~~~~~~~~~~~
+== Basics of CSE
 
 To enable CSE you need to set the advanced preference `CSE` to true
 (this can be done using the switch `-p CSE TRUE` when using the
@@ -53,8 +52,7 @@ well-definedness (e.g., suppose a is not in the domain of f) and for
 performance.
 
 [[substitutions]]
-Substitutions
-~~~~~~~~~~~~~
+== Substitutions
 
 To enable CSE also inside substitutions (aka B statements) you need to
 set the preference `CSE_SUBST` to true. By default, the CSE will only be
@@ -63,8 +61,7 @@ the properties or individual predicates inside operations (but not the
 operation as a whole).
 
 [[sharing-predicates]]
-Sharing Predicates
-~~~~~~~~~~~~~~~~~~
+== Sharing Predicates
 
 By default ProB's CSE will also share predicates. You can turn off CSE
 for predicates, i.e., only expressions get shared, by setting the
@@ -82,8 +79,7 @@ After setting `CSE_PRED` to `FALSE`, this will be translated into:
 `LET @0==(x + 1) IN @0 > 10 & (@0 > 10 => y = 22)`
 
 [[other-preferences]]
-Other Preferences
-~~~~~~~~~~~~~~~~~
+== Other Preferences
 
 ProB will also share expressions which are potentially not well-defined,
 and takes extra care with those expressions (in particular in the
@@ -102,8 +98,7 @@ and ProB will find the solution `x=4`. With `CSE_WD_ONLY` to `TRUE`, the
 predicate will be left unchanged (and ProB will find the same solution).
 
 [[tips]]
-Tips
-~~~~
+== Tips
 
 To inspect the effect of CSE, you do one of the following:
 

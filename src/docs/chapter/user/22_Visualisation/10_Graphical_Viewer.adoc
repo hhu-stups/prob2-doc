@@ -8,8 +8,7 @@ ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 
 
 [[introduction]]
-Introduction
-~~~~~~~~~~~~
+== Introduction
 
 ProB can generate a wide range of visualizations for your models, e.g.:
 
@@ -27,8 +26,7 @@ file with the ".ps" extension), or it uses a Dot-Viewer (such as
 "dotty") to view the file directly.
 
 [[setting-up-the-graphical-viewer]]
-Setting up the Graphical Viewer
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+== Setting up the Graphical Viewer
 
 * GraphViz: in order to make use of the graphical visualization
 features, you need to install a version of GraphViz suitable for your

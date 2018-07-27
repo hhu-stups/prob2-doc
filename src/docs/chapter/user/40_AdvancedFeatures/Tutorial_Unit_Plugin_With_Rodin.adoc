@@ -27,8 +27,7 @@ We assume that you have a general understanding of Event-B and the usage
 of ProB / Rodin.
 
 [[installing-physical-units-support-for-prob-for-rodin]]
-Installing Physical Units Support for ProB for Rodin
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+== Installing Physical Units Support for ProB for Rodin
 
 You can follow the link:/Tutorial_Rodin_First_Step[First Steps
 Instructions] or the
@@ -40,8 +39,7 @@ Rodin2 - Physical Units Support" plugin at out Rodin update site. You
 have to install both to enable physical units support for Rodin.
 
 [[attaching-physical-units-to-variables-and-constants]]
-Attaching Physical Units to Variables and Constants
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+== Attaching Physical Units to Variables and Constants
 
 Once both plugins are installed, ProB allows to annotate both variables
 and constants with physical units:
@@ -58,8 +56,7 @@ Units can be supplied in two forms:
 "10^2 * m^2".
 
 [[starting-the-analysis]]
-Starting the Analysis
-~~~~~~~~~~~~~~~~~~~~~
+== Starting the Analysis
 
 The supplied units can now be used by ProB to infer missing units,
 verify the supplied units and detect unit errors. To start the analysis
@@ -72,8 +69,7 @@ Once the analysis is finished, the "inferred unit" text fields are
 filled with the resulting units.
 
 [[possible-errors]]
-Possible Errors
-~~~~~~~~~~~~~~~
+== Possible Errors
 
 Inside the Rodin Errors view, several errors might occur:
 

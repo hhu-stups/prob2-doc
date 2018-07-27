@@ -3,8 +3,6 @@ ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 [[rush-hour-puzzle]]
 = Rush Hour Puzzle
 
-= Rush Hour Puzzle
-
 This case studies tackles encoding the
 http://en.wikipedia.org/wiki/Rush_Hour_(board_game)[rush hour board
 game] in which cars are packed on a 6-by-6 grid and can either move
@@ -100,8 +98,7 @@ END
 ....
 
 [[finding-a-solution-with-prob]]
-Finding a Solution with ProB
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+== Finding a Solution with ProB
 
 To find a solution you need to run the ProB
 <<consistency-checking,"Model Check" command>> in the "Verify"
@@ -118,8 +115,7 @@ View]''.
 image:ProB_RushHour_v2_Screenshot.png[600px|center]
 
 [[exporting-a-solution-trace]]
-Exporting a Solution Trace
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+== Exporting a Solution Trace
 
 You can inspect or export the solution trace found by ProB in various
 ways:
@@ -141,8 +137,7 @@ output the trace on the console, but also provides various commands to
 save the history to file.
 
 [[finding-the-shortest-solution-using-the-tlc-backend]]
-Finding the shortest solution using the TLC backend
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+== Finding the shortest solution using the TLC backend
 
 If you want to find the shortest solution with ProB you should set the
 "Search Strategy" in the ProB link:/Consistency_Checking[``Model
@@ -306,8 +301,7 @@ Model checking completed. No error has been found.
   based on the actual fingerprints:  val = 8.0E-13
 29889 states generated, 4780 distinct states found, 0 states left on queue.
 The depth of the complete state graph search is 123.
-Finished. (2014-07-23 12:28:21)
---------------------------------
+== Finished. (2014-07-23 12:28:21)
 Parsing time: 644 ms
 Translation time: 107 ms
 Model checking time: 3 sec
@@ -317,8 +311,7 @@ Result: NoError
 ....
 
 [[old-solution]]
-Old Solution
-~~~~~~~~~~~~
+=== Old Solution
 
 This is my old solution to the Rush hour puzzle. It is not very elegant,
 but does work. It has a more sophisticated animation function for
@@ -595,8 +588,7 @@ move_hcar_right(2)
 ....
 
 [[adapted-version-for-tlc]]
-Adapted version for TLC
-~~~~~~~~~~~~~~~~~~~~~~~
+=== Adapted version for TLC
 
 Using our translator to TLA+ we can solve an adapted version of the
 above model in 11 seconds plus the time for the translation and starting

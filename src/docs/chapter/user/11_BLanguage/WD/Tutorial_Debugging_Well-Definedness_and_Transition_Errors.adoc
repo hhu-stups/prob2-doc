@@ -18,8 +18,7 @@ a look at the explanation of
 <<well-definedness-checking,well-definedness in B>>.
 
 [[a-simple-example]]
-A simple example
-~~~~~~~~~~~~~~~~
+== A simple example
 
 Let us use the following B machine as starting point:
 

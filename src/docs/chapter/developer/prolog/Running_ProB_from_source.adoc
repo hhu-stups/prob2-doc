@@ -4,16 +4,14 @@ ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 = Running ProB from source
 
 [[starting-prob-tcltk]]
-Starting ProB Tcl/Tk
-~~~~~~~~~~~~~~~~~~~~
+== Starting ProB Tcl/Tk
 
 Go into the prob_prolog directory and type:
 
 `sicstus -Dprob_profile=true -l src/prob_tcltk.pl --goal "``go.`"`'`
 
 [[starting-probcli-command-line-version]]
-Starting probcli command-line version
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+== Starting probcli command-line version
 
 To start probcli from source define this alias, where `SICSTUSDIR` must
 be defined:
@@ -25,8 +23,7 @@ You can now use probsli just like probcli, e.g.,
 `probsli M.mch --model-check`
 
 [[running-prob-tests-from-source]]
-Running ProB tests from source
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+== Running ProB tests from source
 
 Starting test runner from source: First define the alias, where
 `PROBDIR` and `SICSTUSDIR` must be defined:
@@ -42,8 +39,7 @@ or you can already specify tests to be run:
 `tests last`
 
 [[prob-prolog-compile-time-flags]]
-ProB Prolog compile time flags
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+== ProB Prolog compile time flags
 
 By giving sicstus a command-line option `-Dflag=true` you can set
 certain compile time flags, namely:

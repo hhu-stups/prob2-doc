@@ -4,8 +4,7 @@ ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 = Test Case Generation
 
 [[introduction]]
-Introduction
-~~~~~~~~~~~~
+== Introduction
 
 Testing aims at finding errors in a system or program. A set of tests is
 also called a test suite. Test case generation is the process of
@@ -64,11 +63,11 @@ state space is finite it may run forever in case an operation cannot be
 covered (because it is infeasible).
 
 [[model-checking-based-test-case-generation]]
-=== Model-Checking-Based Test Case Generation
+== Model-Checking-Based Test Case Generation
 
 Model-checking-based test case generation will build the model's state space, starting from the initial states, until the coverage criterion is satisfied. ProB uses a "breadth-first" approach to search for the test cases.
 
-==== How to run
+=== How to run
 
 We will use the following B Machine as an example, which is stored in a
 file called `simplecounter.mch`.
@@ -90,7 +89,7 @@ END
 
 To start the test case generation there are two alternatives: Using the tcl/tk-application or the command line.
 
-====== From the command line
+==== From the command line
 
 From the command line there are two commands to configure the
 test case generation:
@@ -135,7 +134,7 @@ variables and constants where more than one possible initialisation
 exists are written into the trace file, as argument of an INITIALISATION
 event.
 
-====== In the tcl/tk-application
+==== In the tcl/tk-application
 
 In the tcl/tk-application the test case generation can be started by choosing _Analyse_ > "Testing" > "model-checking-based test case generation...". In the appearing window one can set the same parameters as described for the command line.
 
@@ -160,7 +159,7 @@ You cannot look at the test cases in ProB. Instead you can open the file you jus
 ....
 
 [[constraint-based-test-case-generation]]
-=== Constraint-Based Test Case Generation
+== Constraint-Based Test Case Generation
 
 Constraint based test case generation allows to explore the state space
 for a machine and generate traces of operations that cover certain user
@@ -181,7 +180,7 @@ typically grows exponentially with the depth of the feasible execution
 paths.
 
 [[example-when-constraint-based-test-case-generation-is-better]]
-==== Example: When Constraint-based Test Case Generation is better
+=== Example: When Constraint-based Test Case Generation is better
 
 Here is an example which illustrates when constraint-based test case
 generation is better.
@@ -243,12 +242,12 @@ no state where BothOverflow is enabled):
 image::CBC_StateSpace_Example1.png[]
 
 [[how-to-run]]
-==== How to run
+=== How to run
 
 We will again use the machine `simplecounter.mch`. To start the test case generation there are three alternatives: Using the tcl/tk-application or using the command line by either providing all settings as command line arguments or in a test description file.
 
 
-====== From the command line
+==== From the command line
 
 From the command line there are six relevant settings to configure the
 test case generation:
@@ -291,7 +290,7 @@ The generated test cases are stored in a file called `test_results.xml`.
 Just as with model-checking-based test case generation you can provide the empty filename `''`, in which case no file is generated, and an empty `EndPredicate` that will only lead to test cases of length 1.
 
 [[with-a-test-description-file]]
-====== With a test description file
+==== With a test description file
 
 The configuration for the test case generation can also be provided as
 an XML file. The format is shown below:
@@ -342,7 +341,7 @@ with the following call.
 ./probcli.sh simplecounter.mch -test_description simple_counter_test_description.xml
 ....
 
-====== In the tcl/tk-application
+==== In the tcl/tk-application
 
 In the tcl/tk-application the test case generation can be started by choosing _Analyse > Testing > constraint-based test case generation..._. In the appearing window one can set the same parameters as described for the command line.
 

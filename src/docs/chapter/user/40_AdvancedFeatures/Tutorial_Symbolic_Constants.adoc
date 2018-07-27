@@ -7,8 +7,7 @@ ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 
 
 [[introduction]]
-Introduction
-~~~~~~~~~~~~
+== Introduction
 
 ProB Tcl/Tk as well as the
 link:/Using_the_Command-Line_Version_of_ProB[probcli command-line
@@ -20,16 +19,14 @@ complex ones.
 Through a plugin, this behaviour is extended to ProB for Rodin.
 
 [[installing-the-prob-symbolic-constants-plugin]]
-Installing the ProB Symbolic Constants Plugin
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+== Installing the ProB Symbolic Constants Plugin
 
 The plugin is available from the ProB for Rodin Updatesite. The package
 is called "ProB for Rodin2 - Symbolic Constants Support". It is not
 bundled with ProB for Rodin itself.
 
 [[marking-constants-to-be-kept-symbolic]]
-Marking Constants to be kept symbolic
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+== Marking Constants to be kept symbolic
 
 Once the plugin is installed, a toggle button "symbolic" / "not
 symbolic" should appear next to each constant in the Rodin editor.

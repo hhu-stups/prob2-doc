@@ -59,8 +59,7 @@ The solving time using ProB on a MacBook Air is as follows: for Days ==
 (i.e., the complete puzzle).
 
 [[simple-graphical-visualization]]
-Simple Graphical Visualization
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+== Simple Graphical Visualization
 
 To generate a simple graphical visualization of the solutions found by
 ProB, one needs to add a definition for the animation function, e.g., as
@@ -90,8 +89,7 @@ OPERATIONS
 ....
 
 [[adding-graphical-visualization]]
-Adding graphical visualization
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+== Adding graphical visualization
 
 To add a better graphical visualization one needs to generate 10
 pictures (in GIF format). I generate these using OmniGraffle. In the
