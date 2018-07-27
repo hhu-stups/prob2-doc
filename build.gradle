@@ -1,7 +1,10 @@
+import freemarker.template.Configuration
+
+import org.yaml.snakeyaml.Yaml
+
 buildscript {
     repositories {
         jcenter()
-       
     }
 
     dependencies {
@@ -16,19 +19,10 @@ buildscript {
     }
 }
 
-
 apply plugin: 'org.asciidoctor.convert'
 apply plugin: 'com.github.jruby-gradle.base'
 
-import com.github.jrubygradle.JRubyExec
-import org.yaml.snakeyaml.Yaml
-import freemarker.template.Configuration;
-
-def cfg = new Configuration();
-
-
-
-
+def cfg = new Configuration()
 
 repositories {
     jcenter()
@@ -43,18 +37,43 @@ asciidoctorj {
     version = '1.5.6'
 }
 
-task bibtex {
-  doFirst {
-    def tree = fileTree(dir: 'src/docs/bibtex')
-    tree.include("**/*.bib")
-    def files = tree.getFiles()
-  (new File('src/docs/asciidoc/combined.bib')).text =
-      files.collect{it.getText()}.join("\n")
-      }
+task cleanpdf() {
+    def tree = fileTree('build/asciidoc/pdf') {
+        include '*.pdf'
+    }
+    tree.each { it.delete() }
+}
+
+task bibtex() {
+    doFirst {
+        def tree = fileTree(dir: 'src/docs/bibtex') {
+            include "**/*.bib"
+        }
+        def files = tree.files
+        file('src/docs/asciidoc/combined.bib').text = files.collect {it.text}.join("\n")
+    }
+}
+
+task buildMaindocs() {
+    doLast {
+        def template = cfg.getTemplate("src/docs/templates/handbook.ftlh")
+        def parser = new Yaml()
+        def books = parser.loadAll(("config.yaml" as File).text)
+        books.each {book ->
+            def includes = []
+            book.content.each {dir ->
+                includes << fileTree('src/docs/chapter/'+dir).collect().sort()
+            }
+            book.directories = includes
+            new OutputStreamWriter(new FileOutputStream("src/docs/asciidoc/"+book.file), "UTF-8").withWriter {w ->
+                template.process(book, w)
+            }
+        }
+    }
 }
 
 asciidoctor {
-    dependsOn = ['cleanpdf','bibtex','jrubyPrepare','buildMaindocs']
+    dependsOn = [cleanpdf, bibtex, jrubyPrepare, buildMaindocs]
     requires = ['asciidoctor-diagram', 'asciidoctor-bibtex']
     gemPath = jrubyPrepare.outputDir
 
@@ -62,14 +81,16 @@ asciidoctor {
 
     backends = ['html5', 'pdf']
 
-    attributes 'source-highlighter': 'coderay',
+    attributes = [
+        'source-highlighter': 'coderay',
         'coderay-linenums-mode': 'table',
         'toc': 'left',
         'imagesdir': 'images',
         'icon': 'font',
         'linkattrs': true,
         'encoding': 'utf-8',
-        'bibtex-file': 'combined.bib'
+        'bibtex-file': 'combined.bib',
+    ]
 
     sources {
         include '*.adoc'
@@ -82,42 +103,18 @@ asciidoctor {
     }
 }
 
-clean.doFirst {
-    def tree = fileTree('src/docs/asciidoc/images') {
-       include '**/diag-*'
+clean {
+    doFirst {
+        def tree = fileTree('src/docs/asciidoc/images') {
+            include '**/diag-*'
+        }
+        tree.each { it.delete() }
+        tree = fileTree('src/docs/asciidoc') {
+            include '*.adoc'
+        }
+        tree.each { it.delete() }
+        file('src/docs/asciidoc/combined.bib').delete()
     }
-    tree.each { it.delete() }
-    tree = fileTree('src/docs/asciidoc') {
-       include '*.adoc'
-    }
-    tree.each { it.delete() }
-    file('src/docs/asciidoc/combined.bib').delete()
 }
 
-task cleanpdf() {
-  def tree = fileTree('build/asciidoc/pdf') {
-     include '*.pdf'
-  }
-  tree.each { it.delete() }
-}
-
-defaultTasks 'clean','asciidoctor'
-
-task buildMaindocs() {
- doLast {
-   def template = cfg.getTemplate("src/docs/templates/handbook.ftlh")
-   Yaml parser = new Yaml()
-   def books = parser.loadAll(("config.yaml" as File).text)
-   books.each {
-     book ->
-       def includes = []
-       book.content.each {
-         dir ->
-           includes << fileTree('src/docs/chapter/'+dir).collect { it }.sort()
-       }
-       book.directories = includes
-       def w = new FileWriter("src/docs/asciidoc/"+book.file);
-       template.process(book, w);
-   }
- }
-}
+defaultTasks 'clean', 'asciidoctor'
