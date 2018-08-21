@@ -389,5 +389,4 @@ whether a single event is in principle possible (given the invariant):
 $ probcli file.mch -feasibility_analysis_csv FILE
 ....
 
-[[references-and-footnotes]]
 == References and Footnotes

@@ -23,7 +23,7 @@ ProB window should now look as follows:
 
 image::ProB_BusesAfterLoad.png[]
 
-[[first-steps-in-animation]]
+[[first-steps-in-animation-csp]]
 == First Steps in Animation
 
 We have now loaded a first simple CSP model. Let us look at the contents

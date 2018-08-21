@@ -1,4 +1,4 @@
- 
+
 
 [[parb]]
 = ParB
@@ -72,7 +72,7 @@ We plan to develop a control interface that allows configuring the
 logical network in a more convenient way and running the model checker
 from within ProB.
 
-[[options]]
+[[options-for-parb]]
 == Options
 
 You can use preferences in parB.sh (and the master) :

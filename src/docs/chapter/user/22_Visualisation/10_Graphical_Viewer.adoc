@@ -7,7 +7,7 @@
 :category: User_Manual
 
 
-[[introduction]]
+[[introduction-to-graphical-viewer]]
 == Introduction
 
 ProB can generate a wide range of visualizations for your models, e.g.:

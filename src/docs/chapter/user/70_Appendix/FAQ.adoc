@@ -14,16 +14,12 @@ There are several options:
 1. Try to reduce the amount of memory ProB uses per state: For probcli
 you can set the COMPRESSION preference to true, e.g., in the following
 way:
-
 `probcli MyMachine.mch --model-check -p COMPRESSION TRUE`
-
 You could also add a DEFINITION
-
 `SET_PREF_COMPRESSION == TRUE`
-
 to your B machine to set the preference. There is also the possibility
 to forget the state space of already visited states by setting the
-preferences FORGET_STATE_SPACE and IGNORE_HASH_COLLISIONS to TRUE. TEST.
+preferences FORGET_STATE_SPACE and IGNORE_HASH_COLLISIONS to TRUE.
 
 2. You can try to reduce the state space, e.g., via <<symmetry-reduction, symmetry reduction>>. Hash
 symmetry typically works best. Another possibility is in the paragraph partial order reduction of the section

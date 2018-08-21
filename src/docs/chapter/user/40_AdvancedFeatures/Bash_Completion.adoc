@@ -18,7 +18,7 @@ $ probcli -re
 -refchk  -repl
 ....
 
-[[installation]]
+[[installation-bash-completion]]
 == Installation
 
 A generated version of the command completion for Bash is available

@@ -13,7 +13,6 @@ The full description of the case study can be found https://www3.hhu.de/stups/pr
 [[prob-live-visualisations]]
 == ProB Live Visualisations
 
-
 We have prepared two interactive live visualizations of the case study.
 One of our own Event-B model and one of the first development by
 Jean-Raymond Abrial and Wen Su footnote:[Aircraft Landing Gear System:
@@ -37,7 +36,6 @@ of the model by Jean-Raymond Abrial and Wen Su (Temporally disabled)]
 
 video::wFr_pEjbpqo[youtube]
 
-[[resources]]
 == Resources
 
 
@@ -45,7 +43,6 @@ video::wFr_pEjbpqo[youtube]
 
 * https://www3.hhu.de/stups/prob/images/7/77/LandingGear.zip[Landing Gear Model EventB Model]
 
-[[links]]
 == Links
 
 [[bmotion-studio-for-prob]]
@@ -67,5 +64,4 @@ Sourcecode]
 * https://www3.hhu.de/stups/downloads/[ProB 2.0 Downloadsite]
 * https://www3.hhu.de/stups/handbook/prob2/prob_tcltk.html[ProB 2.0 User Manual]
 
-[[references]]
-=== References
+== References

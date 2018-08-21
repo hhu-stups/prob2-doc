@@ -61,7 +61,7 @@ machines
 * ProB now allows the IF-THEN-ELSE for expressions with parentheses
 around it: `(IF x<0 THEN -x ELSE x END)`
 
-[[limitations]]
+[[limitations-with-atelierb]]
 === Limitations
 
 * Parsing: ProB will require parentheses around the comma, the

@@ -1,5 +1,5 @@
-
-/Category:User_Manual[Category:User Manual]__NOTOC__
+[[installation]]
+=Installation
 
 [[what-are-the-available-versions]]
 == What are the available versions?

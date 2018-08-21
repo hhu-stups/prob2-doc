@@ -149,7 +149,7 @@ MacBook Air 2.2GHz i7). The conflict set is
  ((g|->h)|->2),((h|->n)|->0),((i|->j)|->2),((i|->m)|->1),((l|->m)|->2),((m|->n)|->2)}
 ....
 
-[[adding-graphical-visualization]]
+[[adding-graphical-visualization-graphical-puzzle]]
 == Adding graphical visualization
 
 To show the solution graphically, we can add the following to the

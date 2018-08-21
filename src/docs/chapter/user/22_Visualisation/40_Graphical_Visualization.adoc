@@ -297,5 +297,4 @@ c:dom(Sudoku9(r)) & i:1.. fullsize & i = Sudoku9(r)(c)}
 )
 ----
 
-[[references]]
 == References

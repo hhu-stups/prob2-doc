@@ -6,7 +6,7 @@
 :category: User_Manual
 
 
-[[preferences]]
+[[preferences-tutorial-rodin-parameters]]
 == Preferences
 
 You can modify the most important parameters of ProB by going to the

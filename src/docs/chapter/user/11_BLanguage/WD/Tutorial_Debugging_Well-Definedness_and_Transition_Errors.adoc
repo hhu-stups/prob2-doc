@@ -1,5 +1,3 @@
-
-
 [[tutorial-debugging-well-definedness-and-transition-errors]]
 = Tutorial Debugging Well-Definedness and Transition Errors
 
@@ -17,7 +15,6 @@ Understanding the Complexity of B Animation]. You may also want to have
 a look at the explanation of
 <<well-definedness-checking,well-definedness in B>>.
 
-[[a-simple-example]]
 == A simple example
 
 Let us use the following B machine as starting point:

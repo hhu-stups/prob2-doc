@@ -18,7 +18,7 @@ or expressions. Event-B has no let construct whatsoever.
 Since version *1.6.1-beta* (28th of April 2016), ProB supports the use
 of the `LET` substitution syntax in expressions and predicates.
 
-[[examples]]
+[[examples-let]]
 ==== Examples:
 
 ----
@@ -110,7 +110,7 @@ such construct for predicates or expressions.
 Since version *1.6.1-beta* (28th of April 2016), ProB supports the use
 of the `LET` substitution syntax in expressions and predicates.
 
-[[examples-1]]
+[[examples-if-then-else]]
 ==== Examples:
 
 ----

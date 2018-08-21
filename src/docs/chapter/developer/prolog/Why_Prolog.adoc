@@ -3,9 +3,7 @@
 [[why-prolog]]
 = Why Prolog?
 
-:category: Developer_Manual
-In this
-chapter we try to answer the question: why did we use Prolog to develop
+In this chapter we try to answer the question: why did we use Prolog to develop
 the core of ProB, and in particular why do we use the commercial
 http://www.sics.se/isl/sicstuswww/site/index.html[SICStus Prolog] rather
 than an open-source alternative.
@@ -18,8 +16,8 @@ access to more than 256 MB of heap even on 32 bit systems (important for
 model checking), and is easy to interate with other programming
 languages (so that the GUI does not have to be developed in Prolog).
 
-[[why-prolog]]
-== Why Prolog
+[[but-why-prolog]]
+== But why prolog?
 
 * Prolog is a convenient language in which to express the semantics of
 other languages.

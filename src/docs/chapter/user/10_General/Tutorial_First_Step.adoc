@@ -1,20 +1,14 @@
-
-
 [[tutorial-first-step]]
 = Tutorial First Step
 
-
-
 :category: User_Manual
-
-
-[[installation]]
+[[installation-tutorial-first-step]]
 == Installation
 
 Start off by installing the standalone Tcl/Tk version of ProB. Follow
 the instructions in <<installation,Installation>>.
 
-[[starting-prob]]
+[[starting-prob-tutorial-first-step]]
 == Starting ProB
 
 Start ProB by double-clicking on `ProBWin` (for Windows users), or by

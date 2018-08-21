@@ -1,7 +1,7 @@
 
 
-[[generalpresentation]]
-= GeneralPresentation
+[[general-presentation]]
+= General Presentation
 
 [[the-prob-main-window]]
 == The ProB Main Window
@@ -38,7 +38,7 @@ mean);
 
 3.  The history of operations leading to this state (History).
 
-[[preferences]]
+[[general-presentation-preferences]]
 == Preferences
 
 The _Preferences_ menu allows the various features of ProB to be

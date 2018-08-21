@@ -88,7 +88,7 @@ OPERATIONS
               ) END
 ....
 
-[[adding-graphical-visualization]]
+[[adding-graphical-visualization-nine-prisoners]]
 == Adding graphical visualization
 
 To add a better graphical visualization one needs to generate 10

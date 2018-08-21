@@ -18,7 +18,7 @@ construct is translated into a semantically equivalent component of the
 B language. In addition to basic Alloy constructs, our approach supports
 integers and orderings.
 
-[[installation]]
+[[installation-alloy]]
 == Installation
 
 Alloy2B is included with the lastest nightly builds of ProB.
@@ -30,10 +30,10 @@ on Github].
 * Make jar file (gradle build) and
 * put resulting alloy2b-*.jar file into ProB's lib folder.
 
-[[examples]]
+[[examples-alloy]]
 == Examples
 
-[[n-queens]]
+[[n-queens-alloy]]
 === N-Queens
 
 ....

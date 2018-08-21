@@ -13,7 +13,7 @@ specifications. The
 http://www.stups.uni-duesseldorf.de/w/Special:Publication/proz07[iFM'07
 article on ProZ] contains more details about the implementation.
 
-[[preferences]]
+[[preferences-for-proz]]
 == Preferences
 
 A Z specification frequently makes use of comprehension sets, which are
@@ -122,7 +122,7 @@ schema "Invariant" that declares a subset of the state variables. In
 each explored state the invariant will be checked. The model checking
 feature of ProB will try to find states that violate the invariant.
 
-[[scope]]
+[[scope-proz]]
 ==== Scope
 
 It is possible to limit the search space of the model checker by adding
@@ -141,7 +141,7 @@ recommended to use schema definitions instead of abbreviation
 definitions (\defs instead of ==) when defining state, initialization,
 operations, etc.
 
-[[graphical-animation]]
+[[graphical-animation-proz]]
 === Graphical animation
 
 (*Please note that this functionality is part of the next version. If

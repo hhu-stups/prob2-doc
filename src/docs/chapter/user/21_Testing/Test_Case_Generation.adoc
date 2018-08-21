@@ -3,7 +3,7 @@
 [[test-case-generation]]
 = Test Case Generation
 
-[[introduction]]
+[[introduction-to-test-case-generation]]
 == Introduction
 
 Testing aims at finding errors in a system or program. A set of tests is

@@ -82,5 +82,4 @@ number of temporal operators (in this case `G` (globally) and
 `F`(finally)) and thus make practically impossible to check the above
 property in a reasonable time.
 
-[[references]]
 == References

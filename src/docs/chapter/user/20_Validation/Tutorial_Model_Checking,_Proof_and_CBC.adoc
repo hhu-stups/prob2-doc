@@ -30,8 +30,7 @@ Is this model correct? As you will see, this depends on your point of
 view.
 
 [[state-space]]
-State Space
-~~~~~~~~~~~
+== State Space
 
 If you look purely at the state space of the machine (choose the View
 State Space command in the Animate menu) you get the following picture:
@@ -46,8 +45,7 @@ However, you will not be able to prove the system correct using AtelierB
 or Rodin.
 
 [[constraint-based-checking-cbc-for-the-invariant]]
-Constraint Based Checking (CBC) for the Invariant
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+== Constraint Based Checking (CBC) for the Invariant
 
 In addition to model checking, ProB also offers constraint-based
 checking (CBC), which is particularly useful when used in conjunction
@@ -122,8 +120,7 @@ operation must preserve the invariant for the state with `counter=65`,
 which it does not.
 
 [[how-to-correct-problems-found]]
-How to correct problems found
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+== How to correct problems found
 
 Below is a small guide on how to correct invariant violations found by
 constraint-based checking and model checking.

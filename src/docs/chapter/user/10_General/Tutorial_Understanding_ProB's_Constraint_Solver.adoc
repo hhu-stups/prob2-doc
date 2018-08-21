@@ -78,7 +78,6 @@ The following picture provides a very rough picture of this process:
 
 image::ProB_Propagation.png[]
 
-[[a-simple-example]]
 == A simple example
 
 Let us use the following B machine as starting point:

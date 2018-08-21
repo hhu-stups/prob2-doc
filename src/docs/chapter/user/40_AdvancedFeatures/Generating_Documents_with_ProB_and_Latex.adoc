@@ -7,7 +7,7 @@ ProB can (as of version 1.6.1) be used to process Latex files, i.e., the
 command-line tool probcli scans a given Latex file and replaces certain
 commands by processed results.
 
-[[usage]]
+[[usage-generating-documents]]
 == Usage
 
 A typical usage would be as follows:

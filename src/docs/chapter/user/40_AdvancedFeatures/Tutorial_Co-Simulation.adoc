@@ -10,7 +10,7 @@
 
 You can create Co-Simulations using FMI with ProB.
 
-[[overview]]
+[[overview-tutorial-co-simulation]]
 == Overview
 
 The ProB 2.0 Java API contains some classes for cosimulating discrete

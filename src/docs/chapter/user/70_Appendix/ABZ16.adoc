@@ -10,7 +10,6 @@ have submitted for the http://www.cdcc.faw.jku.at/ABZ2016[ABZ 2016 case study tr
 
 The full description of the case study can be found http://www.cdcc.faw.jku.at/ABZ2016/HD-CaseStudy.pdf[here].
 
-[[resources]]
 === Resources
 
 * http://www.cdcc.faw.jku.at/ABZ2016/HD-CaseStudy.pdf[ABZ 2016 Case Study Paper]
@@ -45,7 +44,6 @@ Visualisation of the HD Machine]
 If you have problems in running the visualisation, please contact Lukas
 Ladenberger (ladenberger@cs.uni-duesseldorf.de)
 
-[[links]]
 === Links
 
 * http://www.stups.hhu.de/ProB/index.php5/BMotion_Studio[BMotion Studio for ProB Homepage]

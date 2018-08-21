@@ -11,8 +11,7 @@ https://github.com/Z3Prover/z3[Z3] as an alternate way of solving
 constraints.
 
 [[how-to-use-z3-within-prob]]
-How to use Z3 within ProB
--------------------------
+== How to use Z3 within ProB
 
 One can start a REPL (Read-Eval-Print-Loop) by starting probcli with the
 `-repl` command line option. Any predicate preceded with `:z3` will be
@@ -24,8 +23,7 @@ enabled by setting the corresponding preference by passing
 on the command line.
 
 [[how-to-install-z3-for-prob]]
-How to install Z3 for ProB
---------------------------
+== How to install Z3 for ProB
 
 First of all, download a nightly build of ProB from the
 <<download,Downloads>> page. To connect Z3 to ProB you also need the
@@ -53,9 +51,8 @@ on the same level as the lib directory, not inside it. If the libraries
 can not be loaded, ProB will answer with "solver_not_available" when
 Z3 is queried.
 
-[[what-can-be-translated]]
-What can be translated
-----------------------
+[[what-can-be-translated-z3]]
+== What can be translated
 
 Currently, the Z3 translation is unable to cope with the following
 constructs:
@@ -74,9 +71,8 @@ constraint.
 When used together with ProB, everything Z3 can not be coped with will
 be handled by ProB alone automatically.
 
-[[examples]]
-Examples
---------
+[[examples-z3]]
+== Examples
 
 Using the repl, one can try out different examples.
 
@@ -114,9 +110,8 @@ x = 1000000
 y = 1000000
 ....
 
-[[more-details]]
-More details
-------------
+[[more-details-z3]]
+== More details
 
 A paper describing the integration of ProB and Z3 has been submitted to
 iFM 2016. You can download the

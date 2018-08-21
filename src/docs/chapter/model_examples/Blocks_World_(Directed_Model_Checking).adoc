@@ -205,5 +205,4 @@ OPERATIONS
 END
 ....
 
-[[references]]
 == References

@@ -6,7 +6,7 @@
 :category: User_Manual
 
 
-[[introduction]]
+[[introduction-to-tutorial-symbolic-constants]]
 == Introduction
 
 ProB Tcl/Tk as well as the

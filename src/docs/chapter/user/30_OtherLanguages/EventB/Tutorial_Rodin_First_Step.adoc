@@ -6,7 +6,7 @@
 :category: User_Manual
 
 
-[[installation]]
+[[installation-rodin]]
 == Installation
 
 First you need to download the Rodin platform (e.g,
@@ -34,7 +34,7 @@ A detailed
 link:/Installation#Installation_Instruction_for_ProB_.28Rodin_Plugin.29[screencast
 of the installation is available here].
 
-[[starting-prob]]
+[[starting-prob-tutorial-rodin-first-step]]
 == Starting ProB
 
 Start by right clicking (control Click on the Mac) on the machine or

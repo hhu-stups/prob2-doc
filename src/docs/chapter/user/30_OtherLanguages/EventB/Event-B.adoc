@@ -5,7 +5,7 @@
 
 ProB supports animation and model-checking for Event-B specifications.
 
-[[installation]]
+[[installation-event-b]]
 == Installation
 
 To install the ProB plugin for http://www.event-b.org[Rodin], open the
@@ -53,7 +53,7 @@ theory) or recursive definitions (e.g. operators in the List theory)
 Axiomatically defined operators are not supported without additional
 annotations.
 
-[[tagging-operators]]
+[[tagging-operators-event-b]]
 === Tagging operators
 
 ProB has some extra support for certain operators. ProB expects an

@@ -72,7 +72,7 @@ https://www3.hhu.de/stups/internal/coverage/html/[coverage information]
 is shown accordingly (in blue rather than red in the highlighting and
 this also affects coverage statistics).
 
-[[preferences]]
+[[preferences-for-coding-guidelines]]
 Preferences
 -----------
 

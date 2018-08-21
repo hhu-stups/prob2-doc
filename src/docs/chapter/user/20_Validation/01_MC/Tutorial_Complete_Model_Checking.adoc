@@ -99,7 +99,7 @@ a counter example:
 
 image::ProBSimpleCounterForMC_InvViol.png[]
 
-[[deferred-sets]]
+[[tutorial-deferred-sets]]
 == Deferred Sets
 
 Let us now use the following simple machine:

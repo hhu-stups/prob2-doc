@@ -14,7 +14,7 @@ still experimental when used as a prover. Please keep in mind, that you
 might run into some rough edges or even get wrong results (please inform
 us about any issues).
 
-[[introduction]]
+[[introduction-tutorial-disprover]]
 == Introduction
 
 The ProB Disprover plugin for RODIN utilizes the ProB animator and model
@@ -32,7 +32,7 @@ this cases, the absence of a counter-example will be reported as a
 proof. See http://stups.hhu.de/w/Special:Publication/disprover_eval[the
 paper describing the disprover as a prover] for more details.
 
-[[installation]]
+[[installation-tutorial-disprover]]
 == Installation
 
 The ProB Disprover is currently only available through the ProB Nightly

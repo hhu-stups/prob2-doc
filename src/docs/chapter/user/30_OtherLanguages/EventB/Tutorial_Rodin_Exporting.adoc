@@ -6,7 +6,7 @@
 :category: User_Manual
 
 
-[[introduction]]
+[[introduction-to-tutorial-rodin-exporting]]
 == Introduction
 
 Many features of ProB are currently only available in ProB Tcl/Tk or the

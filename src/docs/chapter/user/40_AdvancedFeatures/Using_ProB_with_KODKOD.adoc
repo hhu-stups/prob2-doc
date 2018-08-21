@@ -14,8 +14,7 @@ constraints. Kodkod provides a relational interface to SAT solvers and
 is the heart of the http://alloy.mit.edu/alloy/[Alloy] tool.
 
 [[how-to-enable-kodkod]]
-How to enable Kodkod
---------------------
+== How to enable Kodkod
 
 For the command-line version you need to call prob as follows:
 
@@ -34,9 +33,8 @@ using dotty or GraphViz:
 For the ProB Tcl/Tk Version you should select the menu command "Enable
 Kodkod for Properties" in the _Preferences_ menu.
 
-[[what-can-be-translated]]
-What can be translated
-----------------------
+[[what-can-be-translated-kodkod]]
+== What can be translated
 
 * Types:
 ** Basic Types: Deferred Sets, enumerated sets, integers, booleans
@@ -62,8 +60,7 @@ analysis can estimate the interval of its possible values.
 unless you set the `KODKOD_ONLY_FULL` preference to FALSE.
 
 [[when-is-the-kokod-translation-used]]
-When is the Kokod translation used
-----------------------------------
+== When is the Kokod translation used
 
 Once enabled, the Kodkod translation will be used in the following
 circumstances:
@@ -77,8 +74,7 @@ _Verify_ -> Constraint-Based Checking)
 * for the REPL in probcli (`probcli -p KODKOD TRUE -repl`)
 
 [[sat-solver]]
-SAT solver
-----------
+== SAT solver
 
 By default Kodkod in ProB uses the bundled SAT4J solver. You can switch
 to using minisat by putting a current version of `libminisat.jnilib`
@@ -96,8 +92,7 @@ These files can be downloaded from the
 http://alloy.mit.edu/kodkod/download.html[Kodkod download site].
 
 [[more-preferences]]
-More Preferences
-----------------
+== More Preferences
 
 If you set `KODKOD_ONLY_FULL` to `FALSE`, then the Kodkod translation
 can be applied to part of a predicate. In other words, the predicate
@@ -118,9 +113,8 @@ one go using the preference `KODKOD_MAX_NR_SOLS`. E.g., if you are
 interested in only one solution and `KODKOD_ONLY_FULL` is `TRUE`, then
 you should set this value to 1.
 
-[[more-details]]
-More details
-------------
+[[more-details-on-kodkod]]
+== More details
 
 * https://www3.hhu.de/stups/downloads/pdf/PlaggeLeuschel_Kodkod2012.pdf[Plagge,
 Leuschel. Validating B, Z and TLA+ using ProB and Kodkod. In Proceedings

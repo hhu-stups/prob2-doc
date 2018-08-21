@@ -58,7 +58,7 @@ BoolOps::
 BinaryTree::
   Binary Trees are supported by ProB.
 
-[[tagging-operators]]
+[[tagging-operators-event-b-theories]]
 == Tagging operators
 
 [IMPORTANT]

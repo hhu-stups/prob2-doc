@@ -98,7 +98,7 @@ http://proval.lri.fr/gallery/unraveling_a_card_trick.en.html[http://proval.lri.f
 than proof. However, by adding a graphical visualization, a different
 kind of insight can be gained. This is shown below.
 
-[[adding-graphical-visualization]]
+[[adding-graphical-visualization-gilbreath-card-trick]]
 == Adding graphical visualization
 
 To add a simple graphical visualization one needs to generate four

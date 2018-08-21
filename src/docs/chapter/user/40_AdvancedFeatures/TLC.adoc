@@ -15,12 +15,10 @@ http://research.microsoft.com/en-us/um/people/lamport/tla/license.html[MIT
 License].
 
 [[how-to-use-tlc]]
-How to use TLC
---------------
+== How to use TLC
 
 [[using-tlc-in-prob-tcltk]]
-Using TLC in ProB Tcl/Tk
-~~~~~~~~~~~~~~~~~~~~~~~~
+=== Using TLC in ProB Tcl/Tk
 
 First you have to open a B specification in the ProB GUI. Then you can
 select the menu command "Model Check with TLC" in the
@@ -47,8 +45,7 @@ pane) to give an optimal feedback.
 image::Model_Checking_With_TLC_Trace.png[]
 
 [[requirements]]
-Requirements
-^^^^^^^^^^^^
+==== Requirements
 
 On Linux the tlc-thread package is required to run TLC from the tcl/tk
 ui:
@@ -56,8 +53,7 @@ ui:
 `sudo apt-get install tcl-thread`
 
 [[using-tlc-in-probcli]]
-Using TLC in probcli
-~~~~~~~~~~~~~~~~~~~~
+=== Using TLC in probcli
 
 You can use the following switch to use TLC rather than ProB's model
 checker:
@@ -81,8 +77,7 @@ be used by TLC. So, a call might look like this:
 `probcli FILE.mch -mc_with_tlc -p TLC_WORKERS 2 -noltl`
 
 [[when-to-use-tlc]]
-When to use TLC
----------------
+== When to use TLC
 
 TLC is extremely valuable when it comes to explicit state model checking
 for large state spaces. Otherwise, TLC has no constraint solving
@@ -106,9 +101,8 @@ There is a
 http://stups.hhu.de/w/Special:Publication/HansenLeuschel_TLC4B_techreport[technical
 report] that describes our translation from B to TLA+.
 
-[[limitations]]
-Limitations
------------
+[[limitations-tlc]]
+== Limitations
 
 The following constructs are currently not supported by the TLC4B
 translator:
@@ -118,8 +112,7 @@ translator:
 * Sequential composition statement (G;H)
 
 [[visited-states]]
-Visited States
---------------
+== Visited States
 
 Sometimes TLC will show a different number of visited states compared to
 the ProB model checker. The following example should illustrate this
@@ -145,8 +138,7 @@ image::NumberOfStates.jpeg[]
 TLC will only report 10 distinct states (10 initialization states).
 
 [[more-information]]
-More Information
-----------------
+== More Information
 
 More information can be found in our
 http://www.stups.uni-duesseldorf.de/w/Special:Publication/HansenLeuschel_ABZ14[ABZ'14
