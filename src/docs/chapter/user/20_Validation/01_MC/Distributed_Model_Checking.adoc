@@ -1,6 +1,6 @@
 :wikifix: 2
 ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
-[[distributed-model-checking]]
+
 = Distributed Model Checking
 
 Distributed Model Checking allows to check invariants and
@@ -8,7 +8,6 @@ deadlock-freedom (and assertions) with additional computational power.
 The distributed version of ProB is named _distb_. In the following, we
 will document how to run it.
 
-[[overview]]
 == Overview
 
 _distb_ consists of three components.
@@ -48,7 +47,6 @@ sudo sysctl -w kern.sysv.shmseg=4096
 sudo sysctl -w kern.sysv.shmall=18446744073692774399
 ----
 
-[[running-distb]]
 == Running _distb_
 
 Run once per machine:
@@ -68,7 +66,6 @@ Run as many workers as you want:
 
 `/path/to/prob/probcli -zmq_worker <unique identifier> &`
 
-[[additional-preferences]]
 == Additional Preferences
 
 You can fine-tune the following parameters by adding `-p NAME VALUE` to

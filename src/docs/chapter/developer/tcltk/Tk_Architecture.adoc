@@ -1,9 +1,6 @@
 ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
-/Category:Developer_Manual[Category:Developer Manual] __NOTOC__
-
 [[theprob-tcltk-cross-language-architecture]]
-TheProB Tcl/Tk cross-language architecture
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+= The ProB Tcl/Tk cross-language architecture
 
 The ProB Tcl/Tk contains a mixture of Prolog and Tcl/Tk source code. The
 core (i.e., the constraint solver, the animation engine, the model
@@ -17,12 +14,12 @@ Overall, the communication works as follows:
 * on startup ProB launches Tcl/Tk; most of the GUI code can be found
 inside `main_prob_tcltk_gui.tcl`
 * from then on Tcl/Tk controls the GUI and calls Prolog predicates
-* Tcl/Tk code calls Prolog using ` prolog PRED(…X…Y…)`
-* Tcl/Tk then gets result values using  `$prolog_variables(X)` or
+* Tcl/Tk code calls Prolog using `prolog PRED(…X…Y…)`
+* Tcl/Tk then gets result values using `$prolog_variables(X)` or
 `$prolog_variables(Y)`. There are only limited Prolog datatypes that can
 be transferred from Prolog to Tcl/Tk in this way; see below.
 * Tcl/Tk code can also check if a Prolog call was successful, e.g.:
-` if [prolog tcltk_backtrack] { … }`
+`if [prolog tcltk_backtrack] { … }`
 * Tcl/Tk code usually calls predicates with tcltk in their name; but
 there are exception (evaluation_view.tcl calls bvisual2 predicates)
 
@@ -36,27 +33,25 @@ Prolog to Tcl/Tk and then extracted using `$prolog_variables(VAR)`:
 return the list but wrap the list result inside a `list(.)` constructor
 
 [[how-to-add-a-simple-menu-command]]
-How to add a simple menu command
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+== How to add a simple menu command
 
 You need to add an entry in the ProB Tcl/Tk menu. The menus are defined
 at the top of the file `main_prob_tcltk_gui.tcl`
 
 ....
-  .frmMenu.mnuAnalyse.mnuCoverage add command -label "Number of Values for all Variables" -command {procNrVariableValuesOverStatespace}
+.frmMenu.mnuAnalyse.mnuCoverage add command -label "Number of Values for all Variables" -command {procNrVariableValuesOverStatespace}
 ....
 
-You also need to define the Tcl/Tk part of your command (probably inside
-`main_prob_tcltk_gui.tcl`):
+You also need to define the Tcl/Tk part of your command (probably inside `main_prob_tcltk_gui.tcl`):
 
 ....
-proc procNrVariableValuesOverStatespace {} {
-        if [prolog “tcltk_compute_nr_covered_values_for_all_variables(Res)"] {
-            procShowErrors
-            procShowTable $prolog_variables(Res) "Coverage Table" "Number of Covered Values for Variables" "CoverageVariablesTable" "" ""
-        } else {
-            procShowErrors
-        }
+proc procNrVariableValuesOverStatespace {}
+    if [prolog “tcltk_compute_nr_covered_values_for_all_variables(Res)"] {
+        procShowErrors
+        procShowTable $prolog_variables(Res) "Coverage Table" "Number of Covered Values for Variables" "CoverageVariablesTable" "" ""
+    } else {
+        procShowErrors
+    }
 }
 ....
 
@@ -83,11 +78,10 @@ ProB Tcl/Tk, just on the console (if any) used to launch ProB Tcl/Tk).
 
 The command is now available and ready to use:
 
- image::ProB_TclTk_CountVarMenu.png[]
+image::ProB_TclTk_CountVarMenu.png[]
 
 [[some-useful-prob-tcltk-procedures]]
-Some useful ProB Tcl/Tk procedures
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+== Some useful ProB Tcl/Tk procedures
 
 * procShowErrors: collect all new errors and warnings from the Prolog
 error_manager and displays them in a dialog (in batch mode they are

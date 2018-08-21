@@ -1,53 +1,44 @@
 ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
-/Category:User_Manual[Category:User Manual]
 
-[[can-i-use-transitive-closure-for-event-b-models]]
-Can I use transitive closure for Event-B models
------------------------------------------------
+= FAQ : Frequently asked Questions
+
+== Can I use transitive closure for Event-B models?
 
 Yes, you need to use a theory of the transitive closure which contains a
-special mapping file. See link:/Event-B_Theories[the page on supporting
-Event-B theories] along with the links to theories that can be used
+special mapping file. See <<Event-B_Theories.adoc,,the section about Event-B theories>> along with the links to theories that can be used
 efficiently with ProB.
 
-[[how-can-i-reduce-the-memory-consumption-for-model-checking]]
-How can I reduce the memory consumption for model-checking
-----------------------------------------------------------
+== How can I reduce the memory consumption for model-checking?
 
 There are several options:
 
-\1) try and reduce the amount of memory ProB uses per state: For probcli
+1. Try to reduce the amount of memory ProB uses per state: For probcli
 you can set the COMPRESSION preference to true, e.g., in the following
 way:
 
-` probcli MyMachine.mch --model-check -p COMPRESSION TRUE`
+`probcli MyMachine.mch --model-check -p COMPRESSION TRUE`
 
 You could also add a DEFINITION
 
-` SET_PREF_COMPRESSION == TRUE`
+`SET_PREF_COMPRESSION == TRUE`
 
 to your B machine to set the preference. There is also the possibility
 to forget the state space of already visited states by setting the
-preferences FORGET_STATE_SPACE and IGNORE_HASH_COLLISIONS to TRUE.
+preferences FORGET_STATE_SPACE and IGNORE_HASH_COLLISIONS to TRUE. <<Download.adoc, test>>
 
-\2) you can try reduce the state space, e.g., via
-link:/Symmetry_Reduction_symmetry[Symmetry_Reduction symmetry]. Hash
+2. You can try to reduce the state space, e.g., via <<Symmetry_Reduction.adoc, symmetry reduction>>. Hash
 symmetry typically works best. Another possibility is
-link:/Tutorial_Various_Optimizations_partial_order_reduction[Tutorial_Various_Optimizations
-partial order reduction].
+<<Tutorial_Various_Optimizations.adoc, Tutorial Various Optimizations
+partial order reduction>>.
 
-\3) sometimes
-link:/Bounded_Model_Checking_bounded_model_checking[Bounded_Model_Checking
-bounded model checking] works much better than explicit state model
+3. Sometimes <<Bounded_Model_Checking.adoc, bounded model checking>> works much better than explicit state model
 checking, especially when the branching factor is very high.
 
-\4) You could try and use our link:/TLC_TLC_backend[TLC TLC backend] It
+4. You could try and use our <<TLC.adoc,, TLC backend>>. It
 will not work for refinements and only has limited support for machine
-inclusion,… but it can be very fast and the state space is kept on disk.
+inclusion, but it can be very fast and the state space is kept on disk.
 
-[[how-do-i-perform-a-self-check-of-prob]]
-How do I perform a self-check of ProB?
---------------------------------------
+== How do I perform a self-check of ProB?
 
 If you suspect something is wrong with your ProB Tcl/Tk installation,
 run the ``Perform Self Check'' command in the ``Debug Menu''. Note: run
@@ -68,9 +59,7 @@ Self-Check Finished
 -------------------
 ....
 
-[[prob-seems-stuck-when-loading-a-machine]]
-ProB seems stuck when loading a machine
----------------------------------------
+== ProB seems stuck when loading a machine
 
 After parsing a machine, ProB is attempting to find valid initial states
 of your machine (or in case your machine has constants, valid values of
@@ -84,21 +73,17 @@ jbtools parser sometimes behaves badly when syntax errors are present
 and can take a very long time to return the syntax error. [This has been
 fixed in the release 1.2.0]
 
-[[which-features-of-b-are-covered]]
-Which features of B are covered?
---------------------------------
+== Which features of B are covered?
 
 ProB covers a large part of B, and we are striving towards full
 coverage. ProB supports B features such as non-deterministic operations,
 ANY statements, operations with complex arguments, sets, sequences,
 functions, lambda abstractions, set comprehensions, constants and
 properties, and many more. It has limited support for multiple machines
-and refinements (see the link:/Current_Limitations_[Current_Limitations
-] section and the FAQ entry about refinements below).
+and refinements (see the <<Current_Limitations.adoc, Current_Limitations>>
+section and the FAQ entry about refinements below).
 
-[[is-there-support-for-refinement]]
-Is there support for refinement?
---------------------------------
+== Is there support for refinement?
 
 For the moment, you have to give types to operation arguments in
 refinements; the types are not always extracted from the ancestor
@@ -117,8 +102,7 @@ affects refinement checking. [ProB's refinement checker is more suited
 for EventB than classical B, but we are working to fully support both
 styles of refinement.]
 
-[[the-constraint-based-checker-is-very-slow-and-does-not-always-work]]
-## The constraint based checker is very slow and does not always work
+== The constraint based checker is very slow and does not always work
 
 
 The constraint based checker is the least stable part of the system.
@@ -131,16 +115,12 @@ the constraint based checker, not in the temporal model checker or the
 animator). Running ProB on Sicstus Prolog 3.9 seems to get rid of this
 problem (at least partially).
 
-[[i-can-animate-your-machine-files-but-i-am-not-able-to-open-my-own-machine-files]]
-## I can animate your machine files but I am not able to open my own
-machine files
+== I can animate your machine files but I am not able to open my own machine files
 
 Be sure to have Java installed and set up the CLASSPATH as stipulated
 above.
 
-[[prob-complains-that-some-variables-are-not-given-a-proper-type]]
-ProB complains that some variables are not given a proper type
---------------------------------------------------------------
+== ProB complains that some variables are not given a proper type
 
 All variables should be given a type even though ProB may still work
 without them (but you are living dangerously). In the latest release,
@@ -150,18 +130,14 @@ also recognized as a type. aa: POW(myset) & bb: POW(aa) is now ok
 POW(POW(myset)) ). One can now also use subset for typing: bb <:
 COLOURS.
 
-[[i-cannot-visualize-the-state-space]]
-I cannot visualize the state space
-----------------------------------
+== I cannot visualize the state space
 
 Be sure to set up the viewer preferences and use / (even on Windows!) Be
 sure to have dot installed and either dotty or a Postscript viewer.
 Also, on Windows the path to the machine files should not contain
 spaces. A good example directory would be C:/Machines/
 
-[[some-of-my-machines-do-not-behave-as-expected.]]
-Some of my machines do not behave as expected.
-----------------------------------------------
+== Some of my machines do not behave as expected
 
 Maybe you are using a feature of B not yet supported by ProB. Have a
 look at the console window and see whether ProB displays any warning
@@ -172,9 +148,7 @@ Machine and a description of the problem to me. You can also use the
 Save State Command in the File Menu and then send me the *.saved.P file
 (this way you do not have to tell me how to reach the buggy state).
 
-[[how-does-prob-treat-int-and-nat-as-opposed-to-integer-and-natural]]
-How does ProB treat INT and NAT as opposed to INTEGER and NATURAL?
-------------------------------------------------------------------
+== How does ProB treat INT and NAT as opposed to INTEGER and NATURAL?
 
 As of version 1.2 ProB treats INT differently from INTEGER (the same is
 true for NAT and NAT1). A variable x:INT is now required to lie between
@@ -182,23 +156,21 @@ MININT..MAXINT (which can be changed in the preferences; you can also
 change the setting on a per machine basis by adding DEFINITIONS
 likeSET_PREF_MININT == -10; SET_PREF_MAXINT == 100; to your machine.)
 
-[[problem-with-libtk.so-on-linux]]
-Problem with libtk.so on Linux
-------------------------------
+== Problem with libtk.so on Linux
 
 When launching ProB on Linux I get: ./prob: error while loading shared
 libraries: /usr/lib/libtk.so : invalid ELF header
 
 Solution:
 
-`Replace libtk.so with a symbolic link to the actual library,` +
-`e.g., do something like that: # ln -s /usr/lib/libtk8.4.so` +
-`/usr/lib/libtk.so` +
-`(Probably best to make a backup of libtk.so before that.)`
+----
+Replace libtk.so with a symbolic link to the actual library,
+e.g., do something like that: # ln -s /usr/lib/libtk8.4.s
+/usr/lib/libtk.so
+(Probably best to make a backup of libtk.so before that.)
+----
 
-[[finding-multiple-assertion-violations]]
-Finding Multiple Assertion Violations
--------------------------------------
+== Finding Multiple Assertion Violations
 
 I want to generate multiple assertion violations in ProB in order to
 generate the customized test cases for a particular B specfication
@@ -216,16 +188,16 @@ my_assertion_N = SELECT not(Assertion_N) THEN skip END After model
 checking, you can again use ``Compute Coverage'' to see how often every
 assertion has been violated.
 
-[[checking-multiple-ltl-formulas]]
-Checking Multiple LTL Formulas
-------------------------------
+== Checking Multiple LTL Formulas
 
 Can multiple LTL formulas be verified at a time?
 
 You can write multiple LTL assertions in the DEFINITIONS clause, e.g.,
 
-`ASSERT_LTL0 == ````G`` ``(e(SetCruiseSpeed)`` ``->`` ``e(CruiseBecomesNotAllowed))`''`;` +
-`ASSERT_LTL1 == ````G`` ``(e(CruiseBecomesNotAllowed)`` ``->`` ``e(SetCruiseSpeed))`''`;` +
-`ASSERT_LTL2 == ````G`` ``(e(CruiseBecomesNotAllowed)`` ``->`` ``e(ObstacleDisappears))`''
+----
+ASSERT_LTL0 == "G (e(SetCruiseSpeed) -> e(CruiseBecomesNotAllowed))";
+ASSERT_LTL1 == "G (e(CruiseBecomesNotAllowed) -> e(SetCruiseSpeed))";
+ASSERT_LTL2 == "G (e(CruiseBecomesNotAllowed) -> e(ObstacleDisappears))"
+----
 
-They can then all be checked using the ``Check LTL Assertions'' command.
+They can then all be checked using the `Check LTL Assertions` command.
