@@ -1,5 +1,5 @@
-:wikifix: 2
-ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
+
+
 [[tutorial-modeling-infinite-datatypes]]
 = Tutorial Modeling Infinite Datatypes
 

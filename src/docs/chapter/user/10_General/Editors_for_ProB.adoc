@@ -1,5 +1,5 @@
-:wikifix: 2
-ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
+
+
 [[editors-for-prob]]
 = Editors for ProB
 

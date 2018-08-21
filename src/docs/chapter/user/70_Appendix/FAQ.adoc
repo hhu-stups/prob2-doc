@@ -1,11 +1,10 @@
-ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
-
+[[faq]]
 = FAQ : Frequently asked Questions
 
 == Can I use transitive closure for Event-B models?
 
 Yes, you need to use a theory of the transitive closure which contains a
-special mapping file. See <<Event-B_Theories.adoc,,the section about Event-B theories>> along with the links to theories that can be used
+special mapping file. See <<event-b-theories,the section about Event-B theories>> along with the links to theories that can be used
 efficiently with ProB.
 
 == How can I reduce the memory consumption for model-checking?
@@ -24,17 +23,16 @@ You could also add a DEFINITION
 
 to your B machine to set the preference. There is also the possibility
 to forget the state space of already visited states by setting the
-preferences FORGET_STATE_SPACE and IGNORE_HASH_COLLISIONS to TRUE. <<Download.adoc, test>>
+preferences FORGET_STATE_SPACE and IGNORE_HASH_COLLISIONS to TRUE. TEST.
 
-2. You can try to reduce the state space, e.g., via <<Symmetry_Reduction.adoc, symmetry reduction>>. Hash
-symmetry typically works best. Another possibility is
-<<Tutorial_Various_Optimizations.adoc, Tutorial Various Optimizations
-partial order reduction>>.
+2. You can try to reduce the state space, e.g., via <<symmetry-reduction, symmetry reduction>>. Hash
+symmetry typically works best. Another possibility is in the paragraph partial order reduction of the section
+<<tutorial-various-optimizations, Tutorial Various Optimizations>>.
 
-3. Sometimes <<Bounded_Model_Checking.adoc, bounded model checking>> works much better than explicit state model
+3. Sometimes <<bounded-model-checking, bounded model checking>> works much better than explicit state model
 checking, especially when the branching factor is very high.
 
-4. You could try and use our <<TLC.adoc,, TLC backend>>. It
+4. You could try and use our <<tlc, TLC backend>>. It
 will not work for refinements and only has limited support for machine
 inclusion, but it can be very fast and the state space is kept on disk.
 

@@ -1,5 +1,5 @@
-:wikifix: 2
-ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
+
+
 [[euler-problem-67---maximum-path-sum-ii]]
 = Euler Problem 67 - Maximum Path Sum II
 

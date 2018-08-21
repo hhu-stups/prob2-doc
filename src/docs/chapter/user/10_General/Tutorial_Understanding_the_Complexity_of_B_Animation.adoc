@@ -1,5 +1,5 @@
-:wikifix: 2
-ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
+
+
 [[tutorial-understanding-the-complexity-of-b-animation]]
 = Tutorial Understanding the Complexity of B Animation
 

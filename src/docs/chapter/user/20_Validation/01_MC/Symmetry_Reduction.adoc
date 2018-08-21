@@ -1,6 +1,6 @@
-:wikifix: 2
-ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
-[[symmetry-reduction]]
+
+
+[[symmetry_reduction]]
 = Symmetry Reduction
 
 :category: User_Manual
@@ -9,7 +9,6 @@ ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 ProB can make use of symmetries induced
 by the use of deferred sets in B (and given sets in Z).
 
-[[static-symmetry-reduction]]
 == Static Symmetry Reduction
 
 ProB will perform a limited form of symmetry reduction for constants
@@ -90,7 +89,6 @@ A = {D1,D2,D3}
 B = {D4,D5,D6}
 ----
 
-[[symmetry-reduction-during-model-checking]]
 == Symmetry Reduction during Model Checking
 
 In addition to the above, you can also turn of stronger symmetry
@@ -135,5 +133,4 @@ Proceedings International Symmetry Conference,Januar,2007,Verlag,
 http://www.stups.uni-duesseldorf.de/publications/final-symmetry.pdf[2]].
 This is typically the most efficient method.
 
-[[references]]
 == References

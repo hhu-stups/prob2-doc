@@ -1,5 +1,5 @@
-:wikifix: 2
-ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
+
+
 [[rush-hour-puzzle]]
 = Rush Hour Puzzle
 

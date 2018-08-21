@@ -1,4 +1,4 @@
-ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
+
 Below is a ProB-based
 http://research.microsoft.com/en-us/um/people/lamport/tla/logic-calculators.html[logic
 calculator]. You can enter predicates and expressions in the upper

@@ -1,4 +1,4 @@
-ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
+
 [[theprob-tcltk-cross-language-architecture]]
 = The ProB Tcl/Tk cross-language architecture
 

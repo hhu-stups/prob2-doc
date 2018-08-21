@@ -1,4 +1,4 @@
-ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
+
 
 = ABZ 2014 Case Study
 

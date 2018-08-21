@@ -1,5 +1,5 @@
-:wikifix: 2
-ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
+
+
 [[die-hard-jugs-puzzle]]
 = Die Hard Jugs Puzzle
 

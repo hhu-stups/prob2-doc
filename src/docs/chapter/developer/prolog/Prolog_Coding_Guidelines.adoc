@@ -1,5 +1,3 @@
-:wikifix: 2
-ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
 [[prolog-coding-guidelines]]
 = Prolog Coding Guidelines
 

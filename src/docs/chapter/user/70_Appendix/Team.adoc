@@ -1,4 +1,4 @@
-ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
+
 ProB is based on research and implemention effort by:
 
 * http://www.stups.uni-duesseldorf.de/~leuschel/[Michael Leuschel],

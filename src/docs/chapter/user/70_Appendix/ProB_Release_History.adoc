@@ -1,4 +1,4 @@
-ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
+
 Full ProB release history until release 1.8.0:
 
 ----

@@ -1,5 +1,5 @@
-:wikifix: 2
-ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
+
+
 [[blocks-world-directed-model-checking]]
 = Blocks World (Directed Model Checking)
 

@@ -1,4 +1,4 @@
-ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
+
 If you want to submit a bug report, please use our https://probjira.atlassian.net/projects/PROBCORE/issues/[bug tracker]. You may
 also want to ask questions within our https://groups.google.com/forum/#!forum/prob-users[prob-users group].
 

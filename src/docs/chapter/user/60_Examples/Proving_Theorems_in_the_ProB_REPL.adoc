@@ -1,4 +1,4 @@
-ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
+
 For this example we try and use the REPL (Read-Eval-Print-Loop) of ProB
 to prove theorems. The REPL can either be started using probcli's
 command `-repl` or by starting the link:/Eval_Console[Eval Console in

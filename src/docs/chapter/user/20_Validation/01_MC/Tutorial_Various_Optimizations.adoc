@@ -1,5 +1,4 @@
-[red]#impossible#:wikifix: 2
-ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
+
 [[tutorial-various-optimizations]]
 = Tutorial Various Optimizations
 
@@ -536,5 +535,4 @@ These and various other benchmarks used for evaluating partial guard
 evaluation (PGE) can be viewed
 http://nightly.cobra.cs.uni-duesseldorf.de/pge/[here].
 
-[[references]]
 == References
