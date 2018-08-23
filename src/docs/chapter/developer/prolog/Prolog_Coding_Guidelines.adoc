@@ -66,7 +66,7 @@ the attention of the user in an appropriate way, depending on whether
 the Rodin, the Tcl/Tk, the command-line version is run and also
 depending on whether the tool is in testing and/or batch mode.
 
-Note: for internal errors that should never occur use the
+NOTE: For internal errors that should never occur use the
 `add_internal_error` predicate. This ensures that the
 https://www3.hhu.de/stups/internal/coverage/html/[coverage information]
 is shown accordingly (in blue rather than red in the highlighting and

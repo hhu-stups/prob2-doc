@@ -1,0 +1,321 @@
+[[downloads]]
+== Download
+
+[[latest-release]]
+=== Latest Release
+
+Details of the link:/ProBLicence[ProB Licence can be found here]. Note:
+please use the provided start scripts (StartProB.sh or StartProBWin.bat)
+to start ProB.
+
+ProB is free to use and open source. For commercial support contact the
+spin-off company http://www.formalmind.com[Formal Mind] or
+http://www.stups.uni-duesseldorf.de/~leuschel/[Michael Leuschel]. In
+particular, we can provide access to the validation report for using
+ProB as a tool of class T2 or T3 within the European norm
+http://de.wikipedia.org/wiki/EN_50128[EN50128].
+
+[cols=",,,",options="header",]
+|=======================================================================
+|Platform |Release Date |Download |Dependencies
+|1.7.1-final
+
+|Linux |5. October 2017
+|http://www3.hhu.de/stups/downloads/prob/tcltk/releases/1.7.1/ProB.linux32.tar.gz[Tarball
+(with probcli) (32bit)], +
+http://www3.hhu.de/stups/downloads/prob/tcltk/releases/1.7.1/ProB.linux64.tar.gz[Tarball
+(with probcli) (64bit)] + |http://java.com/en/[Java Runtime Environment
+(7.0 or newer)], Tcl/Tk 8.5
+
+|colspan=``4'' style=``background-color:lightgrey;'' style="height:20px;
+|
+
+|Windows |5. October 2017
+|http://www3.hhu.de/stups/downloads/prob/tcltk/releases/1.7.1/ProB.windows32.zip[Zipfile
+(with probcli) (32bit)], +
+http://www3.hhu.de/stups/downloads/prob/tcltk/releases/1.7.1/ProB.windows64.zip[Zipfile
+(with probcli) +
+(64bit)] |http://downloads.activestate.com/ActiveTcl/releases/[Tcl/Tk
+8.5 for Windows], http://java.com/en/[Java Runtime Environment (7.0 or
+newer)], link:/Windows_Installation_Instructions[Windows Installation
+Instructions] http://www.graphviz.org/Download_windows.php[GraphViz]
+
+|colspan=``4'' style=``background-color:lightgrey;'' style="height:20px;
+|
+
+|OS X |12. October 2017
+|http://www3.hhu.de/stups/downloads/prob/tcltk/releases/1.7.1/ProB.mac_os.x86_64.tar.gz[Tarball
+(with probcli) (64bit)]
+https://github.com/hhu-stups/homebrew-prob[Homebrew Tap] |OS X 10.9
+(Mavericks) or newer,
+http://www.activestate.com/activetcl/downloads/[Tcl/TK 8.5] (e.g.,
+http://downloads.activestate.com/ActiveTcl/releases/8.5.18.0/[8.5.18.0]),
+http://java.com/en/[Java Runtime Environment] or better
+http://www.oracle.com/technetwork/java/javase/downloads/index.html[Java
+JDK] (7.0 or newer), http://www.pixelglow.com/graphviz/[Graphviz for Mac
+OS X]
+|=======================================================================
+
+The B parser of ProB requires http://java.com/en/[Java] 7 or newer.
+Sometimes you have to install the Java JDK (and not the JRE) so that the
+new Java version becomes visible to command-line tools. The Graphical
+User Interface of ProB Tcl/Tk requires Tcl/Tk 8.5. Note: If you wish to
+use ProB on Windows XP you need the service pack SP3 installed.
+
+[[download-prob-for-rodin]]
+==== ProB for Rodin
+
+To install ProB for Rodin, first download Rodin 2.8 or
+http://sourceforge.net/projects/rodin-b-sharp/files/Core_Rodin_Platform/3.3/[Rodin
+3.3], choose Help -> Install New Software and simply choose the
+pre-configured ProB update site. (The pre-configured update site is
+http://www.stups.uni-duesseldorf.de/prob_updates[http://www.stups.uni-duesseldorf.de/prob_updates]
+for Rodin 2.8 and
+http://www.stups.hhu.de/prob_updates_rodin3[http://www.stups.hhu.de/prob_updates_rodin3]
+for Rodin 3.3. The update site for nightly builds for Rodin 3.x is
+https://www3.hhu.de/stups/rodin/prob1/nightly[https://www3.hhu.de/stups/rodin/prob1/nightly].)
+More link:/Tutorial_Rodin_First_Step[detailed installation instructions
+and a brief tutorial are available].
+
+[[prior-versions]]
+=== Prior Versions
+
+Prior Versions of ProB going back to 1.3.1
+link:/DownloadPriorVersions[are available for download here]. If you are
+interested in still earlier releases, please have a look at the
+http://www3.hhu.de/stups/downloads/prob/tcltk/releases/[Download
+directory].
+
+[[java-requirements-for-b-parser]]
+=== Java Requirements for B parser
+
+The B parser of ProB 1.5.1 requires Java Runtime Environment (JRE) 7 or
+newer. ProB 1.5.0 can be run with JRE 6. Note: on some systems (Mac OS
+X) you may have to install the
+http://www.oracle.com/technetwork/java/javase/downloads/index.html[Oracle
+JDK/JSE] (and not just the JRE) so that Java 7 or 8 becomes available to
+the command-line tools (type `java -version` to check which version is
+used by default for command-line tools; see also
+http://stackoverflow.com/questions/21964709/how-to-set-or-change-the-default-java-jdk-version-on-os-x[this
+discussion on StackOverflow]). In case you have trouble starting the
+Java parser you can now set the `JAVA_PATH` preference of ProB to point
+to the java tool (or java.exe on Windows).
+
+To check whether ProB can correctly use its Java parser you can type the
+following (using probcli.exe on Windows):
+
+`probcli -version -v`
+
+This will try and start the parser and obtain the parser version. In
+case Java is not correctly installed you should get an error message. On
+Windows, you may see the error message
+
+`Error occurred during initialization of VM`
+
+on the console. This means you should probably
+http://stackoverflow.com/questions/11808829/jre-1-7-returns-java-lang-noclassdeffounderror-java-lang-object[re-install
+the Java JRE with admin rights] and try again. If you see the error
+message
+
+`Unsupported major.minor version 51.0`
+
+this means you do not have Java 7 or newer installed. You can try
+setting the path to the correct java version by setting the JAVA_PATH
+preference as follows:
+
+`probcli -p JAVA_PATH path/to/java -version -v`
+
+[[tcltk-requirements-for-prob-tcltk]]
+=== Tcl/Tk Requirements for ProB Tcl/Tk
+
+ProB Tcl/Tk requires an installation of Tcl/Tk 8.5. The command-line
+tool probcli does not require this. Please note that Tcl/Tk 8.6 is not
+yet generally supported by SICStus Prolog (even though ProB may work
+with Tcl/Tk 8.6; we recommend installing Tcl/Tk 8.5 though).
+
+[[tcltk-on-mac-osx]]
+==== Tcl/Tk on Mac OS/X
+
+Note: for Mac OS you may have to install
+http://www.activestate.com/activetcl/downloads/[the ActiveTcl version of
+Tcl/Tk] (e.g.,
+http://downloads.activestate.com/ActiveTcl/releases/8.5.18.0/[8.5.18.0])
+as indicated above (the distribution provided by Apple is typically
+broken, e.g., after opening a file using the standard file selection
+dialog some versions crash). However, even the version of Active Tcl/Tk
+on Mac can be quite unreliable and prone to crashing; for example
+version http://bugs.python.org/issue15853[8.5.12 has a serious bug
+related to copying text], see also
+http://sourceforge.net/tracker/?func=detail&aid=3555211&group_id=12997&atid=112997_type[here]).
+This issue has been fixed in version 8.5.13 or later.
+
+[[tcltk-on-windows]]
+==== Tcl/Tk on Windows
+
+Starting with ProB 1.3.5 you can now use ProB with Tcl/Tk 8.5 on
+Windows. If you have the older version of Tcl/Tk 8.4 you have to install
+the newer one 8.5 (you should be able to also keep the older version).
+For Windows we recommend installing
+http://downloads.activestate.com/ActiveTcl/releases/[ActiveTcl-8.5]
+(e.g.,
+http://downloads.activestate.com/ActiveTcl/releases/8.5.18.0/[8.5.18.0]).
+Note: For the 64 bit version of ProB for Windows, you have to install
+the 64 bit Tcl/Tk 8.5 version! If you wish to use ProB on Windows XP you
+need the service pack SP3 installed.
+
+[[tcltk-on-linux]]
+==== Tcl/Tk on Linux
+
+On Linux you can typically install Tcl/Tk using
+`sudo apt-get install tcl8.5 tk8.5`. On Linux OpenSuse (12.3) you may
+have to perform the following for ProB to work:
+
+`ln -s /usr/lib/libtk8.5.so /usr/lib/libtk8.5.so.0` +
+`ln -s /usr/lib/libtcl8.5.so /usr/lib/libtcl8.5.so.0`
+
+Also, some of the feature require the table extension, which can be installed like this:
+`sudo apt install tk-table`
+Finally, support for .png ANIMATION_IMG declarations requires the Img package:
+`sudo apt install libtk-img`
+
+[[nightly-build]]
+=== Nightly Build
+
+* You can download our
+http://www3.hhu.de/stups/downloads/prob/tcltk/nightly/[nightly
+integration build from here]. Note: if you wish to use the fast
+rendering for large state spaces, you need the sfdp tool of GraphViz
+(ideally version 2.28 or newer with the triangulation library; when
+installing using brew use the option `--with-gts`; see the section
+below).
+* Automatically generated test
+https://www3.hhu.de/stups/internal/coverage/html/[coverage reports are
+also available].
+* Nightly builds of ProB for Rodin 3 can be obtained from within Rodin
+by using the update site
+https://www3.hhu.de/stups/rodin/prob1/nightly[https://www3.hhu.de/stups/rodin/prob1/nightly].
+* Nightly builds of ProB 2 (experimental) for Rodin 3 can be obtained
+from within Rodin using the update site
+https://www3.hhu.de/stups/rodin/prob2/nightly/[https://www3.hhu.de/stups/rodin/prob2/nightly/]
+(this will probably be replaced by a Java FX version in the future)
+* A beta version of the new
+link:/ProB2_JavaFX_UI_Java_FX_UI_(aka_ProB2_FX)[ProB2_JavaFX_UI Java FX
+UI (aka ProB2 FX)] is available at
+https://www3.hhu.de/stups/downloads/prob2/[https://www3.hhu.de/stups/downloads/prob2/].
+
+[[graphviz-requirements]]
+=== Graphviz Requirements
+
+If you wish to view various visualizations generated by ProB Tcl/Tk or
+probcli you will need http://www.graphviz.org/[GraphViz]. ProB may use
+the command-line tool `dot`, a dot-file viewer such as `dotty`.
+
+On Mac you can now install the latest version of Graphviz using brew:
+
+`1. brew uninstall graphviz` +
+`2. brew install graphviz --with-gts` +
+`3. brew link --overwrite graphviz`
+
+Step 1. is optional; you only need to use it if you have a prior version
+of Graphviz installed. Step3 links the binaries to /usr/local/bin. This
+is probably better than using the
+http://www.pixelglow.com/graphviz/[older version from Pixelglow].
+
+Note: if you wish to use the fast rendering for large state spaces in
+ProB 1.7.x, you need the sfdp tool of GraphViz (ideally version 2.28 or
+newer with the triangulation library; when installing using brew use the
+option --with-gts; see the section below).
+ProB 1.8.1 only uses the dot binary, making use of the -Ksfdp option.
+
+[[timed-csp-simulator]]
+=== Timed-CSP Simulator
+
+A version of ProB with built-in support for timed CSP developed by
+http://cs.swansea.ac.uk/~csnga/timed-csp-simulator.html[Swansea
+University (UK)] is available on here:
+https://www3.hhu.de/stups/downloads/prob/timed-csp/[https://www3.hhu.de/stups/downloads/prob/timed-csp/]
+
+[[sourcecode]]
+=== Sourcecode
+
+You can download the latest sourcecode snapshot from:
+http://www3.hhu.de/stups/downloads/prob/source/[http://www3.hhu.de/stups/downloads/prob/source/]
+
+[[short-release-history]]
+=== Short Release History
+
+*20/03/2018* link:/Download[ProB 1.8.0] is available. Highlights: terminal colour support, performance improvements for displaying very large values, improved symmetry breaking and constraint solving.
+
+*5/10/2017* link:/Download[ProB 1.7.1] is available. Highlights:
+performance, non-deterministic assigned variables shown, Z improvements,
+export history to HTML.
+
+*11/7/2017* link:/Download[ProB 1.7.0] is available. Highlights:
+improved link:/Generating_Documents_with_ProB_and_Latex[Latex document
+generation], improved XML/CSV data import and export, RULE DSL language,
+many improvements in constraint solver.
+
+*20/10/2016* link:/Download[ProB 1.6.1] is available. Highlights:
+link:/Generating_Documents_with_ProB_and_Latex[Latex document
+generation], LET and IF-THEN-ELSE for expressions and predicates, XML
+logging, XML data import, performance improvements.
+
+*22/4/2016* link:/Download[ProB 1.6.0] is available. Highlights:
+link:/Tutorial_Directed_Model_Checking[directed model checking],
+link:/Using_ProB_with_Z3[Z3 available as backend], B line comments and
+unicode symbols, improved error messages, performance improvements.
+
+*19/2/2015* link:/Download[ProB 1.5.0] is available. Highlights:
+improved random enumeration, MACE/SEM style static symmetry reduction
+for deferred set elements, link:/State_Space_Coverage_Analyses[MC/DC
+coverage] analysis for guards and invariants, link:/TLC[improved TLC
+interface], bug fixes and improvements including but not limited to the
+constraint solver.
+
+*29/8/2014* link:/Download[ProB 1.4.1], a small bugfix-only release is
+available. For a list of new features in 1.4.0 see below.
+
+*18/8/2014* link:/Download[ProB 1.4.0] is available. Highlights:
+CLP(FD)-based constraint solver enabled by default, kernel can handle
+more operations symbolically, link:/TLC[integration of the TLC model
+checker], bug fixes and performance improvements.
+
+*4/3/2013* link:/Download[ProB 1.3.6] is available. Highlights: improved
+constraint propagation for division, modulo, intervals, model checking
+progress bar, performance improvements,
+link:/Using_ProB_with_KODKOD[improved Kodkod backend] and use within
+REPL, and many more.
+
+*8/10/2012* link:/Download[ProB 1.3.5] is available. Highlights: support
+for external and recursive functions, optional Kodkod backend,
+link:/TLA[TLA+ support], performance improvements, pragmas, units
+inference, and many more.
+
+*30/03/2012* A first prototype of an online
+link:/ProB_Logic_Calculator[ProB Logic Calculator] is available.
+
+*21/11/2011* ProB 1.3.4 is available. Highlights: Evaluation View and
+Eval window, CSP assertion checking, improved editor, 64-bit version for
+Mac and Linux, performance improvements, and many more.
+
+*10/02/2011* ProB 1.3.3 and ProB for Rodin 2.3 is available. Highlights:
+improved performance, constrained-based deadlock checking, record
+detection, and many more.
+
+*07/30/2010* ProB 1.3.2 is available. Highlights: improved performance,
+constraint solving over integers (enable in Advanced Preferences), much
+improved Z support, and many more.
+
+*12/07/2009* ProB 1.3.1 is available. Highlights: new data-structure for
+large sets and relations (see FM 2009), multi-level validation for
+Event-B, improved constraint propagation for boolean connectives, and
+many more.
+
+*03/20/2009* ProB 1.3.0 is available for download. Highlights: New
+parser and integrated typechecker, install as AtelierB plugin, improved
+kernel with support for large sets/relations, improved CSP support,
+faster LTL model checker, Undo/Redo in text editor, graphical formula
+viewer, user definable custom animations with gifs.
+
+The full link:/ProB_Release_History[ProB release history can be found
+here].

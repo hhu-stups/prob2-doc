@@ -1,7 +1,7 @@
 
 
 [[alloy]]
-= Alloy
+== Alloy
 
 As of version 1.8 ProB provides support to load
 http://alloy.mit.edu/alloy/[Alloy] models. The Alloy models are
@@ -19,7 +19,7 @@ B language. In addition to basic Alloy constructs, our approach supports
 integers and orderings.
 
 [[installation-alloy]]
-== Installation
+=== Installation
 
 Alloy2B is included with the lastest nightly builds of ProB.
 
@@ -31,10 +31,10 @@ on Github].
 * put resulting alloy2b-*.jar file into ProB's lib folder.
 
 [[examples-alloy]]
-== Examples
+=== Examples
 
 [[n-queens-alloy]]
-=== N-Queens
+==== N-Queens
 
 ....
 module queens
@@ -97,7 +97,7 @@ END
 
 
 [[river-crossing-puzzle]]
-=== River Crossing Puzzle
+==== River Crossing Puzzle
 ....
 module river_crossing
 open util/ordering[State]
@@ -180,7 +180,7 @@ END
 ....
 
 [[proof-with-atelier-b-example]]
-=== Proof with Atelier-B Example
+==== Proof with Atelier-B Example
 
 ....
 sig Object {}

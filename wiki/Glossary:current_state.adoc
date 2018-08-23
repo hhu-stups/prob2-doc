@@ -1,3 +1,0 @@
-ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
-A /glossary:state[state] that represents the last state evaluated during
-a specific /glossary:animation[animation].

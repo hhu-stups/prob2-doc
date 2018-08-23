@@ -1,3 +1,0 @@
-ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
-A project is a collection of specification files that belong to the same
-component (for some notion of component).

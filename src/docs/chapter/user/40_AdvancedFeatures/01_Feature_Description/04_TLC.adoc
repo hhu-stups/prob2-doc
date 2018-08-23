@@ -1,0 +1,145 @@
+
+
+[[tlc]]
+== TLC
+
+As of version 1.4.0, ProB can make use of
+http://research.microsoft.com/en-us/um/people/lamport/tla/tlc.html[TLC]
+as an alternative model checker to validate B specifications. TLC is an
+efficient model checker for TLA+ specifications, which can check LTL
+properties with fairness. It is particularly good for lower level
+specifications, where it can be substantially faster than ProB's own
+model checker. TLC has been released as an open source project, under
+the
+http://research.microsoft.com/en-us/um/people/lamport/tla/license.html[MIT
+License].
+
+[[how-to-use-tlc]]
+=== How to use TLC
+
+[[using-tlc-in-prob-tcltk]]
+==== Using TLC in ProB Tcl/Tk
+
+First you have to open a B specification in the ProB GUI. Then you can
+select the menu command "Model Check with TLC" in the
+"Verify->External Tools" menu.
+
+image::Model_Checking_With_TLC.png[]
+
+You can use TLC to find the following kinds of errors in the B
+specification:
+
+* Deadlocks
+* Invariant violations
+* Assertion errors
+* Goal found (a desired state is reached)
+* Properties violations (i.e, axioms over the B constants are false)
+* Well-definedness violations
+* Temporal formulas violations
+
+In some cases, TLC reports a trace leading to the state where the error
+(e.g. deadlock or invariant violation) occur. Such traces are
+automatically replayed in the ProB animator (displayed in the history
+pane) to give an optimal feedback.
+
+image::Model_Checking_With_TLC_Trace.png[]
+
+[[requirements]]
+===== Requirements
+
+On Linux the tlc-thread package is required to run TLC from the tcl/tk
+ui:
+
+`sudo apt-get install tcl-thread`
+
+[[using-tlc-in-probcli]]
+==== Using TLC in probcli
+
+You can use the following switch to use TLC rather than ProB's model
+checker:
+
+`-mc_with_tlc`
+
+Some of the standard probcli options also work for TLC:
+
+* -noinv (no invariant checking)
+* -nodead (no deadlock checking)
+* -noass (no assertion checking)
+* -nogoal (no checking for the optional goal predicate)
+
+In addition you can provide
+
+* -noltl (no checking of LTL assertions)
+
+The preference `TLC_WORKERS` influences the number of workers that will
+be used by TLC. So, a call might look like this:
+
+`probcli FILE.mch -mc_with_tlc -p TLC_WORKERS 2 -noltl`
+
+[[when-to-use-tlc]]
+=== When to use TLC
+
+TLC is extremely valuable when it comes to explicit state model checking
+for large state spaces. Otherwise, TLC has no constraint solving
+abilities.
+
+[[translation-from-b-to-tla]]
+Translation from B to TLA+
+--------------------------
+
+TLC is a very efficient model checker for specifications written in
+http://research.microsoft.com/en-us/um/people/lamport/tla/tla.html[TLA+].
+To validate B specification with TLC we developed the translator TLC4B
+which automatically translates a B specification to TLA+, invokes the
+model checker TLC, and translates the results back to B. Counter
+examples produced by TLC are double checked by ProB and replayed in the
+ProB animator. The translation to TLA+ and back to B is completely
+hidden to the user. Hence, the user needs no knowledge of TLA+ to use
+TLC.
+
+There is a
+http://stups.hhu.de/w/Special:Publication/HansenLeuschel_TLC4B_techreport[technical
+report] that describes our translation from B to TLA+.
+
+[[limitations-tlc]]
+=== Limitations
+
+The following constructs are currently not supported by the TLC4B
+translator:
+
+* Refinement specifications
+* Machine inclusion (SEES, INCLUDES, ..)
+* Sequential composition statement (G;H)
+
+[[visited-states]]
+=== Visited States
+
+Sometimes TLC will show a different number of visited states compared to
+the ProB model checker. The following example should illustrate this
+issue:
+
+....
+MACHINE NumberOfStates
+CONSTANTS k
+PROPERTIES
+k : 1..10
+VARIABLES x
+INVARIANT
+x : NATURAL
+INITIALISATION x := k
+END
+....
+
+ProB will report 21 distinct states (1 root state, 10 constant setup
+states, 10 initialization states):
+
+image::NumberOfStates.jpeg[]
+
+TLC will only report 10 distinct states (10 initialization states).
+
+[[more-information]]
+=== More Information
+
+More information can be found in our
+http://www.stups.uni-duesseldorf.de/w/Special:Publication/HansenLeuschel_ABZ14[ABZ'14
+article].

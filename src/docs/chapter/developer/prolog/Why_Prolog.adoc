@@ -199,8 +199,9 @@ programming languages. Below, I give you also a Python, a Haskell, and a
 Java version using BigInts. The benchmarks were run on a MacBook Pro
 Core2 Duo with 2.33 GHz. BinProlog does not have a demo licence for Mac;
 hence I had to run the Windows version in Parallels. LPA Prolog only
-runs on Windows; so it was also run using Parallels. Note: the purpose
-of the benchmark was to measure the performance of recursion. As such, I
+runs on Windows; so it was also run using Parallels.
+
+NOTE: the purpose of the benchmark was to measure the performance of recursion. As such, I
 was trying to use the same types of data on all platforms (BigInts).
 Also note that this is actually not a typical Prolog "application" as
 no use is made of unification or non-determinism. But it is a good

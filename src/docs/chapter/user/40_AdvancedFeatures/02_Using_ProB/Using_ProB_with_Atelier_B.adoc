@@ -1,0 +1,96 @@
+
+
+[[using-prob-with-atelier-b]]
+== Using ProB with Atelier B
+
+As of version 1.3,
+ProB contains a much improved parser which tries be compliant with
+Atelier B as much as possible.
+
+[[atelier-b-plugin]]
+=== Atelier B Plugin
+
+There is also a
+http://tools.clearsy.com/tools/atelier-b-4-0-gui/external-tools-integration/prob-etool-generation/[plugin
+for Atelier B] for use withthe standalone Tcl/Tk Version on
+http://www.atelierb.eu/[Atelier B] projects.
+
+[[differences-with-atelier-b]]
+=== Differences with Atelier B
+
+[[extra-features-of-prob]]
+==== Extra Features of ProB
+
+* Identifiers: ProB also allows identifiers consisting of a single
+letter. ProB also accepts enumerated set elements to be used as
+identifiers.
+
+* Lexing: The Atelier-B parser (`bcomp`) reports a lexical error
+(`illegal token |-`) if the vertical bar (|) of a lambda abstraction is
+followed directly by the minus sign.
+
+* Typing:
+** ProB makes use of a unification-based type inference algorithm. As
+such, typing information can not only flow from left-to-right inside a
+formula, but also from right-to-left. For example, it is sufficient to
+type `xx<:yy & yy<:NAT` instead of typing both `xx` and `yy` in ProB.
+** Similar to Rodin, ProB extracts typing information from all
+predicates. As such, it is sufficient to write `xx/:{1,2}` to assign a
+type to `xx`.
+** the fields of records are normalized (sorted); hence the predicate
+`rec(a:0,b:1) = rec(b:y,a:x)` is correctly typed for ProB.
+
+* DEFINITIONS: the definitions and its arguments are checked by ProB. We
+believe this to be an important feature for a formal method language.
+However, as such, every DEFINITION must be either a predicate, an
+expression or a substitution. You *cannot* use, for example, lists of
+identifiers as a definition. Also, for the moment, the arguments to
+DEFINITIONS have to be expressions. Finally, when replacing DEFINITIONS
+the associativity is not changed. E.g., with `PLUS(x,y) == x+y`, the
+expression `PLUS(2,3)*10` will evaluate to 50 (and not to 32 as with
+Atelier-B).
+
+* for a LET substitution, Atelier-B does not allow introduced
+identifiers to be used in the right-hand side of equations; ProB allows
+`LET x,y BE x=2 & y=x*x IN ... END`
+
+* ProB allows WHILE loops and sequential composition in abstract
+machines
+
+* ProB now allows the IF-THEN-ELSE for expressions with parentheses
+around it: `(IF x<0 THEN -x ELSE x END)`
+
+[[limitations-with-atelierb]]
+==== Limitations
+
+* Parsing: ProB will require parentheses around the comma, the
+relational composition, and parallel product operators. For example, you
+cannot write `r2=rel;rel`. You need to write `r2=(rel;rel)`. This allows
+ProB to distinguish the relational composition from the sequential
+composition (or other uses of the semicolon).
+
+* <<well-definedness-checking,Well-definedness>>: ProB will try to
+check if your predicates are well-defined during animation or model
+checking. For this ProB assumes (similar to Rodin) a stricter
+left-to-right definition of well-definedness than Atelier B.
+
+* Closure: The transitive and reflexive closure operator of classical B
+is not supported as defined in the B-Book by Abrial. AtelierB also does
+not support the operator as defined in the B-Book (as this version
+cannot be applied in practice). For the reflexive component of closure,
+ProB will compute the elements in the domain and range of the relation.
+
+Note however, that the transitive closure operator `closure1` is fully
+supported, and hence one can translate an expression `closure(e)`, where
+e is a binary relation over some domain d, into the expression
+`closure1(e) \/ id(d`).
+
+* Unsupported Operators:
+** Trees and binary trees: most but not all tree operators (mirror,
+infix) are supported yet (the `STRING` type is now supported);
+** `VALUES`: This clause of the `IMPLEMENTATION` machines is not yet
+supported;
+
+* There are also some general limitations wrt refinements. See
+link:/Current_Limitations#Multiple_Machines_and_Refinements[Current
+Limitations#Multiple Machines and Refinements] for more details.

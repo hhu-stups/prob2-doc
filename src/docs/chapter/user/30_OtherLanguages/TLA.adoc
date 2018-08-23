@@ -1,14 +1,13 @@
 
 
 [[tla]]
-= TLA
+== TLA
 
 As of version 1.3.5, ProB supports
 http://research.microsoft.com/en-us/um/people/lamport/tla/tla.html[TLA+].
 
 [[using-prob-for-animation-and-model-checking-of-tla-specifications]]
-Using ProB for Animation and Model Checking of TLA+ specifications
-------------------------------------------------------------------
+=== Using ProB for Animation and Model Checking of TLA+ specifications
 
 The http://nightly.cobra.cs.uni-duesseldorf.de/tcl/[latest version of
 ProB] uses the translator TLA2B, which translates the non temporal part
@@ -35,8 +34,7 @@ also supports TLA syntax and you can experiment with its predicate and
 expression evaluation capabilities.
 
 [[tla2b]]
-TLA2B
------
+=== TLA2B
 
 The parser and semantic analyzer
 http://research.microsoft.com/en-us/um/people/lamport/tla/sany.html[SANY]
@@ -67,8 +65,7 @@ under the ASSUME clause. TLA2B supports furthermore overriding of a
 constant or definition by another definition in the configuration file.
 
 [[supported-tla-syntax]]
-Supported TLA+ syntax
----------------------
+=== Supported TLA+ syntax
 
 ....
 Logic
@@ -195,8 +192,7 @@ Temporal formulas and unused definitions are ignored by TLA2B (they are
 also ignored by the type inference algorithm).
 
 [[limitations-of-the-translation]]
-Limitations of the translation
-------------------------------
+=== Limitations of the translation
 
 * due to the strict type system of the B method there are several
 restrictions to TLA+ modules.
@@ -208,8 +204,7 @@ the tuple must have the same type
 operator with arguments as argument (e.g.: `foo(bar(_),p)`)
 
 [[tla-actions]]
-TLA+ Actions
-------------
+=== TLA+ Actions
 
 '''''
 
@@ -223,8 +218,7 @@ by ProB are not necessarily identical with the actions determined by
 TLC.
 
 [[understanding-the-type-checker]]
-Understanding the type checker
-------------------------------
+=== Understanding the type checker
 
 Corresponding B types to TLA+ data values (let type(e) be the type of
 the expression e):

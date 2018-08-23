@@ -1,0 +1,53 @@
+[[formal_prototyping]]
+== Formal Prototyping
+
+This page provides additional information and resources for the tool paper
+we have submitted for the http://staf2016.conf.tuwien.ac.at/sefm/[SEFM 2016 conference].
+
+=== Resources
+
+* https://www3.hhu.de/stups/prob/index.php/BMotionWeb_Download[BMotionWeb Download]
+* https://www3.hhu.de/stups/prob/images/d/de/Phonebook.Formal.Prototype.zip[Phonebook Formal Prototype]
+* https://www3.hhu.de/stups/prob/images/1/1a/CCS.Formal.Prototype.zip[Cruise Control System Formal Prototype]
+
+[[live-online-formal-prototypes]]
+=== Live Online Formal Prototypes
+
+* http://wyvern.cs.uni-duesseldorf.de/bms/phonebook.html[Phonebook Online-Version]
+* http://wyvern.cs.uni-duesseldorf.de/bms/ccs.html[Cruise Control System Online-Version]
+
+Please note, that the visual editor is only available in the
+desktop-version of BMotionWeb.
+
+If you have troubles with running the online version, please contact
+Lukas Ladenberger (ladenberger@cs.uni-duesseldorf.de).
+
+=== Links
+
+* http://www.stups.hhu.de/ProB/index.php5/BMotion_Studio[BMotionWeb Homepage]
+* https://www3.hhu.de/stups/handbook/bmotion/current/html[BMotionWeb User Handbook]
+
+[[getting-started-with-bmotionweb]]
+=== Getting Started with BMotionWeb
+
+WARNING: BMotionWeb is currently not up-to-date and not in use anymore. BMotion Studio however can still be downloaded with our ProB Plugin for Rodin.
+
+[[install-bmotionweb]]
+==== Install BMotionWeb
+
+Start off by downloading BMotionWeb for your operating system.
+Decompress the archive and expand the directory if necessary. Navigate
+to the application folder and start BMotionWeb by executing the
+bmotion-prob binary.
+
+[[open-a-formal-prototype]]
+==== Open a Formal Prototype
+
+Start off by downloading a formal prototype from this wiki page.
+Decompress the archive and expand the directory if necessary. To open a
+formal prototype, click on the box in the middle of the window and
+select the BMotionWeb manifest file (.json file) of the formal prototype
+or just drag and drop the manifest file into the box. You can also open
+a formal prototype via the top menu: File > Open Visualization. For
+instance, to load the phonebook or CCS formal prototype select the
+phonebook.json or ccs.json file respectively.

@@ -53,7 +53,7 @@ We have abstracted the box of apples `a` by the set containing `apple`.
 Ditto for `o` and `b`, which are abstracted by `{orange}` and
 `{apple,orange}` respectively.
 
-Note: you need a recent version of ProB 1.5.1-beta3 or newer to load the
+NOTE: You need a recent version of ProB 1.5.1-beta3 or newer to load the
 above model with its one-line comments. If you have an older version of
 ProB, simply use the normal comments `/* ... */`.
 
@@ -82,7 +82,7 @@ with "Both", then it contains only oranges and the box labelled with
 "A"pples contains contains both apples and oranges. The box labelled
 "O"ranges contains just apples.
 
-Note: you can inspect values or expressions in a tabular form, using the
+NOTE: You can inspect values or expressions in a tabular form, using the
 command "Expression as Table..." in the Visualize->Formulas menu. If
 you enter "DecisionFunction" as expression you will see the following
 tabular representation:

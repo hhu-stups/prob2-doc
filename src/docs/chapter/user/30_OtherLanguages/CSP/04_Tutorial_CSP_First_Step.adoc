@@ -1,0 +1,135 @@
+
+
+[[tutorial-csp-first-step]]
+=== Tutorial CSP First Step
+
+[Category:User Manual]
+
+[[startup]]
+==== Startup
+
+Start off by installing the standalone Tcl/Tk version of ProB. Follow
+the instructions in <<installation,Installation>>. Start ProB by
+double-clicking on `ProBWin` (for Windows users), or by launching
+`StartProB.sh` from a Terminal (for Linux and Mac users).
+
+[[loading-a-first-csp-specification]]
+==== Loading a first CSP specification
+
+Use the "Open..." command in the _File_ menu and then navigate to
+the "Examples" directory that came with your ProB installation. Inside
+the "CSP" subfolder, open the "buses.csp" specification. Your main
+ProB window should now look as follows:
+
+image::ProB_BusesAfterLoad.png[]
+
+[[first-steps-in-animation-csp]]
+==== First Steps in Animation
+
+We have now loaded a first simple CSP model. Let us look at the contents
+of the ProB window (ignoring the menu bar).
+
+* The upper half of the ProB window contains the source code of the CSP
+specification.
+* The lower half contains three panes.
+** The "State Properties" pane contains information about the current
+state of the specification. We will explain the contents of this pane in
+more detail later.
+** The Pane called "Enabled Operations" contains a list of events that
+your CSP specification offers. At the very first step you have to choose
+a process to animate. If your CSP specification contains a MAIN process
+(as is the case in buses.csp), only this process will be shown.
+** The "History" pane contains the list of operations you have
+executed to reach the current state of the animator. Obviously, this
+list is initially empty.
+
+Now, double click on "`MAIN`" process in the "Enabled Operations"
+Pane. This has the effect of computing the events offered by `MAIN`. The
+ProB window should now look as follows (the upper half will remain
+unchanged):
+
+image::ProB_CSPAfterInit.png[]
+
+In the "Enabled Operations" pane we can see that two tau events are
+offered: `tau(int_choice_left)` and `tau(int_choice_right)`. The
+"History" pane shows us that we have started the "`MAIN`" process to
+reach the current state. By single-clicking on an event, we can see
+which parts of the CSP specification contributed to the event. For
+example, single clicking on the first tau event yields in the following
+picture:
+
+image::ProB_CSPAfterTauSingleClick.png[]
+
+By repeatedly single clicking on the event you can cycle through the
+various locations that contributed to the event. To execute an event,
+simply double-click on it. Try this out for yourself: double-click on
+`tau(int_choice_left)` and then single-click on the `board37` event
+which is offered. This time the event is a synchronization of two
+events(note that ProB uses a different colour for highlighting the
+source locations). The source highlighting should look as follows:
+
+image::ProB_CSPAfterBoardSingleClick.png[]
+
+[[first-steps-in-model-checking]]
+==== First Steps in Model Checking
+
+You can use the model checker to search for certain errors. Execute the
+"Model Check..." command in the _Verify_ menu. The following dialog
+box will appear:
+
+image::ProB_CSPModelCheck.png[]
+
+By default, ProB will search for deadlocks, illegal channel values and
+events on the "error" channel. To turn the latter off, uncheck the
+"Find Invariant Violation" check box. You can also search for events
+on the "goal"channel, by checking the corresponding check box ("Find
+event on goal CSP channel").
+
+Now press the "Model Check" button. ProB should find a deadlock and
+insert the counter-example into the history as follows:
+
+image::ProB_CSPAfterModelCheck.png[]
+
+[[error-highlighting]]
+==== Error Highlighting
+
+Now edit the definition of the BUS37 process and add an illegal output
+of value 1 on the alight37B channel:
+
+`BUS37 = board37A -> (pay90 -> alight37B!1 -> STOP` +
+`[] alight37A -> STOP)`
+
+Now save and reload the specification and again choose the "Model
+Check..." command in the _Verify_ menu. Now uncheck the "Find
+Deadlocks" check-box and press "Model Check". ProB will report the
+following error:
+
+----
+Mismatch in number of arguments for synchronisation on channel alight37B with extra argument(s):
+1
+  ### Line: 11, Column: 30
+----
+
+display the trace to the error in the History pane and highlight the
+error location in the source as follows:
+
+image::ProB_CSPAfterModelCheck2.png[]
+
+[[other-features]]
+==== Other Features
+
+You can check more sophisticated temporal properties using the LTL model
+checker of ProB; see the link:/LTL_Model_Checking[corresponding part of
+the tutorial]. For example, you can try and validate the following LTL
+formula `G([board37A] \=> F [alight37B])`. ProB should respond:
+`Formula TRUE. No counterexample found.` Similarly, you can check the
+absence of divergence by checking the LTL formula `G not G [tau]`. It is
+also possible to perform various refinement checks and other assertion
+checks (see http://stups.hhu.de/ProB/w/Checking_CSP_Assertions[Checking
+CSP Assertions' tutorial]). The state space visualization features of
+ProB are also available for CSP; see link:/State_Space_Visualization[the
+corresponding part of the tutorial]. For example, if you select the
+command "Statespace" in the _Visualize_ menu (after having fully
+explored the system), the following graph will be displayed:
+
+image::ProB_CSPBusStatespace.png[]

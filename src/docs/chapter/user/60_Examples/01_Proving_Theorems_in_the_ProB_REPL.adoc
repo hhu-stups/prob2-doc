@@ -1,0 +1,199 @@
+[[examples]]
+= Examples
+
+[[proving-theorems-in-prob-repl]]
+== Proving Theorems in ProB REPL
+
+For this example we try and use the REPL (Read-Eval-Print-Loop) of ProB
+to prove theorems. The REPL can either be started using probcli's
+command `-repl` or by starting the link:/Eval_Console[Eval Console in
+ProB Tcl/Tk].
+
+See the beginning of link:/Sudoku_Solved_in_the_ProB_REPL[Sudoku Solved
+in the ProB REPL] for more details about how to start the REPL.
+
+The general principle for proving a sequent `Hyp |- Goal` is to state
+the hypotheses `Hyp` and negate the goal. If ProB finds a solution, a
+counter example to the sequent exists and it cannot be proven. If ProB
+finds no solution, then under certain circumstances the sequent is
+proven, as no counter example exists. (This mechanism is used by the
+link:/Tutorial_Disprover[ProB Disprover in Rodin].)
+
+Let us prove that from `x:1..100` it follows that the equation
+`x*x+2*x+2 = 1` has no solution:
+
+....
+>>> x:1..100 & not(x*x+2*x+2/=1)
+Existentially Quantified Predicate over x is FALSE
+....
+
+In this case, ProB has not generated an ``enumeration warning'', i.e.,
+all cases where considered: we have a proof. In general when all
+variables are restricted to a finite set of values in the hypotheses,
+ProB can be used as a prover.
+
+Let us now lift the finiteness restriction on `x` and prove the theorem
+for all integer values:
+
+....
+>>> x:INTEGER & not(x*x+2*x+2/=1)
+### Warning: enumerating x : INTEGER : inf: -1 ---> -1: -1
+Existentially Quantified Predicate over x is TRUE
+Solution:
+       x = -1
+....
+
+Here ProB has found a counter example and the sequent is not valid. As
+you can see, an enumeration warning occurred; meaning that not all of
+the infinitely many values for `x` will be tried. But this warning is
+not relevant here as a solution was found.
+
+Let us try and restrict `x` to positive values; the number of values are
+infinite (`NATURAL` is the set of mathematical natural numbers, not
+restricted by `MAXINT`):
+
+....
+>>> x:NATURAL & not(x*x+2*x+2/=1)
+Existentially Quantified Predicate over x is FALSE
+....
+
+Here ProB has found no solution and generated no enumeration warning:
+the sequent is proven.
+
+Now let us try and prove that `x>=y` follows from `x>y`:
+
+....
+>>> x>y & not(x>=y)
+% Timeout when posting constraint:
+% kernel_objects:(_15735#>0)
+### Warning: enumerating x : INTEGER : inf:sup ---> -1:3
+% Timeout when posting constraint:
+% kernel_objects:(_15735#<0)
+Existentially Quantified Predicate over x,y is UNKNOWN [FALSE with ** ENUMERATION WARNING **]
+....
+
+As you can see, here the solver was not able to detect the inconsistency
+and prove the sequent over the unbounded integers x and y. There are two
+things one can try. First, one can enable some additional constraint
+propagation rules (implemented using the Constraint Handling Rules
+library of Prolog) in the standard ProB kernel by setting the CHR
+preference to TRUE:
+
+....
+>>> -p CHR TRUE
+Executing probcli command: [set_pref(CHR,TRUE)]
+>>> x>y & not(x>=y)
+Existentially Quantified Predicate over x,y is FALSE
+....
+
+This has enabled us to prove the sequent. (The ProB
+link:/Tutorial_Disprover[Disprover] automatically sets this preference
+for you.) Another solution is again to use the Z3 backend:
+
+....
+>>> :z3 x>y & not(x>=y)
+PREDICATE is FALSE
+....
+
+[[user-defined-sets]]
+=== User-Defined Sets
+
+Suppose we want to prove a property not over a specific set such as the
+integers but over an arbitrary set. If you want to use additional basic
+types in the ProB REPL you need to define them in a B machine, they
+cannot (yet) be added in the REPL. For example, let us create a file
+`DefSets.mch`:
+
+....
+MACHINE DefSets
+SETS D;E = {e1,e2,e3,e4,e5} // we just define two sets to be used in the REPL, D is deferred, E is enumerated
+END
+....
+
+Then you can load the file and start the REPL:
+
+`rlwrap probcli DefSets.mch -repl`
+
+Let us try and prove that `A={a,b} & B={c,d}` implies `A /\ B = {}`. We
+can state this as follows. Note that in B we need to type A and B. Here
+we first use the enumerated set E for that purpose.
+
+....
+>>> A <: E & B<: E & A={a,b} & B={c,d} & not(  A /\ B = {} )
+Existentially Quantified Predicate over A,B,a,b,c,d is TRUE
+Solution:
+       A = {e1} &
+       B = {e1} &
+       a = e1 &
+       b = e1 &
+       c = e1 &
+       d = e1
+....
+
+As you can see, the goal `A /\ B = {}` cannot be proven, a
+counter-example is provided. If we add hypotheses that a,b,c,d are all
+pair-wise distinct we can prove the assertion:
+
+....
+>>> A <: E & B<: E & A={a,b} & B={c,d} & a/=b & a/=c & a/=d & b/=c & b/=d & c/=d & not(  A /\ B = {} )
+Existentially Quantified Predicate over A,B,a,b,c,d is FALSE
+....
+
+This has used ProB’s Prolog-CLPFD solver. You can use ProB's translation
+to Z3 (see link:/Using_ProB_with_Z3[Using ProB with Z3]) by prefixing
+the formula with `z3:`
+
+....
+>>> :z3 A <: E & B<: E & A={a,b} & B={c,d} & not(  A /\ B = {} ) & a/=b & a/=c & a/=d & b/=c & b/=d & c/=d
+PREDICATE is FALSE
+....
+
+You can also translate the query to SAT via the Kodkod library (see
+link:/Using_ProB_with_KODKOD[Using ProB with KODKOD]) using:
+
+....
+>>> :kodkod A <: E & B<: E & A={a,b} & B={c,d} & not(  A /\ B = {} ) & a/=b & a/=c & a/=d & b/=c & b/=d & c/=d
+kodkod ok:   A = {a,b} & B = {c,d} & not(A /\ B = {}) & a /= b ...  ints: none, intatoms: none
+Kodkod module started up successfully (SAT solver SAT4J with timeout of 1500 ms).
+Times for computing solutions: []
+Existentially Quantified Predicate over A,B,a,b,c,d is FALSE
+....
+
+Note that ProB’s Prolog-CLPFD solver and Kodkod cannot provide proofs
+when you use deferred sets whose cardinality is not specified and
+finite. For example, let us use the deferred set D instead of E to type
+A and B:
+
+....
+>>> A <: D & B<: D & A={a,b} & B={c,d} & not(  A /\ B = {} ) & a/=b & a/=c & a/=d & b/=c & b/=d & c/=d
+Existentially Quantified Predicate over A,B,a,b,c,d is FALSE
+>>> D
+Expression Value =
+{D1,D2}
+....
+
+As you can see, ProB has set the size of the set D to two (see
+link:/Deferrred_Sets[Deferrred_Sets]). You can see this also by asking
+ProB to find four different Values:
+
+....
+>>> A <: D & B<: D & A={a,b} & B={c,d} & a/=b & a/=c & a/=d & b/=c & b/=d & c/=d
+Existentially Quantified Predicate over A,B,a,b,c,d is FALSE
+....
+
+So, in the presence of deferred sets, ProB's default solver and the
+Kodkod-based solver cannot be used to prove theorems; they can only be
+used to find counter-examples. The Z3 backend however does not fix the
+size of D:
+
+....
+>>> :z3 A <: D & B<: D & A={a,b} & B={c,d} & a/=b & a/=c & a/=d & b/=c & b/=d & c/=d
+PREDICATE is TRUE
+Solution:
+       A = {D1,D2}
+       B = {}
+       a = D1
+       b = D2
+       c = D3
+       d = D4
+....

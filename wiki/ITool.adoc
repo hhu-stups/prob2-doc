@@ -1,6 +1,3 @@
-ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
-/Category:Components[Category:Components]
-
 In order to adapt link:/BMotion_Studio[BMotion Studio] to other
 simulators and formal languages, a simple interface called ITool has
 been developed during the Advance Project.
@@ -91,5 +88,5 @@ Here is the full interface with comments:
     public String getName();
 
  }
- 
+
 ----

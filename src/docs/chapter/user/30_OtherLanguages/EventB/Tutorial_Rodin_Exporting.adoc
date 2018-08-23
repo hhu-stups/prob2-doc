@@ -1,13 +1,10 @@
 
 
 [[tutorial-rodin-exporting]]
-= Tutorial Rodin Exporting
-
-:category: User_Manual
-
+=== Tutorial Rodin Exporting
 
 [[introduction-to-tutorial-rodin-exporting]]
-== Introduction
+==== Introduction
 
 Many features of ProB are currently only available in ProB Tcl/Tk or the
 link:/Using_the_Command-Line_Version_of_ProB[probcli command-line
@@ -15,7 +12,7 @@ version]. Luckily you can export Rodin models for use with those tools.
 Below we explain how.
 
 [[exporting-for-prob-classic]]
-== Exporting for ProB classic
+==== Exporting for ProB classic
 
 Start by right clicking (control Click on the Mac) on the machine or
 context in the "Event-B Explorer" view you wish to export and select
@@ -28,7 +25,7 @@ default one will do) for the file. The file should have the extension
 ".eventb" (as suggested by default).
 
 [[loading-an-event-b-project-into-prob-classic]]
-== Loading an Event-B Project into ProB classic
+==== Loading an Event-B Project into ProB classic
 
 You can now use the ".eventb" file directly for probcli. For example,
 the following command will perform standard model checking on the file
@@ -62,7 +59,7 @@ into a single ".eventb" project file.
 image::ProBRodinLoadedInTclTk.png[]
 
 [[starting-up-prob-classic-directly]]
-== Starting up ProB Classic Directly
+==== Starting up ProB Classic Directly
 
 You can also start up ProB Classic (aka ProB Tcl/Tk) directly, without
 first generating an ".eventb" file. For this, start by right clicking

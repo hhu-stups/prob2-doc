@@ -1,0 +1,321 @@
+[[prior-versions-of-prob]]
+=== Prior Versions of ProB
+
+Below are details for releases 1.7.0 back to 1.3.1. If you are
+interested in earlier releases, please have a look at the
+http://nightly.cobra.cs.uni-duesseldorf.de/releases/[Download
+directory].
+
+[cols=",,,",options="header",]
+|=======================================================================
+|Platform |Release Date |Download |Dependencies
+|1.7.0-final
+
+|Linux |11. July 2017
+|http://www3.hhu.de/stups/downloads/prob/tcltk/releases/1.7.0/ProB.linux32.tar.gz[Tarball
+(with probcli) (32bit)], +
+http://www3.hhu.de/stups/downloads/prob/tcltk/releases/1.7.0/ProB.linux64.tar.gz[Tarball
+(with probcli) (64bit)] + |http://java.com/en/[Java Runtime Environment
+(7.0 or newer)], Tcl/Tk 8.5
+
+|colspan=``4'' style=``background-color:lightgrey;'' style="height:20px;
+|
+
+|Windows |11. July 2017
+|http://www3.hhu.de/stups/downloads/prob/tcltk/releases/1.7.0/ProB.windows32.zip[Zipfile
+(with probcli) (32bit)], +
+http://www3.hhu.de/stups/downloads/prob/tcltk/releases/1.7.0/ProB.windows64.zip[Zipfile
+(with probcli) +
+(64bit)] |http://downloads.activestate.com/ActiveTcl/releases/[Tcl/Tk
+8.5 for Windows], http://java.com/en/[Java Runtime Environment (7.0 or
+newer)], link:/Windows_Installation_Instructions[Windows Installation
+Instructions] http://www.graphviz.org/Download_windows.php[GraphViz]
+
+|colspan=``4'' style=``background-color:lightgrey;'' style="height:20px;
+|
+
+|OS X |11. July 2017
+|http://www3.hhu.de/stups/downloads/prob/tcltk/releases/1.7.0/ProB.mac_os.x86_64.tar.gz[Tarball
+(with probcli) (64bit)]
+https://github.com/hhu-stups/homebrew-prob[Homebrew Tap] |OS X 10.11 (El
+Capitain) recommended,
+http://www.activestate.com/activetcl/downloads/[Tcl/TK 8.5],
+http://java.com/en/[Java Runtime Environment] or better
+http://www.oracle.com/technetwork/java/javase/downloads/index.html[Java
+JDK] (7.0 or newer), http://www.pixelglow.com/graphviz/[Graphviz for Mac
+OS X]
+|=======================================================================
+
+[cols=",,,",options="header",]
+|=======================================================================
+|Platform |Release Date |Download |Dependencies
+|1.6.1-final
+
+|Linux |22. April 2016
+|http://www3.hhu.de/stups/downloads/prob/tcltk/releases/1.6.1/ProB.linux32.tar.gz[Tarball
+(with probcli) (32bit)], +
+http://www3.hhu.de/stups/downloads/prob/tcltk/releases/1.6.1/ProB.linux64.tar.gz[Tarball
+(with probcli) (64bit)] + |http://java.com/en/[Java Runtime Environment
+(7.0 or newer)], Tcl/Tk 8.5
+
+|colspan=``4'' style=``background-color:lightgrey;'' style="height:20px;
+|
+
+|Windows |22. April 2016
+|http://www3.hhu.de/stups/downloads/prob/tcltk/releases/1.6.1/ProB.windows32.zip[Zipfile
+(with probcli) (32bit)], +
+http://www3.hhu.de/stups/downloads/prob/tcltk/releases/1.6.1/ProB.windows64.zip[Zipfile
+(with probcli) +
+(64bit)] |http://downloads.activestate.com/ActiveTcl/releases/[Tcl/Tk
+8.5 for Windows], http://java.com/en/[Java Runtime Environment (7.0 or
+newer)], link:/Windows_Installation_Instructions[Windows Installation
+Instructions] http://www.graphviz.org/Download_windows.php[GraphViz]
+
+|colspan=``4'' style=``background-color:lightgrey;'' style="height:20px;
+|
+
+|OS X |22. April 2016
+|http://www3.hhu.de/stups/downloads/prob/tcltk/releases/1.6.1/ProB.mac_os.x86_64.tar.gz[Tarball
+(with probcli) (64bit)]
+https://github.com/hhu-stups/homebrew-prob[Homebrew Tap] |OS X 10.11 (El
+Capitain) recommended,
+http://www.activestate.com/activetcl/downloads/[Tcl/TK 8.5],
+http://java.com/en/[Java Runtime Environment] or better
+http://www.oracle.com/technetwork/java/javase/downloads/index.html[Java
+JDK] (7.0 or newer), http://www.pixelglow.com/graphviz/[Graphviz for Mac
+OS X]
+|=======================================================================
+
+[cols=",,,",options="header",]
+|=======================================================================
+|Platform |Release Date |Download |Dependencies
+|1.6.0-SR1
+
+|Linux |22. April 2016
+|http://www3.hhu.de/stups/downloads/prob/tcltk/releases/1.6.0/ProB.linux32.tar.gz[Tarball
+(with probcli) (32bit)], +
+http://www3.hhu.de/stups/downloads/prob/tcltk/releases/1.6.0/ProB.linux64.tar.gz[Tarball
+(with probcli) (64bit)] + |http://java.com/en/[Java Runtime Environment
+(7.0 or newer)], Tcl/Tk 8.5
+
+|colspan=``4'' style=``background-color:lightgrey;'' style="height:20px;
+|
+
+|Windows |22. April 2016
+|http://www3.hhu.de/stups/downloads/prob/tcltk/releases/1.6.0/ProB.windows32.zip[Zipfile
+(with probcli) (32bit)], +
+http://www3.hhu.de/stups/downloads/prob/tcltk/releases/1.6.0/ProB.windows64.zip[Zipfile
+(with probcli) +
+(64bit)] |http://downloads.activestate.com/ActiveTcl/releases/[Tcl/Tk
+8.5 for Windows], http://java.com/en/[Java Runtime Environment (7.0 or
+newer)], link:/Windows_Installation_Instructions[Windows Installation
+Instructions]
+
+|colspan=``4'' style=``background-color:lightgrey;'' style="height:20px;
+|
+
+|OS X |22. April 2016
+|http://www3.hhu.de/stups/downloads/prob/tcltk/releases/1.6.0/ProB.mac_os.10.11.4.x86_64.tar.gz[Tarball
+(with probcli) (64bit)]
+https://github.com/hhu-stups/homebrew-prob[Homebrew Tap] |OS X 10.11 (El
+Capitain) recommended,
+http://www.activestate.com/activetcl/downloads/[Tcl/TK 8.5],
+http://java.com/en/[Java Runtime Environment] or better
+http://www.oracle.com/technetwork/java/javase/downloads/index.html[Java
+JDK] (7.0 or newer), http://www.pixelglow.com/graphviz/[Graphviz for Mac
+OS X]
+
+|1.5.0-final
+
+|Linux |19. February 2015
+|http://www3.hhu.de/stups/downloads/prob/tcltk/releases/1.5.0/ProB.linux32.tar.gz[Tarball
+(with probcli) (32bit)], +
+http://nightly.cobra.cs.uni-duesseldorf.de/releases/1.5.0/ProB.linux64.tar.gz[Tarball
+(with probcli) (64bit)] + |Java Runtime Environment (7.0 or newer),
+Tcl/Tk 8.5
+
+|Windows |19. February 2015
+|http://www3.hhu.de/stups/downloads/prob/tcltk/releases/1.5.0/ProB.windows32.zip[Zipfile
+(with probcli) (32bit)], +
+http://www3.hhu.de/stups/downloads/prob/tcltk/releases/1.5.0/ProB.windows64.zip[Zipfile
+(with probcli) +
+(64bit)] |http://downloads.activestate.com/ActiveTcl/releases/[Tcl/Tk
+8.5 for Windows], http://java.com/en/[Java Runtime Environment (7.0 or
+newer)], link:/Windows_Installation_Instructions[Windows Installation
+Instructions]
+
+|OS X |19. February 2015
+|http://www3.hhu.de/stups/downloads/prob/tcltk/releases/1.5.0/ProB.mac_os.10.6.8.x86_64.tar.gz[Tarball
+(with probcli) (64bit)]
+https://github.com/hhu-stups/homebrew-prob[Homebrew Tap]
+|http://www.activestate.com/activetcl/downloads/[Tcl/TK 8.5]
+http://java.com/en/[Java Runtime Environment] or better
+http://www.oracle.com/technetwork/java/javase/downloads/index.html[Java
+JDK] (7.0 or newer) http://www.pixelglow.com/graphviz/[Graphviz for Mac
+OS X]
+
+|1.3.6-final
+
+|Linux |4. March 2013
+|http://nightly.cobra.cs.uni-duesseldorf.de/releases/1.3.6/ProB.linux32.tar.gz[Tarball
+(32bit)], +
+http://nightly.cobra.cs.uni-duesseldorf.de/releases/1.3.6/ProB.linux64.tar.gz[Tarball
+(64bit)], + |Java Runtime Environment (5.0 or newer), Tcl/Tk 8.5
+
+|Windows |4. March 2013
+|http://nightly.cobra.cs.uni-duesseldorf.de/releases/1.3.6/ProB.windows.zip[Zipfile
+(with probcli)]
+|http://downloads.activestate.com/ActiveTcl/releases/[Tcl/Tk 8.5 for
+Windows], http://java.com/en/[Java Runtime Environment (5.0 or newer)],
+link:/Windows_Installation_Instructions[Windows Installation
+Instructions]
+
+|Mac OS X, Snow Leopard, Intel (64-bit) |4. March 2013
+|http://nightly.cobra.cs.uni-duesseldorf.de/releases/1.3.6/ProB.mac_os.10.6.8.x86_64.tar.gz[Tarball
+(with probcli)] |http://www.activestate.com/activetcl/downloads/[Tcl/TK
+8.5] (do not use version 8.5.12.0, use
+http://downloads.activestate.com/ActiveTcl/releases/8.5.11.1/[8.5.11] or
+use at least 8.5.13) http://www.pixelglow.com/graphviz/[Graphviz for Mac
+OS X]
+
+|Mac OS X, Leopard, Intel (32-bit) |4. March 2013
+|http://nightly.cobra.cs.uni-duesseldorf.de/releases/1.3.6/ProB.mac_os.10.5.8.i386.tar.gz[Tarball
+(with probcli)] |http://www.activestate.com/activetcl/downloads/[Tcl/TK
+8.5] (do not use version 8.5.12.0, use
+http://downloads.activestate.com/ActiveTcl/releases/8.5.11.1/[8.5.11]),
+http://www.pixelglow.com/graphviz/[Graphviz for Mac OS X]
+
+|1.3.5-final
+
+|Linux |11. Oct 2012
+|http://nightly.cobra.cs.uni-duesseldorf.de/releases/1.3.5/ProB.linux32.tar.gz[Tarball
+(32bit)], +
+http://nightly.cobra.cs.uni-duesseldorf.de/releases/1.3.5/ProB.linux64.tar.gz[Tarball
+(64bit)], + |Java Runtime Environment (5.0 or newer), Tcl/Tk 8.5
+
+|Windows |11. Oct 2012
+|http://nightly.cobra.cs.uni-duesseldorf.de/releases/1.3.5/ProB.windows.32bit.zip[Zipfile
+(with probcli)]
+|http://downloads.activestate.com/ActiveTcl/releases/[Tcl/Tk 8.5 for
+Windows], http://java.com/en/[Java Runtime Environment (5.0 or newer)],
+link:/Windows_Installation_Instructions[Windows Installation
+Instructions]
+
+|Mac OS X, Snow Leopard, Intel (64-bit) |11. Oct 2012
+|http://nightly.cobra.cs.uni-duesseldorf.de/releases/1.3.5/ProB.mac_os.10.6.tar.gz[Tarball
+(with probcli)] |http://www.activestate.com/activetcl/downloads/[Tcl/TK
+8.5] (do not use version 8.5.12.0, use
+http://downloads.activestate.com/ActiveTcl/releases/8.5.11.1/[8.5.11] or
+use at least 8.5.13) http://www.pixelglow.com/graphviz/[Graphviz for Mac
+OS X]
+
+|Mac OS X, Leopard, Intel (32-bit) |11. Oct 2012
+|http://nightly.cobra.cs.uni-duesseldorf.de/releases/1.3.5/ProB.mac_os.10.5.tar.gz[Tarball
+(with probcli)] |http://www.activestate.com/activetcl/downloads/[Tcl/TK
+8.5] (do not use version 8.5.12.0, use
+http://downloads.activestate.com/ActiveTcl/releases/8.5.11.1/[8.5.11]),
+http://www.pixelglow.com/graphviz/[Graphviz for Mac OS X]
+
+|Mac OS X, Lion, Intel (64-bit) |11. Oct 2012
+|http://nightly.cobra.cs.uni-duesseldorf.de/releases/1.3.5/ProB.mac_os.10.7.5.zip[Zipfile
+(with probcli)] |http://www.activestate.com/activetcl/downloads/[Tcl/TK
+8.6], http://www.pixelglow.com/graphviz/[Graphviz for Mac OS X]
+
+|1.3.4-final
+
+|Linux |27. Nov 2011
+|http://nightly.cobra.cs.uni-duesseldorf.de/releases/1.3.4/ProB.linux32.tar.gz[Tarball
+(32bit)], +
+http://nightly.cobra.cs.uni-duesseldorf.de/releases/1.3.4/ProB.linux64.tar.gz[Tarball
+(64bit)], + |Java Runtime Environment (5.0 or newer), Tcl/Tk 8.5 with
+tklib (see link:/#tklib[below])
+
+|Windows |27. Nov 2011
+|http://nightly.cobra.cs.uni-duesseldorf.de/releases/1.3.4/ProB.windows.32bit.zip[Zipfile
+(with probcli)]
+|http://downloads.activestate.com/ActiveTcl/releases/[Tcl/Tk 8.5 for
+Windows] with tklib (see link:/#tklib[below]), http://java.com/en/[Java
+Runtime Environment (5.0 or newer)]
+
+|Mac OS X, Snow Leopard, Intel (64-bit) |27. Nov 2011
+|http://nightly.cobra.cs.uni-duesseldorf.de/releases/1.3.4/ProB.mac_os.10.6.tar.gz[Tarball
+(with probcli)] |http://www.activestate.com/activetcl/downloads/[Tcl/TK
+8.5], http://www.pixelglow.com/graphviz/[Graphviz for Mac OS X]
+
+|Mac OS X, Leopard, Intel (32-bit) |27. Nov 2011
+|http://nightly.cobra.cs.uni-duesseldorf.de/releases/1.3.4/ProB.mac_os.10.5.8.tar.gz[Tarball
+(with probcli)] |http://www.activestate.com/activetcl/downloads/[Tcl/TK
+8.5], http://www.pixelglow.com/graphviz/[Graphviz for Mac OS X]
+
+|1.3.3-final
+
+|Linux |10. Feb 2011
+|http://nightly.cobra.cs.uni-duesseldorf.de/releases/1.3.3/ProB.linux.tar.gz[Tarball
+(32bit)], +
+http://nightly.cobra.cs.uni-duesseldorf.de/releases/1.3.3/ProB.linux64.tar.gz[Tarball
+(64bit)], +
+http://nightly.cobra.cs.uni-duesseldorf.de/releases/1.3.3/prob_1.3.3_i386.deb[Ubuntu/Debian
+package (32bit)] |Java Runtime Environment (5.0 or newer), Tcl/Tk 8.5
+
+|Windows |10. Feb 2011
+|http://nightly.cobra.cs.uni-duesseldorf.de/releases/1.3.3/ProB.windows.32bit.zip[Zipfile
+(with probcli)]
+|http://downloads.activestate.com/ActiveTcl/releases/[Tcl/Tk 8.4 for
+Windows], http://java.com/en/[Java Runtime Environment (5.0 or newer)]
+
+|Mac OS X, Snow Leopard, Intel |10. Feb 2011
+|http://nightly.cobra.cs.uni-duesseldorf.de/releases/1.3.3/ProB.mac_os.10.6.6.tar.gz[Tarball
+(with probcli)] |http://www.activestate.com/activetcl/downloads/[Tcl/TK
+8.5], http://www.pixelglow.com/graphviz/[Graphviz for Mac OS X]
+
+|Mac OS X, Leopard, Intel |10. Feb 2011
+|http://nightly.cobra.cs.uni-duesseldorf.de/releases/1.3.3/ProB.mac_os.10.5.8.tar.gz[Tarball
+(with probcli)] |http://www.activestate.com/activetcl/downloads/[Tcl/TK
+8.5], http://www.pixelglow.com/graphviz/[Graphviz for Mac OS X]
+
+|1.3.2-final
+
+|Mac OS X, Tiger, Intel |30. Jul 2010
+|http://nightly.cobra.cs.uni-duesseldorf.de/releases/1.3.2/ProB_tiger_intel.tar.gz[Tarball
+(with probcli)] |http://www.activestate.com/activetcl/downloads/[Tcl/TK
+8.4], http://www.pixelglow.com/graphviz/[Graphviz for Mac OS X]
+
+|1.3.1-final
+
+|Linux |13. Jan 2010
+|http://nightly.cobra.cs.uni-duesseldorf.de/releases/1.3.1final5/ProB-linux-1.3.1final5.tar.gz[Tarball]
+|Java Runtime Environment (5.0 or newer), Tcl/Tk 8.4
+
+|Mac OS X, PPC Tiger |07. Dec 2009
+|http://nightly.cobra.cs.uni-duesseldorf.de/releases/1.3.1final3/ProB-ppctiger-1.3.1final3.tar.gz[Tarball]
+|http://www.tcl.tk/software/tcltk/8.5.html[Tcl/TK 8.5],
+http://www.pixelglow.com/graphviz/[Graphviz for Mac OS X]
+|=======================================================================
+
+Note: for version 1.3.3 on Snow Leopard (Mac OS X 10.6.x) you have to
+install a http://www.activestate.com/activetcl/downloads/[corrected
+version of Tcl/Tk] (the distribution provided by Apple is broken). In
+version 1.3.4 we managed to circumvent the bug.
+
+[[tklib-for-prob-1.3.4]]
+=== Tklib for ProB 1.3.4
+
+ProB 1.3.4 requires the text module from tklib. This should come
+pre-installed on Mac and often on Windows as well (see below). On Linux
+you need to install tklib. On Ubuntu just type `sudo apt-get install`
+`tklib`. If you used the Active Tcl distribution, you need to type
+
+`sudo /opt/ActiveTcl-8.5/bin/teacup install tklib85`
+
+on Linux. On Windows, ActiveTcl-8.5 installs an additional tool
+``Teacup'', with which you can install Tcl/Tk library extensions like
+`tcllib` and `tklib`. To use the latest Tcl/Tk version of ProB you may
+have to install tklib. This library can be installed on Windows with
+Teacup by typing
+
+`teacup install tklib85`
+
+into the Command Prompt, when you are logged in as an administrator.
+
+On Snow Leopard (Mac OS X 10.6.x) you have to install Tcl/Tk as
+indicated above for ProB 1.3.3.

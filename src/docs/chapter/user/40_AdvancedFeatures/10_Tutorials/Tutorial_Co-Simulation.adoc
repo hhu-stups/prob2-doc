@@ -1,0 +1,28 @@
+
+
+[[tutorial-co-simulation]]
+== Tutorial Co-Simulation
+
+You can create Co-Simulations using FMI with ProB.
+
+[[overview-tutorial-co-simulation]]
+=== Overview
+
+The ProB 2.0 Java API contains some classes for cosimulating discrete
+models specified in one of the formalisms that are supported by ProB,
+and continuous models that are implemented using the
+https://www.fmi-standard.org/[functional mockup interface (FMI)]. A so
+called functional mockup unit (FMU) can, for example, be created in C
+using the FMI SDK or exported from third party tools such as Dymola. The
+framework is built on top of
+http://ptolemy.eecs.berkeley.edu/java/jfmi/[JFMI] from the Ptolemy
+Project. In fact, we only added a thin wrapper on top of the JFMI
+library. The de.prob.cosimulation.FMU class can be used to load a .fmu
+file and to control the continuous part of the simulation.
+
+This tutorial will be created soon.
+
+In the meantime you can have a look at chapter 6 of the
+http://www.advance-ict.eu[Advance] deliverable
+http://www.advance-ict.eu/sites/www.advance-ict.eu/files/AdvanceD4.2-issue2.pdf[D4.2
+(Methods and tools for simulation and testing I)].

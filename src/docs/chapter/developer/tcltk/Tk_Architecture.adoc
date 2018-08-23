@@ -92,7 +92,7 @@ tables (lists of lists). Parameters are title of dialog box,…
 Operations (Options) views by calling Prolog and getting information
 about the current state
 
-Note: the Tcl/Tk code is mostly state-less, almost everything is stored
+NOTE: The Tcl/Tk code is mostly state-less, almost everything is stored
 inside Prolog:
 
 * current animation state

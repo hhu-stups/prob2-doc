@@ -1,5 +1,5 @@
 [[installation]]
-=Installation
+= Installation
 
 [[what-are-the-available-versions]]
 == What are the available versions?
@@ -12,7 +12,7 @@
 
 Both the standalone ProB Tcl/Tk and probcli can be downloaded together
 (within a Zip archive or tarball together with examples) from our
-link:/Download[Downloads page]. The online
+<<downloads, Download Page>>. The online
 link:/ProB_Logic_Calculator[ProB Logic Calculator] requires no
 installation; just type in predicates and expressions into the web page.
 
@@ -28,8 +28,7 @@ http://safecap.sourceforge.net/index.shtml[SafeCap].
 
 We are also developing a new Java-based API called
 link:/ProB_2.0_Tutorial[ProB 2.0], which is a high-level wrapper for the
-command-line version
-link:/Using_the_Command-Line_Version_of_ProB[probcli].
+command-line version and <<using-the-command-line-version-of-prob, here>> is how to use it.
 
 [[which-version-should-i-use]]
 == Which version should I use?
@@ -46,12 +45,11 @@ prefer working from the command-line.
 [[installation-instruction-for-prob-standalone]]
 == Installation Instruction for ProB (Standalone)
 
-Note: we have specific
-link:/Windows_Installation_Instructions[Windows_Installation_Instructions].
+NOTE: We have specific <<windows-installation-instructions, Windows installation instructions>>.
 These here are the generic instructions.
 
-* Obtain your platform specific ProB distribution from
-link:/Download[Downloads]. Decompress and expand the ProB directory if
+* Obtain your platform specific ProB distribution from <<downloads, Downloads>>.
+Decompress and expand the ProB directory if
 necessary. Do not change the location and structure of the files and
 directories within ProB (apart from the Machines directory)! On Windows
 you just have to double-click the installer. The contents of the ProB
