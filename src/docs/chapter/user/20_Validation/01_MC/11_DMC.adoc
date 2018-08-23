@@ -1,6 +1,6 @@
 
 
-= Distributed Model Checking : Experimental evaluation
+=== Distributed Model Checking : Experimental evaluation
 
 We used three different setups to evaluate the distributed version of ProB.
 
@@ -8,14 +8,14 @@ We used three different setups to evaluate the distributed version of ProB.
 * Amazon EC2 Instances
 * The HILBERT cluster
 
-== Multicore Computer
+==== Multicore Computer
 
 We used a hexacore 3.33GHz Mac Pro with 16GB of RAM. On this computer we
 benchmarked all models regardless whether we expected them to be
 scalable or not. We varied the number of used cores from 1 up to 12
 hyperthreads. Each experiment was repeated at least 5 times.
 
-== Amazon EC2 Instances
+==== Amazon EC2 Instances
 
 We used c3.8xlarge instances, each of which has 32 virtual CPUs and is
 equipped with 64 GB of RAM. We used the Mac Pro to get an impression if
@@ -26,7 +26,7 @@ the Mac Pro were not considered as they would not scale on more
 processors. We used 2 or 4 instances connected with 10 GBit ethernet
 connection. Each experiment was repeated at least 5 times.
 
-== HILBERT
+==== HILBERT
 
 We used the high performance cluster at the university of Düsseldorf
 (HILBERT) for a single model. The model could not be cheked using a
@@ -38,13 +38,13 @@ executed the experiments once but all experiments on the other platforms
 indicated that the variation between experiments could be ignored. Also
 the execution times of all 6 experiments seem to be consistent.
 
-== Models
+==== Models
 
 We cannot make all models public, because they we provided by industrial
 partners from various research projects. The models that could be make
 available can be downloaded http://www.stups.hhu.de/models/parb/[here].
 
-== Results
+==== Results
 
 The results of the experiments are shown in Jens Bendisposto's
 dissertation. A preprint is available http://www.stups.uni-duesseldorf.de/w/Directed_and_Distributed_Model_Checking_of_B_Specifications_(Preprint)[here].

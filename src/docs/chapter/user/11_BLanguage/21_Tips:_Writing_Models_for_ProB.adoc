@@ -1,9 +1,7 @@
 
 
 [[tips-writing-models-for-prob]]
-= Tips: Writing Models for ProB
-
-:category: User_Manual
+== Tips: Writing Models for ProB
 
 
 The most common issue is that ProB needs to find values for the
@@ -36,10 +34,10 @@ a function is fine, computing the image over a set is also possible as
 is taking the union with another symbolic function.
 
 [[effective-constraint-solving-with-prob]]
-== Effective Constraint Solving with ProB
+=== Effective Constraint Solving with ProB
 
 [[existential-quantifiers]]
-=== Existential Quantifiers
+==== Existential Quantifiers
 
 Existential quantifiers can pose subtle problems when solving constraint
 problems.
@@ -77,7 +75,7 @@ avoid repeated computations
 elimination]) and to make your predicates more readable.
 
 [[universal-quantifiers]]
-== Universal Quantifiers
+=== Universal Quantifiers
 
 The situation is very similar to the existential quantifier. In the
 worst case ProB may delay evaluating a universal quantifier `!x.(P=>Q)`
@@ -104,7 +102,7 @@ of `1..10`, then we can rewrite `!x.(s(x)=5 => P(x))` into
 is checked.
 
 [[transitive-closure-in-event-b]]
-== Transitive Closure in Event-B
+=== Transitive Closure in Event-B
 
 Classical B contains the transitive closure operator `closure1`. It is
 not available by default in Event-B, and axiomatisations of it may be

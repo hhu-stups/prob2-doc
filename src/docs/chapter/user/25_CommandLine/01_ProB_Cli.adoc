@@ -3,11 +3,7 @@
 [[prob-cli]]
 = ProB Cli
 
-= ProB CLI
-:category: Components
-
-:category: ProB_Cli
-
+== ProB CLI
 
 The ProB Cli (command-line interface) offers many of the ProB features
 via command-line. As such, you can run ProB from your shell scripts or

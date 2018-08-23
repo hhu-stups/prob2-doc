@@ -1,14 +1,14 @@
 
 
-
-= Distributed Model Checking
+[[distributed-model-checking]]
+== Distributed Model Checking
 
 Distributed Model Checking allows to check invariants and
 deadlock-freedom (and assertions) with additional computational power.
 The distributed version of ProB is named _distb_. In the following, we
 will document how to run it.
 
-== Overview
+=== Overview
 
 _distb_ consists of three components.
 
@@ -21,7 +21,7 @@ is close to the amount of available (physical) CPU cores of a
 participating machine.
 
 [[setting-up-shared-memory]]
-== Setting up shared memory
+=== Setting up shared memory
 
 It might be necessary to increase the limits of how much shared memory
 may be allocated, both per segment and overall. This is, to our
@@ -47,7 +47,7 @@ sudo sysctl -w kern.sysv.shmseg=4096
 sudo sysctl -w kern.sysv.shmall=18446744073692774399
 ----
 
-== Running _distb_
+=== Running _distb_
 
 Run once per machine:
 
@@ -66,7 +66,7 @@ Run as many workers as you want:
 
 `/path/to/prob/probcli -zmq_worker <unique identifier> &`
 
-== Additional Preferences
+=== Additional Preferences
 
 You can fine-tune the following parameters by adding `-p NAME VALUE` to
 the corresponding call (e.g.: `./probcli -zmq_worker worker1 -p port 5010

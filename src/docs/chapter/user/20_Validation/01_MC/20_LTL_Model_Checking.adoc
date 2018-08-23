@@ -1,7 +1,7 @@
 
 
 [[ltl-model-checking]]
-= LTL Model Checking
+== LTL Model Checking
 
 :category: User_Manual
 ProB provides
@@ -68,7 +68,7 @@ The old LTL and CTL dialogs can be accessed from "OldLtlViewers" in
 the menu bar.
 
 [[ltl-preferences]]
-== LTL Preferences
+=== LTL Preferences
 
 There is a set of options coming with the LTL model checker. In this
 section we give a brief overview of the preferences. The LTL preferences
@@ -129,7 +129,7 @@ Note: Whereas `Y true` is always false when checked with option 1 or 2,
 it is usually true (but not in all cases) for option 3.
 
 [[supported-syntax]]
-=== Supported Syntax
+==== Supported Syntax
 
 ProB supports LTL^[e]^, an extended version of LTL. In contrast to the
 standard LTL, LTL^[e]^ provides also support for propositions on
@@ -198,7 +198,7 @@ the operations starts.
 ** `SEF`: strong fairness for all possible operations
 
 [[setting-fairness-constraints]]
-== Setting Fairness Constraints
+=== Setting Fairness Constraints
 
 Fairness is a notion where the search for counterexamples is restricted
 to paths that do not ignore infinitely the execution of a set of enabled
@@ -277,7 +277,7 @@ sfair ::= sf(a) | ( sfair ) | sfair & sfair | sfair or sfair
 where "a" is a transition proposition.
 
 [[storing-ltl-assertions-in-the-model]]
-== Storing LTL Assertions in the Model
+=== Storing LTL Assertions in the Model
 
 *Storing LTL formulas in B machines* +
 LTL formulas can be stored in the DEFINITIONS section of a B machine.
@@ -323,7 +323,7 @@ where `P` is an arbitrary process and `ltl-formula` an LTL formula.
 
 
 [[ltl-formulas-in-a-separate-file]]
-== LTL Formulas in a Separate File
+=== LTL Formulas in a Separate File
 
 With the command line version of ProB it is possible to check several
 LTL^[e]^ formulae with one call. The command has the following syntax:
@@ -346,7 +346,7 @@ One also can check a single LTL^[e]^ formula _F_ using the option
 `probcli -ltlformula "F"...`
 
 [[ltl-formulae-in-a-separate-file]]
-== LTL Formulae in a Separate File
+=== LTL Formulae in a Separate File
 
 With the command line version of ProB it is possible to check several
 LTL^[e]^ formulae with one call. The command has the following syntax:
@@ -369,7 +369,7 @@ One also can check a single LTL^[e]^ formula _F_ using the option
 `probcli -ltlformula "F"...`
 
 [[ltl-model-checker-output]]
-== LTL Model Checker Output
+=== LTL Model Checker Output
 
 The output provided by the LTL model checker can sometimes reveal some
 interesting statistical facts about the model and the property being
@@ -514,7 +514,7 @@ a counter-example for "GF [eat.0]" in case no fairness constraints
 were imposed.
 
 [[other-relevant-tutorials-about-ltl-model-checking]]
-== Other Relevant Tutorials about LTL Model Checking
+=== Other Relevant Tutorials about LTL Model Checking
 
 A brief tutorial on visualizing LTL counter-examples in the Rodin tool
 can be found
@@ -524,4 +524,4 @@ A tutorial of a simple case study, where setting fairness constraints to
 some of the LTL properties is required, can be found
 http://www.stups.uni-duesseldorf.de/ProB/index.php5/Mutual_Exclusion_%28Fairness%29[here].
 
-== References
+=== References

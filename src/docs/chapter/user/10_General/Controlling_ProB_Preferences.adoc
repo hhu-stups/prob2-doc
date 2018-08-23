@@ -1,5 +1,5 @@
 [[controlling-prob-preferences]]
-= Controlling ProB Preferences
+== Controlling ProB Preferences
 
 ProB provides a variety of preferences to control its behaviour. A list
 of the most important preferences can be found
@@ -8,7 +8,7 @@ page for probcli]. We also have a separate link:/Deferred_Sets[manual
 page about setting the sizes of deferred sets].
 
 [[setting-preferences-in-a-b-machine]]
-== Setting Preferences in a B machine
+=== Setting Preferences in a B machine
 
 This only works for classical B models. For a preference `P` you can add
 the following definition to the `DEFINITIONS` section of the main
@@ -19,7 +19,7 @@ machine:
 This will set the preference `P` to the value `VAL` for this model only.
 
 [[setting-preferences-from-the-command-line]]
-== Setting Preferences from the command-line
+=== Setting Preferences from the command-line
 
 You can set a preference `P` to a value `VAL` for a particular run of
 probcli by adding the command-line switch `-p P VAL`, e.g.,
@@ -44,7 +44,7 @@ set] `GS` using the following command-line switch:
 `-card GS Val`
 
 [[setting-preferences-from-prob-tcltk]]
-== Setting Preferences from ProB Tcl/Tk
+=== Setting Preferences from ProB Tcl/Tk
 
 ProB Tcl/Tk stores your preferences settings in a file
 `ProB_Preferences.pl`.

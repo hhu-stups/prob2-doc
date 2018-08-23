@@ -1,16 +1,10 @@
 
 
 [[recursively-defined-functions]]
-= Recursively Defined Functions
-
-:category: User_Manual
-
-:category: _Advanced_Feature
-
+== Recursively Defined Functions
 
 [[symbolic-functions-and-relations]]
-Symbolic Functions and Relations
---------------------------------
+=== Symbolic Functions and Relations
 
 Take the following function:
 
@@ -121,8 +115,7 @@ You may also want to look at the tutorial page on
 <<tutorial-modeling-infinite-datatypes,modeling infinite datatypes>>.
 
 [[when-does-prob-treat-a-set-comprehension-or-lambda-abstraction-symbolically]]
-When does ProB treat a set comprehension or lambda abstraction symbolically ?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+==== When does ProB treat a set comprehension or lambda abstraction symbolically ?
 
 Currently there are four cases when ProB tries to keep a function such
 as `f = %x.(PRED|E)` symbolically rather than computing an explicit
@@ -146,8 +139,7 @@ database attributes and one should use the
 <<tutorial-symbolic-constants,symbolic constants plugin>>.
 
 [[recursive-function-definitions-in-prob]]
-Recursive Function Definitions in ProB
---------------------------------------
+=== Recursive Function Definitions in ProB
 
 As of version 1.3.5-beta7 ProB now accepts recursively defined
 functions. For this:
@@ -181,8 +173,7 @@ SEND
 ---------
 
 [[operations-applicable-for-recursive-functions]]
-Operations applicable for recursive functions
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+==== Operations applicable for recursive functions
 
 With such a recursive function you can:
 

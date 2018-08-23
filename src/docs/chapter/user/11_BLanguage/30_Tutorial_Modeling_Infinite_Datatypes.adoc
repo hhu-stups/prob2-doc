@@ -1,7 +1,7 @@
 
 
 [[tutorial-modeling-infinite-datatypes]]
-= Tutorial Modeling Infinite Datatypes
+== Tutorial Modeling Infinite Datatypes
 
 This tutorial describes how to model (and how not to model)
 infinite datatypes so that they can be animated with ProB. (You may also

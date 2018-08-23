@@ -1,7 +1,7 @@
 
 
 [[well-definedness-checking]]
-= Well-Definedness Checking
+== Well-Definedness Checking
 
 Well-definedness errors can occur in B in the following circumstances:
 

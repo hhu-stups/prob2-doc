@@ -1,7 +1,7 @@
 
 
 [[eval-console]]
-= Eval Console
+== Eval Console
 
 For this tutorial, load for example the file `StackConstructive.mch`
 included in the `examples/Tutorial` directory of the

@@ -1,10 +1,7 @@
 
 
 [[constraint-based-checking]]
-= Constraint Based Checking
-
-:category: User_Manual
-
+== Constraint Based Checking
 
 ProB also offers an alternative checking method, inspired by the Alloy
 footnote:[D. Jackson: Alloy: A lightweight object modeling notation. ACM
@@ -22,7 +19,7 @@ link:/Tutorial_Model_Checking,_Proof_and_CBC[tutorial page on model
 checking, proof and CBC].
 
 [[difference-between-constraint-based-checking-and-model-checking]]
-== Difference between Constraint Based Checking and Model Checking
+=== Difference between Constraint Based Checking and Model Checking
 
 <<consistency-checking,Model checking>> tries to find a sequence of
 operations that, starting from an initial state, leads to a state which
@@ -42,7 +39,7 @@ A comparison between all link:/ProB_Validation_Methods[ProB validation
 methods can be found on a separate manual page].
 
 [[commands-of-the-constraint-based-checker]]
-== Commands of the Constraint Based Checker
+=== Commands of the Constraint Based Checker
 
 These commands are only accessible in the "Normal" mode of ProB (see
 link:/General_Presentation_(tcl/tk)#The_ProB_main_window[General
@@ -77,4 +74,4 @@ The following command is related to the above:
 * link:/Using_the_Command-Line_Version_of_ProB#-cbc_sequence_.3CSEQ.3E[cbc_sequence
 ] to find a sequence of operations using the constraint solver
 
-== References
+=== References

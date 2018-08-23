@@ -1,10 +1,7 @@
 
 
 [[tutorial-understanding-the-complexity-of-b-animation]]
-= Tutorial Understanding the Complexity of B Animation
-
-:category: Tutorial
-
+== Tutorial Understanding the Complexity of B Animation
 
 We assume that you have grasped the way that ProB setups up the initial
 states of a B machine as outlined in
@@ -15,7 +12,7 @@ general, how ProB solves this problem, and what the ramification for
 users are.
 
 [[undecidability]]
-== Undecidability
+=== Undecidability
 
 In general, animation of a B model is undecidable. More precisely, it is
 undecidable to find out
@@ -77,7 +74,7 @@ deferred set to a finite number before animation (see also
 you can control the cardinality of the deferred sets).
 
 [[complexity-of-animation]]
-== Complexity of Animation
+=== Complexity of Animation
 
 However, after addressing the undecidability issue, there is still the
 problem of complexity. The animation task can be arbitrarily complex

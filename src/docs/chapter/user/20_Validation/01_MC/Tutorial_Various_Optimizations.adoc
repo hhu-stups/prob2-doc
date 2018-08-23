@@ -1,6 +1,6 @@
 
 [[tutorial-various-optimizations]]
-= Tutorial Various Optimizations
+== Tutorial Various Optimizations
 
 The ordinary model checker of ProB enables the user to verify
 automatically whether a B model contains any errors such as deadlocks
@@ -21,7 +21,7 @@ additionally gives hints when it is recommendable to use these
 optimizations.
 
 [[partial-order-reduction]]
-== Partial Order Reduction
+=== Partial Order Reduction
 
 Partial order reduction (POR) is a method proposed for combating the
 state space explosion problem by means of state space reduction. The
@@ -221,7 +221,7 @@ models. The evaluation can be obtained
 http://nightly.cobra.cs.uni-duesseldorf.de/por/[here].
 
 [[partial-guard-evaluation]]
-== Partial Guard Evaluation
+=== Partial Guard Evaluation
 
 When checking for consistency a B model the ProB model checker traverses
 the state space of the model beginning in some of the initial states and
@@ -535,4 +535,4 @@ These and various other benchmarks used for evaluating partial guard
 evaluation (PGE) can be viewed
 http://nightly.cobra.cs.uni-duesseldorf.de/pge/[here].
 
-== References
+=== References

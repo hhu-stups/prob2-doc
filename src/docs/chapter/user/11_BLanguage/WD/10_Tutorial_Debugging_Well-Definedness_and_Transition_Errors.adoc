@@ -1,10 +1,5 @@
 [[tutorial-debugging-well-definedness-and-transition-errors]]
-= Tutorial Debugging Well-Definedness and Transition Errors
-
-:category: Tutorial
-
-:category: User_Manual
-
+== Tutorial Debugging Well-Definedness and Transition Errors
 
 We assume that you have grasped the way that ProB setups up the initial
 states of a B machine as outlined in
@@ -15,7 +10,7 @@ Understanding the Complexity of B Animation]. You may also want to have
 a look at the explanation of
 <<well-definedness-checking,well-definedness in B>>.
 
-== A simple example
+=== A simple example
 
 Let us use the following B machine as starting point:
 

@@ -1,11 +1,7 @@
 
 
 [[tutorial-understanding-probs-constraint-solver]]
-= Tutorial Understanding ProB's Constraint Solver
-
-:category: Tutorial
-
-:category: User_Manual
+== Tutorial Understanding ProB's Constraint Solver
 
 
 We assume that you have grasped the way that ProB setups up the initial
@@ -78,7 +74,7 @@ The following picture provides a very rough picture of this process:
 
 image::ProB_Propagation.png[]
 
-== A simple example
+=== A simple example
 
 Let us use the following B machine as starting point:
 
@@ -168,7 +164,7 @@ and fi are correct (by looking at the "State Properties" pane):
 image::ProB_PropagationAfterInit.png[]
 
 [[complicating-the-example]]
-== Complicating the Example
+=== Complicating the Example
 
 To make the example more challenging, let us increase `up` to 100 and
 remove the equality for `f`. In other words, the PROPERTIES will now
@@ -253,7 +249,7 @@ ms)"" in the "Animation Preferences". You can also control it using a
 definition for `SET_PREF_TIME_OUT` in the DEFINITIONS clause.
 
 [[adding-universally-quantified-formulas]]
-== Adding universally quantified formulas
+=== Adding universally quantified formulas
 
 Let us replace `f=fi` by the following property:
 

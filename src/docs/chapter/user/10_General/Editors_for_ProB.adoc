@@ -1,10 +1,10 @@
 
 
 [[editors-for-prob]]
-= Editors for ProB
+== Editors for ProB
 
 [[prob-tcltk-editor]]
-== ProB Tcl/Tk Editor
+=== ProB Tcl/Tk Editor
 
 ProB Tcl/Tk contains an editor in which syntax errors are displayed and
 which can be used to edit B, CSP, Z and TLA+ models. The editor of
@@ -25,7 +25,7 @@ file with this editor. You can also use the command-key shortcut
 "Cmd-E" for this.
 
 [[launching-the-editor-in-probcli]]
-== Launching the editor in probcli
+=== Launching the editor in probcli
 
 The <<using-the-command-line-version-of-prob,probcli>> REPL
 (read-eval-print-loop) supports the command `:e` to open the current
@@ -38,10 +38,10 @@ In case errors occurred with the last command, this will also try and
 move the cursor to the corresponding location in the file.
 
 [[external-editors]]
-== External Editors
+=== External Editors
 
 [[vim]]
-=== VIM
+==== VIM
 
 A https://github.com/bivab/prob.vim[VIM plugin for ProB is available].
 It shows a quick fix list of parse and type errors for classical B
@@ -51,7 +51,7 @@ VIM has builtin syntax highlighting support for
 https://github.com/vim/vim/blob/master/runtime/syntax/b.vim[B].
 
 [[atom]]
-=== Atom
+==== Atom
 
 There is a package
 https://atom.io/packages/language-b-eventb[language-b-eventb] available
@@ -60,12 +60,12 @@ specification languages B and Event-B to Atom. It integrates with
 probcli to obtain error markers for syntax and type errors.
 
 [[bbedit]]
-=== BBEdit
+==== BBEdit
 
 Some https://github.com/leuschel/bbedit-prob[BBedit Language modules for
 B, TLA+, CSP and Prolog] are available.
 
 [[emacs]]
-=== Emacs
+==== Emacs
 
 A package is available. //TODO: Downloadlink  b-mode.el.zip[]

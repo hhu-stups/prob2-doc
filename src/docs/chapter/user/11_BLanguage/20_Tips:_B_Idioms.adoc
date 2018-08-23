@@ -1,25 +1,25 @@
 
 
 [[tips-b-idioms]]
-= Tips: B Idioms
+== Tips: B Idioms
 
 Also have a look at
 /Tips:_Writing_Models_for_ProB[Tips:_Writing_Models_for_ProB].
 
 [[let]]
-== Let
+=== Let
 
 Classical B only has a LET substitution, no let construct for predicates
 or expressions. Event-B has no let construct whatsoever.
 
 [[probs-extended-syntax]]
-=== ProB's Extended Syntax
+==== ProB's Extended Syntax
 
 Since version *1.6.1-beta* (28th of April 2016), ProB supports the use
 of the `LET` substitution syntax in expressions and predicates.
 
 [[examples-let]]
-==== Examples:
+===== Examples:
 
 ----
 >>> LET a BE a = 10 IN a + 10 END
@@ -52,7 +52,7 @@ Expression Value = 11
 ----
 
 [[let-for-predicates]]
-=== Let for predicates
+==== Let for predicates
 
 For predicates this encodes a let predicate:
 
@@ -83,7 +83,7 @@ both encode
 `{x|let y=E1 & z=E2 in P}`
 
 [[let-for-expressions]]
-=== Let for expressions
+==== Let for expressions
 
 In case F is a set expression, then the following construct can be used
 to encode a let statement:
@@ -99,19 +99,19 @@ The following construct has exactly the same effect:
 `INTER(x).(x=E|F)`
 
 [[if-then-else]]
-== If-Then-Else
+=== If-Then-Else
 
 Classical B only has an IF-THEN-ELSE substitution (aka statement), no
 such construct for predicates or expressions.
 
 [[nightly-builds]]
-=== Nightly Builds
+==== Nightly Builds
 
 Since version *1.6.1-beta* (28th of April 2016), ProB supports the use
 of the `LET` substitution syntax in expressions and predicates.
 
 [[examples-if-then-else]]
-==== Examples:
+===== Examples:
 
 ----
 >>> IF 1 = 1 THEN 3 ELSE 4 END
@@ -133,7 +133,7 @@ Predicate is FALSE
 Predicate is TRUE
 ----
 [[expressions]]
-=== Expressions
+==== Expressions
 
 The following construct
 
@@ -150,7 +150,7 @@ parentheses around the IF-THEN-ELSE; version 1.6.1 no longer requires
 them).
 
 [[finite]]
-== finite
+=== finite
 
 In classical B there is no counterpart to the Event-B `finite` operator.
 However, the following construct has the same effect as `finite(x)` (and
@@ -159,7 +159,7 @@ is recognised by ProB):
 `x : FIN(x)`
 
 [[all-different]]
-== all-different
+=== all-different
 
 One can encode the fact that n objects x1,...,xn are pair-wise different
 using the following construct (recognised by ProB):
@@ -167,7 +167,7 @@ using the following construct (recognised by ProB):
 `card({x1,...,xn})=n`
 
 [[map]]
-== map
+=== map
 
 Given a function f and a sequence `sqce` one can map the function over
 all elements of `sqce` using the relational composition operator `;`:
@@ -177,7 +177,7 @@ all elements of `sqce` using the relational composition operator `;`:
 For example, `([1,2,3] ; succ)` gives us the sequence `[2,3,4]`.
 
 [[recursion-using-closure1]]
-== Recursion using closure1
+=== Recursion using closure1
 
 Even though B has no built-in support for recursion, one can use the
 transitive closure operator `closure1` to compute certain recursive
@@ -216,7 +216,7 @@ can compute the relational image of `closure1(step)` for a particular
 set such as `{({4,5,2},[])}` (provided the recursion terminates).
 
 [[recursion-using-abstract_constants]]
-== Recursion using ABSTRACT:_CONSTANTS
+=== Recursion using ABSTRACT:_CONSTANTS
 
 Recursive functions can be declared using the `ABSTRACT_CONSTANTS`
 section in B machines. Functions declared as `ABSTRACT_CONSTANTS` are

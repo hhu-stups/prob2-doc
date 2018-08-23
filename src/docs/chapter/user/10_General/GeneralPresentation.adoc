@@ -1,10 +1,10 @@
 
 
 [[general-presentation]]
-= General Presentation
+== General Presentation
 
 [[the-prob-main-window]]
-== The ProB Main Window
+=== The ProB Main Window
 
 The menu bar contains the various commands to access the features of
 ProB. It includes the traditional _File_ menu with a sub-menu "Recent
@@ -39,7 +39,7 @@ mean);
 3.  The history of operations leading to this state (History).
 
 [[general-presentation-preferences]]
-== Preferences
+=== Preferences
 
 The _Preferences_ menu allows the various features of ProB to be
 configured. When ProB is started for the first time, it creates a file

@@ -1,7 +1,7 @@
 
 
 [[tutorial-model-based-testing]]
-= Tutorial Model-Based Testing
+== Tutorial Model-Based Testing
 
 We assume that you have completed
 link:/Tutorial_Complete_Model_Checking[Tutorial Complete Model
@@ -38,7 +38,7 @@ There are two ways this coverage can be achieved systematically: using a
 model-checking-based or a constraint-based approach.
 
 [[model-checking-based-testcase-generation]]
-== Model-Checking Based Test Case Generation
+=== Model-Checking Based Test Case Generation
 
 To start the test case generation select _Analyse_ > "Testing" > "model-checking-based test case generation...". In the appearing window one can set some parameters:
 
@@ -100,7 +100,7 @@ You cannot look at the test cases in ProB. Instead you can open the file you jus
 
 
 [[constraint-based-testcase-generation]]
-== Constraint-Based Test Case Generation
+=== Constraint-Based Test Case Generation
 
 The constraint-based test case generation can be started by selecting _Analyse_ > "Testing" > "constraint-based test case generation...". In the appearing window one can set the same parameters as described before (except for the maximum number of states). Clicking on _"View CBC Test Tree"_ in the window popping up will open another window showing the test cases.
 

@@ -1,7 +1,7 @@
 
 
 [[graphical-visualization]]
-= Graphical Visualization
+== Graphical Visualization
 
 :category: User_Manual
 The graphical
@@ -18,7 +18,7 @@ function in B stipulates which pictures should be displayed. We now show
 how this animation can be done with very little effort.
 
 [[the-graphical-animation-model]]
-== The Graphical Animation Model
+=== The Graphical Animation Model
 
 The animation model is very simple. It is based on individual images and
 a user-defined animation function, which are both defined in the
@@ -160,13 +160,13 @@ can directly handle user sets but does not work well if we need a
 special image for undefined,...)
 
 [[further-examples]]
-== Further Examples
+=== Further Examples
 
 Below we illustrate how the graphical animation model easily provides
 interesting animations for different models.
 
 [[scheduler]]
-=== Scheduler
+==== Scheduler
 
 The scheduler specification taken from footnote:[B. Legeard, F. Peureux,
 and M. Utting. Automated boundary testing from Z and B. Proceedings of
@@ -249,7 +249,7 @@ ANIMATION_FUNCTION == ({r,c,i| r=1 & i:PID & c=i & i:waiting} \/
 ----
 
 [[sudoku]]
-=== Sudoku
+==== Sudoku
 
 Using ProB we can also solve Sudoku puzzles. The machine has the
 variable Sudoku9 of type `1..fullsize-->(1..fullsize+->NRS)`, where NRS is
@@ -297,4 +297,4 @@ c:dom(Sudoku9(r)) & i:1.. fullsize & i = Sudoku9(r)(c)}
 )
 ----
 
-== References
+=== References

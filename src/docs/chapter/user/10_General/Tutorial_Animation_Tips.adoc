@@ -1,17 +1,14 @@
 
 
 [[tutorial-animation-tips]]
-= Tutorial Animation Tips
-
-:category: User_Manual
-
+== Tutorial Animation Tips
 
 Make sure you have the Lift.mch model from the first part of the
 tutorial: link:/Tutorial_First_Step[Starting ProB and first animation
 steps].
 
 [[operation-with-many-solutions-for-the-parameters]]
-== Operation with many solutions for the parameters
+=== Operation with many solutions for the parameters
 
 Add the following operation to the Lift model:
 
@@ -32,7 +29,7 @@ all possible parameter values for the operations were computed.
 There are several solutions to overcome this.
 
 [[increasing-max_operations]]
-=== Increasing MAX_OPERATIONS
+==== Increasing MAX_OPERATIONS
 
 First, you could increase the "MAX_OPERATIONS" preference of ProB by
 selecting the "Animation Preferences" command in the _Preferences_
@@ -46,7 +43,7 @@ the B machine.
 image::ProB_Lift_OpPane_WithJump101.png[]
 
 [[executing-an-operation-by-predicate]]
-=== Executing an Operation by Predicate
+==== Executing an Operation by Predicate
 
 The alternative is to provide the parameter value for `level` yourself.
 For this, select the "Execute an Operation..." command in the _Animate_
@@ -76,7 +73,7 @@ value `98` for level. When there are multiple solutions, ProB will only
 execute the operation for the first solution found.
 
 [[using-random-enumeration]]
-=== Using Random enumeration
+==== Using Random enumeration
 
 You can also tell ProB to try and perform random enumerations. This
 feature is available in ProB 1.5.0 or newer. You add the following lines
@@ -92,10 +89,10 @@ you should see a picture similar to the following one:
 image::ProB_Lift_Randomise.png[]
 
 [[using-constraint-based-validation-techniques]]
-=== Using Constraint-Based Validation Techniques
+==== Using Constraint-Based Validation Techniques
 
 [[find-sequence]]
-==== Find Sequence
+===== Find Sequence
 
 You can also use the constraint solver to construct sequences which are
 of interest to you. Let us add the following operation to the lift
@@ -124,7 +121,7 @@ it:
 image::FindSequenceResult.png[]
 
 [[constraint-based-model-based-testing]]
-==== Constraint-Based Model-Based Testing
+===== Constraint-Based Model-Based Testing
 
 Alternatively, you could for example use the constraint-based test-case
 generator to find for every operation the shortest trace that enables
