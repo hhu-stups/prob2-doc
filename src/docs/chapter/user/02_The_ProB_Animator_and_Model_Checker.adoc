@@ -9,8 +9,8 @@ site of Clearsy]). It allows fully automatic animation of B
 specifications, and can be used to systematically check a specification
 for a wide range of errors. The constraint-solving capabilities of ProB
 can also be used for model finding,
-link:/Constraint_Based_Checking[deadlock checking] and
-link:/Test_Case_Generation[test-case generation].
+<<constraint-based-checking,deadlock checking>> and
+<<test-case-generation,test-case generation>>.
 
 The B language is rooted in predicate logic, arithmetic and set theory
 and provides support for data structures such as (higher-order)
@@ -35,32 +35,32 @@ Mind] or http://www.stups.uni-duesseldorf.de/~leuschel/[Michael
 Leuschel].
 
  a|
-*News* *5/10/2017* link:/Download[ProB 1.7.1] is available. Highlights:
+*5/10/2017* <<downloads,ProB 1.7.1>> is available. Highlights:
 performance, Z support, export history to HTML.
 
-*11/7/2017* link:/Download[ProB 1.7.0] is available. Highlights:
-improved link:/Generating_Documents_with_ProB_and_Latex[Latex document
-generation], improved XML/CSV data import and export, RULE DSL language,
+*11/7/2017* <<downloads,ProB 1.7.0>> is available. Highlights:
+improved <<generating-documents-with-prob-and-latex,Latex document
+generation>>, improved XML/CSV data import and export, RULE DSL language,
 improvements in solver.
 
-*20/10/2016* link:/Download[ProB 1.6.1] is available. Highlights:
-link:/Generating_Documents_with_ProB_and_Latex[Latex document
-generation], /Tips:_B_Idioms[LET and IF-THEN-ELSE for expressions and
-predicates].
+*20/10/2016* <<downloads,ProB 1.6.1>> is available. Highlights:
+<<generating-documents-with-prob-and-latex,Latex document
+generation>>, <<tips-b-idioms,LET and IF-THEN-ELSE for expressions and
+predicates>>.
 
-*22/4/2016* link:/Download[ProB 1.6.0] is available. Highlights:
-link:/Tutorial_Directed_Model_Checking[directed model checking],
-link:/Using_ProB_with_Z3[Z3 as backend], B line comments and unicode
+*22/4/2016* <<downloads,ProB 1.6.0>> is available. Highlights:
+<<tutorial-directed-model-checking,directed model checking>>,
+<<using-prob-with-z3,Z3 as backend>>, B line comments and unicode
 symbols.
 
-*19/2/2015* link:/DownloadPriorVersions[ProB 1.5.0] is available.
-link:/State_Space_Coverage_Analyses[MC/DC coverage], improved
-link:/TLC[TLC interface].
+*19/2/2015* <<prior-versions-of-prob,ProB 1.5.0>> is available.
+<<state-space-coverage-analyses,MC/DC coverage>>, improved
+<<tlc,TLC interface>>.
 
-*30/03/2012* link:/ProB_Logic_Calculator[ProB Logic Calculator]
+*30/03/2012* <<prob-logic-calulator,ProB Logic Calculator>>
 available.
 
-''' ''' link:/Download#Short_Release_History[More in Release History]
+<<release-history, More in the Release History section>>
 
 |=======================================================================
 
@@ -71,13 +71,13 @@ The core of ProB is implemented in
 http://www.sics.se/isl/sicstuswww/site/index.html[SICStus Prolog] (but
 can be run without a SICStus Prolog license). The ProB constraint solver
 is implemented using co-routining and the CLP(FD) finite domain library
-of SICStus. An alternate link:/Using_ProB_with_KODKOD[constraint solver
-based on Kodkod (and thus SAT)] is also available within ProB, as is
-link:/Using_ProB_with_Z3[an integration with the SMT solver Z3]. An
-alternate link:/TLC[model checking engine (using TLC)] well-suited for
+of SICStus. An alternate <<using-prob-with-kodkod,constraint solver
+based on Kodkod (and thus SAT)>> is also available within ProB, as is
+<<using-prob-with-z3,an integration with the SMT solver Z3>>. An
+alternate <<tlc,model checking engine (using TLC)>> well-suited for
 lower level B specifications is also available. An integration with
 https://github.com/utwente-fmt/ltsmin/releases[LTSmin] is also
-available. The link:/ProBLicence[ProB Licence can be found here].
+available. The <<prob-licence,ProB Licence can be found here>>.
 Automatically generated test
 https://www3.hhu.de/stups/internal/coverage/html/[coverage reports are
 also available].
@@ -85,21 +85,21 @@ also available].
 [[features]]
 == Features
 
-ProB covers a link:/Summary_of_B_Syntax[large part of B], and we are
+ProB covers a <<summary-of-b-syntax,large part of B>>, and we are
 striving towards full coverage of Atelier B constructs. ProB supports B
 features such as non-deterministic operations, arbitrary quantification,
 sets, sequences, functions, lambda abstractions, set comprehensions,
 records, and many more. ProB does support multiple machines,
 refinements, and implementations. ProB can also be used for automated
-link:/Refinement_Checking[refinement checking] and
-link:/LTL_Model_Checking[LTL model checking]. It also
-link:/CSP-M[supports almost full CSP-M] process descriptions, to be used
+<<refinement-checking,refinement checking>> and
+<<ltl-model-checking,LTL model checking>>. It also
+<<cps-m,supports almost full CSP-M>> process descriptions, to be used
 on their own or to guide B machines for specification and property
 validation. The state space of the specifications can be
-link:/Graphical_Viewer[graphically visualized]. ProB also supports Z
+<<graphical-viewer,graphically visualized>>. ProB also supports Z
 specifications (ProB in this context is sometimes called
-link:/ProZ[ProZ]) as well as link:/TLA[TLA+ specifications]. We now also
-have an online link:/ProB_Logic_Calculator[ProB Logic Calculator]. ProB
+<<proz,ProZ>>) as well as <<tla,TLA+ specifications>>. We now also
+have an online <<prob-logic-calulator,ProB Logic Calculator>>. ProB
 can be used within
 http://www.atelierb.eu/en/2016/02/18/atelier-b-4-3-1-is-available-for-maintenance-holders/[Atelier-B
 as a disprover and prover].

@@ -1,10 +1,11 @@
-ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
+[[prob2-javafx-ui]]
+= ProB 2.0 JavaFX UI
+
 * A beta version of this new UI is available at
 https://www3.hhu.de/stups/downloads/prob2/[https://www3.hhu.de/stups/downloads/prob2/].
 
 [[the-prob2-javafx-main-window]]
-The ProB2 JavaFX Main Window
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+== The ProB2 JavaFX Main Window
 
 By default the main window is split into three vertical panes (see
 below).
@@ -16,50 +17,73 @@ blue circular arrow icon when an operation does not change the state);
 machine, listing e.g., the current values of the machine variables;
 * In the right pane there are a variety of subviews, which can be
 activate:
-** link:/History_View[The History of operations leading to this state
-(History)]
-** link:/Project_View[The Project view]
-** link:/Verification_View[The Verification view]
-** link:/Statistics_View[The Statistics view]
+** <<history-view,The History of operations leading to this state (History)>>
+** <<project-view,The Project view>>
+** <<verification-view,The Verification view>>
+** <<statistics-view,The Statistics view>>
 
- image::ProB2JavaFX_UI_Overview.png[]
+image::ProB2JavaFX_UI_Overview.png[]
 
 [[the-prob2-javafx-main-menu-bar]]
-The ProB2 JavaFX Main Menu Bar
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+== The ProB2 JavaFX Main Menu Bar
 
 The menu bar contains the various commands to access the features of
-ProB. It includes the menus
+ProB. It includes the following menus:
 
-* File,
-* Edit,
-* Formula,
-* Consoles,
-* Perspectives,
-* View,
-* Window and
-* Help
+=== File
 
- image::File.png[] The File submenu allows you to create a new
+image::File.png[]
+
+The File submenu allows you to create a new
 Project, open an existing project or a machine, open recent projects
 shown as list and/or clear the list of recent projects, close the ProB2
 JavaFX UI, save your project or reload the currently running machine.
- image::Edit.png[] The Edit submenu provides two ways to edit the
+
+=== Edit
+
+image::Edit.png[]
+
+The Edit submenu provides two ways to edit the
 current machine (either in the editor provided by the ProB2 JavaFX UI or
 in the your operating systems standard editor) and allows to edit your
 general and global preferences by opening a seperate window.
- image::Formula.png[] Here you can add formulas for visualization and
-open the history chart window.  image::Consoles.png[] This submenu
-leads to two consoles, one Groovy, one B.  image::Perspectives.png[]
+
+=== Formula
+
+image::Formula.png[]
+
+Here you can add formulas for visualization and
+open the history chart window.
+
+=== Consoles
+
+image::Consoles.png[]
+
+This submenu leads to two consoles, one Groovy, one B.
+
+=== Perspectives
+
+image::Perspectives.png[]
+
 The Perspectives submenu allows you to change the appearance of the main
 view. The default view is shown at the top and two additional
 perspectives (Seperated History and Seperated History and Statistics)
 are preset. By _Detach Components_ the view can be shown in seperate
 windows. _Load_ allows you to make your own perspective by providing an
 FXML file containing the views but be aware that this might ruin the
-ability to detach components.  image::View.png[] This submenu allows
-you to adjust font and button size in the ProB2 JavaFX UI.
- image::Help.png[] The Help submenu provides you with help about the
+ability to detach components.
+
+=== View
+
+image::View.png[]
+
+This submenu allows you to adjust font and button size in the ProB2 JavaFX UI.
+
+=== Help
+
+image::Help.png[]
+
+The Help submenu provides you with help about the
 ProB2 JavaFX UI, information about the ProB2 UI, ProB2 kernel, ProB CLI
 and Java version used here and a way to report issues regarding the
 ProB2 JavaFX UI.

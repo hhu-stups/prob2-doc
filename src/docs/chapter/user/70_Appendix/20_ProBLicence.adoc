@@ -1,9 +1,5 @@
-ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
-/Category:User_Manual[Category:User Manual]
-
 [[prob-licence]]
-ProB Licence
-~~~~~~~~~~~~
+== ProB Licence
 
 The ProB source code is distributed under the
 http://www.eclipse.org/org/documents/epl-v10.html[EPL v1.0 license] (see

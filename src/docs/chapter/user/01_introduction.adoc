@@ -2,7 +2,7 @@
 = Introduction
 
 ProB is a graphical animator and model checker for the B method. The ProB homepage
-is at http://www.stups.uni-duesseldorf.de/ProB[http://www.stups.uni-duesseldorf.de/ProB],
+is at https://www3.hhu.de/stups/prob/[https://www3.hhu.de/stups/prob/],
 where precompiled binaries, installation instructions and documentation
 are available.
 
@@ -12,23 +12,6 @@ are available.
 If you find a problem with ProB or this documentation please let us
 know. We are happy to receive suggestions for improvements to ProB or
 the documentation. More information about submitting bug reports is
-available in the <<bugs,bugs section>> or directly in our
-http://jira.cobra.cs.uni-duesseldorf.de/[bug tracker]. You can also post
-a question in our
-https://groups.google.com/d/forum/prob-users[prob-users group] or send
+available in the <<bugs,bugs section>>. You can also post
+a question in our https://groups.google.com/d/forum/prob-users[prob-users group] or send
 an email to mailto:Michael.Leuschel@hhu.de[Michael Leuschel].
-
-[[jump-to]]
-== Jump To
-
-* <<modelling-examples,Modelling Examples>>
-* <<general,General Information>>
-* <<b-language,B Language>>
-* <<validation,Validation>>
-* <<testing,Testing>>
-* <<prob-cli,ProB CLI Information>>
-* <<other-languages,Other Languages>>
-* <<advanced-features,Advanced Features>>
-* <<examples,Examples>>
-* <<appendix,Appendix>>
-* <<additional-information,Additional Information>>

@@ -1,4 +1,0 @@
-ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
-[[prob-2.0-alpha-release]]
-ProB 2.0 Alpha Release
-~~~~~~~~~~~~~~~~~~~~~~

@@ -1,4 +1,5 @@
-ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
+= ProB 2.0 Advanced Release
+
 ProB 2.0 for Rodin 3.1 can be installed from the update site located at:
 http://nightly.cobra.cs.uni-duesseldorf.de/prob2/updates/releases/advance-final/
 
@@ -8,4 +9,4 @@ Choose 'Install New Software...' from Rodin's Help menu.
 Enter the update site into the textfield and hit enter. The result is
 shown in the following screenshot:
 
- image::install_prob2.png[]
+image::install_prob2.png[]

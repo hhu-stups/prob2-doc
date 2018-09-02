@@ -1,0 +1,67 @@
+[[prob2-within-rodin]]
+= ProB 2.0 within Rodin
+
+[[installing-prob-2.0-from-rodin-2.7-or-later]]
+== Installing ProB 2.0 from Rodin 2.7 or later
+
+ProB 2.0 for Rodin 3.1 can be installed from the update site, which is located
+http://nightly.cobra.cs.uni-duesseldorf.de/prob2/updates/releases/advance-final/[here].
+
+The installation follows the normal Eclipse installation procedure.
+Choose 'Install New Software...' from Rodin's Help menu.
+
+Enter the update site into the textfield and hit enter. The result is
+shown in the following screenshot:
+
+image::install_prob2.png[]
+
+* Enter the http://nightly.cobra.cs.uni-duesseldorf.de/experimental/updatesite/[update site]
+and install the ProB 2.0 plugin
+
+[[obtaining-the-latest-prob-binary]]
+== Obtaining the latest ProB binary
+
+Open a Groovy Console and type `upgrade latest`.
+
+image::GroovyConsoleUpgradeLatest.png[]
+
+If you have trouble with this you can also manually download the latest
+nightly version of ProB from our downloads area and put the probcli
+binary and the lib directory into a `.prob` directory in your home
+directory.
+
+[[import-the-lift-project]]
+== Import the Lift Project
+
+Select the Rodin `Import…` menu command and import the
+
+#FIXME Lift.zip LINK.
+
+[[start-animating-the-lift]]
+== Start Animating the Lift
+
+Right-click on the `MLift` model and select the `Start Animation`
+command:
+
+image::MLiftAnimateWithProB.png[]
+
+Click on setup_constants and initialise in the Events view:
+
+image::MLiftEventsView.png[]
+
+[[open-html-visualization]]
+== Open HTML Visualization
+
+Go into the BMotion Studio Menu at the top and select
+`Open BMotion Studio Template`:
+
+image::MLiftOpenHTMLVisualization.png[]
+
+Navigate to the `lift.html` file that is included in the Lift.zip
+archive.
+
+You can now see a graphical visualisation of the state of the model:
+
+image::MLiftHTMLVisualization.png[]
+
+You can also click on the buttons in the HTML page to control the model.
