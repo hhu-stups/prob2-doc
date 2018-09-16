@@ -1,3 +1,4 @@
+[[prob2.0-development]]
 = ProB 2.0 Development
 
 [[basic-design-principles]]

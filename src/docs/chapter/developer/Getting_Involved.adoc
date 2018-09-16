@@ -1,19 +1,15 @@
 [[getting-involved]]
 = Getting Involved
 
-:category: Developer_Manual
-
 
 [[the-prob-java-core-and-ui]]
-The ProB Java Core and UI
-^^^^^^^^^^^^^^^^^^^^^^^^^
+== The ProB Java Core and UI
 
 see the README in our https://github.com/bendisposto/prob[Github
 Repository]
 
 [[the-prolog-sources]]
-The Prolog Sources
-^^^^^^^^^^^^^^^^^^
+== The Prolog Sources
 
 If you want to contribute to the Prolog part of ProB, if you want to
 extend the ProB API, or need them as reference, you need the Prolog
@@ -24,8 +20,7 @@ http://www.sics.se/isl/sicstuswww/site/index.html[SICStus Prolog]
 licence.
 
 [[running-prob-from-prolog]]
-Running ProB from Prolog
-^^^^^^^^^^^^^^^^^^^^^^^^
+== Running ProB from Prolog
 
 You first need to download and install
 http://www.sics.se/isl/sicstuswww/site/index.html[SICStus Prolog].
@@ -86,8 +81,7 @@ the number of a unit test to run it, or a test category such as
 `tickets` to run all tests in that category.
 
 [[running-the-prolog-tests]]
-Running the Prolog Tests
-^^^^^^^^^^^^^^^^^^^^^^^^
+== Running the Prolog Tests
 
 All Prolog tests are stored as facts in the file `testcases.pl`. Every
 test has

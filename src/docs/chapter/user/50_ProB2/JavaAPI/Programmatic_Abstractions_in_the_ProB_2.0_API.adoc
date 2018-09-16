@@ -1,13 +1,11 @@
-ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
-/Category:ProB_Java_API[Category:ProB Java API]
+[[programmatic-abstractions-in-prob-api]]
+= Programmatic Abstraction in the ProB 2.0 API
 
 [[overview]]
-Overview
-~~~~~~~~
+== Overview
 
 [[background]]
-Background
-^^^^^^^^^^
+=== Background
 
 The original ProB plug-in for Rodin introduced one basic abstraction:
 developers can create Java commands specifying calculations that are to
@@ -16,8 +14,7 @@ can then be interpreted and manipulated by the developer. Each Java
 command corresponds to one prolog instruction in the ProB kernel.
 
 [[current-implementation]]
-Current Implementation
-^^^^^^^^^^^^^^^^^^^^^^
+=== Current Implementation
 
 We have maintained the abstractions of the commands in order to
 communicate with the ProB kernel. However, as we were considering how
@@ -27,8 +24,7 @@ Therefore, we created the programmatic abstractions that will be
 described in the following sections.
 
 [[model]]
-Model
-~~~~~
+== Model
 
 The Model is an abstraction that provides static information about the
 current model that is being animated or checked. For Classical B and
@@ -49,8 +45,7 @@ information about the model. TLA+ specifications can be represented in
 the API as Classical B models.
 
 [[statespace]]
-StateSpace
-~~~~~~~~~~
+== StateSpace
 
 There is a one-to-one relationship between a StateSpace and a model. The
 StateSpace is the corresponding label transition system for a particular
@@ -70,8 +65,7 @@ not accessed for a given period of time, the garbage collector can clean
 them up.
 
 [[trace]]
-Trace
-~~~~~
+== Trace
 
 For some tools, the StateSpace abstraction may be sufficient. But when
 it comes to animation and the concept of a ``current state'', a further

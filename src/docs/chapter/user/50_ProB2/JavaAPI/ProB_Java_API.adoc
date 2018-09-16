@@ -1,31 +1,26 @@
-ifndef::imagesdir[:imagesdir: ../../asciidoc/images/]
-/Category:Components[Category:Components]
-/Category:ProB_Java_API[Category:ProB Java API]
+[[prob-java-api]]
+= ProB Java API
 
 [[documentation]]
-Documentation
-~~~~~~~~~~~~~
+== Documentation
 
-`             `` `link:/ProB_Java_API_Tutorial[`Tutorial`] +
-`                   `
+* <<prob-java-api-tutorial,Tutorial>>
 
-`             `` `https://www3.hhu.de/stups/handbook/prob2/handbook.html[`Developer`` ``Manual`] +
-`                   `
+* https://www3.hhu.de/stups/handbook/prob2/handbook.html[Developer Manual]
 
 [[additional-material]]
-Additional Material
-~~~~~~~~~~~~~~~~~~~
+== Additional Material
 
-* link:/ProB_2.0_Development[ProB 2.0 Development]
+* <<prob2.0-development,ProB 2.0 Development>>
 * https://github.com/bendisposto/prob2_tooling_template[ProB 2.0 Tooling
 Template]
-* link:/Programmatic_Abstractions_in_the_ProB_2.0_API[Programmatic_Abstractions_in_the_ProB_2.0_API]
+* <<programmatic-abstractions-in-prob-api,Programmatic_Abstractions_in_the_ProB_2.0_API>>
 * https://docs.google.com/document/pub?id=109z3qG6_KBUqm0NC9FaEF1C6_NYCJl453wcXzbovj2Q[ProB
 2.0 Requirements Document] +
 (if you want to comment on the Document, please use goo.gl/KS2bh)
 
-* /Media:Extending_prob.pdf[Rodin User and Developer Workshop 2012 -
-Tutorial Presentation]
+* <<user-and-developer-workshop,Rodin User and Developer Workshop 2013 -
+Tutorial Presentation>>
 
 * link:/Tutorial13[Rodin User and Developer Workshop 2013 - Tutorial]
 
@@ -33,8 +28,7 @@ Tutorial Presentation]
 within Rodin and a HTML Visualization Example]
 
 [[download]]
-Download
-~~~~~~~~
+== Download
 
 Nightly builds of ProB 2 for Rodin 3 can be obtained from within Rodin
 using the update site
