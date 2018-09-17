@@ -1,14 +1,13 @@
 [[prob-java-api]]
 = ProB Java API
 
-[[documentation]]
+[[prob-java-api-documentation]]
 == Documentation
 
 * <<prob-java-api-tutorial,Tutorial>>
 
 * https://www3.hhu.de/stups/handbook/prob2/handbook.html[Developer Manual]
 
-[[additional-material]]
 == Additional Material
 
 * <<prob2.0-development,ProB 2.0 Development>>
@@ -27,7 +26,6 @@ Tutorial Presentation>>
 * link:/ProB_2.0_within_Rodin_and_a_HTML_Visualization_Example[ProB 2.0
 within Rodin and a HTML Visualization Example]
 
-[[download]]
 == Download
 
 Nightly builds of ProB 2 for Rodin 3 can be obtained from within Rodin

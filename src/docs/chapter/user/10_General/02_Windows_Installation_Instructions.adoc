@@ -62,7 +62,7 @@ http://www.graphviz.org/ or http://www.research.att.com/sw/tools/graphviz/[AT&T'
 * Try to open some of the examples provided in the Examples folder shown above
 * Contact us if you have problems
 
-[[checklisttroubleshooting]]
+[[checklist-troubleshooting]]
 == Checklist/Troubleshooting
 
 * Java: be sure to have Java 1.7 or newer installed. Otherwise you will

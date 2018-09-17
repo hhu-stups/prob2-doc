@@ -1,5 +1,5 @@
 [[rodin-user-and-developer-workshop-2013]]
-= Rodin User and Developer Workshop 2013
+== Rodin User and Developer Workshop 2013
 
 Here are the information we have shown you at the tutorial. If you want
 to follow this tutorial on your computer you will have to install ProB
@@ -10,8 +10,8 @@ have to clean the project after importing.
 This page was updated in May of 2015 to reflect changes made to the ProB
 2.0 API.
 
-[[setup]]
-== Setup
+[[java-api-setup]]
+=== Setup
 
 You will need a fresh copy of ProB 2.0 installed to your Rodin or the
 sourcecode.
@@ -30,8 +30,8 @@ In the following we will intermix some explanations with FAQ style code
 snippets. We assume that you execute all the code snippets. Some of the
 snippets rely on the previous execution of other snippets.
 
-[[preparation]]
-== Preparation
+[[java-api-preparation]]
+=== Preparation
 
 1.  Import the Scheduler project.
 2.  Start an animation for Scheduler0
@@ -42,8 +42,8 @@ variable.
 5.  Type `s = trace.getStateSpace()` to save a reference to the state
 space that is associated with `trace`
 
-[[the-model]]
-== The Model
+[[java-api-the-model]]
+=== The Model
 
 A model gives you access to the static properties of a Rodin
 development. Such as contexts, machines, constants, variables,
@@ -86,8 +86,8 @@ access to axioms, constants and sets. Let's explore machines.
 
 `ne.getGuards()`
 
-[[the-state-space]]
-== The State Space
+[[java-api-the-state-space]]
+=== The State Space
 
 
 The state space represents the whole currently known world for an
@@ -180,8 +180,8 @@ run it at the beginning.
 
 `run new File(````myAwesomeScript.groovy`''`)`
 
-[[traces]]
-== Traces
+[[java-api-traces]]
+=== Traces
 
 A trace represents a path through the state space. It can move forward
 and backward through the Trace and can be extended with a new
@@ -228,8 +228,8 @@ If we go back in time, the trace keeps future states. If we change a
 decision in the past, the trace drops the future. It behaves in the same
 way your browser history does.
 
-[[evaluation]]
-== Evaluation
+[[java-api-evaluation]]
+=== Evaluation
 
 Evaluation is done by passing an instance of the interface IEvalElement
 to an evaluator. Each formalism has its own descendant of IEvalElement.
@@ -297,8 +297,8 @@ results in ```(1<2)`` ``=>`` ``(3<4)`''. The last line converts a list
 of predicates into a conjunction. In Groovy collect means map and inject
 means reduce.
 
-[[constraint-solver]]
-== Constraint solver
+[[java-api-constraint-solver]]
+=== Constraint solver
 
 *Evaluation is fine, but can I use ProB's solver?*
 
@@ -334,8 +334,8 @@ not dead code?*
 `g = conj(mch.getEvent(````del`''`).getGuards())` +
 `cbc_solve(s, i & i.implies(g))`
 
-[[notification-and-ui-access]]
-== Notification and UI Access
+[[java-api-notification-and-ui-access]]
+=== Notification and UI Access
 
 Clients can register themself to receive a notification if an animation
 step occured, new states were discovered or the model has changed. The
@@ -367,8 +367,8 @@ in the future to something more meaningful, e.g., loader.
 
 `animations.addNewAnimation(t)`
 
-[[additional-resources]]
-== Additional Resources
+[[java-api-additional-resources]]
+=== Additional Resources
 
 Further information can be found in the link:/Developer_Manual[developer
 manual].

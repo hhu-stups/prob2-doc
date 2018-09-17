@@ -9,4 +9,4 @@ Choose 'Install New Software...' from Rodin's Help menu.
 Enter the update site into the textfield and hit enter. The result is
 shown in the following screenshot:
 
-image::install_prob2.png[]
+image::Install_prob2.png[]

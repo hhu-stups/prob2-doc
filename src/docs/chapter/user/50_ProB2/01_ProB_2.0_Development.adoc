@@ -57,4 +57,4 @@ link:/Programmatic_Abstractions_in_the_ProB_2.0_API[here].
 == Tutorial of the Current Features of ProB 2.0
 
 A tutorial for the current features of ProB 2.0 is available
-link:/ProB_2.0_Tutorial[here].
+<<prob2-tutorial,here>>.

@@ -1,8 +1,8 @@
+[[the-prob-animator-and-modelchecker]]
 
 [width="100%",cols="60%,40%",]
 |=======================================================================
-a|
-ProB is an animator, constraint solver and model checker for the
+| ProB is an animator, constraint solver and model checker for the
 http://en.wikipedia.org/wiki/B-Method[B-Method] (see the
 http://www.clearsy.com/en/our-specific-know-how/b-method/?lang=en[B-Method
 site of Clearsy]). It allows fully automatic animation of B
@@ -34,8 +34,7 @@ support contact the spin-off company http://www.formalmind.com[Formal
 Mind] or http://www.stups.uni-duesseldorf.de/~leuschel/[Michael
 Leuschel].
 
- a|
-*5/10/2017* <<downloads,ProB 1.7.1>> is available. Highlights:
+|*5/10/2017* <<downloads,ProB 1.7.1>> is available. Highlights:
 performance, Z support, export history to HTML.
 
 *11/7/2017* <<downloads,ProB 1.7.0>> is available. Highlights:

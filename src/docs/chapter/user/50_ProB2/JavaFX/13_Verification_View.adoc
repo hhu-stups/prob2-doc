@@ -1,5 +1,5 @@
-[[verification-view]]
-= Verification View
+[[javafx-verification-view]]
+== Verification View
 
 The Verification View provides 3 different methods to test a machine:
 
@@ -11,8 +11,8 @@ In each tab you can add multiple tests to check you currently selected
 machine and interrupt the checking process by pressing the ``Cancel''
 button.
 
-[[modelchecking]]
-== Modelchecking
+[[javafx-modelchecking]]
+=== Modelchecking
 
 image::Modelchecking.png[]
 
@@ -27,8 +27,8 @@ containing different possible errors like deadlocks to be checked for.
 By pushing the `Model Check` button your selected variant will be
 added to the list shown at the top of the Modelchecking Tab.
 
-[[ltl-verifications]]
-== LTL Verifications
+[[javafx-ltl-verifications]]
+=== LTL Verifications
 
 image::LTL.png[]
 
@@ -36,8 +36,8 @@ By pressing the `Add LTL Formula` or `Add LTL
 Pattern` buttons an editor for each respectively will be opened and you
 can add LTL formulas or patterns to the lists to be checked for.
 
-[[constraint-based-checking]]
-== Constraint Based Checking
+[[javafx-constraint-based-checking]]
+=== Constraint Based Checking
 
 image::CBC.png[]
 

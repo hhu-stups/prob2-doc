@@ -17,10 +17,10 @@ blue circular arrow icon when an operation does not change the state);
 machine, listing e.g., the current values of the machine variables;
 * In the right pane there are a variety of subviews, which can be
 activate:
-** <<history-view,The History of operations leading to this state (History)>>
-** <<project-view,The Project view>>
-** <<verification-view,The Verification view>>
-** <<statistics-view,The Statistics view>>
+** <<javafx-history-view,The History of operations leading to this state (History)>>
+** <<javafx-project-view,The Project view>>
+** <<javafx-verification-view,The Verification view>>
+** <<javafx-statistics-view,The Statistics view>>
 
 image::ProB2JavaFX_UI_Overview.png[]
 

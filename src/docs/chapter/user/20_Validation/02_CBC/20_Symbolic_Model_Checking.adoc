@@ -3,7 +3,7 @@
 [[symbolic-model-checking]]
 == Symbolic Model Checking
 
-[[overview]]
+[[overview-symbolic-model-checking]]
 === Overview
 
 The current nightly builds of ProB support different symbolic model

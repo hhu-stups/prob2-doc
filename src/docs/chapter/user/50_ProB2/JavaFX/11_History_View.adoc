@@ -1,5 +1,5 @@
-[[history-view]]
-= History View
+[[javafx-history-view]]
+== History View
 
 image::History.png[]
 

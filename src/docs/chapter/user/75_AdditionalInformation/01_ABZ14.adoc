@@ -36,7 +36,14 @@ of the model by Jean-Raymond Abrial and Wen Su (Temporally disabled)]
 [[bmotion-studio-for-prob-video]]
 === BMotion Studio for ProB Video
 
+ifdef::basebackend-html[]
+++++
+<script>
 video::wFr_pEjbpqo[youtube]
+</script>
+++++
+endif::[]
+
 
 === Resources
 

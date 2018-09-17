@@ -1,9 +1,4 @@
-
-
-[[apples-and-oranges-apple-interview-question]]
-= Apples and Oranges (Apple Interview Question)
-
-
+[[apples-and-oranges]]
 = Apples and Oranges
 
 This puzzle is
