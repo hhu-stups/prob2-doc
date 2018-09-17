@@ -37,35 +37,40 @@ asciidoctorj {
     version = '1.5.6'
 }
 
-task cleanpdf() {
-    def tree = fileTree('build/asciidoc/pdf') {
-        include '*.pdf'
-    }
-    tree.each { it.delete() }
-}
-
 task bibtex() {
+    def inputDir = file("src/docs/bibtex")
+    def combinedFile = file("src/docs/asciidoc/combined.bib")
+    inputs.dir(inputDir)
+    outputs.file(combinedFile)
+
     doFirst {
-        def tree = fileTree('src/docs/bibtex') {
+        combinedFile.text = fileTree(inputDir) {
             include "**/*.bib"
-        }
-        def files = tree.files
-        file('src/docs/asciidoc/combined.bib').text = files.collect {it.text}.join("\n")
+        }.collect {it.text}.join("\n")
     }
 }
 
 task buildMaindocs() {
+    def templateFileName = "src/docs/templates/handbook.ftlh"
+    def configFile = file("config.yaml")
+    def chapterDir = file("src/docs/chapter")
+    def outputDir = file("src/docs/asciidoc")
+
+    inputs.files(templateFileName, configFile)
+    inputs.dir(chapterDir)
+    outputs.dir(outputDir)
+
     doLast {
-        def template = cfg.getTemplate("src/docs/templates/handbook.ftlh")
+        def template = cfg.getTemplate(templateFileName)
         def parser = new Yaml()
-        def books = parser.loadAll(("config.yaml" as File).text)
+        def books = parser.loadAll(configFile.text)
         books.each {book ->
             def includes = []
             book.content.each {dir ->
-                includes << fileTree('src/docs/chapter/'+dir).collect().sort()
+                includes << fileTree(new File(chapterDir, dir)).collect().sort()
             }
             book.directories = includes
-            new OutputStreamWriter(new FileOutputStream("src/docs/asciidoc/"+book.file), "UTF-8").withWriter {w ->
+            new File(outputDir, book.file).withWriter("UTF-8") {w ->
                 template.process(book, w)
             }
         }
@@ -73,7 +78,7 @@ task buildMaindocs() {
 }
 
 asciidoctor {
-    dependsOn = [cleanpdf, bibtex, jrubyPrepare, buildMaindocs]
+    dependsOn = [bibtex, jrubyPrepare, buildMaindocs]
     requires = ['asciidoctor-diagram', 'asciidoctor-bibtex']
     gemPath = jrubyPrepare.outputDir
 
@@ -104,17 +109,13 @@ asciidoctor {
 }
 
 clean {
-    doFirst {
-        def tree = fileTree('src/docs/asciidoc/images') {
-            include '**/diag-*'
-        }
-        tree.each { it.delete() }
-        tree = fileTree('src/docs/asciidoc') {
-            include '*.adoc'
-        }
-        tree.each { it.delete() }
-        file('src/docs/asciidoc/combined.bib').delete()
-    }
+    delete(fileTree('src/docs/asciidoc/images') {
+        include '**/diag-*'
+    })
+    delete(fileTree('src/docs/asciidoc') {
+        include '*.adoc'
+    })
+    delete('src/docs/asciidoc/combined.bib')
 }
 
-defaultTasks 'clean', 'asciidoctor'
+defaultTasks 'asciidoctor'
