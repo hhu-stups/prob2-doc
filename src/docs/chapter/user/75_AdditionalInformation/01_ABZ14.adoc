@@ -44,6 +44,8 @@ video::wFr_pEjbpqo[youtube]
 ++++
 endif::[]
 
+You can find the video https://youtu.be/wFr_pEjbpqo[here].
+
 
 === Resources
 
