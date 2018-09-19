@@ -7,7 +7,7 @@ different properties will be checked that are not satisfied by the
 model.
 
 [[ltl-model-checking-and-the-meaning-of-counter-examples]]
-== LTL Model Checking and the Meaning of Counter-examples
+=== LTL Model Checking and the Meaning of Counter-examples
 
 Model checking is a technique for checking in an automatic way whether a
 model satisfies a property expressed in formal logic. LTL (standing for
@@ -49,7 +49,7 @@ is a counter-example for each LTL formula latexmath:[$X^{n} (true)$],
 with latexmath:[$n\geq 1$].] property, whereas the path in Figure 3
 represents usually a counter-example for a safety property.
 
-== Visualization of Counter-examples in Rodin
+=== Visualization of Counter-examples in Rodin
 
 *Coloring and highlighting nodes in a counter-example*
 Each state of a path in the LTL counter-example view is marked by a
@@ -162,7 +162,7 @@ image::LTLViewVisualisation4.png[]
 In order to view the visualizations of the sub-formulas, one should
 click on one of the states of the source-formula.
 
-== Use Case for the LTL Counter-example Viewer
+=== Use Case for the LTL Counter-example Viewer
 
 Consider an Event-B model formalizing an algorithm for mutual exclusion
 with semaphores for two concurrent processes latexmath:[$P_1$] and
@@ -257,7 +257,7 @@ state ‘p1=wait1’ becomes true. Once a state is encountered where
 will hold. This is apparently not fulfilled as in all successor states
 _p1_ will not become equal to _crit1_.
 
-== Literature Sources
+=== Literature Sources
 
 For more detailed information on visualizing counter-examples in the LTL
 counter-example view in Rodin refer to footnote:[Andriy Tolstoy,
@@ -271,4 +271,4 @@ Checking_. MIT Press, 2008.].
 The Event-B model used in this tutorial can be downloaded from
 http://www.stups.uni-duesseldorf.de/~dobrikov/modelchecking/MUTEX.zip[here].
 
-== References
+=== References
