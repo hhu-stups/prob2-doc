@@ -1,5 +1,3 @@
-
-
 [[recursively-defined-functions]]
 == Recursively Defined Functions
 

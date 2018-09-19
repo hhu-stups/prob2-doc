@@ -1,5 +1,3 @@
-
-
 [[tutorial-complete-model-checking]]
 == Tutorial Complete Model Checking
 

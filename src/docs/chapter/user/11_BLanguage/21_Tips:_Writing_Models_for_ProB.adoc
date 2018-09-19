@@ -1,5 +1,3 @@
-
-
 [[tips-writing-models-for-prob]]
 == Tips: Writing Models for ProB
 

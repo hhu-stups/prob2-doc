@@ -1,5 +1,3 @@
-
-
 [[symmetry_reduction]]
 == Symmetry Reduction
 

@@ -1,5 +1,3 @@
-
-
 [[tutorial-model-checking-proof-and-cbc]]
 == Tutorial Model Checking, Proof and CBC
 

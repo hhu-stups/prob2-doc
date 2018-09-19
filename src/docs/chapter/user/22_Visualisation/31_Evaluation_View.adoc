@@ -1,5 +1,3 @@
-
-
 [[evaluation-view]]
 == Evaluation View
 

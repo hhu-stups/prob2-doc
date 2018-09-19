@@ -1,5 +1,3 @@
-
-
 [[tutorial-enabling-analysis]]
 == Tutorial Enabling Analysis
 

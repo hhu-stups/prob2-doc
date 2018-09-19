@@ -1,5 +1,3 @@
-
-
 [[tutorial-symbolic-constants]]
 == Tutorial Symbolic Constants
 

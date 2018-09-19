@@ -1,11 +1,7 @@
-
-
 [[graphical-visualization]]
 == Graphical Visualization
 
-:category: User_Manual
-The graphical
-visualization of ProB footnote:[M. Leuschel, M. Samia, J. Bendisposto
+The graphical visualization of ProB footnote:[M. Leuschel, M. Samia, J. Bendisposto
 and L. Luo: Easy Graphical Animation and Formula Viewing for Teaching B.
 In C. Attiogbé and H. Habrias, editors, Proceedings: The B Method: from
 Research to Teaching, pages 17-32, Nantes, France. APCB, 2008.] enables

@@ -1,7 +1,8 @@
-= Windows Specific Download Instructions
+[[windows-specific-download-instructions]]
+== Windows Specific Download Instructions
 
 [[go-to-the-prob-downloads-site]]
-== Go to the ProB Downloads site
+=== Go to the ProB Downloads site
 
 * Go to the page
 http://www.stups.uni-duesseldorf.de/ProB/index.php5/Download[http://www.stups.uni-duesseldorf.de/ProB/index.php5/Download],
@@ -10,7 +11,7 @@ this should look as follows:
 image::ProBWindowsDownload.png[]
 
 [[install-tcltk-8.5]]
-== Install Tcl/Tk 8.5
+=== Install Tcl/Tk 8.5
 
 If Tcl/Tk 8.5 is already installed you can skip this step.
 
@@ -26,7 +27,7 @@ ProB.
 image::TkWindowsDownload.png[]
 
 [[install-java]]
-== Install Java
+=== Install Java
 
 If Java 7 or newer is already installed you can skip this step.
 
@@ -35,7 +36,7 @@ newer)] link provided in the `Dependencies` column and the `Windows` row above
 * Follow the installation instructions
 
 [[download-the-prob-for-windows-zipfile]]
-== Download the ProB for Windows Zipfile
+=== Download the ProB for Windows Zipfile
 
 * Click on the http://nightly.cobra.cs.uni-duesseldorf.de/releases/1.4.1/ProB.windows.zip[Zipfile
 (with probcli)] link in the `Downloads` column and `Windows` row
@@ -50,20 +51,20 @@ The subfolder called `Microsoft.VC80.CRT` contains the DLLs for the
 Microsoft C runtime.
 
 [[optionally-download-graphviz]]
-== Optionally Download GraphViz
+=== Optionally Download GraphViz
 
 * Install the `dot` program and `dotty viewer` from
 http://www.graphviz.org/ or http://www.research.att.com/sw/tools/graphviz/[AT&T's Graphviz package]
 
 [[start-prob]]
-== Start ProB
+=== Start ProB
 
 * Start ProB by double-clicking on the ProBWin icon above
 * Try to open some of the examples provided in the Examples folder shown above
 * Contact us if you have problems
 
 [[checklist-troubleshooting]]
-== Checklist/Troubleshooting
+=== Checklist/Troubleshooting
 
 * Java: be sure to have Java 1.7 or newer installed. Otherwise you will
 not be able to parse your own classical B machines as our parser is

@@ -1,5 +1,3 @@
-
-
 [[state-space-visualization]]
 == State Space Visualization
 

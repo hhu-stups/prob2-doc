@@ -1,5 +1,3 @@
-
-
 [[symbolic-model-checking]]
 == Symbolic Model Checking
 

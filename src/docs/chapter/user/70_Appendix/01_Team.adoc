@@ -1,6 +1,3 @@
-[[appendix]]
-= Appendix
-
 [[team]]
 == Team
 ProB is based on research and implemention effort by:

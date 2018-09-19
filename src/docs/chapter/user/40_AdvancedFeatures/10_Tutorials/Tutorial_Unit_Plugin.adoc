@@ -1,5 +1,3 @@
-
-
 [[tutorial-unit-plugin]]
 == Tutorial Unit Plugin
 

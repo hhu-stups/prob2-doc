@@ -1,5 +1,3 @@
-
-
 [[tutorial-model-based-testing]]
 == Tutorial Model-Based Testing
 

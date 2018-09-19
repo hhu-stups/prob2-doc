@@ -1,9 +1,5 @@
-
-
 [[state-space-visualization-examples]]
 == State space visualization examples
-
-(This page is under construction)
 
 [[alternating-bit-protocol]]
 === Alternating Bit Protocol

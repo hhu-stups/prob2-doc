@@ -1,5 +1,3 @@
-
-
 [[tutorial-rodin-first-step]]
 === Tutorial Rodin First Step
 

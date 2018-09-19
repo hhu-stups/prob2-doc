@@ -1,5 +1,3 @@
-
-
 [[editors-for-prob]]
 == Editors for ProB
 

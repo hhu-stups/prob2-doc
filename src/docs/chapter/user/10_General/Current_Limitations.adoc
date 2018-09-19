@@ -1,5 +1,3 @@
-
-
 [[current-limitations]]
 == Current Limitations
 

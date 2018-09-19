@@ -1,9 +1,6 @@
-
-
 [[ltl-model-checking]]
 == LTL Model Checking
 
-:category: User_Manual
 ProB provides
 support for LTL (linear temporal logic) model checking. For an
 introduction to LTL see the

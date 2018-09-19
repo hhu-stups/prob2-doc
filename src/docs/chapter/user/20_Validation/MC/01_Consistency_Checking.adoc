@@ -1,5 +1,3 @@
-
-
 [[consistency-checking]]
 == Consistency Checking
 

@@ -1,8 +1,5 @@
 
-
 [[prob-cli]]
-= ProB Cli
-
 == ProB CLI
 
 The ProB Cli (command-line interface) offers many of the ProB features

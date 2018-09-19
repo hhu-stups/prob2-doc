@@ -1,5 +1,3 @@
-
-
 [[tutorial-setup-phases]]
 == Tutorial Setup Phases
 

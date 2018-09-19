@@ -1,4 +1,5 @@
-= Complicated Problem for Siemans
+
+== Complicated Problem for Siemans
 
 Below we show the graphical visualisation of a complicated property by
 ProB's graphical formula viewer. The graphics are also available as

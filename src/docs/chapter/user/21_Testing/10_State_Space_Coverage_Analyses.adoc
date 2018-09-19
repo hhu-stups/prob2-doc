@@ -1,6 +1,3 @@
-[[testing]]
-= Testing
-
 [[state-space-coverage-analyses]]
 == State Space Coverage Analyses
 

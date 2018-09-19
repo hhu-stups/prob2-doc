@@ -1,5 +1,3 @@
-
-
 [[generating-documents-with-prob-and-latex]]
 == Generating Documents with ProB and Latex
 

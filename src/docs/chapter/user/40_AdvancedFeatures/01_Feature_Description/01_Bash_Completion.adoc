@@ -1,6 +1,3 @@
-[[advanced-features]]
-= Advanced Features
-
 [[bash-completion]]
 == Bash Completion
 

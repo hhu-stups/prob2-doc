@@ -1,4 +1,5 @@
-= Tutorial LTL Counter-example View
+[[tutorial-ltl-counter-example-view]]
+== Tutorial LTL Counter-example View
 
 In this tutorial a quick overview will be given describing the LTL
 counter-example visualization plug-in in Rodin. The functionality of the

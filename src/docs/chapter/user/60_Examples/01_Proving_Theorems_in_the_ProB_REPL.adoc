@@ -1,5 +1,3 @@
-[[examples]]
-= Examples
 
 [[proving-theorems-in-prob-repl]]
 == Proving Theorems in ProB REPL

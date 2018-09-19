@@ -1,5 +1,3 @@
-
-
 [[well-definedness-checking]]
 == Well-Definedness Checking
 

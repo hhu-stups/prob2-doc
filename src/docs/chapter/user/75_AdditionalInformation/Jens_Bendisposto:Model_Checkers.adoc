@@ -1,4 +1,5 @@
-= Model Checkers
+
+== Model Checkers
 
 * *SPIN* http://spinroot.com/spin/whatispin.html
 * *PAT* http://www.comp.nus.edu.sg/~pat/

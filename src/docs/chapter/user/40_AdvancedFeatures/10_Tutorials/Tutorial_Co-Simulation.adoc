@@ -1,5 +1,3 @@
-
-
 [[tutorial-co-simulation]]
 == Tutorial Co-Simulation
 

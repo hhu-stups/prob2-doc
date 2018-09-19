@@ -1,8 +1,5 @@
-
-
 [[tutorial-troubleshooting-the-setup]]
 == Tutorial Troubleshooting the Setup
-
 
 We assume that you have grasped the way that ProB setups up the initial
 states of a B machine as outlined in

@@ -1,5 +1,3 @@
-
-
 [[tutorial-rodin-parameters]]
 === Tutorial Rodin Parameters
 

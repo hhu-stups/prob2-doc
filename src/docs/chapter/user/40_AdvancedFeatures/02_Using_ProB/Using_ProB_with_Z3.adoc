@@ -1,5 +1,3 @@
-
-
 [[using-prob-with-z3]]
 == Using ProB with Z3
 

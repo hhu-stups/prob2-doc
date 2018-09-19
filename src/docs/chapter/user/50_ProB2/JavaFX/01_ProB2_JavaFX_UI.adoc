@@ -1,11 +1,11 @@
 [[prob2-javafx-ui]]
-= ProB 2.0 JavaFX UI
+== ProB 2.0 JavaFX UI
 
 * A beta version of this new UI is available at
 https://www3.hhu.de/stups/downloads/prob2/[https://www3.hhu.de/stups/downloads/prob2/].
 
 [[the-prob2-javafx-main-window]]
-== The ProB2 JavaFX Main Window
+=== The ProB2 JavaFX Main Window
 
 By default the main window is split into three vertical panes (see
 below).
@@ -25,12 +25,12 @@ activate:
 image::ProB2JavaFX_UI_Overview.png[]
 
 [[the-prob2-javafx-main-menu-bar]]
-== The ProB2 JavaFX Main Menu Bar
+=== The ProB2 JavaFX Main Menu Bar
 
 The menu bar contains the various commands to access the features of
 ProB. It includes the following menus:
 
-=== File
+==== File
 
 image::File.png[]
 
@@ -39,7 +39,7 @@ Project, open an existing project or a machine, open recent projects
 shown as list and/or clear the list of recent projects, close the ProB2
 JavaFX UI, save your project or reload the currently running machine.
 
-=== Edit
+==== Edit
 
 image::Edit.png[]
 
@@ -48,20 +48,20 @@ current machine (either in the editor provided by the ProB2 JavaFX UI or
 in the your operating systems standard editor) and allows to edit your
 general and global preferences by opening a seperate window.
 
-=== Formula
+==== Formula
 
 image::Formula.png[]
 
 Here you can add formulas for visualization and
 open the history chart window.
 
-=== Consoles
+==== Consoles
 
 image::Consoles.png[]
 
 This submenu leads to two consoles, one Groovy, one B.
 
-=== Perspectives
+==== Perspectives
 
 image::Perspectives.png[]
 
@@ -73,13 +73,13 @@ windows. _Load_ allows you to make your own perspective by providing an
 FXML file containing the views but be aware that this might ruin the
 ability to detach components.
 
-=== View
+==== View
 
 image::View.png[]
 
 This submenu allows you to adjust font and button size in the ProB2 JavaFX UI.
 
-=== Help
+==== Help
 
 image::Help.png[]
 

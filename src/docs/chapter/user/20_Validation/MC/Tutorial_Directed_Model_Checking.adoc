@@ -1,5 +1,3 @@
-
-
 [[tutorial-directed-model-checking]]
 == Tutorial Directed Model Checking
 

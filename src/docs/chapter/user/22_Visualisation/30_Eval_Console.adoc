@@ -1,5 +1,3 @@
-
-
 [[eval-console]]
 == Eval Console
 

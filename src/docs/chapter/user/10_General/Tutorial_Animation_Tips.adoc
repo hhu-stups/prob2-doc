@@ -1,5 +1,3 @@
-
-
 [[tutorial-animation-tips]]
 == Tutorial Animation Tips
 

@@ -1,7 +1,4 @@
 
-[[visualisation]]
-= Visualisation
-
 [[graphical-viewer]]
 == Graphical Viewer
 

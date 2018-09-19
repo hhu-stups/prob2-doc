@@ -1,6 +1,3 @@
-[[general]]
-= General
-
 [[installation]]
 == Installation
 
@@ -61,9 +58,9 @@ directory should look something like this:
 `examples            lib     prob` +
 `StartProB.sh        tcl`
 
-On Windows, you will also have a subfolder called ``Microsoft.VC80.CRT''
+On Windows, you will also have a subfolder called "Microsoft.VC80.CRT"
 containing the DLLs for the C runtime. Also, the binary is called
-``ProBWin'' and not ``prob''.
+"ProBWin" and not "prob".
 
 * Be sure that you have Tcl/Tk installed (see, e.g.,
 http://www.tcl.tk/software/tcltk/). With the latest version of ProB, you
@@ -71,26 +68,28 @@ have to install Tcl/Tk version 8.5.
 For example, you can find a correct version of Tcl/Tk at
 http://downloads.activestate.com/ActiveTcl/releases/8.5.18.0/.
 * To load your own B machines you also need Java 7 or newer runtime or better JDK.
-* Note: you can skip this step if you do not wish to use the
-visualization commands. Install the ``dot'' program and ``dotty'' viewer
+
+NOTE: you can skip this step if you do not wish to use the
+visualization commands. Install the "dot" program and "dotty" viewer
 from AT&T's Graphviz package (http://www.graphviz.org/ or
 http://www.research.att.com/sw/tools/graphviz/).
 By default, ProB will
-open the ``dotty'' program to visualize the graphs, but postscript
+open the "dotty" program to visualize the graphs, but postscript
 viewers (such as gv) are also supported. So, you do not need to install
 dotty if you don't want to; but it is probably easiest to install the
 entire Graphviz package.
+
 * Change to the ProB directory and then start up prob. In Windows you
 can simply double-click on the ProBWin Application. On Mac OS X you may
 have to type 'limit data unlimited' (in tcsh) or 'ulimit -d unlimited'
 (in bash) before launching ProB using the Terminal Application. The
 distribution contains a script StartProB.sh which does this for you
-(note you may have to do chmod u+x StartProB.sh before launching it from
+(note you may have to do `chmod u+x StartProB.sh` before launching it from
 the command-line).
 * Now you should be able to open some of the B Machines in the Machines
 directory. You should then be able to initialize the machines and
 animate them. Have a look at the supplied Machines in the examples
-directory. Have fun ! Please report bugs!
+directory. Have fun! Please report bugs!
 
 [[checklisttroubleshooting]]
 ==== Checklist/Troubleshooting
@@ -106,12 +105,12 @@ versions of ProB.
 
 * GraphViz: in order to make use of the graphical visualization
 features, you need to install a version of GraphViz suitable for your
-architecture. Then use the command ``Graphical Viewer Preferences...''
+architecture. Then use the command "Graphical Viewer Preferences..."
 in the Preferences Menu to set or check the following preferences:
 ** Path/Command for dot program
 ** Path/Command for dot viewer (e.g., dotty)
 
-Note: you can use the ``Pick'' button to locate the dot program and the
+NOTE: you can use the "Pick" button to locate the dot program and the
 dot viewer. See more information about the
 link:/Graphical_Viewer[Graphical Viewer here].
 
@@ -120,4 +119,4 @@ link:/Graphical_Viewer[Graphical Viewer here].
 
 The following movie shows how to install the ProB Rodin Plugin.
 
-http://www.stups.uni-duesseldorf.de/ProB/Install.swf[`http://www.stups.uni-duesseldorf.de/ProB/Install.swf`]
+http://www.stups.uni-duesseldorf.de/ProB/Install.swf[http://www.stups.uni-duesseldorf.de/ProB/Install.swf]

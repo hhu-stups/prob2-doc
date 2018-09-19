@@ -1,5 +1,3 @@
-
-
 [[probpath]]
 == PROBPATH
 

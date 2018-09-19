@@ -1,4 +1,3 @@
-
 [[tutorial-various-optimizations]]
 == Tutorial Various Optimizations
 

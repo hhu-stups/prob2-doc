@@ -1,4 +1,5 @@
-= Troubleshooting
+[[troubleshooting]]
+== Troubleshooting
 
 * Avoid installing ProB in a path with spaces or other special
 characters in them. The same holds for B machines you wish to analyze

@@ -1,5 +1,3 @@
-
-
 [[test-case-generation]]
 == Test Case Generation
 

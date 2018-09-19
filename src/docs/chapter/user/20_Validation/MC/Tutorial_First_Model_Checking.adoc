@@ -1,5 +1,3 @@
-
-
 [[tutorial-first-model-checking]]
 == Tutorial First Model Checking
 

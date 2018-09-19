@@ -1,5 +1,3 @@
-
-
 [[event-b-theories]]
 === Event-B Theories
 

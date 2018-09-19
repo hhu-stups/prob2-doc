@@ -1,5 +1,3 @@
-
-
 [[prob-validation-methods]]
 = ProB Validation Methods
 

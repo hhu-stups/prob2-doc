@@ -1,7 +1,3 @@
-
-[[b-language]]
-= B Language
-
 [[summary-of-b-syntax]]
 == Summary of B Syntax
 

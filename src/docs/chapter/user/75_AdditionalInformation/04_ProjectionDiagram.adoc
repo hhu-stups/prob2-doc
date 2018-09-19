@@ -1,11 +1,11 @@
 [[projection-diagram]]
-= Mastering the Visualization of Larger State Spaces with Projection Diagrams
+== Mastering the Visualization of Larger State Spaces with Projection Diagrams
 
 NOTE: This page provides additional resources for the paper we have
 submitted for the http://icfem2015.lri.fr/[ICFEM 2015].
 
 [[resources-and-prob-live-visualizations]]
-== Resources and ProB Live Visualizations
+=== Resources and ProB Live Visualizations
 
 We have prepared two interactive live visualizations. One of the Event-B
 model of the landing gear system (the full description of the case study
@@ -28,7 +28,7 @@ http://stups.hhu.de/w/Special:Publication/LadenbergerLeuschel_ProjectDiagram[Tec
 Report]
 
 [[creating-a-domain-specific-projection]]
-=== Creating a Domain Specific Projection
+==== Creating a Domain Specific Projection
 
 * Open the ModelCheckingUI using the "Open View" menu at the bottom
 right corner.

@@ -1,5 +1,3 @@
-
-
 [[constraint-based-checking]]
 == Constraint Based Checking
 

@@ -1,5 +1,3 @@
-
-
 [[deferred-sets]]
 == Deferred Sets
 
