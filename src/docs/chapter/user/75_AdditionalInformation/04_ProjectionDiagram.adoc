@@ -1,0 +1,44 @@
+[[projection-diagram]]
+= Mastering the Visualization of Larger State Spaces with Projection Diagrams
+
+NOTE: This page provides additional resources for the paper we have
+submitted for the http://icfem2015.lri.fr/[ICFEM 2015].
+
+[[resources-and-prob-live-visualizations]]
+== Resources and ProB Live Visualizations
+
+We have prepared two interactive live visualizations. One of the Event-B
+model of the landing gear system (the full description of the case study
+can be found https://www3.hhu.de/stups/prob/images/d/df/Landing_system.pdf[here]) and one of the Event-B
+model of a simple lift system.
+
+The visualizations can either be controlled by interacting with the
+displayed elements (i.e., clicking the handle) or using the Events view
+which can be opened using the "Open View" menu at the bottom right
+corner.
+
+1.  http://wyvern.cs.uni-duesseldorf.de/bms/landing.html[Visualization
+of the landing gear system]
+2.  http://wyvern.cs.uni-duesseldorf.de/bms/lift.html[Visualization of
+the simple lift]
+
+The Event-B model of the simple lift system be can be downloaded https://www3.hhu.de/stups/prob/index.php/File:SimpleLift.zip[here].
+
+http://stups.hhu.de/w/Special:Publication/LadenbergerLeuschel_ProjectDiagram[Technical
+Report]
+
+[[creating-a-domain-specific-projection]]
+=== Creating a Domain Specific Projection
+
+* Open the ModelCheckingUI using the "Open View" menu at the bottom
+right corner.
+* Click on the "MC" icon and run the model checker in order to explore
+the full state space of the model.
+* After finishing, you can open the Element Projection view using the
+"Open Diagram" menu at the bottom right corner.
+* Select the lift or landing visualization respectively and select some
+elements for the projection.
+
+Please note: Due to a small bug, you can only create a projection for
+max. two selected graphical elements at the moment. We are already
+working on this bug.

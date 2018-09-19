@@ -1,0 +1,57 @@
+[[prob-validation-for-siemens-sas]]
+= ProB Validation for Siemens SAS
+
+== Situation
+
+During the course of the European FP7 project Deploy, Siemens deployed
+the ProB software to check if it was feasible to use ProB to
+automatically check B models. These models were already used in a
+production environment and related to the track topology and signal
+data. At that point in time, the properties in question took Siemens
+several weeks to manually check (about a man month of effort).
+
+== Challenge
+
+The challenge facing the STUPS team (Softwaretechnik und
+Programmiersprachen) at the University of Düsseldorf is described in the
+Deploy Deliverable D41. Siemens sent the STUPS team the models for the
+San Juan case study on 8 July 2008. There were 23,000 lines of B spread
+over 79 files, two of which were to be analysed: a simpler model and a
+hard model. It then took STUPS a while to understand the models and get
+them through the new parser, the development of which was being
+finalised at the time.
+
+== Solution
+
+ProB was able to analyse the simple model right away. One error in the
+assertions was discovered. Then ProB was improved so that the analysis
+of the difficult model was possible. The improvements that were made
+were not specific to the model in question, but were rather general
+improvements that benefited all ProB users. The results of the analysis
+were conclusive.
+
+On 8 December 2008 the STUPS team were finally able to animate and
+validate the complicated model. This revealed four errors. Note that the
+STUPS team were not told about the presence of errors in the models
+(they were not even hinted at by Siemens), and initially STUPS believed
+that there was still a bug in ProB. In fact, the errors were genuine and
+they were exactly the same errors that Siemens had uncovered themselves
+by manual inspection.
+
+== Results
+
+The results shows that ProB was a great success. Instead of taking
+several weeks to inspect the properties manually, ProB was able to check
+the properties in 4.15 seconds and the assertions in 1017.7 seconds
+(around 17 minutes) using ProB 1.3.0. Performance tuning for the ProB
+software has continued. The assertion checking for the above model now
+takes less than one minute using the current version of ProB.
+
+== Papers
+
+More details can be found in these papers:
+
+* http://www.stups.uni-duesseldorf.de/w/Special:Publication/LeFaFrPl2011[FAC'2011]
+* http://www.stups.uni-duesseldorf.de/w/Special:Publication/LeFaFrPl09_248[FM'2009]
+* http://www.stups.uni-duesseldorf.de/w/Special:Publication/abs-1210-6815[Formally
+Checking Large Data Sets in the Railways, 2012]

@@ -1,8 +1,6 @@
 [[bmotion-studio-download]]
 = BMotion Studio Download
 
-:category: BMotion_Studio
-
 Current Release
 
 v0.3.2

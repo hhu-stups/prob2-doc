@@ -1,0 +1,36 @@
+= Complicated Problem for Siemans
+
+Below we show the graphical visualisation of a complicated property by
+ProB's graphical formula viewer. The graphics are also available as
+https://www3.hhu.de/stups/prob/images/4/44/GraphicalViewerSiemensSaoPauloL9.pdf[pdf]
+The property is the following one:
+
+....
+!iti_ztr.(iti_ztr: t_iti_ztr_pas =>
+  !(cv_ztr1,cv_ztr2).(cv_ztr1: t_cv_ztr & cv_ztr2: t_cv_ztr &
+    cv_ztr1: {aa,bb | aa: t_iti_ztr_pas & bb: t_cv_ztr &
+      bb: inv_iti_ztr_cv_liste_i[inv_iti_ztr_cv_deb(aa)..inv_iti_ztr_cv_fin(aa)]}[{iti_ztr}] &
+    cv_ztr2: {aa,bb | aa: t_iti_ztr_pas & bb: t_cv_ztr &
+      bb: inv_iti_ztr_cv_liste_i[inv_iti_ztr_cv_deb(aa)..inv_iti_ztr_cv_fin(aa)]}[{iti_ztr}] &
+    not(cv_ztr1 = cv_ztr2)
+   =>
+    inv_ztr_cv_pas_i(inv_iti_ztr_pas_i(iti_ztr)|->cv_ztr1)
+                      |->inv_ztr_cv_pas_i(inv_iti_ztr_pas_i(iti_ztr)|->cv_ztr2)
+      :
+    dom(inv_cv_sens_orientation)))
+....
+
+It stems from a Siemens model for the automatic controller for Line 9 of
+Sao Paulo. The property defied validation using Atelier B or alternate
+methods.
+
+Indeed, the property is related to routes from one zone controller to
+another one: each route is decomposed into virtual blocks, each virtual
+block is linked with another virtual block by a function, and each
+couple of blocks has a direction. This property checks the coherence of
+all these items. This property involves several large functions, with
+images of images of functions, and has a double universal quantifier.
+All this lead to a proof tree and a goal size that is beyond the
+capabilities of Atelier B.
+
+image::GraphicalViewerSiemensSaoPauloL9.png[]

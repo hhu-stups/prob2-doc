@@ -14,7 +14,7 @@ of the page.
 
 http://wyvern.cs.uni-duesseldorf.de:8443/index.html[*Click here to get to the ProB Logic Calculator*]
 
-The above calculator has a time-out of 2.5 seconds, and `MAXINT` is set
+The calculator above has a time-out of 3 seconds, and `MAXINT` is set
 to 127 and `MININT` to -128. An alternative version of the calculator is
 available at the
 http://www.formalmind.com/en/blog/prob-logic-calculator[Formal Mind
@@ -71,7 +71,7 @@ NOTE: Statements (aka substitutions) and B machine construction
 elements cannot be used above; you must enter either a predicate or an
 expression.
 
-The term logic calculator is taken over from
+The term logic calculator we use is taken from
 http://research.microsoft.com/en-us/um/people/lamport/tla/logic-calculators.html[Leslie
 Lamport]. An early implementation of a logic calculator is the
 http://en.wikipedia.org/wiki/William_Stanley_Jevons#Logic[Logic Piano].
@@ -237,6 +237,10 @@ You can of course adapt the preferences (TIME_OUT, MININT, MAXINT, ...)
 according to your needs; the
 <<using-the-command-line-version-of-prob,user manual>> provides more
 details.
+
+....
+rlwrap ./probcli -repl -p BOOL_AS_PREDICATE TRUE -p CLPFD TRUE -p MAXINT 127 -p MININT -128
+....
 
 Probably, you may want to generate full-fledged B machines as input to
 `probcli`. This allows you to introduce enumerated and deferred sets;

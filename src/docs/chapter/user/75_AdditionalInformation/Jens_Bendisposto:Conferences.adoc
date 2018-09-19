@@ -1,0 +1,69 @@
+= Conferences
+
+* *VMCAI* International Conference on Verification, Model Checking,
+and Abstract Interpretation http://vmcai13.di.univr.it/Home.html
+* *CAV* International Conference on Computer Aided Verification
+http://cav12.cs.illinois.edu/cfp.html
+* *TCAS* International Conference on Tools and Algorithms for the
+Construction and of Analysis Systems http://www.etaps.org/2012/tacas
+http://www.etaps.org/2012/call-for-papers
+* *FMCAD* International Conference on Formal Methods in
+Computer-Aided Design http://www.cs.utexas.edu/users/hunt/FMCAD/
+* *FTSCS* International Workshop on Formal Techniques for
+Safety-Critical Systems
+http://www.ftscs12.org/index.php?n=Conference.CallForPapers
+* *ICST* International Conference on Software Testing,
+Verification, and Validation
+http://www.icst.lu/site/icst2013/call-for-papers
+* *INFINITY* International Workshop on Verification of Infinite-State
+Systems http://www.it.uu.se/workshop/infinity2012/
+* *DATE* Design Automation and Test in Europe
+http://www.date-conference.com/
+* *MoTiP* Workshop on Model-based Testing in Practice
+http://www.ourglocal.com/event/?eventid=19009
+* *ACES-MB* Workshop on Model Based Architecting and Construction
+of Embedded Systems
+http://www.artist-embedded.org/artist/Overview,2130.html
+* *SIGSOFT* International Symposium on the Foundations of Software
+Engineering http://sel.ifmo.ru/esec-fse2013/
+* *ISoLA* International Symposium on Leveraging Applications of
+Formal Methods, Verification, and Validation
+http://www.cs.uni-potsdam.de/isola/isola2012/pdf/isola-cfp2012.pdf
+* *ASE* International Conference on Automated Software Engineering
+http://ase2012.paluno.uni-due.de/calls/
+* *FASE* International Conference on Fundamental Approaches to
+Software Engineering http://www.etaps.org/2012/fase
+http://www.etaps.org/2012/call-for-papers
+* *PLDI* Conference on Programming Language Design and
+Implementation http://pldi12.cs.purdue.edu/content/calls-征稿启事
+* *ICSE* International Conference on Software Engineering
+http://2013.icse-conferences.org/submissions
+* *SAS* Static Analysis Symposium
+http://www.sas2012.ens.fr/#submission
+* *FM* International Symposium on Formal Methods
+http://www.fmeurope.org/?p=443
+* *SPIN* International SPIN Workshop on Model Checking of Software
+http://qav.cs.ox.ac.uk/spin2012/
+* *ATVA* International Symposium on Automated Technology for
+Verification and Analysis http://www.iarcs.org.in/atva2012/
+* *AVOCS* International Workshop on Automated Verification of
+Critical Systems http://www.swt-bamberg.de/AVoCS2012/callforpapers.php
+* *PDMC* International Workshop on Parallel and Distributed Methods
+in Verification http://www.pdmc.cz/PDMC12/
+* *BMC* International Workshop on Bounded Model Checking
+http://www.illc.uva.nl/LogicList/newsitem.php?id=1835
+* *MoChArt* Model Checking and Artificial Intelligence
+http://www.aaai.org/Workshops/ws13.php
+* *SBFM* Workshop on Systems Biology and Formal Methods
+http://cs.nyu.edu/~pcousot/SBFM2012/index.html
+* *MoCSeRS* Workshop on model checking secure and reliable systems
+http://www.comp.nus.edu.sg/~pat/MoCSeRS2010/submission.html
+* *ICFEM* International Conference on Formal Engineering Methods
+http://www.jaist.ac.jp/icfem2012/callforpapers/index.html
+* *DSN* International Conference on Dependable Systems and Networks
+http://2013.dsn.org/call-for-contributions/
+* *MBT* Model Based Testing, Satellite workshop of ETAPS European
+joint conference on Theory And Practice of Software
+http://mbt-workshop.org/
+* *SoftMC* Workshop on Software Model Checking
+http://www.cav2005.inf.ed.ac.uk/2005_call_for_papers.html
