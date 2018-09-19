@@ -5,38 +5,24 @@ ProB in general requires all <<deferred-sets,deferred sets>> to be
 given a finite cardinality. If no cardinality is specified, a default
 size will be used. Also, unless finite bounds can be inferred by the
 ProB constraint solver, mathematical integers will only be enumerated
-within `MININT` to `MAXINT` (there is now some support for checking
-whether such an enumeration did occur, in particular when using the
-commands in the "Analyse Predicate" sub-menu).
+within `MININT` to `MAXINT` (and ProB will generate enumeration
+warnings in case no solution is found).
 
 Other general limitations are:
 
-* `closure`. The transitive and reflexive closure operator of classical
-B, named `closure`, does not follow exactly the definition from the
-B-Book by Abrial. AtelierB also does not support the operator as defined
-in the B-Book (as this version cannot be applied in practice). For the
-reflexive component of `closure`, ProB will compute the elements in the
-domain and range of the relation (i.e., for ProB we have
-`closure(r) = closure1(r) \/ id(dom(r) \/ ran(r)))`. As an example,
-`closure({1|->2})` equals `{1|->1,2|->2,1|->2}` in ProB, but is infinite
-according to the B-Book : `{1|->2, 0|->0, 1|->1, -1|->-1, 2|->2,...}`.
-
-Note however, that the transitive closure operator `closure1` is fully
-supported, and hence one can translate an expression closure(e), where e
-is a binary relation over some domain d, into the expression
-`closure1(e) \/ id(d)`.
-
 * Trees and binary trees are specific to the AtelierB
-tool and are not supported (the `STRING` type is now supported).
+tool and are only partially supported (the `STRING` type is now supported).
 
 * Definitions (from the `DEFINITIONS` clause) with
 arguments are supported, but in contrast to AtelierB they are parsed
 independently and have to be either an expression, a predicate, or a
 substitution; definitions which are predicates or substitutions must be
-declared before first use. Also: the arguments of `DEFINITIONS` have to
+declared before first use.
+Also: the arguments of `DEFINITIONS` have to
 be expressions. Finally, when replacing DEFINITIONS the associativity is
 not changed. E.g., with `PLUS(x,y) == x+y`, the expression
 `PLUS(2,3)*10` will evaluate to 50 (and not to 32 as with Atelier-B).
+Also, ProB will generate a warning when variable capture may occur.
 
 * There are also limitations with refinements, as discussed below.
 
@@ -66,5 +52,5 @@ rewrite the preconditions of operations (and, if necessary, reformulate
 them in terms of the variables of the refinement machine). Also, the
 refinement checker does yet check the gluing invariant.
 
-Note however, that for Rodin Event-B models we now support multi-level
+Note however, that for Rodin Event-B models, ProB fully supports multi-level
 animation and validation.

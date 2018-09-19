@@ -1,5 +1,5 @@
 [[consistency-checking]]
-== Consistency Checking
+== Model Checking Consistency
 
 [[checking-consistency-via-model-checking]]
 === Checking Consistency via Model Checking

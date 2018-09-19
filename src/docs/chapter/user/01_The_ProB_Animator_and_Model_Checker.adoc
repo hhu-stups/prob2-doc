@@ -29,12 +29,20 @@ ProB can now also be used as a
 
 ProB is being used within Siemens, Alstom, Thales and several other
 companies for http://www.data-validation.fr[data validation] of
-complicated properties for safety critical systems. For commercial
+complicated properties for safety critical systems.
+ProB is certified T2 SIL4 according to the Cenelec EN 50128 standard for use at Thales.
+In https://www.youtube.com/watch?v=FjKnugbmrP4[a video from the Deutsche Bahn] you can see ProB animating a formal B model of the ETCS hybrid-level 3 principles in real-time, controlling two trains.
+For commercial
 support contact the spin-off company http://www.formalmind.com[Formal
 Mind] or http://www.stups.uni-duesseldorf.de/~leuschel/[Michael
 Leuschel].
 
-|*5/10/2017* <<downloads,ProB 1.7.1>> is available. Highlights:
+|*1/10/2018* <<downloads,ProB 1.8.2>> is available. Highlights: improved error feedback, support Jupyter kernel, first support for Alloy models.
+
+*20/3/2018* <<downloads,ProB 1.8.0>> is available. Highlights:
+terminal colour support, performance improvements, improved symmetry breaking.
+
+*5/10/2017* <<downloads,ProB 1.7.1>> is available. Highlights:
 performance, Z support, export history to HTML.
 
 *11/7/2017* <<downloads,ProB 1.7.0>> is available. Highlights:
