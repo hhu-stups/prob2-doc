@@ -21,9 +21,9 @@ integers and orderings.
 [[installation-alloy]]
 === Installation
 
-Alloy2B is included with the lastest nightly builds of ProB.
+Alloy2B is included as of version 1.8.2 of ProB.
 
-You can build it yourself:
+You can build Alloy2B yourself:
 
 * Clone or download https://github.com/hhu-stups/alloy2b[Alloy2B project
 on Github].
@@ -68,30 +68,38 @@ image::ProBAlloyQueens.png[800px|center]
 Internally the Alloy model is translated to the following B model:
 
 ....
-/*@ generated */
-MACHINE queens
-SETS queen_
-CONSTANTS x_queen, x__queen, y_queen
-DEFINITIONS
-    show_ ==   1=1 ;
-    SET_PREF_MAXINT == 15 ; SET_PREF_MININT == -16
+MACHINE alloytranslation
+SETS /* deferred */
+  queen
+CONCRETE_CONSTANTS
+  x,
+  x_,
+  y
+/* PROMOTED OPERATIONS
+  run0 */
 PROPERTIES
-    (!(q_, q__).({q_} <: queen_ & {q__} <: (queen_ - {q_}) =>
-            (not((x_queen(q_) = x_queen(q__)))) & (not((y_queen(q_) = y_queen(q__))))
-            & (not(((x_queen(q_) + y_queen(q_)) = (x_queen(q__) + y_queen(q__)))))
-            & (not(((x__queen(q_) + y_queen(q_)) = (x__queen(q__) + y_queen(q__))))))) &
-    card(queen_) = 4 &
-    /* from signature declaration */ !(this_).({this_} <: queen_ =>
-            ((x_queen(this_) >= 1)) & ((y_queen(this_) >= 1))
-            & ((x_queen(this_) <= card(queen_)))
-            & ((y_queen(this_) <= card(queen_)))
-            & ((x__queen(this_) >= 1)) & ((x__queen(this_) <= card(queen_)))
-            & ((x__queen(this_) = ((card(queen_) + 1) - x_queen(this_))))) &
-    x_queen : queen_ --> INT &
-    x__queen : queen_ --> INT &
-    y_queen : queen_ --> INT
+    x : queen --> INTEGER
+  & x_ : queen --> INTEGER
+  & y : queen --> INTEGER
+  & !this.(this : queen => x(this) >= 1 & y(this) >= 1 & x(this) <= card(queen) & y(this) <= 
+  card(queen) & x_(this) >= 1 & x_(this) <= card(queen) & x_(this) = (card(queen) + 1) - x(this)
+  )
+  & card(queen) = 4
+  & !(q,q_).(q_ : queen - {q} => not(x(q) = x(q_)) & not(y(q) = y(q_)) & not(x(q) + y(q) = x(
+  q_) + y(q_)) & not(x_(q) + y(q) = x_(q_) + y(q_)))
+INITIALISATION
+    skip
 OPERATIONS
-    run_show = PRE show_ THEN skip END
+  run0 = 
+    PRE 
+        card(queen) = 4
+      & !(q,q_).(q_ : queen - {q} => not(x(q) = x(q_)) & not(y(q) = y(q_)) & not(x(q) + y(q)
+   = x(q_) + y(q_)) & not(x_(q) + y(q) = x_(q_) + y(q_)))
+    THEN
+      skip
+    END
+/* DEFINITIONS
+  PREDICATE show; */
 END
 ....
 
