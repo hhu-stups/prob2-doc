@@ -234,3 +234,151 @@ END
 The following shows AtelierB proving the above assertion:
 
 image::AlloyAtelierB.png[]
+
+
+[[Alloy-Syntax]]
+==== Alloy Syntax
+....
+Logical predicates:
+-------------------
+ P and Q       conjunction
+ P or Q        disjunction
+ P implies Q   implication
+ P iff Q       equivalence
+ not P         negation
+
+Alternative syntax:
+ P && Q        conjunction
+ P || Q        disjunction
+ P => Q        implication
+ P <=> Q       equivalence
+ ! P           negation
+
+Quantifiers:
+-------------
+ all DECL | P   universal quantification
+ some DECL | P  existential quantification
+ one DECL | P   existential quantification with exactly one solution
+ lone DECL | P  quantification with one or zero solutions
+ 
+where the DECL follow the following form: 
+ x : S          choose a singleton subset of S (like x : one S)
+ x : one S      choose a singleton subset of S
+ x : S          choose x to be any subset of S
+ x : some S     choose x to be any non-empty subset of S
+ x : lone S     choose x to be empty or a singleton subset of S
+ x : Rel        where Rel is a cartesian product / relation: see multiplicity declarations x in Rel
+ x,y... : S, v,w,... : T  means x:S and y : S and ... v:T and w:T and ...
+ disjoint x,y,... : S     means x : S and y : S and ... and x,y,... are all pairwise distinct
+
+Set Expressions:
+----------------
+ univ           all objects
+ none           empty set
+ S + T          set union
+ S & T          set intersection
+ S - T          set difference
+ # S			cardinality of set
+
+Set Predicates:
+---------------
+ no S           set S is empty
+ S in T         R is subset of S
+ S = T          set equality
+ S != T         set inequality
+ some S         set S is not empty
+ one S          S is singleton set
+ lone S         S is empty or a singleton
+ {x:S | P}      set comprehension
+ {DECL | P}     set comprehension, DECL has same format as for quantifiers
+ let s : S | P 	identifier definition
+
+Relation Expressions:
+----------------------
+ R -> S         Cartesian product
+ R . S          relational join
+ S <: R         domain restriction of relation R for unary set S
+ R :> S         range restriction of relation R for unary set S
+ R ++ Q         override of relation R by relation Q
+ ~R             relational inverse
+ ^R             transitive closure of binary relation
+ *R             reflexive and transitive closure
+ 
+Multiplicity Declarations:
+---------------------------
+The following multiplicity annotations are supported for binary (sub)-relations:
+
+f in S -> T            f is any relation from S to T (subset of cartesian product)
+f in S -> lone T       f is a partial function from S to T
+f in S -> one T        f is a total function from S to T
+f in S -> some T       f is a total relation from S to T
+f in S one -> one T    f is a total bijection from S to T
+f in S lone -> lone T  f is a partial injection from S to T
+f in S lone -> one T   f is a total injection from S to T
+f in S some -> lone T  f is a partial surjection from S to T
+f in S some -> one T   f is a total surjection from S to T
+f in S some -> T       f is a surjective relation from S to T
+f in S some -> some T  f is a total surjective relation from S to T
+
+Ordered Signatures:
+-------------------
+A signature S can be defined to be ordered:
+ open util/ordering [S] as s
+
+ s/first	first element
+ s/last		last element
+ s/next[s2]	element after s2
+ s/nexts[s2]	all elements after s2
+ s/prev[s2]	element before s2
+ s/prevs[s2]	all elements before s2
+
+Sequences:
+----------
+
+s : seq S 	ordered and indexed sequence
+s.first		head element
+s.rest 		tail of the sequence
+s.idxOf [x] 	returns the first index of the occurence of x in s, returns the empty set if x does not occur in s
+s.insert[i,x]	returns a new sequence where x is inserted at index position i
+
+Arithmetic Expressions and Predicates:
+--------------------------------------
+You need to open util/integer:
+
+ plus[X,Y]       addition
+ minus[X,Y]      subtraction
+ mul[X,Y]        multiplication
+ div[X,Y]        division
+ rem[X,Y]        remainder
+ sum[S]          sum of integers of set S
+
+ X < Y           less
+ X = Y           integer equality
+ X != Y          integer inequality
+ X > Y           greater
+ X =< Y          less or equal
+ X >= Y          greater or equal
+
+Structuring:
+------------
+fact NAME { PRED }
+fact NAME (x1,...,xk : Set) { PRED }
+
+pred NAME { PRED }
+pred NAME (x1,...,xk : Set) { PRED }
+
+assert NAME { PRED }
+
+fun NAME : Type { EXPR }
+
+Commands:
+---------
+
+run NAME
+check NAME
+
+run NAME for x 				global scope of less or equal x
+run NAME for exactly x1 but x2 S 	global scope of x1 but less or equal x2 S
+run NAME for x1 S1,...,xk Sk 		individual scopes for signatures S1,..,Sk
+run NAME for x Int 			specify the integer bitwidth (integer overflows might occur)
+....
