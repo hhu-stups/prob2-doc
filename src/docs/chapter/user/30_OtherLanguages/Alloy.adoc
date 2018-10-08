@@ -286,7 +286,7 @@ Set Expressions:
  S + T          set union
  S & T          set intersection
  S - T          set difference
- # S			cardinality of set
+ # S      cardinality of set
 
 Set Predicates:
 ---------------
@@ -299,7 +299,7 @@ Set Predicates:
  lone S         S is empty or a singleton
  {x:S | P}      set comprehension
  {DECL | P}     set comprehension, DECL has same format as for quantifiers
- let s : S | P 	identifier definition
+ let s : S | P  identifier definition
 
 Relation Expressions:
 ----------------------
@@ -316,38 +316,66 @@ Multiplicity Declarations:
 ---------------------------
 The following multiplicity annotations are supported for binary (sub)-relations:
 
-f in S -> T            f is any relation from S to T (subset of cartesian product)
-f in S -> lone T       f is a partial function from S to T
-f in S -> one T        f is a total function from S to T
-f in S -> some T       f is a total relation from S to T
-f in S one -> one T    f is a total bijection from S to T
-f in S lone -> lone T  f is a partial injection from S to T
-f in S lone -> one T   f is a total injection from S to T
-f in S some -> lone T  f is a partial surjection from S to T
-f in S some -> one T   f is a total surjection from S to T
-f in S some -> T       f is a surjective relation from S to T
-f in S some -> some T  f is a total surjective relation from S to T
+ f in S -> T            f is any relation from S to T (subset of cartesian product)
+ f in S -> lone T       f is a partial function from S to T
+ f in S -> one T        f is a total function from S to T
+ f in S -> some T       f is a total relation from S to T
+ f in S one -> one T    f is a total bijection from S to T
+ f in S lone -> lone T  f is a partial injection from S to T
+ f in S lone -> one T   f is a total injection from S to T
+ f in S some -> lone T  f is a partial surjection from S to T
+ f in S some -> one T   f is a total surjection from S to T
+ f in S some -> T       f is a surjective relation from S to T
+ f in S some -> some T  f is a total surjective relation from S to T
 
 Ordered Signatures:
 -------------------
 A signature S can be defined to be ordered:
  open util/ordering [S] as s
 
- s/first	first element
- s/last		last element
- s/next[s2]	element after s2
- s/nexts[s2]	all elements after s2
- s/prev[s2]	element before s2
- s/prevs[s2]	all elements before s2
-
+ s/first            first element
+ s/last             last element
+ s/max              returns the largest element in s or the empty set
+ s/min              returns the smallest element in s or the empty set
+ s/next[s2]         element after s2
+ s/nexts[s2]        all elements after s2
+ s/prev[s2]         element before s2
+ s/prevs[s2]        all elements before s2
+ s/smaller[e1,e2]   return the element with the smaller index
+ s/larger[e1,e2]    returns the element with the larger index
+ s/lt[e1,e2]        true if index(e1) < index(e2)
+ s/lte[s2]          true if index(e1) =< index(e2)
+ s/gt[s2]           true if index(e1) > index(e2)
+ s/gte[s2]          true if index(e1) >= index(e2)
+ 
 Sequences:
 ----------
+The longest allowed sequence length (maxseq) is set in the scope of a run or check command using the 'seq' keyword.
+Otherwise, a default value is used.
+The elements of a sequence s are enumerated from 0 to #s-1.
 
-s : seq S 	ordered and indexed sequence
-s.first		head element
-s.rest 		tail of the sequence
-s.idxOf [x] 	returns the first index of the occurence of x in s, returns the empty set if x does not occur in s
-s.insert[i,x]	returns a new sequence where x is inserted at index position i
+ s : seq S       ordered and indexed sequence
+ #s              the cardinality of s
+ s.isEmpty       true if s is empty
+ s.hasDups       true if s contains duplicate elements
+ s.first         head element
+ s.last          last element
+ s.butlast       s without its last element
+ s.rest          tail of the sequence
+ s.inds          the set {0,..,#s-1} if s is not empty, otherwise the empty set
+ s.lastIdx       #s-1 if s is not empty, otherwise the empty set
+ s.afterLastIdx  #s if s is smaller than maxseq, otherwise the empty set
+ s.idxOf [x]     the first index of the occurence of x in s, the empty set if x does not occur in s
+ s.add[x]        insert x at index position i
+ s.indsOf[i]     the set of indices where x occurs in s, the empty set if x does not occur in s
+ s.delete[i]     delete the element at index i
+ s.lastIdxOf[x]  the last index of the occurence of x in s, the empty set if x does not occur in s
+ s.append[s2]    concatenate s and s2, truncate the result if it contains more than maxseq elements
+ s.insert[i,x]   insert x at index position i, remove the last element if #s = maxseq
+ s.setAt[i,x]    replace the value at index position i with x
+ s.subseq[i,j]   the subsequence of s from indices i to j inclusively
+
+[see http://alloy.lcs.mit.edu/alloy/documentation/quickguide/seq.html]
 
 Arithmetic Expressions and Predicates:
 --------------------------------------
@@ -385,8 +413,8 @@ Commands:
 run NAME
 check NAME
 
-run NAME for x 				global scope of less or equal x
-run NAME for exactly x1 but x2 S 	global scope of x1 but less or equal x2 S
-run NAME for x1 S1,...,xk Sk 		individual scopes for signatures S1,..,Sk
-run NAME for x Int 			specify the integer bitwidth (integer overflows might occur)
-....
+run NAME for x                      global scope of less or equal x
+run NAME for exactly x1 but x2 S    global scope of x1 but less or equal x2 S
+run NAME for x1 S1,...,xk Sk        individual scopes for signatures S1,..,Sk
+run NAME for x Int                  specify the integer bitwidth (integer overflows might occur)
+run NAME for x seq                  specify the longest allowed sequence length
