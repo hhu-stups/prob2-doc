@@ -297,4 +297,44 @@ c:dom(Sudoku9(r)) & i:1.. fullsize & i = Sudoku9(r)(c)}
 )
 ----
 
+=== Other Features
+
+One can define actions for right clicks and mouse clicks and drags:
+----
+ANIMATION_RIGHT_CLICK(col,row) == SUBSTITUTION
+
+ANIMATION_CLICK(fromcol,fromrow,tocol,torow) == SUBST
+----
+
+The allowed substitutions are currently limited:
+* ANY, LET: to introduce wild cards; predicates will not (yet) be evaluated !!
+* IF-ELSIF-ELSE: conditions have to be evaluable using the parameters only
+* CHOICE: to provide multiple right click actions
+
+One can set the font being used using ProB preferences.
+The following leads to a Monospaced font being used, making
+lining up of columns easier:
+
+-----
+  SET_PREF_TK_CUSTOM_STATE_VIEW_FONT_NAME == "Monaco";
+  SET_PREF_TK_CUSTOM_STATE_VIEW_FONT_SIZE == 9;
+-----
+
+The following preferneces can be used to control padding around cells:
+-----
+  SET_PREF_TK_CUSTOM_STATE_VIEW_STRING_PADDING == Nr
+  SET_PREF_TK_CUSTOM_STATE_VIEW_PADDING == Nr
+-----
+  
+The following preference can be used to disable the custom graphical visualization view:
+-----
+  SET_PREF_TK_CUSTOM_STATE_VIEW_VISIBLE == FALSE
+-----
+
+One can control justification of animation strings using either of the two following DEFINITIONS:
+-----
+ANIMATION_STR_JUSTIFY_LEFT == TRUE
+ANIMATION_STR_JUSTIFY_RIGHT == TRUE
+-----
+
 === References
