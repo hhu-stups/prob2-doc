@@ -5,7 +5,21 @@
 Full ProB release history until release 1.8.0:
 
 ....
-1.8.1-beta
+1.10.2018: 1.8.2
+ - allow deterministic trace replay to reduce memory consumption
+ - fix potential variable clashes in nested B while loops with operation calls
+ - improvements in kernel (improve symbolic treatment of set difference, avoid enumeration warnings
+   for large but finite sets, ...)
+ - improved error location detection for some error messages; provide possible alternatives for
+   errors involving identifiers
+ - support for loading Alloy models
+ - improve pretty printing values in TLA+ mode
+ - changes for external functions: DEC_STRING_TO_INT raises WD errors to avoid spurious error messages,
+   improve READ_CSV to skip over empty lines
+ - support /*@symbolic */ pragma for UNION
+ - conversion to Unicode for B symbols in ProB Tcl/Tk Edit menu
+
+1.8.1-rc4 (not officially released)
  - support PNG images for ANIMATION_FUNCTION and ANIMATION_IMG, also look for images relative to
    the file in wich the ANIMATION_IMG is declared.
    Add horizontal scrolling for very wide visualizations and allow to scale visualization.
@@ -13,7 +27,7 @@ Full ProB release history until release 1.8.0:
  - allow to choose dot layout engine via DOT_ENGINE preference
  - support Atelier-B's "ref" keyword in Event-B (.sys) models
  - better error messages for unknown identifiers (fuzzy matching and completion checking)
- - support Jupyter kernel
+ - support Jupyter kernel https://gitlab.cs.uni-duesseldorf.de/dgelessus/prob2-jupyter-kernel
  - executing operations by predicate can now also specify post-conditions (e.g., on non-deterministically
    assigned variables)
  - CUSTOM_GRAPH_EDGES and CUSTOM_GRAPH_NODES can provide shape information and a much wider range of Tk/dot colours.
@@ -21,7 +35,7 @@ Full ProB release history until release 1.8.0:
  - improved error location feedback for expressions involving (nested) DEFINITION calls
  - improvements in kernel (detection of infinite sets, symbolic treatments of set difference, ...)
  - reduce console output in -silent mode
- - add opitional ndjson error logging via NDJSON_ERROR_LOG_FILE preference
+ - add optional ndjson error logging via NDJSON_ERROR_LOG_FILE preference
 
 20.03.2018: 1.8.0
  - add terminal colour output in probcli, can be disabled by setting NO_COLOR environment variable
