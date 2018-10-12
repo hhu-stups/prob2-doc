@@ -320,7 +320,7 @@ lining up of columns easier:
   SET_PREF_TK_CUSTOM_STATE_VIEW_FONT_SIZE == 9;
 -----
 
-The following preferneces can be used to control padding around cells:
+The following preferences can be used to control padding around cells:
 -----
   SET_PREF_TK_CUSTOM_STATE_VIEW_STRING_PADDING == Nr
   SET_PREF_TK_CUSTOM_STATE_VIEW_PADDING == Nr
@@ -337,4 +337,3 @@ ANIMATION_STR_JUSTIFY_LEFT == TRUE
 ANIMATION_STR_JUSTIFY_RIGHT == TRUE
 -----
 
-=== References
