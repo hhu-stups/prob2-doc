@@ -39,35 +39,35 @@ Leuschel].
 
 |*1/10/2018* <<downloads,ProB 1.8.2>> is available. Highlights: improved error feedback, support Jupyter kernel, first support for Alloy models.
 
-|*20/3/2018* <<downloads,ProB 1.8.0>> is available. Highlights:
+*20/3/2018* <<downloads,ProB 1.8.0>> is available. Highlights:
 terminal colour support, performance improvements, improved symmetry breaking.
 
-|*5/10/2017* <<downloads,ProB 1.7.1>> is available. Highlights:
+*5/10/2017* <<downloads,ProB 1.7.1>> is available. Highlights:
 performance, Z support, export history to HTML.
 
-|*11/7/2017* <<downloads,ProB 1.7.0>> is available. Highlights:
+*11/7/2017* <<downloads,ProB 1.7.0>> is available. Highlights:
 improved <<generating-documents-with-prob-and-latex,Latex document
 generation>>, improved XML/CSV data import and export, RULE DSL language,
 improvements in solver.
 
-|*20/10/2016* <<downloads,ProB 1.6.1>> is available. Highlights:
+*20/10/2016* <<downloads,ProB 1.6.1>> is available. Highlights:
 <<generating-documents-with-prob-and-latex,Latex document
 generation>>, <<tips-b-idioms,LET and IF-THEN-ELSE for expressions and
 predicates>>.
 
-|*22/4/2016* <<downloads,ProB 1.6.0>> is available. Highlights:
+*22/4/2016* <<downloads,ProB 1.6.0>> is available. Highlights:
 <<tutorial-directed-model-checking,directed model checking>>,
 <<using-prob-with-z3,Z3 as backend>>, B line comments and unicode
 symbols.
 
-|*19/2/2015* <<prior-versions-of-prob,ProB 1.5.0>> is available.
+*19/2/2015* <<prior-versions-of-prob,ProB 1.5.0>> is available.
 <<state-space-coverage-analyses,MC/DC coverage>>, improved
 <<tlc,TLC interface>>.
 
-|*30/03/2012* <<prob-logic-calulator,ProB Logic Calculator>>
+*30/03/2012* <<prob-logic-calulator,ProB Logic Calculator>>
 available.
 
-|<<release-history, More in the Release History section>>
+<<release-history, More in the Release History section>>
 
 |=======================================================================
 
