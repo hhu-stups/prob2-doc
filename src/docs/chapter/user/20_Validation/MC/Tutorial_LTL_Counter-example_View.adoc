@@ -26,16 +26,16 @@ satisfies the LTL property.
 
 The LTL model checker of ProB provides three types of counter-examples:
 
-1.  Finite path leading to a deadlock state (see Figure 1):
+* Finite path leading to a deadlock state (see Figure 1):
 
 image::Deadlock_path.png[]
 
-2.  Infinite path (see Figure 2), the infinite path in this case is
+* Infinite path (see Figure 2), the infinite path in this case is
 represented by means of a loop:
 
 image::LTLViewInfinitePath.png[]
 
-3.  Finite path (see Figure 3). (In this case an infinite path
+* Finite path (see Figure 3). (In this case an infinite path
 representing the respective counter-example has been shortened in order
 to attract the attention to the relevant part of the counter-example).
 
