@@ -1319,6 +1319,10 @@ Use the CSP File *File* to guide the B Machine ("CSP||B"). (This
 feature is included since version 1.3.5-beta7.)
 
 [[preferences-for-command-line]]
+=== Environment Variables
+
+Set NO_COLOR environment variable to disable terminal colors.
+
 === Preferences
 
 You can use these preferences within the command:
