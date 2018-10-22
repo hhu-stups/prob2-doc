@@ -17,7 +17,7 @@ model checking), and is easy to interate with other programming
 languages (so that the GUI does not have to be developed in Prolog).
 
 [[but-why-prolog]]
-== But why prolog?
+== But why Prolog?
 
 * Prolog is a convenient language in which to express the semantics of
 other languages.
