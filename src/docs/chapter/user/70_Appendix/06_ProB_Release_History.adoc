@@ -1,9 +1,17 @@
 [[release-history]]
 == ProB Release History
 
-Full ProB release history until release 1.8.0:
+Full ProB release history until release 1.8.3:
 
-....
+1.8.3-beta
+ - size, ^, ->, <- do some well-definedness checks if TRY_FIND_ABORT is TRUE
+ - operations view shows non-deterministically set variables also for
+   subsidiary called operations
+ - improve setting JAVA_PATH preference on Macs
+ - performance improvements in kernel: intersection, STRING_JOIN, ...
+ - new external function: BITS
+ - allow Unicode to be used in projection diagrams
+
 1.10.2018: 1.8.2
  - allow deterministic trace replay to reduce memory consumption
  - fix potential variable clashes in nested B while loops with operation calls
