@@ -370,5 +370,4 @@ in the future to something more meaningful, e.g., loader.
 [[java-api-additional-resources]]
 === Additional Resources
 
-Further information can be found in the link:/Developer_Manual[developer
-manual].
+Further information can be found in the ProB Developer_Manual.
