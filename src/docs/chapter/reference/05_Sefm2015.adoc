@@ -1,8 +1,7 @@
 [[sefm2015]]
 == Benchmarks for the ProB (Dis)prover
 
-We benchmarked the ProB disprove for an article currently under
-consideration for SEFM 2015.
+We benchmarked the ProB disprover for an article for SEFM 2015.
 
 === Raw Data
 

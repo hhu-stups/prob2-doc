@@ -1,8 +1,7 @@
 [[projection-diagram]]
 == Mastering the Visualization of Larger State Spaces with Projection Diagrams
 
-NOTE: This page provides additional resources for the paper we have
-submitted for the http://icfem2015.lri.fr/[ICFEM 2015].
+NOTE: This page provides additional resources for the paper for http://icfem2015.lri.fr/[ICFEM 2015].
 
 [[resources-and-prob-live-visualizations]]
 === Resources and ProB Live Visualizations
