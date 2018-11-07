@@ -2,8 +2,8 @@
 == Tutorial Animation Tips
 
 Make sure you have the Lift.mch model from the first part of the
-tutorial: link:/Tutorial_First_Step[Starting ProB and first animation
-steps].
+tutorial: <<tutorial-first-step,Starting ProB and first animation
+steps>>.
 
 [[operation-with-many-solutions-for-the-parameters]]
 === Operation with many solutions for the parameters

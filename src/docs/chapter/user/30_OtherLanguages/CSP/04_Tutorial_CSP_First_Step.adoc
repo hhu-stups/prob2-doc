@@ -127,8 +127,8 @@ absence of divergence by checking the LTL formula `G not G [tau]`. It is
 also possible to perform various refinement checks and other assertion
 checks (see http://stups.hhu.de/ProB/w/Checking_CSP_Assertions[Checking
 CSP Assertions' tutorial]). The state space visualization features of
-ProB are also available for CSP; see link:/State_Space_Visualization[the
-corresponding part of the tutorial]. For example, if you select the
+ProB are also available for CSP; see <<state-space-visualization,the
+corresponding part of the tutorial>>. For example, if you select the
 command "Statespace" in the _Visualize_ menu (after having fully
 explored the system), the following graph will be displayed:
 

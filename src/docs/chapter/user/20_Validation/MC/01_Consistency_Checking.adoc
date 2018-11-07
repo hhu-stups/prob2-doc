@@ -105,8 +105,8 @@ of the pop-up window, unless a violation of the properties
 step, the user can execute the various commands of ProB, notably those
 of the _Analyse_ menu to display information on the state space (see
 <<animation,The Analyse Menu>>) and the
-visualization features (see link:/State_Space_Visualization[State Space
-Visualization]).
+visualization features (see <<state-space-visualization,State Space
+Visualization>>).
 
 By default, each model checking step starts from the open nodes of the
 last computed state space. This means that a change in the settings of
@@ -153,8 +153,8 @@ too big to be covered by ProB.
 Once the state space of the B specification has been computed by ProB,
 the commands from the _Analyse_ menu (see
 <<animation,The Analyse menu>>) and the
-visualization features (see link:/State_Space_Visualization[State Space
-Visualization]) are then very useful to examine the state space. The
+visualization features (see <<state-space-visualization,State Space
+Visualization>>) are then very useful to examine the state space. The
 features used to visualize a reduced state space are particularly useful
 as examining a huge state space may not yield to interesting
 observations due to excessive cluttering footnote:[M. Leuschel and

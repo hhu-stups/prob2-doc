@@ -2,8 +2,8 @@
 == Tutorial Setup Phases
 
 We assume that you have grasped the first steps of opening and animating
-a B machine as outlined in link:/Tutorial_First_Step[Tutorial First
-Step].
+a B machine as outlined in <<tutorial-first-step,Tutorial First
+Step>>.
 
 In this lesson, we examine more closely the various steps that ProB
 undertakes before a machine can be animated.

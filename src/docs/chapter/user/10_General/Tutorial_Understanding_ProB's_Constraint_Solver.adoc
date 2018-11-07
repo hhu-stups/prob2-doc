@@ -218,8 +218,8 @@ This will hopefully help us pinpoint the error in our properties. More
 recent versions of ProB also have a "Minimize" button in the lower
 left corner of the above dialog, in order to compute a minimal set of
 inconsistent properties. See
-link:/Tutorial_Troubleshooting_the_Setup[Tutorial Troubleshooting the
-Setup] for more ways to locate problems in the properties. After
+<<tutorial-troubleshooting-the-setup,Tutorial Troubleshooting the
+Setup>> for more ways to locate problems in the properties. After
 clicking "Done", we get the following; observe the orange timeout
 button in the "State Properties" pane:
 

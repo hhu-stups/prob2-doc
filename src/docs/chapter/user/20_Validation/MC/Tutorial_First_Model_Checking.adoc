@@ -2,8 +2,8 @@
 == Tutorial First Model Checking
 
 We assume that you have loaded the "Lift.mch" B machine from the ProB
-Examples folder as outlined in link:/Tutorial_First_Step[Tutorial First
-Step]. There we have also seen how to execute operations on a B machine
+Examples folder as outlined in <<tutorial-first-step,Tutorial First
+Step>>. There we have also seen how to execute operations on a B machine
 by double clicking on the items in the "Enabled Operations" pane.
 
 [[simple-model-checking]]

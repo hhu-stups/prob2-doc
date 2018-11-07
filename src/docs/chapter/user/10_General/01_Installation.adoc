@@ -27,7 +27,7 @@ http://wiki.event-b.org/index.php/IUML-B[iUML-B] or
 http://safecap.sourceforge.net/index.shtml[SafeCap].
 
 We are also developing a new Java-based API called
-link:/ProB_2.0_Tutorial[ProB 2.0], which is a high-level wrapper for the
+<<prob_2.0-tutorial,ProB 2.0>>, which is a high-level wrapper for the
 command-line version and <<using-the-command-line-version-of-prob, here>> is how to use it.
 
 [[which-version-should-i-use]]
