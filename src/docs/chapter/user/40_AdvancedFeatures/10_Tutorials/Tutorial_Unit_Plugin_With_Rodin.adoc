@@ -20,8 +20,8 @@ of ProB / Rodin.
 [[installing-physical-units-support-for-prob-for-rodin]]
 === Installing Physical Units Support for ProB for Rodin
 
-You can follow the link:/Tutorial_Rodin_First_Step[First Steps
-Instructions] or the
+You can follow the <<tutorial-rodin-first-step,First Steps
+Instructions>> or the
 http://www.stups.uni-duesseldorf.de/ProB/index.php5/Installation#Installation_Instruction_for_ProB_.28Rodin_Plugin.29[Screencast]
 to install ProB for Rodin.
 

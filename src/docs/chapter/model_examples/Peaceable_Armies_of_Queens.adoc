@@ -29,8 +29,8 @@ problem.
 
 Here is a B model for the checking problem. The problem is quite
 straightforward to encode in B. Many lines below (in the DEFINITIONS)
-just define the link:/Graphical_Visualization[animation function to
-graphically represent solutions].
+just define the <<graphical-visualization,animation function to
+graphically represent solutions>>.
 
 ....
 MACHINE JustQueens

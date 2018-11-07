@@ -3,8 +3,8 @@
 
 ProB offers various validation techniques:
 
-* link:/Consistency_Checking[Consistency Checking (Finding Invariant
-Violations using the Model Checker)]
+* <<consistency-checking,Consistency Checking (Finding Invariant
+Violations using the Model Checker)>>
 * <<constraint-based-checking,Constraint Based Checking>>
 * <<refinement-checking,Refinement Checking>>
 * <<ltl-model-checking,LTL Model Checking>>

@@ -90,8 +90,8 @@ checking time about 3.3 seconds).
 As of version 1.5.1 you can use the
 <<using-the-command-line-version-of-prob,`-mc_mode`>>
 flag to provide other options to control the model checking (see also
-link:/Tutorial_Directed_Model_Checking[the tutorial page on directed
-model checking options]).
+<<tutorial-directed-model-checking,the tutorial page on directed
+model checking options>>).
 
 One option is `random`, which gives every node (aka unprocesses state) a
 random weight. The difference over the mixed depth-first/breadth-first

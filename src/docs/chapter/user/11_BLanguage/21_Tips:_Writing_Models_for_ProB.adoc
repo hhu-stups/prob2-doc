@@ -6,8 +6,8 @@ The most common issue is that ProB needs to find values for the
 constants which satisfy the properties (aka axioms in Event-B). You
 should read the tutorial pages on this (in particular
 <<tutorial-setup-phases,Understanding the ProB Setup Phases>> and
-link:/Tutorial_Troubleshooting_the_Setup[Tutorial Troubleshooting the
-Setup])
+<<tutorial-troubleshooting-the-setup,Tutorial Troubleshooting the
+Setup>>)
 
 * Try to use ProB as early as possible in the modeling process; this
 will make it easier to identify the cause of problems (and also will
@@ -69,8 +69,8 @@ is a good use of the existential quantifier. This quantifier will never
 
 * Tip: use existential quantifiers as LET-PREDICATES `#x.(x=E & P)` to
 avoid repeated computations
-(link:/Common_Subexpression_Elimination[common-subexpression
-elimination]) and to make your predicates more readable.
+(<<common-subexpression-elimination,common-subexpression
+elimination>>) and to make your predicates more readable.
 
 [[universal-quantifiers]]
 === Universal Quantifiers
@@ -108,8 +108,8 @@ very difficult to treat by ProB. Indeed, if you define the transitive
 closure in Event-B as a function `tclos` from relations to relations,
 ProB will try to find a value for `tclos`. The search space for this
 function is `(2\^n*n)^(2^n*n)`, where `n` is the size of the base set
-(see link:/Tutorial_Understanding_the_Complexity_of_B_Animation[Tutorial
-Understanding the Complexity of B Animation]). For n=3 this is already
+(see <<tutorial-understanding-the-complexity-of-b-animation,Tutorial
+Understanding the Complexity of B Animation>>). For n=3 this is already
 way too big too handle (the search space has 1.40e+1387 relations).
 
 Hence, in Event-B, you should use a theory of the transitive closure

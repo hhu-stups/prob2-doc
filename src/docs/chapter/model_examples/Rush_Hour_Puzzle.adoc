@@ -15,14 +15,14 @@ Inspired by discussions with Neng-Fa Zhou at ICLP'14 in Vienna, we now
 have a new version of the B model for this puzzle.
 
 The old version can still be found below. There is also a Prolog
-<<other-languages,XTL>> encoding of the link:/Rush_Hour_XTL[same
-problem available], where ProB finds the example in one second or less.
+<<other-languages,XTL>> encoding of the <<rush-hour-xtl,same
+problem available>>, where ProB finds the example in one second or less.
 Explanations and comparison with the
 http://picat-lang.org/exs/prob_rushhour.pi[Picat solution] will follow
 soon.
 
 As we show below, the shortest solution can be found very quickly using
-our new feature to use link:/TLC[TLC for model checking B
+our new feature to use <<tlc,TLC>> for model checking B
 specifications] (about 1 second model checking time; rest of time needed
 to replay counter example).
 
@@ -109,8 +109,8 @@ as above we have specified the target state `col(red) = 4` inside the
 Here is a screenshot of ProB after finding the shortest solution using
 model checking. As you can see there is also a (simple)
 <<graphical-visualization,graphical visualisation>> of the state of
-the model. We have also opened the ``link:/Evaluation_View[Evaluation
-View]''.
+the model. We have also opened the ``<<evaluation-view,Evaluation
+View>>''.
 
 image:ProB_RushHour_v2_Screenshot.png[600px|center]
 
@@ -140,8 +140,8 @@ save the history to file.
 == Finding the shortest solution using the TLC backend
 
 If you want to find the shortest solution with ProB you should set the
-"Search Strategy" in the ProB link:/Consistency_Checking[``Model
-Check'' command] to "Breadth First". The shortest solution has 81
+"Search Strategy" in the ProB <<consistency-checking,``Model
+Check'' command>> to "Breadth First". The shortest solution has 81
 moves (if one allows a car to move multiple spaces in one move then the
 shortest solution has 51 moves).
 

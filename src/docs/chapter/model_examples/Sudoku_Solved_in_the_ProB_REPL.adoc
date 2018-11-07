@@ -166,8 +166,8 @@ Other useful REPL commands are:
 load any specification), and
 * `:q` to quit the REPL.
 
-Also, many link:/Using_the_Command-Line_Version_of_ProB[commands
-available for probcli] also work inside the REPL:
+Also, many <<using-the-command-line-version-of-prob,commands
+available for probcli>> also work inside the REPL:
 
 * `-p PREF VALUE` to set preference values, e.g.,
 `-p MAX_DISPLAY_SET 999` if you want the pretty printer to display sets

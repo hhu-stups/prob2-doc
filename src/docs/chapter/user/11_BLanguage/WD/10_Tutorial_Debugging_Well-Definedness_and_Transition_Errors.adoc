@@ -5,8 +5,8 @@ We assume that you have grasped the way that ProB setups up the initial
 states of a B machine as outlined in
 <<tutorial-setup-phases,Tutorial Setup Phases>>, and have understood
 why animation is difficult as outlined in
-link:/Tutorial_Understanding_the_Complexity_of_B_Animation[Tutorial
-Understanding the Complexity of B Animation]. You may also want to have
+<<tutorial-understanding-the-complexity-of-b-animation,Tutorial
+Understanding the Complexity of B Animation>>. You may also want to have
 a look at the explanation of
 <<well-definedness-checking,well-definedness in B>>.
 

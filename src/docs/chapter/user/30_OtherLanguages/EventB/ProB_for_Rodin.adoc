@@ -11,8 +11,8 @@ http://wiki.event-b.org/index.php/Rodin_Platform_2.8_Release_Notes[Rodin
 2.8] and
 http://wiki.event-b.org/index.php/Rodin_Platform_3.3_Release_Notes[Rodin
 3.3]. The update site comes built in into Rodin, see
-link:/Tutorial_Rodin_First_Step[the tutorial on installing ProB for
-Rodin]. Nightly releases of this versions are also available on the
+<<tutorial-rodin-first-step,the tutorial on installing ProB for
+Rodin>>. Nightly releases of this versions are also available on the
 <<download,Download>> page.
 
 [[prob-2.0-for-rodin]]

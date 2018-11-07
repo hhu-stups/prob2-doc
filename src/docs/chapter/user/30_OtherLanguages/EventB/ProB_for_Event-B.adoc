@@ -11,8 +11,8 @@ files and use them within ProB Tcl/Tk and the command-line version
 See the tutorial pages for more information about using ProB for
 Event-B:
 
-* link:/Tutorial_Rodin_First_Step[Starting ProB for Rodin and first
-animation steps]
+* <<tutorial-rodin-first-step,Starting ProB for Rodin and first
+animation steps>>
 * link:/Tutorial_Rodin_Parameters[Important Parameters of ProB for
 Rodin]
 * link:/Tutorial_Rodin_Exporting[Exporting Rodin Models for ProB

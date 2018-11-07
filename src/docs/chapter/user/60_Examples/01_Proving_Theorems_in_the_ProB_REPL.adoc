@@ -4,8 +4,8 @@
 
 For this example we try and use the REPL (Read-Eval-Print-Loop) of ProB
 to prove theorems. The REPL can either be started using probcli's
-command `-repl` or by starting the link:/Eval_Console[Eval Console in
-ProB Tcl/Tk].
+command `-repl` or by starting the <<eval-console,Eval Console in
+ProB Tcl/Tk>>.
 
 See the beginning of link:/Sudoku_Solved_in_the_ProB_REPL[Sudoku Solved
 in the ProB REPL] for more details about how to start the REPL.
@@ -15,7 +15,7 @@ the hypotheses `Hyp` and negate the goal. If ProB finds a solution, a
 counter example to the sequent exists and it cannot be proven. If ProB
 finds no solution, then under certain circumstances the sequent is
 proven, as no counter example exists. (This mechanism is used by the
-link:/Tutorial_Disprover[ProB Disprover in Rodin].)
+<<tutorial-disprover,ProB Disprover in Rodin>>.)
 
 Let us prove that from `x:1..100` it follows that the equation
 `x*x+2*x+2 = 1` has no solution:
@@ -85,7 +85,7 @@ Existentially Quantified Predicate over x,y is FALSE
 ....
 
 This has enabled us to prove the sequent. (The ProB
-link:/Tutorial_Disprover[Disprover] automatically sets this preference
+<<tutorial-disprover,Disprover>> automatically sets this preference
 for you.) Another solution is again to use the Z3 backend:
 
 ....
@@ -147,7 +147,7 @@ PREDICATE is FALSE
 ....
 
 You can also translate the query to SAT via the Kodkod library (see
-link:/Using_ProB_with_KODKOD[Using ProB with KODKOD]) using:
+<<using-prob-with-kodkod,Using ProB with KODKOD>>) using:
 
 ....
 >>> :kodkod A <: E & B<: E & A={a,b} & B={c,d} & not(  A /\ B = {} ) & a/=b & a/=c & a/=d & b/=c & b/=d & c/=d

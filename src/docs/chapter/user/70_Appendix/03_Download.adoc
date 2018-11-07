@@ -74,8 +74,8 @@ for Rodin 2.8 and
 http://www.stups.hhu.de/prob_updates_rodin3[http://www.stups.hhu.de/prob_updates_rodin3]
 for Rodin 3.3. The update site for nightly builds for Rodin 3.x is
 https://www3.hhu.de/stups/rodin/prob1/nightly[https://www3.hhu.de/stups/rodin/prob1/nightly].)
-More link:/Tutorial_Rodin_First_Step[detailed installation instructions
-and a brief tutorial are available].
+More <<tutorial-rodin-first-step,detailed installation instructions
+and a brief tutorial are available>>.
 
 [[prior-versions]]
 === Prior Versions
@@ -283,7 +283,7 @@ checker], bug fixes and performance improvements.
 *4/3/2013* link:/Download[ProB 1.3.6] is available. Highlights: improved
 constraint propagation for division, modulo, intervals, model checking
 progress bar, performance improvements,
-link:/Using_ProB_with_KODKOD[improved Kodkod backend] and use within
+<<using-prob-with-kodkod,improved Kodkod backend>> and use within
 REPL, and many more.
 
 *8/10/2012* link:/Download[ProB 1.3.5] is available. Highlights: support
@@ -292,7 +292,7 @@ link:/TLA[TLA+ support], performance improvements, pragmas, units
 inference, and many more.
 
 *30/03/2012* A first prototype of an online
-link:/ProB_Logic_Calculator[ProB Logic Calculator] is available.
+<<prob-logic-calculator,ProB Logic Calculator>> is available.
 
 *21/11/2011* ProB 1.3.4 is available. Highlights: Evaluation View and
 Eval window, CSP assertion checking, improved editor, 64-bit version for

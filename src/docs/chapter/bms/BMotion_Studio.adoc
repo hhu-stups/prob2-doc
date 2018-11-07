@@ -7,8 +7,8 @@ image::Bmotion_logo.png[]
 
 == What is BMotionWeb?
 
-BMotionWeb is a tool built on top of the link:/ProB_Java_API[ProB Java
-API] for creating interactive visualizations of Classical-B, Event-B and
+BMotionWeb is a tool built on top of the <<prob-java-api,ProB Java
+API>> for creating interactive visualizations of Classical-B, Event-B and
 CSP models.
 
 == Download

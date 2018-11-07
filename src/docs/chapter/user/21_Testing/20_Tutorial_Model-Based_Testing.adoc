@@ -2,8 +2,8 @@
 == Tutorial Model-Based Testing
 
 We assume that you have completed
-link:/Tutorial_Complete_Model_Checking[Tutorial Complete Model
-Checking]. It may also be a good idea to complete the
+<<tutorial-complete-model-checking,Tutorial Complete Model
+Checking>>. It may also be a good idea to complete the
 <<tutorial-model-checking-proof-and-cbc,Tutorial_Model_Checking,_Proof_and_CBC>>.
 
 Let us examine the following B model:

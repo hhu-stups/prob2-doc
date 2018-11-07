@@ -56,8 +56,8 @@ constraint based checking looking for assertion violations, while the
 command "Constraint Search for Abort Conditions" executes it looking
 for abort conditions.
 
-Within the link:/Using_the_Command-Line_Version_of_ProB[command-line
-version of ProB], there are also several commands available:
+Within the <<using-the-command-line-version-of-prob,command-line
+version of ProB>>, there are also several commands available:
 
 * <<using-the-command-line-version-of-prob,cbc >>
 to check whether an operation preserves the invariant

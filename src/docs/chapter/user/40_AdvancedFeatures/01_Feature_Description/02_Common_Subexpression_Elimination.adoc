@@ -10,8 +10,8 @@ subexpression elimination (CSE)].
 
 To enable CSE you need to set the advanced preference `CSE` to true
 (this can be done using the switch `-p CSE TRUE` when using the
-link:/Using_the_Command-Line_Version_of_ProB[command-line version
-probcli] or using the Advanced Preferences command in ProB Tcl/Tk). With
+<<using-the-command-line-version-of-prob,command-line version
+probcli>> or using the Advanced Preferences command in ProB Tcl/Tk). With
 CSE enabled, ProB will translate the predicate
 
 `x:dom(f(a)) & r=f(a)(x)`

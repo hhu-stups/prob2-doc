@@ -70,7 +70,7 @@ A similar console is also available for the command-line version of ProB
 link:/Using_the_Command-Line_Version_of_ProB#-repl[available on the
 separate wiki page for probcli.]
 
-We now also have made two versions of a link:/ProB_Logic_Calculator[ProB
-Logic Calculator available online]. The second one works similarly to
+We now also have made two versions of a <<prob-logic-calculator,ProB
+Logic Calculator available online>>. The second one works similarly to
 the Eval console above, but is not linked to any B machine. You can try
 it out directly on this page below:

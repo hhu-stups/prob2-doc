@@ -84,8 +84,8 @@ treated symbolically. Thus you can now also compose two symbolic
 functions using relational composition `;` or take the transitive
 closure (`closure1`) symbolically.
 
-You can experiment with those by using the link:/Eval_Console[Eval
-console] of ProB, experimenting for example with the following complete
+You can experiment with those by using the <<eval-console,Eval
+console>> of ProB, experimenting for example with the following complete
 machine. Note, you should use ProB 1.3.5-beta2 or higher. (You can also
 type expressions and predicates such as
 `parity = %x.(x:NATURAL|x mod 2) & parity[1..10] = res` directly into

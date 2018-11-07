@@ -204,7 +204,7 @@ axioms
 end
 ....
 
-If you load this model with link:/Tutorial_Rodin_First_Step[ProB for
-Rodin], you can see the solution in the State view:
+If you load this model with <<tutorial-rodin-first-step,ProB for
+Rodin>>, you can see the solution in the State view:
 
 image::ProBRodinArgumentationState.png[]

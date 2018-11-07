@@ -5,7 +5,7 @@
 ==== Introduction
 
 Many features of ProB are currently only available in ProB Tcl/Tk or the
-link:/Using_the_Command-Line_Version_of_ProB[probcli command-line
+<<using-the-command-line-version-of-prob,probcli>> command-line
 version]. Luckily you can export Rodin models for use with those tools.
 Below we explain how.
 
@@ -32,8 +32,8 @@ the following command will perform standard model checking on the file
 `probcli b_1_mch.eventb -mc 100000`
 
 All options described in
-link:/Using_the_Command-Line_Version_of_ProB[the manual page for
-probcli] for B models are also applicable to Event-B models.
+<<using-the-command-line-version-of-prob,the manual page for
+probcli>> for B models are also applicable to Event-B models.
 
 Warning: the preferences for ProB are managed in different ways by the
 different tools. For the command-line version, preference values have to

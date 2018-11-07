@@ -165,8 +165,8 @@ END
 */
 ....
 
-We can also add a simple link:/Graphical_Visualization[graphical
-visualisation] by including the following in the XTL file (using the
+We can also add a simple <<graphical-visualization,graphical
+visualisation>> by including the following in the XTL file (using the
 `animation_function_result` predicate recognised by ProB as of version
 1.4.0-rc3):
 

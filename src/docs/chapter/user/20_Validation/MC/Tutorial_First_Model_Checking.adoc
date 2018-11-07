@@ -73,8 +73,8 @@ operations.
 
 We can obtain a graphical visualization of the state space explored by
 ProB. For this, be sure that you have correctly
-link:/Graphical_Viewer[installed and setup the graphical viewer as
-desribed in the user manual]. Now, choose the "View Statespace"
+<<graphical-viewer,installed and setup the graphical viewer as
+desribed in the user manual>>. Now, choose the "View Statespace"
 command in the _Animate_ menu:
 
 image::ProB_LiftAfterModelCheck_Statespace.png[]

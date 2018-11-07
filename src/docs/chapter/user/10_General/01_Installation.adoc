@@ -6,14 +6,14 @@
 
 * The standalone Tcl/Tk Version of ProB (ProB Tcl/Tk)
 * The standalone command-line version of ProB
-(link:/Using_the_Command-Line_Version_of_ProB[probcli])
-* The link:/Tutorial_Rodin_First_Step[ProB Plugin for Rodin/Eclipse]
-* The online link:/ProB_Logic_Calculator[ProB Logic Calculator]
+(<<using-the-command-line-version-of-prob,probcli>>)
+* The <<tutorial-rodin-first-step,ProB Plugin for Rodin/Eclipse>>
+* The online <<prob-logic-calculator,ProB Logic Calculator>>
 
 Both the standalone ProB Tcl/Tk and probcli can be downloaded together
 (within a Zip archive or tarball together with examples) from our
 <<downloads, Download Page>>. The online
-link:/ProB_Logic_Calculator[ProB Logic Calculator] requires no
+<<prob-logic-calculator,ProB Logic Calculator>> requires no
 installation; just type in predicates and expressions into the web page.
 
 There is also a
@@ -112,7 +112,7 @@ in the Preferences Menu to set or check the following preferences:
 
 NOTE: you can use the "Pick" button to locate the dot program and the
 dot viewer. See more information about the
-link:/Graphical_Viewer[Graphical Viewer here].
+<<graphical-viewer,Graphical Viewer here>>.
 
 [[installation-instruction-for-prob-rodin-plugin]]
 === Installation Instruction for ProB (Rodin Plugin)
