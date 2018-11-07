@@ -114,8 +114,8 @@ way too big too handle (the search space has 1.40e+1387 relations).
 
 Hence, in Event-B, you should use a theory of the transitive closure
 which contains a special mapping file which instructs ProB to use the
-classical B operator. See link:/Event-B_Theories[the page on supporting
-Event-B theories] along with the links to theories that can be used
+classical B operator. See <<event-b-theories,the page on supporting
+Event-B theories>> along with the links to theories that can be used
 efficiently with ProB.
 
 * Tip: within set comprehensions use the form `dom({x,y|P})` rather than

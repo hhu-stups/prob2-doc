@@ -170,8 +170,8 @@ choice; currently the default),
 instead of a random number generator),
 * `heuristic` (try and use `HEURISTIC_FUNCTION` provided by user in
 `DEFINITIONS` clause). Some explanations can be found
-link:/Blocks_World_(Directed_Model_Checking)[in an example about
-directed model checking].
+<<blocks-world-directed-model-checking,in an example about
+directed model checking>>.
 * `out_degree_hash` (prioritise nodes with fewer outgoing transitions;
 mainly useful for deadlock checking)
 

@@ -37,8 +37,8 @@ However, for the bounded model checker this is less of a problem; it
 will use the constraint solver to try and find suitable values of the
 constants, initial variable values and parameters to generate an
 invariant violation. The bounded model checker actually uses the same
-algorithm than the link:/Test_Case_Generation[constraint-based test-case
-generator], but uses the negation of the invariant as target. You can
+algorithm than the <<test-case-generation,constraint-based test-case
+generator>>, but uses the negation of the invariant as target. You can
 use the command-line version of ProB, with the
 <<using-the-command-line-version-of-prob,`-bmc DEPTH`>>
 command as follows:

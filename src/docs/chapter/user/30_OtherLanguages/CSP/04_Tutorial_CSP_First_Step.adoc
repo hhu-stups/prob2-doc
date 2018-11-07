@@ -119,8 +119,8 @@ image::ProB_CSPAfterModelCheck2.png[]
 ==== Other Features
 
 You can check more sophisticated temporal properties using the LTL model
-checker of ProB; see the link:/LTL_Model_Checking[corresponding part of
-the tutorial]. For example, you can try and validate the following LTL
+checker of ProB; see the <<ltl-model-checking,corresponding part of
+the tutorial>>. For example, you can try and validate the following LTL
 formula `G([board37A] \=> F [alight37B])`. ProB should respond:
 `Formula TRUE. No counterexample found.` Similarly, you can check the
 absence of divergence by checking the LTL formula `G not G [tau]`. It is

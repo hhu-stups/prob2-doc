@@ -92,5 +92,5 @@ menu.
 image::ProB_GraphicalViewerPreferences_Shapes.png[]
 
 You can obtain more information about the state space visualization in
-the user manual: link:/State_Space_Visualization[State Space
-Visualization].
+the user manual: <<state-space-visualization,State Space
+Visualization>>.

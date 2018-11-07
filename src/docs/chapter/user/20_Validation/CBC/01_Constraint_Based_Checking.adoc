@@ -13,8 +13,8 @@ solving, and we call this approach constraint based checking (another
 sensible name would be model finding).
 
 More details and examples can be found in the
-link:/Tutorial_Model_Checking,_Proof_and_CBC[tutorial page on model
-checking, proof and CBC].
+<<tutorial-model-checking-proof-and-cbc,tutorial page on model
+checking, proof and CBC>>.
 
 [[difference-between-constraint-based-checking-and-model-checking]]
 === Difference between Constraint Based Checking and Model Checking
@@ -33,15 +33,15 @@ This situation further indicates that it will be impossible to prove the
 machine using the B proof rules. In other words, the constraint-based
 checker verifies that the invariant is inductive.
 
-A comparison between all link:/ProB_Validation_Methods[ProB validation
-methods can be found on a separate manual page].
+A comparison between all <<prob-validation-methods,ProB validation
+methods can be found on a separate manual section>>.
 
 [[commands-of-the-constraint-based-checker]]
 === Commands of the Constraint Based Checker
 
 These commands are only accessible in the "Normal" mode of ProB (see
-link:/General_Presentation_(tcl/tk)#The_ProB_main_window[General
-Presentation]) and are in the sub-menu "Verify|Constraint Based
+<<the-prob-main-window,the general
+presentation>>) and are in the sub-menu "Verify|Constraint Based
 Checking". The command "Constraint Search for Invariant Violations"
 will execute the constraint based checking described above to check for
 invariant violations. The process stops as soon as a counterexample has
@@ -69,7 +69,6 @@ axioms/properties.
 
 The following command is related to the above:
 
-* link:/Using_the_Command-Line_Version_of_ProB#-cbc_sequence_.3CSEQ.3E[cbc_sequence
-] to find a sequence of operations using the constraint solver
+* <<using-the-command-line-version-of-prob,cbc_sequence>> to find a sequence of operations using the constraint solver
 
 === References

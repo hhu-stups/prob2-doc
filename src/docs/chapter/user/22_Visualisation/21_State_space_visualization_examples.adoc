@@ -7,8 +7,8 @@
 This is a visualisation of 3643 states and 11115 transitions of a TLA+
 model of the alternating bit protocol, as distributed with the
 http://research.microsoft.com/en-us/um/people/lamport/tla/tools.html[TLA+
-tools]. This model (MCAlternatingBit.tla) was loaded with link:/TLA[ProB
-for TLA+], the model checker run for a few seconds and then the command
+tools]. This model (MCAlternatingBit.tla) was loaded with <<tla,ProB
+for TLA+>>, the model checker run for a few seconds and then the command
 "State Space Fast Rendering" with options (scale,fast) was used.
 
 The goal predicate rBit=1 was used; those states satisfying this
@@ -59,8 +59,8 @@ DataPerm == Permutations(Data)
 This is a visualisation of 3866 states and 9661 transitions of a TLA+
 model of a FIFO, as distributed with the
 http://research.microsoft.com/en-us/um/people/lamport/tla/tools.html[TLA+
-tools]. This model (MCInnerFIFO) was loaded with link:/TLA[ProB for
-TLA+] and the model checker run so that all states with queue size
+tools]. This model (MCInnerFIFO) was loaded with <<TLA,ProB for
+TLA+>> and the model checker run so that all states with queue size
 greater than qLen (3) were ignored, i.e., no successor states were
 computed (this can be set by defining SCOPE==card(q)<=qLen). The colour
 indicates the length of the queue variable q of the model
@@ -77,8 +77,8 @@ image::MCInnerFIFO_proj_cardq.png[]
 === RushHour
 
 This is a visualisation of the
-link:/Rush_Hour_Puzzle_Rush_Hour_puzzle_B_model[Rush_Hour_Puzzle Rush
-Hour puzzle B model], at the moment that ProB has found a solution to
+<<rush-hour-puzzle, Rush
+Hour puzzle B model>>, at the moment that ProB has found a solution to
 the goal predicate (red car moved out of the grid). The solution node(s)
 are marked in orange and the prism option was used.
 

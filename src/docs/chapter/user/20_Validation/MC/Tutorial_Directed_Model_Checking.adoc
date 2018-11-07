@@ -27,8 +27,8 @@ As of version 1.5.1, the following options are also available:
 `HEURISTIC_FUNCTION` provided by user in `DEFINITIONS` clause; states
 with the smallest value for the heuristic function are treated first by
 the model checker. Some explanations can be found
-link:/Blocks_World_(Directed_Model_Checking)[in an example about
-directed model checking].
+<<blocks-world-directed-model-checking,in an example about
+directed model checking>>.
 * Random (`random`) : choosing next node to process completely at
 random,
 * Hash-Random (`hash`) :similar to random, but uses the Prolog hash

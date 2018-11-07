@@ -7,8 +7,8 @@ to prove theorems. The REPL can either be started using probcli's
 command `-repl` or by starting the <<eval-console,Eval Console in
 ProB Tcl/Tk>>.
 
-See the beginning of link:/Sudoku_Solved_in_the_ProB_REPL[Sudoku Solved
-in the ProB REPL] for more details about how to start the REPL.
+See the beginning of <<sudoku-solved-in-the-prob-repl,Sudoku Solved
+in the ProB REPL>> for more details about how to start the REPL.
 
 The general principle for proving a sequent `Hyp |- Goal` is to state
 the hypotheses `Hyp` and negate the goal. If ProB finds a solution, a
@@ -138,7 +138,7 @@ Existentially Quantified Predicate over A,B,a,b,c,d is FALSE
 ....
 
 This has used ProB’s Prolog-CLPFD solver. You can use ProB's translation
-to Z3 (see link:/Using_ProB_with_Z3[Using ProB with Z3]) by prefixing
+to Z3 (see <<using-prob-with-z3,Using ProB with Z3>>) by prefixing
 the formula with `z3:`
 
 ....
@@ -171,7 +171,7 @@ Expression Value =
 ....
 
 As you can see, ProB has set the size of the set D to two (see
-link:/Deferrred_Sets[Deferrred_Sets]). You can see this also by asking
+<<deferrred-sets,Deferrred_Sets>>). You can see this also by asking
 ProB to find four different Values:
 
 ....

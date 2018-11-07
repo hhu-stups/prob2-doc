@@ -3,9 +3,9 @@
 
 The ProB source code is distributed under the
 http://www.eclipse.org/org/documents/epl-v10.html[EPL v1.0 license] (see
-also link:/Getting_Involved[Getting Involved]).
+also the ProB developer manual).
 
-\(C) 2000-2017 Michael Leuschel and many others.
+\(C) 2000-2018 Michael Leuschel and many others.
 
 ProB comes with ABSOLUTELY NO WARRANTY OF ANY KIND ! This software is
 distributed in the hope that it will be useful but WITHOUT ANY WARRANTY.

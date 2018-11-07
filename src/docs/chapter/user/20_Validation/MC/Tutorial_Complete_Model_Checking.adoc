@@ -181,5 +181,5 @@ it. This information is not yet fed back to the graphical user interface
 Finally, even if ProB was able to successfully check the entire state
 space of your model, this does not imply that you can prove your machine
 correct with AtelierB (or Rodin). We dedicate another tutorial page to
-this: link:/Tutorial_Model_Checking,_Proof_and_CBC[Model Checking, Proof
-and CBC].
+this: <<tutorial-model-checking-proof_and_cbc,Model Checking, Proof
+and CBC>>.

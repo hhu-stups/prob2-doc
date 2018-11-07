@@ -91,7 +91,7 @@ gen_concat(R1,R2,R) :-
 prop(X,X).
 ....
 
-Finally, a more complex example is link:/Rush_Hour_XTL[an encoding of
-the Rush Hour puzzle] which also includes a graphical visualisation
+Finally, a more complex example is <<rush-hour-xtl,an encoding of
+the Rush Hour puzzle>> which also includes a graphical visualisation
 (using the `animation_function_result` predicate recognised by ProB as
 of version 1.4.0-rc3).

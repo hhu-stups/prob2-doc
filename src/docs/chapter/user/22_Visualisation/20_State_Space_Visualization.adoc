@@ -81,8 +81,8 @@ Model Checking]) are satisfied.
 As of December 2015, there is also a sub-menu "Statespace Fast
 Rendering", which enables one to visualize larger state spaces more
 effectively. Some sample
-link:/State_space_visualization_examples[visualizations can be found
-here].
+<<state-space-visualization-examples,visualizations can be found
+here>>
 
 [[other-visualization-commands]]
 === Other Visualization Commands

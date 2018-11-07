@@ -11,8 +11,8 @@ checking algorithms:
 * k-Induction, and
 * different Variants of the IC3 algorithm.
 
-As opposed to link:/Constraint_Based_Checking[constraint-based
-checking], these algorithms find counterexamples which are reachable
+As opposed to <<constraint-based-checking,constraint-based
+checking>>, these algorithms find counterexamples which are reachable
 from the INITIALISATION. As opposed to
 <<consistency-checking,ordinary model checking>>, they do not build
 up the state space explicitly, e.g., they do not compute all possible

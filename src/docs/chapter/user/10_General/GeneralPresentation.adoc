@@ -12,7 +12,7 @@ reopens the currently opened file and re-initialises the state of the
 animation and the model checking processes completely. The _About_
 menu provides help on the tool and includes a command to check if an
 update is available on the ProB website. By default, ProB starts with a
-limited set of commands in the Beginner mode. The Normal mode gives
+limited set of commands in the *Beginner mode*. The *Normal mode* gives
 access to more features and can be set in the menu _Preferences|User
 Mod_.
 

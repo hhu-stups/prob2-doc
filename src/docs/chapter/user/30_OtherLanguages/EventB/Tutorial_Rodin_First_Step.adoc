@@ -60,8 +60,8 @@ image::ProBRodinAfterOpChoose.png[]
 
 Next Step:
 
-* link:/Tutorial_Rodin_Parameters[Important Parameters of ProB for
-Rodin]
+* <<tutorial-rodin-parameters,Important Parameters of ProB for
+Rodin>>
 
 We also have a
 http://cobra.cs.uni-duesseldorf.de/bmotionstudio/index.php/Tutorial[tutorial

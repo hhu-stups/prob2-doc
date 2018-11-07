@@ -13,14 +13,14 @@ Event-B:
 
 * <<tutorial-rodin-first-step,Starting ProB for Rodin and first
 animation steps>>
-* link:/Tutorial_Rodin_Parameters[Important Parameters of ProB for
-Rodin]
-* link:/Tutorial_Rodin_Exporting[Exporting Rodin Models for ProB
-Classic]
+* <<tutorial-rodin-parameters,Important Parameters of ProB for
+Rodin>>
+* <<tutorial-rodin-exporting,Exporting Rodin Models for ProB
+Classic>>
 * <<tutorial-symbolic-constants,Using the Symbolic Contants Plugin>>
 * <<tutorial-disprover,Using the ProB (Dis-)Prover>>
-* link:/Tutorial_LTL_Counter-example_View[Visualization of LTL
-Counter-examples in Rodin]
+* <<tutorial-ltl-counter-example-view,Visualization of LTL
+Counter-examples in Rodin>>
 
 The http://handbook.event-b.org[Rodin handbook] also contains material
 about ProB:

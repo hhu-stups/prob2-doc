@@ -64,5 +64,5 @@ Example:
 `probcli my.mch -card PID 5`
 
 See
-link:/Using_the_Command-Line_Version_of_ProB#-card_.3CGS.3E_.3CVAL.3E[manual
-page for probcli].
+<<using-the-command-line-version-of-prob,manual
+page for probcli>>.

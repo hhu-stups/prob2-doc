@@ -26,7 +26,7 @@ FM tools manage large scale industrial problems ?]
 [[prob]]
 === ProB
 
-* link:/ProB_Examples[Examples for ProB] (along with screenshots and
+* <<modelling-examples,Examples for ProB>> (along with screenshots and
 explanations)
 * http://www.ecs.soton.ac.uk/~mal/systems/prob.html[Old web page of
 ProB] (in Southampton; use for releases prior to 1.2)

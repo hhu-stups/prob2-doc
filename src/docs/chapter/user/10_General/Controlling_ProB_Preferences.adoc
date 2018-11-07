@@ -3,8 +3,8 @@
 
 ProB provides a variety of preferences to control its behaviour. A list
 of the most important preferences can be found
-link:/Using_the_Command-Line_Version_of_ProB#Preferences[in the manual
-page for probcli]. We also have a separate <<deferred-sets,manual
+<<using-the-command-line-version-of-prob,in the manual
+page for probcli>>. We also have a separate <<deferred-sets,manual
 page about setting the sizes of deferred sets>>.
 
 [[setting-preferences-in-a-b-machine]]
