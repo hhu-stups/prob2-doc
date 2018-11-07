@@ -3,6 +3,7 @@
 
 Full ProB release history until release 1.8.3:
 
+....
 1.8.3-beta
  - size, ^, ->, <- do some well-definedness checks if TRY_FIND_ABORT is TRUE
  - operations view shows non-deterministically set variables also for
