@@ -1322,6 +1322,7 @@ feature is included since version 1.3.5-beta7.)
 === Environment Variables
 
 Set NO_COLOR environment variable to disable terminal colors.
+See also https://no-color.org[https://no-color.org].
 
 === Preferences
 
