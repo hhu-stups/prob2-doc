@@ -75,8 +75,8 @@ subgraphs of the state space. The command "Subgraph for Invariant
 Violation" displays the subgraph of nodes which violate the invariant,
 while the command "Subgraph of nodes satisfying GOAL" displays the
 subgraph where goals (discussed in
-link:/Temporal_Model_Checking#Specifying_Goals_and_Assertions[Temporal
-Model Checking]) are satisfied.
+<temporal-model-checking,the Temporal
+Model Checking section>>) are satisfied.
 
 As of December 2015, there is also a sub-menu "Statespace Fast
 Rendering", which enables one to visualize larger state spaces more

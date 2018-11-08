@@ -21,10 +21,10 @@ Template]
 * <<user-and-developer-workshop,Rodin User and Developer Workshop 2013 -
 Tutorial Presentation>>
 
-* link:/Tutorial13[Rodin User and Developer Workshop 2013 - Tutorial]
+* <<tutorial13,Rodin User and Developer Workshop 2013 - Tutorial>>
 
-* link:/ProB_2.0_within_Rodin_and_a_HTML_Visualization_Example[ProB 2.0
-within Rodin and a HTML Visualization Example]
+* <<prob-2.0-within-rodin-and-a-html-visualization-example,ProB 2.0
+within Rodin and a HTML Visualization Example>>
 
 === Download
 

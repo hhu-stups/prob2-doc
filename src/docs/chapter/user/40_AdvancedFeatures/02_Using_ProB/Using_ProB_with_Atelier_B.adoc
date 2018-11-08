@@ -90,5 +90,5 @@ infix) are supported yet (the `STRING` type is now supported);
 supported;
 
 * There are also some general limitations wrt refinements. See
-link:/Current_Limitations#Multiple_Machines_and_Refinements[Current
-Limitations#Multiple Machines and Refinements] for more details.
+<<current-limitations,Current
+Limitations section>> for more details.

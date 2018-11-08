@@ -54,7 +54,7 @@ being checked or animated. The StateSpace provides the corresponding
 label transition system for the Model. The Trace represents exactly one
 trace throughout the StateSpace. A more detailed description of the
 different is available
-link:/Programmatic_Abstractions_in_the_ProB_2.0_API[here].
+<<programmatic-abstractions-in-the-prob-2.0-api,here>>.
 
 [[tutorial-of-the-current-features-of-prob-2.0]]
 === Tutorial of the Current Features of ProB 2.0

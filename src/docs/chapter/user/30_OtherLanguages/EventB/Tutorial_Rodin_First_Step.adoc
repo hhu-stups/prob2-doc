@@ -26,8 +26,8 @@ image::ProBRodinUpdateDialog.png[]
 After that, press the Next button and finish the installation.
 
 A detailed
-link:/Installation#Installation_Instruction_for_ProB_.28Rodin_Plugin.29[screencast
-of the installation is available here].
+<<installation,screencast
+of the installation is available here>>.
 
 [[starting-prob-tutorial-rodin-first-step]]
 ==== Starting ProB

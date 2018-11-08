@@ -28,8 +28,8 @@ http://www3.hhu.de/stups/downloads/prob/tcltk/releases/1.7.0/ProB.windows64.zip[
 (with probcli) +
 (64bit)] |http://downloads.activestate.com/ActiveTcl/releases/[Tcl/Tk
 8.5 for Windows], http://java.com/en/[Java Runtime Environment (7.0 or
-newer)], link:/Windows_Installation_Instructions[Windows Installation
-Instructions] http://www.graphviz.org/Download_windows.php[GraphViz]
+newer)], <<windows-installation-instructions,Windows Installation
+Instructions>> http://www.graphviz.org/Download_windows.php[GraphViz]
 
 |colspan=``4'' style=``background-color:lightgrey;'' style="height:20px;
 |
@@ -68,8 +68,8 @@ http://www3.hhu.de/stups/downloads/prob/tcltk/releases/1.6.1/ProB.windows64.zip[
 (with probcli) +
 (64bit)] |http://downloads.activestate.com/ActiveTcl/releases/[Tcl/Tk
 8.5 for Windows], http://java.com/en/[Java Runtime Environment (7.0 or
-newer)], link:/Windows_Installation_Instructions[Windows Installation
-Instructions] http://www.graphviz.org/Download_windows.php[GraphViz]
+newer)], <<windows-installation-instructions,Windows Installation
+Instructions>> http://www.graphviz.org/Download_windows.php[GraphViz]
 
 |colspan=``4'' style=``background-color:lightgrey;'' style="height:20px;
 |
@@ -108,8 +108,8 @@ http://www3.hhu.de/stups/downloads/prob/tcltk/releases/1.6.0/ProB.windows64.zip[
 (with probcli) +
 (64bit)] |http://downloads.activestate.com/ActiveTcl/releases/[Tcl/Tk
 8.5 for Windows], http://java.com/en/[Java Runtime Environment (7.0 or
-newer)], link:/Windows_Installation_Instructions[Windows Installation
-Instructions]
+newer)], <<windows-installation-instructions,Windows Installation
+Instructions>>
 
 |colspan=``4'' style=``background-color:lightgrey;'' style="height:20px;
 |
@@ -141,8 +141,8 @@ http://www3.hhu.de/stups/downloads/prob/tcltk/releases/1.5.0/ProB.windows64.zip[
 (with probcli) +
 (64bit)] |http://downloads.activestate.com/ActiveTcl/releases/[Tcl/Tk
 8.5 for Windows], http://java.com/en/[Java Runtime Environment (7.0 or
-newer)], link:/Windows_Installation_Instructions[Windows Installation
-Instructions]
+newer)], <<windows-installation-instructions,Windows Installation
+Instructions>>
 
 |OS X |19. February 2015
 |http://www3.hhu.de/stups/downloads/prob/tcltk/releases/1.5.0/ProB.mac_os.10.6.8.x86_64.tar.gz[Tarball
@@ -167,8 +167,8 @@ http://nightly.cobra.cs.uni-duesseldorf.de/releases/1.3.6/ProB.linux64.tar.gz[Ta
 (with probcli)]
 |http://downloads.activestate.com/ActiveTcl/releases/[Tcl/Tk 8.5 for
 Windows], http://java.com/en/[Java Runtime Environment (5.0 or newer)],
-link:/Windows_Installation_Instructions[Windows Installation
-Instructions]
+<<windows-installation-instructions,Windows Installation
+Instructions>>
 
 |Mac OS X, Snow Leopard, Intel (64-bit) |4. March 2013
 |http://nightly.cobra.cs.uni-duesseldorf.de/releases/1.3.6/ProB.mac_os.10.6.8.x86_64.tar.gz[Tarball
@@ -198,8 +198,8 @@ http://nightly.cobra.cs.uni-duesseldorf.de/releases/1.3.5/ProB.linux64.tar.gz[Ta
 (with probcli)]
 |http://downloads.activestate.com/ActiveTcl/releases/[Tcl/Tk 8.5 for
 Windows], http://java.com/en/[Java Runtime Environment (5.0 or newer)],
-link:/Windows_Installation_Instructions[Windows Installation
-Instructions]
+<<windows-installation-instructions,Windows Installation
+Instructions>>
 
 |Mac OS X, Snow Leopard, Intel (64-bit) |11. Oct 2012
 |http://nightly.cobra.cs.uni-duesseldorf.de/releases/1.3.5/ProB.mac_os.10.6.tar.gz[Tarball

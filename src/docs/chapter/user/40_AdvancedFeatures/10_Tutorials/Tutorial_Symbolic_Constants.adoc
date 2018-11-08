@@ -37,5 +37,5 @@ symbolically (i.e. an infinite set). In this case the "not symbolic"
 setting is overridden.
 
 See
-link:/Recursively_Defined_Functions#When_does_ProB_treat_a_set_comprehension_or_lambda_abstraction_symbolically_.3F[the
-wiki page on infinite and recursive functions] for more details.
+<<recursively-defined-functions,the
+wiki page on infinite and recursive functions>> for more details.

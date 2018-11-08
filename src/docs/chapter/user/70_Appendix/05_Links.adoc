@@ -113,8 +113,8 @@ validation at Siemens, Jérôme Falampin]: "``The work done with ProB is a
 great success. Thanks to the automatization and ProB, the wayside data
 validation is quicker, easier and complete.'' More details and academic
 papers can be found on our page
-link:/Siemens_Data_Validation_with_ProB[Siemens Data Validation with
-ProB].
+<siemens-data-validation-with-prob,Siemens Data Validation with
+ProB>>.
 * http://dl.acm.org/citation.cfm?doid=2406336.2406351[Pacemaker model by
 Mery and Singh]: ``ProB was very useful in the development of the
 pacemaker specification, and was able to animate all of our models and

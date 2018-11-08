@@ -37,8 +37,8 @@ http://www3.hhu.de/stups/downloads/prob/tcltk/releases/1.7.1/ProB.windows64.zip[
 (with probcli) +
 (64bit)] |http://downloads.activestate.com/ActiveTcl/releases/[Tcl/Tk
 8.5 for Windows], http://java.com/en/[Java Runtime Environment (7.0 or
-newer)], link:/Windows_Installation_Instructions[Windows Installation
-Instructions] http://www.graphviz.org/Download_windows.php[GraphViz]
+newer)], <<windows-installation-instructions,Windows Installation
+Instructions>> http://www.graphviz.org/Download_windows.php[GraphViz]
 
 |colspan=``4'' style=``background-color:lightgrey;'' style="height:20px;
 |
