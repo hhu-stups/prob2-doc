@@ -139,5 +139,5 @@ TLC will only report 10 distinct states (10 initialization states).
 === More Information
 
 More information can be found in our
-http://www.stups.uni-duesseldorf.de/w/Special:Publication/HansenLeuschel_ABZ14[ABZ'14
+https://www3.hhu.de/stups/downloads/pdf/HansenLeuschel_ABZ14.pdf[ABZ'14
 article].

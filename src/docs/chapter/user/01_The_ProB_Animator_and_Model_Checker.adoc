@@ -21,7 +21,7 @@ http://research.microsoft.com/en-us/um/people/lamport/tla/tla.html[TLA+],
 and http://en.wikipedia.org/wiki/Z_notation[Z]. ProB can be installed
 within http://sourceforge.net/projects/rodin-b-sharp/[Rodin], where it
 comes with
-http://www.stups.uni-duesseldorf.de/BMotionStudio/[BMotionStudio] to
+https://www3.hhu.de/stups/prob/index.php/BMotion_Studio[BMotionStudio] to
 easily generate domain specific graphical visualizations. (See
 https://www3.hhu.de/stups/prob/[for an overview of ProB's components]).
 ProB can now also be used as a
@@ -34,7 +34,7 @@ ProB is certified T2 SIL4 according to the Cenelec EN 50128 standard for use at 
 In https://www.youtube.com/watch?v=FjKnugbmrP4[a video from the Deutsche Bahn] you can see ProB animating a formal B model of the ETCS hybrid-level 3 principles in real-time, controlling two trains.
 For commercial
 support contact the spin-off company http://www.formalmind.com[Formal
-Mind] or http://www.stups.uni-duesseldorf.de/~leuschel/[Michael
+Mind] or https://www.cs.hhu.de/lehrstuehle-und-arbeitsgruppen/softwaretechnik-und-programmiersprachen/unser-team.html[Michael
 Leuschel].
 
 |*1/10/2018* <<downloads,ProB 1.8.2>> is available. Highlights: improved error feedback, support Jupyter kernel, first support for Alloy models.

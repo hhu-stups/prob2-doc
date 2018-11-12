@@ -11,7 +11,7 @@ can refer to footnote:[M. Leuschel and E.Turner: Visualising larger
 state spaces in ProB. In H. Treharne, S. King, M. Henson, and S.
 Schneider, editors, ZB 2005: Formal Specification and Development in Z
 and B, LNCS 3455. Springer-Verlag, 2005
-http://www.stups.uni-duesseldorf.de/publications/prob_visualise.pdf%5Bwiki:Visualisation#VisualizeStateSpace].
+https://www3.hhu.de/stups/downloads/pdf/LeTu05_8.pdf].
 
 The visualization features of the states pace are in the "Visualize"
 menu, and comprise the command (visualize) "Statespace" and all the

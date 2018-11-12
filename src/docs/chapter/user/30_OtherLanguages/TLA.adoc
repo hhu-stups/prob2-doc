@@ -25,7 +25,7 @@ translation you can animate and model check the TLA+ specification.
 There are many working examples in the 'ProB/Examples/TLA+/'-directory.
 
 There is also an
-http://www.stups.uni-duesseldorf.de/w/Special:Publication/HansenLeuschelTLA2012[iFM'2012
+https://www3.hhu.de/stups/downloads/pdf/HansenLeuschelTLA2012.pdf[iFM'2012
 paper] that describes our approach and performs some comparison with
 TLC. Our <<prob-logic-calculator,online ProB Logic Calculator>> now
 also supports TLA syntax and you can experiment with its predicate and

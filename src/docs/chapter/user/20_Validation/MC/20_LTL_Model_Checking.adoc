@@ -514,11 +514,10 @@ were imposed.
 === Other Relevant Tutorials about LTL Model Checking
 
 A brief tutorial on visualizing LTL counter-examples in the Rodin tool
-can be found
-http://www.stups.uni-duesseldorf.de/ProB/index.php5/Tutorial_LTL_Counter-example_View[here].
+can be found <<tutorial-ltl-counter-example-view,here>>.
 
 A tutorial of a simple case study, where setting fairness constraints to
 some of the LTL properties is required, can be found
-http://www.stups.uni-duesseldorf.de/ProB/index.php5/Mutual_Exclusion_%28Fairness%29[here].
+<<mutual-exclusion-fairness,here>>.
 
 === References

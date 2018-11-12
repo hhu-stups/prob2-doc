@@ -117,6 +117,4 @@ dot viewer. See more information about the
 [[installation-instruction-for-prob-rodin-plugin]]
 === Installation Instruction for ProB (Rodin Plugin)
 
-The following movie shows how to install the ProB Rodin Plugin.
-
-http://www.stups.uni-duesseldorf.de/ProB/Install.swf[http://www.stups.uni-duesseldorf.de/ProB/Install.swf]
+<<tutorial-rodin-first-step,This>> tutorial shows how to properly install ProB for Rodin.

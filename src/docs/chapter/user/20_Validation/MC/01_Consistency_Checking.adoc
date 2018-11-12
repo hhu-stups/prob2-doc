@@ -162,7 +162,7 @@ E.Turner: Visualising larger state spaces in ProB. In H. Treharne, S.
 King, M. Henson, and S. Schneider, editors, ZB 2005: Formal
 Specification and Development in Z and B, LNCS 3455. Springer-Verlag,
 2005
-http://www.stups.uni-duesseldorf.de/publications/prob_visualise.pdf%5Bwiki:Visualisation#VisualizeStateSpace].
+https://www3.hhu.de/stups/downloads/pdf/LeTu05_8.pdf].
 
 [[machines-with-invariant-violations-and-deadlocks]]
 ==== Machines with Invariant Violations and Deadlocks

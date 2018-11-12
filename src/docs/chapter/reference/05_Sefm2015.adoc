@@ -6,9 +6,9 @@ We benchmarked the ProB disprover for an article for SEFM 2015.
 === Raw Data
 
 All raw data is available as csv files from
-http://www.stups.uni-duesseldorf.de/models/sefm2015_disprover/raw/[here].
+https://www3.hhu.de/stups/models/sefm2015_disprover/raw/[here].
 A zip file containing all csv files is available
-http://www.stups.uni-duesseldorf.de/models/sefm2015_disprover/raw/rawdata.zip[here].
+https://www3.hhu.de/stups/models/sefm2015_disprover/raw/rawdata.zip[here].
 
 === Data Visualisations
 
@@ -18,60 +18,60 @@ available here:
 
 ==== Landing Gears
 
-* http://www.stups.uni-duesseldorf.de/models/sefm2015_disprover/output/abrial1_provers_only.pdf[Su
+* https://www3.hhu.de/stups/models/sefm2015_disprover/output/abrial1_provers_only.pdf[Su
 and Abrial, Landing Gear Model 1, Provers alone]
-* http://www.stups.uni-duesseldorf.de/models/sefm2015_disprover/output/abrial1_tactic.pdf[Su
+* https://www3.hhu.de/stups/models/sefm2015_disprover/output/abrial1_tactic.pdf[Su
 and Abrial, Landing Gear Model 1, Tactics]
-* http://www.stups.uni-duesseldorf.de/models/sefm2015_disprover/output/abrial2_provers_only.pdf[Su
+* https://www3.hhu.de/stups/models/sefm2015_disprover/output/abrial2_provers_only.pdf[Su
 and Abrial, Landing Gear Model 2, Provers alone]
-* http://www.stups.uni-duesseldorf.de/models/sefm2015_disprover/output/abrial2_tactic.pdf[Su
+* https://www3.hhu.de/stups/models/sefm2015_disprover/output/abrial2_tactic.pdf[Su
 and Abrial, Landing Gear Model 2, Tactics]
-* http://www.stups.uni-duesseldorf.de/models/sefm2015_disprover/output/abrial3_provers_only.pdf[Su
+* https://www3.hhu.de/stups/models/sefm2015_disprover/output/abrial3_provers_only.pdf[Su
 and Abrial, Landing Gear Model 3, Provers alone]
-* http://www.stups.uni-duesseldorf.de/models/sefm2015_disprover/output/abrial3_tactic.pdf[Su
+* https://www3.hhu.de/stups/models/sefm2015_disprover/output/abrial3_tactic.pdf[Su
 and Abrial, Landing Gear Model 3, Tactics]
-* http://www.stups.uni-duesseldorf.de/models/sefm2015_disprover/output/landinggearfinal_provers_only.pdf[Hansen
+* https://www3.hhu.de/stups/models/sefm2015_disprover/output/landinggearfinal_provers_only.pdf[Hansen
 et. al., Provers alone]
-* http://www.stups.uni-duesseldorf.de/models/sefm2015_disprover/output/landinggearfinal_tactic.pdf[Hansen
+* https://www3.hhu.de/stups/models/sefm2015_disprover/output/landinggearfinal_tactic.pdf[Hansen
 et. al., Tactics]
-* http://www.stups.uni-duesseldorf.de/models/sefm2015_disprover/output/mammarlaleau_provers_only.pdf[Mammar
+* https://www3.hhu.de/stups/models/sefm2015_disprover/output/mammarlaleau_provers_only.pdf[Mammar
 and Laleau, Provers alone]
-* http://www.stups.uni-duesseldorf.de/models/sefm2015_disprover/output/mammarlaleau_tactic.pdf[Mammar
+* https://www3.hhu.de/stups/models/sefm2015_disprover/output/mammarlaleau_tactic.pdf[Mammar
 and Laleau, Tactics]
-* http://www.stups.uni-duesseldorf.de/models/sefm2015_disprover/output/nantes_provers_only.pdf[André,
+* https://www3.hhu.de/stups/models/sefm2015_disprover/output/nantes_provers_only.pdf[André,
 Attiogbé and Lanoix, Provers alone]
-* http://www.stups.uni-duesseldorf.de/models/sefm2015_disprover/output/nantes_tactic.pdf[André,
+* https://www3.hhu.de/stups/models/sefm2015_disprover/output/nantes_tactic.pdf[André,
 Attiogbé and Lanoix, Tactics]
 
 ==== Further Models
 
-* http://www.stups.uni-duesseldorf.de/models/sefm2015_disprover/output/canbus_provers_only.pdf[Colley,
+* https://www3.hhu.de/stups/models/sefm2015_disprover/output/canbus_provers_only.pdf[Colley,
 Canbus, Provers alone]
-* http://www.stups.uni-duesseldorf.de/models/sefm2015_disprover/output/canbus_tactic.pdf[Colley,
+* https://www3.hhu.de/stups/models/sefm2015_disprover/output/canbus_tactic.pdf[Colley,
 Canbus, Tactics]
-* http://www.stups.uni-duesseldorf.de/models/sefm2015_disprover/output/graphcoloring_provers_only.pdf[Andriamiarina
+* https://www3.hhu.de/stups/models/sefm2015_disprover/output/graphcoloring_provers_only.pdf[Andriamiarina
 and Méry, Graphcoloring, Provers alone]
-* http://www.stups.uni-duesseldorf.de/models/sefm2015_disprover/output/graphcoloring_tactic.pdf[Andriamiarina
+* https://www3.hhu.de/stups/models/sefm2015_disprover/output/graphcoloring_tactic.pdf[Andriamiarina
 and Méry, Graphcoloring, Tactics]
-* http://www.stups.uni-duesseldorf.de/models/sefm2015_disprover/output/graphcoloring_provers_only.pdf[Wiegard,
+* https://www3.hhu.de/stups/models/sefm2015_disprover/output/graphcoloring_provers_only.pdf[Wiegard,
 Stuttgart 21, Provers alone]
-* http://www.stups.uni-duesseldorf.de/models/sefm2015_disprover/output/graphcoloring_tactic.pdf[Wiegard,
+* https://www3.hhu.de/stups/models/sefm2015_disprover/output/graphcoloring_tactic.pdf[Wiegard,
 Stuttgart 21, Tactics]
 
 ==== Summaries
 
-* http://www.stups.uni-duesseldorf.de/models/sefm2015_disprover/output/tactic_landiggears.pdf[Tactics
+* https://www3.hhu.de/stups/models/sefm2015_disprover/output/tactic_landiggears.pdf[Tactics
 on Landing Gears]
-* http://www.stups.uni-duesseldorf.de/models/sefm2015_disprover/output/tactic_all_models.pdf[Tactics
+* https://www3.hhu.de/stups/models/sefm2015_disprover/output/tactic_all_models.pdf[Tactics
 on all Models]
-* http://www.stups.uni-duesseldorf.de/models/sefm2015_disprover/output/provers_alone_landiggears.pdf[Provers
+* https://www3.hhu.de/stups/models/sefm2015_disprover/output/provers_alone_landiggears.pdf[Provers
 alone on Landing Gears]
-* http://www.stups.uni-duesseldorf.de/models/sefm2015_disprover/output/provers_alone_all_models.pdf[Provers
+* https://www3.hhu.de/stups/models/sefm2015_disprover/output/provers_alone_all_models.pdf[Provers
 alone on all Models]
 
 ==== Surplus of ProB
 
-* http://www.stups.uni-duesseldorf.de/models/sefm2015_disprover/output/surplus.pdf[Surplus
+* https://www3.hhu.de/stups/models/sefm2015_disprover/output/surplus.pdf[Surplus
 of ProB (added last)]
-* http://www.stups.uni-duesseldorf.de/models/sefm2015_disprover/output/surplus2.pdf[Surplus
+* https://www3.hhu.de/stups/models/sefm2015_disprover/output/surplus2.pdf[Surplus
 of ProB (added first)]

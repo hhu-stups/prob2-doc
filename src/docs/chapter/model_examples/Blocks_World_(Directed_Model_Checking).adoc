@@ -14,7 +14,7 @@ The techniques are also explained and evaluated in a scientific paper
 footnote:[M. Leuschel and J. Bendisposto: Directed Model Checking for B:
 An Evaluation and New Techniques. In Proceedings SBMF'2010, LNCS 6527.
 Springer-Verlag, 2010
-http://www.stups.uni-duesseldorf.de/w/Special:Publication/LeBe2010].
+https://www3.hhu.de/stups/downloads/pdf/LeBe2010.pdf].
 
 To illustrate the directed model checking feature, we use the following
 model of Blocks-World, where we manipulate a given set of blocks

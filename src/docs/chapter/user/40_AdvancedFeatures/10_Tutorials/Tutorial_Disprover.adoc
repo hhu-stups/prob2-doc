@@ -24,7 +24,7 @@ Leuschel.
 Recently, the Disprover has been extended to detect cases in which the
 search for a counter-example was complete, yet there was no result. In
 this cases, the absence of a counter-example will be reported as a
-proof. See http://stups.hhu.de/w/Special:Publication/disprover_eval[the
+proof. See https://www3.hhu.de/stups/downloads/pdf/disprover_eval.pdf[the
 paper describing the disprover as a prover] for more details.
 
 [[installation-tutorial-disprover]]

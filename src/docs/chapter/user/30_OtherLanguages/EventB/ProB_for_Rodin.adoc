@@ -55,7 +55,7 @@ We also develop the Camille text-editor for Rodin. A preliminary version
 of Camille for Rodin 3.3 is available at the nightly update site:
 http://nightly.cobra.cs.uni-duesseldorf.de/camille/[http://nightly.cobra.cs.uni-duesseldorf.de/camille/].
 The regular update site
-(http://www.stups.uni-duesseldorf.de/camille_updates[http://www.stups.uni-duesseldorf.de/camille_updates])
+(https://www3.hhu.de/stups/rodin/camille/nightly/[camille nightly])
 is preconfigured within Rodin. More information can be found on the
 http://wiki.event-b.org/index.php/Camille_Editor[Camille site at
 event-b.org].

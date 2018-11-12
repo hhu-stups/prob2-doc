@@ -29,7 +29,7 @@ support infinite deferred sets. We need to do a more constructive
 definition and use the infinite set ProB knows about: `INTEGER`. This is
 done in the following machine, which is included in the
 `examples/Tutorial` directory of the
-http://www.stups.uni-duesseldorf.de/ProB/index.php5/Download[ProB
+https://www3.hhu.de/stups/prob/index.php/Download[ProB
 distribution].
 
 ----

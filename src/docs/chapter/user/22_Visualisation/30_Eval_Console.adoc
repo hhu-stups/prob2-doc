@@ -3,7 +3,7 @@
 
 For this tutorial, load for example the file `StackConstructive.mch`
 included in the `examples/Tutorial` directory of the
-http://www.stups.uni-duesseldorf.de/ProB/index.php5/Download[ProB
+https://www3.hhu.de/stups/prob/index.php/Download[ProB
 distribution] (this example is also discussed in the
 <<tutorial-modeling-fnfinite-datatypes,Tutorial Modeling Infinite
 Datatypes>>).

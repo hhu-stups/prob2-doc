@@ -22,7 +22,7 @@ of ProB / Rodin.
 
 You can follow the <<tutorial-rodin-first-step,First Steps
 Instructions>> or the
-http://www.stups.uni-duesseldorf.de/ProB/index.php5/Installation#Installation_Instruction_for_ProB_.28Rodin_Plugin.29[Screencast]
+<<installation-instruction-for-prob-rodin-plugin,Screencast>>
 to install ProB for Rodin.
 
 In addition to the "ProB for Rodin2" plugin there is a "ProB for

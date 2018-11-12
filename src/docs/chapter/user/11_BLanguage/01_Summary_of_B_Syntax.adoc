@@ -453,10 +453,7 @@ reference manual]. Here are the main differences with Atelier B:
   - ProB allows a she-bang line in machine files starting with `#!` +
 (If you discover more differences, please let us know!)
 
-See also our Wiki for documentation:
-
-* http://www.stups.hhu.de/ProB/index.php5/Current_Limitations
-* http://www.stups.hhu.de/ProB/index.php5/Using_ProB_with_Atelier_B
+See also: <<using_prob_with_atelier,Using ProB with AtelierB>>
 
 Also note that there are various differences between BToolkit and
 AtelierB/ProB:

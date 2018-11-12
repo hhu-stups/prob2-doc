@@ -29,7 +29,7 @@ explains what is included.
 
 The zip file contains the domain specific visualisation of the HD
 machine developed with BMotion Studio. You need to
-http://www.stups.hhu.de/ProB/index.php5/BMotion_Studio_Download[download]
+https://www3.hhu.de/stups/prob/index.php/BMotion_Studio[download]
 the latest version of BMotion Studio (v.0.2.7). Some instruction for
 getting started with BMotion Studio can be find
 http://www3.hhu.de/stups/handbook/bmotion/current/html/first_steps.html[here].
@@ -45,7 +45,7 @@ Ladenberger (ladenberger@cs.uni-duesseldorf.de)
 
 ==== Links
 
-* http://www.stups.hhu.de/ProB/index.php5/BMotion_Studio[BMotion Studio for ProB Homepage]
+* https://www3.hhu.de/stups/prob/index.php/BMotion_Studio[BMotion Studio for ProB Homepage]
 * https://www3.hhu.de/stups/handbook/bmotion/current/html[BMotion Studio for ProB User Handbook]
 * http://wiki.event-b.org/index.php/IUML-B[iUML-B Homepage]
 * http://handbook.event-b.org/[Rodin Handbook]

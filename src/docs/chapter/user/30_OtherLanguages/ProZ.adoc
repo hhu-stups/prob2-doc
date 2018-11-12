@@ -1,14 +1,13 @@
 [[proz]]
 == ProZ
 
-:category: User_Manual
 ProZ is a extension
 of the ProB animator and model checker to support Z specifications. It
 uses the http://spivey.oriel.ox.ac.uk/mike/fuzz[Fuzz Type Checker] by
 Mike Spivey for extracting the formal specification from a LaTeX file.
 On the website you can also find documentation about the syntax of Z
 specifications. The
-http://www.stups.uni-duesseldorf.de/w/Special:Publication/proz07[iFM'07
+https://www3.hhu.de/stups/downloads/pdf/proz07.pdf[iFM'07
 article on ProZ] contains more details about the implementation.
 
 [[preferences-for-proz]]

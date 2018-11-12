@@ -77,7 +77,7 @@ Lamport]. An early implementation of a logic calculator is the
 http://en.wikipedia.org/wiki/William_Stanley_Jevons#Logic[Logic Piano].
 
 We are grateful for feedback about our logic calculator (send an email
-to http://www.stups.uni-duesseldorf.de/~leuschel[Michael Leuschel]). In
+to https://www.cs.hhu.de/lehrstuehle-und-arbeitsgruppen/softwaretechnik-und-programmiersprachen/unser-team.html[Michael Leuschel]). In
 future we plan to provide additional features:
 
 * getting an unsat core for unsatisfiable formulas
@@ -87,7 +87,7 @@ future we plan to provide additional features:
 http://research.microsoft.com/en-us/um/people/lamport/tla/tla.html[TLA+]
 or http://en.wikipedia.org/wiki/Z_notation[Z]
 * ability to change the parameters, e.g., use the
-http://www.stups.uni-duesseldorf.de/w/Special:Publication/PlaggeLeuschel_Kodkod2012[ProB-Kodkod
+https://www3.hhu.de/stups/downloads/pdf/PlaggeLeuschel_Kodkod2012.pdf[ProB-Kodkod
 backend] instead of the default constraint-logic programming kernel.
 
 [[small-tutorial]]

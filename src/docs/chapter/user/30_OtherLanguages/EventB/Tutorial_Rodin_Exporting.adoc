@@ -70,7 +70,7 @@ image::ProBRodinExport.png[]
 For this to work, you first need to open the ProB Classic preferences
 and then click on "Browse" to locate your installation of ProB Classic
 (which you can obtain from the
-http://www.stups.uni-duesseldorf.de/ProB/index.php5/Download[ProB
+https://www3.hhu.de/stups/prob/index.php/Download[ProB
 download site] (we usually recommend the nightly-build version).
 
 image::ProBRodinClassicPreference.png[]

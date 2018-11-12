@@ -40,9 +40,9 @@ the execution times of all 6 experiments seem to be consistent.
 
 We cannot make all models public, because they we provided by industrial
 partners from various research projects. The models that could be make
-available can be downloaded http://www.stups.hhu.de/models/parb/[here].
+available can be downloaded https://www3.hhu.de/stups/models/parb/[here].
 
 === Results
 
 The results of the experiments are shown in Jens Bendisposto's
-dissertation. A preprint is available http://www.stups.uni-duesseldorf.de/w/Directed_and_Distributed_Model_Checking_of_B_Specifications_(Preprint)[here].
+dissertation. The dissertation is available https://docserv.uni-duesseldorf.de/servlets/DocumentServlet?id=34472[here].

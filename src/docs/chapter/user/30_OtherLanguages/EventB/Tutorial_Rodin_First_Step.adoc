@@ -16,7 +16,7 @@ image::RodinInstallNewSoftware.png[]
 In the dialog box you should then select the ProB for Rodin update site,
 and then select the various components of ProB as shown below. (the
 update site for Rodin 3.x is
-http://www.stups.hhu.de/prob_updates_rodin3[http://www.stups.hhu.de/prob_updates_rodin3]
+https://www3.hhu.de/stups/rodin/prob1/release/3[Installing the ProB plug-ins]
 for stable builds, and
 https://www3.hhu.de/stups/rodin/prob1/nightly[https://www3.hhu.de/stups/rodin/prob1/nightly].
 for nightly builds, in case you want to type it by hand).

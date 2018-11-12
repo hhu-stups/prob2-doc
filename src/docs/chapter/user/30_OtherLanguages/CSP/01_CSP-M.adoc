@@ -8,7 +8,7 @@ ProB supports
 machine readable CSPfootnote:[M. Butler and M. Leuschel: _Combining CSP
 and B for specification and property verification_. FM 2005, LNCS 3582,
 Springer-Verlag, 2005
-http://www.stups.uni-duesseldorf.de/~leuschel/publication_detail.php?id=1[1]]
+https://www3.hhu.de/stups/downloads/pdf/LeBu05_1.pdf]
 as supported by FDR and ProBE. CSP files can be animated and model
 checked on their own simply by opening a file ending with ".csp".
 

@@ -57,7 +57,7 @@ You can find the video https://youtu.be/wFr_pEjbpqo[here].
 ==== BMotion Studio for ProB
 
 
-* http://www.stups.hhu.de/ProB/index.php5/BMotion_Studio[BMotion Studio
+* https://www3.hhu.de/stups/prob/index.php/BMotion_Studio[BMotion Studio
 for ProB Homepage]
 * https://www3.hhu.de/stups/handbook/bmotion/current/html[BMotion Studio
 for ProB User Handbook]

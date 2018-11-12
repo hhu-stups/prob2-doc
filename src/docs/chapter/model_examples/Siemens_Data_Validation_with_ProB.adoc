@@ -51,9 +51,9 @@ takes less than one minute using the current version of ProB.
 
 More details can be found in these papers:
 
-* http://www.stups.uni-duesseldorf.de/w/Special:Publication/LeFaFrPl2011[FAC'2011]
-* http://www.stups.uni-duesseldorf.de/w/Special:Publication/LeFaFrPl09_248[FM'2009]
-* http://www.stups.uni-duesseldorf.de/w/Special:Publication/abs-1210-6815[Formally
+* https://www3.hhu.de/stups/downloads/pdf/LeFaFrPl2011.pdf[FAC'2011]
+* https://www3.hhu.de/stups/downloads/pdf/LeFaFrPl09_248.pdf[FM'2009]
+* https://www3.hhu.de/stups/downloads/pdf/abs-1210-6815.pdf[Formally
 Checking Large Data Sets in the Railways, 2012]
 
 === Complicated Formula
@@ -92,4 +92,3 @@ All this lead to a proof tree and a goal size that is beyond the
 capabilities of Atelier B.
 
 image::GraphicalViewerSiemensSaoPauloL9.png[]
-

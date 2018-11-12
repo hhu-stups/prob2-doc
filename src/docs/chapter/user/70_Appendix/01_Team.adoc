@@ -2,7 +2,7 @@
 == Team
 ProB is based on research and implemention effort by:
 
-* http://www.stups.uni-duesseldorf.de/~leuschel/[Michael Leuschel],
+* https://www.cs.hhu.de/lehrstuehle-und-arbeitsgruppen/softwaretechnik-und-programmiersprachen/unser-team.html[Michael Leuschel],
 * Michael Butler,
 * http://www.stups.uni-duesseldorf.de/w/Jens_Bendisposto[Jens
 Bendisposto],

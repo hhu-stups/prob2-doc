@@ -24,7 +24,7 @@ Lukas Ladenberger (ladenberger@cs.uni-duesseldorf.de).
 
 === Links
 
-* http://www.stups.hhu.de/ProB/index.php5/BMotion_Studio[BMotionWeb Homepage]
+* https://www3.hhu.de/stups/prob/index.php/BMotion_Studio[BMotionWeb Homepage]
 * https://www3.hhu.de/stups/handbook/bmotion/current/html[BMotionWeb User Handbook]
 
 [[getting-started-with-bmotionweb]]

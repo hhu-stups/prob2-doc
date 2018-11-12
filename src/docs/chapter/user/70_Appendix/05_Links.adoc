@@ -15,8 +15,7 @@ Software Engineering, by Jean-Raymond Abrial] (the Bee book)
 [[papers]]
 === Papers
 
-* http://www.stups.uni-duesseldorf.de/w/Publications:ProB[ProB
-Publications]
+* https://www3.hhu.de/stups/downloads/pdf/[ProB Publications]
 * http://en.wikipedia.org/wiki/B-Method[B-Method in Wikipedia]
 * http://www.bmethod.com/[B-Method Site] from ClearSy
 * http://www.fm4industry.org/index.php/Can_FM_tools_manage_large_industrial_problems%3F[Can
