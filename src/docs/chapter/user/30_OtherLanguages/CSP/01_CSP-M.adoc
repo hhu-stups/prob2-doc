@@ -40,7 +40,7 @@ x.y:Set" the ":Set" associates only with y; if you want to check that
 "x.y" is in Set you need to write: "ch?(x.y):Set.
 * channel declarations can either use associative dot tuples or
 non-associative tuples but not yet both. Also, sets of tuples as channel
-types will not work the same way as in FDR. I.e., for channel a:LinkData
+types will not work the same way as in FDR. I.e., for channel a LinkData
 you should not use LinkData = {0.0, 0.1, 1.0, 1.1} but rather nametype
 LinkData = {0,1}.{0,1}.
 

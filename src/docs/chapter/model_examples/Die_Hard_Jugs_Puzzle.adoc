@@ -4,8 +4,8 @@
 = Die Hard Jugs Puzzle
 
 
-This is the B model of a puzzle from the movie ``Die Hard with a
-Vengeance''. This https://www.youtube.com/watch?v=BVtQNK_ZUJg[clip shows
+This is the B model of a puzzle from the movie "Die Hard with a
+Vengeance". This https://www.youtube.com/watch?v=BVtQNK_ZUJg[clip shows
 Bruce Willis and Samuel Jackson having a go at the puzzle]. A
 http://www.math.tamu.edu/~dallen/hollywood/diehard/diehard.htm[more
 detailed explanation can be found here]. At start we have one 3 gallon

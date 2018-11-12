@@ -12,8 +12,8 @@ or directory if Tcl/Tk is not proberly installed. You can get Tcl/Tk at
 http://www.tcl.tk/software/tcltk/.
 
 * For the very latest version of ProB (1.2.0 or newer), you need a Java
-1.5 Runtime environment or newer (you will get a message ``Could not
-execute parser.'' with ``Error: java.lang.UnsupportedClassVersionError''
+1.5 Runtime environment or newer (you will get a message "Could not
+execute parser." with "Error: java.lang.UnsupportedClassVersionError"
 when opening a machine). You can obtain Java at
 http://java.sun.com/j2se/index.jsp[http://java.sun.com/j2se/index.jsp].
 

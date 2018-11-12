@@ -4,8 +4,8 @@
 = TrainSwitchingPuzzle
 
 
-This model was developed to solve Puzzle Nr 40 from the book ``My best
-mathematical and logical puzzles'' by Martin Gardner. Using
+This model was developed to solve Puzzle Nr 40 from the book "My best
+mathematical and logical puzzles" by Martin Gardner. Using
 breadth-first, ProB takes about 5 seconds to find the shortest solution
 leading to a state satisfying the `GOAL` predicate. The trace consists
 of 22 steps. A visualisation of this trace can be found on

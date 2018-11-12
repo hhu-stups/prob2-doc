@@ -119,12 +119,12 @@ image::ProB_Jukebox_AnalyseGraphicallyUnsatAssertion3.png[]
 
 The graphical viewer gives us an instance where the universally
 quantified formula is false: `x=99`, which hopefully helps us in fixing
-the problem, e.g., writing `!x.(x``x<=99)`.
+the problem, e.g., writing `!x.(x<limit => x<=99)`.
 
 Note, that ProB also allows us to inspect custom predicates using the
 graphical viewer (without saving and reopening a machine). For this,
 choose the "Analyse Graphically/Custom Predicate..." in the
-_Analyse_ menu and enter `!x.(x``x<=99)`:
+_Analyse_ menu and enter `!x.(x<limit => x<=99)`:
 
 image::ProB_Jukebox_AnalyseGraphicallyCustomCommand.png[]
 

@@ -54,8 +54,8 @@ Afterwards, ProB will determine the cardinality of all deferred sets
 influence this:
 
 * by using "Animation Preferences..." command in the _Preferences_
-menu and modifying the preference ``Size of unspecified deferred sets in
-SETS section''.
+menu and modifying the preference "Size of unspecified deferred sets in
+SETS section".
 * by including a "DEFINITIONS" section in your machine (if there is
 not yet one) and then adding a definition of the form `scope_TRACK == 5`
 (where `TRACK` is the name of the deferred set you wish to influence and
@@ -80,8 +80,8 @@ are true. Note that ProB will *not* (yet) modify the settings from phase
 
 ProB will initiate this phase automatically, and as we can see above,
 ProB has found three distinct ways to setup the constant limit. Observe
-that a little orange button labeled max has appeared in the ``Enabled
-Operations'' pane. This means that there might actually be more than
+that a little orange button labeled max has appeared in the "Enabled
+Operations" pane. This means that there might actually be more than
 three ways to setup the constants. We will return to this issue later.
 
 By double clicking on "SETUP_CONSTANTS(2)" we proceed to the next

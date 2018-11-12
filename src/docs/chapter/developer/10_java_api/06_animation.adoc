@@ -49,7 +49,7 @@ def execute(machine, state, operation_name, Object... params) {
 }
 ----
 
-A call would look like  `execute(mch, x,``foo", 42)` or for an operation with three parameters it would look like `execute(mch,"bar",1,"{}",-3)`.
+A call would look like  `execute(mch, x,"foo", 42)` or for an operation with three parameters it would look like `execute(mch,"bar",1,"{}",-3)`.
 
 == Animation via Trace
 

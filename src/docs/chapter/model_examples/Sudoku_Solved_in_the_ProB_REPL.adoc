@@ -25,7 +25,7 @@ less for all queries below on a Mac Book Air).
 
 `probcli -repl -p REPL_UNICODE TRUE` +
 `ProB Interactive Expression and Predicate Evaluator` +
-`Type "``:help`"`for more information.`
+`Type ":help" for more information.`
 
 First let us define two useful values: the domain `DOM` for the numbers
 to be put inside the Sudoku and the group of indices `SUBSQ` which can

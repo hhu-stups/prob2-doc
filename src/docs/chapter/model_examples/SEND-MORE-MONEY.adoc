@@ -18,7 +18,7 @@ your shell or terminal:
 This should give you the following output:
 
 `ProB Interactive Expression and Predicate Evaluator` +
-`Type "``:help`"`for more information.` +
+`Type ":help"for more information.` +
 `>>>`
 
 Note, you can also use the <<eval-console,Eval Console in ProB

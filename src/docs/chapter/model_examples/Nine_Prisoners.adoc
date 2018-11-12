@@ -9,7 +9,7 @@ https://www.quantamagazine.org/20150609-a-design-dilemma-solved-minus-designs/[a
 in Quanta magazine] mentions the following puzzle by Dudeney and
 popularized by Martin Gardner:
 
- ``So in the spirit of Kirkman, we will leave the gentle reader with
+"So in the spirit of Kirkman, we will leave the gentle reader with
 another brainteaser, a slight variation on the schoolgirl puzzle devised
 in 1917 by the British puzzle aficionado Henry Ernest Dudeney and later
 popularized by Martin Gardner: Nine prisoners are taken outdoors for
@@ -17,7 +17,7 @@ exercise in rows of three, with each adjacent pair of prisoners linked
 by handcuffs, on each of the six weekdays (back in Dudeney’s less
 enlightened times, Saturday was still a weekday). Can the prisoners be
 arranged over the course of the six days so that each pair of prisoners
-shares handcuffs exactly once?''
+shares handcuffs exactly once?"
 
 An encoding of this puzzle in B is relatively straightforward, thanks to
 the use of sets, sequences and permutations and universal

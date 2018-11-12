@@ -8,7 +8,7 @@ The Verification View provides 3 different methods to test a machine:
 * Constraint Based Checking
 
 In each tab you can add multiple tests to check you currently selected
-machine and interrupt the checking process by pressing the ``Cancel''
+machine and interrupt the checking process by pressing the "Cancel"
 button.
 
 [[javafx-modelchecking]]

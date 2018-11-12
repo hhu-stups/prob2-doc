@@ -90,18 +90,18 @@ save the Trace object that is returned.
 The simplest way to add a transition is to specify it with the name of
 the event to be executed and predicates to specify how the parameters
 for the event are to be allocated. Specifying no predicate will assume a
-predicate of ``TRUE=TRUE'' for the given event.
+predicate of "TRUE=TRUE" for the given event.
 
 `t = t.execute("new","pp=PID1")`
 
 If executing the event in a groovy environment (console or script), the
 event will be recognized as a method on the Trace class. This means that
-you can execute the event ``new'' as follows:
+you can execute the event "new" as follows:
 
 `t = t.new("pp=PID1") `
 
 If you know the id that has been allocated by the ProB kernel to a given
-transition, this can be added via the ``add'' method. This will search
+transition, this can be added via the "add" method. This will search
 the outgoing transitions from the current state and attempts to find one
 with a matching id. For instance, if operation 0 is among the enabled
 operations for the current state, then
@@ -123,12 +123,12 @@ It is also possible to execute any event by executing
 
 `t = t.anyEvent()`
 
-and it is also possible to execute any event with name ``name''. For
+and it is also possible to execute any event with name "name". For
 instance,
 
 `t = t.anyEvent("name")`
 
-will execute any event with the name ``name''.
+will execute any event with the name "name".
 
 It also possible to move backwards and forwards within a trace.
 
@@ -153,7 +153,7 @@ right hand corner of the `Events` view.
 === How to switch from UI to groovy console
 
 There is an easy way to switch from the UI to the groovy console and
-back. It all happens using the ``animations'' global variable in the
+back. It all happens using the "animations" global variable in the
 groovy console. What is important to remember, is that in this case,
 there is no distinction between an animation and a trace.
 
@@ -193,12 +193,12 @@ the string. The two parsers currently available are `ClassicalB` and
 
 `t.evalCurrent("x:NAT" as EventB) `
 
-will parse ``x:NAT'' using the Event B parser and then will evaluate it
+will parse "x:NAT" using the Event B parser and then will evaluate it
 at the current state. The following code
 
 `t.evalCurrent("x:NAT" as ClassicalB)`
 
-will parse ``x:NAT'' using the Classical B parser and then will evaluate
+will parse "x:NAT" using the Classical B parser and then will evaluate
 it at the current state.
 
 The Trace class can also attempt to identify the correct parser for the
@@ -219,8 +219,8 @@ formulas by typing
 
 `space_0.eval(space_0[5],["x:NAT" as EventB,"y:NAT" as ClassicalB])`
 
-into the console. This will parse ``x:NAT'' with the Event B parser and
-``y:NAT'' with the Classical B parser and then will evaluate them at the
+into the console. This will parse "x:NAT" with the Event B parser and
+"y:NAT" with the Classical B parser and then will evaluate them at the
 state with id 5. The parser is not implicit in the StateSpace, so it is
 important to specify it here. In order to evaluate a formula, you need
 to specify the StateId object that is associated with the desired id. To
@@ -329,9 +329,9 @@ from there, you can execute a chain of events. For instance,
 
 So you can execute anyEvent with the method anyEvent(filter), where
 filter can be a String name, or a List of names. You can also execute an
-event with name ``name'', with the method name(predicate), where
+event with name "name", with the method name(predicate), where
 predicate is the predicate string intended to filter the solutions for
-the event. If there are no parameters, the predicate ``TRUE = TRUE''
+the event. If there are no parameters, the predicate "TRUE = TRUE"
 will automatically be added.
 
 [[how-to-use-a-different-probcli-binary-for-prob2]]

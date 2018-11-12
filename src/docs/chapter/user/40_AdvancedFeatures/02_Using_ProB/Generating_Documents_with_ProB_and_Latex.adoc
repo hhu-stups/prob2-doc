@@ -30,7 +30,7 @@ The distribution folder of ProB contains an example with a Makefile,
 producing the following file, which at the same time documents the core
 features:
 
-link:\\docs\asciidoc\images\prob_latex_doc.pdf[ProB Latex Documentation]
+https://www3.hhu.de/stups/prob/images/7/7f/Prob_latex_doc.pdf[ProB Latex Documentation]
 
 [[commands]]
 === Commands
@@ -99,8 +99,8 @@ value of the set.
 * Presentation held in Grenoble in September 2016 about "Constraint
 Programming Puzzles in B"
 
-link:\\docs\asciidoc\images\puzzle_latex_presentation.pdf[Puzzle Latex Presentation]
+https://www3.hhu.de/stups/prob/images/2/2d/Puzzle_latex_presentation.pdf[Puzzle Latex Presentation]
 
 * SBMF'2016 keynote article:
 
-link:\\docs\asciidoc\images\smbf_2016_latex.pdf[Formal Model-Based Constraint Solving and Document Generation]
+https://www3.hhu.de/stups/prob/images/1/17/Sbmf_2016_latex.pdf[Formal Model-Based Constraint Solving and Document Generation]

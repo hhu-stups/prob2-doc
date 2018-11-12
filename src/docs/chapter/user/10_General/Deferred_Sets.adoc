@@ -57,7 +57,7 @@ END
 From the command-line, using probcli you can use the command-line
 switch:
 
-`-card```
+`-card <GS> <VAL>`
 
 Example:
 

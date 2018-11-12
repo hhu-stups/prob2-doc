@@ -311,7 +311,7 @@ Note that a semicolon must not follow the last assertion in a pragma.
 
 For CSP-M specifications, it is also possible to assert LTL-formulae to
 particular processes in the model. This is possible by means of
-``assert`` declarations, which have been recently included to the CSP-M
+`assert` declarations, which have been recently included to the CSP-M
 grammar of the ProB CSP-M parser:
 
 `assert P |= LTL: "ltl-formula"`

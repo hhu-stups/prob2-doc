@@ -35,7 +35,7 @@ inclusion, but it can be very fast and the state space is kept on disk.
 === How do I perform a self-check of ProB?
 
 If you suspect something is wrong with your ProB Tcl/Tk installation,
-run the ``Perform Self Check'' command in the ``Debug Menu''. Note: run
+run the "Perform Self Check" command in the "Debug Menu". Note: run
 this command immediately after startup before opening new machines
 (otherwise you may get some errors because the machine will override
 some default definitions used for the tests). Normally, the console
@@ -174,12 +174,12 @@ can help in producing multiple assertion violations at one goal/command?
 
 For the moment the solution would be to put the assertions into the
 invariant and then model check the entire state space by disabling
-``Find Invariant Violations'' in the dialog box for the Temporal Model
-Check command. Afterwards, you can use ``Compute Coverage'' in the
-``Analyse'' menu to see how many states have violated the invariant.
-Another solution is to write a ``dummy'' operation for every assertion:
+"Find Invariant Violations" in the dialog box for the Temporal Model
+Check command. Afterwards, you can use "Compute Coverage" in the
+"Analyse" menu to see how many states have violated the invariant.
+Another solution is to write a "dummy" operation for every assertion:
 my_assertion_N = SELECT not(Assertion_N) THEN skip END After model
-checking, you can again use ``Compute Coverage'' to see how often every
+checking, you can again use "Compute Coverage" to see how often every
 assertion has been violated.
 
 === Checking Multiple LTL Formulas

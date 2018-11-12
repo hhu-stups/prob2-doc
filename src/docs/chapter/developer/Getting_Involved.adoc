@@ -40,9 +40,11 @@ http://tuatara.cs.uni-duesseldorf.de/prob/prob_prolog[http://tuatara.cs.uni-dues
 Now, add the following to your `.bash_login` file (at least on Mac OS;
 supposing you cloned the Git repository into ~/git_root):
 
-`export PROBDIR=~/git_root/prob_prolog` +
-`export PROB_SOURCE_DIR=$PROBDIR/src` +
-`alias prob='cd $PROB_SOURCE_DIR; sicstus -Dprob_profile=true -l $PROB_SOURCE_DIR/prob_tcltk.pl --goal "``go.`"`'`
+....
+export PROBDIR=~/git_root/prob_prolog
+export PROB_SOURCE_DIR=$PROBDIR/src
+alias prob='cd $PROB_SOURCE_DIR; sicstus -Dprob_profile=true -l $PROB_SOURCE_DIR/prob_tcltk.pl --goal "go."'
+....
 
 Now, you can simply start ProB from the command-line and from source
 with `prob`.
@@ -50,7 +52,7 @@ with `prob`.
 To start the Unit Test REPL, add the following to your `.bash_login`
 file (at least on Mac OS):
 
-`alias test='cd $PROBDIR; rlwrap sicstus -Dprob_safe_mode=true -l $PROB_SOURCE_DIR/test_runner.pl --goal "``test_repl.`"`'`
+`alias test='cd $PROBDIR; rlwrap sicstus -Dprob_safe_mode=true -l $PROB_SOURCE_DIR/test_runner.pl --goal "test_repl."`
 
 (It is recommended to install rlwrap so that you get a history of your
 commands. If you don't want to install rlwrap just remove it from the
@@ -60,10 +62,12 @@ Before using ProB for the first time from source you should build the
 extensions. The minimal extensions are counter and user_signal. You can
 build them using
 
-`cd extensions/counter` +
-`make` +
-`cd ../user_signal` +
-`make`
+....
+cd extensions/counter
+make
+cd ../user_signal
+make
+....
 
 You could also build all extensions at once by going to the top of the
 prob_prolog tree (i.e., the directory containing src and lib as
@@ -99,7 +103,7 @@ Supposing you have set the variable `PROBDIR` (see above) and have the
 `rlwrap` tool, you can define the following alias (e.g., in your
 `.bash_login` file on Mac OS X):
 
-`alias test='cd $PROBDIR; rlwrap sicstus -Dprob_safe_mode=true -l $PROBDIR/src/test_runner.pl --goal "``test_repl.`"`'`
+`alias test='cd $PROBDIR; rlwrap sicstus -Dprob_safe_mode=true -l $PROBDIR/src/test_runner.pl --goal "test_repl."'`
 
 Now you can start the test runner:
 

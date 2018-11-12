@@ -25,7 +25,7 @@ Let us prove that from `x:1..100` it follows that the equation
 Existentially Quantified Predicate over x is FALSE
 ....
 
-In this case, ProB has not generated an ``enumeration warning'', i.e.,
+In this case, ProB has not generated an "enumeration warning", i.e.,
 all cases where considered: we have a proof. In general when all
 variables are restricted to a finite set of values in the hypotheses,
 ProB can be used as a prover.

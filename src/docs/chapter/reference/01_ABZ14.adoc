@@ -21,7 +21,7 @@ Science (ABZ 2014: The Landing Gear Case Study)].
 
 The visualization of our own model can either be controlled by
 interacting with the displayed elements (i.e., clicking the handle) or
-using the Events view which can be opened using the ``Open View'' menu
+using the Events view which can be opened using the "Open View" menu
 at the bottom right corner. The other model can only be controlled using
 the Events view.
 

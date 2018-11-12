@@ -12,8 +12,8 @@ To install the ProB plugin for http://www.event-b.org[Rodin], open the
 _Help_ menu in Rodin and click "Install new software".
 
 You see a drop-down list titled "Work with:" at the top of the install
-dialog. Choose the update site "ProB - ..." and click on ``ProB for
-rodin2'' in the field below. Click on the "Next" button at the button
+dialog. Choose the update site "ProB - ..." and click on "ProB for
+rodin2" in the field below. Click on the "Next" button at the button
 on the dialog and proceed with the installation as usual.
 
 Alternativaly, one can use the Tcl/Tk version of ProB but Event-B models
@@ -23,8 +23,8 @@ must be exported to an .eventb file first (see below).
 ==== Animation and Modelchecking
 
 You can start animation of a model (machine or context) by
-right-clicking on the model in the Event-B explorer. Choose ``Start
-Animation / Model Checking''.
+right-clicking on the model in the Event-B explorer. Choose "Start
+Animation / Model Checking".
 
 //*TODO:* Here we should add more details about the ProB perspective and views.
 

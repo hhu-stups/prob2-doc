@@ -67,8 +67,8 @@ Here is a screenshot of ProB Tcl/Tk after loading the model.
 image::ProB_Argumentation_Screenshot1.png[]
 
 You can see that there is only a single solution (solving time 10 ms),
-as only a single SETUP_CONSTANTS line is available in the ``Enabled
-Operations'' pane. Double-click on SETUP_CONSTANTS and then
+as only a single SETUP_CONSTANTS line is available in the "Enabled
+Operations" pane. Double-click on SETUP_CONSTANTS and then
 INITIALISATION will give you the following result, where you can see the
 solution in the "State Properties" pane:
 
@@ -161,8 +161,8 @@ DEFINITIONS
 ....
 
 These lines do not influence the meaning of the model; they are just
-used by ProB. Indeed, one can then use the ``Current State as Custom
-Graph'' command in the "States" submenu of the "Visualise" menu to
+used by ProB. Indeed, one can then use the "Current State as Custom
+Graph" command in the "States" submenu of the "Visualise" menu to
 obtain the following rendering of the very first example above:
 
 image::ProB_Argumentation_CustomDot.png[]

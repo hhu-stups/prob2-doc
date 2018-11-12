@@ -109,14 +109,14 @@ checking tools]
 === Testimonials
 
 * http://www.deploy-project.eu/pdf/D41-Siemens-final-full.pdf[Data
-validation at Siemens, Jérôme Falampin]: "``The work done with ProB is a
+validation at Siemens, Jérôme Falampin]: "The work done with ProB is a
 great success. Thanks to the automatization and ProB, the wayside data
-validation is quicker, easier and complete.'' More details and academic
+validation is quicker, easier and complete." More details and academic
 papers can be found on our page
 <siemens-data-validation-with-prob,Siemens Data Validation with
 ProB>>.
 * http://dl.acm.org/citation.cfm?doid=2406336.2406351[Pacemaker model by
-Mery and Singh]: ``ProB was very useful in the development of the
+Mery and Singh]: "ProB was very useful in the development of the
 pacemaker specification, and was able to animate all of our models and
 able to prove the absence of error (no counterexample exist). The ProB
 model checker also discovered several invariant violations, e.g.,
@@ -125,17 +125,17 @@ activities. It was also able to discover a deadlock in two of the
 models, which was due to the fact that “clock counter” were not properly
 recycled, meaning that after a while no pacing or sensing activities
 occur into the system. Such kind of errors would have been more
-difficult to uncover with the prover of RODIN tool.''
+difficult to uncover with the prover of RODIN tool.""
 * http://www.data-validation.fr/data-validation-reverse-engineering/[Reverse
-engineering using ProB at ClearSy]: ``Data validation principles have
+engineering using ProB at ClearSy]: "Data validation principles have
 been applied recently to a railways reverse-engineering project with
 great success. B and ProB have demonstrated again how efficient they are
-when used in combination.''...``This problem was solved elegantly by
+when used in combination."..."This problem was solved elegantly by
 using data validation principles: a B model representing the two graphs
 and their properties were elaborated, and ProB used for finding a
-solution.''
+solution."
 * http://www.ncl.ac.uk/computing/research/publication/197269[Safecap
-tool paper by Iliasov, Lopatkin and Romanovsky]: ``One of the larger
+tool paper by Iliasov, Lopatkin and Romanovsky]: "One of the larger
 examples we have tackled is the Carlisle Citadel station with the North,
 South, and Caldew junctions. The modelled fragment is 2.6km long and
 comprises 70 train detection circuits, 63 points, 79 routes and 161
@@ -145,10 +145,10 @@ theory constraints using ProB took just over 6 minutes on a PC with i7
 3730 CPU and utilized just under 2GB of RAM. The Why3 verification of
 the same theory takes approximately 70 minutes. The control table theory
 is verified under 20 seconds by ProB and not verified completely, with
-the current translation of conditions, using Why3.''
+the current translation of conditions, using Why3."
 * http://www.erts2014.org/Site/0R4UXE94/Fichier/erts2014_1B2.pdf[Innovative
 Approach for Requirements Verification of Closed Systems by Reis,
-Bicknell, Butler, Colley]: ``The Event-B model can be animated within
+Bicknell, Butler, Colley]: "The Event-B model can be animated within
 Rodin using the BMotion Studio tool, which is part of ProB. Using the
 tool, it is possible to generate an animated front-end to the simulation
 of the model in the form of a user-friendly graphical interface, which
@@ -162,9 +162,9 @@ underlying Event-B model, it can not only be used to run through the
 model and confirm that the model is the correct representation of the
 system, but can also be used to explore further scenarios. This
 graphical representation of the system can be used without necessarily
-requiring any experience with the Event-B language or the toolset.''
+requiring any experience with the Event-B language or the toolset."
 * http://dl.acm.org/citation.cfm?id=2480314[ProZ for Modelling Safety
-Properties of Interactive Medical Systems by Bowen and Reeves]: ``In
+Properties of Interactive Medical Systems by Bowen and Reeves]: "In
 this paper we have shown how temporal logic and invariants describing
 safety properties of interactive medical devices can be investigated
 within the ProZ tool. We have given examples of checking for such
@@ -175,7 +175,7 @@ functionalities, contributes to supporting safer use of interactive
 medical devices. That is we can use such techniques not just to help
 develop better and safer systems (where such techniques are most
 typically used) but also, as we have shown here, to investigate existing
-devices to ensure they can be safely used within the clinical setting.''
+devices to ensure they can be safely used within the clinical setting."
 * ProB has been used “out-of-the-box” for Rodin theories by Thales for
 railway interlocking models, building ProB BMotionStudio visualizations
 on top. According to the

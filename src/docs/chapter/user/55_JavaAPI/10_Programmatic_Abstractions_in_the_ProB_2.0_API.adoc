@@ -55,7 +55,7 @@ Conceptually, the state space is completely there and completely
 evaluated. When you access a state within the StateSpace, ProB will
 fetch the information from Prolog automatically and transparently. The
 only observation that can be made is that the fetching of some states
-takes longer than the ones that are already ``cached'' in the
+takes longer than the ones that are already "cached" in the
 StateSpace. For performance reasons, not all states in the state space
 are saved indefinitely. The states in the StateSpace are saved as State
 objects, which then hold the information about the outgoing transitions
@@ -68,7 +68,7 @@ them up.
 === Trace
 
 For some tools, the StateSpace abstraction may be sufficient. But when
-it comes to animation and the concept of a ``current state'', a further
+it comes to animation and the concept of a "current state", a further
 abstraction becomes necessary. The Trace provides this abstraction.
 
 A Trace consists of a linked list of states which correspond to a path

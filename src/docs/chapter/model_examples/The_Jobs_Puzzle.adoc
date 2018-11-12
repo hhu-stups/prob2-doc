@@ -22,8 +22,8 @@ The puzzle consists of eight statements that describe the problem domain
 and provide some constraints on the elements of the domain. The problem
 is about a set of people and a set of jobs; the question posed by the
 puzzle is: who holds which job? The text of the puzzle as presented in
-__``The jobs puzzle: A challenge for logical expressibility and
-automated reasoning.''__footnote:[S. C. Shapiro. The jobs puzzle: A
+__"The jobs puzzle: A challenge for logical expressibility and
+automated reasoning."__footnote:[S. C. Shapiro. The jobs puzzle: A
 challenge for logical expressibility and automated reasoning. In AAAI
 Spring Symposium: Logical Formalizations of Commonsense Reasoning,
 2011.] is as follows:
@@ -288,8 +288,8 @@ cardinality expressions.
 In his paper Shapiro discusses several formalizations of the puzzle with
 regard to the identified challenges. A further formalization using
 controlled natural language and answer set programming (ASP) was
-presented in _``The jobs puzzle: Taking on the challenge via controlled
-natural language processing''_ by Schwitter et al.footnote:[R.
+presented in _"The jobs puzzle: Taking on the challenge via controlled
+natural language processing"_ by Schwitter et al.footnote:[R.
 Schwitter. The jobs puzzle: Taking on the challenge via controlled
 natural language processing. Theory and Practice of Logic Programming,
 13:487–501, 7 2013.]

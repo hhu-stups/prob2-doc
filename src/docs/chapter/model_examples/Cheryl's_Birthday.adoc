@@ -77,7 +77,7 @@ END
 ....
 
 When loading this B machine in ProB, you will see that there is only a
-single solution (solving time 20-30 ms) : `Month = "``july`" and
+single solution (solving time 20-30 ms) : `Month = "july" and
 `Day = 16`.
 
 Here is a screenshot of ProB Tcl/Tk after loading the model.

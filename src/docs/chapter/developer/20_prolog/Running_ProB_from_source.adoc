@@ -6,7 +6,7 @@
 
 Go into the prob_prolog directory and type:
 
-`sicstus -Dprob_profile=true -l src/prob_tcltk.pl --goal "``go.`"`'`
+`sicstus -Dprob_profile=true -l src/prob_tcltk.pl --goal "go."'`
 
 [[starting-probcli-command-line-version]]
 == Starting probcli command-line version
@@ -14,7 +14,7 @@ Go into the prob_prolog directory and type:
 To start probcli from source define this alias, where `SICSTUSDIR` must
 be defined:
 
-`alias probsli='rlwrap $SICSTUSDIR/bin/sicstus -l src/prob_cli.pl --goal "``go_cli.`"`-a'`
+`alias probsli='rlwrap $SICSTUSDIR/bin/sicstus -l src/prob_cli.pl --goal "go_cli." -a'`
 
 You can now use probsli just like probcli, e.g.,
 
@@ -26,7 +26,7 @@ You can now use probsli just like probcli, e.g.,
 Starting test runner from source: First define the alias, where
 `PROBDIR` and `SICSTUSDIR` must be defined:
 
-`alias tests='cd $PROBDIR; rlwrap $SICSTUSDIR/bin/sicstus -Dprob_safe_mode=true -l $PROBDIR/src/test_runner.pl --goal "``test_repl.`"`-- '`
+`alias tests='cd $PROBDIR; rlwrap $SICSTUSDIR/bin/sicstus -Dprob_safe_mode=true -l $PROBDIR/src/test_runner.pl --goal "test_repl."-- '`
 
 Now you can start the test runner like this:
 
