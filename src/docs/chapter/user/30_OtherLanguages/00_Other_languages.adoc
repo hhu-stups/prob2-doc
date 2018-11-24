@@ -95,3 +95,12 @@ Finally, a more complex example is <<rush-hour-xtl,an encoding of
 the Rush Hour puzzle>> which also includes a graphical visualisation
 (using the `animation_function_result` predicate recognised by ProB as
 of version 1.4.0-rc3).
+
+== Other recognised Prolog predicates
+
+The following can be used to set up an animation image matrix with corresponding actions:
+* animation_image(Nr,Path)
+* animation_function_result(State,List) where List is a list of terms of the form ((Row,Col),Img)
+where Img is either a declared animation_image number or another Prolog term
+* animation_image_right_click_transition(Row,Col,TransitionTemplate)
+* animation_image_click_transition(FromRow,FromCol,ToRow,ToCol,ListOfTransitionTemplates,ImageNr)
