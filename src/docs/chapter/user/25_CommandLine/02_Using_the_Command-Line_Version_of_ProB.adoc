@@ -644,7 +644,7 @@ probcli my.mch -mc 1000 -cc 10 25
 
 [cols="",]
 |=======================================================================
-|set to . For more information about preferences please have a look at
+|set <PREFERENCE> to <VALUE> For more information about preferences please have a look at
 <<using-the-command-line-version-of-prob,Preferences>>
 |=======================================================================
 
@@ -657,6 +657,29 @@ probcli my.mch -p TIME_OUT 8000 -p CLPFD TRUE -mc 10000
 ....
 
 [[prefs]]
+
+==== -pref_group <PREFGROUP> <SETTING>
+
+=====  Description
+
+[cols="",]
+|=======================================================================
+|set to the group of preferences <PREFGROUP> to a predefined setting <SETTING>
+|=======================================================================
+
+
+=====  Example
+
+....
+probcli my.mch -pref_group model_check unlimited
+....
+
+Available groups and settings are:
+- PREFERENCE GROUP integer : SETTINGS [int32] : Values for MAXINT and MININT
+- PREFERENCE GROUP time_out : SETTINGS [disable_time_out] : To disable TIME_OUT
+- PREFERENCE GROUP model_check : SETTINGS [disable_max,unlimited] : Model Checking Limits
+- PREFERENCE GROUP dot_colors : SETTINGS [classic,dreams,winter] : Colours for Dot graphs
+
 ==== -prefs <FILE>
 
 =====  Description
