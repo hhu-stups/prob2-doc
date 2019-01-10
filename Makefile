@@ -1,6 +1,6 @@
 run:
-	rm build/asciidoc/pdf/*.pdf
-	gradle asciidoctor --no-daemon
+	rm -f build/asciidoc/pdf/*.pdf
+	JAVA_OPTS="-Xmx2G" ./gradlew --no-daemon asciidoctor
 view:
 	open build/asciidoc/pdf/prob_user_manual.pdf
 viewd:
