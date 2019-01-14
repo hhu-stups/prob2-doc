@@ -36,7 +36,7 @@ remove the need to add the predicate
 `#(a2,b2).((a2,b2):alive & neighbour(u2,v2,a2,b2))` by improving ProB's
 constraint solver for cardinality constraints on set comprehensions. You
 may want to compare this to an
-http://sourceforge.net/p/asmeta/code/2606/tree/asm_examples/examples/conwayGameOfLife/[ASM
+https://sourceforge.net/p/asmeta/code/2606/tree/asm_examples/examples/conwayGameOfLife/[ASM
 specification found here] and described on pages 39-40 in Egon Börger
 and Robert Stärk, Abstract State Machines, A Method for High-Level
 System Design and Analysis, Springer-Verlag 2003, (ISBN 3-540-00702-4).

@@ -5,7 +5,7 @@
 
 
 For this example we try and solve a
-http://en.wikipedia.org/wiki/Sudoku[Sudoku] using the REPL
+https://en.wikipedia.org/wiki/Sudoku[Sudoku] using the REPL
 (Read-Eval-Print-Loop) of ProB only, without constructing any B machine.
 The REPL can either be started using probcli's command `-repl` or by
 starting the <<eval-console,Eval Console in ProB Tcl/Tk>>.

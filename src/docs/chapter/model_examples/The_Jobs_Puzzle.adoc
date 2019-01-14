@@ -15,7 +15,7 @@ Introduction and Applications. Prentice-Hall, Englewood Cliffs, NJ,
 1984.] as part of a collection of puzzles for automatic reasoners. A
 reference implementation of the puzzle, by one of the authors of the
 book, using
-http://www.mcs.anl.gov/~wos/mathproblems/jobs.txt[OTTER]footnote:[W.
+https://www.mcs.anl.gov/~wos/mathproblems/jobs.txt[OTTER]footnote:[W.
 Mccune. Otter 3.3 reference manual, 2003.].
 
 The puzzle consists of eight statements that describe the problem domain
@@ -90,8 +90,7 @@ PEOPLE={"Roberta", "Thelma", "Steve", "Pete"}
 We are using strings here to describe the elements of the set. This has
 the advantage, that the elements of the set are implicitly
 different.footnote:[This encoding allows us to input the puzzle directly
-into the http://stups.hhu.de/ProB/index.php5/ProB_Logic_Calculator[ProB
-Console].] Alternatively, we could use enumerated or deferred sets
+into the <<prob-logic-calculator,ProB Logic Calculator>>.] Alternatively, we could use enumerated or deferred sets
 defined in the SETS section of a B machine. As stated above we need some
 additional information that is not included in the puzzle to solve it.
 The first bit of information is that the names used in the puzzle imply

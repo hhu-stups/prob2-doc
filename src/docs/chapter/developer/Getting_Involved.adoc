@@ -5,8 +5,7 @@
 [[the-prob-java-core-and-ui]]
 == The ProB Java Core and UI
 
-see the README in our https://github.com/bendisposto/prob[Github
-Repository]
+See the README in our https://github.com/bendisposto/prob[Github Repository]
 
 [[the-prolog-sources]]
 == The Prolog Sources
@@ -14,16 +13,16 @@ Repository]
 If you want to contribute to the Prolog part of ProB, if you want to
 extend the ProB API, or need them as reference, you need the Prolog
 sources which can be downloaded from
-https://www3.hhu.de/stups/downloads/prob/source/[https://www3.hhu.de/stups/downloads/prob/source/].
+https://www3.hhu.de/stups/downloads/prob/source/[our source prob directory].
 To compile the sources you need a
-http://www.sics.se/isl/sicstuswww/site/index.html[SICStus Prolog]
+https://www.sics.se/projects/sicstus-prolog-leading-prolog-technology[SICStus Prolog]
 licence.
 
 [[running-prob-from-prolog]]
 == Running ProB from Prolog
 
 You first need to download and install
-http://www.sics.se/isl/sicstuswww/site/index.html[SICStus Prolog].
+https://www.sics.se/projects/sicstus-prolog-leading-prolog-technology[SICStus Prolog].
 Evaluation licenses (30-days) are available. You need SICStus 4.2 or
 newer (we will switch to SICStus 4.3 in summer or autumn of 2014).
 
@@ -35,7 +34,7 @@ Probably you should also install a recent Active Tcl distribution.
 
 Now, you need the ProB Prolog sources. If you have access to our Gitlab
 server then the information is here:
-http://tuatara.cs.uni-duesseldorf.de/prob/prob_prolog[http://tuatara.cs.uni-duesseldorf.de/prob/prob_prolog].
+https://www3.hhu.de/stups/downloads/prob/source/[Prolog Sources].
 
 Now, add the following to your `.bash_login` file (at least on Mac OS;
 supposing you cloned the Git repository into ~/git_root):

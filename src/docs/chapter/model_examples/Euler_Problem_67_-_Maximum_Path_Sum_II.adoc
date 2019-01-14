@@ -112,7 +112,7 @@ SUMMARY
 ....
 
 An interesting fact is the that
-http://en.wikipedia.org/wiki/Dynamic_programming[dynamic programming] is
+https://en.wikipedia.org/wiki/Dynamic_programming[dynamic programming] is
 done automatically by ProB's constraint solving. In the
 <<fibonacci-numbers-with-automatic-dynamic-programming,Fibonacci
 Numbers with Automatic Dynamic Programming>> page we explain this fact on

@@ -6,7 +6,7 @@
 My belief is that B is a very expressive language, which can be very
 convenient for modelling many problems. Hence, when in the Dagstuhl
 library I stumbled upon a nice short
-http://link.springer.com/chapter/10.1007%2F978-3-642-13754-9_10[article
+https://link.springer.com/chapter/10.1007%2F978-3-642-13754-9_10[article
 by Tony Hoare and Natarajan Shankar] in memory of Amir Pnueli, I decided
 to model the problem and time how long it would take me to solve the
 problem using ProB. The article unravels a card trick by Gilbreath. The
@@ -15,11 +15,11 @@ card trick has several phases:
 * first you arrange 16 cards into a sequence of quartets with one card
 from each suit (Spade, Club, Heart, Diamond) in the same order. The
 example in the
-http://link.springer.com/chapter/10.1007%2F978-3-642-13754-9_10[article]
+https://link.springer.com/chapter/10.1007%2F978-3-642-13754-9_10[article]
 is as follows: ⟨5♠⟩,⟨3♡⟩,⟨Q♣⟩,⟨8♢⟩, ⟨K♠⟩,⟨2♡⟩,⟨7♣⟩,⟨4♢⟩,
 ⟨8♠⟩,⟨J♡⟩,⟨9♣⟩,⟨A♢⟩
 * you split the cards into two sequences. The example in the
-http://link.springer.com/chapter/10.1007%2F978-3-642-13754-9_10[article]
+https://link.springer.com/chapter/10.1007%2F978-3-642-13754-9_10[article]
 is: ⟨5♠⟩,⟨3♡⟩,⟨Q♣⟩,⟨8♢⟩,⟨K♠⟩ and ⟨2♡⟩,⟨7♣⟩,⟨4♢⟩,⟨8♠⟩,⟨J♡⟩,⟨9♣⟩,⟨A♢⟩ .
 * you reverse one of the sequences
 * you perform a (not necessarily perfect) riffle shuffle of the two
@@ -48,7 +48,7 @@ MACHINE CardTrick
  "Unraveling a Card Trick" by Tony Hoare and Natarajan Shankar
   in LNCS 6200, pp. 195-201, 2010.
   DOI: 10.1007/978-3-642-13754-9_10
-  http://www.springerlink.com/content/gn18673357154448/
+  https://link.springer.com/chapter/10.1007%2F978-3-642-13754-9_10
   */
 SETS
  SUIT={spade,club,heart,diamond}
@@ -87,13 +87,13 @@ particular order of the cards initially
 * a version of the model which does not do this can be found below; it
 requires symmetry reduction to be enabled for efficient model checking
 * I have tried to translate this example to TLA+ and use
-http://research.microsoft.com/en-us/um/people/lamport/tla/tlc.html[TLC]
+http://lamport.azurewebsites.net/tla/tlc.html[TLC]
 (using our new B-TLC translator), but TLC cannot deal with the
 initialisation `x,y : (x^y = initial)`. Later Domink Hansen produced an
 adapted (more low-level) version of my B machine which can be run by
 TLC; see below.
-* A (longer) Why3 encoding can be found here
-http://proval.lri.fr/gallery/unraveling_a_card_trick.en.html[http://proval.lri.fr/gallery/unraveling_a_card_trick.en.html].
+* A (longer) Why3 encoding can be found
+http://proval.lri.fr/gallery/unraveling_a_card_trick.en.html[here].
 * Arguably model checking gives less insight into why the trick works
 than proof. However, by adding a graphical visualization, a different
 kind of insight can be gained. This is shown below.
@@ -131,7 +131,7 @@ MACHINE CardTrickSym /* a version to be used with ProB's symmetry reduction */
 /* see comments in machine CardTrick for more details about the modeling effort */
 /* Translation by Michael Leuschel of Example in "Unraveling a Card Trick" by Tony Hoare and Natarajan Shankar in LNCS 6200, pp. 195-201, 2010.
   DOI: 10.1007/978-3-642-13754-9_10
-  http://www.springerlink.com/content/gn18673357154448/
+  https://link.springer.com/chapter/10.1007%2F978-3-642-13754-9_10
   */
 /* Model checking with hash symmetry taking 161.9 seconds to traverse
    150,183 states and 179,181 transitions (on a MacBook Air 1.8Ghz i7) */
@@ -163,12 +163,12 @@ END
 
 We later adapted the above model (without symmetry) to make it somewhat
 more low-level and to enable the translation to TLA+ for use with
-http://research.microsoft.com/en-us/um/people/lamport/tla/tlc.html[TLC]
+http://lamport.azurewebsites.net/tla/tlc.html[TLC]
 (this is a new feature inside ProB Tcl/Tk). The machine is shown below.
 The model checking time with ProB is now reduced to 75 seconds. With the
 command "Verify -> External Tools -> Model Check with TLC..." you can
 use
-http://research.microsoft.com/en-us/um/people/lamport/tla/tlc.html[TLC]
+http://lamport.azurewebsites.net/tla/tlc.html[TLC]
 as a backend. The model checking time is then approximately 15 seconds
 (including the translation time from B to TLA+).
 
@@ -178,7 +178,7 @@ MACHINE CardTrick_TLC
    this improves model checking performance and now allows translation to TLC */
 /* Translation by Michael Leuschel of Example in "Unraveling a Card Trick" by Tony Hoare and Natarajan Shankar in LNCS 6200, pp. 195-201, 2010.
   DOI: 10.1007/978-3-642-13754-9_10
-  http://www.springerlink.com/content/gn18673357154448/
+  https://link.springer.com/chapter/10.1007%2F978-3-642-13754-9_10
   */
 SETS
  SUIT={spade,club,heart,diamond}

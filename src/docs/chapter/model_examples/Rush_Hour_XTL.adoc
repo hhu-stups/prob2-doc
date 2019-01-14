@@ -5,7 +5,7 @@
 
 
 This case studies tackles encoding the
-http://en.wikipedia.org/wiki/Rush_Hour_(board_game)[rush hour board
+https://en.wikipedia.org/wiki/Rush_Hour_(puzzle)[rush hour board
 game] in which cars are packed on a 6-by-6 grid and can either move
 horizontally or vertically. The goal is to move the red car to the exit.
 In this particular instance we try to solve the

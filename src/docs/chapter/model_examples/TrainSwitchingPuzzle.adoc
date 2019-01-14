@@ -9,7 +9,7 @@ mathematical and logical puzzles" by Martin Gardner. Using
 breadth-first, ProB takes about 5 seconds to find the shortest solution
 leading to a state satisfying the `GOAL` predicate. The trace consists
 of 22 steps. A visualisation of this trace can be found on
-http://www.youtube.com/watch?v=e5bjOMDBoQs[YouTube].
+https://www.youtube.com/watch?v=e5bjOMDBoQs[YouTube].
 
 ....
 MACHINE GardnerSwitchingPuzzle_v2

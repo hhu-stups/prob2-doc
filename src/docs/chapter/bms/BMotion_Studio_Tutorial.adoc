@@ -1,5 +1,0 @@
-[[bmotion-studio-tutorial]]
-= BMotion Studio Tutorial
-
-[[getting-started]]
-== Getting Started

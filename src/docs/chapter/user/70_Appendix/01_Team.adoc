@@ -1,31 +1,24 @@
 [[team]]
 == Team
-ProB is based on research and implemention effort by:
+ProB is based on research and implemention effort by our https://www.cs.hhu.de/lehrstuehle-und-arbeitsgruppen/softwaretechnik-und-programmiersprachen/unser-team.html[team]:
 
-* https://www.cs.hhu.de/lehrstuehle-und-arbeitsgruppen/softwaretechnik-und-programmiersprachen/unser-team.html[Michael Leuschel],
+* Michael Leuschel,
 * Michael Butler,
-* http://www.stups.uni-duesseldorf.de/w/Jens_Bendisposto[Jens
-Bendisposto],
-* http://www.stups.uni-duesseldorf.de/w/Ivaylo_Miroslavov_Dobrikov[Ivaylo
-Dobrikov],
-* http://www.stups.uni-duesseldorf.de/w/Dominik_Hansen[Dominik Hansen],
+* Jens Bendisposto,
+* Ivaylo Dobrikov,
+* Dominik Hansen,
 * Philipp Körner,
-* http://www.stups.uni-duesseldorf.de/w/Sebastian_Krings[Sebastian
-Krings],
-* http://www.stups.uni-duesseldorf.de/w/Lukas_Ladenberger[Lukas
-Ladenberger],
-* http://www.stups.uni-duesseldorf.de/w/David_Schneider[David
-Schneider],
+* Sebastian Krings,
+* Lukas Ladenberger,
+* David Schneider,
 * Joshua Schmidt
-* http://www.stups.uni-duesseldorf.de/w/Daniel_Plagge[Daniel Plagge],
-* http://www.stups.uni-duesseldorf.de/w/Marc_Fontaine[Marc Fontaine],
-* http://www.stups.uni-duesseldorf.de/w/Fabian_Fritz[Fabian Fritz],
-* http://www.stups.uni-duesseldorf.de/w/Corinna_Spermann[Corina
-Spermann],
-* http://www.stups.uni-duesseldorf.de/w/Michael_Jastram[Michael
-Jastram],
+* Daniel Plagge,
+* Marc Fontaine,
+* Fabian Fritz,
+* Corina Spermann,
+* Michael Jastram,
 * Joy Clark,
-* David Gelessus,
+* David Geleßus,
 * Antonia Pütz,
 * Fabian Vu,
 * Yumiko Takahashi,
@@ -39,7 +32,8 @@ Jastram],
 * Carla Ferreira,
 * Stéphane Lo Presti,
 * Leonid Mikhailov,
-* Laksono Adhianto, ...
+* Laksono Adhianto
+* ...
 
 Part of the research and development was conducted within various
 research projects, such as the http://www.epsrc.ac.uk/default.htm[EPSRC]

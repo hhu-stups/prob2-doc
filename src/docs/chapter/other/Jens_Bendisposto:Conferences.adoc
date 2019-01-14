@@ -12,7 +12,7 @@ http://www.etaps.org/2012/call-for-papers
 Computer-Aided Design http://www.cs.utexas.edu/users/hunt/FMCAD/
 * *FTSCS* International Workshop on Formal Techniques for
 Safety-Critical Systems
-http://www.ftscs12.org/index.php?n=Conference.CallForPapers
+http://www.ftscs.org/2012/index.php?n=Conference.CallForPapers
 * *ICST* International Conference on Software Testing,
 Verification, and Validation
 http://www.icst.lu/site/icst2013/call-for-papers

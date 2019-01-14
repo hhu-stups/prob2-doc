@@ -6,7 +6,7 @@
 
 The N-Queens is a famous constraint solving benchmark puzzle. It is a
 generalisation of the original
-http://en.wikipedia.org/wiki/Eight_queens_puzzle[eight queens puzzle],
+https://en.wikipedia.org/wiki/Eight_queens_puzzle[eight queens puzzle],
 where the goal is to place eight queens on a 8*8 chessboard so that no
 two queens attach each other.
 

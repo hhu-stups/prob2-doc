@@ -1318,12 +1318,14 @@ probcli my.mch -bmc 20
 Use the CSP File *File* to guide the B Machine ("CSP||B"). (This
 feature is included since version 1.3.5-beta7.)
 
-[[preferences-for-command-line]]
+[[environment-variables-for-command-line]]
 === Environment Variables
 
 Set NO_COLOR environment variable to disable terminal colors.
 See also https://no-color.org[https://no-color.org].
 
+
+[[preferences-for-command-line]]
 === Preferences
 
 You can use these preferences within the command:

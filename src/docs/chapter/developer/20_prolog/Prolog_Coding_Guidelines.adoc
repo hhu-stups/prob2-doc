@@ -10,9 +10,7 @@ checking in. Also, try to ensure that there are no errors when loading
 the files in Spider (Eclipse). Ideally, try to get rid of warnings as
 well.
 
-Have a look at the paper by
-/http://www.ai.uga.edu/mc/plcoding.pdf_Covington_et_al.[http://www.ai.uga.edu/mc/plcoding.pdf
-Covington et al.] on Prolog coding guidelines.
+Have a look at the paper by http://www.covingtoninnovations.com/mc/plcoding.pdf[Covington et al.] on Prolog coding guidelines.
 
 Concerning naming of identifiers: try to use names for constants,
 functors and predicates that are unique and not a prefix of other names.

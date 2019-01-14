@@ -5,7 +5,7 @@
 
 In this chapter we try to answer the question: why did we use Prolog to develop
 the core of ProB, and in particular why do we use the commercial
-http://www.sics.se/isl/sicstuswww/site/index.html[SICStus Prolog] rather
+https://www.sics.se/projects/sicstus-prolog-leading-prolog-technology[SICStus Prolog] rather
 than an open-source alternative.
 
 The short answer is that Prolog allows us to flexibly implement various

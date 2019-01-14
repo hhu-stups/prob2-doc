@@ -1,11 +1,8 @@
-
-
 [[nine-prisoners]]
 = Nine Prisoners
 
 
-An
-https://www.quantamagazine.org/20150609-a-design-dilemma-solved-minus-designs/[article
+An https://www.quantamagazine.org/150-year-old-math-design-problem-solved-20150609[article
 in Quanta magazine] mentions the following puzzle by Dudeney and
 popularized by Martin Gardner:
 
