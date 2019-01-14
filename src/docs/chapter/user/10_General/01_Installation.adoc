@@ -17,9 +17,9 @@ Both the standalone ProB Tcl/Tk and probcli can be downloaded together
 installation; just type in predicates and expressions into the web page.
 
 There is also a
-http://www.tools.clearsy.com/index.php5?title=ProB_etool_generation[plugin
+https://tools.clearsy.com/index.php5?title=ProB_etool_generation[plugin
 for Atelier B], in order to use the standalone ProB Tcl/Tk Version on
-http://www.atelierb.eu/[Atelier B] projects. It comes bundled with ProB
+https://www.atelierb.eu/[Atelier B] projects. It comes bundled with ProB
 Tcl/Tk.
 
 ProB is used within a few other tools, such as

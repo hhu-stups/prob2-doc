@@ -217,7 +217,7 @@ state space will be performed using the reduced search algorithm.
 
 The reduction algorithm has been evaluated on various B and Event-B
 models. The evaluation can be obtained
-http://nightly.cobra.cs.uni-duesseldorf.de/por/[here].
+https://www3.hhu.de/stups/downloads/[here].
 
 [[partial-guard-evaluation]]
 === Partial Guard Evaluation
@@ -532,6 +532,6 @@ evaluations could be saved up.
 
 These and various other benchmarks used for evaluating partial guard
 evaluation (PGE) can be viewed
-http://nightly.cobra.cs.uni-duesseldorf.de/pge/[here].
+https://www3.hhu.de/stups/downloads/[here].
 
 === References

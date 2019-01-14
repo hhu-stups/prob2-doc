@@ -3,8 +3,8 @@
 [width="100%",cols="60%,40%",]
 |=======================================================================
 | ProB is an animator, constraint solver and model checker for the
-http://en.wikipedia.org/wiki/B-Method[B-Method] (see the
-http://www.clearsy.com/en/our-specific-know-how/b-method/?lang=en[B-Method
+https://en.wikipedia.org/wiki/B-Method[B-Method] (see the
+https://www.clearsy.com/en/[B-Method
 site of Clearsy]). It allows fully automatic animation of B
 specifications, and can be used to systematically check a specification
 for a wide range of errors. The constraint-solving capabilities of ProB
@@ -17,7 +17,7 @@ and provides support for data structures such as (higher-order)
 relations, functions and sequences. In addition to the B language, ProB
 also supports http://www.event-b.org/[Event-B],
 http://en.wikipedia.org/wiki/Communicating_sequential_processes[CSP-M],
-http://research.microsoft.com/en-us/um/people/lamport/tla/tla.html[TLA+],
+http://lamport.azurewebsites.net/tla/tla.html[TLA+],
 and http://en.wikipedia.org/wiki/Z_notation[Z]. ProB can be installed
 within http://sourceforge.net/projects/rodin-b-sharp/[Rodin], where it
 comes with

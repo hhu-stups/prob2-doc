@@ -38,7 +38,7 @@ newer)] link provided in the `Dependencies` column and the `Windows` row above
 [[download-the-prob-for-windows-zipfile]]
 === Download the ProB for Windows Zipfile
 
-* Click on the http://nightly.cobra.cs.uni-duesseldorf.de/releases/1.4.1/ProB.windows.zip[Zipfile
+* Click on the https://www3.hhu.de/stups/downloads/[Zipfile
 (with probcli)] link in the `Downloads` column and `Windows` row
 * Decompress and expand the ProB directory if necessary. Do not change
 the location and structure of the files and directories within ProB
@@ -74,7 +74,7 @@ written in Java.
 
 * In case you cannot start neither ProBWin nor probcli, you should to
 install the
-http://www.microsoft.com/en-us/download/details.aspx?id=3387[Microsoft
+https://www.microsoft.com/en-us/download/details.aspx?id=3387[Microsoft
 Visual C++ 2005 Redistributable Package (x86)] for yourself (rather than
 rely on the ones we provide in the `Microsoft.VC80.CRT` folder
 mentioned above).

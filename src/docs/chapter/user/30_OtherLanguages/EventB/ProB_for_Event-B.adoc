@@ -22,10 +22,5 @@ Classic>>
 * <<tutorial-ltl-counter-example-view,Visualization of LTL
 Counter-examples in Rodin>>
 
-The http://handbook.event-b.org[Rodin handbook] also contains material
-about ProB:
-
-* http://handbook.event-b.org/current/html/tut_building_the_model.html#tut:prob[Finding
-Invariant Violations with ProB]
-* http://handbook.event-b.org/current/html/tut_populate_context.html#a0000000094[Finding
-Solutions to Axioms]
+The https://www3.hhu.de/stups/handbook/rodin/[Rodin handbook], also contains material
+about ProB.
