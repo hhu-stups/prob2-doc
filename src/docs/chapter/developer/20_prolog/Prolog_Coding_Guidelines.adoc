@@ -94,6 +94,19 @@ you have changed. See alias below to start the test REPL. The command
 to run all non-regression tests related to tickets.
 * as a rule of thumb: use rebase before pushing your changes to gitlab,
 especially when you only have one real commit.
+* avoid merge bombs with many changed files: a Git merge can hide unintended changes,
+e.g., accidentally reverting previous commits because of editor issues (editor out of sync with file system).
+* provide good commit messages. If a commit is related to a JIRA ticket
+reference the identifier of the ticket in the commit message. 
+https://chris.beams.io/posts/git-commit/[This web page] provides the following seven rules:
+ * Separate subject from body with a blank line
+ * Limit the subject line to 50 characters
+ * Capitalize the subject line
+ * Do not end the subject line with a period
+ * Use the imperative mood in the subject line
+ * Wrap the body at 72 characters
+ * Use the body to explain what and why vs. how
+ 
 
 [[useful-bash-aliases]]
 Useful Bash Aliases
