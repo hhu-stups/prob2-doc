@@ -7,8 +7,7 @@
 
 * <<prob-java-api-tutorial,Tutorial>>
 
-* https://www3.hhu.de/stups/handbook/prob2/handbook.html[Developer Manual]
-
+* <<developer-introduction, Documentation>>
 == Additional Material
 
 * <<prob2.0-development,ProB 2.0 Development>>

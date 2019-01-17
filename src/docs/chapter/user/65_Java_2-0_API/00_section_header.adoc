@@ -1,4 +1,4 @@
 
 [[developer-prob-java-api]]
-= ProB 2.0 Java API
+= ProB 2.0 Java API Documentation
 :leveloffset: +1
