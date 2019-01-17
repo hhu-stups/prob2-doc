@@ -1,11 +1,12 @@
+
 [[prob2.0_general]]
-== General
+= General
 
 [[prob2.0-development]]
-== ProB 2.0 Development
+= ProB 2.0 Development
 
 [[basic-design-principles]]
-=== Basic Design Principles
+== Basic Design Principles
 
 One of our main design goals was that we wanted to build our UI on top
 of a programmatic API. Our goal was to bring the ProB 2.0 API into a
@@ -29,7 +30,7 @@ spent quite a bit of energy developing a developer friendly console for
 testing out features as they are being developed.
 
 [[why-groovy]]
-=== Why Groovy?
+== Why Groovy?
 
 The scripting language that we chose is Groovy. It is a dynamically
 typed JVM language. Because of the seamless integration between Java and
@@ -45,7 +46,7 @@ ProB 2.0, we redefined the java.lang.String class so that we can specify
 the correct Parser with which a string should be parsed.
 
 [[explanation-of-the-basic-programmatic-abstractions]]
-=== Explanation of the basic programmatic abstractions
+== Explanation of the basic programmatic abstractions
 
 The basic programmatic abstractions that are available in the ProB 2.0
 API are the Model, Trace, and StateSpace abstractions. The Model
@@ -57,7 +58,7 @@ different is available
 <<programmatic-abstractions-in-the-prob-2.0-api,here>>.
 
 [[tutorial-of-the-current-features-of-prob-2.0]]
-=== Tutorial of the Current Features of ProB 2.0
+== Tutorial of the Current Features of ProB 2.0
 
 A tutorial for the current features of ProB 2.0 is available
 <<prob2-tutorial,here>>.

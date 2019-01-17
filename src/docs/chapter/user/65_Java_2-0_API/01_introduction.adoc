@@ -1,0 +1,83 @@
+
+[[developer-introduction]]
+= Introduction
+
+For developers who want to build specialized tools on top of ProB, we
+have prepared comprehensive documentation of the ProB Java API together
+with a template that enables a quick start. The documentation is
+available in https://www3.hhu.de/stups/handbook/prob2/prob_user_manual.html[the user manual],
+the template is located at https://github.com/bendisposto/prob2_tooling_template.
+
+== Acknowledgements
+
+Parts of this document were taken from the ProB wiki,
+which contain contributions from a lot of people.
+We would like to thank Michael Birkhoff, Ivaylo Dobrikov,
+Rene Goebbels, Dominik Hansen, Philipp Körner,
+Sebastian Krings, Lukas Ladenberger, Michael Leuschel,
+Daniel Plagge, and Harald Wiegard for their
+contributions to the documentation and ProB 2.0.
+
+== About ProB 2.0
+
+We believe that any proof centric formal method must
+be complemented by animation and visualization to be
+useful because there are always properties of a model
+that cannot be covered by proof. In particular, a
+proof can guarantee that a model is internally
+consistent, but it cannot guarantee that this model
+is actually what its designer had in mind. Animation
+and visualization can help to review models.
+
+ProB is a mature toolset that supports a whole range
+of different formalisms such as classical B, Event-B,
+CSP and Z. Previously, we developed a ProB plug-in
+to add animation and model checking to the Rodin
+platform. This plug-in was designed to be extensible
+using an abstraction called a command. A command
+encapsulates a call to the ProB CLI that is written
+in the Prolog language and the result of that call.
+The architecture was successfully used to build
+third-party tools on top of ProB. For instance,
+the UML-B Statechart animation plug-in uses ProB.
+
+However, while the design was very flexible there were
+some abstractions that were missing.
+For instance, the API had no notion of a state space
+or a trace through the state space. Each tool that
+required one of these concepts had to reinvent them.
+Also, building tools on top of ProB was a task for a
+plug-in developer and it required a good deal of
+effort, i.e., one needs to know how to create an
+Eclipse plug-in. We wanted to introduce a more
+lightweight approach to allow an end user to customize
+the tool itself. In ProB 2.0 this can be done using
+Groovy as an embedded scripting language. Our  major
+design principles for the new version of ProB were:
+
+
+* *Embrace Groovy* We try to make (almost) everything
+accessible to the scripting language. This is very
+important because it enables customization and extension
+of the tool from within the tool. Actually we even
+tried to go further by designing the tool as if it were
+a library for Groovy. This made a couple of extensions
+to ProB extremely easy. For instance, adding CSP support
+to the plug-in only took a few hours.
+* *Add recurring abstractions:* We have identified three
+main abstractions: model, state space and trace.
+The state space contains two further abstractions:
+a state and a transition. The model represents the
+static properties of a specification, i.e., its abstract
+syntax. For Event-B this could have been done using the
+Rodin abstractions, but we wanted to use Event-B and
+classical B uniformly. A trace consists of a list of
+transitions that have been executed in order.
+* *Prefer immutability:* This is more a implementation
+principle than a design principle but we think it is
+essential to prefer immutable objects wherever it is
+possible. If we add a new step to a trace, we do not
+change the trace but we generate a new trace.
+Because of the consistent use of immutable values,
+we can use structural sharing to avoid expensive
+copying.

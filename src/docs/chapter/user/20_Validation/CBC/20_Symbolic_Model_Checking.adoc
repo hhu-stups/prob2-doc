@@ -1,8 +1,9 @@
+
 [[symbolic-model-checking]]
-== Symbolic Model Checking
+= Symbolic Model Checking
 
 [[overview-symbolic-model-checking]]
-=== Overview
+== Overview
 
 The current nightly builds of ProB support different symbolic model
 checking algorithms:
@@ -26,7 +27,7 @@ checking algorithm based on a different technique is available in Prob.
 See <<bounded-model-checking,its wiki page>> for details.
 
 [[usage]]
-=== Usage
+== Usage
 
 Take the following example:
 
@@ -85,7 +86,7 @@ The algorithms are also available from within ProB Tcl/Tk. They can be
 found inside the "Symbolic Model Checking" sub-menu of the _Analyse_ menu.
 
 [[more-details]]
-=== More details
+== More details
 
 A paper describing the symbolic model checking algorithms and how they
 are applied to B and Event-B machines has been submitted to ABZ 2016.

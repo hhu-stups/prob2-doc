@@ -1,5 +1,8 @@
+
 [[prob-logic-calculator]]
-== ProB Logic Calculator
+= ProB Logic Calculator
+
+WARNING: This section is relatively old and may contain errors.
 
 Below is a ProB-based http://research.microsoft.com/en-us/um/people/lamport/tla/logic-calculators.html[logic
 calculator]. You can enter predicates and expressions in the upper
@@ -28,7 +31,7 @@ versions available for Linux and Mac (the above calculator only uses the
 32-bit version).
 
 [[short-syntax-guide-for-b-constructs]]
-=== Short syntax guide for some of B's constructs:
+== Short syntax guide for some of B's constructs:
 
 * comments `/* ... */`
 * conjunction `P & Q`, disjunction `P or Q`, implication `P \=> Q`,
@@ -91,7 +94,7 @@ https://www3.hhu.de/stups/downloads/pdf/PlaggeLeuschel_Kodkod2012.pdf[ProB-Kodko
 backend] instead of the default constraint-logic programming kernel.
 
 [[small-tutorial]]
-=== Small Tutorial
+== Small Tutorial
 
 Here is a small tutorial to get you started. B distinguishes
 expressions, which have a value, and predicates which can be either true
@@ -209,7 +212,7 @@ will refine ProB's output to also indicate when the
 solution/counter-example is still guaranteed to be correct)!
 
 [[executing-the-calculator-locally]]
-=== Executing the Calculator locally
+== Executing the Calculator locally
 
 You can evaluate formulas on your machine in the same way as the
 calculator above, by <<downloads,downloading ProB>> (ideally a nightly

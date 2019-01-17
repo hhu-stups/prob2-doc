@@ -1,10 +1,11 @@
+
 [[symmetry-reduction]]
-== Symmetry Reduction
+= Symmetry Reduction
 
 ProB can make use of symmetries induced
 by the use of deferred sets in B (and given sets in Z).
 
-=== Static Symmetry Reduction
+== Static Symmetry Reduction
 
 ProB will perform a limited form of symmetry reduction for constants
 which are elements of deferred sets. Take the following example:
@@ -84,7 +85,7 @@ A = {D1,D2,D3}
 B = {D4,D5,D6}
 ----
 
-=== Symmetry Reduction during Model Checking
+== Symmetry Reduction during Model Checking
 
 In addition to the above, you can also turn of stronger symmetry
 reduction for model checking.
@@ -128,4 +129,4 @@ Proceedings International Symmetry Conference,Januar,2007,Verlag,
 https://www3.hhu.de/stups/downloads/pdf/LeMa07_212.pdf].
 This is typically the most efficient method.
 
-=== References
+== References

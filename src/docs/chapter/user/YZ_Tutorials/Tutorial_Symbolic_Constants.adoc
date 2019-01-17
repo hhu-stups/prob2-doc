@@ -1,0 +1,42 @@
+
+[[tutorial-symbolic-constants]]
+= Tutorial Symbolic Constants
+
+[[introduction-to-tutorial-symbolic-constants]]
+== Introduction
+
+ProB Tcl/Tk as well as the
+<<using-the-command-line-version-of-prob,probcli command-line
+version>> are able to store units symbolically (i.e. as a predicate)
+instead of evaluating them. For constants that contain large sets or
+relations, this might speed up computations or even facilitate more
+complex ones.
+
+Through a plugin, this behaviour is extended to ProB for Rodin.
+
+[[installing-the-prob-symbolic-constants-plugin]]
+== Installing the ProB Symbolic Constants Plugin
+
+The plugin is available from the ProB for Rodin Updatesite. The package
+is called "ProB for Rodin2 - Symbolic Constants Support". It is not
+bundled with ProB for Rodin itself.
+
+[[marking-constants-to-be-kept-symbolic]]
+== Marking Constants to be kept symbolic
+
+Once the plugin is installed, a toggle button "symbolic" / "not
+symbolic" should appear next to each constant in the Rodin editor.
+
+You can select between the two behaviours:
+
+* symbolic, which will keep the constant stored as a predicate as long
+as possible. Please note, that some operations might trigger a full
+evaluation of the constant and thus discard the symbolic representation.
+* not symbolic, which is the default setting. Please note that in
+certain cases ProB might auto detect that a constant should be stored
+symbolically (i.e. an infinite set). In this case the "not symbolic"
+setting is overridden.
+
+See
+<<recursively-defined-functions,the
+wiki page on infinite and recursive functions>> for more details.

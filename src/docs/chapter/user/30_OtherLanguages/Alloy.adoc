@@ -1,5 +1,6 @@
+
 [[alloy]]
-== Alloy
+= Alloy
 
 As of version 1.8 ProB provides support to load
 http://alloy.mit.edu/alloy/[Alloy] models. The Alloy models are
@@ -17,7 +18,7 @@ B language. In addition to basic Alloy constructs, our approach supports
 integers and orderings.
 
 [[installation-alloy]]
-=== Installation
+== Installation
 
 Alloy2B is included as of version 1.8.2 of ProB.
 
@@ -29,10 +30,10 @@ on Github].
 * put resulting alloy2b-*.jar file into ProB's lib folder.
 
 [[examples-alloy]]
-=== Examples
+== Examples
 
 [[n-queens-alloy]]
-==== N-Queens
+=== N-Queens
 
 ....
 module queens
@@ -79,7 +80,7 @@ PROPERTIES
     x : queen --> INTEGER
   & x_ : queen --> INTEGER
   & y : queen --> INTEGER
-  & !this.(this : queen => x(this) >= 1 & y(this) >= 1 & x(this) <= card(queen) & y(this) <= 
+  & !this.(this : queen => x(this) >= 1 & y(this) >= 1 & x(this) <= card(queen) & y(this) <=
   card(queen) & x_(this) >= 1 & x_(this) <= card(queen) & x_(this) = (card(queen) + 1) - x(this)
   )
   & card(queen) = 4
@@ -88,8 +89,8 @@ PROPERTIES
 INITIALISATION
     skip
 OPERATIONS
-  run0 = 
-    PRE 
+  run0 =
+    PRE
         card(queen) = 4
       & !(q,q_).(q_ : queen - {q} => not(x(q) = x(q_)) & not(y(q) = y(q_)) & not(x(q) + y(q)
    = x(q_) + y(q_)) & not(x_(q) + y(q) = x_(q_) + y(q_)))
@@ -103,7 +104,7 @@ END
 
 
 [[river-crossing-puzzle]]
-==== River Crossing Puzzle
+=== River Crossing Puzzle
 ....
 module river_crossing
 open util/ordering[State]
@@ -186,7 +187,7 @@ END
 ....
 
 [[proof-with-atelier-b-example]]
-==== Proof with Atelier-B Example
+=== Proof with Atelier-B Example
 
 ....
 sig Object {}
@@ -243,7 +244,7 @@ image::AlloyAtelierB.png[]
 
 
 [[Alloy-Syntax]]
-==== Alloy Syntax
+=== Alloy Syntax
 ....
 Logical predicates:
 -------------------
@@ -266,8 +267,8 @@ Quantifiers:
  some DECL | P  existential quantification
  one DECL | P   existential quantification with exactly one solution
  lone DECL | P  quantification with one or zero solutions
- 
-where the DECL follow the following form: 
+
+where the DECL follow the following form:
  x : S          choose a singleton subset of S (like x : one S)
  x : one S      choose a singleton subset of S
  x : S          choose x to be any subset of S
@@ -309,7 +310,7 @@ Relation Expressions:
  ~R             relational inverse
  ^R             transitive closure of binary relation
  *R             reflexive and transitive closure
- 
+
 Multiplicity Declarations:
 ---------------------------
 The following multiplicity annotations are supported for binary (sub)-relations:
@@ -345,7 +346,7 @@ A signature S can be defined to be ordered:
  s/lte[s2]          true if index(e1) =< index(e2)
  s/gt[s2]           true if index(e1) > index(e2)
  s/gte[s2]          true if index(e1) >= index(e2)
- 
+
 Sequences:
 ----------
 The longest allowed sequence length (maxseq) is set in the scope of a run or check command using the 'seq' keyword.

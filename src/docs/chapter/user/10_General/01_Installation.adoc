@@ -1,8 +1,9 @@
+
 [[installation]]
-== Installation
+= Installation
 
 [[what-are-the-available-versions]]
-=== What are the available versions?
+== What are the available versions?
 
 * The standalone Tcl/Tk Version of ProB (ProB Tcl/Tk)
 * The standalone command-line version of ProB
@@ -31,7 +32,7 @@ We are also developing a new Java-based API called
 command-line version and <<using-the-command-line-version-of-prob, here>> is how to use it.
 
 [[which-version-should-i-use]]
-=== Which version should I use?
+== Which version should I use?
 
 The standalone version Tcl/Tk of ProB contains a richer set of features
 than the Rodin version and also works on other formalisms than Event-B
@@ -43,7 +44,7 @@ ProB. Use the probcli version if you want to write batch scripts or
 prefer working from the command-line.
 
 [[installation-instruction-for-prob-standalone]]
-=== Installation Instruction for ProB (Standalone)
+== Installation Instruction for ProB (Standalone)
 
 NOTE: We have specific <<windows-installation-instructions, Windows installation instructions>>.
 These here are the generic instructions.
@@ -92,7 +93,7 @@ animate them. Have a look at the supplied Machines in the examples
 directory. Have fun! Please report bugs!
 
 [[checklisttroubleshooting]]
-==== Checklist/Troubleshooting
+=== Checklist/Troubleshooting
 
 * Java: be sure to have Java 7 or newer installed. Otherwise you will
 not be able to parse your own classical B machines as our parser is
@@ -115,6 +116,6 @@ dot viewer. See more information about the
 <<graphical-viewer,Graphical Viewer here>>.
 
 [[installation-instruction-for-prob-rodin-plugin]]
-=== Installation Instruction for ProB (Rodin Plugin)
+== Installation Instruction for ProB (Rodin Plugin)
 
 <<tutorial-rodin-first-step,This>> tutorial shows how to properly install ProB for Rodin.

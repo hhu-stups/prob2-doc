@@ -1,23 +1,23 @@
 
 [[csp-m-syntax]]
-=== CSP-M Syntax
+= CSP-M Syntax
 
 
 
 [[details-of-supported-csp-m-syntax]]
-==== Details of supported CSP-M syntax
+== Details of supported CSP-M syntax
 
 Note: you can use the command "Summary of CSP syntax" in ProB's help
 menu to get an up-to-date list of the supported syntax, along with
 current limitations.
 
 [[process-definitions]]
-==== PROCESS DEFINITIONS
+== PROCESS DEFINITIONS
 
 * `Process = ProcessExpression`
 
 [[process-expressions]]
-==== PROCESS EXPRESSIONS
+== PROCESS EXPRESSIONS
 
 * `STOP` deadlocking process
 * `SKIP` terminating process
@@ -54,7 +54,7 @@ empty)
 * `let f1=E1 ... fk=Ek within P`
 
 [[boolean-expressions]]
-==== BOOLEAN EXPRESSIONS
+== BOOLEAN EXPRESSIONS
 
 * `true`
 * `false`
@@ -73,7 +73,7 @@ empty)
 * `elem(x,s)` sequence member check
 
 [[value-expressions]]
-==== VALUE EXPRESSIONS
+== VALUE EXPRESSIONS
 
 * `v+w`, `v-w` addition and subtraction
 * `v*w` multiplication
@@ -106,13 +106,13 @@ explicit sequence for patterns)
 * `set(s)` convert sequence into set
 
 [[comments]]
-==== COMMENTS
+== COMMENTS
 
 * `-- comment until end of line`
 * `\{- arbitrary comment -}`
 
 [[pragmas]]
-==== PRAGMAS
+== PRAGMAS
 
 * `transparent f` where f is a unary function which will then on be
 ignored by ProB

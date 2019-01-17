@@ -1,0 +1,43 @@
+
+[[developer-architecture]]
+= Architecture
+
+In this chapter we will give an overview of the tool's architecture. First we will explain the base components and then we will explain how these components interact with each other.
+
+== Overview of the Components
+
+The following diagram shows the architecture of ProB 2.0.
+
+[ditaa]
+----
+/-------------------------\
+| cFEB                    |
+| ProB 2.0 UI             |
+|                         |
+|  /-------------------\  |
+|  | cCEC              |  |
+|  | ProB 2.0 Java API |  |
+|  |                   |  |
+|  \-------------------/  |
+|          ^              |
+|          |              |
+|          |  tcp         |
+|          |              |
+|          v              |
+|  +-------------------\  |
+|  | cCEF              |  |
+|  |      probcli      |  |
+|  |                   |  |
+|  \-------------------/  |
+\-------------------------/
+----
+
+
+=== Prolog Binary
+At the bottom layer it contains a platform specific binary. This binary is actually the same binary that is used from the shell (probcli). The binary is usually placed in a .prob folder in the user's home directory. The binary communicates with the rest of the tool via tcp socket. While the current version does not support it, in principle the probcli does not have to run on the same computer as the rest of ProB. The probcli should not be integrated into other tools, use the Java API instead.
+
+=== ProB 2.0 Java API
+On top of the probcli binary we have a Java library  that abstracts away the details of running animations. The library is the main part of ProB 2.0 and will be explained in more detail in the next chapter. It is important to notice that the library is only dependent on Java. There is no dependency to Eclipse or Rodin. The library is written in Java and Groovy. The Java API is a library hosted on Maven Central that can be included in other tools. Alternatively it is possible to extend the ProB 2.0 UI using its plug-in mechanism.
+
+=== ProB 2.0 UI
+On top of the Java API we developed a standalone JavaFX GUI, that is typically used by end users to run animations or model checking. The UI has a mechanism to add custom code.

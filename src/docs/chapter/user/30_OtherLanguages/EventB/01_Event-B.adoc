@@ -1,12 +1,13 @@
-[[event-b]]
-== Event-B
 
-=== Installation and General Information
+[[event-b]]
+= Event-B
+
+== Installation and General Information
 
 ProB supports animation and model-checking for Event-B specifications.
 
 [[installation-event-b]]
-==== Installation
+=== Installation
 
 To install the ProB plugin for http://www.event-b.org[Rodin], open the
 _Help_ menu in Rodin and click "Install new software".
@@ -20,7 +21,7 @@ Alternativaly, one can use the Tcl/Tk version of ProB but Event-B models
 must be exported to an .eventb file first (see below).
 
 [[animation-and-modelchecking]]
-==== Animation and Modelchecking
+=== Animation and Modelchecking
 
 You can start animation of a model (machine or context) by
 right-clicking on the model in the Event-B explorer. Choose "Start
@@ -29,7 +30,7 @@ Animation / Model Checking".
 //*TODO:* Here we should add more details about the ProB perspective and views.
 
 [[export-for-use-with-the-tcltk-version-of-prob]]
-==== Export for use with the Tcl/Tk version of ProB
+=== Export for use with the Tcl/Tk version of ProB
 
 You can export a model (machine or context) to an .eventb - file by
 right-clicking on the model in the Event-B explorer. You can find the
@@ -39,7 +40,7 @@ Such a .eventb file can be opened by the command line and Tcl/Tk version
 of ProB.
 
 [[theories]]
-==== Theories
+=== Theories
 
 ProB has (limited) support for theories.
 
@@ -54,7 +55,7 @@ Axiomatically defined operators are not supported without additional
 annotations.
 
 [[tagging-operators-event-b]]
-===== Tagging operators
+==== Tagging operators
 
 ProB has some extra support for certain operators. ProB expects an
 annotation to an operator that provides the information that it should

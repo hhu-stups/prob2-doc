@@ -1,0 +1,4 @@
+
+= ProB Preferences
+
+A list of the current preferences available in ProB is available <<preferences-for-command-line,here>>.

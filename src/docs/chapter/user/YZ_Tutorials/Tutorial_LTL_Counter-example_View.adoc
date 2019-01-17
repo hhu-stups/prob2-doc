@@ -1,0 +1,276 @@
+
+[[tutorial-ltl-counter-example-view]]
+= Tutorial LTL Counter-example View
+
+In this tutorial a quick overview will be given describing the LTL
+counter-example visualization plug-in in Rodin. The functionality of the
+plug-in will be presented by means of an Event-B model on which
+different properties will be checked that are not satisfied by the
+model.
+
+[[ltl-model-checking-and-the-meaning-of-counter-examples]]
+== LTL Model Checking and the Meaning of Counter-examples
+
+Model checking is a technique for checking in an automatic way whether a
+model satisfies a property expressed in formal logic. LTL (standing for
+linear temporal logic) is a version of the temporal logic used mainly
+for encoding time-dependent properties of systems.
+
+Verifying whether a system fulfills an LTL property by means of model
+checking is realized by searching a path in the state space of the
+system that violates the property being checked. That is, if the system
+behaves in a way violating the LTL property being checked, then the
+erroneous behavior will be reported by returning a path (mostly
+infinite) representing the false behavior. Otherwise, if no
+counter-example was found, it will be considered that the system
+satisfies the LTL property.
+
+The LTL model checker of ProB provides three types of counter-examples:
+
+* Finite path leading to a deadlock state (see Figure 1):
+
+image::Deadlock_path.png[]
+
+* Infinite path (see Figure 2), the infinite path in this case is
+represented by means of a loop:
+
+image::LTLViewInfinitePath.png[]
+
+* Finite path (see Figure 3). (In this case an infinite path
+representing the respective counter-example has been shortened in order
+to attract the attention to the relevant part of the counter-example).
+
+image::LTLViewFinitePath.png[]
+
+Intuitively, the first two types of counter-examples (Figure 1 and
+Figure 2) constitute a violation of a liveness footnote:[The first type
+of a counter-example (Figure 1) can in some cases be a valid
+counter-example for safety properties. For example, if the model cannot
+perform any actions, then a path possessing only single deadlock state
+is a counter-example for each LTL formula latexmath:[$X^{n} (true)$],
+with latexmath:[$n\geq 1$].] property, whereas the path in Figure 3
+represents usually a counter-example for a safety property.
+
+== Visualization of Counter-examples in Rodin
+
+*Coloring and highlighting nodes in a counter-example*
+Each state of a path in the LTL counter-example view is marked by a
+respective color that denotes the evaluation of an LTL formula at that
+state. There are three possible statuses (colors) that a state _s_ may
+have in respect to an LTL formula _f_:
+
+*  T : the value of _f_ is true at _s_
+*  F : the value of _f_ is false at _s_
+*  U : the value of _f_ cannot be determined at _s_ (unknown value)
+
+A state will be colored in grey if the value of the respective LTL
+formula cannot be determined. This may happen in case the
+counter-example is represented by finite path. For example, evaluating
+the LTL formula ‘X \{p2=crit2}’ on a path of length two where the value
+of _p2_ is not equal to _crit2_ in both states (see Figure 4) yields the
+following coloring of the states in Rodin: footnote:[The visualization
+refers to the LTL formula ‘XX \{p2=crit2}’. However, in this example we
+are interested in the coloring of the states in regard to the LTL
+formula ‘X \{p2=crit2}’.]
+
+image::LTLViewVisualisation1.png[]
+
+Since the value of the atom ‘\{p2=crit2}’ in latexmath:[$s_{1}$] is
+equal to false the value of the LTL formula ‘X \{p2=crit2}’ in
+latexmath:[$s_{0}$] is also equal to false. Therefore, the first state
+is colored in red. On the other hand, the value of the formula ‘X
+\{p2=crit2}’ in latexmath:[$s_{1}$] is unknown as there is no successor
+state of latexmath:[$s_{1}$] in the path, as shown in Figure 4.
+Accordingly, the second state in the LTL counter-example viewer will be
+colored in grey.
+
+image::LTLViewFinitePathUnknown.png[]
+
+States in the path considered to be significant for the evaluation of
+the respective LTL formula are highlighted by bright colors.
+Accordingly, the other states will be grayed out.
+
+Consider the path in Figure 5 that can be reported as a counter-example
+for the LTL formula ‘\{p1=noncrit1} U \{p1=crit1}’. footnote:[An LTL
+formula latexmath:[$\phi U \psi$] is satisfied by a path
+latexmath:[$\pi$] if there exists a state latexmath:[$s$] in
+latexmath:[$\pi$] fulfilling latexmath:[$\psi$] and latexmath:[$\phi$]
+holds at all states of latexmath:[$\pi$] until latexmath:[$s$] is
+reached.] As a consequence, the LTL counter-example view will display
+the following visualization of the counter-example:
+
+image::LTLViewVisualisation2.png[]
+
+The path in Figure 5 violates ‘\{p1=noncrit1} U \{p1=crit1}’ since the
+goal (‘\{p1=crit1}’) of the until-formula does not hold in all states of
+the path. This is illustrated by means of the bottom colored path in the
+picture above. Both states have been colored with bright red as both are
+significant for the violation of the until-formula in regard to
+‘\{p1=crit1}’.
+
+The upper path in the picture above has been evaluated and colored in
+regard to the condition (‘\{p1=noncrit1}’) of the until-formula. The
+critical state here is the second one as ‘\{p1=noncrit1}’ does not hold
+in that state and therefore it is highlighted by bright red. On the
+other hand, the atom ‘\{p1=noncrit1}’ holds in latexmath:[$s_{0}$] and
+thus the state is colored in green. latexmath:[$s_{0}$] has been grayed
+out since the evaluation of ‘\{p1=noncrit1}’ in that state has no
+significant meaning for the violation of ‘\{p1=noncrit1} U
+\{p1=crit1}’.
+
+image::LTLViewFinitePathUntil.png[]
+
+Notice, for a given LTL formula _f_ the values (or the colors) of the
+states are set in regard to the evaluation of the sub-formula/-s of _f_
+and highlighted with respect to the semantics of _f_. In case of the
+formula ‘\{p1=noncrit1} U \{p1=crit1}’ the states are colored in regard
+to the atoms ‘\{p1=noncrit1}’ and ‘\{p1=crit1}’ and highlighted in
+regard to the semantics of the until-operator.
+
+_' Obtaining transition and state information_'
+A path reported as a counter-example of an LTL formula represents a
+possible trace of the model being analyzed. In some cases it may be
+helpful to know which transitions are executed along the path in order
+to reproduce the erroneous behavior of the model (e.g. by animating the
+trace). To see which transitions are being executed in the
+counter-example hold the mouse cursor on the respective edge. A label
+will appear with the transition name:
+
+image::LTLViewVisualisation3.png[]
+
+Another way to find out the transitions of the path is to inspect the
+current trace loaded in the history view.
+
+To view a state of a counter-example shown in the LTL counter-example
+view perform a double-click action on the respective state. After
+double-clicking a state the relevant information (variables’ evaluation,
+invariant evaluation, etc.) of the state is displayed in the state view
+and the trace leading to the double-clicked state is loaded in the
+history view.
+
+*Number of visualizations per LTL formula*
+The counter-example reported by the LTL model checker will be visualized
+in regard to all operators used in the LTL formula. For example, three
+different visualizations will be illustrated for ‘G (\{p1=wait1} => F
+\{p1=crit1})’ as shown in the picture below. footnote:[There are five
+sub-formulas for ‘G (\{p1=wait1} => F \{p1=crit1})’: ‘G (\{p1=wait1} =>
+F \{p1=crit1})’, ‘\{p1=wait1} => F \{p1=crit1}’, ‘\{p1=wait1}’, ‘F
+\{p1=crit1}’, and ‘\{p1=crit1}’. However, the number of visualizations
+corresponds not to the number of sub-formulas, but to the number of the
+operators used in the LTL formula.]:
+
+image::LTLViewVisualisation4.png[]
+
+In order to view the visualizations of the sub-formulas, one should
+click on one of the states of the source-formula.
+
+== Use Case for the LTL Counter-example Viewer
+
+Consider an Event-B model formalizing an algorithm for mutual exclusion
+with semaphores for two concurrent processes latexmath:[$P_1$] and
+latexmath:[$P_2$]. Each process has been simplified to perform three
+types of events: request (for entering in the critical section), enter
+(entering the critical section), and release (exiting the critical
+section).
+
+image::LTLViewMUTEXEvents.png[]
+
+Each process latexmath:[$P_{i}$] has three possible states that are
+denoted by the constants latexmath:[$noncrit_{i}$] (the state in which
+latexmath:[$P_{i}$] performs noncritical actions),
+latexmath:[$wait_{i}$] (the state in which latexmath:[$P_{i}$] waits to
+enter the critical section), and latexmath:[$crit_{i}$] (representing
+the state in which latexmath:[$P_{i}$] is in the critical section). Both
+processes share the binary semaphore y, where y=1 indicates that the
+semaphore is free and y=0 that the semaphore is currently processed by
+one of the processes.
+
+There are several requirements that the mutual exclusion algorithm
+should satisfy. The most important one is the mutual exclusion property
+that says _always at most one process is in its critical section_. This
+can be simply expressed, for example, as an invariant of the respective
+Event-B model: ‘not(p1 = crit1 & p2 = crit2)’. However, there are other
+properties that can be easily expressed by means of LTL formulas and
+automatically checked on the model. For example, the requirement _each
+process will enter infinitely often its critical section_ can be
+specified by the LTL formula `GF \{p1 = crit1} & GF \{p2 = crit2}` and
+the starvation freedom property that states _each waiting process will
+eventually enter its critical section_ can be encoded in LTL by means of
+the formula `G (\{p1 = wait1} => F \{p1 = crit1}) & G (\{p2 = wait2} =>
+F \{p2=crit2}) `.
+
+The second requirement _each process will enter infinitely often its
+critical section_ can be divided in two single requirements:
+
+1.  Process 1 will enter infinitely often its critical section (‘GF
+\{p1=crit1}’)
+2.  Process 2 will enter infinitely often its critical section (‘GF
+\{p2=crit2}’)
+
+Running the LTL model checker of ProB with the LTL formula ‘GF
+\{p1=crit1}’ on the MUTEX model will provide the following path as a
+counter-example, where the equations in the set braces represent the
+current variables’ evaluation in the respective state and the labels
+above the edges the executed events in the path:
+
+image::LTLViewCEForGF1.png[]
+
+Obviously the property ‘GF \{p1=crit1}’ is violated for the path in
+Figure 6 since it constitutes an infinite path where no state exists in
+which _p1_ is equal to _crit1_. The counter-example for ‘GF \{p1=crit1}’
+will be then visualized as follows:
+
+image::LTLViewVisualisation5.png[]
+
+Each state of the counter-example is colored in red since ‘F
+\{p1=crit1}’ does not hold for all states of the path. Additionally,
+state latexmath:[$s_{0}$] has been highlighted since *all* paths
+starting in latexmath:[$s_{0}$] do not satisfy ‘F \{p1=crit1}’ (the
+semantic of the globally-operator).
+
+To see why the LTL formula ‘F \{p1=crit1}’ does not hold in each state
+of the path in Figure 6 click on one of the nodes in the visualization.
+As a result, a second box will appear visualizing the counter-example in
+regard to the LTL formula ‘F \{p1=crit1}’. In the second visualization
+all states are colored in red since ‘p1=crit1’ does not hold in all
+states. All states are highlighted as well since ‘F \{p1=crit1}’ holds
+if and only if there is a state in which _p1_ is equal to _crit1_ and
+thus all states are significant for the violation of the formula.
+
+image::LTLViewVisualisation6.png[]
+
+For the starvation freedom property (_each waiting process will
+eventually enter its critical section_) of process P1 three operators
+are needed for encoding it in LTL: ‘G (\{p1=wait1} => F \{p1=crit1})’.
+The mutual exclusion model violates the property because it permits the
+second process P2 to perform infinitely often consecutively the events
+Req2, Enter2, Rel2 and thus not allowing process P1 to get access to its
+critical section. This means that the path in Figure 6 may also be
+reported as a counter-example for ‘G (\{p1=wait1} => F \{p1=crit1})’ by
+the LTL model checker. As a consequence, the following visualization
+will be shown in the LTL counter-example view:
+
+image::LTLViewVisualisation4.png[]
+
+In this visualization the crucial state for violating the property ‘G
+(\{p1=wait1} => F \{p1=crit1})’ is latexmath:[$s_{1}$] since at this
+state ‘p1=wait1’ becomes true. Once a state is encountered where
+‘p1=wait1’ holds, it should be guaranteed that eventually ‘p1=crit1’
+will hold. This is apparently not fulfilled as in all successor states
+_p1_ will not become equal to _crit1_.
+
+== Literature Sources
+
+For more detailed information on visualizing counter-examples in the LTL
+counter-example view in Rodin refer to footnote:[Andriy Tolstoy,
+http://www.stups.uni-duesseldorf.de/mediawiki/images/1/10/Master_tolstoy.pdf[_Visualisierung
+von LTL-Gegenbeispielen_], Master Thesis.]. For a thorough introduction
+to LTL and LTL model checking consult footnote:[E. M. Clarke, Jr.,
+Grumberg, and D.A. Peled. _Model Checking_. MIT Press, Cambridge, MA,
+USA, 1999.] or footnote:[C. Baier and J.-P. Katoen. _Principles of Model
+Checking_. MIT Press, 2008.].
+
+The Event-B model used in this tutorial can be downloaded from
+http://www.stups.uni-duesseldorf.de/~dobrikov/modelchecking/MUTEX.zip[here].
+
+== References

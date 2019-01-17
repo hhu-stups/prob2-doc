@@ -1,12 +1,13 @@
+
 [[generating-documents-with-prob-and-latex]]
-== Generating Documents with ProB and Latex
+= Generating Documents with ProB and Latex
 
 ProB can (as of version 1.6.1) be used to process Latex files, i.e., the
 command-line tool probcli scans a given Latex file and replaces certain
 commands by processed results.
 
 [[usage-generating-documents]]
-=== Usage
+== Usage
 
 A typical usage would be as follows:
 
@@ -33,7 +34,7 @@ features:
 https://www3.hhu.de/stups/prob/images/7/7f/Prob_latex_doc.pdf[ProB Latex Documentation]
 
 [[commands]]
-=== Commands
+== Commands
 
 The commands are described in the PDF document above. Here is a short
 summary of some of the commands:
@@ -94,7 +95,7 @@ for every element of the set expression, setting the identifier to a
 value of the set.
 
 [[some-examples]]
-=== Some Examples
+== Some Examples
 
 * Presentation held in Grenoble in September 2016 about "Constraint
 Programming Puzzles in B"

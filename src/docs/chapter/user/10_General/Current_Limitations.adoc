@@ -1,5 +1,6 @@
+
 [[current-limitations]]
-== Current Limitations
+= Current Limitations
 
 ProB in general requires all <<deferred-sets,deferred sets>> to be
 given a finite cardinality. If no cardinality is specified, a default
@@ -38,7 +39,7 @@ composition (or other uses of the semicolon).
 See the page <<using-prob-with-atelier-b,Using ProB with Atelier B>> for more details.
 
 [[multiple-machines-and-refinements]]
-=== Multiple Machines and Refinements
+== Multiple Machines and Refinements
 
 It is possible to use multiple B machines with ProB. However, ProB may
 not enforce all of the classical B visibility rules (although we try

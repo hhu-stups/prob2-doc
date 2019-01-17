@@ -1,0 +1,107 @@
+
+[[other-languages-overview]]
+= Overview
+
+Since version
+1.2.7 of ProB (July 2008) you can also open Promela files with ProB.
+This mode is still experimental but already very usable and provides
+source-level highlighting during animation. The main purpose is to debug
+and animate Promela specifications in a user-friendly way. We do not
+plan to compete in terms of model checking speed with Spin (Spin
+compiles Promela to C code, ProB uses a Prolog interpreter). To animate
+a Promela model, simply open the file with the .pml or .prom extension
+with the "File->Open..." command. You will have to choose "Other
+Formalisms" or "All Files" in the filter pop-up-menu to be able to
+select the file.
+
+You can also use ProB to animate and model check other specification
+languages by writing your own Prolog interpreter. To do this you should
+create a Prolog file with the .P extension and which defines three
+predicates:
+
+* trans/3: this predicate should compute for every state (second
+argument), the outgoing transitions (first argument), and the resulting
+new states (third argument)
+* prop/2: this predicate should compute the properties for the states of
+your system
+* start/1: this defines the initial states of your system
+
+For example, the following defines a system with two states (a and b)
+and two transitions (lock and unlock):
+
+start(a). trans(lock,a,b). trans(unlock,b,a). prop(X,X).
+
+These Prolog files can be loaded with ProB's open command (be sure to
+use the .P extension and to either choose "All files" or "Other
+Formalisms" in the file filtering menu).
+
+Another simple example for a very basic process algebra is as follows:
+
+....
+% start(PossibleInitialState)
+start(choice(pref(a,stop),intl(pref(b,pref(c,stop)),pref(d,stop)))).
+
+% trans(Event, StateBefore, StateAfter)
+trans(A,pref(A,P),P). % action prefix
+trans(A,intl(P,Q),intl(P2,Q)) :- trans(A,P,P2). % interleave
+trans(A,intl(P,Q),intl(P,Q2)) :- trans(A,Q,Q2).
+trans(A,par(P,Q),par(P2,Q2)) :- trans(A,P,P2), trans(A,Q,Q2). % parallel composition
+trans(A,choice(P,Q),P2) :- trans(A,P,P2). % choice
+trans(A,choice(P,Q),Q2) :- trans(A,Q,Q2).`
+
+% prop(State, PropertyOfState)
+prop(pref(A,P),prefix).
+prop(intl(P,Q),interleave).
+prop(A,A).
+....
+
+If you have a working interpreter, you can also contact the ProB
+developers in order for your interpreter to be included in the standard
+ProB distribution (in the style of the CSP-M or Promela interpreters).
+With this you can add syntax highlighting, error highlighting in the
+source code, highlighting during animation, support for new LTL
+properties,...
+
+Another, slightly more elaborate example, is the following interpreter
+for regular expressions:
+
+....
+/* A simple animator for regular expressions */
+
+start('|'('.'('*'(a),b) ,  '.'('*'(b),a))).
+
+trans(_,[],_) :- !,fail.
+trans(X,X,[]) :- atomic(X),!.
+trans(X,'|'(R1,R2),R) :-
+trans(X,R1,R) ; trans(X,R2,R).
+trans(X,'.'(R1,B),R) :- trans(X,R1,R2),
+gen_concat(R2,B,R).
+trans(X,'?'(R1),R) :-
+trans(X,R1,R) ; (X=epsilon,R=[]).
+trans(epsilon,'*'(_R1),[]).
+trans(X,'*'(R1),R) :-
+trans(X,R1,R2),
+gen_concat(R2,'*'(R1),R).
+trans(X,'+'(R1),R) :-
+trans(X,R1,R2),
+gen_concat(R2,'*'(R1),R).
+
+gen_concat(R1,R2,R) :-
+(R1=[] -> R = R2 ; R = '.'(R1,R2)).
+
+prop(X,X).
+....
+
+Finally, a more complex example is <<rush-hour-xtl,an encoding of
+the Rush Hour puzzle>> which also includes a graphical visualisation
+(using the `animation_function_result` predicate recognised by ProB as
+of version 1.4.0-rc3).
+
+= Other recognised Prolog predicates
+
+The following can be used to set up an animation image matrix with corresponding actions:
+* animation_image(Nr,Path)
+* animation_function_result(State,List) where List is a list of terms of the form ((Row,Col),Img)
+where Img is either a declared animation_image number or another Prolog term
+* animation_image_right_click_transition(Row,Col,TransitionTemplate)
+* animation_image_click_transition(FromRow,FromCol,ToRow,ToCol,ListOfTransitionTemplates,ImageNr)

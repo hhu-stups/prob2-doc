@@ -1,8 +1,6 @@
-[[csp]]
-== CSP
 
 [[csp-m]]
-=== CSP-M
+= CSP-M
 
 ProB supports
 machine readable CSPfootnote:[M. Butler and M. Leuschel: _Combining CSP
@@ -21,7 +19,7 @@ below)
 current B machine to control it
 
 [[limitations-of-csp-m-support]]
-==== Limitations of CSP-M Support
+== Limitations of CSP-M Support
 
 ProB now supports FDR and ProBE compatible CSP-M syntax, with the
 following outstanding issues
@@ -50,7 +48,7 @@ We still need to tune the animator and model checker for efficiency
 deeply nested CSP synchronization constructs).
 
 [[guiding-b-machines-with-csp]]
-==== Guiding B Machines with CSP
+== Guiding B Machines with CSP
 
 To use this feature of ProB: first open a B Machine, then select "Use
 CSP File to Guide B..." or "Use Default CSP File" in the "Open
@@ -116,4 +114,4 @@ guide the B machine with
 
 (This feature is included since version 1.3.5-beta7.)
 
-==== References
+== References

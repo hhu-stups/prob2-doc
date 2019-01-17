@@ -1,0 +1,343 @@
+
+[[prob-java-api-tutorial]]
+= ProB Java API Tutorial
+
+ProB 2.0 is currently experimental. This means that the implementation
+may change during the course of development. However, we have reached
+the point in development where some of the features have reached a
+certain level of stability. Therefore, we are writing this tutorial to
+explain what those features are.
+
+[[how-to-get-started-developing-with-prob-2.0]]
+== How to get started developing with ProB 2.0
+
+The source code for ProB 2.0 is available via GitHub. Click
+https://github.com/bendisposto/prob2[here] to view the prob2 repository.
+There is also a short guide available there which will help getting
+Eclipse set up so that you can get started with the development. Our
+bugtracker is available
+http://jira.cobra.cs.uni-duesseldorf.de/browse/PROBCORE[here]. There you
+can view the features that we are currently working on and can submit
+new feature requests.
+
+[[how-to-open-the-groovy-shell]]
+== How to open the Groovy Shell
+
+The ProB Groovy shell is available in the Eclipse application. To open
+it, select
+
+`Window > Show View > Other..`
+
+Then select
+
+`ProB > Groovy Console`
+
+and hit `ok`.
+
+[[open-the-prob-api-from-sourcejar-file]]
+== Open the ProB API from Source/JAR file
+
+In order to access the console from source or from a JAR file, start the
+application with the parameters -s (short for --shell) and -local (which
+specifies that you are running the application from a local computer).
+This will start a web server at a given port (the default is 8080, but
+it increments the port number if a port is already active). The shell
+can then be accessed at the following address:
+
+localhost:PORTNR/sessions/GroovyConsoleSession
+
+[[how-to-load-a-model]]
+== How to load a model
+
+[[java-api-classical-b]]
+=== Classical B
+
+You can load a Classical B model into the groovy console using the `api`
+variable that is available. There is a method `b_load` that is available
+to load Classical B models. For example:
+
+`m = api.b_load("/home/pathToFile/example.mch")`
+
+will load example.mch into the variable `m`.
+
+[[java-api-event-b]]
+=== Event B
+
+To load an Event B model into ProB, right click on the model and select
+
+`Start Animation / Model Checking`
+
+from the context menu that drops down.
+
+You can also load Event B models into the API via the eventb_load
+command in the Api object. The eventb_load command accepts .bcm and .bcc
+files.
+
+[[how-to-animate-models]]
+== How to animate models
+
+The Trace abstraction is available to carry out animations.
+
+[[in-the-console]]
+=== In The Console
+
+There are several different ways that a new transition can be added to
+the current trace. The most important thing to remember is that each
+Trace object is completely immutable. This means that when you change a
+trace, you are actually getting a new Trace back. This means that when
+you carry out an animation step, you always have to make sure that you
+save the Trace object that is returned.
+
+The simplest way to add a transition is to specify it with the name of
+the event to be executed and predicates to specify how the parameters
+for the event are to be allocated. Specifying no predicate will assume a
+predicate of "TRUE=TRUE" for the given event.
+
+`t = t.execute("new","pp=PID1")`
+
+If executing the event in a groovy environment (console or script), the
+event will be recognized as a method on the Trace class. This means that
+you can execute the event "new" as follows:
+
+`t = t.new("pp=PID1") `
+
+If you know the id that has been allocated by the ProB kernel to a given
+transition, this can be added via the "add" method. This will search
+the outgoing transitions from the current state and attempts to find one
+with a matching id. For instance, if operation 0 is among the enabled
+operations for the current state, then
+
+`t = t.add(0)`
+
+will add operation 0 to the current trace, create a new trace, and
+return it.
+
+If you know the name and parameters combination for a specific
+transition, you can also add operations via operation name and a list of
+the parameters. For instance
+
+`t = t.addTransitionWith("new",["PID3"])`
+
+will add the transition new(PID3) to the trace.
+
+It is also possible to execute any event by executing
+
+`t = t.anyEvent()`
+
+and it is also possible to execute any event with name "name". For
+instance,
+
+`t = t.anyEvent("name")`
+
+will execute any event with the name "name".
+
+It also possible to move backwards and forwards within a trace.
+
+Move backwards:
+
+`t = t.back()`
+
+Move forwards:
+
+`t = t.forward()`
+
+[[in-the-ui]]
+=== In The UI
+
+In order to animate a loaded model in the UI, double-click on an enabled
+event in the `Events` view. Then, the resulting trace will automatically
+be loaded into the different views and it can be further animated. To
+move backwards and forwards in the trace, use the buttons in the upper
+right hand corner of the `Events` view.
+
+[[how-to-switch-from-ui-to-groovy-console]]
+== How to switch from UI to groovy console
+
+There is an easy way to switch from the UI to the groovy console and
+back. It all happens using the "animations" global variable in the
+groovy console. What is important to remember, is that in this case,
+there is no distinction between an animation and a trace.
+
+[[from-ui-to-console]]
+=== From UI to Console
+
+In the UI, switch to the `Current Animations` view. Here you can view
+the different animations that are available. If the desired animation is
+not available, double click on it in this view and it will be set as the
+current animation. Now, to move this animation from the UI to the groovy
+console, simply type
+
+`x = animations.getCurrentTrace()`
+
+into the groovy console and the current animation will be loaded into
+the variable `x`.
+
+[[from-the-console-to-the-ui]]
+=== From the Console to the UI
+
+If you have a trace saved into variable `trace_0` in the groovy console,
+you can easily add it to the UI. Simply type
+
+`animations.addNewAnimation(trace_0)`
+
+into the groovy console and the trace will automatically be added to the
+list of current animations and all of the views will be updated.
+
+[[how-to-carry-out-evaluations]]
+== How to carry out evaluations
+
+It is very simple to evaluate strings in the groovy console. There is a
+build in eval method in both the Trace and the StateSpace. In the trace,
+you just need to specify a string and the parser that is needed to parse
+the string. The two parsers currently available are `ClassicalB` and
+`EventB`.For instance,
+
+`t.evalCurrent("x:NAT" as EventB) `
+
+will parse "x:NAT" using the Event B parser and then will evaluate it
+at the current state. The following code
+
+`t.evalCurrent("x:NAT" as ClassicalB)`
+
+will parse "x:NAT" using the Classical B parser and then will evaluate
+it at the current state.
+
+The Trace class can also attempt to identify the correct parser for the
+formula in question. This means that for an EventBModel the EventB
+parser will be used, and for a ClassicalBModel, the ClassicalB parser
+will be used. In this case, calling the evalCurrent method with a String
+parameter will parse the String formula with the parser associated with
+the current formalism being animated. In this case
+
+`t.eval("x:NAT")`.
+
+will identify which model type is being animated and choose the
+appropriate parser.
+
+It is also possible to evaluate formulas on the SpaceSpace level. For
+instance, if `space_0` is a StateSpace, you can evaluate a list of
+formulas by typing
+
+`space_0.eval(space_0[5],["x:NAT" as EventB,"y:NAT" as ClassicalB])`
+
+into the console. This will parse "x:NAT" with the Event B parser and
+"y:NAT" with the Classical B parser and then will evaluate them at the
+state with id 5. The parser is not implicit in the StateSpace, so it is
+important to specify it here. In order to evaluate a formula, you need
+to specify the StateId object that is associated with the desired id. To
+extract a StateId from a StateSpace, you can use the notation
+`space[ID]` where ID is either a String or an integer representing the
+StateId that you want to view.
+
+[[how-to-convert-between-the-main-abstractions]]
+== How to convert between the main abstractions
+
+There is a connection between all of the main abstractions. You can
+easily convert between them by using the `as` operator.
+
+To convert between a Model and a StateSpace, use:
+
+`eventb = statespace_0 as EventBModel` (if you are animating an Event B
+model)
+
+or
+
+`classicalb = statespace_0 as ClassicalBModel` (if you are animating
+ClassicalB).
+
+The reverse translation is just as easy:
+
+`space = model as StateSpace`
+
+will return the StateSpace associated with model.
+
+Conversion between a Trace and a StateSpace and between a Trace and
+Model are also simple. The following conversions are valid:
+
+`space = trace as StateSpace`
+
+`trace = StateSpace as Trace`
+
+`trace = model as Trace`
+
+`model = trace as EventBModel` or `model = trace as ClassicalBModel`
+
+The only thing to mention is that every time you convert from a
+StateSpace or Model to a Trace, a new trace from the root state is
+created.
+
+[[how-to-save-a-trace]]
+== How to save a trace
+
+ProB currently supports a mechanism to save a trace in a script so that
+the same trace can be recreated. We are currently working on some
+improvements to this mechanism, so expect it to change over the next
+period of time. Currently, it is possible to save a Trace as an XML
+trace by typing
+
+`TraceConverter.save(trace_0,"/pathToFile/fileName.xml")`
+
+into the console. This will create the XML file `fileName.xml`.
+
+If you want to load this trace back into the console, there are two
+options available. You can convert the XML file to a Groovy closure that
+will then take a Model object and return a Trace with all of the
+operations specified in the XML file. This can be triggered by calling
+the method
+
+`TraceConverter.xmlToGroovy("/pathToFile/fileName.xml","/pathToFile/groovyScript.groovy")`
+
+You can then run the produced Groovy script and execute the resulting
+closure to restore your Trace
+
+`run /pathToFile/groovyScript.groovy`
+
+A script `script_NUM` will be produced. Then enter
+
+`trace = script_NUM(modelForThisTrace)`
+
+into the console, where modelForThisTrace is the model for which the
+trace should be executed.
+
+Another option is to simply restore the Trace directly from the
+TraceConverter
+
+`trace = TraceConverter.restore(modelForThisTrace,"/pathToFile/fileName.xml")`
+
+[[how-to-run-a-groovy-script]]
+== How to run a groovy script
+
+You can use the build in `run` command to run a groovy script. Simply
+type
+
+`run new File(pathToScript/script.groovy)`
+
+into the console.
+
+[[how-to-animate-with-only-the-statespace-abstraction]]
+== How to animate with only the StateSpace abstraction
+
+It is also possible to carry out animations without using a trace
+object.
+
+To get the root vertex from StateSpace space_0, type:
+
+`st = space_0.root`
+
+from there, you can execute a chain of events. For instance,
+
+`st = st.anyEvent("new").anyEvent().new("pp=PID1").new()`
+
+So you can execute anyEvent with the method anyEvent(filter), where
+filter can be a String name, or a List of names. You can also execute an
+event with name "name", with the method name(predicate), where
+predicate is the predicate string intended to filter the solutions for
+the event. If there are no parameters, the predicate "TRUE = TRUE"
+will automatically be added.
+
+[[how-to-use-a-different-probcli-binary-for-prob2]]
+== How to use a different probcli binary for ProB2
+
+You need to start ProB2 or the respective Java application with:
+
+`-Dprob.home=PATHTOPROBCLIFOLDER`

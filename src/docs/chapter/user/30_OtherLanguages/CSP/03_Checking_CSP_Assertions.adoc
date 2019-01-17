@@ -1,6 +1,6 @@
 
 [[checking-csp-assertions]]
-=== Checking CSP Assertions
+= Checking CSP Assertions
 
 As of version 1.3.4, ProB provides support for refinement checking and
 various other assertions (deadlock, divergence, determinism, and LTL/CTL
@@ -11,7 +11,7 @@ assembled and checked in the _CSP Assertions Viewer_. A description of
 the _CSP Assertions Viewer_ is also given.
 
 [[supported-csp-assertions-in-prob]]
-==== Supported CSP Assertions in ProB
+== Supported CSP Assertions in ProB
 
 ProB provides support for checking almost all types of CSP-M assertions
 that can be checked within FDR2. Besides the assertion types that can be
@@ -144,7 +144,7 @@ syntax error. Bear in mind to remove or comment out such LTL/CTL
 assertions in the CSP-M file before loading it in FDR2.
 
 [[csp-assertions-viewer]]
-==== CSP Assertions Viewer
+== CSP Assertions Viewer
 
 When a CSP-M specification is loaded one can open the _CSP Assertion
 Viewer_ either from the menu bar of the main window by selecting the
@@ -392,7 +392,7 @@ button command “Cancel” is replaced by another button command
 check when the button is clicked on.
 
 [[debugging-non-satisfied-assertions]]
-==== Debugging Non-satisfied Assertions
+== Debugging Non-satisfied Assertions
 
 In case an assertion check has failed the user can explore the reason
 for the assertion violation. If the corresponding assertion is not
@@ -489,7 +489,7 @@ In the figure above, the nodes and the transitions of the respective
 counterexample "a -> (b -> a)+" are colored in red.
 
 [[checking-csp-assertions-with-probcli]]
-==== Checking CSP Assertions with `probcli`
+== Checking CSP Assertions with `probcli`
 
 It is also possible to check CSP assertions with the command line
 version of ProB. The command has the following syntax:
@@ -513,4 +513,4 @@ formula by means of a backslash \.
 
 `probcli -csp_assertion "Q |= LTL: \"F [c]\"" example.csp`
 
-==== References and Notes
+== References and Notes

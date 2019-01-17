@@ -1,8 +1,9 @@
+
 [[state-space-visualization-examples]]
-== State space visualization examples
+= State space visualization examples
 
 [[alternating-bit-protocol]]
-=== Alternating Bit Protocol
+== Alternating Bit Protocol
 
 This is a visualisation of 3643 states and 11115 transitions of a TLA+
 model of the alternating bit protocol, as distributed with the
@@ -40,7 +41,7 @@ SeqConstraint == /\ Len(msgQ) \leq msgQLen
                  /\ Len(ackQ) \leq ackQLen
 
 SentLeadsToRcvd == \A d \in Data : (sent = d) /\ (sBit # sAck) ~> (rcvd = d)
-==============================================================================
+=============================================================================
 
 ImpliedAction == [ABCNext]_cvars
 
@@ -50,11 +51,11 @@ TProp == \A d \in Data : (sent = d) => [](sent = d)
 CSpec == ABSpec /\ TNext
 
 DataPerm == Permutations(Data)
-===============================================================
+==============================================================
 ....
 
 [[mcinnerfifo]]
-=== MCInnerFIFO
+== MCInnerFIFO
 
 This is a visualisation of 3866 states and 9661 transitions of a TLA+
 model of a FIFO, as distributed with the
@@ -74,7 +75,7 @@ using the "Custom Transition Diagram" feature of ProB:
 image::MCInnerFIFO_proj_cardq.png[]
 
 [[rushhour]]
-=== RushHour
+== RushHour
 
 This is a visualisation of the
 <<rush-hour-puzzle, Rush
@@ -90,7 +91,7 @@ transitions, using the scale option this time:
 image::RushHour_full_sfdp.png[]
 
 [[can-bus]]
-=== CAN Bus
+== CAN Bus
 
 This is a visualisation of the statespace of an Event-B model of a CAN
 Bus. The colours indicate the size of the BUSwrite variable
@@ -99,7 +100,7 @@ Bus. The colours indicate the size of the BUSwrite variable
 image::CANBus_sfdp.png[]
 
 [[hanoi-6-discs]]
-=== Hanoi (6 Discs)
+== Hanoi (6 Discs)
 
 This is a visualisation of the statespace of a B model of the towers of
 Hanoi for 6 discs. The state space contains 731 nodes and 2186 nodes.
@@ -117,7 +118,7 @@ ProB:
 image::Hanoi6_proj_cardondest.png[]
 
 [[threads---partial-order-reduction]]
-=== Threads - Partial Order Reduction
+== Threads - Partial Order Reduction
 
 This is the visualisation of a simple threads model, of two threads with
 n=51 steps before a synchronisation occurs and threads start again. The

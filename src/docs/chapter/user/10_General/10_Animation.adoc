@@ -1,5 +1,6 @@
+
 [[animation]]
-== Animation
+= Animation
 
 The animation facilities of ProB allow users to gain confidence in their
 specifications. These features try to be as user-friendly as possible
@@ -8,7 +9,7 @@ operation arguments or choice variables, and he uses the mouse to
 operate the animation).
 
 [[basic-animation]]
-=== Basic Animation
+== Basic Animation
 
 When the B specification is opened, the syntax and type checker analyses
 it and, if a syntax or type error is detected, it is then reported,
@@ -21,7 +22,7 @@ performed in the Enabled Operations pane. These operations can be of two
 types described below.
 
 [[operations-from-the-b-machine]]
-==== Operations from the B Machine
+=== Operations from the B Machine
 
 These operations are the ones whose preconditions and guards are
 satisfiable in the current state. The parameter values that make true
@@ -41,7 +42,7 @@ preconditions and guards.
 corresponds to a deadlock*
 
 [[virtual-operations]]
-==== Virtual Operations
+=== Virtual Operations
 
 There are three particular operations that correspond to specific tasks
 performed by ProB:
@@ -64,7 +65,7 @@ pane. These enable the user to explore interactively the behaviour of
 the B machine.
 
 [[animating-the-b-machine]]
-==== Animating the B machine
+=== Animating the B machine
 
 If the B machine has constants, one or several initialise constants
 operations are displayed. The user selects one of these operations, then
@@ -94,7 +95,7 @@ added to the History pane, the effect of the operation are computed and
 the state is updated in the State Properties pane.
 
 [[the-analyse-menu]]
-=== The Analyse menu
+== The Analyse menu
 
 At each point during the animation process, several useful commands
 displaying various information on the B machine are available in the
@@ -122,7 +123,7 @@ properties and the Analyse Assertions plays this role for the
 assertions.
 
 [[animation-preferences]]
-=== Animation Preferences
+== Animation Preferences
 
 The animation process in ProB can be configured via several preferences
 set in the preference window Preferences|Animation Preferences.
@@ -142,7 +143,7 @@ The preference Check invariant will toggle the display of the invariant
 status indicator in the State Properties pane.
 
 [[other-animation-features]]
-=== Other Animation Features
+== Other Animation Features
 
 Several other commands are provided by ProB in the _Animate_ menu for
 animating B specifications. The Reset command will set the state of the

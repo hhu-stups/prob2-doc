@@ -1,5 +1,6 @@
+
 [[colours-of-enabled-operations]]
-== Colours of enabled operations
+= Colours of enabled operations
 
 The enabled operations are shown in different colours, depending on the
 state where the operation leads to. If more than one rule of the

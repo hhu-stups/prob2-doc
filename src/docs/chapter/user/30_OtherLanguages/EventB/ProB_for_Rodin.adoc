@@ -1,10 +1,11 @@
+
 [[prob-for-rodin]]
-=== ProB for Rodin
+= ProB for Rodin
 
 Currently there are two versions of ProB available for Rodin.
 
 [[prob-1-for-rodin]]
-==== ProB (1) for Rodin
+== ProB (1) for Rodin
 
 The first one is based on the old Java API and supports
 http://wiki.event-b.org/index.php/Rodin_Platform_2.8_Release_Notes[Rodin
@@ -16,7 +17,7 @@ Rodin>>. Nightly releases of this versions are also available on the
 <<download,Download>> page.
 
 [[prob-2.0-for-rodin]]
-==== ProB 2.0 for Rodin
+== ProB 2.0 for Rodin
 
 The second, still experimental, one is based on the new
 <<prob-java-api,ProB Java API>> (aka ProB 2.0). Because the UI
@@ -30,7 +31,7 @@ releases of this versions is also available on the
 <<download,Download>> page.
 
 [[multi-simulation-for-rodin-based-on-prob]]
-==== Multi-Simulation for Rodin based on ProB
+== Multi-Simulation for Rodin based on ProB
 
 There is now also a
 http://users.ecs.soton.ac.uk/vs2/ac.soton.multisim.updatesite/[Multi-Simulation
@@ -38,10 +39,10 @@ Plug-in] available for Rodin. It enables discrete/continuous
 co-simulation.
 
 [[other-plug-ins-for-rodin]]
-==== Other Plug-Ins for Rodin
+== Other Plug-Ins for Rodin
 
 [[prover-evaluation]]
-===== Prover Evaluation
+=== Prover Evaluation
 
 This Plug-in is available at the update site
 http://nightly.cobra.cs.uni-duesseldorf.de/rodin_provereval/[http://nightly.cobra.cs.uni-duesseldorf.de/rodin_provereval/]
@@ -49,7 +50,7 @@ and is capable to evaluate a variety of provers or tactics on a
 selection of proof obligations.
 
 [[camille]]
-===== Camille
+=== Camille
 
 We also develop the Camille text-editor for Rodin. A preliminary version
 of Camille for Rodin 3.3 is available at the nightly update site:

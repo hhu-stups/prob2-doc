@@ -1,5 +1,6 @@
+
 [[prob-for-event-b]]
-=== ProB for Event-B
+= ProB for Event-B
 
 In addition to classical B (aka B for software development), ProB also
 supports Event-B and the Rodin platform. ProB can be installed as a

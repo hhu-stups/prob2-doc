@@ -1,5 +1,6 @@
+
 [[deferred-sets]]
-== Deferred Sets
+= Deferred Sets
 
 A deferred set in B is declared in the SETS Section and is not
 explicitly enumerated. In the example below, AA is a deferred set and BB
@@ -35,7 +36,7 @@ influence the size used for AA by ProB, for example:
 set the cardinality of AA to the constant.
 
 [[using-refinement-for-animation-preferences]]
-=== Using Refinement for Animation Preferences
+== Using Refinement for Animation Preferences
 
 Note: instead of adding AA = \{aa,bb} to the SETS clause you can also
 add `AA = {aa,bb} & aa/=bb` to the PROPERTIES clause. This can also be
@@ -52,7 +53,7 @@ END
 ....
 
 [[setting-deferred-set-cardinalities-within-probcli]]
-=== Setting Deferred Set Cardinalities within probcli
+== Setting Deferred Set Cardinalities within probcli
 
 From the command-line, using probcli you can use the command-line
 switch:

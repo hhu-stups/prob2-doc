@@ -1,0 +1,7 @@
+
+[[advanced-features]]
+= Advanced Features
+:leveloffset: +1
+
+Over the years, the ProB Team developed a few features for advanced users.
+You can find further descriptions and tutorials on how to use them in the following sections.

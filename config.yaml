@@ -1,18 +1,9 @@
 ---
-file: prob_developer.adoc
-title: ProB Developer Handbook
+file: prob_handbook.adoc
+title: ProB Handbook
 authors:
   - Jens Bendisposto
   - Joy Clark
-  - Michael Leuschel
-content:
-  - developer
-  - appendix
----
-file: prob_user_manual.adoc
-title: ProB User Manual
-authors:
-  - Jens Bendisposto
   - Michael Leuschel
 content:
   - user

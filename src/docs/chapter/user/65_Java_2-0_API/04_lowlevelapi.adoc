@@ -1,0 +1,57 @@
+
+[[developer-low-level-api]]
+= Low Level API
+
+The ProB core has two different APIs. One is suited for high level usage and one directly interacts with the Prolog binary. The latter (low level) API is used to extend the functionality of ProB 2.0 and this is the API that we are introducing in this chapter. It is typically only used within the development team because it often requires changing parts of the Prolog kernel. However, it still may be useful to know where one can look for low level features. This is particulary helpful when some of the features are not yet accessible to a higher level API.
+
+The low level API was introduced in the first version of ProB for Rodin and is still used in version 2.0. We use subclasses of the `de.prob.animator.command.AbstractCommand` class to interact with the ProB CLI that is written in the Prolog language. A command must implement two important methods: `writeCommand` and `processResults`. The basic idea is that we pass a command to the `execute` method of an instance of `IAnimator`. The `IAnimator` will call the command's `writeCommand` method passing in an object that represents a Prolog query. It expects that the command will extend the Prolog query. The reason for this approach is that we want to combine multiple commands in a single call for efficiency reason and we have to take care to rename Prolog variables to prevent accidental unification between independent commands. For instance, a command could write the query `foo(a,1,X)` and a second command could write `bar(X,Y)`. The combination `foo(a,1,X), bar(X,Y)` will probably yield a completely different result than executing them one after the other because X is unified. Typically this combination will fail. To prevent this, ProB automatically renames variables. In this instance, the combination would become `foo(a,1,AX), bar(BX,BY)`.
+
+After calling writeCommand, the query is sent to Prolog and executed. The animator thread blocks until it receives a result from Prolog. The relevant bits of the result are passed to the command's `processResult` method. The command then proceeds to extract the information and store them in an appropriate format. This means that the command is a mutable object that also captures the result of a query. Usually commands provide a method to get the result as an object.
+
+The following listing shows an example of a command that takes a state as an input and produces a list of transitions that represent the shortest (known) trace from the initial state. When called, it will produce a query such as `prob2_find_trace(42,Trace)`. Prolog will bind the variable `Trace` to a list of prolog terms that represent the Transition objects in the StateSpace. These terms (tuples with the form `op(TransitionId, Name, SourceId, DestinationId)`) will be translated to Transition objects using the static method `Transition.createTransitionFromCompoundPrologTerm` when the `processResult` method is called. Finally we have a getter method that can be used to extract the result.
+
+
+[source,groovy]
+----
+public class GetShortestTraceCommand extends AbstractCommand {
+
+	private static final String TRACE = "Trace";
+	private final State state;
+	private final List<Transition> transitions = new ArrayList<Transition>();
+
+	public GetShortestTraceCommand(final State state) {
+		this.state = state;
+	}
+
+	public void writeCommand(final IPrologTermOutput pto) {
+		pto.openTerm("find_trace_to_node");
+		pto.printAtomOrNumber(id.getId());
+		pto.printVariable(TRACE);
+		pto.closeTerm();
+	}
+
+	public void processResult(ISimplifiedROMap<String,PrologTerm> bindings){
+		PrologTerm trace = bindings.get(TRACE);
+		if (trace instanceof ListPrologTerm) {
+			for (PrologTerm term : (ListPrologTerm) trace) {
+				Transition transition = Transition.createTransitionFromCompoundPrologTerm(state.getStateSpace(),
+					(CompoundPrologTerm) term);
+				transitions.add(transition);
+			}
+		}
+	}
+
+	public List<Transition> getTransitions() {
+		return transitions;
+	}
+}
+----
+
+<<img-lowlevelapi>> shows how commands are executed by ProB. Commands can be combined using ComposedCommand and executed via an instance of IAnimator. When the `execute` method returns, the commands have been processed and the results are ready.
+
+[#img-lowlevelapi]
+.Combined execution of low level commands
+
+image::Lowlevelapi.png[]
+
+CAUTION: <<img-lowlevelapi>> is slightly outdated, the Prolog interface is located in prob2_interface.pl rather than eclipse_interface.pl.

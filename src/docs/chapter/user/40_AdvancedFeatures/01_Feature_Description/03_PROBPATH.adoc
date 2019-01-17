@@ -1,5 +1,6 @@
+
 [[probpath]]
-== PROBPATH
+= PROBPATH
 
 Starting with version 1.5 of ProB, it is possible to customize where the
 parser will ProB will search for referenced files.

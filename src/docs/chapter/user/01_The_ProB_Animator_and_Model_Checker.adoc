@@ -1,4 +1,6 @@
+
 [[the-prob-animator-and-modelchecker]]
+= The ProB Animator and Modelchecker
 
 [width="100%",cols="60%,40%",]
 |=======================================================================

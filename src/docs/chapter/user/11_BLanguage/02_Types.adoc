@@ -1,5 +1,6 @@
+
 [[types]]
-== Types
+= Types
 
 ProB requires all constants and variables to be typed. As of version
 1.3, ProB uses a new unification-based type inference and checking
@@ -10,7 +11,7 @@ adding additional typing predicates). Also note that, in contrast to
 Atelier B, ProB will type check macro DEFINITIONS.
 
 [[what-is-a-basic-type-in-b]]
-=== What is a basic type in B
+== What is a basic type in B
 
 * BOOL
 * INTEGER
@@ -20,7 +21,7 @@ parameter of the machine
 * τ1 * τ2 (Cartesian product) for τ1 and τ2 being two types
 
 [[what-needs-to-be-typed]]
-=== What needs to be typed
+== What needs to be typed
 
 Generally speaking, any constant or variable. More precisely:
 
@@ -46,7 +47,7 @@ ProB will warn you if a variable has not been given a type.
 inferred for your constants and global variables.*
 
 [[restriction-on-the-domains-of-the-variables]]
-=== Restriction on the Domains of the Variables
+== Restriction on the Domains of the Variables
 
 Animating and verifying a B specification is in principle undecidable.
 ProB overcomes this by requiring that the domain of the variables is
@@ -72,7 +73,7 @@ ProB, provided it is of a simple form `card(S)=Nr`, where `S` is a deferred
 set and `Nr` a natural number.
 
 [[enumeration-in-prob]]
-=== Enumeration in ProB
+== Enumeration in ProB
 
 The typing information is used by ProB to enumerate the possible values
 of a constant or a variable whenever a specification does not narrow

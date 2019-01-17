@@ -1,5 +1,6 @@
+
 [[bounded-model-checking]]
-== Bounded Model Checking
+= Bounded Model Checking
 
 As of version 1.5, ProB provides support for constraint-based bounded
 model checking (BMC). As opposed to

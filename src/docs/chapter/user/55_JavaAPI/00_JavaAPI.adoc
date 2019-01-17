@@ -1,2 +1,0 @@
-[[prob-java-api]]
-= ProB Java API

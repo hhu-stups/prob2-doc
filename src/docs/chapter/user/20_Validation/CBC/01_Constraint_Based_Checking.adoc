@@ -1,23 +1,6 @@
-[[constraint-based-checking]]
-== Constraint Based Checking
-
-ProB also offers an alternative checking method, inspired by the Alloy
-footnote:[D. Jackson: Alloy: A lightweight object modeling notation. ACM
-Transactions Software Engineering and Methodology (TOSEM),
-11(2):256–290, 2002.] analyser. In this mode of operation, ProB does not
-explore the reachable states starting from the initial state(s), but
-checks whether applying a single operation can result in a property
-violation (invariant and assertion) independently of the particular
-initialization of the B machine. This is done by symbolic constraint
-solving, and we call this approach constraint based checking (another
-sensible name would be model finding).
-
-More details and examples can be found in the
-<<tutorial-model-checking-proof-and-cbc,tutorial page on model
-checking, proof and CBC>>.
 
 [[difference-between-constraint-based-checking-and-model-checking]]
-=== Difference between Constraint Based Checking and Model Checking
+= Difference between Constraint Based Checking and Model Checking
 
 <<consistency-checking,Model checking>> tries to find a sequence of
 operations that, starting from an initial state, leads to a state which
@@ -37,7 +20,7 @@ A comparison between all <<prob-validation-methods,ProB validation
 methods can be found on a separate manual section>>.
 
 [[commands-of-the-constraint-based-checker]]
-=== Commands of the Constraint Based Checker
+= Commands of the Constraint Based Checker
 
 These commands are only accessible in the "Normal" mode of ProB (see
 <<the-prob-main-window,the general
@@ -71,4 +54,4 @@ The following command is related to the above:
 
 * <<using-the-command-line-version-of-prob,cbc_sequence>> to find a sequence of operations using the constraint solver
 
-=== References
+= References
