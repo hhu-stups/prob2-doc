@@ -2,8 +2,7 @@
 = ProB Licence
 
 The ProB source code is distributed under the
-http://www.eclipse.org/org/documents/epl-v10.html[EPL v1.0 license] (see
-also the ProB developer manual).
+http://www.eclipse.org/org/documents/epl-v10.html[EPL v1.0 license].
 
 \(C) 2000-2018 Michael Leuschel and many others.
 

@@ -512,5 +512,3 @@ you need to escape the double quotes (") wrapping the respective LTL/CTL
 formula by means of a backslash \.
 
 `probcli -csp_assertion "Q |= LTL: \"F [c]\"" example.csp`
-
-== References and Notes

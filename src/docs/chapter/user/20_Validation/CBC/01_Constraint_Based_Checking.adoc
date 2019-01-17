@@ -53,5 +53,3 @@ axioms/properties.
 The following command is related to the above:
 
 * <<using-the-command-line-version-of-prob,cbc_sequence>> to find a sequence of operations using the constraint solver
-
-= References

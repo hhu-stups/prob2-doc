@@ -142,5 +142,3 @@ less support for information on arcs (for example, dotted lines).
 which is useful for examining large graphs.
 * Against Dotty: Dotty may crash if the graph is too big or complex (and
 on Solaris and Linux if non-standard mouse buttons are used).
-
-== References

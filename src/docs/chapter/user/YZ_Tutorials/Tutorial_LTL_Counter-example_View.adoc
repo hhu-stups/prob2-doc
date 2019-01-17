@@ -272,5 +272,3 @@ Checking_. MIT Press, 2008.].
 
 The Event-B model used in this tutorial can be downloaded from
 http://www.stups.uni-duesseldorf.de/~dobrikov/modelchecking/MUTEX.zip[here].
-
-== References

@@ -204,5 +204,3 @@ OPERATIONS
   END
 END
 ....
-
-== References

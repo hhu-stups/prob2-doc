@@ -128,5 +128,3 @@ Efficient Approximate Verification of B via Symmetry Markers,
 Proceedings International Symmetry Conference,Januar,2007,Verlag,
 https://www3.hhu.de/stups/downloads/pdf/LeMa07_212.pdf].
 This is typically the most efficient method.
-
-== References

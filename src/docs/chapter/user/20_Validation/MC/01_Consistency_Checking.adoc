@@ -242,5 +242,3 @@ a goal without defining it explicitly in the B specification. The
 "Verify|Advanced Find..." command enables the user to type a predicate
 directly in a text field. ProB then searches for a state of the state
 space currently computed that satisfies this goal.
-
-== References

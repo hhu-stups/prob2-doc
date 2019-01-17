@@ -113,5 +113,3 @@ guide the B machine with
 `-csp-guide`
 
 (This feature is included since version 1.3.5-beta7.)
-
-== References

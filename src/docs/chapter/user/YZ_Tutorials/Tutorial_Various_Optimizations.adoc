@@ -534,5 +534,3 @@ evaluations could be saved up.
 These and various other benchmarks used for evaluating partial guard
 evaluation (PGE) can be viewed
 https://www3.hhu.de/stups/downloads/[here].
-
-== References
