@@ -85,7 +85,7 @@ asciidoctor {
 
     options doctype: 'book'
 
-    backends = ['html5']
+    backends = ['html5', 'pdf']
 
     attributes = [
         'source-highlighter': 'coderay',
