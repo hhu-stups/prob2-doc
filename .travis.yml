@@ -10,7 +10,7 @@ install:
 script:
 - TERM=dumb ./gradlew --no-daemon asciidoctor --info --stacktrace
 after_success:
-- travis_wait 30 travis-custom-deploy sftp build/asciidoc/pdf/*.pdf
+- travis-custom-deploy sftp build/asciidoc/pdf/*.pdf
 - travis-custom-deploy sftp build/asciidoc/html5
 env:
   global:

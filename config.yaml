@@ -7,4 +7,12 @@ authors:
   - Michael Leuschel
 content:
   - user
-  - model_examples
+---
+file: modelling_examples.adoc
+title: Modelling Examples
+authors:
+  - Jens Bendisposto
+  - Joy Clark
+  - Michael Leuschel
+content:
+  - modelling_examples
