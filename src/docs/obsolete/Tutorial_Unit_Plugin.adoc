@@ -2,6 +2,8 @@
 [[tutorial-unit-plugin]]
 = Tutorial Unit Plugin
 
+Note: This feature is no longer available in ProB 1.9.0.
+
 This tutorial describes, how ProB's integrated plugin for unit analysis
 can be used to verify the usage of physical units throughout a B
 machine. This includes
