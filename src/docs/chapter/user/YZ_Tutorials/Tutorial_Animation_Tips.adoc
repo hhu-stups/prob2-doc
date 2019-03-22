@@ -42,6 +42,19 @@ the B machine.
 image::ProB_Lift_OpPane_WithJump101.png[]
 
 [[executing-an-operation-by-predicate]]
+
+=== Increasing MAX_OPERATIONS for an individual operation
+
+As of version 1.9.0 of ProB you can also set the MAX_OPERATIONS limit individually per operation.
+For this you need to add a declaration in the DEFINITIONS section of your B machine:
+
+....
+ DEFINITIONS
+   MAX_OPERATIONS_jump == 101
+....
+
+
+[[execute-operation-by-predicate]]
 === Executing an Operation by Predicate
 
 The alternative is to provide the parameter value for `level` yourself.
