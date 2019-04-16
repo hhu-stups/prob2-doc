@@ -32,3 +32,5 @@ Take the following example:
 
 Memoization means that the recursive Fibonacci function now runs in linear time rather than in exponential time.
 Generally, memoization is useful for functions which are complex to compute but which are called repeatedly with the same arguments.
+
+With the command-line version probcli you can use the `-profile` command to obtain some statistics about memoization.
