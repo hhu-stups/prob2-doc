@@ -1,0 +1,34 @@
+
+[[function-memoization]]
+= Memoization for Functions
+
+
+
+As of version 1.9.0-beta9 ProB allows you to annotate functions in the ABSTRACT_CONSTANTS section for memoization.
+[https://en.wikipedia.org/wiki/Memoization Memoization] is a technique for storing results of function applications and reusing the result if possible to avoid re-computing the function for the same arguments again.
+
+To enable memoization you either need to
+* annotate the function in the ABSTRACT_CONSTANTS section with the pragma `/*@desc memo */`
+* set the preference `MEMOIZE_FUNCTIONS` to true. In this case ProB will try to memoize all functions in the ABSTRACT_CONSTANTS section, unless they are obviously small and  finite and can thus be precomputed completely.
+
+Take the following example:
+
+---------
+  MACHINE MemoizationTests
+  ABSTRACT_CONSTANTS
+    fib /*@desc memo */,
+    fact /*@desc memo */
+  PROPERTIES
+    fib = %x.(x:NATURAL |
+             (IF x=0 or x=1 THEN 1
+             ELSE fib(x-1)+fib(x-2)
+             END))
+    &
+    fact = %x.(x:NATURAL|(IF x=0 THEN 1 ELSE x*fact(x-1) END))
+  ASSERTIONS
+    fib(30)=1346269;
+  END
+---------
+
+Memoization means that the recursive Fibonacci function now runs in linear time rather than in exponential time.
+Generally, memoization is useful for functions which are complex to compute but which are called repeatedly with the same arguments.
