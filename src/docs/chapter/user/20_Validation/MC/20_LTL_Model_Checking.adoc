@@ -520,3 +520,16 @@ can be found <<tutorial-ltl-counter-example-view,here>>.
 A tutorial of a simple case study, where setting fairness constraints to
 some of the LTL properties is required, can be found
 <<mutual-exclusion-fairness,here>>.
+
+== Summary of CTL Syntax supported by ProB
+ProB also provides limited support for CTL model checking.
+Here is a brief summary of the syntax:
+
+
+----
+   use {...} for B predicates,
+   ExUy,EXx,AXx,EFx,AGx are supported CTL syntax,
+   use e(op) to check if an operation op is enabled,
+   use EX[Op]x to check what is the next operation, e.g. EX[reset]{db={}}
+----
+
