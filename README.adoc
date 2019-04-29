@@ -4,5 +4,5 @@ image:https://travis-ci.org/bendisposto/prob2-doc.svg?branch=master["Build Statu
 
 Repository for the ProB 2.0 Developer and User Handbook.
 
-* The handbook is located at https://www3.hhu.de/stups/handbook/prob2/prob_developer.html
-* A PDF is available from https://www3.hhu.de/stups/handbook/prob2/prob_developer.pdf
+* The handbook is located at https://www3.hhu.de/stups/handbook/prob2/prob_handbook.html
+* A PDF is available from https://www3.hhu.de/stups/handbook/prob2/prob_handbook.pdf
