@@ -27,10 +27,22 @@ Take the following example:
     fact = %x.(x:NATURAL|(IF x=0 THEN 1 ELSE x*fact(x-1) END))
   ASSERTIONS
     fib(30)=1346269;
+    fib[28..30] = {514229,832040,1346269};
   END
 ---------
 
 Memoization means that the recursive Fibonacci function now runs in linear time rather than in exponential time.
 Generally, memoization is useful for functions which are complex to compute but which are called repeatedly with the same arguments.
+
+As can be seen above, memoization is active for
+* function calls such as fib(30) (which in turn calls fib(29) and fib(28) which are also memoized)
+* computation of relational image such as fib[28..30], which internally results in three function calls to fib
+
+The following points are relevant:
+* Memoization is currently only possible for functions declared in the ABSTRACT_CONSTANTS section
+* Memoization means that all results of function calls are stored. The memoization table is reset when another B machine is loaded or the same B machine is re-loaded.
+* Memoized functions are automatically marked as symbolic. If your function is finite and relatively small, it may be better to put the function into the CONCRETE_CONSTANTS section so that it gets computed in its entirety once.
+* Memoization of a function f is currently <b>not</b> active for computations such as dom(f), ran(f) or x|->y:f.
+
 
 With the command-line version probcli you can use the `-profile` command to obtain some statistics about memoization.
