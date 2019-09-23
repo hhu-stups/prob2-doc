@@ -78,3 +78,17 @@ axiom `f : A -\->> B`, then the cardinality of `A` must be greater or
 equal to the cardinality of `B`. We are working on an automated analysis
 for detecting the correct cardinalities of the carrier sets
 automatically.
+
+==== Transforming deferred carrier sets into enumerated sets
+Instead of providing a cardinality you can also transform a deferred set into
+an enumerated set, i.e., provided an enumeration of all its elements.
+Here is how you would instantiate S to be a set containing the three elements named a,b,c:
+
+----
+ context c1_prob extends c1
+ constants a,b,c
+ axioms
+  @prob_axm partition(S,{a},{b},{c})
+ end
+----
+
