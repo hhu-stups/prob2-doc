@@ -1,11 +1,13 @@
 [[troubleshooting]]
 = Troubleshooting
 
+* On macOS Catalina the Tcl/Tk menu bar is sometimes not working. Switching to another application and then back to ProB seems to solve the problem.
+
 * Avoid installing ProB in a path with spaces or other special
 characters in them. The same holds for B machines you wish to analyze
 with ProB.
 
-* You need Tcl/Tk (preferably 8.4 or newer) installed on your machine.
+* You need Tcl/Tk (preferably 8.5 or newer) installed on your machine.
 On Linux you will get the error message: ./prob: error while loading
 shared libraries: libtk.so: cannot open shared object file: No such file
 or directory if Tcl/Tk is not proberly installed. You can get Tcl/Tk at
