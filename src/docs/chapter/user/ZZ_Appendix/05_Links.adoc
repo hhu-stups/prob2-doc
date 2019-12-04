@@ -36,11 +36,14 @@ to Success Story (written by Cetic)]
 [[tools-using-prob]]
 == Tools using ProB
 
+* https://www.clearsy.com/en/our-tools/clearsy-data-solver/[ClearSy Data Solver]
+* http://www.data-validation.fr/data-validation-in-the-railways/[DTVT -
+Data Table Validation Tool] for Alstom by ClearSy
+* OLAF data validation tool by ClearSy for Alstom and SNCF
+* Dave data validation tool by ClearSy for General Electric Transportation
 * https://github.com/plues/plues[PLUES] tool for university course
 validation
 * http://safecap.cs.ncl.ac.uk/index.php/Safecap_Project_Wiki[SafeCap]
-* http://www.data-validation.fr/data-validation-in-the-railways/[DTVT -
-Data Table Validation Tool]
 * http://wiki.event-b.org/index.php/IUML-B[iUML Statemachines]
 * http://users.ecs.soton.ac.uk/vs2/ac.soton.multisim.updatesite/[MultiSimulation
 Plug-In for Rodin]
@@ -77,6 +80,7 @@ Developing Trustworthy Systems]
 * http://bibbase.org/network/publication/lausdahl-ishikawa-larsen-interpretingimplicitvdmspecificationsusingprob-2015[Animating
 implicit VDM specifications inside Ouverture]
 * http://www.ovado.net[Ovado] (as second tool chain)
+* https://github.com/tofische/cucumber-event-b/[Cucumber-Event-B] tool to run high-level tests
 
 [[related-tools]]
 == Related Tools
