@@ -19,6 +19,11 @@ plugins {
     id "com.github.jruby-gradle.base" version "1.7.0"
 }
 
+wrapper {
+    gradleVersion = "4.10.2"
+    distributionType = Wrapper.DistributionType.ALL
+}
+
 def cfg = new Configuration()
 
 repositories {
