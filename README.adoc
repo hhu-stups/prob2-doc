@@ -1,6 +1,6 @@
 = ProB 2.0 Developer Manual
 
-image:https://travis-ci.org/bendisposto/prob2-doc.svg?branch=master["Build Status", link="https://travis-ci.org/bendisposto/prob2-doc"]
+image:https://travis-ci.org/hhu-stups/prob2-doc.svg?branch=master["Build Status", link="https://travis-ci.org/hhu-stups/prob2-doc"]
 
 Repository for the ProB 2.0 Developer and User Handbook.
 
