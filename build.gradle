@@ -8,14 +8,14 @@ buildscript {
     }
 
     dependencies {
-        classpath 'org.asciidoctor:asciidoctor-gradle-plugin:1.5.8.1'
-        classpath 'org.asciidoctor:asciidoctorj-pdf:1.5.0-alpha.16'
-        classpath 'org.asciidoctor:asciidoctorj-epub3:1.5.0-alpha.8.1'
-        classpath 'org.asciidoctor:asciidoctorj:1.5.6'
-        classpath 'com.github.jruby-gradle:jruby-gradle-plugin:1.6.0'
-        classpath 'com.github.spullara.mustache.java:compiler:0.9.5'
-        classpath 'org.freemarker:freemarker:2.3.28'
-        classpath 'org.yaml:snakeyaml:1.17'
+        classpath 'org.asciidoctor:asciidoctor-gradle-plugin:1.6.1'
+        classpath 'org.asciidoctor:asciidoctorj-pdf:1.5.0-beta.8'
+        classpath 'org.asciidoctor:asciidoctorj-epub3:1.5.0-alpha.9'
+        classpath 'org.asciidoctor:asciidoctorj:1.6.2'
+        classpath 'com.github.jruby-gradle:jruby-gradle-plugin:1.7.0'
+        classpath 'com.github.spullara.mustache.java:compiler:0.9.6'
+        classpath 'org.freemarker:freemarker:2.3.29'
+        classpath 'org.yaml:snakeyaml:1.25'
     }
 }
 
@@ -29,15 +29,15 @@ repositories {
 }
 
 dependencies {
-    gems 'rubygems:asciidoctor-diagram:1.5.10'
+    gems 'rubygems:asciidoctor-diagram:1.5.19'
     // asciidoctor-bibtex requires a 4.x version of bibtex-ruby, but for some reason the build installs a 5.x version by default.
     // To fix this we need this manual dependency on a 4.x version of bibtex-ruby.
     gems 'rubygems:bibtex-ruby:4.4.7'
-    gems 'rubygems:asciidoctor-bibtex:0.3.1'
+    gems 'rubygems:asciidoctor-bibtex:0.6.0'
 }
 
 asciidoctorj {
-    version = '1.5.6'
+    version = '1.6.2'
 }
 
 task bibtex() {
