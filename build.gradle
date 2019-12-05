@@ -20,7 +20,7 @@ plugins {
 }
 
 wrapper {
-    gradleVersion = "4.10.2"
+    gradleVersion = "5.6.4"
     distributionType = Wrapper.DistributionType.ALL
 }
 
