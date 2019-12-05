@@ -30,6 +30,9 @@ repositories {
 
 dependencies {
     gems 'rubygems:asciidoctor-diagram:1.5.10'
+    // asciidoctor-bibtex requires a 4.x version of bibtex-ruby, but for some reason the build installs a 5.x version by default.
+    // To fix this we need this manual dependency on a 4.x version of bibtex-ruby.
+    gems 'rubygems:bibtex-ruby:4.4.7'
     gems 'rubygems:asciidoctor-bibtex:0.3.1'
 }
 
