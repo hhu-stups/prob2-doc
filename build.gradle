@@ -81,7 +81,6 @@ task buildMaindocs() {
 }
 
 asciidoctor {
-    def inputDir = file("src/docs/chapter/")
     dependsOn = [bibtex, jrubyPrepare, buildMaindocs]
     requires = ['asciidoctor-diagram', 'asciidoctor-bibtex']
     gemPath = jrubyPrepare.outputDir
