@@ -1,0 +1,185 @@
+
+[[debugging-prob]]
+= Debugging Models with ProB
+
+There are various ways in which you can debug your model.
+We focus here on debugging performance issues
+
+== Debugging with LibraryIO
+
+The [[External Functions|standard library]] "LibraryIO.def" contains various external functions and predicates with which you can instrument your formal model.
+
+To use the library in your model you need to include the following 
+
+....
+DEFINITIONS
+ "LibraryIO.def"
+....
+
+With the external predicate <tt>printf</tt> you can view values of variables and identifiers. The printf predicate is always true and will print its arguments when all of them have been fully computed.
+The printf predicate uses the format from SICStus Prolog for the format string.
+The most important are <tt>~w</tt> for printing an argument and <tt>~n</tt>
+for a newline. There must be exactly as many <tt>~w</tt> in the format string as there
+are aguments.
+Below is a small example, to inspect in which order ProB enumerates values.
+The example is typed in the REPL of  [[Using_the_Command-Line_Version_of_ProB|probcli]]
+(started using the command <tt>probcli -repl File.mch</tt> where <tt>File.mch</tt> includes the definitions section above):
+
+....
+>>> {x,y | x:1..5 & y:1..2 & x+y=6 & printf("x=~w~n",[x]) & printf("y=~w~n",[y])}
+y=1
+x=5
+y=2
+x=4
+Expression Value = 
+{(4|->2),(5|->1)}
+....
+
+As you can see, ProB has enumerated y before x, as its domain was smaller.
+
+You can use the external function <tt>observe</tt> to inspect a list of
+identifiers:
+
+....
+>>> {x,y | x:1..5 & y:1..2 & x+y=6 & observe((x,y))}
+ observing x
+ observing y
+ y = 1  (walltime: 562188 ms)
+. x = 5  (walltime: 562188 ms)
+..* Value complete: x |-> y = (5|->1)  (walltime: 562188 ms)
+------
+ y = 2  (walltime: 562188 ms)
+. x = 4  (walltime: 562188 ms)
+..* Value complete: x |-> y = (4|->2)  (walltime: 562188 ms)
+------
+Expression Value = 
+{(4|->2),(5|->1)}
+....
+
+With the external function <tt>TIME</tt> you can get the current time in seconds:
+....
+>>> TIME("sec")
+Expression Value = 
+11
+>>> TIME("now")
+Expression Value = 
+1581432376
+>>> TIME("now")
+Expression Value = 
+1581432377
+....
+
+With the external function <tt>DELTA_WALLTIME</tt> you can get the  time in milliseconds since the last call to <tt>DELTA_WALLTIME</tt>.
+
+== Performance Messages
+
+By setting the preference <tt>PERFORMANCE_INFO</tt> to <tt>TRUE</tt> ProB will print various performance messages.
+For example it may print messages when the evaluation of comprehension sets has exceeded a threshold. This threshold (in ms) can be influenced by setting the preference
+<tt>PERFORMANCE_INFO_LIMIT</tt>.
+
+== Debugging Constants Setup
+
+By setting the preference <tt>TRACE_INFO</tt> to <tt>TRUE</tt> ProB will print additional messages when evaluating certain predicates, in particular the <tt>PROPERTIES</tt> clause of a B machine.
+With this feature you can observe how constants get bound to values and can sometimes spot expensive predicates and large values.
+Some additional information about debugging the PROPERTIES can be found in the [[Tutorial Troubleshooting the Setup]].
+
+Let us take the following machine
+....
+MACHINE Debug
+CONSTANTS a,b,c
+PROPERTIES
+  a = card(b) &
+  b = %x.(x:1..c|x*x) &
+  c : 1000..1001 & c < 1001
+VARIABLES x
+INVARIANT x:NATURAL
+INITIALISATION x:=2
+OPERATIONS
+  Sqr = SELECT x:dom(b) THEN x := b(x) END;
+  Finished = SELECT x /: dom(b) THEN skip END
+END
+....
+
+Here is how we can debug the constants setup:
+
+....
+$ probcli Debug.mch -p TRACE_INFO TRUE -init
+% unused_constants(2,[a,c])
+nr_of_components(1)
+
+ ====> (1) c < 1001
+
+ ====> (1) a = card(b)
+
+ ====> (1) b = %x.(x : 1 .. c|x * x)
+
+ ====> (1) c : 1000 .. 1001
+finished_processing_component_predicates
+grounding_wait_flags
+ :?: a int(?:0..sup)
+ :?: b VARIABLE: _31319 : GRVAL-CHECK
+ :?: c int(?:inf..1000)
+--1-->> a
+     int(1000)
+--1-->> b
+     AVL.size=1000
+--1-->> c
+     int(1000)
+% Runtime for SOLUTION for SETUP_CONSTANTS: 107 ms (walltime: 110 ms)
+% Runtime to FINALISE SETUP_CONSTANTS: 0 ms (walltime: 0 ms)
+
+ =INIT=> x := 2
+ [=OK= 0 ms]
+....
+
+== Debugging Animation or Execution
+
+By using the <tt>-animate_stats</tt> flag, you can see execution times for operations that are executed either using the <tt>-execute</tt> or <tt>-animate</tt> commands.
+In verbose mode (<tt>-v</tt> flag) you also see the memory consumption.
+
+....
+$ probcli Debug.mch -execute_all -animate_stats
+% unused_constants(2,[a,c])
+% Runtime for SOLUTION for SETUP_CONSTANTS: 79 ms (walltime: 80 ms)
+1    : SETUP_CONSTANTS
+       91 ms walltime (89 ms runtime), since start: 1107 ms
+2    : INITIALISATION
+       5 ms walltime (4 ms runtime), since start: 1112 ms
+3    : Sqr
+       10 ms walltime (10 ms runtime), since start: 1123 ms
+4    : Sqr
+       0 ms walltime (0 ms runtime), since start: 1123 ms
+5    : Sqr
+       1 ms walltime (0 ms runtime), since start: 1124 ms
+6    : Sqr
+       0 ms walltime (0 ms runtime), since start: 1124 ms
+7    : Finished
+       3 ms walltime (4 ms runtime), since start: 1127 ms
+Infinite loop reached after 8 steps (looping on Finished).
+% Runtime for -execute: 116 ms (with gc: 116 ms, walltime: 119 ms); time since start: 1132 ms
+....
+
+== Profiling ==
+
+You can obtain some profiling information using the <tt>-prob_profile</tt> command.
+This command unfortunately requires that ProB was compiled using special flags (<tt>-Dprob_profile=true</tt> and <tt>-Dprob_src_profile=true</tt>).
+
+....
+$ probcli ../prob_examples/public_examples/B/Tutorial/Debug.mch -execute_all -prob_profile
+...
+--------------------------
+ProB profile info after 5685 ms walltime (5248 ms runtime)
+----Source Location Profiler Information----
+----Tracks number of times B statements (aka substitutions) are hit
+ 1 hits at 9:15 -- 9:19 in /Users/leuschel/git_root/prob_examples/public_examples/B/Tutorial/Debug.mch
+ 1 hits at 12:37 -- 12:41 in /Users/leuschel/git_root/prob_examples/public_examples/B/Tutorial/Debug.mch
+ 4 hits at 11:29 -- 11:38 in /Users/leuschel/git_root/prob_examples/public_examples/B/Tutorial/Debug.mch
+----
+---- ProB Runtime Profiler ----
+---- Tracks time spent in B operations and invariant evaluation
+ $setup_constants : 78 ms (80 ms walltime & 80 ms max. walltime; #calls 1)
+ Sqr : 9 ms (9 ms walltime & 9 ms max. walltime; #calls 1)
+ $initialise_machine : 5 ms (5 ms walltime & 5 ms max. walltime; #calls 1)
+ Finished : 3 ms (4 ms walltime & 4 ms max. walltime; #calls 1)
+ Total Walltime: 98 ms for #calls 4
+....
