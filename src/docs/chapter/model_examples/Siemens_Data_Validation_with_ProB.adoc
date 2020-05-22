@@ -1,7 +1,7 @@
 [[prob-validation-for-siemens-sas]]
-== ProB Validation for Siemens SAS
+= ProB Validation for Siemens SAS
 
-=== Situation
+== Situation
 
 During the course of the European FP7 project Deploy, Siemens deployed
 the ProB software to check if it was feasible to use ProB to
@@ -10,7 +10,7 @@ production environment and related to the track topology and signal
 data. At that point in time, the properties in question took Siemens
 several weeks to manually check (about a man month of effort).
 
-=== Challenge
+== Challenge
 
 The challenge facing the STUPS team (Softwaretechnik und
 Programmiersprachen) at the University of Düsseldorf is described in the
@@ -21,7 +21,7 @@ hard model. It then took STUPS a while to understand the models and get
 them through the new parser, the development of which was being
 finalised at the time.
 
-=== Solution
+== Solution
 
 ProB was able to analyse the simple model right away. One error in the
 assertions was discovered. Then ProB was improved so that the analysis
@@ -38,7 +38,7 @@ that there was still a bug in ProB. In fact, the errors were genuine and
 they were exactly the same errors that Siemens had uncovered themselves
 by manual inspection.
 
-=== Results
+== Results
 
 The results shows that ProB was a great success. Instead of taking
 several weeks to inspect the properties manually, ProB was able to check
@@ -47,7 +47,7 @@ the properties in 4.15 seconds and the assertions in 1017.7 seconds
 software has continued. The assertion checking for the above model now
 takes less than one minute using the current version of ProB.
 
-=== Papers
+== Papers
 
 More details can be found in these papers:
 
@@ -56,7 +56,7 @@ More details can be found in these papers:
 * https://www3.hhu.de/stups/downloads/pdf/abs-1210-6815.pdf[Formally
 Checking Large Data Sets in the Railways, 2012]
 
-=== Complicated Formula
+== Complicated Formula
 
 Below we show the graphical visualisation of a complicated property by
 ProB's graphical formula viewer. The graphics are also available as

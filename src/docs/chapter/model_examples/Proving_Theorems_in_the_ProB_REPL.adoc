@@ -1,6 +1,6 @@
 
 [[proving-theorems-in-prob-repl]]
-== Proving Theorems in ProB REPL
+= Proving Theorems in ProB REPL
 
 For this example we try and use the REPL (Read-Eval-Print-Loop) of ProB
 to prove theorems. The REPL can either be started using probcli's
