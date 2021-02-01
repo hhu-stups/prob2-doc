@@ -14,7 +14,7 @@ buildscript {
 }
 
 plugins {
-    id "org.asciidoctor.convert" version "2.4.0"
+    id "org.asciidoctor.jvm.convert" version "2.4.0"
     id "com.github.jruby-gradle.base" version "1.7.0"
 }
 
@@ -29,10 +29,14 @@ repositories {
     jcenter()
 }
 
+configurations {
+    asciidoctorDeps
+}
+
 dependencies {
-    asciidoctor 'org.asciidoctor:asciidoctorj-diagram:1.5.18'
-    asciidoctor 'org.asciidoctor:asciidoctorj-epub3:1.5.0-alpha.9'
-    asciidoctor 'org.asciidoctor:asciidoctorj-pdf:1.5.0-beta.8'
+    asciidoctorDeps 'org.asciidoctor:asciidoctorj-diagram:1.5.18'
+    asciidoctorDeps 'org.asciidoctor:asciidoctorj-epub3:1.5.0-alpha.9'
+    asciidoctorDeps 'org.asciidoctor:asciidoctorj-pdf:1.5.0-beta.8'
     
     gems 'rubygems:asciidoctor-bibtex:0.8.0'
 }
@@ -83,23 +87,30 @@ task buildMaindocs() {
 
 asciidoctor {
     dependsOn = [bibtex, jrubyPrepare, buildMaindocs]
-    requires = ['asciidoctor-diagram', 'asciidoctor-bibtex']
-    gemPath = jrubyPrepare.outputDir
+    configurations "asciidoctorDeps"
 
     options doctype: 'book'
 
-    backends = ['html5', 'pdf']
+    outputOptions {
+        backends = ['html5', 'pdf']
+    }
 
-    attributes = [
-        'source-highlighter': 'coderay',
-        'coderay-linenums-mode': 'table',
-        'toc': 'left',
-        'imagesdir': 'images',
-        'icon': 'font',
-        'linkattrs': true,
-        'encoding': 'utf-8',
-        'bibtex-file': 'combined.bib',
-    ]
+    asciidoctorj {
+        requires = ['asciidoctor-diagram', 'asciidoctor-bibtex']
+        gemPaths = [jrubyPrepare.outputDir]
+        attributes = [
+            'source-highlighter': 'coderay',
+            'coderay-linenums-mode': 'table',
+            'toc': 'left',
+            'imagesdir': 'images',
+            'icon': 'font',
+            'linkattrs': true,
+            'encoding': 'utf-8',
+            'bibtex-file': 'combined.bib',
+        ]
+    }
+
+    baseDirFollowsSourceDir()
 
     sources {
         include '*.adoc'
