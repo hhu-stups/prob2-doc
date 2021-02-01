@@ -11,8 +11,9 @@ install:
 script:
 - ./gradlew --no-daemon asciidoctor --info --stacktrace
 after_success:
-- travis-custom-deploy sftp build/asciidoc/pdf/*.pdf
-- travis-custom-deploy sftp build/asciidoc/html5
+- travis-custom-deploy sftp build/docs/asciidoc/pdf/*.pdf
+- travis-custom-deploy sftp build/docs/asciidoc/html5/*.html
+- travis-custom-deploy sftp build/docs/asciidoc/html5/images
 env:
   global:
   - secure: zA8P78YBsqwWjNSlLkVieuVi67w+9upcHc2EGH7K3T9fSHvS5wPPywNma/00tqeNwQeyekyd6K2slhgSgKy71MnVGjEn96qfUMU7MVBRDoY9e/QE+bipB2p5gaT5peTGGfX1TPLJx3wYTTnnSdXs1+iXCgkRxPap1JVw/iG5Wn+1q9c3djXlcU/kUwl7jrO0qb4idQD6ks7I9/BajM7Yg7Hx98x6Wq8AVG0/rmkybalqkQjNBUdDN6/wqjPBqh/nUB8qAaUiaHOHUvOmFONWGFasiNK1Ys6bnp7eQUP73URx270OSGNtMZDPZP+yFcyVWqoMLqVk9v7qgSlRSVcm2n4WpPqt4ibDGH6jzp5SkGFqDpYTIN97v5OKnpi2A3DGpnhHdid17g0PovIPIAhEfdqgZC8Q3daMiQG8C+rIaJ5nRQ2LHckXP0RAtGLXkPrhAPW8K2JVW8qrgiTdOUPI18CkKLH0Ty+7WMnBfUN2+kyYMNzObF6mg62J2rfILH/TVwdnEbIPjmBr6QoNlB/ln3wQXdlV1+JbFjGQ9keR59Zdo+gDaBjP1NU+0Zy9AJB8WQLQyOhwIfOes14vU66oVv0JDSfvAjCmTi4Ujoi24vdV+DsJ49sa5aEaGc/0FKh8BBr+ALprlOAHmjx8IiVoJyy8Gw2l3JLSEERjRI7DH7w=
