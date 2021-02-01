@@ -15,7 +15,7 @@ buildscript {
 
 plugins {
     id "org.asciidoctor.jvm.convert" version "3.1.0"
-    id "com.github.jruby-gradle.base" version "1.7.0"
+    id "org.asciidoctor.jvm.gems" version "3.1.0"
 }
 
 wrapper {
@@ -27,6 +27,7 @@ def cfg = new Configuration()
 
 repositories {
     jcenter()
+    ruby.gems()
 }
 
 configurations {
@@ -38,7 +39,7 @@ dependencies {
     asciidoctorDeps 'org.asciidoctor:asciidoctorj-epub3:1.5.0-alpha.19'
     asciidoctorDeps 'org.asciidoctor:asciidoctorj-pdf:1.5.4'
     
-    gems 'rubygems:asciidoctor-bibtex:0.8.0'
+    asciidoctorGems 'rubygems:asciidoctor-bibtex:0.8.0'
 }
 
 asciidoctorj {
@@ -86,7 +87,7 @@ task buildMaindocs() {
 }
 
 asciidoctor {
-    dependsOn = [bibtex, jrubyPrepare, buildMaindocs]
+    dependsOn = [bibtex, asciidoctorGemsPrepare, buildMaindocs]
     configurations "asciidoctorDeps"
 
     options doctype: 'book'
@@ -97,7 +98,6 @@ asciidoctor {
 
     asciidoctorj {
         requires = ['asciidoctor-diagram', 'asciidoctor-bibtex']
-        gemPaths = [jrubyPrepare.outputDir]
         attributes = [
             'source-highlighter': 'coderay',
             'coderay-linenums-mode': 'table',
