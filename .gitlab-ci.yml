@@ -1,0 +1,35 @@
+variables:
+  DEBIAN_FRONTEND: noninteractive
+  GRADLE_OPTIONS: --info --stacktrace --warning-mode=all
+
+default:
+  image: openjdk:8-jdk-slim
+  cache:
+    paths:
+      - .gradle/caches
+      - .gradle/native
+      - .gradle/wrapper
+  before_script:
+    - apt-get update
+    - apt-get install --assume-yes graphviz
+    - export GRADLE_USER_HOME="${PWD}/.gradle"
+
+asciidoctor:
+  stage: build
+  script:
+    - ./gradlew ${GRADLE_OPTIONS} asciidoctor
+  artifacts:
+    paths:
+      - build/docs/asciidoc
+
+upload:
+  stage: deploy
+  only: 
+    - master@general/stups/prob2_doc
+  image: debian:stable-slim
+  before_script:
+    - apt-get update
+    - apt-get install --assume-yes lftp
+  variables:
+    DEPLOY_REMOTE_BASEDIR: stupshome/stups
+  script: LFTP_PASSWORD="${DEPLOY_PASSWORD}" lftp -c "set sftp:auto-confirm yes; open --user ${DEPLOY_USERNAME} --env-password sftp://${DEPLOY_HOST}/${DEPLOY_REMOTE_BASEDIR}/handbook/; mput -e build/docs/asciidoc/pdf/*.pdf build/docs/asciidoc/html5/*.html; mput -e -O images/ build/docs/asciidoctor/html5/images/*; exit"
