@@ -14,7 +14,7 @@ buildscript {
 }
 
 plugins {
-    id "org.asciidoctor.jvm.convert" version "2.4.0"
+    id "org.asciidoctor.jvm.convert" version "3.1.0"
     id "com.github.jruby-gradle.base" version "1.7.0"
 }
 
@@ -34,15 +34,15 @@ configurations {
 }
 
 dependencies {
-    asciidoctorDeps 'org.asciidoctor:asciidoctorj-diagram:1.5.18'
-    asciidoctorDeps 'org.asciidoctor:asciidoctorj-epub3:1.5.0-alpha.9'
-    asciidoctorDeps 'org.asciidoctor:asciidoctorj-pdf:1.5.0-beta.8'
+    asciidoctorDeps 'org.asciidoctor:asciidoctorj-diagram:2.1.0'
+    asciidoctorDeps 'org.asciidoctor:asciidoctorj-epub3:1.5.0-alpha.19'
+    asciidoctorDeps 'org.asciidoctor:asciidoctorj-pdf:1.5.4'
     
     gems 'rubygems:asciidoctor-bibtex:0.8.0'
 }
 
 asciidoctorj {
-    version = '1.6.2'
+    version = '2.4.2'
 }
 
 task bibtex() {
