@@ -1,4 +1,0 @@
-
-[[prob-2.0-javafx-ui]]
-= ProB 2.0 JavaFX UI
-:leveloffset: +1
