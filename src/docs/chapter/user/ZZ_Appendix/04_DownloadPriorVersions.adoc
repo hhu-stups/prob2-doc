@@ -1,4 +1,0 @@
-[[prior-versions-of-prob]]
-= Prior Versions of ProB
-
-If you click https://www3.hhu.de/stups/prob/index.php/DownloadPriorVersions[here] you will be redirected to the Download Prior Versions of ProB page.
