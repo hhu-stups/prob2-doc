@@ -1,4 +1,0 @@
-
-[[feature-description]]
-= Feature Description
-:leveloffset: +1
