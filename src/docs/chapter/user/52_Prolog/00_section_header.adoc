@@ -1,4 +1,0 @@
-
-[[prob-prolog-guide]]
-= ProB Prolog Guide
-:leveloffset: +1
