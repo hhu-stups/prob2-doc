@@ -9,7 +9,7 @@ ${authors?join(";", "")}
 
 <#list directory as file>
 include::${file}[]
-</#list>
 
+</#list>
 :leveloffset: -1
 </#list>
