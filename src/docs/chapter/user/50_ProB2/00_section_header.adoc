@@ -1,4 +1,0 @@
-
-[[prob2.0]]
-= ProB 2.0
-:leveloffset: +1
