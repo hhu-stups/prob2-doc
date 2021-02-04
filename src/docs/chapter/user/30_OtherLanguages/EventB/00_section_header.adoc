@@ -1,4 +1,0 @@
-
-[[eventb-and-rodin]]
-= Event B and Rodin
-:leveloffset: +1
