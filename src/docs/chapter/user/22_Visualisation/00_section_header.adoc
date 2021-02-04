@@ -1,4 +1,0 @@
-
-[[visualisation]]
-= Visualisation
-:leveloffset: +1
