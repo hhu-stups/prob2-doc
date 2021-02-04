@@ -1,4 +1,0 @@
-
-[[model-checking]]
-= Model Checking
-:leveloffset: +1
