@@ -26,7 +26,7 @@ wrapper {
 def cfg = new Configuration()
 
 repositories {
-    jcenter()
+    mavenCentral()
     ruby.gems()
 }
 
