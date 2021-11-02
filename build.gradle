@@ -36,7 +36,6 @@ configurations {
 
 dependencies {
     asciidoctorDeps 'org.asciidoctor:asciidoctorj-diagram:2.2.1'
-    asciidoctorDeps 'org.asciidoctor:asciidoctorj-epub3:1.5.1'
     asciidoctorDeps 'org.asciidoctor:asciidoctorj-pdf:1.6.0'
     
     asciidoctorGems 'rubygems:asciidoctor-bibtex:0.8.0'
