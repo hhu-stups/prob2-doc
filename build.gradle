@@ -42,10 +42,6 @@ dependencies {
     asciidoctorGems 'rubygems:asciidoctor-bibtex:0.8.0'
 }
 
-asciidoctorj {
-    version = '2.5.2'
-}
-
 task bibtex() {
     def inputDir = file("src/docs/bibtex")
     def combinedFile = file("src/docs/asciidoc/combined.bib")
