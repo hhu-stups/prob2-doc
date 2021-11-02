@@ -8,14 +8,14 @@ buildscript {
     }
 
     dependencies {
-        classpath 'org.freemarker:freemarker:2.3.30'
-        classpath 'org.yaml:snakeyaml:1.27'
+        classpath 'org.freemarker:freemarker:2.3.31'
+        classpath 'org.yaml:snakeyaml:1.29'
     }
 }
 
 plugins {
-    id "org.asciidoctor.jvm.convert" version "3.1.0"
-    id "org.asciidoctor.jvm.gems" version "3.1.0"
+    id "org.asciidoctor.jvm.convert" version "3.3.2"
+    id "org.asciidoctor.jvm.gems" version "3.3.2"
 }
 
 wrapper {
@@ -35,15 +35,15 @@ configurations {
 }
 
 dependencies {
-    asciidoctorDeps 'org.asciidoctor:asciidoctorj-diagram:2.1.0'
-    asciidoctorDeps 'org.asciidoctor:asciidoctorj-epub3:1.5.0-alpha.19'
-    asciidoctorDeps 'org.asciidoctor:asciidoctorj-pdf:1.5.4'
+    asciidoctorDeps 'org.asciidoctor:asciidoctorj-diagram:2.2.1'
+    asciidoctorDeps 'org.asciidoctor:asciidoctorj-epub3:1.5.1'
+    asciidoctorDeps 'org.asciidoctor:asciidoctorj-pdf:1.6.0'
     
     asciidoctorGems 'rubygems:asciidoctor-bibtex:0.8.0'
 }
 
 asciidoctorj {
-    version = '2.4.2'
+    version = '2.5.2'
 }
 
 task bibtex() {
