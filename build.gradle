@@ -16,6 +16,7 @@ buildscript {
 plugins {
     id "org.asciidoctor.jvm.convert" version "3.3.2"
     id "org.asciidoctor.jvm.gems" version "3.3.2"
+    id "org.asciidoctor.jvm.pdf" version "3.3.2"
 }
 
 wrapper {
@@ -30,14 +31,7 @@ repositories {
     ruby.gems()
 }
 
-configurations {
-    asciidoctorDeps
-}
-
 dependencies {
-    asciidoctorDeps 'org.asciidoctor:asciidoctorj-diagram:2.2.1'
-    asciidoctorDeps 'org.asciidoctor:asciidoctorj-pdf:1.6.0'
-    
     asciidoctorGems 'rubygems:asciidoctor-bibtex:0.8.0'
 }
 
@@ -83,7 +77,6 @@ task buildMaindocs() {
 
 asciidoctor {
     dependsOn = [bibtex, asciidoctorGemsPrepare, buildMaindocs]
-    configurations "asciidoctorDeps"
 
     options doctype: 'book'
 
@@ -92,7 +85,10 @@ asciidoctor {
     }
 
     asciidoctorj {
-        requires = ['asciidoctor-diagram', 'asciidoctor-bibtex']
+        modules {
+            diagram.use()
+        }
+        requires = ['asciidoctor-bibtex']
         attributes = [
             'source-highlighter': 'coderay',
             'coderay-linenums-mode': 'table',
