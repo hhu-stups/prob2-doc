@@ -32,6 +32,11 @@ repositories {
 
 dependencies {
     asciidoctorGems 'rubygems:asciidoctor-bibtex:0.8.0'
+    // asciidoctor-bibtex depends on version 1.x of citeproc-ruby and csl-styles,
+    // but for some reason the build installs version 2.x by default.
+    // To fix this we need these manual dependencies on the 1.x versions.
+    asciidoctorGems 'rubygems:citeproc-ruby:1.1.14'
+    asciidoctorGems 'rubygems:csl-styles:1.0.1.11'
 }
 
 task bibtex() {
