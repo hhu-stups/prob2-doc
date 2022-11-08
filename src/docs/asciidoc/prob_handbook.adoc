@@ -12,9 +12,28 @@ Jens Bendisposto;Joy Clark;Michael Leuschel
 
 :leveloffset: +1
 
-include::../chapter/user/00_introduction.adoc[]
+[[user-introduction]]
+= Introduction
 
-include::../chapter/user/65_Java_2-0_API/00_section_header.adoc[]
+ProB is a graphical animator and model checker for the B method. The ProB homepage
+is at https://www3.hhu.de/stups/prob/[https://www3.hhu.de/stups/prob/],
+where precompiled binaries, installation instructions and documentation
+are available.
+
+[[important-notice]]
+== Important notice
+
+If you find a problem with ProB or this documentation please let us
+know. We are happy to receive suggestions for improvements to ProB or
+the documentation. More information about submitting bug reports is
+available in the <<bugs,bugs section>>. You can also post
+a question in our https://groups.google.com/d/forum/prob-users[prob-users group] or send
+an email to mailto:Michael.Leuschel@hhu.de[Michael Leuschel].
+
+[[developer-prob-java-api]]
+= ProB 2.0 Java API Documentation
+
+:leveloffset: +1
 
 include::../chapter/user/65_Java_2-0_API/01_introduction.adoc[]
 
@@ -36,12 +55,13 @@ include::../chapter/user/65_Java_2-0_API/09_dependencyinjection.adoc[]
 
 include::../chapter/user/65_Java_2-0_API/10_program_synthesis.adoc[]
 
-include::../chapter/user/65_Java_2-0_API/ZZ_section_footer.adoc[]
+:leveloffset: -1
 
-include::../chapter/user/ZZ_Appendix/00_section_header.adoc[]
+[[appendix]]
+= Appendix
 
-include::../chapter/user/ZZ_Appendix/A_literature.adoc[]
+== Additional Literature
 
-include::../chapter/user/ZZ_Appendix/ZZ_section_footer.adoc[]
+bibliography::[]
 
 :leveloffset: -1

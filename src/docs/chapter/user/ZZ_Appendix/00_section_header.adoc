@@ -1,4 +1,0 @@
-
-[[appendix]]
-= Appendix
-:leveloffset: +1
