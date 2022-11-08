@@ -35,25 +35,25 @@ an email to mailto:Michael.Leuschel@hhu.de[Michael Leuschel].
 
 :leveloffset: +1
 
-include::../chapter/user/65_Java_2-0_API/01_introduction.adoc[]
+include::chapter/Java_API/01_introduction.adoc[]
 
-include::../chapter/user/65_Java_2-0_API/02_architecture.adoc[]
+include::chapter/Java_API/02_architecture.adoc[]
 
-include::../chapter/user/65_Java_2-0_API/03_installation.adoc[]
+include::chapter/Java_API/03_installation.adoc[]
 
-include::../chapter/user/65_Java_2-0_API/04_lowlevelapi.adoc[]
+include::chapter/Java_API/04_lowlevelapi.adoc[]
 
-include::../chapter/user/65_Java_2-0_API/05_probcore.adoc[]
+include::chapter/Java_API/05_probcore.adoc[]
 
-include::../chapter/user/65_Java_2-0_API/06_animation.adoc[]
+include::chapter/Java_API/06_animation.adoc[]
 
-include::../chapter/user/65_Java_2-0_API/07_evaluation.adoc[]
+include::chapter/Java_API/07_evaluation.adoc[]
 
-include::../chapter/user/65_Java_2-0_API/08_cosimulation.adoc[]
+include::chapter/Java_API/08_cosimulation.adoc[]
 
-include::../chapter/user/65_Java_2-0_API/09_dependencyinjection.adoc[]
+include::chapter/Java_API/09_dependencyinjection.adoc[]
 
-include::../chapter/user/65_Java_2-0_API/10_program_synthesis.adoc[]
+include::chapter/Java_API/10_program_synthesis.adoc[]
 
 :leveloffset: -1
 
