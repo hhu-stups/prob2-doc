@@ -38,8 +38,6 @@ task bibtex() {
 asciidoctor {
     dependsOn = [bibtex, asciidoctorGemsPrepare]
 
-    options doctype: 'book'
-
     outputOptions {
         backends = ['html5', 'pdf']
     }
@@ -49,16 +47,6 @@ asciidoctor {
             diagram.use()
         }
         requires = ['asciidoctor-bibtex']
-        attributes = [
-            'source-highlighter': 'coderay',
-            'coderay-linenums-mode': 'table',
-            'toc': 'left',
-            'imagesdir': 'images',
-            'icon': 'font',
-            'linkattrs': true,
-            'encoding': 'utf-8',
-            'bibtex-file': 'combined.bib',
-        ]
     }
 
     baseDirFollowsSourceDir()
