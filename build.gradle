@@ -1,18 +1,3 @@
-import freemarker.template.Configuration
-
-import org.yaml.snakeyaml.Yaml
-
-buildscript {
-    repositories {
-        mavenCentral()
-    }
-
-    dependencies {
-        classpath 'org.freemarker:freemarker:2.3.31'
-        classpath 'org.yaml:snakeyaml:1.29'
-    }
-}
-
 plugins {
     id "org.asciidoctor.jvm.convert" version "3.3.2"
     id "org.asciidoctor.jvm.gems" version "3.3.2"
@@ -22,8 +7,6 @@ plugins {
 wrapper {
     gradleVersion = "7.4.2"
 }
-
-def cfg = new Configuration()
 
 repositories {
     mavenCentral()
@@ -52,35 +35,8 @@ task bibtex() {
     }
 }
 
-task buildMaindocs() {
-    def templateFileName = "src/docs/templates/handbook.ftlh"
-    def configFile = file("config.yaml")
-    def chapterDir = file("src/docs/chapter")
-    def outputDir = file("src/docs/asciidoc")
-
-    inputs.files(templateFileName, configFile)
-    inputs.dir(chapterDir)
-    outputs.dir(outputDir)
-
-    doLast {
-        def template = cfg.getTemplate(templateFileName)
-        def parser = new Yaml()
-        def books = parser.loadAll(configFile.text)
-        books.each {book ->
-            def includes = []
-            book.content.each {dir ->
-                includes << fileTree(new File(chapterDir, dir)).collect().sort()
-            }
-            book.directories = includes
-            new File(outputDir, book.file).withWriter("UTF-8") {w ->
-                template.process(book, w)
-            }
-        }
-    }
-}
-
 asciidoctor {
-    dependsOn = [bibtex, asciidoctorGemsPrepare, buildMaindocs]
+    dependsOn = [bibtex, asciidoctorGemsPrepare]
 
     options doctype: 'book'
 
@@ -119,9 +75,6 @@ asciidoctor {
 }
 
 clean {
-    delete(fileTree('src/docs/asciidoc') {
-        include '*.adoc'
-    })
     delete('src/docs/asciidoc/combined.bib')
 }
 

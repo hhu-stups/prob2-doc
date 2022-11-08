@@ -1,0 +1,41 @@
+= ProB Handbook
+Jens Bendisposto;Joy Clark;Michael Leuschel
+
+:xrefstyle: short
+:toc:
+
+:leveloffset: +1
+
+include::../chapter/user/00_introduction.adoc[]
+
+include::../chapter/user/65_Java_2-0_API/00_section_header.adoc[]
+
+include::../chapter/user/65_Java_2-0_API/01_introduction.adoc[]
+
+include::../chapter/user/65_Java_2-0_API/02_architecture.adoc[]
+
+include::../chapter/user/65_Java_2-0_API/03_installation.adoc[]
+
+include::../chapter/user/65_Java_2-0_API/04_lowlevelapi.adoc[]
+
+include::../chapter/user/65_Java_2-0_API/05_probcore.adoc[]
+
+include::../chapter/user/65_Java_2-0_API/06_animation.adoc[]
+
+include::../chapter/user/65_Java_2-0_API/07_evaluation.adoc[]
+
+include::../chapter/user/65_Java_2-0_API/08_cosimulation.adoc[]
+
+include::../chapter/user/65_Java_2-0_API/09_dependencyinjection.adoc[]
+
+include::../chapter/user/65_Java_2-0_API/10_program_synthesis.adoc[]
+
+include::../chapter/user/65_Java_2-0_API/ZZ_section_footer.adoc[]
+
+include::../chapter/user/ZZ_Appendix/00_section_header.adoc[]
+
+include::../chapter/user/ZZ_Appendix/A_literature.adoc[]
+
+include::../chapter/user/ZZ_Appendix/ZZ_section_footer.adoc[]
+
+:leveloffset: -1
