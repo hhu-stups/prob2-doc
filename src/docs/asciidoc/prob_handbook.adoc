@@ -3,7 +3,6 @@ Jens Bendisposto;Joy Clark;Michael Leuschel
 :bibtex-file: combined.bib
 :coderay-linenums-mode: table
 :doctype: book
-:encoding: utf-8
 :icon: font
 :imagesdir: images
 :linkattrs:
