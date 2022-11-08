@@ -1,6 +1,6 @@
 = ProB Handbook
 Jens Bendisposto;Joy Clark;Michael Leuschel
-:bibtex-file: combined.bib
+:bibtex-file: src/docs/asciidoc/combined.bib
 :coderay-linenums-mode: table
 :doctype: book
 :icons: font

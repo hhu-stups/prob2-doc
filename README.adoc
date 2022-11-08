@@ -6,3 +6,30 @@ Repository for the ProB 2.0 Developer and User Handbook.
 
 * The handbook is located at https://www3.hhu.de/stups/handbook/prob2/prob_handbook.html
 * A PDF is available from https://www3.hhu.de/stups/handbook/prob2/prob_handbook.pdf
+
+== Building
+
+Assuming you have all necessary dependencies installed (see below), run:
+
+[source,sh]
+----
+$ make
+----
+
+The documentation will be built in HTML and PDF format and output into the build directory.
+
+== Dependencies
+
+The build requires https://asciidoctor.org/[Asciidoctor] with the https://github.com/asciidoctor/asciidoctor-bibtex[BibTeX], https://docs.asciidoctor.org/diagram-extension/latest/[diagram], and https://docs.asciidoctor.org/pdf-converter/latest/[PDF] extensions.
+These dependencies are available in most package managers
+and as a Docker image https://github.com/asciidoctor/docker-asciidoctor[asciidoctor/docker-asciidoctor].
+
+You can also use an existing https://www.ruby-lang.org/[Ruby] installation and https://bundler.io/[Bundler] to install the dependencies:
+
+[source,sh]
+----
+$ bundle config set --local path vendor/bundle
+$ bundle install
+----
+
+Then use `bundle exec make` to run the build.

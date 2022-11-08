@@ -1,4 +1,6 @@
-.gradle
+.bundle
 /build/
+/Gemfile.lock
+/vendor/bundle
 
 combined.bib
