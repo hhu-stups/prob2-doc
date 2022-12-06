@@ -18,6 +18,4 @@ upload:
   before_script:
     - apk update
     - apk add lftp openssh-client
-  variables:
-    DEPLOY_REMOTE_BASEDIR: stupshome/stups
   script: LFTP_PASSWORD="${DEPLOY_PASSWORD}" lftp -c "set sftp:auto-confirm yes; open --user ${DEPLOY_USERNAME} --env-password sftp://${DEPLOY_HOST}/${DEPLOY_REMOTE_BASEDIR}/handbook/prob2/; mput -e build/*.html build/*.pdf; mput -e -O images/ build/images/*; exit"
