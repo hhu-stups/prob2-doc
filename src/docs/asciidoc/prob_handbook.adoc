@@ -49,8 +49,6 @@ include::chapter/Java_API/06_animation.adoc[]
 
 include::chapter/Java_API/07_evaluation.adoc[]
 
-include::chapter/Java_API/08_cosimulation.adoc[]
-
 include::chapter/Java_API/09_dependencyinjection.adoc[]
 
 include::chapter/Java_API/10_program_synthesis.adoc[]
