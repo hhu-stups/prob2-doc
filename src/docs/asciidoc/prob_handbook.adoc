@@ -15,8 +15,8 @@ Jens Bendisposto;Joy Clark;Michael Leuschel
 [[user-introduction]]
 = Introduction
 
-ProB is a graphical animator and model checker for the B method. The ProB homepage
-is at https://www3.hhu.de/stups/prob/[https://www3.hhu.de/stups/prob/],
+ProB is a graphical animator and model checker for the B method.
+The ProB homepage is at https://prob.hhu.de/w/,
 where precompiled binaries, installation instructions and documentation
 are available.
 
