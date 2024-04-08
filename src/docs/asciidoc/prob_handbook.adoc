@@ -23,12 +23,11 @@ are available.
 [[important-notice]]
 == Important notice
 
-If you find a problem with ProB or this documentation please let us
-know. We are happy to receive suggestions for improvements to ProB or
-the documentation. More information about submitting bug reports is
-available in the <<bugs,bugs section>>. You can also post
-a question in our https://groups.google.com/d/forum/prob-users[prob-users group] or send
-an email to mailto:Michael.Leuschel@hhu.de[Michael Leuschel].
+If you find a problem with ProB or this documentation please let us know.
+We are happy to receive suggestions for improvements to ProB or the documentation.
+You can submit bug reports on our https://github.com/hhu-stups/prob-issues/issues[issue tracker].
+You can also post a question in our https://groups.google.com/d/forum/prob-users[prob-users group]
+or send an email to mailto:Michael.Leuschel@hhu.de[Michael Leuschel].
 
 [[developer-prob-java-api]]
 = ProB 2.0 Java API Documentation
