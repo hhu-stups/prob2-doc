@@ -1,8 +1,8 @@
-= ProB 2.0 Developer and User Handbook
+= ProB 2.0 Handbook
 
 image:https://travis-ci.org/hhu-stups/prob2-doc.svg?branch=master["Build Status", link="https://travis-ci.org/hhu-stups/prob2-doc"]
 
-Repository for the ProB 2.0 Developer and User Handbook.
+Repository for the ProB 2.0 Handbook.
 
 * The handbook is located at https://www3.hhu.de/stups/handbook/prob2/prob_handbook.html
 * A PDF is available from https://www3.hhu.de/stups/handbook/prob2/prob_handbook.pdf
